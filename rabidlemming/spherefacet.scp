@@ -1,0 +1,778 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Sunday, March 4, 2001
+// Facet Gate System v1.0e created by Admin Vaticus
+
+VERSION=0.54
+
+
+[ITEMDEF i_facet_moonstone_tram]
+NAME=Trammel moonstone
+DEFNAME=i_facet_moonstone_tram
+ID=i_reag_pumice
+TYPE=t_script
+PILE=1
+WEIGHT=.1
+
+ON=@Create
+ATTR=0004
+TAG.FACET=1
+
+ON=@Click
+IF <SRC.SECTOR.LIGHT>=<EVAL <TAG.STATUS>>
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==20
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=480
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==19
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=480
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==18
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=480
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==17
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0585
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==16
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0585
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==15
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0585
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==14
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0146
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==13
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0146
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==12
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0146
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==11
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0400
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==10
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0400
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==9
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=01c0
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==8
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=01c0
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==7
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0410
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==6
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0410
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==5
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0152
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==4
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0152
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==3
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0152
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==2
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=04d0
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==1
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=04d0
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+RETURN 0
+
+ON=@DCLICK
+IF <SRC.FLAGS>&080000000
+SRC.MESSAGE You cannot bury a stone whle you sit on a mount.
+RETURN 1
+ELSE
+IF <SRC.MAPPLANE>==0
+SRC.SYSMESSAGE You cannot use this stone here.
+RETURN 1
+ELSE
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers cannot travel to another facet!
+RETURN 1
+ELSE
+IF (<SRC.FLAGS>&02000000)
+SRC.SYSMESSAGE You cannot travel through facets as a criminal!
+RETURN 1
+ELSE
+IF (<SRC.REGION.GUARDED>==1)
+P=<SRC.P>
+SRC.BOW
+SRC.SYSMESSAGE I could not bury the stone here.
+RETURN 1
+ELSE
+P=<SRC.P>
+SRC.BOW
+SAY The stone settles into the ground.
+ATTR 08010
+SRC.NEWITEM i_facet_timer_tram
+SRC.ACT.LINK <UID>
+SRC.ACT.TIMER 10
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF i_facet_moonstone_fel]
+NAME=Felluca moonstone
+DEFNAME=i_facet_moonstone_fel
+ID=i_reag_pumice
+TYPE=t_script
+PILE=1
+WEIGHT=.1
+
+ON=@Create
+ATTR=0004
+TAG.FACET=1
+
+ON=@Click
+IF <SRC.SECTOR.LIGHT>=<EVAL <TAG.STATUS>>
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==20
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=480
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==19
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=480
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==18
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=480
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==17
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0585
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==16
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0585
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==15
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0585
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==14
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0146
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==13
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0146
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==12
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0146
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==11
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0400
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==10
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0400
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==9
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=01c0
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==8
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=01c0
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==7
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0410
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==6
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0410
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==5
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0152
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==4
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0152
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==3
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=0152
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==2
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=04d0
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+IF <SRC.SECTOR.LIGHT>==1
+SRC.SYSMESSAGE The stone's substance shifts as you examine it.
+COLOR=04d0
+TAG.STATUS=<SRC.SECTOR.LIGHT>
+UPDATE
+RETURN 0
+ELSE
+RETURN 0
+
+ON=@DCLICK
+IF <SRC.FLAGS>&080000000
+SRC.MESSAGE You cannot bury a stone whle you sit on a mount.
+RETURN 1
+ELSE
+IF (<SRC.MAPPLANE>==1)
+SRC.SYSMESSAGE You cannot use this stone here.
+RETURN 1
+ELSE
+IF (<EVAL <SRC.REGION.TAG.OCLLO>>==1)
+SRC.SYSMESSAGE You cannot use this stone here.
+RETURN 1
+ELSE
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers cannot travel to another facet!
+RETURN 1
+ELSE
+IF (<SRC.FLAGS>&02000000)
+SRC.SYSMESSAGE You cannot travel through facets as a criminal!
+RETURN 1
+ELSE
+IF (<SRC.REGION.GUARDED>==1)
+P=<SRC.P>
+SRC.BOW
+SRC.SYSMESSAGE I could not bury the stone here.
+RETURN 1
+ELSE
+P=<SRC.P>
+SRC.BOW
+SAY The stone settles into the ground.
+ATTR 08010
+SRC.NEWITEM i_facet_timer_fel
+SRC.ACT.LINK <UID>
+SRC.ACT.TIMER 10
+SRC.ACT.EQUIP
+RETURN 1
+
+[ITEMDEF i_facet_timer_fel]
+NAME=Facet Timer [REMOVE]
+ID=i_memory
+TYPE=T_EQ_SCRIPT
+LAYER=30
+
+ON=@TIMER
+LINK.NUDGEDOWN 1
+CONT.NEWITEM i_moongate_facet
+VAR.GATELINK=<CONT.ACT.UID>
+CONT.ACT.COLOR <LINK.COLOR>
+CONT.ACT.P <LINK.P>
+CONT.ACT.LINK <CONT.UID>
+CONT.ACT.TYPE t_facet_moongate_fel
+CONT.ACT.NAME Facet gate
+CONT.ACT.UPDATEX
+CONT.NEWITEM i_moongate_facet_fel
+CONT.ACT.COLOR <LINK.COLOR>
+CONT.ACT.P <LINK.P>
+CONT.ACT.TYPE t_normal
+CONT.ACT.MAPPLANE 1
+CONT.ACT.NAME Facet gate
+CONT.ACT.LINK <VAR.GATELINK>
+CONT.ACT.UPDATEX
+LINK.REMOVE
+REMOVE
+RETURN 1
+
+[ITEMDEF i_facet_timer_tram]
+NAME=Facet Timer [REMOVE]
+ID=i_memory
+TYPE=T_EQ_SCRIPT
+LAYER=30
+
+ON=@TIMER
+LINK.NUDGEDOWN 1
+CONT.NEWITEM i_moongate_facet
+VAR.GATELINK=<CONT.ACT.UID>
+CONT.ACT.COLOR <LINK.COLOR>
+CONT.ACT.P <LINK.P>
+CONT.ACT.LINK <CONT.UID>
+CONT.ACT.TYPE t_facet_moongate_tram
+CONT.ACT.NAME Facet gate
+CONT.ACT.UPDATEX
+CONT.NEWITEM i_moongate_facet_tram
+CONT.ACT.COLOR <LINK.COLOR>
+CONT.ACT.P <LINK.P>
+CONT.ACT.TYPE t_normal
+CONT.ACT.MAPPLANE 0
+CONT.ACT.NAME Facet gate
+CONT.ACT.LINK <VAR.GATELINK>
+CONT.ACT.UPDATEX
+LINK.REMOVE
+REMOVE
+RETURN 1
+
+[ITEMDEF i_moongate_facet]
+ID=i_moongate_red
+TYPE=t_telepad
+
+ON=@Create
+TIMER=20
+ATTR=0012
+
+[ITEMDEF i_moongate_facet_fel]
+ID=i_moongate_red
+TYPE=t_telepad
+
+ON=@Create
+TIMER=20
+ATTR=0012
+
+ON=@Step
+IF (<SRC.REGION.FLAGS>==01092) || (<SRC.REGION.FLAGS>==01192)
+SRC.SYSMESSAGE There is a house in the way.
+LINK.TYPE=t_facet_moongate_non
+SRC.MAPPLANE 0
+SRC.MOVE 50
+SRC.MOVE -49
+RETURN 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+[ITEMDEF i_moongate_facet_tram]
+ID=i_moongate_red
+TYPE=t_telepad
+
+ON=@Create
+TIMER=20
+ATTR=0012
+
+ON=@Step
+IF (<SRC.REGION.FLAGS>==01092) || (<SRC.REGION.FLAGS>==01192)
+SRC.SYSMESSAGE There is a house in the way.
+LINK.TYPE=t_facet_moongate_non
+SRC.MAPPLANE 1
+SRC.MOVE 50
+SRC.MOVE -49
+RETURN 1
+
+ON=@Timer
+REMOVE
+RETURN 1
+
+[TYPEDEF t_facet_moongate_non]
+ON=@Step
+SRC.MESSAGE There is a house in the way.
+RETURN 1
+
+[TYPEDEF t_facet_moongate]
+ON=@Step
+IF (<EVAL <SRC.TAG.FACETMENU>>==1)
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=1
+SRC.DIALOG d_facet_moongate
+RETURN 1
+
+[TYPEDEF t_facet_moongate_tram]
+ON=@Step
+IF <LINK>==<SRC.UID>
+SRC.MAPPLANE 0
+SRC.MOVE 50
+SRC.MOVE -50
+RETURN 1
+ELSE
+IF <LINK.FINDID.i_faction_mem_timer.MORE2>==<SRC.FINDID.i_faction_mem_timer.MORE2>
+SRC.MAPPLANE 0
+SRC.MOVE 50
+SRC.MOVE -50
+RETURN 1
+ELSE
+RETURN 1
+
+[TYPEDEF t_facet_moongate_fel]
+ON=@Step
+IF <LINK>==<SRC.UID>
+SRC.MAPPLANE 1
+SRC.MOVE 50
+SRC.MOVE -50
+RETURN 1
+ELSE
+IF <LINK.FINDID.i_faction_mem_timer.MORE2>==<SRC.FINDID.i_faction_mem_timer.MORE2>
+SRC.MAPPLANE 1
+SRC.MOVE 50
+SRC.MOVE -50
+RETURN 1
+ELSE
+RETURN 1
+
+[DIALOG d_facet_moongate]
+0,0
+page 0 
+resizepic 200 175 2600 400 275 // Curved Grey background 
+text 245 192 0 0 
+button 375 410 2143 2142 1 0 1
+page 1
+text 410 192 62 2
+resizepic 242 230 3000 150 35
+text 244 230 0 3
+button 220 235 210 211 1 0 2
+resizepic 242 265 3000 150 35
+text 244 265 0 4
+button 220 270 210 211 1 0 3
+resizepic 242 300 3000 150 35
+text 244 300 0 5
+button 220 305 210 211 1 0 4
+resizepic 242 335 3000 150 35
+text 244 335 0 6
+button 220 340 210 211 1 0 5
+resizepic 425 230 3000 150 35
+text 427 230 0 7
+button 403 235 210 211 1 0 6
+resizepic 425 265 3000 150 35
+text 427 265 0 8
+button 403 270 210 211 1 0 7
+resizepic 425 300 3000 150 35
+text 427 300 0 9
+button 403 305 210 211 1 0 8
+resizepic 425 335 3000 150 35
+text 427 335 0 10
+button 403 340 210 211 1 0 9
+button 375 410 2143 2142 1 0 1
+button 225 372 1210 1209 0 2
+text 244 370 0 1
+page 2
+text 410 192 62 1
+resizepic 242 230 3000 150 35
+text 244 230 0 3
+button 220 235 210 211 1 0 11
+resizepic 242 265 3000 150 35
+text 244 265 0 4
+button 220 270 210 211 1 0 12
+resizepic 242 300 3000 150 35
+text 244 300 0 5
+button 220 305 210 211 1 0 13
+resizepic 242 335 3000 150 35
+text 244 335 0 6
+button 220 340 210 211 1 0 14
+resizepic 425 230 3000 150 35
+text 427 230 0 7
+button 403 235 210 211 1 0 15
+resizepic 425 265 3000 150 35
+text 427 265 0 8
+button 403 270 210 211 1 0 16
+resizepic 425 300 3000 150 35
+text 427 300 0 9
+button 403 305 210 211 1 0 17
+resizepic 425 335 3000 150 35
+text 427 335 0 10
+button 403 340 210 211 1 0 18
+button 375 410 2143 2142 1 0 1
+button 225 372 1210 1209 0 1
+text 244 370 0 2
+
+[DIALOG d_facet_moongate TEXT]
+Pick your destination:
+Trammel
+Felluca
+Moonglow
+Britain
+Jhelom
+Yew
+Minoc
+Trinsic
+Skara Brae
+Magincia
+
+
+[DIALOG d_facet_moongate BUTTON]
+ONBUTTON=0
+SRC.TAG.FACETMENU=0
+ONBUTTON=1
+SRC.TAG.FACETMENU=0
+ONBUTTON=2
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO MOONGLOW 
+RETURN 1
+ONBUTTON=3
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO BRITAIN
+RETURN 1
+ONBUTTON=4
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO JHELOM
+RETURN 1
+ONBUTTON=5
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO YEW
+RETURN 1
+ONBUTTON=6
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO MINOC
+RETURN 1
+ONBUTTON=7
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO TRINSIC
+RETURN 1
+ONBUTTON=8
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO SKARA BRAE
+RETURN 1
+ONBUTTON=9
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO MAGINCIA
+RETURN 1
+ONBUTTON=10
+ONBUTTON=11
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers are not welcome in Trammel.
+SRC.TAG.FACETMENU=0
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO 4442,1172,0,1
+RETURN 1
+ONBUTTON=12
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers are not welcome in Trammel.
+SRC.TAG.FACETMENU=0
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO 1495,1629,10,1
+RETURN 1
+ONBUTTON=13
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers are not welcome in Trammel.
+SRC.TAG.FACETMENU=0
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO 1383,3815,0,1
+RETURN 1
+ONBUTTON=14
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers are not welcome in Trammel.
+SRC.TAG.FACETMENU=0
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO 546,992,0,1
+RETURN 1
+ONBUTTON=15
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers are not welcome in Trammel.
+SRC.TAG.FACETMENU=0
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO 2466,544,0,1
+RETURN 1
+ONBUTTON=16
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers are not welcome in Trammel.
+SRC.TAG.FACETMENU=0
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO 1867,2780,0,1
+RETURN 1
+ONBUTTON=17
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers are not welcome in Trammel.
+SRC.TAG.FACETMENU=0
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO 632,2233,0,1
+RETURN 1
+ONBUTTON=18
+IF (<SRC.KILLS>>=4)
+SRC.SYSMESSAGE Murderers are not welcome in Trammel.
+SRC.TAG.FACETMENU=0
+RETURN 1
+ELSE
+SRC.TAG.FACETMENU=0
+SRC.FIX
+SRC.GO 3714,2220,20,1
+RETURN 1
+
+[PLEVEL 6]
+FACET
+FACET1
+
+[FUNCTION facet]
+SRC.MAPPLANE 0
+SRC.MOVE 80
+SRC.MOVE -80
+SRC.MOVE -80
+SRC.MOVE 80
+RETURN 1
+
+[FUNCTION facet1]
+SRC.MAPPLANE 1
+SRC.MOVE 80
+SRC.MOVE -80
+SRC.MOVE -80
+SRC.MOVE 80
+RETURN 1

@@ -1,0 +1,835 @@
+[DEFNAME COLORS_TAILORED_ARMORS]
+color_o_drakeskin	005d
+color_o_dragonskin	02ff
+color_o_wyrmskin	0451
+color_o_arctic		07e7
+
+// ************************************
+// Drakeskin Leather Armor
+// ************************************
+
+[ITEMDEF i_drakeskin_leather_cap]
+ID=i_leather_cap
+NAME=Drakeskin Leather Cap
+TYPE=t_armor_leather
+RESOURCES=6 i_drake_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+SKILLMAKE=TAILORING 65.4, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_drakeskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Drakeskin Leather Armor
+DESCRIPTION=Drakeskin Leather Cap
+DUPELIST=01dba
+
+[ITEMDEF i_drakeskin_leather_sleeves]
+ID=i_leather_sleeves
+NAME=Drakeskin Leather Sleeves
+TYPE=t_armor_leather
+RESOURCES=12 i_drake_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+DUPELIST=013c8,013cd,013cf
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_drakeskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Drakeskin Leather Armor
+DESCRIPTION=Drakeskin Leather Sleeves
+
+[ITEMDEF i_drakeskin_leather_gloves]
+ID=i_leather_gloves
+NAME=Drakeskin Leather Gloves
+TYPE=t_armor_leather
+RESOURCES=9 i_drake_hides_cut
+WEIGHT=1
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+DUPELIST=013ce
+SKILLMAKE=TAILORING 66.8, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_drakeskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Drakeskin Leather Armor
+DESCRIPTION=Drakeskin Leather Gloves
+
+[ITEMDEF i_drakeskin_leather_gorget]
+ID=i_leather_gorget
+NAME=Drakeskin Leather Gorget
+TYPE=t_armor_leather
+RESOURCES=12 i_drake_hides_cut
+WEIGHT=2
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_drakeskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Drakeskin Leather Armor
+DESCRIPTION=Drakeskin Leather Gorget
+
+[ITEMDEF i_drakeskin_leather_leggings]
+ID=i_leather_leggings
+NAME=Drakeskin Leather Leggings
+TYPE=t_armor_leather
+RESOURCES=30 i_drake_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+DUPELIST=013d2
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_drakeskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Drakeskin Leather Armor
+DESCRIPTION=Drakeskin Leather Leggings
+
+[ITEMDEF i_drakeskin_leather_tunic]
+ID=i_leather_tunic
+NAME=Drakeskin Leather Tunic
+TYPE=t_armor_leather
+RESOURCES=36 i_drake_hides_cut
+WEIGHT=7
+FLIP=1
+ARMOR=30
+REQSTR=15
+VALUE=7000-8000
+
+DUPELIST=013d3
+SKILLMAKE=TAILORING 67.2, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_drakeskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Drakeskin Leather Armor
+DESCRIPTION=Drakeskin Leather Tunic
+
+[ITEMDEF i_drakeskin_leather_shoes]
+ID=i_shoes_plain
+NAME=Drakeskin Leather Shoes
+TYPE=t_armor_leather
+RESOURCES=12 i_drake_hides_cut
+WEIGHT=2
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_drakeskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Drakeskin Leather Armor
+DESCRIPTION=Drakeskin Leather Shoes
+
+[ITEMDEF i_shield_drakeskin_leather]
+ID=i_shield_round_bronze
+NAME=Drakeskin Leather Shield
+ARMOR=8
+TYPE=t_armor_leather
+
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+RESOURCES=20 i_drake_hides_cut
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_drakeskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Drakeskin Leather Armor
+DESCRIPTION=Drakeskin Leather Shield
+
+// ************************************
+// Dragonskin Leather Armor
+// ************************************
+
+[ITEMDEF i_dragonskin_leather_cap]
+ID=i_leather_cap
+NAME=Dragonskin Leather Cap
+TYPE=t_armor_leather
+RESOURCES=6 i_dragon_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=40
+REQSTR=10
+VALUE=9000-11000
+
+SKILLMAKE=TAILORING 75.4, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={31 37}
+  COLOR=color_o_dragonskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Dragonskin Leather Armor
+DESCRIPTION=Dragonskin Leather Cap
+DUPELIST=01dba
+
+[ITEMDEF i_dragonskin_leather_sleeves]
+ID=i_leather_sleeves
+NAME=Dragonskin Leather Sleeves
+TYPE=t_armor_leather
+RESOURCES=12 i_dragon_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=40
+REQSTR=10
+VALUE=9000-11000
+
+DUPELIST=013c8,013cd,013cf
+SKILLMAKE=TAILORING 79.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={31 37}
+  COLOR=color_o_dragonskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Dragonskin Leather Armor
+DESCRIPTION=Dragonskin Leather Sleeves
+
+[ITEMDEF i_dragonskin_leather_gloves]
+ID=i_leather_gloves
+NAME=Dragonskin Leather Gloves
+TYPE=t_armor_leather
+RESOURCES=9 i_dragon_hides_cut
+WEIGHT=1
+FLIP=1
+ARMOR=40
+REQSTR=10
+VALUE=9000-11000
+
+DUPELIST=013ce
+SKILLMAKE=TAILORING 76.8, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={31 37}
+  COLOR=color_o_dragonskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Dragonskin Leather Armor
+DESCRIPTION=Dragonskin Leather Gloves
+
+[ITEMDEF i_dragonskin_leather_gorget]
+ID=i_leather_gorget
+NAME=Dragonskin Leather Gorget
+TYPE=t_armor_leather
+RESOURCES=12 i_dragon_hides_cut
+WEIGHT=2
+FLIP=1
+ARMOR=40
+REQSTR=10
+VALUE=9000-11000
+
+SKILLMAKE=TAILORING 79.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={31 37}
+  COLOR=color_o_dragonskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Dragonskin Leather Armor
+DESCRIPTION=Dragonskin Leather Gorget
+
+[ITEMDEF i_dragonskin_leather_leggings]
+ID=i_leather_leggings
+NAME=Dragonskin Leather Leggings
+TYPE=t_armor_leather
+RESOURCES=30 i_dragon_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=40
+REQSTR=10
+VALUE=9000-11000
+
+DUPELIST=013d2
+SKILLMAKE=TAILORING 79.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={31 37}
+  COLOR=color_o_dragonskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Dragonskin Leather Armor
+DESCRIPTION=Dragonskin Leather Leggings
+
+[ITEMDEF i_dragonskin_leather_tunic]
+ID=i_leather_tunic
+NAME=Dragonskin Leather Tunic
+TYPE=t_armor_leather
+RESOURCES=36 i_dragon_hides_cut
+WEIGHT=7
+FLIP=1
+ARMOR=40
+REQSTR=15
+VALUE=9000-11000
+
+DUPELIST=013d3
+SKILLMAKE=TAILORING 77.2, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={31 37}
+  COLOR=color_o_dragonskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Dragonskin Leather Armor
+DESCRIPTION=Dragonskin Leather Tunic
+
+[ITEMDEF i_dragonskin_shoes]
+ID=i_shoes_plain
+NAME=Dragonskin Leather Shoes
+TYPE=t_armor_leather
+RESOURCES=12 i_dragon_hides_cut
+WEIGHT=2
+ARMOR=40
+REQSTR=10
+VALUE=9000-11000
+
+SKILLMAKE=TAILORING 79.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={31 37}
+  COLOR=color_o_dragonskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Dragonskin Leather Armor
+DESCRIPTION=Dragonskin Leather Shoes
+
+[ITEMDEF i_shield_dragonskin_leather]
+ID=i_shield_round_bronze
+NAME=Dragonskin Leather Shield
+ARMOR=10
+TYPE=t_armor_leather
+
+SKILLMAKE=TAILORING 79.0, t_sewing_kit
+RESOURCES=20 i_dragon_hides_cut
+
+ON=@Create
+  HITPOINTS={31 37}
+  COLOR=color_o_dragonskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Dragonskin Leather Armor
+DESCRIPTION=Dragonskin Leather Shield
+
+// ************************************
+// Wyrmskin Studded Leather Armor
+// ************************************
+
+[ITEMDEF i_wyrmskin_leather_cap]
+ID=i_leather_cap
+NAME=Wyrmskin Leather Cap
+TYPE=t_armor_leather
+RESOURCES=6 i_wyrm_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=50
+REQSTR=10
+VALUE=14000-16000
+
+SKILLMAKE=TAILORING 95.4, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={36 44}
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Wyrmskin Leather Armor
+DESCRIPTION=Wyrmskin Leather Cap
+DUPELIST=01dba
+
+[ITEMDEF i_wyrmskin_studded_sleeves]
+ID=i_studded_sleeves
+NAME=Wyrmskin Leather Sleeves
+TYPE=T_ARMOR
+RESOURCES=12 i_wyrm_hides_cut
+WEIGHT=8
+FLIP=1
+ARMOR=50
+REQSTR=25
+VALUE=14000-16000
+
+DUPELIST=013dc
+SKILLMAKE=TAILORING 96.3, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={36 44}
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Wyrmskin Leather Armor
+DESCRIPTION=Wyrmskin Leather Sleeves
+
+[ITEMDEF i_wyrmskin_studded_gloves]
+ID=013d5
+NAME=Wyrmskin Leather Gloves
+TYPE=t_armor
+RESOURCES=9 i_wyrm_hides_cut
+WEIGHT=2
+FLIP=1
+ARMOR=50
+REQSTR=25
+VALUE=14000-16000
+
+DUPELIST=013dd
+SKILLMAKE=TAILORING 91.8, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={36 44}
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Wyrmskin Leather Armor
+DESCRIPTION=Wyrmskin Leather Gloves
+
+[ITEMDEF i_wyrmskin_studded_gorget]
+ID=i_studded_gorget
+NAME=Wyrmskin Leather Gorget
+TYPE=T_ARMOR
+RESOURCES=12 i_wyrm_hides_cut
+WEIGHT=3
+ARMOR=50
+REQSTR=25
+VALUE=14000-16000
+
+SKILLMAKE=TAILORING 97.2, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={36 44}
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Wyrmskin Leather Armor
+DESCRIPTION=Wyrmskin Leather Gorget
+
+[ITEMDEF i_wyrmskin_studded_leggings]
+ID=i_studded_leggings
+NAME=Wyrmskin Leather Leggings
+TYPE=T_ARMOR
+RESOURCES=30 i_wyrm_hides_cut
+WEIGHT=7
+FLIP=1
+ARMOR=50
+REQSTR=35
+VALUE=14000-16000
+
+DUPELIST=013e1
+SKILLMAKE=TAILORING 100.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={36 44}
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Wyrmskin Leather Armor
+DESCRIPTION=Wyrmskin Leather Leggings
+
+[ITEMDEF i_wyrmskin_studded_tunic]
+ID=i_studded_tunic
+NAME=Wyrmskin Leather Tunic
+TYPE=T_ARMOR
+RESOURCES=36 i_wyrm_hides_cut
+WEIGHT=9
+FLIP=1
+ARMOR=50
+REQSTR=35
+VALUE=14000-16000
+
+DUPELIST=013e2
+SKILLMAKE=TAILORING 100.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={36 44}
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Wyrmskin Leather Armor
+DESCRIPTION=Wyrmskin Leather Tunic
+
+[ITEMDEF i_wyrmskin_shoes]
+ID=i_shoes_plain
+NAME=Wyrmskin Shoes
+TYPE=T_ARMOR
+RESOURCES=12 i_wyrm_hides_cut
+WEIGHT=3
+ARMOR=50
+REQSTR=25
+VALUE=14000-16000
+
+SKILLMAKE=TAILORING 97.2, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={36 44}
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Wyrmskin Leather Armor
+DESCRIPTION=Wyrmskin Leather Gorget
+
+[ITEMDEF i_shield_wyrmskin_leather]
+ID=i_shield_round_bronze
+NAME=Wyrmskin Leather Shield
+ARMOR=14
+TYPE=t_armor
+
+SKILLMAKE=TAILORING 100.0, t_sewing_kit
+RESOURCES=20 i_wyrm_hides_cut
+
+ON=@Create
+  HITPOINTS={36 44}
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Wyrmskin Leather Armor
+DESCRIPTION=Wyrmskin Leather Shield
+
+// ************************************
+// Arctic Armor
+// ************************************
+
+[ITEMDEF i_arctic_leather_cap]
+ID=i_leather_cap
+NAME=Arctic Leather Cap
+TYPE=t_armor_leather
+RESOURCES=6 i_fur_polar_bear,3 i_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+SKILLMAKE=TAILORING 65.4, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_arctic
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Arctic Leather Armor
+DESCRIPTION=Arctic Leather Cap
+DUPELIST=01dba
+
+[ITEMDEF i_arctic_leather_sleeves]
+ID=i_leather_sleeves
+NAME=Arctic Leather Sleeves
+TYPE=t_armor_leather
+RESOURCES=12 i_fur_polar_bear,6 i_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+DUPELIST=013c8,013cd,013cf
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_arctic
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Arctic Leather Armor
+DESCRIPTION=Arctic Leather Sleeves
+
+[ITEMDEF i_arctic_leather_gloves]
+ID=i_leather_gloves
+NAME=Arctic Leather Gloves
+TYPE=t_armor_leather
+RESOURCES=9 i_fur_polar_bear,4 i_hides_cut
+WEIGHT=1
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+DUPELIST=013ce
+SKILLMAKE=TAILORING 66.8, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_arctic
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Arctic Leather Armor
+DESCRIPTION=Arctic Leather Gloves
+
+[ITEMDEF i_arctic_leather_gorget]
+ID=i_leather_gorget
+NAME=Arctic Leather Gorget
+TYPE=t_armor_leather
+RESOURCES=12 i_fur_polar_bear,6 i_hides_cut
+WEIGHT=2
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_arctic
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Arctic Leather Armor
+DESCRIPTION=Arctic Leather Gorget
+
+[ITEMDEF i_arctic_leather_leggings]
+ID=i_leather_leggings
+NAME=Arctic Leather Leggings
+TYPE=t_armor_leather
+RESOURCES=30 i_fur_polar_bear,15 i_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+DUPELIST=013d2
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_arctic
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Arctic Leather Armor
+DESCRIPTION=Arctic Leather Leggings
+
+[ITEMDEF i_arctic_leather_tunic]
+ID=i_leather_tunic
+NAME=Arctic Leather Tunic
+TYPE=t_armor_leather
+RESOURCES=36 i_fur_polar_bear,18 i_hides_cut
+WEIGHT=7
+FLIP=1
+ARMOR=30
+REQSTR=15
+VALUE=7000-8000
+
+DUPELIST=013d3
+SKILLMAKE=TAILORING 67.2, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_arctic
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Arctic Leather Armor
+DESCRIPTION=Arctic Leather Tunic
+
+[ITEMDEF i_arctic_leather_shoes]
+ID=i_shoes_plain
+NAME=Arctic Leather Shoes
+TYPE=t_armor_leather
+RESOURCES=12 i_fur_polar_bear,6 i_hides_cut
+WEIGHT=2
+ARMOR=30
+REQSTR=10
+VALUE=7000-8000
+
+SKILLMAKE=TAILORING 69.0, t_sewing_kit
+
+ON=@Create
+  HITPOINTS={27 34}
+  COLOR=color_o_arctic
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Arctic Leather Armor
+DESCRIPTION=Arctic Leather Shoes
+
+// ************************************
+// Drake/Dragon/Wyrm Hides
+// ************************************
+
+[ITEMDEF i_drake_hides]
+ID=i_hide
+NAME=drake hide%s
+TYPE=t_leather
+PILE=1
+WIEGHT=2
+DYE=0
+VALUE=100-200
+
+ON=@Create
+  COLOR=color_o_drakeskin
+
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Drake Hides
+
+[ITEMDEF i_drake_hides_cut]
+ID=i_hides_cut
+NAME=drake hide%s
+TYPE=t_leather
+PILE=1
+WIEGHT=1
+DYE=0
+VALUE=100-200
+
+ON=@Create
+  COLOR=color_o_drakeskin
+
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Drake Hides
+
+[ITEMDEF i_dragon_hides]
+ID=i_hide
+NAME=dragon hide%s
+TYPE=t_leather
+PILE=1
+WEIGHT=2
+DYE=0
+VALUE=200-400
+
+ON=@Create
+  COLOR=color_o_dragonskin
+
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Cut Dragon Hides
+
+[ITEMDEF i_dragon_hides_cut]
+ID=i_hides_cut
+NAME=cut up dragon leather
+TYPE=t_leather
+PILE=1
+WEIGHT=1
+DYE=0
+VALUE=200-400
+
+ON=@Create
+  COLOR=color_o_dragonskin
+
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Cut Dragon Hides
+
+[ITEMDEF i_wyrm_hides]
+ID=i_hide
+NAME=wyrm hide%s
+TYPE=t_leather
+PILE=1
+WEIGHT=2
+DYE=0
+VALUE=400-800
+
+ON=@Create
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Wyrm Hides
+
+[ITEMDEF i_wyrm_hides_cut]
+ID=i_hides_cut
+NAME=cut up wyrm leather
+TYPE=t_leather
+PILE=1
+WEIGHT=1
+DYE=0
+VALUE=400-800
+
+ON=@Create
+  COLOR=color_o_wyrmskin
+
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Cut Wyrm Hides
+
+[ITEMDEF i_fur_polar_bear]
+ID=011fa
+NAME=fur (polar bear)
+WEIGHT=1
+VALUE=30
+
+ON=@Create
+  COLOR=08fd
+
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Polar Bear Fur
+
+[ITEMDEF i_robe_energy]
+ID=i_robe
+NAME=energy robe
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+
+SKILLMAKE=TAILORING 59.0, t_sewing_kit
+RESOURCES=16 i_cloth, 5 i_enchant_armor
+RESOURCES2=16 i_cloth,1 i_thread
+
+ON=@CLICK
+  IF <EVAL <MOREY>> < 10
+    VAR.Prefix=lesser
+  ELSEIF <EVAL <MOREY>> < 20
+    VAR.Prefix=
+  ELSEIF <EVAL <MOREY>> < 25
+    VAR.Prefix=greater
+  ENDIF
+  MESSAGE=<VAR.Prefix> <NAME> (<MOREX> charges)
+  RETURN=1
+
+ON=@EQUIP
+  SFX=00fd
+  MOREX=<MOREX>+-1
+  SRC.MagicResistance=(<SRC.MagicResistance> + (<MOREY>*2))
+  SRC.Magery=(<SRC.Magery> + <MOREY>)
+
+ON=@UNEQUIP
+  SFX=00fb
+  SRC.MagicResistance=(<SRC.MagicResistance> +- (<MOREY>*2))
+  SRC.Magery=(<SRC.Magery> +- <MOREY>)
+
+ON=@Create
+  ATTR=attr_magic
+  COLOR=07af
+  HITPOINTS={11 40}
+  MOREX={20 50}
+  MOREY={5 25}
+
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Energy Robe
+DUPELIST=01f04
+
+[EOF]

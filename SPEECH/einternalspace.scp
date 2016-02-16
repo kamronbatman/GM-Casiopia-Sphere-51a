@@ -1,0 +1,176 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+// Purpose: Britannia Internal Space Script
+// Notes:	This is used for general information pertaining to all Britannian's
+//			who don't like people standing too close to them.
+// Current Keyword List:
+//	none - event triggered
+//
+
+
+ON=@InternalPersonalSpace
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 4
+					SAY Here, get off me!
+					SAY Back off, fool.
+					SAY Back away. Thy smell overwhelms me.
+					SAY I have no wish to look so closely on thine ugly face.
+				ENDDO
+			ELSE
+				DORAND 4
+					SAY Here, get off me!
+					SAY Back off.
+					SAY Back away!
+					SAY Thou'rt too close!
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 4
+					SAY Dost thou try to provoke me?
+					SAY Thy nearness offends me.
+					SAY Stand not so close by me.
+					SAY Stand back, I do not wish to be seen so near to thee.
+				ENDDO
+			ELSE
+				DORAND 4
+					SAY Back away from me!
+					SAY Please, get away.
+					SAY Stand away.
+					SAY Get away. Thou'rt too close.
+				ENDDO
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 4
+					SAY Who would have thought that such a great personage would smell so common.
+					SAY I care not how important thou art, stand back from me.
+					SAY Step back, or thou shalt need more than a fine name to protect thee.
+					SAY Wherefore followest thou me so closely?
+				ENDDO
+			ELSE
+				DORAND 4
+					SAY Back up a bit!
+					SAY Stand back from me.
+					SAY Step back, or thy fame won't protect thee.
+					SAY Get away from me, oh exalted one!
+				ENDDO
+			ENDIF
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 4
+					SAY Why standest thou so near to me?
+					SAY Prithee, step back.
+					SAY Wilt thou stand back a bit
+					SAY I seek no trouble with thee, but please step back.
+				ENDDO
+			ELSE
+				DORAND 4
+					SAY Don't stand so near.
+					SAY Hey, step back.
+					SAY Wilt thou stand back a bit?
+					SAY I don' want no trouble, but step back!
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 5
+					SAY Wherefore dost thou press me so closely?
+					SAY Thou art nearer to me than I like.
+					SAY Stand thou back.
+					SAY Please back away a bit, <SRC.SEX milord/milady>.
+					SAY I would ask thee to stand not so near to me.
+				ENDDO
+			ELSE
+				DORAND 6
+					SAY Don't stand so close.
+					SAY Could thou back off a bit?
+					SAY Thou'rt nearer to me than I like.
+					SAY Stand back.
+					SAY Please back away a bit.
+					SAY I'd ask thee to stand away some.
+				ENDDO
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 5
+					SAY An it please thee, wilt thou step back a bit.
+					SAY Is it necessary to stand so near by?
+					SAY Forgive me for asking, but please step back.
+					SAY Please back away a bit, <SRC.SEX milord/milady>.
+					SAY <SRC.SEX Sir/Madam>, thou standest too close.
+				ENDDO
+			ELSE
+				DORAND 6
+					SAY An it please thee, wilt thou step back a bit.
+					SAY Is it necessary to stand so near by?
+					SAY Forgive me for askin', but please step back.
+					SAY Please back away a bit, <SRC.SEX milord/milady>.
+					SAY Please give me some space, <SRC.SEX milord/milady>.
+					SAY <SRC.SEX Sir/Madam>, thou stands too close.
+				ENDDO
+			ENDIF
+		ENDIF
+	ELSE
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 4
+					SAY Please, wilt thou stand off a little ways?
+					SAY A bit more distance between thee and me, an it please thee.
+					SAY Excuse me, but pray step back.
+					SAY May I ask thee to step back a bit.
+				ENDDO
+			ELSE
+				DORAND 4
+					SAY Please, stand off a ways?
+					SAY A bit more distance 'tween us would be better.
+					SAY 'Scuse me, but step back.
+					SAY Step back a bit.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 4
+					SAY Friend, why standest thou so close?
+					SAY Take a step back, if it please thee.
+					SAY I would prefer if thou wouldst step back.
+					SAY A bit more space between thee and me, I pray thee.
+				ENDDO
+			ELSE
+				DORAND 4
+					SAY Friend, why're thou so close?
+					SAY Take a step back, if thou would.
+					SAY I'd like thee to step back.
+					SAY A bit more space 'tween us, please.
+				ENDDO
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 4
+					SAY Forgive me, I seem to be standing too close to thee.
+					SAY An it please thee, wilt thou step back a bit.
+					SAY Forgive me <SRC.SEX sir/madam>, but wilt thou step back a pace or two.
+					SAY Thou art standing very close to me.
+				ENDDO
+			ELSE
+				DORAND 4
+					SAY Forgive me, I'm too close to thee.
+					SAY An it please thee, wilt thou step back a bit.
+					SAY Pleas step back a pace or two.
+					SAY Thou'rt standin' too close to me.
+				ENDDO
+			ENDIF
+		ENDIF
+	ENDIF

@@ -1,0 +1,481 @@
+// *******************************************************************************
+// *****************************SKILL GATES***************************************
+// *******************************************************************************
+// **       USING PLOTITEM 11 FOR ALL SKILL GATES ON GM SHARDS FOR NOW          **
+// *******************************************************************************
+
+[ITEMDEF i_mage_gate]
+Name=Mage Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Mage has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.MAGICRESISTANCE=500
+  SRC.MAGERY=500
+  SRC.EVALUATINGINTEL=500
+  SRC.MEDITATION=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0190
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Mage Gate
+
+[ITEMDEF i_fighter_gate]
+Name=Fighter Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Fighter has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.SWORDSMANSHIP=500
+  SRC.TACTICS=500
+  SRC.ANATOMY=500
+  SRC.MACEFIGHTING=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0020
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Fighter Gate
+
+[ITEMDEF i_druid_gate]
+Name=Druid Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Druid has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.TAMING=500
+  SRC.MAGERY=500
+  SRC.ANIMALLORE=500
+  SRC.MACEFIGHTING=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0043
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Druid Gate
+
+[ITEMDEF i_paladin_gate]
+Name=Paladin Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Paladin has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.SWORDSMANSHIP=500
+  SRC.PARRYING=500
+  SRC.HEALING=500
+  SRC.ANATOMY=500
+ENDIF
+
+ON=@CREATE
+  COLOR=00bb
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Paladin Gate
+
+[ITEMDEF i_ranger_gate]
+Name=Ranger Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Ranger has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.ARCHERY=500
+  SRC.TACTICS=500
+  SRC.ANATOMY=500
+  SRC.TRACKING=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0237
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Ranger Gate
+
+[ITEMDEF i_cleric_gate]
+Name=Cleric Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Cleric has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.HEALING=500
+  SRC.ANATOMY=500
+  SRC.MAGERY=500
+  SRC.MAGICRESISTANCE=500
+ENDIF
+
+ON=@CREATE
+  COLOR=03bc
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Cleric Gate
+
+[ITEMDEF i_rouge_gate]
+Name=Rogue Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Rogue has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.LOCKPICKING=500
+  SRC.ANATOMY=500
+  SRC.HIDING=500
+  SRC.ARCHERY=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0386
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Rouge Gate
+
+[ITEMDEF i_thief_gate]
+Name=Thief Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Thief has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.LOCKPICKING=500
+  SRC.SNOOPING=500
+  SRC.STEALING=500
+  SRC.STEALTH=500
+ENDIF
+
+ON=@CREATE
+  COLOR=032e
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Thief Gate
+
+[ITEMDEF i_assasin_gate]
+Name=Assasin Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Assasin has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.POISONING=500
+  SRC.ALCHEMY=500
+  SRC.SWORDSMANSHIP=500
+  SRC.ANATOMY=500
+ENDIF
+
+ON=@CREATE
+  COLOR=020a
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Assasin Gate
+
+[ITEMDEF i_alchemist_gate]
+Name=Alchemist Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Alchemist has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.MAGERY=500
+  SRC.ALCHEMY=500
+  SRC.INSCRIPTION=500
+  SRC.MEDITATION=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0015
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Alcmemist Gate
+
+[ITEMDEF i_blacksmith_gate]
+Name=Blacksmith Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Blacksmith has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.BLACKSMITHING=500
+  SRC.MINING=500
+  SRC.ARMSLORE=500
+  SRC.ITEMID=500
+ENDIF
+
+ON=@CREATE
+  COLOR=03b5
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Blacksmith Gate
+
+[ITEMDEF i_carpenter_gate]
+Name=Carpenter Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Carpenter has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.CARPENTRY=500
+  SRC.LUMBERJACKING=500
+  SRC.BOWCRAFT=500
+  SRC.TINKERING=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0287
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Carpenter Gate
+
+[ITEMDEF i_bard_gate]
+Name=Bard Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Bard has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.PROVOCATION=500
+  SRC.ANIMALLORE=500
+  SRC.MUSICIANSHIP=500
+  SRC.PEACEMAKING=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0070
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Bard Gate
+
+[ITEMDEF i_tinkerer_gate]
+Name=Tinkerer Gate
+ID=i_moongate_red
+
+ON=@STEP
+
+IF !((<SRC.BODY>==0190) || (<SRC.BODY>==0191))
+  SAY Sorry only Human PLAYERS may use skill gates.
+  RETURN 1
+ENDIF 
+
+IF (<SRC.PLOT1> == 0800)
+  SRC.MESSAGE Thou canst only use a magical skill gate once.  
+  RETURN 1
+ELSE
+  SRC.PLOT1=0800
+  SRC.MESSAGE Thou hath been blessed!
+  SRC.MESSAGE Your path as a Bard has begun.
+  SRC.EFFECT=FX_BLESS_EFFECT
+  SRC.SOUND=snd_SPELL_BLESS
+  SRC.TINKERING=500
+  SRC.ALCHEMY=500
+  SRC.CARPENTRY=500
+  SRC.BLACKSMITHING=500
+ENDIF
+
+ON=@CREATE
+  COLOR=0142
+  ATTR=010
+
+CATEGORY=!GameMonger - Custom
+SUBSECTION=Skill Gates
+DESCRIPTION=Tinkering Gate

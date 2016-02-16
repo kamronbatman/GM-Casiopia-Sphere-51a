@@ -1,0 +1,2827 @@
+/////////////////////////////////////////////////
+//*********************************************\\
+//*REWARD SYSTEM V1.2
+//*Created by: Avandore (tim swartz)
+//*Avandore@qwest.net
+//*This is not to be distibuted by anyone other
+//*than uoexchange.com
+//*you may edit this script as long as credit
+//*is given to Avandore (Tim Swartz) and this
+//*box of information remains, but you may not
+//*distribute it.
+//*email any bugs or requests for features to:
+//*Avandore@qwest.net
+//*********************************************\\
+/////////////////////////////////////////////////
+
+//REVISIONS:
+//
+//5/11/01
+//fixed a few bugs and updated verion tags
+//
+//5/9/01
+//Changed quest points to tickets
+//Changed almost everything
+//
+//5/1/01
+//Fixed the menu so that setting points is done through a dialog
+
+//ADDING:
+//ability to edit items from any menu
+//more restrictions to what can be trashed
+
+//CURRENT FEATURES:
+//***************************************************
+//the most important feature is that i dont work for
+//a certain shard and so i dont script for any 1 shard
+//but instead i script for any posability of something
+//that a shard may want.
+//***************************************************
+//Add any items you want ingame
+//set the values of points to whatever you want
+//use quest points or points
+//remembers colors attributes and a few other things
+//shows you the attributes
+//you can use tickets points or both
+//you can make players buy with tickets and points
+
+
+//POSSIBLY COMING:
+//If i get enough requests these things will be added: (avandore@qwest.net)
+//
+//nothing so far
+
+//BUGS:
+//none that i know of
+//
+
+//INSTALLATION:
+//Just place the script in your sphere directory
+//INGAME add i_reward_menu you will be doing everything from this menu
+//never add more of these unless you want more than 1 set of items
+//
+//to give points out such as qest points for quests
+//type .xgivepoints # or .xgivetickets # where # is the amounnt
+//
+
+[PLEVEL 3]
+givepoints
+givetickets
+
+[FUNCTION rewardsys]
+DIALOG d_reward_sys
+
+[FUNCTION givepoints]
+TAG.POINTS=<eval <TAG.POINTS>+<ARGS>>
+
+[FUNCTION givetickets]
+NEWITEM=i_reward_ticket
+ACT.AMOUNT=<eval <ARGS>>
+ACT.BOUNCE
+
+[ITEMDEF i_reward_ticket]
+ID=0f8e
+NAME=reward ticket
+TYPE=t_eq_script
+WEIGHT=0
+
+[ITEMDEF i_reward_can]
+ID=i_barrel
+NAME=Reward Barrel
+TYPE=t_eq_script
+
+ON=@DCLICK
+	TARGET what do you wish to trash for points?
+	RETURN 1
+
+ON=@TARGON_ITEM
+	IF <SRC.TARG.CONT.UID>==<SRC.findlayer(layer_pack).UID>
+		IF <SRC.TARG.ATTR>==04
+			SRC.SYSMESSAGE You cant trash newbie items!
+		ELSEIF <SRC.TARG.LINK>==04fffffff
+			SRC.TAG.POINTS=<eval <SRC.TAG.POINTS>+<eval (<SRC.TARG.VALUE>*<SRC.TARG.AMOUNT>)/4>>
+			SRC.SYSMESSAGE You have recieved <eval (<SRC.TARG.VALUE>*<SRC.TARG.AMOUNT>)/4> points
+			SRC.TARG.REMOVE
+		ELSE
+			SRC.SYSMESSAGE You cannot trash that!
+		ENDIF
+	ELSE
+		SRC.SYSMESSAGE That item must be in your pack!
+	ENDIF
+	RETURN 1
+
+CATEGORY=Event System
+SUBSECTION=Reward System
+DESCRIPTION=Reward Barrel
+
+[DIALOG d_reward_sys]
+0, 0
+page 0
+resizepic 100 100 2600 350 350
+
+text 155 160 0 1			//Reward System v .1a
+text 160 400 0 2			//by:Avandore www.uoexchange.com
+
+text 160 220 0 4			//Place a reward barrel
+text 160 250 0 5			//Place a reward menu
+text 160 280 0 6			//edit the items
+
+
+button 140 220 <eval 0d0> <eval 0d1> 1 0 2	//Place a reward barrel
+button 140 250 <eval 0d0> <eval 0d1> 1 0 3	//place a reward sign
+button 140 280 <eval 0d0> <eval 0d1> 1 0 4	//edit the items
+
+[DIALOG d_reward_sys TEXT]
+f
+GM Console Reward System v 1.2
+by: Avandore www.uoexchange.com
+How to do I use this?
+Place a Reward Barrel.
+Place a Reward Menu.
+Edit the items
+
+[DIALOG d_reward_sys BUTTON]
+ON=1
+	DIALOG d_reward_sys_help
+
+ON=2
+	SRC.STATIC=i_reward_can
+
+ON=3
+	SRC.NEWITEM=i_reward_menu_player
+	SRC.ACT.BOUNCE
+	SRC.ACT.LINK=<UID>
+
+ON=4
+	DIALOG d_reward_sys_itemset
+
+[DIALOG d_reward_sys_itemset]
+0, 0
+page 0
+resizepic 0 0 2600 490 460
+button 440 420 <eval 0fa5> <eval 0fa6> 1 0 100
+
+text 40 55 0 1						//NAME1
+text 40 70 0 2						//P1
+text 40 85 0 3						//T1
+text 40 100 0 4						//ID1
+tilepic 40 120 <eval <TAG.ID1>>			//PIC1
+button 70 55 <eval 0d0> <eval 0d1> 1 0 4		//name1
+
+text 130 55 0 5						//NAME2
+text 130 70 0 6						//P2
+text 130 85 0 7						//T2
+text 130 100 0 8						//ID2
+tilepic 130 120 <eval <TAG.ID2>>			//PIC2
+button 160 55 <eval 0d0> <eval 0d1> 1 0 14	//name2
+
+text 220 55 0 9						//NAME3
+text 220 70 0 10						//P3
+text 220 85 0 11						//T3
+text 220 100 0 12						//ID3
+tilepic 220 120 <eval <TAG.ID3>>			//PIC3
+button 250 55 <eval 0d0> <eval 0d1> 1 0 24	//name3
+
+text 310 55 0 13						//NAME4
+text 310 70 0 14						//P4
+text 310 85 0 15						//T4
+text 310 100 0 16						//ID4
+tilepic 310 120 <eval <TAG.ID4>>			//PIC4
+button 340 55 <eval 0d0> <eval 0d1> 1 0 34	//name4
+
+text 400 55 0 17						//NAME5
+text 400 70 0 18						//P5
+text 400 85 0 19						//T5
+text 400 100 0 20						//ID5
+tilepic 400 120 <eval <TAG.ID5>>			//PIC5
+button 430 55 <eval 0d0> <eval 0d1> 1 0 44	//name5
+
+text 40 255 0 21						//NAME6
+text 40 270 0 22						//P6
+text 40 285 0 23						//T6
+text 40 300 0 24						//ID6
+tilepic 40 320 <eval <TAG.ID6>>			//PIC6
+button 70 255 <eval 0d0> <eval 0d1> 1 0 54	//name6
+
+text 130 255 0 25						//NAME7
+text 130 270 0 26						//P7
+text 130 285 0 27						//T7
+text 130 300 0 28						//ID7
+tilepic 130 320 <eval <TAG.ID7>>			//PIC7
+button 160 255 <eval 0d0> <eval 0d1> 1 0 64	//name7
+
+text 220 255 0 29						//NAME8
+text 220 270 0 30						//P8
+text 220 285 0 31						//T8
+text 220 300 0 32						//ID8
+tilepic 220 320 <eval <TAG.ID8>>			//PIC8
+button 250 255 <eval 0d0> <eval 0d1> 1 0 74	//name8
+
+text 310 255 0 33						//NAME9
+text 310 270 0 34						//P9
+text 310 285 0 35						//T9
+text 310 300 0 36						//ID9
+tilepic 310 320 <eval <TAG.ID9>>			//PIC9
+button 340 255 <eval 0d0> <eval 0d1> 1 0 84	//name9
+
+text 400 255 0 37						//NAME10
+text 400 270 0 38						//P10
+text 400 285 0 39						//T10
+text 400 300 0 40						//ID10
+tilepic 400 320 <eval <TAG.ID10>>			//PIC10
+button 430 255 <eval 0d0> <eval 0d1> 1 0 94	//name10
+
+[DIALOG d_reward_sys_itemset TEXT]
+f
+Info:
+P:<eval <TAG.P1>>
+T:<eval <TAG.T1>>
+picture:
+Info:
+P:<eval <TAG.P2>>
+T:<eval <TAG.T2>>
+picture:
+Info:
+P:<eval <TAG.P3>>
+T:<eval <TAG.T3>>
+picture:
+Info:
+P:<eval <TAG.P4>>
+T:<eval <TAG.T4>>
+picture:
+Info:
+P:<eval <TAG.P5>>
+T:<eval <TAG.T5>>
+picture:
+Info:
+P:<eval <TAG.P6>>
+T:<eval <TAG.T6>>
+picture:
+Info:
+P:<eval <TAG.P7>>
+T<eval <TAG.T7>>
+picture:
+Info:
+P:<eval <TAG.P8>>
+T:<eval <TAG.T8>>
+picture:
+Info:
+P:<eval <TAG.P9>>
+T:<eval <TAG.T9>>
+picture:
+Info:
+P:<eval <TAG.P10>>
+T:<eval <TAG.T10>>
+picture:
+
+[DIALOG d_reward_sys_itemset BUTTON]
+ON=1
+	TARGET What do you wish to set to slot 1?
+	MORE=1
+ON=4
+	SHOWITEMINFOE 1
+ON=11
+	TARGET What do you wish to set to slot 2?
+	MORE=2
+
+ON=14
+	SHOWITEMINFOE 2
+ON=21
+	TARGET What do you wish to set to slot 3?
+	MORE=3
+
+ON=24
+	SHOWITEMINFOE 3
+ON=31
+	TARGET What do you wish to set to slot 4?
+	MORE=4
+ON=34
+	SHOWITEMINFOE 4
+ON=41
+	TARGET What do you wish to set to slot 5?
+	MORE=5
+
+ON=44
+	SHOWITEMINFOE 5
+ON=51
+	TARGET What do you wish to set to slot 6?
+	MORE=6
+
+ON=54
+	SHOWITEMINFOE 6
+ON=61
+	TARGET What do you wish to set to slot 7?
+	MORE=7
+
+ON=64
+	SHOWITEMINFOE 7
+ON=71
+	TARGET What do you wish to set to slot 8?
+	MORE=8
+
+ON=74
+	SHOWITEMINFOE 8
+ON=81
+	TARGET What do you wish to set to slot 9?
+	MORE=9
+
+ON=84
+	SHOWITEMINFOE 9
+ON=91
+	TARGET What do you wish to set to slot 10?
+	MORE=10
+
+ON=94
+	SHOWITEMINFOE 10
+ON=100
+	DIALOG d_reward_sys_itemset1
+
+[ITEMDEF i_reward_menu]
+ID=i_sign_brass
+TYPE=t_eq_script
+NAME=GM Reward Menu Control
+
+ON=@CREATE
+	ATTR=08010
+		TAG.ID1=0
+		TAG.NAME1=0
+		TAG.P1=0
+		TAG.T1=0
+		TAG.BASEID1=0
+		TAG.AMOUNT1=0
+		TAG.MOREY1=0
+		TAG.COLOR1=0
+		TAG.TYPE1=0
+		TAG.ATTR1=0
+		TAG.MORE11=0
+		TAG.MORE21=0
+		TAG.MOREP1=0
+		TAG.ID2=0
+		TAG.NAME2=0
+		TAG.P2=0
+		TAG.T2=0
+		TAG.BASEID2=0
+		TAG.AMOUNT2=0
+		TAG.MOREY2=0
+		TAG.COLOR2=0
+		TAG.TYPE2=0
+		TAG.ATTR2=0
+		TAG.MORE12=0
+		TAG.MORE22=0
+		TAG.MOREP2=0
+		TAG.ID3=0
+		TAG.NAME3=0
+		TAG.P3=0
+		TAG.T3=0
+		TAG.BASEID3=0
+		TAG.AMOUNT3=0
+		TAG.MOREY3=0
+		TAG.COLOR3=0
+		TAG.TYPE3=0
+		TAG.ATTR3=0
+		TAG.MORE13=0
+		TAG.MORE23=0
+		TAG.MOREP3=0
+		TAG.ID4=0
+		TAG.NAME4=0
+		TAG.P4=0
+		TAG.T4=0
+		TAG.BASEID4=0
+		TAG.AMOUNT4=0
+		TAG.MOREY4=0
+		TAG.COLOR4=0
+		TAG.TYPE4=0
+		TAG.ATTR4=0
+		TAG.MORE14=0
+		TAG.MORE24=0
+		TAG.MOREP4=0
+		TAG.ID5=0
+		TAG.NAME5=0
+		TAG.P5=0
+		TAG.T5=0
+		TAG.BASEID5=0
+		TAG.AMOUNT5=0
+		TAG.MOREY5=0
+		TAG.COLOR5=0
+		TAG.TYPE5=0
+		TAG.ATTR5=0
+		TAG.MORE15=0
+		TAG.MORE25=0
+		TAG.MOREP5=0
+		TAG.ID6=0
+		TAG.NAME6=0
+		TAG.P6=0
+		TAG.T6=0
+		TAG.BASEID6=0
+		TAG.AMOUNT6=0
+		TAG.MOREY6=0
+		TAG.COLOR6=0
+		TAG.TYPE6=0
+		TAG.ATTR6=0
+		TAG.MORE16=0
+		TAG.MORE26=0
+		TAG.MOREP6=0
+		TAG.ID7=0
+		TAG.NAME7=0
+		TAG.P7=0
+		TAG.T7=0
+		TAG.BASEID7=0
+		TAG.AMOUNT7=0
+		TAG.MOREY7=0
+		TAG.COLOR7=0
+		TAG.TYPE7=0
+		TAG.ATTR7=0
+		TAG.MORE17=0
+		TAG.MORE27=0
+		TAG.MOREP7=0
+		TAG.ID8=0
+		TAG.NAME8=0
+		TAG.P8=0
+		TAG.T8=0
+		TAG.BASEID8=0
+		TAG.AMOUNT8=0
+		TAG.MOREY8=0
+		TAG.COLOR8=0
+		TAG.TYPE8=0
+		TAG.ATTR8=0
+		TAG.MORE18=0
+		TAG.MORE28=0
+		TAG.MOREP8=0
+		TAG.ID9=0
+		TAG.NAME9=0
+		TAG.P9=0
+		TAG.T9=0
+		TAG.BASEID9=0
+		TAG.AMOUNT9=0
+		TAG.MOREY9=0
+		TAG.COLOR9=0
+		TAG.TYPE9=0
+		TAG.ATTR9=0
+		TAG.MORE19=0
+		TAG.MORE29=0
+		TAG.MOREP9=0
+		TAG.ID10=0
+		TAG.NAME10=0
+		TAG.P10=0
+		TAG.T10=0
+		TAG.BASEID10=0
+		TAG.AMOUNT10=0
+		TAG.MOREY10=0
+		TAG.COLOR10=0
+		TAG.TYPE10=0
+		TAG.ATTR10=0
+		TAG.MORE110=0
+		TAG.MORE210=0
+		TAG.MOREP10=0
+		TAG.ID11=0
+		TAG.NAME11=0
+		TAG.P11=0
+		TAG.T11=0
+		TAG.BASEID11=0
+		TAG.AMOUNT11=0
+		TAG.MOREY11=0
+		TAG.COLOR11=0
+		TAG.TYPE11=0
+		TAG.ATTR11=0
+		TAG.MORE111=0
+		TAG.MORE211=0
+		TAG.MOREP11=0
+		TAG.ID12=0
+		TAG.NAME12=0
+		TAG.P12=0
+		TAG.T12=0
+		TAG.BASEID12=0
+		TAG.AMOUNT12=0
+		TAG.MOREY12=0
+		TAG.COLOR12=0
+		TAG.TYPE12=0
+		TAG.ATTR12=0
+		TAG.MORE112=0
+		TAG.MORE212=0
+		TAG.MOREP12=0
+		TAG.ID13=0
+		TAG.NAME13=0
+		TAG.P13=0
+		TAG.T13=0
+		TAG.BASEID13=0
+		TAG.AMOUNT13=0
+		TAG.MOREY13=0
+		TAG.COLOR13=0
+		TAG.TYPE13=0
+		TAG.ATTR13=0
+		TAG.MORE113=0
+		TAG.MORE213=0
+		TAG.MOREP13=0
+		TAG.ID14=0
+		TAG.NAME14=0
+		TAG.P14=0
+		TAG.T14=0
+		TAG.BASEID14=0
+		TAG.AMOUNT14=0
+		TAG.MOREY14=0
+		TAG.COLOR14=0
+		TAG.TYPE14=0
+		TAG.ATTR14=0
+		TAG.MORE114=0
+		TAG.MORE214=0
+		TAG.MOREP14=0
+		TAG.ID15=0
+		TAG.NAME15=0
+		TAG.P15=0
+		TAG.T15=0
+		TAG.BASEID15=0
+		TAG.AMOUNT15=0
+		TAG.MOREY15=0
+		TAG.COLOR15=0
+		TAG.TYPE15=0
+		TAG.ATTR15=0
+		TAG.MORE115=0
+		TAG.MORE215=0
+		TAG.MOREP15=0
+		TAG.ID16=0
+		TAG.NAME16=0
+		TAG.P16=0
+		TAG.T16=0
+		TAG.BASEID16=0
+		TAG.AMOUNT16=0
+		TAG.MOREY16=0
+		TAG.COLOR16=0
+		TAG.TYPE16=0
+		TAG.ATTR16=0
+		TAG.MORE116=0
+		TAG.MORE216=0
+		TAG.MOREP16=0
+		TAG.ID17=0
+		TAG.NAME17=0
+		TAG.P17=0
+		TAG.T17=0
+		TAG.BASEID17=0
+		TAG.AMOUNT17=0
+		TAG.MOREY17=0
+		TAG.COLOR17=0
+		TAG.TYPE17=0
+		TAG.ATTR17=0
+		TAG.MORE117=0
+		TAG.MORE217=0
+		TAG.MOREP17=0
+		TAG.ID18=0
+		TAG.NAME18=0
+		TAG.P18=0
+		TAG.T18=0
+		TAG.BASEID18=0
+		TAG.AMOUNT18=0
+		TAG.MOREY18=0
+		TAG.COLOR18=0
+		TAG.TYPE18=0
+		TAG.ATTR18=0
+		TAG.MORE118=0
+		TAG.MORE218=0
+		TAG.MOREP18=0
+		TAG.ID19=0
+		TAG.NAME19=0
+		TAG.P19=0
+		TAG.T19=0
+		TAG.BASEID19=0
+		TAG.AMOUNT19=0
+		TAG.MOREY19=0
+		TAG.COLOR19=0
+		TAG.TYPE19=0
+		TAG.ATTR19=0
+		TAG.MORE119=0
+		TAG.MORE219=0
+		TAG.MOREP19=0
+		TAG.ID20=0
+		TAG.NAME20=0
+		TAG.P20=0
+		TAG.T20=0
+		TAG.BASEID20=0
+		TAG.AMOUNT20=0
+		TAG.MOREY20=0
+		TAG.COLOR20=0
+		TAG.TYPE20=0
+		TAG.ATTR20=0
+		TAG.MORE120=0
+		TAG.MORE220=0
+		TAG.MOREP20=0
+
+ON=@DCLICK
+	IF <SRC.GM>==1
+		DIALOG d_reward_sys
+	ENDIF
+	RETURN 1
+
+ON=@TARGON_ITEM
+	IF <MORE>==1
+		TAG.ID1=<SRC.TARG.ID>
+		TAG.NAME1=<SRC.TARG.NAME>
+		TAG.P1=0
+		TAG.T1=0
+		TAG.BASEID1=<SRC.TARG.BASEID>
+		TAG.AMOUNT1=<SRC.TARG.AMOUNT>
+		TAG.MOREY1=<SRC.TARG.MOREY>
+		TAG.COLOR1=<SRC.TARG.COLOR>
+		TAG.TYPE1=<SRC.TARG.TYPE>
+		TAG.ATTR1=<SRC.TARG.ATTR>
+		TAG.MORE11=<SRC.TARG.MORE1>
+		TAG.MORE21=<SRC.TARG.MORE2>
+		TAG.MOREP1=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==2
+		TAG.ID2=<SRC.TARG.ID>
+		TAG.NAME2=<SRC.TARG.NAME>
+		TAG.P2=0
+		TAG.T2=0
+		TAG.BASEID2=<SRC.TARG.BASEID>
+		TAG.AMOUNT2=<SRC.TARG.AMOUNT>
+		TAG.MOREY2=<SRC.TARG.MOREY>
+		TAG.COLOR2=<SRC.TARG.COLOR>
+		TAG.TYPE2=<SRC.TARG.TYPE>
+		TAG.ATTR2=<SRC.TARG.ATTR>
+		TAG.MORE12=<SRC.TARG.MORE1>
+		TAG.MORE22=<SRC.TARG.MORE2>
+		TAG.MOREP2=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==3
+		TAG.ID3=<SRC.TARG.ID>
+		TAG.NAME3=<SRC.TARG.NAME>
+		TAG.P3=0
+		TAG.T3=0
+		TAG.BASEID3=<SRC.TARG.BASEID>
+		TAG.AMOUNT3=<SRC.TARG.AMOUNT>
+		TAG.MOREY3=<SRC.TARG.MOREY>
+		TAG.COLOR3=<SRC.TARG.COLOR>
+		TAG.TYPE3=<SRC.TARG.TYPE>
+		TAG.ATTR3=<SRC.TARG.ATTR>
+		TAG.MORE13=<SRC.TARG.MORE1>
+		TAG.MORE23=<SRC.TARG.MORE2>
+		TAG.MOREP3=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==4
+		TAG.ID4=<SRC.TARG.ID>
+		TAG.NAME4=<SRC.TARG.NAME>
+		TAG.P4=0
+		TAG.T4=0
+		TAG.BASEID4=<SRC.TARG.BASEID>
+		TAG.AMOUNT4=<SRC.TARG.AMOUNT>
+		TAG.MOREY4=<SRC.TARG.MOREY>
+		TAG.COLOR4=<SRC.TARG.COLOR>
+		TAG.TYPE4=<SRC.TARG.TYPE>
+		TAG.ATTR4=<SRC.TARG.ATTR>
+		TAG.MORE14=<SRC.TARG.MORE1>
+		TAG.MORE24=<SRC.TARG.MORE2>
+		TAG.MOREP4=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==5
+		TAG.ID5=<SRC.TARG.ID>
+		TAG.NAME5=<SRC.TARG.NAME>
+		TAG.P5=0
+		TAG.T5=0
+		TAG.BASEID5=<SRC.TARG.BASEID>
+		TAG.AMOUNT5=<SRC.TARG.AMOUNT>
+		TAG.MOREY5=<SRC.TARG.MOREY>
+		TAG.COLOR5=<SRC.TARG.COLOR>
+		TAG.TYPE5=<SRC.TARG.TYPE>
+		TAG.ATTR5=<SRC.TARG.ATTR>
+		TAG.MORE15=<SRC.TARG.MORE1>
+		TAG.MORE25=<SRC.TARG.MORE2>
+		TAG.MOREP5=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==6
+		TAG.ID6=<SRC.TARG.ID>
+		TAG.NAME6=<SRC.TARG.NAME>
+		TAG.P6=0
+		TAG.T6=0
+		TAG.BASEID6=<SRC.TARG.BASEID>
+		TAG.AMOUNT6=<SRC.TARG.AMOUNT>
+		TAG.MOREY6=<SRC.TARG.MOREY>
+		TAG.COLOR6=<SRC.TARG.COLOR>
+		TAG.TYPE6=<SRC.TARG.TYPE>
+		TAG.ATTR6=<SRC.TARG.ATTR>
+		TAG.MORE16=<SRC.TARG.MORE1>
+		TAG.MORE26=<SRC.TARG.MORE2>
+		TAG.MOREP6=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==7
+		TAG.ID7=<SRC.TARG.ID>
+		TAG.NAME7=<SRC.TARG.NAME>
+		TAG.P7=0
+		TAG.T7=0
+		TAG.BASEID7=<SRC.TARG.BASEID>
+		TAG.AMOUNT7=<SRC.TARG.AMOUNT>
+		TAG.MOREY7=<SRC.TARG.MOREY>
+		TAG.COLOR7=<SRC.TARG.COLOR>
+		TAG.TYPE7=<SRC.TARG.TYPE>
+		TAG.ATTR7=<SRC.TARG.ATTR>
+		TAG.MORE17=<SRC.TARG.MORE1>
+		TAG.MORE27=<SRC.TARG.MORE2>
+		TAG.MOREP7=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==8
+		TAG.ID8=<SRC.TARG.ID>
+		TAG.NAME8=<SRC.TARG.NAME>
+		TAG.P8=<eval <SRC.TARG.VALUE>>
+		TAG.T8=<eval <SRC.TARG.VALUE>>
+		TAG.BASEID8=<SRC.TARG.BASEID>
+		TAG.AMOUNT8=<SRC.TARG.AMOUNT>
+		TAG.MOREY8=<SRC.TARG.MOREY>
+		TAG.COLOR8=<SRC.TARG.COLOR>
+		TAG.TYPE8=<SRC.TARG.TYPE>
+		TAG.ATTR8=<SRC.TARG.ATTR>
+		TAG.MORE18=<SRC.TARG.MORE1>
+		TAG.MORE28=<SRC.TARG.MORE2>
+		TAG.MOREP8=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==9
+		TAG.ID9=<SRC.TARG.ID>
+		TAG.NAME9=<SRC.TARG.NAME>
+		TAG.P9=0
+		TAG.T9=0
+		TAG.BASEID9=<SRC.TARG.BASEID>
+		TAG.AMOUNT9=<SRC.TARG.AMOUNT>
+		TAG.MOREY9=<SRC.TARG.MOREY>
+		TAG.COLOR9=<SRC.TARG.COLOR>
+		TAG.TYPE9=<SRC.TARG.TYPE>
+		TAG.ATTR9=<SRC.TARG.ATTR>
+		TAG.MORE19=<SRC.TARG.MORE1>
+		TAG.MORE29=<SRC.TARG.MORE2>
+		TAG.MOREP9=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==10
+		TAG.ID10=<SRC.TARG.ID>
+		TAG.NAME10=<SRC.TARG.NAME>
+		TAG.P10=0
+		TAG.T10=0
+		TAG.BASEID10=<SRC.TARG.BASEID>
+		TAG.AMOUNT10=<SRC.TARG.AMOUNT>
+		TAG.MOREY10=<SRC.TARG.MOREY>
+		TAG.COLOR10=<SRC.TARG.COLOR>
+		TAG.TYPE10=<SRC.TARG.TYPE>
+		TAG.ATTR10=<SRC.TARG.ATTR>
+		TAG.MORE110=<SRC.TARG.MORE1>
+		TAG.MORE210=<SRC.TARG.MORE2>
+		TAG.MOREP10=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==11
+		TAG.ID11=<SRC.TARG.ID>
+		TAG.NAME11=<SRC.TARG.NAME>
+		TAG.P11=0
+		TAG.T11=0
+		TAG.BASEID11=<SRC.TARG.BASEID>
+		TAG.AMOUNT11=<SRC.TARG.AMOUNT>
+		TAG.MOREY11=<SRC.TARG.MOREY>
+		TAG.COLOR11=<SRC.TARG.COLOR>
+		TAG.TYPE11=<SRC.TARG.TYPE>
+		TAG.ATTR11=<SRC.TARG.ATTR>
+		TAG.MORE111=<SRC.TARG.MORE1>
+		TAG.MORE211=<SRC.TARG.MORE2>
+		TAG.MOREP11=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==12
+		TAG.ID12=<SRC.TARG.ID>
+		TAG.NAME12=<SRC.TARG.NAME>
+		TAG.P12=0
+		TAG.T12=0
+		TAG.BASEID12=<SRC.TARG.BASEID>
+		TAG.AMOUNT12=<SRC.TARG.AMOUNT>
+		TAG.MOREY12=<SRC.TARG.MOREY>
+		TAG.COLOR12=<SRC.TARG.COLOR>
+		TAG.TYPE12=<SRC.TARG.TYPE>
+		TAG.ATTR12=<SRC.TARG.ATTR>
+		TAG.MORE112=<SRC.TARG.MORE1>
+		TAG.MORE212=<SRC.TARG.MORE2>
+		TAG.MOREP12=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==13
+		TAG.ID13=<SRC.TARG.ID>
+		TAG.NAME13=<SRC.TARG.NAME>
+		TAG.P13=0
+		TAG.T13=0
+		TAG.BASEID13=<SRC.TARG.BASEID>
+		TAG.AMOUNT13=<SRC.TARG.AMOUNT>
+		TAG.MOREY13=<SRC.TARG.MOREY>
+		TAG.COLOR13=<SRC.TARG.COLOR>
+		TAG.TYPE13=<SRC.TARG.TYPE>
+		TAG.ATTR13=<SRC.TARG.ATTR>
+		TAG.MORE113=<SRC.TARG.MORE1>
+		TAG.MORE213=<SRC.TARG.MORE2>
+		TAG.MOREP13=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==14
+		TAG.ID14=<SRC.TARG.ID>
+		TAG.NAME14=<SRC.TARG.NAME>
+		TAG.P14=0
+		TAG.T14=0
+		TAG.BASEID14=<SRC.TARG.BASEID>
+		TAG.AMOUNT14=<SRC.TARG.AMOUNT>
+		TAG.MOREY14=<SRC.TARG.MOREY>
+		TAG.COLOR14=<SRC.TARG.COLOR>
+		TAG.TYPE14=<SRC.TARG.TYPE>
+		TAG.ATTR14=<SRC.TARG.ATTR>
+		TAG.MORE114=<SRC.TARG.MORE1>
+		TAG.MORE214=<SRC.TARG.MORE2>
+		TAG.MOREP14=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==15
+		TAG.ID15=<SRC.TARG.ID>
+		TAG.NAME15=<SRC.TARG.NAME>
+		TAG.P15=0
+		TAG.T15=0
+		TAG.BASEID15=<SRC.TARG.BASEID>
+		TAG.AMOUNT15=<SRC.TARG.AMOUNT>
+		TAG.MOREY15=<SRC.TARG.MOREY>
+		TAG.COLOR15=<SRC.TARG.COLOR>
+		TAG.TYPE15=<SRC.TARG.TYPE>
+		TAG.ATTR15=<SRC.TARG.ATTR>
+		TAG.MORE115=<SRC.TARG.MORE1>
+		TAG.MORE215=<SRC.TARG.MORE2>
+		TAG.MOREP15=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==16
+		TAG.ID16=<SRC.TARG.ID>
+		TAG.NAME16=<SRC.TARG.NAME>
+		TAG.P16=0
+		TAG.T16=0
+		TAG.BASEID16=<SRC.TARG.BASEID>
+		TAG.AMOUNT16=<SRC.TARG.AMOUNT>
+		TAG.MOREY16=<SRC.TARG.MOREY>
+		TAG.COLOR16=<SRC.TARG.COLOR>
+		TAG.TYPE16=<SRC.TARG.TYPE>
+		TAG.ATTR16=<SRC.TARG.ATTR>
+		TAG.MORE116=<SRC.TARG.MORE1>
+		TAG.MORE216=<SRC.TARG.MORE2>
+		TAG.MOREP16=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==17
+		TAG.ID17=<SRC.TARG.ID>
+		TAG.NAME17=<SRC.TARG.NAME>
+		TAG.P17=0
+		TAG.T17=0
+		TAG.BASEID17=<SRC.TARG.BASEID>
+		TAG.AMOUNT17=<SRC.TARG.AMOUNT>
+		TAG.MOREY17=<SRC.TARG.MOREY>
+		TAG.COLOR17=<SRC.TARG.COLOR>
+		TAG.TYPE17=<SRC.TARG.TYPE>
+		TAG.ATTR17=<SRC.TARG.ATTR>
+		TAG.MORE117=<SRC.TARG.MORE1>
+		TAG.MORE217=<SRC.TARG.MORE2>
+		TAG.MOREP17=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==18
+		TAG.ID18=<SRC.TARG.ID>
+		TAG.NAME18=<SRC.TARG.NAME>
+		TAG.P18=0
+		TAG.T18=0
+		TAG.BASEID18=<SRC.TARG.BASEID>
+		TAG.AMOUNT18=<SRC.TARG.AMOUNT>
+		TAG.MOREY18=<SRC.TARG.MOREY>
+		TAG.COLOR18=<SRC.TARG.COLOR>
+		TAG.TYPE18=<SRC.TARG.TYPE>
+		TAG.ATTR18=<SRC.TARG.ATTR>
+		TAG.MORE118=<SRC.TARG.MORE1>
+		TAG.MORE218=<SRC.TARG.MORE2>
+		TAG.MOREP18=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==19
+		TAG.ID19=<SRC.TARG.ID>
+		TAG.NAME19=<SRC.TARG.NAME>
+		TAG.P19=0
+		TAG.T19=0
+		TAG.BASEID19=<SRC.TARG.BASEID>
+		TAG.AMOUNT19=<SRC.TARG.AMOUNT>
+		TAG.MOREY19=<SRC.TARG.MOREY>
+		TAG.COLOR19=<SRC.TARG.COLOR>
+		TAG.TYPE19=<SRC.TARG.TYPE>
+		TAG.ATTR19=<SRC.TARG.ATTR>
+		TAG.MORE119=<SRC.TARG.MORE1>
+		TAG.MORE219=<SRC.TARG.MORE2>
+		TAG.MOREP19=<SRC.TARG.MOREP>
+	ELSEIF <MORE>==20
+		TAG.ID20=<SRC.TARG.ID>
+		TAG.NAME20=<SRC.TARG.NAME>
+		TAG.P20=0
+		TAG.T20=0
+		TAG.BASEID20=<SRC.TARG.BASEID>
+		TAG.AMOUNT20=<SRC.TARG.AMOUNT>
+		TAG.MOREY20=<SRC.TARG.MOREY>
+		TAG.COLOR20=<SRC.TARG.COLOR>
+		TAG.TYPE20=<SRC.TARG.TYPE>
+		TAG.ATTR20=<SRC.TARG.ATTR>
+		TAG.MORE120=<SRC.TARG.MORE1>
+		TAG.MORE220=<SRC.TARG.MORE2>
+		TAG.MOREP20=<SRC.TARG.MOREP>
+	ENDIF
+	IF <MORE><11
+		DIALOG d_reward_sys_itemset
+	ELSEIF <MORE><21
+		DIALOG d_reward_sys_itemset1
+	ENDIF
+	RETURN 1
+ON=@TARGON_CHAR
+	DIALOG d_reward_sys_itemset
+
+ON=@TARGON_GROUND
+	DIALOG d_reward_sys_itemset
+
+CATEGORY=Event System
+SUBSECTION=Reward System
+DESCRIPTION=GM Reward Menu Control
+
+[ITEMDEF i_reward_menu_player]
+ID=i_sign_brass
+TYPE=t_eq_script
+NAME=Reward Menu
+
+ON=@DCLICK
+	IF <SRC.GM>==1
+		DIALOG d_gm_or_player
+	ELSE
+		DIALOG d_reward_sys_player
+	ENDIF
+	RETURN 1
+
+ON=@CREATE
+	ATTR=08010
+
+CATEGORY=Event System
+SUBSECTION=Reward System
+DESCRIPTION=Reward Menu
+
+[DIALOG d_reward_sys_player]
+0, 0
+page 0
+resizepic 0 0 2600 490 460
+button 440 420 <eval 0fa5> <eval 0fa6> 1 0 1
+text 240 20 0 0						//title
+text 45 20 0 41						//P
+text 45 40 0 42						//T
+text 240 40 0 43						//reward system v 1.0a
+
+text 40 55 0 1						//NAME1
+text 40 70 0 2						//P1
+text 40 85 0 3						//T1
+text 40 100 0 4						//ID1
+tilepic 40 120 <eval <LINK.TAG.ID1>>		//PIC1
+
+button 70 55 <eval 0d0> <eval 0d1> 1 0 4		//name1
+
+text 130 55 0 5						//NAME2
+text 130 70 0 6						//P2
+text 130 85 0 7						//T2
+text 130 100 0 8						//ID2
+tilepic 130 120 <eval <LINK.TAG.ID2>>		//PIC2
+
+
+button 160 55 <eval 0d0> <eval 0d1> 1 0 14	//name2
+
+text 220 55 0 9						//NAME3
+text 220 70 0 10						//P3
+text 220 85 0 11						//T3
+text 220 100 0 12						//ID3
+tilepic 220 120 <eval <LINK.TAG.ID3>>		//PIC3
+
+button 250 55 <eval 0d0> <eval 0d1> 1 0 24	//name3
+
+text 310 55 0 13						//NAME4
+text 310 70 0 14						//P4
+text 310 85 0 15						//T4
+text 310 100 0 16						//ID4
+tilepic 310 120 <eval <LINK.TAG.ID4>>		//PIC4
+
+button 340 55 <eval 0d0> <eval 0d1> 1 0 34	//name4
+
+text 400 55 0 17				//NAME5
+text 400 70 0 18				//P5
+text 400 85 0 19				//T5
+text 400 100 0 20				//ID5
+tilepic 400 120 <eval <LINK.TAG.ID5>>		//PIC5
+
+button 430 55 <eval 0d0> <eval 0d1> 1 0 44	//name5
+
+text 40 255 0 21				//NAME6
+text 40 270 0 22				//P6
+text 40 285 0 23				//T6
+text 40 300 0 24				//ID6
+tilepic 40 320 <eval <LINK.TAG.ID6>>		//PIC6
+
+button 70 255 <eval 0d0> <eval 0d1> 1 0 54	//name6
+
+text 130 255 0 25				//NAME7
+text 130 270 0 26				//P7
+text 130 285 0 27				//T7
+text 130 300 0 28				//ID7
+tilepic 130 320 <eval <LINK.TAG.ID7>>		//PIC7
+
+button 160 255 <eval 0d0> <eval 0d1> 1 0 64	//name7
+
+text 220 255 0 29				//NAME8
+text 220 270 0 30				//P8
+text 220 285 0 31				//T8
+text 220 300 0 32				//ID8
+tilepic 220 320 <eval <LINK.TAG.ID8>>		//PIC8
+
+button 250 255 <eval 0d0> <eval 0d1> 1 0 74	//name8
+
+text 310 255 0 33				//NAME9
+text 310 270 0 34				//P9
+text 310 285 0 35				//T9
+text 310 300 0 36				//ID9
+tilepic 310 320 <eval <LINK.TAG.ID9>>		//PIC9
+
+button 340 255 <eval 0d0> <eval 0d1> 1 0 84	//name9
+
+text 400 255 0 37				//NAME10
+text 400 270 0 38				//P10
+text 400 285 0 39				//T10
+text 400 300 0 40				//ID10
+tilepic 400 320 <eval <LINK.TAG.ID10>>		//PIC10
+
+button 430 255 <eval 0d0> <eval 0d1> 1 0 94	//name10
+
+[DIALOG d_reward_sys_player TEXT]
+PLAYER REWARDS
+Info:
+P:<eval <LINK.TAG.P1>>
+T:<eval <LINK.TAG.T1>>
+picture:
+Info:
+P:<eval <LINK.TAG.P2>>
+T:<eval <LINK.TAG.T2>>
+picture:
+Info:
+P:<eval <LINK.TAG.P3>>
+T:<eval <LINK.TAG.T3>>
+picture:
+Info:
+P:<eval <LINK.TAG.P4>>
+T:<eval <LINK.TAG.T4>>
+picture:
+Info:
+P:<eval <LINK.TAG.P5>>
+T:<eval <LINK.TAG.T5>>
+picture:
+Info:
+P:<eval <LINK.TAG.P6>>
+T:<eval <LINK.TAG.T6>>
+picture:
+Info:
+P:<eval <LINK.TAG.P7>>
+T:<eval <LINK.TAG.T7>>
+picture:
+Info:
+P:<eval <LINK.TAG.P8>>
+T:<eval <LINK.TAG.T8>>
+picture:
+Info:
+P:<eval <LINK.TAG.P9>>
+T:<eval <LINK.TAG.T9>>
+picture:
+Info:
+P:<eval <LINK.TAG.P10>>
+T:<eval <LINK.TAG.T10>>
+picture:
+Points:  <eval <SRC.TAG.POINTS>>
+<>
+Reward System v 1.2
+
+[DIALOG d_reward_sys_player BUTTON]
+ON=0
+ON=1
+	DIALOG d_reward_sys_player1
+
+ON=4
+	SHOWITEMINFO 1
+
+ON=14
+	SHOWITEMINFO 2
+
+ON=24
+	SHOWITEMINFO 3
+
+ON=34
+	SHOWITEMINFO 4
+
+ON=44
+	SHOWITEMINFO 5
+
+ON=54
+	SHOWITEMINFO 6
+
+ON=64
+	SHOWITEMINFO 7
+
+ON=74
+	SHOWITEMINFO 8
+
+ON=84
+	SHOWITEMINFO 9
+
+ON=94
+	SHOWITEMINFO 10
+
+[DIALOG d_reward_sys_itemset1]
+0, 0
+page 0
+resizepic 0 0 2600 490 460
+button 20 420 <eval 0fae> <eval 0faf> 1 0 101
+
+text 40 55 0 1					//NAME11
+text 40 70 0 2					//P11
+text 40 85 0 3					//T11
+text 40 100 0 4					//ID11
+tilepic 40 120 <eval <TAG.ID11>>		//PIC1
+
+button 70 55 <eval 0d0> <eval 0d1> 1 0 4	//name11
+
+text 130 55 0 5						//NAME12
+text 130 70 0 6						//P12
+text 130 85 0 7						//T12
+text 130 100 0 8						//ID12
+tilepic 130 120 <eval <TAG.ID12>>			//PIC12
+
+button 160 55 <eval 0d0> <eval 0d1> 1 0 14	//name12
+
+text 220 55 0 9						//NAME13
+text 220 70 0 10						//P13
+text 220 85 0 11						//T13
+text 220 100 0 12						//ID13
+tilepic 220 120 <eval <TAG.ID13>>			//PIC13
+
+button 250 55 <eval 0d0> <eval 0d1> 1 0 24	//name13
+
+text 310 55 0 13						//NAME14
+text 310 70 0 14						//P14
+text 310 85 0 15						//T14
+text 310 100 0 16						//ID14
+tilepic 310 120 <eval <TAG.ID14>>			//PIC14
+
+button 340 55 <eval 0d0> <eval 0d1> 1 0 34	//name14
+
+text 400 55 0 17						//NAME15
+text 400 70 0 18						//P15
+text 400 85 0 19						//T15
+text 400 100 0 20						//ID15
+tilepic 400 120 <eval <TAG.ID15>>			//PIC15
+
+button 430 55 <eval 0d0> <eval 0d1> 1 0 44	//name15
+
+text 40 255 0 21						//NAME16
+text 40 270 0 22						//P16
+text 40 285 0 23						//T16
+text 40 300 0 24						//ID16
+tilepic 40 320 <eval <TAG.ID16>>			//PIC16
+
+button 70 255 <eval 0d0> <eval 0d1> 1 0 54	//name16
+
+text 130 255 0 25						//NAME17
+text 130 270 0 26						//P17
+text 130 285 0 27						//T17
+text 130 300 0 28						//ID17
+tilepic 130 320 <eval <TAG.ID17>>			//PIC17
+
+button 160 255 <eval 0d0> <eval 0d1> 1 0 64	//name17
+
+text 220 255 0 29						//NAME18
+text 220 270 0 30						//P18
+text 220 285 0 31						//T18
+text 220 300 0 32						//ID18
+tilepic 220 320 <eval <TAG.ID18>>			//PIC18
+
+button 250 255 <eval 0d0> <eval 0d1> 1 0 74	//name18
+
+text 310 255 0 33						//NAME19
+text 310 270 0 34						//P19
+text 310 285 0 35						//T19
+text 310 300 0 36						//ID19
+tilepic 310 320 <eval <TAG.ID19>>			//PIC19
+
+button 340 255 <eval 0d0> <eval 0d1> 1 0 84	//name19
+
+text 400 255 0 37						//NAME20
+text 400 270 0 38						//P20
+text 400 285 0 39						//T20
+text 400 300 0 40						//ID20
+tilepic 400 320 <eval <TAG.ID20>>			//PIC20
+
+button 430 255 <eval 0d0> <eval 0d1> 1 0 94	//name10
+
+[DIALOG d_reward_sys_itemset1 TEXT]
+h
+Info:
+P:<eval <TAG.P11>>
+T:<eval <TAG.T11>>
+picture:
+Info:
+P:<eval <TAG.P12>>
+T:<eval <TAG.T12>>
+picture:
+Info:
+P:<eval <TAG.P13>>
+T:<eval <TAG.T13>>
+picture:
+Info:
+P:<eval <TAG.P14>>
+T:<eval <TAG.T14>>
+picture:
+Info:
+P:<eval <TAG.P15>>
+T:<eval <TAG.T15>>
+picture:
+Info:
+P:<eval <TAG.P16>>
+T:<eval <TAG.T16>>
+picture:
+Info:
+P:<eval <TAG.P17>>
+T:<eval <TAG.T17>>
+picture:
+Info:
+P:<eval <TAG.P18>>
+T:<eval <TAG.T18>>
+picture:
+Info:
+P:<eval <TAG.P19>>
+T:<eval <TAG.T19>>
+picture:
+Info:
+P:<eval <TAG.P20>>
+T:<eval <TAG.T20>>
+picture:
+[DIALOG d_reward_sys_itemset1 BUTTON]
+ON=1
+	TARGET What do you wish to set to slot 11?
+	MORE=11
+ON=4
+	SHOWITEMINFOE 11
+ON=11
+	TARGET What do you wish to set to slot 12?
+	MORE=12
+
+ON=14
+	SHOWITEMINFOE 12
+ON=21
+	TARGET What do you wish to set to slot 13?
+	MORE=13
+
+ON=24
+	SHOWITEMINFOE 13
+ON=31
+	TARGET What do you wish to set to slot 14?
+	MORE=14
+
+ON=34
+	SHOWITEMINFOE 14
+ON=41
+	TARGET What do you wish to set to slot 15?
+	MORE=15
+
+ON=44
+	SHOWITEMINFOE 15
+ON=51
+	TARGET What do you wish to set to slot 16?
+	MORE=16
+
+ON=54
+	SHOWITEMINFOE 16
+ON=61
+	TARGET What do you wish to set to slot 17?
+	MORE=17
+
+ON=64
+	SHOWITEMINFOE 17
+ON=71
+	TARGET What do you wish to set to slot 18?
+	MORE=18
+
+ON=74
+	SHOWITEMINFOE 18
+ON=81
+	TARGET What do you wish to set to slot 19?
+	MORE=19
+
+ON=84
+	SHOWITEMINFOE 19
+ON=91
+	TARGET What do you wish to set to slot 20?
+	MORE=20
+ON=94
+	SHOWITEMINFOE 20
+ON=101
+	DIALOG d_reward_sys_itemset
+
+[DIALOG d_reward_sys_player1]
+0, 0
+page 0
+resizepic 0 0 2600 490 460
+button 20 420 <eval 0fae> <eval 0faf> 1 0 101
+
+text 240 20 0 0						//title
+text 45 20 0 41						//P
+text 45 40 0 42						//T
+text 240 40 0 43						//reward system v 1.0a
+
+text 40 55 0 1						//NAME11
+text 40 70 0 2						//P11
+text 40 85 0 3						//T11
+text 40 100 0 4						//ID11
+tilepic 40 120 <eval <LINK.TAG.ID11>>		//PIC11
+
+
+button 70 55 <eval 0d0> <eval 0d1> 1 0 4		//name11
+
+text 130 55 0 5						//NAME12
+text 130 70 0 6						//P12
+text 130 85 0 7						//T12
+text 130 100 0 8						//ID12
+tilepic 130 120 <eval <LINK.TAG.ID12>>		//PIC12
+
+
+button 160 55 <eval 0d0> <eval 0d1> 1 0 14	//name12
+
+text 220 55 0 9						//NAME13
+text 220 70 0 10						//P13
+text 220 85 0 11						//T13
+text 220 100 0 12						//ID13
+tilepic 220 120 <eval <LINK.TAG.ID13>>		//PIC13
+
+
+button 250 55 <eval 0d0> <eval 0d1> 1 0 24	//name13
+
+text 310 55 0 13						//NAME14
+text 310 70 0 14						//P14
+text 310 85 0 15						//T14
+text 310 100 0 16						//ID14
+tilepic 310 120 <eval <LINK.TAG.ID14>>		//PIC14
+
+
+button 340 55 <eval 0d0> <eval 0d1> 1 0 34	//name14
+
+text 400 55 0 17						//NAME15
+text 400 70 0 18						//P15
+text 400 85 0 19						//T15
+text 400 100 0 20						//ID15
+tilepic 400 120 <eval <LINK.TAG.ID15>>		//PIC15
+
+
+button 430 55 <eval 0d0> <eval 0d1> 1 0 44	//name15
+
+text 40 255 0 21						//NAME16
+text 40 270 0 22						//P16
+text 40 285 0 23						//T16
+text 40 300 0 24						//ID16
+tilepic 40 320 <eval <LINK.TAG.ID16>>		//PIC16
+
+
+button 70 255 <eval 0d0> <eval 0d1> 1 0 54	//name16
+
+text 130 255 0 25						//NAME17
+text 130 270 0 26						//P17
+text 130 285 0 27						//T17
+text 130 300 0 28						//ID17
+tilepic 130 320 <eval <LINK.TAG.ID17>>		//PIC17
+
+
+button 160 255 <eval 0d0> <eval 0d1> 1 0 64	//name17
+
+text 220 255 0 29						//NAME18
+text 220 270 0 30						//P18
+text 220 285 0 31						//T18
+text 220 300 0 32						//ID18
+tilepic 220 320 <eval <LINK.TAG.ID18>>		//PIC18
+
+
+button 250 255 <eval 0d0> <eval 0d1> 1 0 74	//name18
+
+text 310 255 0 33						//NAME19
+text 310 270 0 34						//P19
+text 310 285 0 35						//T19
+text 310 300 0 36						//ID19
+tilepic 310 320 <eval <LINK.TAG.ID19>>		//PIC19
+
+button 340 255 <eval 0d0> <eval 0d1> 1 0 84	//name19
+
+text 400 255 0 37						//NAME20
+text 400 270 0 38						//P20
+text 400 285 0 39						//T20
+text 400 300 0 40						//ID20
+tilepic 400 320 <eval <LINK.TAG.ID20>>		//PIC20
+
+button 430 255 <eval 0d0> <eval 0d1> 1 0 94	//name20
+[DIALOG d_reward_sys_player1 TEXT]
+PLAYER REWARDS
+Info:
+P:<eval <LINK.TAG.P11>>
+T:<eval <LINK.TAG.T11>>
+picture:
+Info:
+P:<eval <LINK.TAG.P12>>
+T:<eval <LINK.TAG.T12>>
+picture:
+Info:
+P:<eval <LINK.TAG.P13>>
+T:<eval <LINK.TAG.T13>>
+picture:
+Info:
+P:<eval <LINK.TAG.P14>>
+T:<eval <LINK.TAG.T14>>
+picture:
+Info:
+P:<eval <LINK.TAG.P15>>
+T:<eval <LINK.TAG.T15>>
+picture:
+Info:
+P:<eval <LINK.TAG.P16>>
+T:<eval <LINK.TAG.T16>>
+picture:
+Info:
+P:<eval <LINK.TAG.P17>>
+T:<eval <LINK.TAG.T17>>
+picture:
+Info:
+P:<eval <LINK.TAG.P18>>
+T:<eval <LINK.TAG.T18>>
+picture:
+Info:
+P:<eval <LINK.TAG.P19>>
+T:<eval <LINK.TAG.T19>>
+picture:
+Info:
+P:<eval <LINK.TAG.P20>>
+T:<eval <LINK.TAG.T20>>
+picture:
+Points:  <eval <SRC.TAG.POINTS>>
+<>
+Reward System v 1.2
+
+[DIALOG d_reward_sys_player1 BUTTON]
+ON=4
+	SHOWITEMINFO 11
+ON=14
+	SHOWITEMINFO 12
+ON=24
+	SHOWITEMINFO 13
+ON=34
+	SHOWITEMINFO 14
+ON=44
+	SHOWITEMINFO 15
+ON=54
+	SHOWITEMINFO 16
+ON=64
+	SHOWITEMINFO 17
+ON=74
+	SHOWITEMINFO 18
+ON=84
+	SHOWITEMINFO 19
+ON=94
+	SHOWITEMINFO 20
+ON=101
+	DIALOG d_reward_sys_player
+
+[FUNCTION showiteminfo]
+IF <ARGS>==1
+TAG.ID=<LINK.TAG.ID1>
+TAG.NAME=<LINK.TAG.NAME1>
+TAG.P=<LINK.TAG.P1>
+TAG.T=<LINK.TAG.T1>
+TAG.BASEID=<LINK.TAG.BASEID1>
+TAG.AMOUNT=<LINK.TAG.AMOUNT1>
+TAG.MOREY=<LINK.TAG.MOREY1>
+TAG.COLOR=<LINK.TAG.COLOR1>
+TAG.TYPE=<LINK.TAG.TYPE1>
+TAG.ATTR=<LINK.TAG.ATTR1>
+TAG.MORE1=<LINK.TAG.MORE11>
+TAG.MORE2=<LINK.TAG.MORE21>
+TAG.MOREP=<LINK.TAG.MOREP1>
+TAG.BOTH=<LINK.TAG.BOTH1>
+ELSEIF <ARGS>==2
+TAG.ID=<LINK.TAG.ID2>
+TAG.NAME=<LINK.TAG.NAME2>
+TAG.P=<LINK.TAG.P2>
+TAG.T=<LINK.TAG.T2>
+TAG.BASEID=<LINK.TAG.BASEID2>
+TAG.AMOUNT=<LINK.TAG.AMOUNT2>
+TAG.MOREY=<LINK.TAG.MOREY2>
+TAG.COLOR=<LINK.TAG.COLOR2>
+TAG.TYPE=<LINK.TAG.TYPE2>
+TAG.ATTR=<LINK.TAG.ATTR2>
+TAG.MORE1=<LINK.TAG.MORE12>
+TAG.MORE2=<LINK.TAG.MORE22>
+TAG.MOREP=<LINK.TAG.MOREP2>
+TAG.BOTH=<LINK.TAG.BOTH2>
+ELSEIF <ARGS>==3
+TAG.ID=<LINK.TAG.ID3>
+TAG.NAME=<LINK.TAG.NAME3>
+TAG.P=<LINK.TAG.P3>
+TAG.T=<LINK.TAG.T3>
+TAG.BASEID=<LINK.TAG.BASEID3>
+TAG.AMOUNT=<LINK.TAG.AMOUNT3>
+TAG.MOREY=<LINK.TAG.MOREY3>
+TAG.COLOR=<LINK.TAG.COLOR3>
+TAG.TYPE=<LINK.TAG.TYPE3>
+TAG.ATTR=<LINK.TAG.ATTR3>
+TAG.MORE1=<LINK.TAG.MORE13>
+TAG.MORE2=<LINK.TAG.MORE23>
+TAG.MOREP=<LINK.TAG.MOREP3>
+TAG.BOTH=<LINK.TAG.BOTH3>
+ELSEIF <ARGS>==4
+TAG.ID=<LINK.TAG.ID4>
+TAG.NAME=<LINK.TAG.NAME4>
+TAG.P=<LINK.TAG.P4>
+TAG.T=<LINK.TAG.T4>
+TAG.BASEID=<LINK.TAG.BASEID4>
+TAG.AMOUNT=<LINK.TAG.AMOUNT4>
+TAG.MOREY=<LINK.TAG.MOREY4>
+TAG.COLOR=<LINK.TAG.COLOR4>
+TAG.TYPE=<LINK.TAG.TYPE4>
+TAG.ATTR=<LINK.TAG.ATTR4>
+TAG.MORE1=<LINK.TAG.MORE14>
+TAG.MORE2=<LINK.TAG.MORE24>
+TAG.MOREP=<LINK.TAG.MOREP4>
+TAG.BOTH=<LINK.TAG.BOTH4>
+ELSEIF <ARGS>==5
+TAG.ID=<LINK.TAG.ID5>
+TAG.NAME=<LINK.TAG.NAME5>
+TAG.P=<LINK.TAG.P5>
+TAG.T=<LINK.TAG.T5>
+TAG.BASEID=<LINK.TAG.BASEID5>
+TAG.AMOUNT=<LINK.TAG.AMOUNT5>
+TAG.MOREY=<LINK.TAG.MOREY5>
+TAG.COLOR=<LINK.TAG.COLOR5>
+TAG.TYPE=<LINK.TAG.TYPE5>
+TAG.ATTR=<LINK.TAG.ATTR5>
+TAG.MORE1=<LINK.TAG.MORE15>
+TAG.MORE2=<LINK.TAG.MORE25>
+TAG.MOREP=<LINK.TAG.MOREP5>
+TAG.BOTH=<LINK.TAG.BOTH5>
+ELSEIF <ARGS>==6
+TAG.ID=<LINK.TAG.ID6>
+TAG.NAME=<LINK.TAG.NAME6>
+TAG.P=<LINK.TAG.P6>
+TAG.T=<LINK.TAG.T6>
+TAG.BASEID=<LINK.TAG.BASEID6>
+TAG.AMOUNT=<LINK.TAG.AMOUNT6>
+TAG.MOREY=<LINK.TAG.MOREY6>
+TAG.COLOR=<LINK.TAG.COLOR6>
+TAG.TYPE=<LINK.TAG.TYPE6>
+TAG.ATTR=<LINK.TAG.ATTR6>
+TAG.MORE1=<LINK.TAG.MORE16>
+TAG.MORE2=<LINK.TAG.MORE26>
+TAG.MOREP=<LINK.TAG.MOREP6>
+TAG.BOTH=<LINK.TAG.BOTH6>
+ELSEIF <ARGS>==7
+TAG.ID=<LINK.TAG.ID7>
+TAG.NAME=<LINK.TAG.NAME7>
+TAG.P=<LINK.TAG.P7>
+TAG.T=<LINK.TAG.T7>
+TAG.BASEID=<LINK.TAG.BASEID7>
+TAG.AMOUNT=<LINK.TAG.AMOUNT7>
+TAG.MOREY=<LINK.TAG.MOREY7>
+TAG.COLOR=<LINK.TAG.COLOR7>
+TAG.TYPE=<LINK.TAG.TYPE7>
+TAG.ATTR=<LINK.TAG.ATTR7>
+TAG.MORE1=<LINK.TAG.MORE17>
+TAG.MORE2=<LINK.TAG.MORE27>
+TAG.MOREP=<LINK.TAG.MOREP7>
+TAG.BOTH=<LINK.TAG.BOTH7>
+ELSEIF <ARGS>==8
+TAG.ID=<LINK.TAG.ID8>
+TAG.NAME=<LINK.TAG.NAME8>
+TAG.P=<LINK.TAG.P8>
+TAG.T=<LINK.TAG.T8>
+TAG.BASEID=<LINK.TAG.BASEID8>
+TAG.AMOUNT=<LINK.TAG.AMOUNT8>
+TAG.MOREY=<LINK.TAG.MOREY8>
+TAG.COLOR=<LINK.TAG.COLOR8>
+TAG.TYPE=<LINK.TAG.TYPE8>
+TAG.ATTR=<LINK.TAG.ATTR8>
+TAG.MORE1=<LINK.TAG.MORE18>
+TAG.MORE2=<LINK.TAG.MORE28>
+TAG.MOREP=<LINK.TAG.MOREP8>
+TAG.BOTH=<LINK.TAG.BOTH8>
+ELSEIF <ARGS>==9
+TAG.ID=<LINK.TAG.ID9>
+TAG.NAME=<LINK.TAG.NAME9>
+TAG.P=<LINK.TAG.P9>
+TAG.T=<LINK.TAG.T9>
+TAG.BASEID=<LINK.TAG.BASEID9>
+TAG.AMOUNT=<LINK.TAG.AMOUNT9>
+TAG.MOREY=<LINK.TAG.MOREY9>
+TAG.COLOR=<LINK.TAG.COLOR9>
+TAG.TYPE=<LINK.TAG.TYPE9>
+TAG.ATTR=<LINK.TAG.ATTR9>
+TAG.MORE1=<LINK.TAG.MORE19>
+TAG.MORE2=<LINK.TAG.MORE29>
+TAG.MOREP=<LINK.TAG.MOREP9>
+TAG.BOTH=<LINK.TAG.BOTH9>
+ELSEIF <ARGS>==10
+TAG.ID=<LINK.TAG.ID10>
+TAG.NAME=<LINK.TAG.NAME10>
+TAG.P=<LINK.TAG.P10>
+TAG.T=<LINK.TAG.T10>
+TAG.BASEID=<LINK.TAG.BASEID10>
+TAG.AMOUNT=<LINK.TAG.AMOUNT10>
+TAG.MOREY=<LINK.TAG.MOREY10>
+TAG.COLOR=<LINK.TAG.COLOR10>
+TAG.TYPE=<LINK.TAG.TYPE10>
+TAG.ATTR=<LINK.TAG.ATTR10>
+TAG.MORE1=<LINK.TAG.MORE110>
+TAG.MORE2=<LINK.TAG.MORE210>
+TAG.MOREP=<LINK.TAG.MOREP10>
+TAG.BOTH=<LINK.TAG.BOTH10>
+ELSEIF <ARGS>==11
+TAG.ID=<LINK.TAG.ID11>
+TAG.NAME=<LINK.TAG.NAME11>
+TAG.P=<LINK.TAG.P11>
+TAG.T=<LINK.TAG.T11>
+TAG.BASEID=<LINK.TAG.BASEID11>
+TAG.AMOUNT=<LINK.TAG.AMOUNT11>
+TAG.MOREY=<LINK.TAG.MOREY11>
+TAG.COLOR=<LINK.TAG.COLOR11>
+TAG.TYPE=<LINK.TAG.TYPE11>
+TAG.ATTR=<LINK.TAG.ATTR11>
+TAG.MORE1=<LINK.TAG.MORE111>
+TAG.MORE2=<LINK.TAG.MORE211>
+TAG.MOREP=<LINK.TAG.MOREP11>
+TAG.BOTH=<LINK.TAG.BOTH11>
+ELSEIF <ARGS>==12
+TAG.ID=<LINK.TAG.ID12>
+TAG.NAME=<LINK.TAG.NAME12>
+TAG.P=<LINK.TAG.P12>
+TAG.T=<LINK.TAG.T12>
+TAG.BASEID=<LINK.TAG.BASEID12>
+TAG.AMOUNT=<LINK.TAG.AMOUNT12>
+TAG.MOREY=<LINK.TAG.MOREY12>
+TAG.COLOR=<LINK.TAG.COLOR12>
+TAG.TYPE=<LINK.TAG.TYPE12>
+TAG.ATTR=<LINK.TAG.ATTR12>
+TAG.MORE1=<LINK.TAG.MORE112>
+TAG.MORE2=<LINK.TAG.MORE212>
+TAG.MOREP=<LINK.TAG.MOREP12>
+TAG.BOTH=<LINK.TAG.BOTH12>
+ELSEIF <ARGS>==13
+TAG.ID=<LINK.TAG.ID13>
+TAG.NAME=<LINK.TAG.NAME13>
+TAG.P=<LINK.TAG.P13>
+TAG.T=<LINK.TAG.T13>
+TAG.BASEID=<LINK.TAG.BASEID13>
+TAG.AMOUNT=<LINK.TAG.AMOUNT13>
+TAG.MOREY=<LINK.TAG.MOREY13>
+TAG.COLOR=<LINK.TAG.COLOR13>
+TAG.TYPE=<LINK.TAG.TYPE13>
+TAG.ATTR=<LINK.TAG.ATTR13>
+TAG.MORE1=<LINK.TAG.MORE113>
+TAG.MORE2=<LINK.TAG.MORE213>
+TAG.MOREP=<LINK.TAG.MOREP13>
+TAG.BOTH=<LINK.TAG.BOTH13>
+ELSEIF <ARGS>==14
+TAG.ID=<LINK.TAG.ID14>
+TAG.NAME=<LINK.TAG.NAME14>
+TAG.P=<LINK.TAG.P14>
+TAG.T=<LINK.TAG.T14>
+TAG.BASEID=<LINK.TAG.BASEID14>
+TAG.AMOUNT=<LINK.TAG.AMOUNT14>
+TAG.MOREY=<LINK.TAG.MOREY14>
+TAG.COLOR=<LINK.TAG.COLOR14>
+TAG.TYPE=<LINK.TAG.TYPE14>
+TAG.ATTR=<LINK.TAG.ATTR14>
+TAG.MORE1=<LINK.TAG.MORE114>
+TAG.MORE2=<LINK.TAG.MORE214>
+TAG.MOREP=<LINK.TAG.MOREP14>
+TAG.BOTH=<LINK.TAG.BOTH14>
+ELSEIF <ARGS>==15
+TAG.ID=<LINK.TAG.ID15>
+TAG.NAME=<LINK.TAG.NAME15>
+TAG.P=<LINK.TAG.P15>
+TAG.T=<LINK.TAG.T15>
+TAG.BASEID=<LINK.TAG.BASEID15>
+TAG.AMOUNT=<LINK.TAG.AMOUNT15>
+TAG.MOREY=<LINK.TAG.MOREY15>
+TAG.COLOR=<LINK.TAG.COLOR15>
+TAG.TYPE=<LINK.TAG.TYPE15>
+TAG.ATTR=<LINK.TAG.ATTR15>
+TAG.MORE1=<LINK.TAG.MORE115>
+TAG.MORE2=<LINK.TAG.MORE215>
+TAG.MOREP=<LINK.TAG.MOREP15>
+TAG.BOTH=<LINK.TAG.BOTH15>
+ELSEIF <ARGS>==16
+TAG.ID=<LINK.TAG.ID16>
+TAG.NAME=<LINK.TAG.NAME16>
+TAG.P=<LINK.TAG.P16>
+TAG.T=<LINK.TAG.T16>
+TAG.BASEID=<LINK.TAG.BASEID16>
+TAG.AMOUNT=<LINK.TAG.AMOUNT16>
+TAG.MOREY=<LINK.TAG.MOREY16>
+TAG.COLOR=<LINK.TAG.COLOR16>
+TAG.TYPE=<LINK.TAG.TYPE16>
+TAG.ATTR=<LINK.TAG.ATTR16>
+TAG.MORE1=<LINK.TAG.MORE116>
+TAG.MORE2=<LINK.TAG.MORE216>
+TAG.MOREP=<LINK.TAG.MOREP16>
+TAG.BOTH=<LINK.TAG.BOTH16>
+ELSEIF <ARGS>==17
+TAG.ID=<LINK.TAG.ID17>
+TAG.NAME=<LINK.TAG.NAME17>
+TAG.P=<LINK.TAG.P17>
+TAG.T=<LINK.TAG.T17>
+TAG.BASEID=<LINK.TAG.BASEID17>
+TAG.AMOUNT=<LINK.TAG.AMOUNT17>
+TAG.MOREY=<LINK.TAG.MOREY17>
+TAG.COLOR=<LINK.TAG.COLOR17>
+TAG.TYPE=<LINK.TAG.TYPE17>
+TAG.ATTR=<LINK.TAG.ATTR17>
+TAG.MORE1=<LINK.TAG.MORE117>
+TAG.MORE2=<LINK.TAG.MORE217>
+TAG.MOREP=<LINK.TAG.MOREP17>
+TAG.BOTH=<LINK.TAG.BOTH17>
+ELSEIF <ARGS>==18
+TAG.ID=<LINK.TAG.ID18>
+TAG.NAME=<LINK.TAG.NAME18>
+TAG.P=<LINK.TAG.P18>
+TAG.T=<LINK.TAG.T18>
+TAG.BASEID=<LINK.TAG.BASEID18>
+TAG.AMOUNT=<LINK.TAG.AMOUNT18>
+TAG.MOREY=<LINK.TAG.MOREY18>
+TAG.COLOR=<LINK.TAG.COLOR18>
+TAG.TYPE=<LINK.TAG.TYPE18>
+TAG.ATTR=<LINK.TAG.ATTR18>
+TAG.MORE1=<LINK.TAG.MORE118>
+TAG.MORE2=<LINK.TAG.MORE218>
+TAG.MOREP=<LINK.TAG.MOREP18>
+TAG.BOTH=<LINK.TAG.BOTH18>
+ELSEIF <ARGS>==19
+TAG.ID=<LINK.TAG.ID19>
+TAG.NAME=<LINK.TAG.NAME19>
+TAG.P=<LINK.TAG.P19>
+TAG.T=<LINK.TAG.T19>
+TAG.BASEID=<LINK.TAG.BASEID19>
+TAG.AMOUNT=<LINK.TAG.AMOUNT19>
+TAG.MOREY=<LINK.TAG.MOREY19>
+TAG.COLOR=<LINK.TAG.COLOR19>
+TAG.TYPE=<LINK.TAG.TYPE19>
+TAG.ATTR=<LINK.TAG.ATTR19>
+TAG.MORE1=<LINK.TAG.MORE119>
+TAG.MORE2=<LINK.TAG.MORE219>
+TAG.MOREP=<LINK.TAG.MOREP19>
+TAG.BOTH=<LINK.TAG.BOTH19>
+ELSEIF <ARGS>==20
+TAG.ID=<LINK.TAG.ID20>
+TAG.NAME=<LINK.TAG.NAME20>
+TAG.P=<LINK.TAG.P20>
+TAG.T=<LINK.TAG.T20>
+TAG.BASEID=<LINK.TAG.BASEID20>
+TAG.AMOUNT=<LINK.TAG.AMOUNT20>
+TAG.MOREY=<LINK.TAG.MOREY20>
+TAG.COLOR=<LINK.TAG.COLOR20>
+TAG.TYPE=<LINK.TAG.TYPE20>
+TAG.ATTR=<LINK.TAG.ATTR20>
+TAG.MORE1=<LINK.TAG.MORE120>
+TAG.MORE2=<LINK.TAG.MORE220>
+TAG.MOREP=<LINK.TAG.MOREP20>
+TAG.BOTH=<TAG.BOTH20>
+ENDIF
+TAG.TET=<ARGS>
+IF <eval isbit(<TAG.ATTR>,0)>//identified
+TAG.A1PIC1=0d1
+ELSE
+TAG.A1PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,1)>//decay
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,2)>//newbied
+TAG.A2PIC1=0d1
+ELSE
+TAG.A2PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,3)>//allways moveable
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,4)>//never moveable
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,5)>//magic
+TAG.A3PIC1=0d1
+ELSE
+TAG.A3PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,6)>//owned by town
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,7)>//invisible
+TAG.A4PIC1=0d1
+ELSE
+TAG.A4PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,8)>//cursed
+TAG.A5PIC1=0d1
+ELSE
+TAG.A5PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,9)>//damned
+TAG.A6PIC1=0d1
+ELSE
+TAG.A6PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,10)>//blessed
+TAG.A7PIC1=0d1
+ELSE
+TAG.A7PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,11)>//sacred
+TAG.A8PIC1=0d1
+ELSE
+TAG.A8PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,12)>//forsale
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,13)>//stolen
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,14)>//can decay
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,15)>//static
+TAG.A9PIC1=0d1
+ELSE
+TAG.A9PIC1=0d0
+ENDIF
+
+IF ((<TAG.P>==0)||(<TAG.ID>==0))
+TAG.PPIC1=0d1
+TAG.PPIC2=0d1
+TAG.PA=0
+ELSE
+TAG.PPIC1=0d0
+TAG.PPIC2=0d1
+TAG.PA=1
+ENDIF
+
+IF ((<TAG.T>==0)||(<TAG.ID>==0))
+TAG.TPIC1=0d1
+TAG.TPIC2=0d1
+TAG.TA=0
+ELSE
+TAG.TPIC1=0d0
+TAG.TPIC2=0d1
+TAG.TA=1
+ENDIF
+
+IF <TAG.COLOR>==0
+TAG.CPIC1=0d1
+TAG.CPIC2=0d1
+TAG.CA=0
+ELSE
+TAG.CPIC1=0d0
+TAG.CPIC2=0d1
+TAG.CA=1
+ENDIF
+
+IF (<TAG.BOTH>=0)
+TAG.BPIC1=0d1
+TAG.BPIC2=0d1
+TAG.BA=0
+ELSE
+TAG.BPIC1=0d0
+TAG.BPIC2=0d1
+TAG.BA=1
+TAG.PPIC1=0d1
+TAG.PPIC2=0d1
+TAG.PA=0
+TAG.TPIC1=0d1
+TAG.TPIC2=0d1
+TAG.TA=0
+ENDIF
+
+DIALOG d_reward_item_info_player
+RETURN 1
+
+[DIALOG d_reward_item_info_player]
+100, 100
+page 0
+resizepic 0 0 2600 350 370
+
+text 50 20 0 0
+tilepic 20 50 <eval <TAG.ID>>
+text 100 50 0 1
+text 100 70 0 2
+text 240 50 0 3
+text 240 70 0 4
+text 240 90 0 5
+
+text 140 120 0 6
+text 20 130 0 7
+text 20 150 0 8
+text 20 170 0 9
+text 240 150 0 10
+text 240 170 0 11
+text 240 190 0 12
+text 240 210 0 13
+text 240 230 0 14
+text 240 250 0 15
+text 240 270 0 16
+text 240 290 0 17
+text 240 310 0 18
+text 240 330 0 19
+
+button 220 50 <eval <TAG.PPIC1>> <eval <TAG.PPIC2>> <eval <TAG.PA>> 0 1
+button 220 70 <eval <TAG.TPIC1>> <eval <TAG.TPIC2>> <eval <TAG.TA>> 0 2
+button 220 90 <eval <TAG.BPIC1>> <eval <TAG.BPIC2>> <eval <TAG.BA>> 0 3
+
+button 110 170 <eval <TAG.CPIC1>> <eval <TAG.CPIC2>> <eval <TAG.CA>> 0 4
+
+button 220 170 <eval <TAG.A1PIC1>> <eval <TAG.A1PIC1>> 0 0 3
+button 220 190 <eval <TAG.A2PIC1>> <eval <TAG.A2PIC1>> 0 0 3
+button 220 210 <eval <TAG.A3PIC1>> <eval <TAG.A3PIC1>> 0 0 3
+button 220 230 <eval <TAG.A4PIC1>> <eval <TAG.A4PIC1>> 0 0 3
+button 220 250 <eval <TAG.A5PIC1>> <eval <TAG.A5PIC1>> 0 0 3
+button 220 270 <eval <TAG.A6PIC1>> <eval <TAG.A6PIC1>> 0 0 3
+button 220 290 <eval <TAG.A7PIC1>> <eval <TAG.A7PIC1>> 0 0 3
+button 220 310 <eval <TAG.A8PIC1>> <eval <TAG.A8PIC1>> 0 0 3
+button 220 330 <eval <TAG.A9PIC1>> <eval <TAG.A9PIC1>> 0 0 3
+
+[DIALOG d_reward_item_info_player TEXT]
+<TAG.NAME>
+Points:  <eval <TAG.P>>
+Tickets: <eval <TAG.T>>
+Points
+Tickets
+Both
+Item Info
+________________________
+Amount:  <eval <TAG.AMOUNT>>
+See the color
+Attributes
+Identified
+Newbie
+Magic
+Invisible
+Cursed
+Damned
+Blessed
+Sacred
+Static
+
+[DIALOG d_reward_item_info_player BUTTON]
+ON=0
+	IF <TAG.TET><11
+	DIALOG d_reward_sys_player
+	ELSE
+	DIALOG d_reward_sys_player1
+	ENDIF
+ON=1
+IF <SRC.TAG.POINTS><<TAG.P>
+	SRC.SYSMESSAGE You do not have enough points for that item
+ELSE
+	SRC.TAG.POINTS=<eval <SRC.TAG.POINTS>-<TAG.P>>
+	SRC.SYSMESSAGE Thank you come again
+	SRC.NEWITEM=<TAG.BASEID>
+	SRC.ACT.ID=<TAG.ID>
+	SRC.ACT.NAME=<TAG.NAME>
+	SRC.ACT.AMOUNT=<TAG.AMOUNT>
+	SRC.ACT.MOREY=<TAG.MOREY>
+	SRC.ACT.COLOR=<TAG.COLOR>
+	SRC.ACT.TYPE=<TAG.TYPE>
+	SRC.ACT.ATTR=<TAG.ATTR>
+	SRC.ACT.MORE1=<TAG.MORE1>
+	SRC.ACT.MORE2=<TAG.MORE2>
+	SRC.ACT.MOREP=<TAG.MOREP>
+	SRC.ACT.BOUNCE
+ENDIF
+
+ON=2
+IF !<SRC.RESTEST <TAG.T> t_reward_ticket>
+	SRC.SYSMESSAGE You do not have enough tickets for that item
+ELSE
+	SRC.CONSUME <TAG.T> t_reward_ticket
+	SRC.SYSMESSAGE Thank you come again
+	SRC.NEWITEM=<TAG.BASEID>
+	SRC.ACT.ID=<TAG.ID>
+	SRC.ACT.NAME=<TAG.NAME>
+	SRC.ACT.AMOUNT=<TAG.AMOUNT>
+	SRC.ACT.MOREY=<TAG.MOREY>
+	SRC.ACT.COLOR=<TAG.COLOR>
+	SRC.ACT.TYPE=<TAG.TYPE>
+	SRC.ACT.ATTR=<TAG.ATTR>
+	SRC.ACT.MORE1=<TAG.MORE1>
+	SRC.ACT.MORE2=<TAG.MORE2>
+	SRC.ACT.MOREP=<TAG.MOREP>
+	SRC.ACT.BOUNCE
+ENDIF
+
+ON=3
+IF ((!<SRC.RESTEST <TAG.T> i_reward_ticket>)||(<SRC.TAG.POINTS><<TAG.P>))
+	SRC.SYSMESSAGE You do not have enough points or tickets for that item
+ELSE
+	SRC.CONSUME <TAG.T> i_reward_ticket
+	SRC.TAG.POINTS=<eval <SRC.TAG.POINTS>-<TAG.P>>
+	SRC.SYSMESSAGE Thank you come again
+	SRC.NEWITEM=<TAG.BASEID>
+	SRC.ACT.ID=<TAG.ID>
+	SRC.ACT.NAME=<TAG.NAME>
+	SRC.ACT.AMOUNT=<TAG.AMOUNT>
+	SRC.ACT.MOREY=<TAG.MOREY>
+	SRC.ACT.COLOR=<TAG.COLOR>
+	SRC.ACT.TYPE=<TAG.TYPE>
+	SRC.ACT.ATTR=<TAG.ATTR>
+	SRC.ACT.MORE1=<TAG.MORE1>
+	SRC.ACT.MORE2=<TAG.MORE2>
+	SRC.ACT.MOREP=<TAG.MOREP>
+	SRC.ACT.BOUNCE
+ENDIF
+
+ON=4
+SRC.SYSMESSAGE This item will show you the color for 5 seconds.
+SRC.NEWITEM=i_coloring_view
+SRC.ACT.COLOR=<TAG.COLOR>
+SRC.ACT.BOUNCE
+
+[ITEMDEF i_coloring_view]
+ID=01383
+NAME=Color Tile
+TYPE=t_eq_script
+
+ON=@CREATE
+	TIMER=5
+
+ON=@TIMER
+	REMOVE
+	RETURN 1
+
+[FUNCTION showiteminfoe]
+IF <ARGS>==1
+TAG.ID=<TAG.ID1>
+TAG.NAME=<TAG.NAME1>
+TAG.P=<TAG.P1>
+TAG.T=<TAG.T1>
+TAG.BASEID=<TAG.BASEID1>
+TAG.AMOUNT=<TAG.AMOUNT1>
+TAG.MOREY=<TAG.MOREY1>
+TAG.COLOR=<TAG.COLOR1>
+TAG.TYPE=<TAG.TYPE1>
+TAG.ATTR=<TAG.ATTR1>
+TAG.MORE1=<TAG.MORE11>
+TAG.MORE2=<TAG.MORE21>
+TAG.MOREP=<TAG.MOREP1>
+TAG.BOTH=<TAG.BOTH1>
+ELSEIF <ARGS>==2
+TAG.ID=<TAG.ID2>
+TAG.NAME=<TAG.NAME2>
+TAG.P=<TAG.P2>
+TAG.T=<TAG.T2>
+TAG.BASEID=<TAG.BASEID2>
+TAG.AMOUNT=<TAG.AMOUNT2>
+TAG.MOREY=<TAG.MOREY2>
+TAG.COLOR=<TAG.COLOR2>
+TAG.TYPE=<TAG.TYPE2>
+TAG.ATTR=<TAG.ATTR2>
+TAG.MORE1=<TAG.MORE12>
+TAG.MORE2=<TAG.MORE22>
+TAG.MOREP=<TAG.MOREP2>
+TAG.BOTH=<TAG.BOTH2>
+ELSEIF <ARGS>==3
+TAG.ID=<TAG.ID3>
+TAG.NAME=<TAG.NAME3>
+TAG.P=<TAG.P3>
+TAG.T=<TAG.T3>
+TAG.BASEID=<TAG.BASEID3>
+TAG.AMOUNT=<TAG.AMOUNT3>
+TAG.MOREY=<TAG.MOREY3>
+TAG.COLOR=<TAG.COLOR3>
+TAG.TYPE=<TAG.TYPE3>
+TAG.ATTR=<TAG.ATTR3>
+TAG.MORE1=<TAG.MORE13>
+TAG.MORE2=<TAG.MORE23>
+TAG.MOREP=<TAG.MOREP3>
+TAG.BOTH=<TAG.BOTH3>
+ELSEIF <ARGS>==4
+TAG.ID=<TAG.ID4>
+TAG.NAME=<TAG.NAME4>
+TAG.P=<TAG.P4>
+TAG.T=<TAG.T4>
+TAG.BASEID=<TAG.BASEID4>
+TAG.AMOUNT=<TAG.AMOUNT4>
+TAG.MOREY=<TAG.MOREY4>
+TAG.COLOR=<TAG.COLOR4>
+TAG.TYPE=<TAG.TYPE4>
+TAG.ATTR=<TAG.ATTR4>
+TAG.MORE1=<TAG.MORE14>
+TAG.MORE2=<TAG.MORE24>
+TAG.MOREP=<TAG.MOREP4>
+TAG.BOTH=<TAG.BOTH4>
+ELSEIF <ARGS>==5
+TAG.ID=<TAG.ID5>
+TAG.NAME=<TAG.NAME5>
+TAG.P=<TAG.P5>
+TAG.T=<TAG.T5>
+TAG.BASEID=<TAG.BASEID5>
+TAG.AMOUNT=<TAG.AMOUNT5>
+TAG.MOREY=<TAG.MOREY5>
+TAG.COLOR=<TAG.COLOR5>
+TAG.TYPE=<TAG.TYPE5>
+TAG.ATTR=<TAG.ATTR5>
+TAG.MORE1=<TAG.MORE15>
+TAG.MORE2=<TAG.MORE25>
+TAG.MOREP=<TAG.MOREP5>
+TAG.BOTH=<TAG.BOTH5>
+ELSEIF <ARGS>==6
+TAG.ID=<TAG.ID6>
+TAG.NAME=<TAG.NAME6>
+TAG.P=<TAG.P6>
+TAG.T=<TAG.T6>
+TAG.BASEID=<TAG.BASEID6>
+TAG.AMOUNT=<TAG.AMOUNT6>
+TAG.MOREY=<TAG.MOREY6>
+TAG.COLOR=<TAG.COLOR6>
+TAG.TYPE=<TAG.TYPE6>
+TAG.ATTR=<TAG.ATTR6>
+TAG.MORE1=<TAG.MORE16>
+TAG.MORE2=<TAG.MORE26>
+TAG.MOREP=<TAG.MOREP6>
+TAG.BOTH=<TAG.BOTH6>
+ELSEIF <ARGS>==7
+TAG.ID=<TAG.ID7>
+TAG.NAME=<TAG.NAME7>
+TAG.P=<TAG.P7>
+TAG.T=<TAG.T7>
+TAG.BASEID=<TAG.BASEID7>
+TAG.AMOUNT=<TAG.AMOUNT7>
+TAG.MOREY=<TAG.MOREY7>
+TAG.COLOR=<TAG.COLOR7>
+TAG.TYPE=<TAG.TYPE7>
+TAG.ATTR=<TAG.ATTR7>
+TAG.MORE1=<TAG.MORE17>
+TAG.MORE2=<TAG.MORE27>
+TAG.MOREP=<TAG.MOREP7>
+TAG.BOTH=<TAG.BOTH7>
+ELSEIF <ARGS>==8
+TAG.ID=<TAG.ID8>
+TAG.NAME=<TAG.NAME8>
+TAG.P=<TAG.P8>
+TAG.T=<TAG.T8>
+TAG.BASEID=<TAG.BASEID8>
+TAG.AMOUNT=<TAG.AMOUNT8>
+TAG.MOREY=<TAG.MOREY8>
+TAG.COLOR=<TAG.COLOR8>
+TAG.TYPE=<TAG.TYPE8>
+TAG.ATTR=<TAG.ATTR8>
+TAG.MORE1=<TAG.MORE18>
+TAG.MORE2=<TAG.MORE28>
+TAG.MOREP=<TAG.MOREP8>
+TAG.BOTH=<TAG.BOTH8>
+ELSEIF <ARGS>==9
+TAG.ID=<TAG.ID9>
+TAG.NAME=<TAG.NAME9>
+TAG.P=<TAG.P9>
+TAG.T=<TAG.T9>
+TAG.BASEID=<TAG.BASEID9>
+TAG.AMOUNT=<TAG.AMOUNT9>
+TAG.MOREY=<TAG.MOREY9>
+TAG.COLOR=<TAG.COLOR9>
+TAG.TYPE=<TAG.TYPE9>
+TAG.ATTR=<TAG.ATTR9>
+TAG.MORE1=<TAG.MORE19>
+TAG.MORE2=<TAG.MORE29>
+TAG.MOREP=<TAG.MOREP9>
+TAG.BOTH=<TAG.BOTH9>
+ELSEIF <ARGS>==10
+TAG.ID=<TAG.ID10>
+TAG.NAME=<TAG.NAME10>
+TAG.P=<TAG.P10>
+TAG.T=<TAG.T10>
+TAG.BASEID=<TAG.BASEID10>
+TAG.AMOUNT=<TAG.AMOUNT10>
+TAG.MOREY=<TAG.MOREY10>
+TAG.COLOR=<TAG.COLOR10>
+TAG.TYPE=<TAG.TYPE10>
+TAG.ATTR=<TAG.ATTR10>
+TAG.MORE1=<TAG.MORE110>
+TAG.MORE2=<TAG.MORE210>
+TAG.MOREP=<TAG.MOREP10>
+TAG.BOTH=<TAG.BOTH10>
+ELSEIF <ARGS>==11
+TAG.ID=<TAG.ID11>
+TAG.NAME=<TAG.NAME11>
+TAG.P=<TAG.P11>
+TAG.T=<TAG.T11>
+TAG.BASEID=<TAG.BASEID11>
+TAG.AMOUNT=<TAG.AMOUNT11>
+TAG.MOREY=<TAG.MOREY11>
+TAG.COLOR=<TAG.COLOR11>
+TAG.TYPE=<TAG.TYPE11>
+TAG.ATTR=<TAG.ATTR11>
+TAG.MORE1=<TAG.MORE111>
+TAG.MORE2=<TAG.MORE211>
+TAG.MOREP=<TAG.MOREP11>
+TAG.BOTH=<TAG.BOTH11>
+ELSEIF <ARGS>==12
+TAG.ID=<TAG.ID12>
+TAG.NAME=<TAG.NAME12>
+TAG.P=<TAG.P12>
+TAG.T=<TAG.T12>
+TAG.BASEID=<TAG.BASEID12>
+TAG.AMOUNT=<TAG.AMOUNT12>
+TAG.MOREY=<TAG.MOREY12>
+TAG.COLOR=<TAG.COLOR12>
+TAG.TYPE=<TAG.TYPE12>
+TAG.ATTR=<TAG.ATTR12>
+TAG.MORE1=<TAG.MORE112>
+TAG.MORE2=<TAG.MORE212>
+TAG.MOREP=<TAG.MOREP12>
+TAG.BOTH=<TAG.BOTH12>
+ELSEIF <ARGS>==13
+TAG.ID=<TAG.ID13>
+TAG.NAME=<TAG.NAME13>
+TAG.P=<TAG.P13>
+TAG.T=<TAG.T13>
+TAG.BASEID=<TAG.BASEID13>
+TAG.AMOUNT=<TAG.AMOUNT13>
+TAG.MOREY=<TAG.MOREY13>
+TAG.COLOR=<TAG.COLOR13>
+TAG.TYPE=<TAG.TYPE13>
+TAG.ATTR=<TAG.ATTR13>
+TAG.MORE1=<TAG.MORE113>
+TAG.MORE2=<TAG.MORE213>
+TAG.MOREP=<TAG.MOREP13>
+TAG.BOTH=<TAG.BOTH13>
+ELSEIF <ARGS>==14
+TAG.ID=<TAG.ID14>
+TAG.NAME=<TAG.NAME14>
+TAG.P=<TAG.P14>
+TAG.T=<TAG.T14>
+TAG.BASEID=<TAG.BASEID14>
+TAG.AMOUNT=<TAG.AMOUNT14>
+TAG.MOREY=<TAG.MOREY14>
+TAG.COLOR=<TAG.COLOR14>
+TAG.TYPE=<TAG.TYPE14>
+TAG.ATTR=<TAG.ATTR14>
+TAG.MORE1=<TAG.MORE114>
+TAG.MORE2=<TAG.MORE214>
+TAG.MOREP=<TAG.MOREP14>
+TAG.BOTH=<TAG.BOTH14>
+ELSEIF <ARGS>==15
+TAG.ID=<TAG.ID15>
+TAG.NAME=<TAG.NAME15>
+TAG.P=<TAG.P15>
+TAG.T=<TAG.T15>
+TAG.BASEID=<TAG.BASEID15>
+TAG.AMOUNT=<TAG.AMOUNT15>
+TAG.MOREY=<TAG.MOREY15>
+TAG.COLOR=<TAG.COLOR15>
+TAG.TYPE=<TAG.TYPE15>
+TAG.ATTR=<TAG.ATTR15>
+TAG.MORE1=<TAG.MORE115>
+TAG.MORE2=<TAG.MORE215>
+TAG.MOREP=<TAG.MOREP15>
+TAG.BOTH=<TAG.BOTH15>
+ELSEIF <ARGS>==16
+TAG.ID=<TAG.ID16>
+TAG.NAME=<TAG.NAME16>
+TAG.P=<TAG.P16>
+TAG.T=<TAG.T16>
+TAG.BASEID=<TAG.BASEID16>
+TAG.AMOUNT=<TAG.AMOUNT16>
+TAG.MOREY=<TAG.MOREY16>
+TAG.COLOR=<TAG.COLOR16>
+TAG.TYPE=<TAG.TYPE16>
+TAG.ATTR=<TAG.ATTR16>
+TAG.MORE1=<TAG.MORE116>
+TAG.MORE2=<TAG.MORE216>
+TAG.MOREP=<TAG.MOREP16>
+TAG.BOTH=<TAG.BOTH16>
+ELSEIF <ARGS>==17
+TAG.ID=<TAG.ID17>
+TAG.NAME=<TAG.NAME17>
+TAG.P=<TAG.P17>
+TAG.T=<TAG.T17>
+TAG.BASEID=<TAG.BASEID17>
+TAG.AMOUNT=<TAG.AMOUNT17>
+TAG.MOREY=<TAG.MOREY17>
+TAG.COLOR=<TAG.COLOR17>
+TAG.TYPE=<TAG.TYPE17>
+TAG.ATTR=<TAG.ATTR17>
+TAG.MORE1=<TAG.MORE117>
+TAG.MORE2=<TAG.MORE217>
+TAG.MOREP=<TAG.MOREP17>
+TAG.BOTH=<TAG.BOTH17>
+ELSEIF <ARGS>==18
+TAG.ID=<TAG.ID18>
+TAG.NAME=<TAG.NAME18>
+TAG.P=<TAG.P18>
+TAG.T=<TAG.T18>
+TAG.BASEID=<TAG.BASEID18>
+TAG.AMOUNT=<TAG.AMOUNT18>
+TAG.MOREY=<TAG.MOREY18>
+TAG.COLOR=<TAG.COLOR18>
+TAG.TYPE=<TAG.TYPE18>
+TAG.ATTR=<TAG.ATTR18>
+TAG.MORE1=<TAG.MORE118>
+TAG.MORE2=<TAG.MORE218>
+TAG.MOREP=<TAG.MOREP18>
+TAG.BOTH=<TAG.BOTH18>
+ELSEIF <ARGS>==19
+TAG.ID=<TAG.ID19>
+TAG.NAME=<TAG.NAME19>
+TAG.P=<TAG.P19>
+TAG.T=<TAG.T19>
+TAG.BASEID=<TAG.BASEID19>
+TAG.AMOUNT=<TAG.AMOUNT19>
+TAG.MOREY=<TAG.MOREY19>
+TAG.COLOR=<TAG.COLOR19>
+TAG.TYPE=<TAG.TYPE19>
+TAG.ATTR=<TAG.ATTR19>
+TAG.MORE1=<TAG.MORE119>
+TAG.MORE2=<TAG.MORE219>
+TAG.MOREP=<TAG.MOREP19>
+TAG.BOTH=<TAG.BOTH19>
+ELSEIF <ARGS>==20
+TAG.ID=<TAG.ID20>
+TAG.NAME=<TAG.NAME20>
+TAG.P=<TAG.P20>
+TAG.T=<TAG.T20>
+TAG.BASEID=<TAG.BASEID20>
+TAG.AMOUNT=<TAG.AMOUNT20>
+TAG.MOREY=<TAG.MOREY20>
+TAG.COLOR=<TAG.COLOR20>
+TAG.TYPE=<TAG.TYPE20>
+TAG.ATTR=<TAG.ATTR20>
+TAG.MORE1=<TAG.MORE120>
+TAG.MORE2=<TAG.MORE220>
+TAG.MOREP=<TAG.MOREP20>
+TAG.BOTH=<TAG.BOTH20>
+ENDIF
+TAG.TET=<ARGS>
+
+IF <eval isbit(<TAG.ATTR>,0)>//identified
+TAG.A1PIC1=0d1
+ELSE
+TAG.A1PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,1)>//decay
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,2)>//newbied
+TAG.A2PIC1=0d1
+ELSE
+TAG.A2PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,3)>//allways moveable
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,4)>//never moveable
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,5)>//magic
+TAG.A3PIC1=0d1
+ELSE
+TAG.A3PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,6)>//owned by town
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,7)>//invisible
+TAG.A4PIC1=0d1
+ELSE
+TAG.A4PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,8)>//cursed
+TAG.A5PIC1=0d1
+ELSE
+TAG.A5PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,9)>//damned
+TAG.A6PIC1=0d1
+ELSE
+TAG.A6PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,10)>//blessed
+TAG.A7PIC1=0d1
+ELSE
+TAG.A7PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,11)>//sacred
+TAG.A8PIC1=0d1
+ELSE
+TAG.A8PIC1=0d0
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,12)>//forsale
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,13)>//stolen
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,14)>//can decay
+
+ENDIF
+
+IF <eval isbit(<TAG.ATTR>,15)>//static
+TAG.A9PIC1=0d1
+ELSE
+TAG.A9PIC1=0d0
+ENDIF
+
+IF (<TAG.P>==0)
+TAG.PPIC1=0d0
+TAG.PPIC2=0d1
+TAG.PA=1
+ELSE
+TAG.PPIC1=0d0
+TAG.PPIC2=0d1
+TAG.PA=1
+ENDIF
+
+IF (<TAG.T>==0)
+TAG.TPIC1=0d0
+TAG.TPIC2=0d1
+TAG.TA=1
+ELSE
+TAG.TPIC1=0d0
+TAG.TPIC2=0d1
+TAG.TA=1
+ENDIF
+
+IF (<TAG.COLOR>==0)
+TAG.CPIC1=0d1
+TAG.CPIC2=0d1
+TAG.CA=0
+ELSE
+TAG.CPIC1=0d0
+TAG.CPIC2=0d1
+TAG.CA=1
+ENDIF
+
+IF (<TAG.BOTH>==1)
+TAG.BPIC1=0d1
+TAG.BPIC2=0d0
+ELSE
+TAG.BPIC1=0d0
+TAG.BPIC2=0d1
+ENDIF
+
+DIALOG d_reward_item_info_gm
+RETURN 1
+
+[DIALOG d_reward_item_info_gm]
+100, 100
+page 0
+resizepic 0 0 2600 350 370
+
+text 50 20 0 0
+tilepic 20 50 <eval <TAG.ID>>
+text 100 50 0 1
+text 100 70 0 2
+text 240 50 0 3
+text 240 70 0 4
+text 240 90 0 5
+
+text 140 120 0 6
+text 20 130 0 7
+text 20 150 0 8
+text 20 170 0 9
+text 240 150 0 10
+text 240 170 0 11
+text 240 190 0 12
+text 240 210 0 13
+text 240 230 0 14
+text 240 250 0 15
+text 240 270 0 16
+text 240 290 0 17
+text 240 310 0 18
+text 240 330 0 19
+
+text 240 110 0 20
+
+button 220 110 <eval 0d0> <eval 0d1> 1 0 5
+button 220 50 <eval <TAG.PPIC1>> <eval <TAG.PPIC2>> 1 0 1
+button 220 70 <eval <TAG.TPIC1>> <eval <TAG.TPIC2>> 1 0 2
+button 220 90 <eval <TAG.BPIC1>> <eval <TAG.BPIC2>> 1 0 3
+
+button 110 170 <eval <TAG.CPIC1>> <eval <TAG.CPIC2>> <eval <TAG.CA>> 0 4
+
+button 220 170 <eval <TAG.A1PIC1>> <eval <TAG.A1PIC1>> 0 0 3
+button 220 190 <eval <TAG.A2PIC1>> <eval <TAG.A2PIC1>> 0 0 3
+button 220 210 <eval <TAG.A3PIC1>> <eval <TAG.A3PIC1>> 0 0 3
+button 220 230 <eval <TAG.A4PIC1>> <eval <TAG.A4PIC1>> 0 0 3
+button 220 250 <eval <TAG.A5PIC1>> <eval <TAG.A5PIC1>> 0 0 3
+button 220 270 <eval <TAG.A6PIC1>> <eval <TAG.A6PIC1>> 0 0 3
+button 220 290 <eval <TAG.A7PIC1>> <eval <TAG.A7PIC1>> 0 0 3
+button 220 310 <eval <TAG.A8PIC1>> <eval <TAG.A8PIC1>> 0 0 3
+button 220 330 <eval <TAG.A9PIC1>> <eval <TAG.A9PIC1>> 0 0 3
+
+[DIALOG d_reward_item_info_gm TEXT]
+<TAG.NAME>
+Points:  <eval <TAG.P>>
+Tickets: <eval <TAG.T>>
+Points
+Tickets
+Both
+Item Info
+________________________
+Amount:  <eval <TAG.AMOUNT>>
+See the color
+Attributes
+Identified
+Newbie
+Magic
+Invisible
+Cursed
+Damned
+Blessed
+Sacred
+Static
+Set the item
+
+[DIALOG d_reward_item_info_gm BUTTON]
+ON=0
+	IF <TAG.TET><11
+	DIALOG d_reward_sys_itemset
+	ELSE
+	DIALOG d_reward_sys_itemset1
+	ENDIF
+
+ON=1
+	DIALOG d_setp
+
+ON=2
+	DIALOG d_sett
+
+ON=3
+	IF <TAG.TET>==1
+		IF <TAG.BOTH>==1
+			TAG.BOTH1=0
+		ELSE
+			TAG.BOTH1=1
+		ENDIF
+	ELSEIF <TAG.TET>==2
+		IF <TAG.BOTH>==1
+			TAG.BOTH2=0
+		ELSE
+			TAG.BOTH2=1
+		ENDIF
+	ELSEIF <TAG.TET>==3
+		IF <TAG.BOTH>==1
+			TAG.BOTH3=0
+		ELSE
+			TAG.BOTH3=1
+		ENDIF
+	ELSEIF <TAG.TET>==4
+		IF <TAG.BOTH>==1
+			TAG.BOTH4=0
+		ELSE
+			TAG.BOTH4=1
+		ENDIF
+	ELSEIF <TAG.TET>==5
+		IF <TAG.BOTH>==1
+			TAG.BOTH5=0
+		ELSE
+			TAG.BOTH5=1
+		ENDIF
+	ELSEIF <TAG.TET>==6
+		IF <TAG.BOTH>==1
+			TAG.BOTH6=0
+		ELSE
+			TAG.BOTH6=1
+		ENDIF
+	ELSEIF <TAG.TET>==7
+		IF <TAG.BOTH>==1
+			TAG.BOTH7=0
+		ELSE
+			TAG.BOTH7=1
+		ENDIF
+	ELSEIF <TAG.TET>==8
+		IF <TAG.BOTH>==1
+			TAG.BOTH8=0
+		ELSE
+			TAG.BOTH8=1
+		ENDIF
+	ELSEIF <TAG.TET>==9
+		IF <TAG.BOTH>==1
+			TAG.BOTH9=0
+		ELSE
+			TAG.BOTH9=1
+		ENDIF
+	ELSEIF <TAG.TET>==10
+		IF <TAG.BOTH>==1
+			TAG.BOTH10=0
+		ELSE
+			TAG.BOTH10=1
+		ENDIF
+	ELSEIF <TAG.TET>==11
+		IF <TAG.BOTH>==1
+			TAG.BOTH11=0
+		ELSE
+			TAG.BOTH11=1
+		ENDIF
+	ELSEIF <TAG.TET>==12
+		IF <TAG.BOTH>==1
+			TAG.BOTH12=0
+		ELSE
+			TAG.BOTH12=1
+		ENDIF
+	ELSEIF <TAG.TET>==13
+		IF <TAG.BOTH>==1
+			TAG.BOTH13=0
+		ELSE
+			TAG.BOTH13=1
+		ENDIF
+	ELSEIF <TAG.TET>==14
+		IF <TAG.BOTH>==1
+			TAG.BOTH14=0
+		ELSE
+			TAG.BOTH14=1
+		ENDIF
+	ELSEIF <TAG.TET>==15
+		IF <TAG.BOTH>==1
+			TAG.BOTH15=0
+		ELSE
+			TAG.BOTH15=1
+		ENDIF
+	ELSEIF <TAG.TET>==16
+		IF <TAG.BOTH>==1
+			TAG.BOTH16=0
+		ELSE
+			TAG.BOTH16=1
+		ENDIF
+	ELSEIF <TAG.TET>==17
+		IF <TAG.BOTH>==1
+			TAG.BOTH17=0
+		ELSE
+			TAG.BOTH17=1
+		ENDIF
+	ELSEIF <TAG.TET>==18
+		IF <TAG.BOTH>==1
+			TAG.BOTH18=0
+		ELSE
+			TAG.BOTH18=1
+		ENDIF
+	ELSEIF <TAG.TET>==19
+		IF <TAG.BOTH>==1
+			TAG.BOTH19=0
+		ELSE
+			TAG.BOTH19=1
+		ENDIF
+	ELSEIF <TAG.TET>==20
+		IF <TAG.BOTH>==1
+			TAG.BOTH20=0
+		ELSE
+			TAG.BOTH20=1
+		ENDIF
+	ENDIF
+
+	SHOWITEMINFOE <TAG.TET>
+ON=4
+SRC.SYSMESSAGE This item will show you the color for 5 seconds.
+SRC.NEWITEM=i_coloring_view
+SRC.ACT.COLOR=<TAG.COLOR>
+SRC.ACT.BOUNCE
+
+ON=5
+	TARGET What item do you wish to place in slot <TAG.TET>?
+	MORE=<TAG.TET>
+[DIALOG d_sett]
+100,100
+page 0
+resizepic 0 0 2600 200 100
+button 40 20 <eval 0fa5> <eval 0fa6> 1 0 1
+button 40 50 <eval 0fa5> <eval 0fa6> 1 0 0
+text 70 20 0 0
+text 70 50 0 1
+
+[DIALOG d_sett TEXT]
+Set Ticket
+Leave
+
+[DIALOG d_sett BUTTON]
+ON=0
+	SHOWITEMINFOE <TAG.TET>
+ON=1
+	IF <TAG.TET>==1
+	TRYP 4 INPDLG=TAG.T1 9
+	ELSEIF <TAG.TET>==2
+	TRYP 4 INPDLG=TAG.T2 9
+	ELSEIF <TAG.TET>==3
+	TRYP 4 INPDLG=TAG.T3 9
+	ELSEIF <TAG.TET>==4
+	TRYP 4 INPDLG=TAG.T4 9
+	ELSEIF <TAG.TET>==5
+	TRYP 4 INPDLG=TAG.T5 9
+	ELSEIF <TAG.TET>==6
+	TRYP 4 INPDLG=TAG.T6 9
+	ELSEIF <TAG.TET>==7
+	TRYP 4 INPDLG=TAG.T7 9
+	ELSEIF <TAG.TET>==8
+	TRYP 4 INPDLG=TAG.T8 9
+	ELSEIF <TAG.TET>==9
+	TRYP 4 INPDLG=TAG.T9 9
+	ELSEIF <TAG.TET>==10
+	TRYP 4 INPDLG=TAG.T10 9
+	ELSEIF <TAG.TET>==11
+	TRYP 4 INPDLG=TAG.T11 9
+	ELSEIF <TAG.TET>==12
+	TRYP 4 INPDLG=TAG.T12 9
+	ELSEIF <TAG.TET>==13
+	TRYP 4 INPDLG=TAG.T13 9
+	ELSEIF <TAG.TET>==14
+	TRYP 4 INPDLG=TAG.T14 9
+	ELSEIF <TAG.TET>==15
+	TRYP 4 INPDLG=TAG.T15 9
+	ELSEIF <TAG.TET>==16
+	TRYP 4 INPDLG=TAG.T16 9
+	ELSEIF <TAG.TET>==17
+	TRYP 4 INPDLG=TAG.T17 9
+	ELSEIF <TAG.TET>==18
+	TRYP 4 INPDLG=TAG.T18 9
+	ELSEIF <TAG.TET>==19
+	TRYP 4 INPDLG=TAG.T19 9
+	ELSEIF <TAG.TET>==20
+	TRYP 4 INPDLG=TAG.T20 9
+	ENDIF
+
+[DIALOG d_setp]
+100,100
+page 0
+resizepic 0 0 2600 200 100
+button 40 20 <eval 0fa5> <eval 0fa6> 1 0 1
+button 40 50 <eval 0fa5> <eval 0fa6> 1 0 0
+text 70 20 0 0
+text 70 50 0 1
+
+[DIALOG d_setp TEXT]
+Set Point
+Leave
+
+[DIALOG d_setp BUTTON]
+ON=0
+	SHOWITEMINFOE <TAG.TET>
+ON=1
+	IF <TAG.TET>==1
+	TRYP 4 INPDLG=TAG.P1 9
+	ELSEIF <TAG.TET>==2
+	TRYP 4 INPDLG=TAG.P2 9
+	ELSEIF <TAG.TET>==3
+	TRYP 4 INPDLG=TAG.P3 9
+	ELSEIF <TAG.TET>==4
+	TRYP 4 INPDLG=TAG.P4 9
+	ELSEIF <TAG.TET>==5
+	TRYP 4 INPDLG=TAG.P5 9
+	ELSEIF <TAG.TET>==6
+	TRYP 4 INPDLG=TAG.P6 9
+	ELSEIF <TAG.TET>==7
+	TRYP 4 INPDLG=TAG.P7 9
+	ELSEIF <TAG.TET>==8
+	TRYP 4 INPDLG=TAG.P8 9
+	ELSEIF <TAG.TET>==9
+	TRYP 4 INPDLG=TAG.P9 9
+	ELSEIF <TAG.TET>==10
+	TRYP 4 INPDLG=TAG.P10 9
+	ELSEIF <TAG.TET>==11
+	TRYP 4 INPDLG=TAG.P11 9
+	ELSEIF <TAG.TET>==12
+	TRYP 4 INPDLG=TAG.P12 9
+	ELSEIF <TAG.TET>==13
+	TRYP 4 INPDLG=TAG.P13 9
+	ELSEIF <TAG.TET>==14
+	TRYP 4 INPDLG=TAG.P14 9
+	ELSEIF <TAG.TET>==15
+	TRYP 4 INPDLG=TAG.P15 9
+	ELSEIF <TAG.TET>==16
+	TRYP 4 INPDLG=TAG.P16 9
+	ELSEIF <TAG.TET>==17
+	TRYP 4 INPDLG=TAG.P17 9
+	ELSEIF <TAG.TET>==18
+	TRYP 4 INPDLG=TAG.P18 9
+	ELSEIF <TAG.TET>==19
+	TRYP 4 INPDLG=TAG.P19 9
+	ELSEIF <TAG.TET>==20
+	TRYP 4 INPDLG=TAG.P20 9
+	ENDIF
+
+[DIALOG d_gm_or_player]
+80,100
+page 0
+resizepic 0 0 2600 220 100
+button 50 20 <eval 0fa5> <eval 0fa6> 1 0 1
+button 50 50 <eval 0fa5> <eval 0fa6> 1 0 2
+text 80 20 0 0
+text 80 50 0 1
+
+[DIALOG d_gm_or_player TEXT]
+Gm Menu
+Player Menu
+
+[DIALOG d_gm_or_player BUTTON]
+ON=0
+ON=1
+LINK.DCLICK
+ON=2
+DIALOG d_reward_sys_player

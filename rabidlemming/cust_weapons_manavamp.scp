@@ -1,0 +1,915 @@
+[FUNCTION f_mana_vamp_hit]
+IF (<MORE2> > 0) && (<SRC.MANA> > 5)
+  VAR.ManaDrained={30 40}
+  IF (<SRC.MANA> > <VAR.ManaDrained>)
+    SRC.MANA=(<SRC.MANA>+-<VAR.ManaDrained>)
+  ELSE
+    SRC.MANA=0
+  ENDIF
+  LINK.MANA=<LINK.MANA>+<VAR.ManaDrained>
+  IF (<LINK.MANA> > <LINK.INT>)
+    LINK.MANA=<LINK.INT>
+  ENDIF
+  MORE2=<MORE2>+-1
+ENDIF
+RETURN=0
+
+[ITEMDEF i_manavamp_scimitar]
+ID=i_scimitar
+NAME=scimitar
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Scimitar
+DUPELIST=013b6
+
+[ITEMDEF i_manavamp_sword_long_b]
+ID=i_sword_long_b
+NAME=long sword
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Long Sword
+DUPELIST=013b8
+
+[ITEMDEF i_manavamp_sword_viking]
+ID=i_sword_viking
+NAME=viking sword
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 100}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Viking Sword
+DUPELIST=013ba
+
+[ITEMDEF i_manavamp_katana]
+ID=i_katana
+NAME=katana
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Katana
+DUPELIST=013ff
+
+[ITEMDEF i_manavamp_cutlass]
+ID=i_cutlass
+NAME=cutlass
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Cutlass
+DUPELIST=01441
+
+[ITEMDEF i_manavamp_axe_exec]
+ID=i_axe_exec
+NAME=executioner's axe
+TYPE=t_weapon_axe
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Executioner's Axe
+DUPELIST=0f46
+
+[ITEMDEF i_manavamp_axe_battle]
+ID=i_axe_battle
+NAME=battle axe
+TYPE=t_weapon_axe
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=45
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Battle Axe
+DUPELIST=0f48
+
+[ITEMDEF i_manavamp_axe]
+ID=i_axe
+NAME=axe
+TYPE=t_weapon_axe
+VALUE=42
+SKILL=Swordsmanship
+REQSTR=25
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Axe
+DUPELIST=0f4a
+
+[ITEMDEF i_manavamp_axe_double]
+ID=i_axe_double
+NAME=double axe
+TYPE=t_weapon_axe
+VALUE=25
+SKILL=Swordsmanship
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Double Axe
+DUPELIST=0f4c
+
+[ITEMDEF i_manavamp_axe_war]
+ID=i_axe_war
+NAME=war axe
+TYPE=t_weapon_mace_sharp
+VALUE=32
+SKILL=Macefighting
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire War Axe
+DUPELIST=013b0
+
+[ITEMDEF i_manavamp_axe_two_hand]
+ID=i_axe_two_hand
+NAME=two handed axe
+TYPE=t_weapon_axe
+VALUE=36
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Two Handed Axe
+DUPELIST=01443
+
+[ITEMDEF i_manavamp_dagger]
+ID=i_dagger
+NAME=dagger
+TYPE=t_weapon_fence
+VALUE=18
+SKILL=Fencing
+REQSTR=1
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 40}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Dagger
+DUPELIST=0f52
+
+[ITEMDEF i_manavamp_kryss]
+ID=i_kryss
+NAME=kryss
+TYPE=t_weapon_fence
+VALUE=36
+SKILL=Fencing
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Kryss
+DUPELIST=01401
+
+[ITEMDEF i_manavamp_mace]
+ID=i_mace
+NAME=mace
+TYPE=t_weapon_mace_smith
+VALUE=32
+SKILL=Macefighting
+REQSTR=20
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Mace
+DUPELIST=0f5d
+
+[ITEMDEF i_manavamp_club]
+ID=i_club
+NAME=club
+TYPE=t_weapon_mace_sharp
+VALUE=22
+SKILL=Macefighting
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 40}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Club
+DUPELIST=013b4
+
+[ITEMDEF i_manavamp_mace_war]
+ID=i_mace_war
+NAME=war mace
+TYPE=t_weapon_mace_smith
+VALUE=32
+SKILL=Macefighting
+REQSTR=30
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire War Mace
+DUPELIST=01407
+
+[ITEMDEF i_manavamp_hammer_war]
+ID=i_hammer_war
+NAME=war hammer
+TYPE=t_weapon_mace_smith
+VALUE=24
+SKILL=Macefighting
+REQSTR=40
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire War Hammer
+DUPELIST=01439
+
+[ITEMDEF i_manavamp_maul]
+ID=i_maul
+NAME=maul
+TYPE=t_weapon_mace_smith
+VALUE=24
+SKILL=Macefighting
+REQSTR=20
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Maul
+DUPELIST=0143b
+
+[ITEMDEF i_manavamp_hammer_pick]
+ID=i_hammer_pick
+NAME=hammer pick
+TYPE=t_weapon_mace_smith
+VALUE=24
+SKILL=Macefighting
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Hammer Pick
+DUPELIST=0143d
+
+[ITEMDEF i_manavamp_crossbow]
+ID=i_crossbow
+NAME=crossbow
+TYPE=t_weapon_bow
+VALUE=46
+SKILL=Archery
+REQSTR=30
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Crossbow
+DUPELIST=0f50
+
+[ITEMDEF i_manavamp_bow]
+ID=i_bow
+NAME=bow
+TYPE=t_weapon_bow
+VALUE=46
+SKILL=Archery
+REQSTR=20
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 60}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Bow
+DUPELIST=013b2
+
+[ITEMDEF i_manavamp_crossbow_heavy]
+ID=i_crossbow_heavy
+NAME=heavy crossbow
+TYPE=t_weapon_bow
+VALUE=85
+SKILL=Archery
+REQSTR=40
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 100}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Heavy Crossbow
+DUPELIST=013fd
+
+[ITEMDEF i_manavamp_pitchfork]
+ID=i_pitchfork
+NAME=pitchfork
+TYPE=t_weapon_fence
+VALUE=20
+SKILL=Fencing
+REQSTR=15
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 60}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Pitchfork
+DUPELIST=0e88
+
+[ITEMDEF i_manavamp_bardiche]
+ID=i_bardiche
+NAME=bardiche
+TYPE=t_weapon_sword
+VALUE=58
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 100}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Bardiche
+DUPELIST=0f4e
+
+[ITEMDEF i_manavamp_spear]
+ID=i_spear
+NAME=spear
+TYPE=t_weapon_fence
+VALUE=32
+SKILL=Fencing
+REQSTR=30
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Spear
+DUPELIST=0f63
+
+[ITEMDEF i_manavamp_halberd]
+ID=i_halberd
+NAME=halberd
+TYPE=t_weapon_sword
+VALUE=64
+SKILL=Swordsmanship
+REQSTR=45
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Halberd
+DUPELIST=0143f
+
+[ITEMDEF i_manavamp_spear_short]
+ID=i_spear_short
+NAME=short spear
+TYPE=t_weapon_fence
+VALUE=24
+SKILL=Fencing
+REQSTR=15
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Short Spear
+DUPELIST=01403
+
+[ITEMDEF i_manavamp_war_fork]
+ID=i_war_fork
+NAME=war fork
+TYPE=t_weapon_fence
+VALUE=28
+SKILL=Fencing
+REQSTR=35
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire War Fork
+DUPELIST=01405
+
+[ITEMDEF i_manavamp_black_staff]
+ID=i_staff_black
+NAME=black staff
+TYPE=t_weapon_mace_staff
+VALUE=32
+SKILL=Macefighting
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Black Staff
+DUPELIST=0df1
+
+[ITEMDEF i_manavamp_staff_quarter]
+ID=i_staff_quarter
+NAME=quarter staff
+TYPE=t_weapon_mace_staff
+VALUE=28
+SKILL=Macefighting
+REQSTR=30
+TWOHANDS=N
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  LINK=0
+
+ON=@DAMAGE
+  f_mana_vamp_hit
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 60}
+  ATTR=attr_magic
+  MOREX=s_mana_vampire
+  MORE2={5 25}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Mana Vampire
+DESCRIPTION=Mana Vampire Quarter Staff
+DUPELIST=0e8a

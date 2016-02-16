@@ -1,0 +1,557 @@
+// These bottom 2 are the npcs, i set them up already to use the selling
+// template in this file, you just have to put the names of the clothing in.
+// You can still dress up your npcs like you did the vampire npcs. I called
+// them dyemasters, but you can probably think of a better name or something
+// for their title/profession. As for the tspeach and tevens, leave those.
+
+[CHARDEF C_H_DYEMASTER]
+NAME=#NAMES_HUMANMALE the Dyemaster
+ID=C_MAN
+DESIRES=i_gold,e_notoriety,i_cloth
+
+TSPEECH=spk_human_prime
+TSPEECH=jobTailor
+TSPEECH=spk_shopkeep
+TSPEECH=spk_rehello
+TSPEECH=spk_needs
+TSPEECH=spk_human_default
+
+TEVENTS=e_Human_HearUnk
+TEVENTS=e_Human_ConvInit
+TEVENTS=e_Human_Greet
+TEVENTS=e_Human_Space
+TEVENTS=e_Human_Refuse
+TEVENTS=e_Human_Needs
+TEVENTS=e_Human_Environ
+
+ON=@Create
+NPC=brain_vendor
+COLOR=colors_skin
+STR={36 50}
+DEX={46 60}
+INT={41 55}
+
+TAILORING={50.0 70.0}
+WRESTLING={15.0 35.0}
+TACTICS={15.0 35.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=RANDOM_LIGHT
+ITEM=i_tub_dye
+COLOR=colors_all
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=random_pants
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_coin_purse
+
+SELL=VENDOR_S_DYED_CLOTHING
+BUY=VENDOR_B_TAILOR
+
+CATEGORY=Civilized
+SUBSECTION=Tradesmen
+DESCRIPTION=Dyemaster (male)
+
+[CHARDEF C_H_DYEMASTER_F]
+NAME=#NAMES_HUMANFEMALE the Dyemaster
+ID=C_WOMAN
+DESIRES=i_gold,e_notoriety,i_cloth
+
+TSPEECH=spk_human_prime
+TSPEECH=jobTailor
+TSPEECH=spk_shopkeep
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+TEVENTS=e_Human_HearUnk
+TEVENTS=e_Human_Needs
+TEVENTS=e_Human_ConvInit
+TEVENTS=e_Human_Greet
+TEVENTS=e_Human_Space
+TEVENTS=e_Human_Refuse
+TEVENTS=e_Human_Environ
+
+ON=@Create
+NPC=brain_vendor
+COLOR=colors_skin
+STR={36 50}
+DEX={46 60}
+INT={41 55}
+
+TAILORING={50.0 70.0}
+WRESTLING={15.0 35.0}
+TACTICS={15.0 35.0}
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=RANDOM_LIGHT
+ITEM=i_tub_dye
+COLOR=colors_all
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=random_skirt
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_coin_purse
+
+SELL=VENDOR_S_DYED_CLOTHING
+BUY=VENDOR_B_TAILOR
+
+CATEGORY=Civilized
+SUBSECTION=Tradesmen
+DESCRIPTION=Dyemaster (female)
+
+[TEMPLATE VENDOR_S_DYED_CLOTHING]
+CATEGORY=Vendor Templates
+SUBSECTION=Sell Templates
+DESCRIPTION=Dyed Clothing
+
+// Below are 4 examples of items in the list of the 2 above npcs to sell.
+// After the sell= is the item ID, then a random amount of them to be sold
+// from this vendor. {2 24} means random number from 2 to 24. You might want
+// to make yours {0 1} so that they randomly carry 1 or none at all, more rare.
+
+SELL=i_shirt_plain,{2 24}
+SELL=i_shirt_fancy,{2 24}
+SELL=i_pants_short,{2 24}
+SELL=i_pants_long,{2 24}
+
+// Below are all of the items you will script in, you dont have to use each
+// and every clothing, but they are all there so that you can find everything
+// you might want to use. First off, you replace some stuff like you did with
+// the Barbarian Weapons. You change DEFNAME=whatever into ID=whatever first.
+// You also need to replace the number in itemdef with a name such as 
+// [ITEMDEF i_cape_hellfire], first part i_cape comes from what used to be the
+// defname, but you changed them to id aready. Second part of the name should
+// probably be the color they are, since you may have more than 1 type of cape
+// added in, for different colors. Although there is a way to do it so the
+// color on each item is random, so that you dont have to copy and paste the
+// same item a couple times to get it in all the colors you want. If you want
+// a random color, just put in a COLOR= under the ON=@Create event, but instead
+// of just putting a color, this time put a list of colors like this: 
+// COLOR={0001 0020 003e}. This will randomly make it red, blue or green. If
+// You use the random color, also change the itemdef to something like
+// i_cape_hecateware since you dont need to list all the colors after. If
+// you want each of these to have a special name such as "hecateware cape" then
+// you will need to add in a NAME=hecateweare cape near the top of each item.
+// Otherwise, its fine to just leave it without a NAME= line, it will grab the
+// name from the original item in the ID= line. Dont worry about the skillmake
+// and resources, they cant be created unless they are put in the skill menus.
+// You may want to add more durability to these items since they are rare,
+// Just change the number in HITPOINTS={11 40} to something like {40 80}
+// One last thing you have to add is the price, use VALUE=(whatever gold)
+// to put a price on it. Last thing is the axis category, change to something
+// like this: CATEGORY=Provisions - Clothes
+// SUBSECTION=Hecateware
+// DESCRIPTION=Cloak, Cape (hellfire)
+// Or if you use just a random color list dont bother putting the color after
+// in the description.
+
+[ITEMDEF 01515]
+DEFNAME=i_cape
+RESOURCES=14 i_cloth
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Cloak, Cape
+DUPELIST=01530
+SKILLMAKE=TAILORING 45.4, t_sewing_kit
+RESOURCES2=14 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01516]
+DEFNAME=i_skirt_long
+RESOURCES=10 i_cloth
+WEIGHT=4
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=4
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Long Skirt
+SKILLMAKE=TAILORING 31.8, t_sewing_kit
+RESOURCES2=10 i_cloth,1 i_thread
+
+[ITEMDEF 01517]
+DEFNAME=i_shirt_plain
+RESOURCES=8 i_cloth
+SKILLMAKE=TAILORING 22.7, t_sewing_kit
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Plain Shirt
+DUPELIST=01518
+RESOURCES2=8 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 0152e]
+DEFNAME=i_pants_short
+RESOURCES=6 i_cloth
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Short Pants
+DUPELIST=0152f
+SKILLMAKE=TAILORING 6.8, t_sewing_kit
+RESOURCES2=6 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01531]
+DEFNAME=i_skirt_short
+RESOURCES=10 i_CLOTH, 1 i_THREAD
+WEIGHT=4
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=4
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Skirt (Tea Length)
+
+ON=@Create
+HITPOINTS={21 24}
+
+[ITEMDEF 01537]
+DEFNAME=i_kilt
+RESOURCES=8 i_cloth
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Kilt
+DUPELIST=01538
+SKILLMAKE=TAILORING 22.7, t_sewing_kit
+RESOURCES2=8 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 24}
+
+[ITEMDEF 01539]
+DEFNAME=i_pants_long
+RESOURCES=8 i_cloth
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Long Pants
+DUPELIST=0153a
+SKILLMAKE=TAILORING 27.2, t_sewing_kit
+RESOURCES2=8 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 24}
+
+[ITEMDEF 0153b]
+DEFNAME=i_apron_half
+RESOURCES=6 i_cloth
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=2
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Half Apron
+DUPELIST=0153c
+SKILLMAKE=TAILORING 22.7, t_sewing_kit
+RESOURCES2=6 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 25}
+
+[ITEMDEF 0153d]
+DEFNAME=i_apron_full
+RESOURCES=10 i_cloth
+WEIGHT=4
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=4
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Full Apron
+DUPELIST=0153e
+SKILLMAKE=TAILORING 31.8, t_sewing_kit
+RESOURCES2=10 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 30}
+
+[ITEMDEF 0153f]
+DEFNAME=i_bandana
+RESOURCES=2 i_cloth
+WEIGHT=1
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Bandana
+DUPELIST=01540
+SKILLMAKE=TAILORING 0.1, t_sewing_kit
+RESOURCES2=2 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01541]
+DEFNAME=i_sash
+RESOURCES=4 i_cloth
+WEIGHT=1
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Body Sash
+DUPELIST=01542
+SKILLMAKE=TAILORING 4.5, t_sewing_kit
+RESOURCES2=4 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01543]
+DEFNAME=i_skull_cap
+RESOURCES=2 i_cloth
+WEIGHT=1
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=SkullCap
+DUPELIST=01544
+SKILLMAKE=TAILORING 0.1, t_sewing_kit
+RESOURCES2=2 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={10 14}
+
+[ITEMDEF 01545]
+DEFNAME=i_mask_bear
+RESOURCES3=1 i_BEAR_SKULL
+SKILLMAKE=TAILORING 16.1, t_sewing_kit
+WEIGHT=6
+TYPE=T_CLOTHING
+ARMOR=6
+CATEGORY=Provisions - Clothes
+SUBSECTION=Masks
+DESCRIPTION=Bear Mask
+DUPELIST=01546
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01547]
+DEFNAME=i_mask_deer
+RESOURCES3=1 i_DEER_SKULL
+SKILLMAKE=TAILORING 16.1, t_sewing_kit
+WEIGHT=6
+TYPE=T_CLOTHING
+ARMOR=6
+CATEGORY=Provisions - Clothes
+SUBSECTION=Masks
+DESCRIPTION=Deer Mask
+DUPELIST=01548
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01549]
+// WHITE_MASK
+DEFNAME=i_mask_blue
+RESOURCES=1 i_STRAW, 1 i_CANVAS, 1 i_FEATHER, 1 i_bone
+SKILLMAKE=TAILORING 16.1, t_sewing_kit
+WEIGHT=4
+TYPE=T_CLOTHING
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Masks
+DESCRIPTION=Tribal Mask
+DUPELIST=0154a
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 0154b]
+// RED_MASK
+DEFNAME=i_mask_tribal_red
+RESOURCES=1 i_STRAW, 1 i_CANVAS, 1 i_FEATHER, 1 I_BONE
+SKILLMAKE=TAILORING 16.1, t_sewing_kit
+WEIGHT=4
+TYPE=T_CLOTHING
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Masks
+DESCRIPTION=Tribal Mask 2
+DUPELIST=0154c
+//tribal mask
+
+[ITEMDEF 01efd]
+//Fancy Shirt
+DEFNAME=i_shirt_fancy
+RESOURCES=8 i_cloth
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=4
+DUPELIST=01efe
+DESCRIPTION=Fancy Shirt
+SUBSECTION=Shirts & Robes
+CATEGORY=Provisions - Clothes
+SKILLMAKE=TAILORING 27.2, t_sewing_kit
+RESOURCES2=8 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01eff]
+//Fancy Dress
+DEFNAME=i_dress_full
+RESOURCES=12 i_cloth
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Fancy Dress
+DUPELIST=01f00
+SKILLMAKE=TAILORING 13.6, t_sewing_kit
+RESOURCES2=12 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 30}
+
+[ITEMDEF 01f01]
+// DEFNAME2=PLAIN_DRESS
+DEFNAME=i_dress_plain
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+RESOURCES=10 i_cloth
+SKILLMAKE=TAILORING 36.3, t_sewing_kit
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Plain Dress
+DUPELIST=01f02
+RESOURCES2=10 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 30}
+
+[ITEMDEF 01f03]
+DEFNAME=i_robe
+RESOURCES=16 i_cloth
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=7
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Robe
+DUPELIST=01f04
+SKILLMAKE=TAILORING 59.0, t_sewing_kit
+RESOURCES2=16 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01f7b]
+DEFNAME=i_doublet
+RESOURCES=8 I_CLOTH, I_THREAD
+SKILLMAKE=TAILORING 22.7, t_sewing_kit
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Doublet
+DUPELIST=01f7c
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01f9f]
+//Jester's Suit
+DEFNAME=i_jester_suit
+RESOURCES=24 i_cloth
+WEIGHT=5
+TYPE=T_CLOTHING
+ARMOR=7
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Jester's Suit
+DUPELIST=01fa0
+SKILLMAKE=TAILORING 9.0, t_sewing_kit
+RESOURCES2=24 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01fa1]
+//Tunic
+DEFNAME=i_tunic
+RESOURCES=12 i_cloth
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Tunic
+DUPELIST=01fa2
+SKILLMAKE=TAILORING 0.1, t_sewing_kit
+RESOURCES2=12 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01ffd]
+DEFNAME=i_surcoat
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Surcoat
+DUPELIST=01ffe
+
+SKILLMAKE=TAILORING 25.0, t_sewing_kit
+RESOURCES=14 i_cloth
+RESOURCES2=14 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+

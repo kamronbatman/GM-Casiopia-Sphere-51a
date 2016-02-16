@@ -1,0 +1,289 @@
+[TYPEDEF t_weapon_throwing]
+ON=@DCLICK
+  IF <SRC.FINDLAYER(layer_special).ID=i_eq_memory_tired_arms>
+    SRC.SYSMESSAGE Your arm is still tired from the last throw.
+    RETURN 1
+  ELSE
+    TARGET You aim your raise your arm to throw a <NAME>.
+    RETURN=1
+  ENDIF
+
+ON=@TARGON_CHAR
+  // Consume 1 of the item
+  IF <AMOUNT> > 1
+    AMOUNT=<AMOUNT>+-1
+  ELSE
+    REMOVE
+  ENDIF
+  
+  // Memory of tired arms
+  SRC.NEWITEM=i_eq_memory_tired_arms
+  SRC.ACT.EQUIP
+  SRC.ACT.TIMER=<WEIGHT>
+  
+  // Criminal to their target.
+  SRC.TARG.NEWITEM=02007
+  SRC.TARG.ACT.ATTR=attr_newbie
+  SRC.TARG.ACT.COLOR=0011
+  SRC.TARG.ACT.NAME=<SRC.NAME>
+  SRC.TARG.ACT.EQUIP
+  SRC.TARG.ACT.LINK=<SRC.UID>
+  
+  IF <SRC.Throwing> < 33.3
+    IF <EVAL RAND(2)> = 0
+      SRC.Throwing=<SRC.Throwing>+1
+    ENDIF
+  ELSEIF <SRC.Throwing> < 66.6
+    IF <EVAL RAND(4)> = 0
+      SRC.Throwing=<SRC.Throwing>+1
+    ENDIF
+  ELSEIF <SRC.Throwing < 100.1
+    IF <EVAL RAND(7)> = 0
+      SRC.Throwing=<SRC.Throwing>+1
+    ENDIF
+  ENDIF
+  
+  SRC.ANIM 11
+  SRC.TARG.EFFECT=0,<ID>,7
+  DORAND 8
+    VAR.HitLocation=head
+    VAR.HitLocation=neck
+    VAR.HitLocation=hand
+    VAR.HitLocation=arm
+    VAR.HitLocation=chest
+    VAR.HitLocation=groin
+    VAR.HitLocation=legs
+    VAR.HitLocation=foot
+  ENDRAND
+  //SRC.TARG.DAMAGE=<DAM>
+  SRC.SYSMESSAGE=You hit <SRC.TARG.NAME> in the <VAR.HitLocation> with a <NAME>!
+  SRC.TARG.SYSMESSAGE=<SRC.NAME> hit you in the <VAR.HitLocation> with a <NAME>!
+  TIMER=<MORE2>
+  RETURN=1
+
+ON=@TARGON_ITEM
+  RETURN=0
+
+ON=@TIMER
+  TIMER=0
+  RETURN=1
+
+[FUNCTION f_consume]
+AMOUNT=<AMOUNT>+-<eval <ARGS>>
+IF AMOUNT=0
+  REMOVE
+ENDIF
+
+[ITEMDEF i_eq_memory_tired_arms]
+ID=02007
+NAME=tired arms memory
+TYPE=T_EQ_MEMORY_OBJ
+LAYER=layer_special
+
+ON=@Create
+  ATTR=attr_decay
+  COLOR=20
+
+[ITEMDEF i_throwing_knifes]
+ID=0ec4
+NAME=throwing knife%s
+TYPE=T_WEAPON_XBOW
+FLIP=1
+DAM=1,10
+//SPEED=80
+SKILL=Throwing
+REQSTR=10
+TWOHANDS=N
+WEIGHT=1
+PILE=1
+LAYER=layer_hand1
+
+TDATA3=0 // No ammunition
+TDATA4=0ec4
+
+RESOURCES=2 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 20.0
+REPLICATE=1
+
+ON=@Create
+  HITPOINTS={31 40}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Throwing Weapons
+DESCRIPTION=Throwing Knifes
+DUPELIST=0ec5
+
+[ITEMDEF i_throwing_hatchet]
+ID=0f43
+NAME=throwing hatchet%s
+TYPE=T_WEAPON_XBOW
+FLIP=1
+DAM=2,17
+//SPEED=55
+SKILL=Throwing
+REQSTR=15
+TWOHANDS=N
+WEIGHT=4
+PILE=1
+LAYER=layer_hand1
+
+TDATA3=0 // No ammunition
+TDATA4=0f43
+
+RESOURCES=4 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 33.9
+REPLICATE=1
+
+ON=@Create
+  HITPOINTS={31 80}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Throwing Weapons
+DESCRIPTION=Throwing Hatchets
+DUPELIST=0f44
+
+[ITEMDEF i_throwing_axe_battle]
+ID=i_axe_battle
+NAME=throwing battle axe%s
+TYPE=T_WEAPON_XBOW
+FLIP=1
+DAM=6,38
+//SPEED=20
+SKILL=Throwing
+REQSTR=40
+TWOHANDS=Y
+WEIGHT=4
+PILE=1
+LAYER=layer_hand1
+
+TDATA3=0 // No ammunition
+TDATA4=i_axe_battle
+
+RESOURCES=14 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 66.1
+REPLICATE=1
+
+ON=@Create
+  HITPOINTS={31 110}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Throwing Weapons
+DESCRIPTION=Throwing Battle Axes
+DUPELIST=0f48
+
+[ITEMDEF i_throwing_axe]
+ID=i_axe
+NAME=throwing axe%s
+TYPE=T_WEAPON_XBOW
+FLIP=1
+DAM=6,33
+//SPEED=37
+SKILL=Throwing
+REQSTR=35
+TWOHANDS=Y
+WEIGHT=4
+PILE=1
+LAYER=layer_hand1
+
+TDATA3=0 // No ammunition
+TDATA4=i_axe
+
+RESOURCES=14 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 69.7
+REPLICATE=1
+
+ON=@Create
+  HITPOINTS={31 100}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Throwing Weapons
+DESCRIPTION=Throwing Axes
+DUPELIST=0f4a
+
+[ITEMDEF i_throwing_dagger]
+ID=i_dagger
+NAME=throwing dagger%s
+TYPE=T_WEAPON_XBOW
+FLIP=1
+DAM=3,15
+//SPEED=80
+SKILL=Throwing
+REQSTR=10
+TWOHANDS=N
+WEIGHT=1
+PILE=1
+LAYER=layer_hand1
+
+TDATA3=0 // No ammunition
+TDATA4=i_dagger
+
+RESOURCES=3 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 36.7
+REPLICATE=1
+
+ON=@Create
+  HITPOINTS={31 40}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Throwing Weapons
+DESCRIPTION=Throwing Daggers
+DUPELIST=0f52
+
+[ITEMDEF i_throwing_spear]
+ID=i_spear
+NAME=throwing spear%s
+TYPE=T_WEAPON_XBOW
+FLIP=1
+DAM=5,33
+//SPEED=30
+SKILL=Throwing
+REQSTR=60
+TWOHANDS=N
+WEIGHT=7
+PILE=1
+LAYER=layer_hand1
+
+TDATA3=0 // No ammunition
+TDATA4=i_spear
+
+RESOURCES=12 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 83.8
+REPLICATE=1
+
+ON=@Create
+  HITPOINTS={31 80}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Throwing Weapons
+DESCRIPTION=Throwing Spears
+DUPELIST=0f63
+
+[ITEMDEF i_throwing_spear_short]
+ID=i_spear_short
+TYPE=T_WEAPON_XBOW
+FLIP=1
+DAM=7,19
+//SPEED=55
+SKILL=Throwing
+REQSTR=15
+TWOHANDS=N
+WEIGHT=7
+PILE=1
+LAYER=layer_hand1
+
+TDATA3=0 // No ammunition
+TDATA4=01403
+
+RESOURCES=6 i_ingot_iron
+RESOURCES2=6 i_ingot_iron,1 i_board
+SKILLMAKE=BLACKSMITHING 70.2
+REPLICATE=1
+
+ON=@Create
+  HITPOINTS={31 70}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Throwing Weapons
+DESCRIPTION=Short Spear
+DUPELIST=01403
+

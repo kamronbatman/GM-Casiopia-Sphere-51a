@@ -1,0 +1,206 @@
+[CHARDEF c_unicorn_blue]
+NAME=Unicorn 
+ID=c_horse_gray
+SOUND=snd_ANIMALS_HORSE1
+ICON=i_pet_horse_gray
+
+DAM=4,18
+ARMOR=10
+RESOURCES=25 i_ribs_raw,31 i_hide
+
+//ALIGNMENT=EVIL
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_meat_raw,20 t_grain
+SHELTER=r_caves,r_dungeon
+DESIRES=T_FOLIAGE,T_GRAIN
+AVERSIONS=r_civilization,r_water
+
+ON=@Create
+COLOR=07c3
+STR={400 401}
+DEX={86 105}
+INT={385 425}
+
+PARRYING={55.0 95.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={98.0 100.0}
+WRESTLING={90.0 93.0}
+TAMING={115.0 125.0}
+
+NPC=brain_monster
+
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+ITEM=loot_NIGHTMARE
+ITEM=i_gold, 1000
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Unicorn (blue)
+
+[CHARDEF c_unicorn_crimson]
+NAME=Unicorn 
+ID=c_horse_gray
+SOUND=snd_ANIMALS_HORSE1
+ICON=i_pet_horse_gray
+
+DAM=4,18
+ARMOR=10
+RESOURCES=25 i_ribs_raw,31 i_hide
+
+//ALIGNMENT=EVIL
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_meat_raw,20 t_grain
+SHELTER=r_caves,r_dungeon
+DESIRES=T_FOLIAGE,T_GRAIN
+AVERSIONS=r_civilization,r_water
+
+ON=@Create
+COLOR=07c4
+STR={400 401}
+DEX={86 105}
+INT={385 425}
+
+PARRYING={55.0 95.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={98.0 100.0}
+WRESTLING={90.0 93.0}
+TAMING={115.0 125.0}
+
+NPC=brain_monster
+
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+ITEM=loot_NIGHTMARE
+ITEM=i_gold, 1000
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Unicorn (crimson)
+
+[CHARDEF c_unicorn_green]
+NAME=Unicorn 
+ID=c_horse_gray
+SOUND=snd_ANIMALS_HORSE1
+ICON=i_pet_horse_gray
+
+DAM=4,18
+ARMOR=10
+RESOURCES=25 i_ribs_raw,31 i_hide
+
+//ALIGNMENT=EVIL
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_meat_raw,20 t_grain
+SHELTER=r_caves,r_dungeon
+DESIRES=T_FOLIAGE,T_GRAIN
+AVERSIONS=r_civilization,r_water
+
+ON=@Create
+COLOR=07c5
+STR={400 401}
+DEX={86 105}
+INT={385 425}
+
+PARRYING={55.0 95.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={98.0 100.0}
+WRESTLING={90.0 93.0}
+TAMING={115.0 125.0}
+
+NPC=brain_monster
+
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+ITEM=loot_NIGHTMARE
+ITEM=i_gold, 1000
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Unicorn (green)
+
+[CHARDEF c_unicorn_purple]
+NAME=Unicorn 
+ID=c_horse_gray
+SOUND=snd_ANIMALS_HORSE1
+ICON=i_pet_horse_gray
+
+DAM=4,18
+ARMOR=10
+RESOURCES=25 i_ribs_raw,31 i_hide
+
+//ALIGNMENT=EVIL
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_meat_raw,20 t_grain
+SHELTER=r_caves,r_dungeon
+DESIRES=T_FOLIAGE,T_GRAIN
+AVERSIONS=r_civilization,r_water
+
+ON=@Create
+COLOR=07c7
+STR={400 401}
+DEX={86 105}
+INT={385 425}
+
+PARRYING={55.0 95.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={98.0 100.0}
+WRESTLING={90.0 93.0}
+TAMING={115.0 125.0}
+
+NPC=brain_monster
+
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+ITEM=loot_NIGHTMARE
+ITEM=i_gold, 1000
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Unicorn (purple)
+
+[CHARDEF c_unicorn_turquois]
+NAME=Unicorn 
+ID=c_horse_gray
+SOUND=snd_ANIMALS_HORSE1
+ICON=i_pet_horse_gray
+
+DAM=4,18
+ARMOR=10
+RESOURCES=25 i_ribs_raw,31 i_hide
+
+//ALIGNMENT=EVIL
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_meat_raw,20 t_grain
+SHELTER=r_caves,r_dungeon
+DESIRES=T_FOLIAGE,T_GRAIN
+AVERSIONS=r_civilization,r_water
+
+ON=@Create
+COLOR=07c8
+STR={400 401}
+DEX={86 105}
+INT={385 425}
+
+PARRYING={55.0 95.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={98.0 100.0}
+WRESTLING={90.0 93.0}
+TAMING={115.0 125.0}
+
+NPC=brain_monster
+
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+ITEM=loot_NIGHTMARE
+ITEM=i_gold, 1000
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Unicorn (turquois)
+
+[EOF]

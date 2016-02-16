@@ -1,0 +1,552 @@
+[DEFNAME COLOR_ORE_2]
+color_o_provain     0079b
+color_o_terocir     00796
+color_o_vicomec     0079a
+color_o_marik       00783
+color_o_sanexim     00786
+color_o_freoric     007a0
+color_o_werin       00798
+color_o_snow        007a1
+color_o_inferno     00793
+color_o_brazen      007ad
+color_o_vinatol     00799
+color_o_shivess     0079e
+color_o_rivalry     00795
+color_o_grandure    007c5
+color_o_locrin      007c6
+color_o_ontura      007c4
+color_o_blood_crest 007a3
+color_o_midnite     00784
+
+//************** Ores ***************
+
+[ITEMDEF i_ore_inferno]
+ID=i_ore_iron
+NAME=Inferno Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_inferno
+VALUE=18
+
+[ITEMDEF i_ore_brazen]
+ID=i_ore_iron
+NAME=Brazen Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_brazen
+VALUE=18
+
+[ITEMDEF i_ore_vinatol]
+ID=i_ore_iron
+NAME=Vinatol Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_vinatol
+VALUE=18
+
+[ITEMDEF i_ore_midnite]
+ID=i_ore_iron
+NAME=Midnite Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_midnite
+VALUE=18
+
+[ITEMDEF i_ore_blood_crest]
+ID=i_ore_iron
+NAME=Blood Crest Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_blood_crest
+VALUE=18
+
+ON=@Create
+COLOR=color_o_blood_crest
+
+[ITEMDEF i_ore_grandure]
+ID=i_ore_iron
+NAME=Grandure Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_grandure
+VALUE=18
+
+ON=@Create
+COLOR=color_o_grandure
+
+[ITEMDEF i_ore_locrin]
+ID=i_ore_iron
+NAME=Locrin Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_locrin
+VALUE=18
+
+ON=@Create
+COLOR=color_o_locrin
+
+[ITEMDEF i_ore_ontura]
+ID=i_ore_iron
+NAME=Ontura Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_ontura
+VALUE=18
+
+ON=@Create
+COLOR=color_o_ontura
+
+[ITEMDEF i_ore_provain]
+ID=i_ore_iron
+NAME=Provain Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_provain
+VALUE=18
+
+ON=@Create
+COLOR=color_o_provain
+
+[ITEMDEF i_ore_terocir]
+ID=i_ore_iron
+NAME=Terocir Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_terocir
+VALUE=18
+
+ON=@Create
+COLOR=color_o_terocir
+
+[ITEMDEF i_ore_vicomec]
+ID=i_ore_iron
+NAME=Marik Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_vicomec
+VALUE=18
+
+ON=@Create
+COLOR=color_o_vicomec
+
+[ITEMDEF i_ore_marik]
+ID=i_ore_iron
+NAME=Marik Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_marik
+VALUE=18
+
+ON=@Create
+COLOR=color_o_marik
+
+[ITEMDEF i_ore_sanexim]
+ID=i_ore_iron
+NAME=Sanexim Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_sanexim
+VALUE=18
+
+ON=@Create
+COLOR=color_o_sanexim
+
+[ITEMDEF i_ore_freoric]
+ID=i_ore_iron
+NAME=Freoric Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_freoric
+VALUE=18
+
+ON=@Create
+COLOR=color_o_freoric
+
+[ITEMDEF i_ore_rivalry]
+ID=i_ore_iron
+NAME=Rivalry Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_rivalry
+VALUE=18
+
+ON=@CREATE
+COLOR=color_o_rivalry
+
+[ITEMDEF i_ore_shivess
+ID=i_ore_iron
+NAME=Shivess Ore
+SKILLMAKE=MINING 100.0
+TDATA1=i_ingot_shivess
+VALUE=18
+
+ON=@CREATE
+COLOR=color_o_shivess
+
+//************** Ingots ***************
+
+[ITEMDEF i_ingot_inferno]
+ID=i_ingot_iron
+NAME=Inferno Ingot
+RESOURCES=i_ore_inferno
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_inferno
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Inferno Ingot
+
+[ITEMDEF i_ingot_brazen]
+ID=i_ingot_iron
+NAME=Brazen Ingot
+RESOURCES=i_ore_brazen
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_brazen
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Brazen Ingot
+
+[ITEMDEF i_ingot_vinatol]
+ID=i_ingot_iron
+NAME=Vinatol Ingot
+RESOURCES=i_ore_vinatol
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_vinatol
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Vinatol Ingot
+
+[ITEMDEF i_ingot_midnite]
+ID=i_ingot_iron
+NAME=Midnite Ingot
+RESOURCES=i_ore_midnite
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_midnite
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Midnite Ingot
+
+[ITEMDEF i_ingot_blood_crest]
+ID=i_ingot_iron
+NAME=Blood Crest Ingot
+RESOURCES=i_ore_blood_crest
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_blood_crest
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Blood Crest Ingot
+
+[ITEMDEF i_ingot_grandure]
+ID=i_ingot_iron
+NAME=Grandure Ingot
+RESOURCES=i_ore_grandure
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_grandure
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Grandure Ingot
+
+[ITEMDEF i_ingot_locrin]
+ID=i_ingot_iron
+NAME=Locrin Ingot
+RESOURCES=i_ore_locrin
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_locrin
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Locrin Ingot
+
+[ITEMDEF i_ingot_ontura]
+ID=i_ingot_iron
+NAME=Ontura Ingot
+RESOURCES=i_ore_ontura
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_ontura
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Ontura Ingot
+
+[ITEMDEF 05061]
+DEFNAME=i_ingot_provain
+ID=i_ingot_iron
+NAME=Provain Ingot
+RESOURCES=i_ore_provain
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Provain Ingot
+
+ON=@Create
+COLOR=color_o_provain
+
+[ITEMDEF 05062]
+DEFNAME=i_ingot_terocir
+ID=i_ingot_iron
+NAME=Terocir Ingot
+RESOURCES=i_ore_terocir
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Terocir Ingot
+
+ON=@Create
+COLOR=color_o_terocir
+
+[ITEMDEF 05063]
+DEFNAME=i_ingot_vicomec
+ID=i_ingot_iron
+NAME=Vicomec Ingot
+RESOURCES=i_ore_vicomec
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Vicomec Ingot
+
+ON=@Create
+COLOR=color_o_vicomec
+
+[ITEMDEF 050cd]
+DEFNAME=i_ingot_marik
+ID=i_ingot_iron
+NAME=Marik Ingot
+RESOURCES=i_ore_marik
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Marik Ingot
+
+ON=@Create
+COLOR=color_o_marik
+
+[ITEMDEF 050ce]
+DEFNAME=i_ingot_sanexim
+ID=i_ingot_iron
+NAME=Sanexim Ingot
+RESOURCES=i_ore_sanexim
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Sanexim Ingot
+
+ON=@Create
+COLOR=color_o_sanexim
+
+[ITEMDEF 050cf]
+DEFNAME=i_ingot_freoric
+ID=i_ingot_iron
+NAME=Freoric Ingot
+RESOURCES=i_ore_freoric
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Freoric Ingot
+
+ON=@Create
+COLOR=color_o_freoric
+
+[ITEMDEF 06035]
+ID=i_ingot_iron
+DEFNAME=i_ingot_rivalry
+NAME=Rivalry Ingot
+RESOURCES=i_ore_rivalry
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_rivalry
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Rivalry Ingot
+
+[ITEMDEF 050d5]
+ID=i_ingot_iron
+DEFNAME=i_ingot_shivess
+NAME=Shivess Ingot
+RESOURCES=i_ore_shivess
+SKILLMAKE=MINING 100.0
+TDATA1=90.0
+TDATA2=120.0
+
+ON=@Create
+COLOR=color_o_shivess
+
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Shivess Ingot
+
+//***** default distributions of ores/resources ******
+
+[REGIONRESOURCE mr_shivess]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_shivess
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_inferno]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_inferno
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_brazen]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_brazen
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_vinatol]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_vinatol
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_midnite]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_midnite
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_blood_crest]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_blood_crest
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_grandure]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_grandure
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_locrin]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_locrin
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_ontura]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_ontura
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_provain]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_provain
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_terocir]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_terocir
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_vicomec]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_vicomec
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_marik]
+// t_rock
+SKILL=60.0110.0
+AMOUNT=1,3
+REAP=i_ore_marik
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_sanexim]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_sanexim
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_freoric]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,3
+REAP=i_ore_freoric
+REGEN=60*60*11
+
+[REGIONRESOURCE mr_rivalry]
+// t_rock
+SKILL=60.0,110.0
+AMOUNT=1,2
+REAP=i_ore_rivalry
+REGEN=60*60*11
+
+[COMMENT OTHER ORES]
+// other things that could be mined for .
+//	ChanceofVein, MinFindSkill,	Item, Color, Name, OrePerVein Min, Max
+//Dragon,0593,100.0,1.0,1-2,06037
+//Titan,0736,100.0,1.0,1-2,06035
+//Crystaline,0065,100.0,1.0,1-2,06039
+//Kryptonite,0170,100.0,1.0,1-2,06505
+//Vulcan,6324,100.0,1.0,1-2,06506
+//Sand Rock,0709,100.0,1.0,1-2,06507
+//Blood Crest,064e,100.0,1.0,1-2,06508
+//Steel,0540,100.0,1.0,1-2,06509
+//Elvin,0596,100.0,1.0,1-2,06510
+//Gorgan,0456,100.0,1.0,1-2,06512
+//Acid,0078,100.0,1.0,1-2,06514
+//Aqua,123982,100.0,1.0,1-2,06513
+//Eldar,04d8,100.0,1.0,1-2,06511
+
+[EOF]

@@ -1,0 +1,138 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+// Purpose: Britannia Barber Script
+// Notes:  This is used for general information pertaining to all Britannian Barber
+// Current Keyword List:
+//  hair, cut, style, scissors, wig, dye, lice, dandruff, job, work, what*do*do, profession, occupation
+//
+
+ON=*job*
+ON=*work*
+ON=*what*do*do*
+ON=*profession*
+ON=*occupation*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> )
+			DORAND 2
+				SAY I cut hair, please don't hurt me.
+				SAY I'm a humble barber, and completely defenseless.
+			ENDDO
+		ELIF ( <COMPLEXITY.MEDIUM>)
+			DORAND 2
+				SAY I cut hair.
+				SAY I'm a barber.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY I cut hair.
+				SAY I'm a barber.
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> )
+			DORAND 2
+				SAY I cut hair.
+				SAY I'm a barber.
+			ENDDO
+		ELIF ( <COMPLEXITY.MEDIUM>)
+			DORAND 2
+				SAY I cut hair.
+				SAY I'm a barber.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY I cut hair.
+				SAY I'm a barber.
+			ENDDO
+		ENDIF
+	ELSE
+		DORAND 2
+				SAY I'm an artist, my palette is your head!
+				SAY I live to style hair.
+		ENDDO
+	ENDIF
+ON=*hair*
+ON=*cut*
+ON=*style*
+ON=*scissors*
+ON=*wig*
+ON=*dye*
+ON=*lice*
+ON=*dandruff*  
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY Hmm... you could do with a new hair style, but I shall not design on thy lice-ridden head!
+				SAY Use sulphur for thy dander problems.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY Errr, wouldst thou mind washing thy own hair?
+				SAY Ahh, nice color work, did ye do it thyself?
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY I am presently considering the subject of my next work.
+				SAY My hair cuts are on display on the finest heads throughout the land.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY Thy head seems not quite roundish...
+				SAY Oh! My work is world reknowned!
+			ENDDO
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY Thy head seems not quite roundish...
+				SAY Oh! My work is world reknowned!
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY Sorry, I'm drawin' a blank right now. Barber's block.
+				SAY Lotsa people like my work, if I may say so.
+			ENDDO
+		ENDIF
+	ENDIF
+
+//Barber
+DEFAULT=Pardon? I do not understand thee.
+
+ON=Hi 
+ON=Greet 
+ON=Hello 
+ON=Hail
+	SAY=Hail, friend.
+ON=Job 
+ON=What do you do 
+	SAY=I am a grand barber!
+ON=Bye 
+ON=Goodbye 
+ON=Farewell 
+	SAY=Goodbye.
+ON=ART 
+	SAY=Barbering is the reflection of life.  A more beautiful reflection...
+ON=HEAD 
+ON=HAIR
+	SAY=Your head shall be my battlefield!  Stand Back!
+ON=hair
+ON=cut
+ON=style
+ON=scissors
+ON=wig
+ON=dye
+ON=lice
+ON=dandruff
+	SAY=Would ye like a style similar to our Lord British?  Allow me to fetch a bowl...
+
+//RANDOM=I shalt capture thy likeness for all to admire.

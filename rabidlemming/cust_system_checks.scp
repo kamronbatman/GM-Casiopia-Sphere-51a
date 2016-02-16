@@ -1,0 +1,275 @@
+[DIALOG d_check_write]
+120,80
+resizepic 0 0 2520 450 300
+text 30 40 295 0
+text 30 80 598 1
+gumppic 30 100 2501
+textentry 40 100 110 20 0 0 2
+text 30 150 598 3
+gumppic 30 170 2501
+text 40 170 0 4
+text 300 180 598 5
+tilepic 300 210 5360
+button 340 200 4509 4510 1 0 1
+tilepic 380 210 3823
+
+[DIALOG d_check_write text]
+<SRC.REGION.NAME> Bank - Checking System
+Choose the amount to write your check for:
+1
+Current Balance:
+<SRC.BANKBALANCE>
+Write Check
+
+[DIALOG d_check_write button]
+ON=0
+  SRC.SYSMESSAGE Check writing canceled.
+ON=1
+  IF (<EVAL <ARGTXT[0]>> = 0)
+    RETURN=1
+  ENDIF
+  IF (<SRC.BANKBALANCE> >= <ARGTXT[0]>)
+    IF (<EVAL <ARGTXT[0]>> < 1000)
+      SAY=I can not write checks for such a small amount. Sorry.
+      RETURN=1
+    ENDIF
+    SRC.FINDLAYER(layer_bankbox).CONSUMEGOLD=<EVAL <ARGTXT[0]>>
+    SRC.NEWITEM i_check
+    SRC.ACT.MORE2=<ARGTXT[0]>
+    SRC.ACT.NAME=<EVAL <ARGTXT[0]>>gp check
+    SRC.ACT.TAG.BankerName=<NAME>
+    SRC.ACT.TAG.Region=<SRC.REGION.NAME>
+    SRC.ACT.LINK=<SRC.UID>
+    SRC.ACT.TAG.Account=<SRC.ACCOUNT>
+    SRC.ACT.BOUNCE
+  ELSE
+    SRC.SYSMESSAGE You misteak me for a creditor, get some money first.
+  ENDIF
+
+[DIALOG d_check_info]
+120,80
+resizepic 0 0 2520 420 300
+gumppic 380 30 31
+text 100 40 295 0
+text 30 80 0 1
+text 30 100 0 2
+text 30 120 0 3
+text 30 150 598 4
+text 150 150 0 5
+gumppic 30 170 2091
+gumppic 160 170 2091
+gumppic 200 190 52
+croppedtext 250 200 100 20 0 6
+
+[DIALOG d_check_info text]
+<TAG.Region> Bank Check
+I, <TAG.BankerName> of <TAG.Region> Bank,
+guarantee that this check is valid and cashable
+at any other banks in the world of Brittain.
+Check for:
+<EVAL <MORE2>> Gold Coins
+<LINK.NAME>
+
+[DIALOG d_check_info button]
+
+[ITEMDEF i_check]
+ID=i_deed
+NAME=check
+TYPE=t_script
+
+ON=@CREATE 
+  COLOR=07bd
+  ATTR=attr_newbie
+
+ON=@DCLICK
+  DIALOG=d_check_info
+
+CATEGORY=Items by Professions
+SUBSECTION=Banker
+DESCRIPTION=Check
+
+[CHARDEF 0418]
+DEFNAME=C_H_BANKER
+NAME=#NAMES_HUMANMALE the Banker
+ID=C_MAN
+DESIRES=i_gold,e_notoriety,i_check
+AVERSIONS=t_TRAP,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=jobbanker
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+TSPEECH=checking_system
+
+TEVENTS=e_Human_HearUnk
+TEVENTS=e_Human_Needs
+TEVENTS=e_Human_ConvInit
+TEVENTS=e_Human_Greet
+TEVENTS=e_Human_Space
+TEVENTS=e_Human_Refuse
+TEVENTS=e_Human_Environ
+
+ON=@Create
+COLOR=colors_skin
+STR={71 85}
+DEX={66 80}
+INT={66 80}
+
+SWORDSMANSHIP={15.0 38.0}
+ITEMID={50.0 70.0}
+TACTICS={15.0 38.0}
+
+NPC=BRAIN_BANKER
+NEED=i_gold
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=RANDOM_LIGHT
+ITEM=i_shirt_fancy
+COLOR=colors_green
+ITEM=i_pants_long
+COLOR=colors_yellow
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_coin_purse
+
+CATEGORY=Civilized
+SUBSECTION=Tradesmen
+DESCRIPTION=Banker (male)
+
+[CHARDEF 0419]
+DEFNAME=C_H_BANKER_F
+NAME=#NAMES_HUMANFEMALE the Banker
+ID=C_WOMAN
+//ATT=
+//ARMOR=
+DESIRES=i_gold,e_notoriety,i_check
+AVERSIONS=t_TRAP,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=jobbanker
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+TSPEECH=checking_system
+
+TEVENTS=e_Human_HearUnk
+TEVENTS=e_Human_Needs
+TEVENTS=e_Human_ConvInit
+TEVENTS=e_Human_Greet
+TEVENTS=e_Human_Space
+TEVENTS=e_Human_Refuse
+TEVENTS=e_Human_Environ
+
+ON=@Create
+COLOR=colors_skin
+STR={71 85}
+DEX={66 80}
+INT={66 80}
+
+SWORDSMANSHIP={15.0 38.0}
+ITEMID={50.0 70.0}
+TACTICS={15.0 38.0}
+
+NPC=BRAIN_BANKER
+NEED=i_gold
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=RANDOM_LIGHT
+ITEM=i_shirt_fancy
+COLOR=colors_green
+ITEM=random_skirt
+COLOR=colors_yellow
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_coin_purse
+ITEM=RANDOM_LIGHT
+
+CATEGORY=Civilized
+SUBSECTION=Tradesmen
+DESCRIPTION=Banker (female)
+
+[SPEECH checking_system]
+ON=*write*check*
+ON=*get*check*
+ON=*make*check*
+	DIALOG=d_check_write
+ON=*cash*check*
+	IF (<SRC.FINDID.i_check.UID> != 0)
+		VAR.CheckUID=<SRC.FINDID.i_check.UID>
+		VAR.CheckValue=<SRC.UID.<VAR.CheckUID>.MORE2>
+		DORAND 2
+			SAY=A good ol <SRC.UID.<VAR.CheckUID>.TAG.Region> Bank check, your check appears valid, so here is your <EVAL <VAR.CheckValue>> Gold.
+			SAY=Ah, I know banker <SRC.UID.<VAR.CheckUID>.TAG.BankerName>. Here is your <EVAL <VAR.CheckValue>> Gold.
+		ENDDO
+		VAR.GoldToPay=<EVAL <VAR.CheckValue>>
+		f_cash_check
+	ELSE
+		SAY=Pardon me, but thou dost not have any checks for me to cash.
+	ENDIF
+
+[FUNCTION f_cash_check]
+  IF (<EVAL <VAR.GoldToPay>> > 59999)
+    SRC.NEWITEM=i_gold
+    SRC.ACT.AMOUNT=60000
+    SRC.ACT.BOUNCE
+    VAR.GoldToPay=(<EVAL <VAR.GoldToPay>>+-60000)
+    f_cash_check
+  ELSEIF (<EVAL <VAR.GoldToPay>> < 60000) && (<EVAL <VAR.GoldToPay>> > 0)
+    SRC.NEWITEM=i_gold
+    SRC.ACT.AMOUNT=<EVAL <VAR.GoldToPay>>
+    SRC.ACT.BOUNCE
+    VAR.GoldToPay=0
+    f_cash_check
+  ELSEIF (<EVAL <VAR.GoldToPay>> = 0)
+    TRY SRC.UID.<VAR.CheckUID>.REMOVE=1
+    RETURN=1
+  ENDIF
+
+[FUNCTION consumegold]
+var.consumegold = <args>
+consumegold_rec 0
+if ( <var.consumegold> = 0 )
+return 0
+endif
+return 1
+
+[FUNCTION consumegold_rec]
+if ( <findcont(<args>).uid> = 0 )
+return 0
+endif
+
+if ( <findcont(<args>).baseid> != i_gold ) // skip stuff other than gold
+consumegold_rec <eval (1+<args>)>
+return 0
+endif
+
+var.consumegold = <eval (<var.consumegold> - <findcont(<args>).amount>)>
+if ( <var.consumegold> < 0 ) // more than enough, reduce amount
+SRC.ACT = <findcont(<args>).uid>
+src.act.amount = <eval (0 - <var.consumegold>)>
+var.consumegold = 0
+return 0
+endif
+
+if ( <var.consumegold> > 0 ) // still need more gold
+consumegold_rec <eval (1+<args>)>
+endif
+
+if ( <var.consumegold> > 0 ) // we tried, but no more money around
+return 0
+endif
+
+src.act = <findcont(<args>).uid>
+src.act.remove
+return 0
+
+[EOF]

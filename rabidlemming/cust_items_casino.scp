@@ -1,0 +1,2181 @@
+
+// **************************************************
+// Items
+// **************************************************
+
+[ITEMDEF i_roulette_wheel]
+ID=i_shield_round_metal
+NAME=roulette wheel
+TYPE=t_script
+
+ON=@DCLICK
+  IF <DISTANCE> > 1
+    SRC.SYSMESSAGE You are too far away to use this.
+    RETURN=1
+  ENDIF
+  SRC.TAG.GamblingDevice=<UID>
+  SRC.ITEMMENU menu_roulette
+  RETURN=1
+
+ON=@TIMER
+  IF !(<LINK>=04fffffff)
+    IF (<LINK.TYPE>=t_casino_sign)
+      LINK.MORE=<LINK.MORE>+<MORE>
+      LINK.MORE2=<LINK.MORE2>+<MORE2>
+      MORE=0
+      MORE2=0
+    ENDIF
+  ENDIF
+  TIMER=600 // Update casino sign with wins/losses every 10 minutes
+  RETURN=1
+
+ON=@Create
+  COLOR=079c
+  ATTR=attr_move_never
+  TIMER=600
+
+CATEGORY=Custom Items
+SUBSECTION=Casinos & Gambling
+DESCRIPTION=Roulette Wheel
+
+[ITEMDEF i_slot_machine]
+ID=00edb
+NAME=slot machine
+TYPE=t_script
+FLIP=1
+
+ON=@DCLICK
+  IF <DISTANCE> > 1
+    SRC.SYSMESSAGE You are too far away to use this.
+    RETURN=1
+  ENDIF
+  IF <SRC.RESTEST=<MOREX> i_gold>
+    SRC.CONSUME=<MOREX> i_gold
+    SOUND=0032
+    IF !(<NAME>=slot machine - <EVAL <MOREX>> gold)
+      NAME=slot machine - <EVAL <MOREX>> gold
+    ENDIF
+    SRC.TAG.GamblingDevice=<UID>
+    SRC.SYSMESSAGE You put <EVAL <MOREX>> gold in the <NAME>.
+    TRY SRC.UID.<SRC.TAG.GamblingDevice>.SFX=0056
+    VAR.Number_1=<EVAL RAND(8)>
+    VAR.Number_2=<EVAL RAND(8)>
+    VAR.Number_3=<EVAL RAND(8)>
+    IF (<VAR.Number_1>=0)
+      SRC.SYSMESSAGE Lemmon
+    ELSEIF (<VAR.Number_1>=01)
+      SRC.SYSMESSAGE Orange
+    ELSEIF (<VAR.Number_1>=02)
+      SRC.SYSMESSAGE Cherry
+    ELSEIF (<VAR.Number_1>=03)
+      SRC.SYSMESSAGE Dagger
+    ELSEIF (<VAR.Number_1>=04)
+      SRC.SYSMESSAGE Axe
+    ELSEIF (<VAR.Number_1>=05)
+      SRC.SYSMESSAGE Mace
+    ELSEIF (<VAR.Number_1>=06)
+      SRC.SYSMESSAGE Sword
+    ELSEIF (<VAR.Number_1>=07)
+      SRC.SYSMESSAGE Chaos Symbol
+    ELSEIF (<VAR.Number_1>=08)
+      SRC.SYSMESSAGE Order Symbol
+    ENDIF
+    IF (<VAR.Number_2>=0)
+      SRC.SYSMESSAGE Lemmon
+    ELSEIF (<VAR.Number_2>=01)
+      SRC.SYSMESSAGE Orange
+    ELSEIF (<VAR.Number_2>=02)
+      SRC.SYSMESSAGE Cherry
+    ELSEIF (<VAR.Number_2>=03)
+      SRC.SYSMESSAGE Dagger
+    ELSEIF (<VAR.Number_2>=04)
+      SRC.SYSMESSAGE Axe
+    ELSEIF (<VAR.Number_2>=05)
+      SRC.SYSMESSAGE Mace
+    ELSEIF (<VAR.Number_2>=06)
+      SRC.SYSMESSAGE Sword
+    ELSEIF (<VAR.Number_2>=07)
+      SRC.SYSMESSAGE Chaos Symbol
+    ELSEIF (<VAR.Number_2>=08)
+      SRC.SYSMESSAGE Order Symbol
+    ENDIF
+    IF (<VAR.Number_3>=0)
+      SRC.SYSMESSAGE Lemmon
+    ELSEIF (<VAR.Number_3>=01)
+      SRC.SYSMESSAGE Orange
+    ELSEIF (<VAR.Number_3>=02)
+      SRC.SYSMESSAGE Cherry
+    ELSEIF (<VAR.Number_3>=03)
+      SRC.SYSMESSAGE Dagger
+    ELSEIF (<VAR.Number_3>=04)
+      SRC.SYSMESSAGE Axe
+    ELSEIF (<VAR.Number_3>=05)
+      SRC.SYSMESSAGE Mace
+    ELSEIF (<VAR.Number_3>=06)
+      SRC.SYSMESSAGE Sword
+    ELSEIF (<VAR.Number_3>=07)
+      SRC.SYSMESSAGE Chaos Symbol
+    ELSEIF (<VAR.Number_3>=08)
+      SRC.SYSMESSAGE Order Symbol
+    ENDIF
+  
+    // Payoff section: if all 3 symbols came up same, pay...
+    // <what they put in> * <jackpot level multiplier> * <slot cost prize increaser>
+    IF (<VAR.Number_1>=0) & (<VAR.Number_2>=0) & (<VAR.Number_3>=0)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*2*(<MOREX>/10>))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*2*<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*2*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSEIF (<VAR.Number_1>=01) & (<VAR.Number_2>=01) & (<VAR.Number_3>=01)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*5*(<MOREX>/10>))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*5*(<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*5*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSEIF (<VAR.Number_1>=02) & (<VAR.Number_2>=02) & (<VAR.Number_3>=02)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*10*(<MOREX>/10>))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*10*(<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*10*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSEIF (<VAR.Number_1>=03) & (<VAR.Number_2>=03) & (<VAR.Number_3>=03)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*20*(<MOREX>/10>))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*20*(<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*20*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSEIF (<VAR.Number_1>=04) & (<VAR.Number_2>=04) & (<VAR.Number_3>=04)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*30*(<MOREX>/10>))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*30*(<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*30*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSEIF (<VAR.Number_1>=05) & (<VAR.Number_2>=05) & (<VAR.Number_3>=05)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*45*(<MOREX>/10>))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*45*(<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*45*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSEIF (<VAR.Number_1>=06) & (<VAR.Number_2>=06) & (<VAR.Number_3>=06)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*60*(<MOREX>/10>))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*60*(<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*60*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSEIF (<VAR.Number_1>=07) & (<VAR.Number_2>=07) & (<VAR.Number_3>=07)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*80*(<MOREX>/10))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*80*(<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*80*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSEIF (<VAR.Number_1>=08) & (<VAR.Number_2>=08) & (<VAR.Number_3>=08)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=<EVAL (<MOREX>*100*(<MOREX>/10))>
+      SRC.ACT.BOUNCE
+      SRC.EMOTE win a <EVAL (<MOREX>*100*(<MOREX>/10))> gold jackpot
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE>+(<MOREX>*100*(<MOREX>/10))+-<MOREX> // Move win counter
+    ELSE
+      TRY SRC.UID.<SRC.TAG.GamblingDevice>.MORE2=<SRC.UID.<SRC.TAG.GamblingDevice>.MORE2>+<MOREX> // Move loss counter
+    ENDIF
+    SRC.TAG.GamblingDevice=
+  ELSE
+    DORAND 4
+      SRC.SYSMESSAGE You are out of money, perhaps the you could pawn the clothes you are wearing.
+      SRC.SYSMESSAGE It looks like you have gambled your money away already, come back with more.
+      SRC.SYSMESSAGE Have you thought about selling your house? because your broke now.
+      SRC.SYSMESSAGE You try to put some fake coins in the machine, but it doesnt work. Try some getting some real money.    
+    ENDRAND
+  ENDIF
+
+ON=@TIMER
+  IF !(<LINK>=04fffffff)
+    IF (<LINK.TYPE>=t_casino_sign)
+      LINK.MORE=<LINK.MORE>+<MORE>
+      LINK.MORE2=<LINK.MORE2>+<MORE2>
+      MORE=0
+      MORE2=0
+    ENDIF
+  ENDIF
+  TIMER=600 // Update casino sign with wins/losses every 10 minutes
+  RETURN=1
+
+ON=@Create
+  COLOR=07bd
+  MOREX=10.0 // Cost to play (default 10 gold)
+  TIMER=600
+    
+CATEGORY=Custom Items
+SUBSECTION=Casinos & Gambling
+DESCRIPTION=Slot Machine
+DUPELIST=0edc
+
+// **************************************************
+// Triggers
+// **************************************************
+
+[TYPEDEF t_casino_sign]
+ON=@DCLICK
+  SRC.SYSMESSAGE Welcome to <NAME>, <EVAL <MORE>> gold in total wins, <EVAL <MORE2>> gold in total losses.
+  RETURN=1
+
+// **************************************************
+// Menus
+// **************************************************
+
+[MENU menu_roulette] // Roulette main
+Roulette - Choose your bet
+
+ON=0 10 Gold
+TAG.Bet=10
+IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+  ITEMMENU menu_roulette_numbers
+  TAG.Bet_1=
+  TAG.Bet_2=
+  TAG.Bet_3=
+  TAG.Bet_4=
+  TAG.Bet_5=
+  TAG.Bet_6=
+  TAG.Bet_7=
+  TAG.Bet_8=
+  TAG.Bet_9=
+  TAG.Bet_10=
+  TAG.Bet_11=
+  TAG.Bet_12=
+ELSE
+  DORAND 4
+    SRC.SYSMESSAGE You are out of money, perhaps the you could pawn the clothes you are wearing.
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, come back with more.
+    SRC.SYSMESSAGE Have you thought about selling your house? because your broke now.
+    SRC.SYSMESSAGE You try to put some fake coins in the machine, but it doesnt work. Try some getting some real money.    
+  ENDRAND
+ENDIF
+
+ON=0 100 Gold
+TAG.Bet=100
+IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+  ITEMMENU menu_roulette_numbers
+  TAG.Bet_1=
+  TAG.Bet_2=
+  TAG.Bet_3=
+  TAG.Bet_4=
+  TAG.Bet_5=
+  TAG.Bet_6=
+  TAG.Bet_7=
+  TAG.Bet_8=
+  TAG.Bet_9=
+  TAG.Bet_10=
+  TAG.Bet_11=
+  TAG.Bet_12=
+ELSE
+  SRC.SYSMESSAGE You do not have that much money, try a smaller bet maybe.
+  ITEMMENU=menu_roulette
+ENDIF
+
+ON=0 1,000 Gold
+TAG.Bet=1000
+IF <SRC.RESTEST=<<SRC.TAG.Bet> i_gold>
+  ITEMMENU menu_roulette_numbers
+  TAG.Bet_1=
+  TAG.Bet_2=
+  TAG.Bet_3=
+  TAG.Bet_4=
+  TAG.Bet_5=
+  TAG.Bet_6=
+  TAG.Bet_7=
+  TAG.Bet_8=
+  TAG.Bet_9=
+  TAG.Bet_10=
+  TAG.Bet_11=
+  TAG.Bet_12=
+ELSE
+  SRC.SYSMESSAGE You do not have that much money, try a smaller bet maybe.
+  ITEMMENU=menu_roulette
+ENDIF
+
+ON=0 10,000 Gold
+TAG.Bet=10000
+IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+  ITEMMENU menu_roulette_numbers
+  TAG.Bet_1=
+  TAG.Bet_2=
+  TAG.Bet_3=
+  TAG.Bet_4=
+  TAG.Bet_5=
+  TAG.Bet_6=
+  TAG.Bet_7=
+  TAG.Bet_8=
+  TAG.Bet_9=
+  TAG.Bet_10=
+  TAG.Bet_11=
+  TAG.Bet_12=
+ELSE
+  SRC.SYSMESSAGE You do not have that much money, try a smaller bet maybe.
+  ITEMMENU=menu_roulette
+ENDIF
+
+ON=0 100,000 Gold
+TAG.Bet=100000
+IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+  ITEMMENU menu_roulette_numbers
+  TAG.Bet_1=
+  TAG.Bet_2=
+  TAG.Bet_3=
+  TAG.Bet_4=
+  TAG.Bet_5=
+  TAG.Bet_6=
+  TAG.Bet_7=
+  TAG.Bet_8=
+  TAG.Bet_9=
+  TAG.Bet_10=
+  TAG.Bet_11=
+  TAG.Bet_12=
+ELSE
+  SRC.SYSMESSAGE You do not have that much money, try a smaller bet maybe.
+  ITEMMENU=menu_roulette
+ENDIF
+
+[MENU menu_roulette_confirmation]
+Finished making bets?
+
+ON=0 Done making bets
+  VAR.NUMBER=(<EVAL RAND(27)>+1)
+  IF (<VAR.NUMBER>=01) | (<VAR.NUMBER>=03) | (<VAR.NUMBER>=05) | (<VAR.NUMBER>=07) | (<VAR.NUMBER>=09) | (<VAR.NUMBER>=012) | (<VAR.NUMBER>=014) | (<VAR.NUMBER>=016) | (<VAR.NUMBER>=017) | (<VAR.NUMBER>=019) | (<VAR.NUMBER>=021) | (<VAR.NUMBER>=023) | (<VAR.NUMBER>=025) | (<VAR.NUMBER>=027) | (<VAR.NUMBER>=030) | (<VAR.NUMBER>=032) | (<VAR.NUMBER>=034) | (<VAR.NUMBER>=036)
+    TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on red <EVAL <VAR.NUMBER>>
+  ELSEIF (<VAR.NUMBER>=037) | (<VAR.NUMBER>=038)
+    IF (<VAR.NUMBER>=037) // 37 is used as 00
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 0
+    ELSE
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 00
+    ENDIF
+  ELSE
+    TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on black <EVAL <VAR.NUMBER>>
+  ENDIF
+  IF (<TAG.Bet_1>=<VAR.NUMBER>) | (<TAG.Bet_2>=<VAR.NUMBER>) | (<TAG.Bet_3>=<VAR.NUMBER>) | (<TAG.Bet_4>=<VAR.NUMBER>) | (<TAG.Bet_5>=<VAR.NUMBER>) | (<TAG.Bet_6>=<VAR.NUMBER>) | (<TAG.Bet_7>=<VAR.NUMBER>) | (<TAG.Bet_8>=<VAR.NUMBER>) | (<TAG.Bet_9>=<VAR.NUMBER>) | (<TAG.Bet_10>=<VAR.NUMBER>) | (<TAG.Bet_11>=<VAR.NUMBER>) | (<TAG.Bet_12>=<VAR.NUMBER>)
+    SRC.NEWITEM=i_gold
+    SRC.ACT.AMOUNT=(<SRC.TAG.Bet>*35)
+    SRC.ACT.BOUNCE
+    SOUND=0032
+    SRC.SYSMESSAGE You have won <EVAL <SRC.TAG.Bet>*35> gold.
+    TRY SRC.UID.<TAG.GamblingDevice>.MORE=<SRC.UID.<TAG.GamblingDevice>.MORE>+((<SRC.TAG.Bet>*35)+-<SRC.TAG.Bet>) // Move win counter
+  ELSE // Loosing number
+    IF (<TAG.Bet_2>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*1)
+    ELSEIF (<TAG.Bet_3>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*2)
+    ELSEIF (<TAG.Bet_4>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*3)
+    ELSEIF (<TAG.Bet_5>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*4)
+    ELSEIF (<TAG.Bet_6>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*5)
+    ELSEIF (<TAG.Bet_7>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*6)
+    ELSEIF (<TAG.Bet_8>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*7)
+    ELSEIF (<TAG.Bet_9>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*8)
+    ELSEIF (<TAG.Bet_10>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*9)
+    ELSEIF (<TAG.Bet_11>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*10)
+    ELSEIF !(<TAG.Bet_12>=0)
+      VAR.LOSS=(<SRC.TAG.Bet>*11)
+    ELSE
+      VAR.LOSS=(<SRC.TAG.Bet>*12)
+    ENDIF
+  ENDIF
+  SRC.SYSMESSAGE You have lost <EVAL <VAR.LOSS>> gold.
+  TRY SRC.UID.<TAG.GamblingDevice>.MORE2=<SRC.UID.<TAG.GamblingDevice>.MORE>+<VAR.LOSS> // Move loss counter
+  // Clear tags on player
+  TAG.GamblingDevice=
+  TAG.Bet=
+  TAG.Bet_1=
+  TAG.Bet_2=
+  TAG.Bet_3=
+  TAG.Bet_4=
+  TAG.Bet_5=
+  TAG.Bet_6=
+  TAG.Bet_7=
+  TAG.Bet_8=
+  TAG.Bet_9=
+  TAG.Bet_10=
+  TAG.Bet_11=
+  TAG.Bet_12=
+
+ON=0 Make more bets
+  IF (<TAG.Bet_1>=0)
+    SRC.SYSMESSAGE You have can still place 12 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_2>=0)
+    SRC.SYSMESSAGE You have can still place 11 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_3>=0)
+    SRC.SYSMESSAGE You have can still place 10 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_4>=0)
+    SRC.SYSMESSAGE You have can still place 9 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_5>=0)
+    SRC.SYSMESSAGE You have can still place 8 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_6>=0)
+    SRC.SYSMESSAGE You have can still place 7 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_7>=0)
+    SRC.SYSMESSAGE You have can still place 6 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_8>=0)
+    SRC.SYSMESSAGE You have can still place 5 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_9>=0)
+    SRC.SYSMESSAGE You have can still place 4 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_10>=0)
+    SRC.SYSMESSAGE You have can still place 3 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF (<TAG.Bet_11>=0)
+    SRC.SYSMESSAGE You have can still place 2 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSEIF !(<TAG.Bet_12>=0)
+    SRC.SYSMESSAGE You have can still place 1 more bets.
+    ITEMMENU menu_roulette_numbers
+  ELSE
+    SRC.SYSMESSAGE You can place no more bets, you already have 12 numbers.
+    ITEMMENU menu_roulette_confirmation
+  ENDIF
+
+ON=0 View current bets
+  IF !(<TAG.Bet_1>=0)
+    IF (<TAG.Bet_1>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_1>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_1>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_2>=0)
+    IF (<TAG.Bet_2>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_2>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_2>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_3>=0)
+    IF (<TAG.Bet_3>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_3>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_3>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_4>=0)
+    IF (<TAG.Bet_4>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_4>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_4>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_5>=0)
+    IF (<TAG.Bet_5>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_5>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_5>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_6>=0)
+    IF (<TAG.Bet_6>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_6>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_6>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_7>=0)
+    IF (<TAG.Bet_7>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_7>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_7>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_8>=0)
+    IF (<TAG.Bet_8>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_8>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_8>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_9>=0)
+    IF (<TAG.Bet_9>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_9>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_9>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_10>=0)
+    IF (<TAG.Bet_10>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_10>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_10>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_11>=0)
+    IF (<TAG.Bet_11>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_11>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_11>>
+    ENDIF
+  ENDIF
+  IF !(<TAG.Bet_12>=0)
+    IF (<TAG.Bet_12>=037)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 0
+    ELSEIF (<TAG.Bet_12>=038)
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on 00
+    ELSE
+      SRC.SYSMESSAGE <EVAL <SRC.TAG.Bet>> gold on <EVAL <TAG.Bet_12>>
+    ENDIF
+  ENDIF
+  ITEMMENU menu_roulette_confirmation
+
+[MENU menu_roulette_numbers]
+What do you wish to bet on?
+
+ON=0 Even
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    VAR.NUMBER=(<EVAL RAND(27)>+1)
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on Evens
+    IF (<VAR.NUMBER>=01) | (<VAR.NUMBER>=03) | (<VAR.NUMBER>=05) | (<VAR.NUMBER>=07) | (<VAR.NUMBER>=09) | (<VAR.NUMBER>=012) | (<VAR.NUMBER>=014) | (<VAR.NUMBER>=016) | (<VAR.NUMBER>=017) | (<VAR.NUMBER>=019) | (<VAR.NUMBER>=021) | (<VAR.NUMBER>=023) | (<VAR.NUMBER>=025) | (<VAR.NUMBER>=027) | (<VAR.NUMBER>=030) | (<VAR.NUMBER>=032) | (<VAR.NUMBER>=034) | (<VAR.NUMBER>=036)
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on red <EVAL <VAR.NUMBER>>
+    ELSEIF (<VAR.NUMBER>=037) | (<VAR.NUMBER>=038)
+      IF (<VAR.NUMBER>=037) // 37 is used as 0
+        TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 0
+      ELSE // 38 is used as 00
+        TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 00
+      ENDIF
+    ELSE
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on black <EVAL <VAR.NUMBER>>
+    ENDIF
+    IF (<VAR.NUMBER>=02) || (<VAR.NUMBER>=04) || (<VAR.NUMBER>=06) || (<VAR.NUMBER>=08) || (<VAR.NUMBER>=010) || (<VAR.NUMBER>=012) || (<VAR.NUMBER>=014) || (<VAR.NUMBER>=016) || (<VAR.NUMBER>=018) || (<VAR.NUMBER>=020) || (<VAR.NUMBER>=022) || (<VAR.NUMBER>=024) || (<VAR.NUMBER>=026) || (<VAR.NUMBER>=028) || (<VAR.NUMBER>=030) || (<VAR.NUMBER>=032) || (<VAR.NUMBER>=034) || (<VAR.NUMBER>=036)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=(<SRC.TAG.Bet>*2)
+      SRC.ACT.BOUNCE
+      SOUND=0032
+      SRC.SYSMESSAGE You have won <EVAL <SRC.TAG.Bet>*2> gold.
+      TRY SRC.UID.<TAG.GamblingDevice>.MORE=<SRC.UID.<TAG.GamblingDevice>.MORE>+((<SRC.TAG.Bet>*2)+-<SRC.TAG.Bet>) // Move win counter
+    ELSE // Loosing number
+      SRC.SYSMESSAGE You have lost <EVAL <SRC.TAG.Bet>> gold.
+      TRY SRC.UID.<TAG.GamblingDevice>.MORE2=<SRC.UID.<TAG.GamblingDevice>.MORE>+<SRC.TAG.Bet> // Move loss counter
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+  ENDIF
+  TAG.GamblingDevice=
+  TAG.Bet=
+
+ON=0 Odd
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    VAR.NUMBER=(<EVAL RAND(27)>+1)
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on Odds
+    IF (<VAR.NUMBER>=01) | (<VAR.NUMBER>=03) | (<VAR.NUMBER>=05) | (<VAR.NUMBER>=07) | (<VAR.NUMBER>=09) | (<VAR.NUMBER>=012) | (<VAR.NUMBER>=014) | (<VAR.NUMBER>=016) | (<VAR.NUMBER>=017) | (<VAR.NUMBER>=019) | (<VAR.NUMBER>=021) | (<VAR.NUMBER>=023) | (<VAR.NUMBER>=025) | (<VAR.NUMBER>=027) | (<VAR.NUMBER>=030) | (<VAR.NUMBER>=032) | (<VAR.NUMBER>=034) | (<VAR.NUMBER>=036)
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on red <EVAL <VAR.NUMBER>>
+    ELSEIF (<VAR.NUMBER>=037) | (<VAR.NUMBER>=038)
+      IF (<VAR.NUMBER>=037) // 37 is used as 0
+        TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 0
+      ELSE // 38 is used as 00
+        TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 00
+      ENDIF
+    ELSE
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on black <EVAL <VAR.NUMBER>>
+    ENDIF
+    IF (<VAR.NUMBER>=01) | (<VAR.NUMBER>=03) | (<VAR.NUMBER>=05) | (<VAR.NUMBER>=07) | (<VAR.NUMBER>=09) | (<VAR.NUMBER>=011) | (<VAR.NUMBER>=013) | (<VAR.NUMBER>=015) | (<VAR.NUMBER>=017) | (<VAR.NUMBER>=019) | (<VAR.NUMBER>=021) | (<VAR.NUMBER>=023) | (<VAR.NUMBER>=025) | (<VAR.NUMBER>=027) | (<VAR.NUMBER>=029) | (<VAR.NUMBER>=031) | (<VAR.NUMBER>=033) | (<VAR.NUMBER>=035)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=(<SRC.TAG.Bet>*2)
+      SRC.ACT.BOUNCE
+      SOUND=0032
+      SRC.SYSMESSAGE You have won <EVAL <SRC.TAG.Bet>*2)> gold.
+      TRY SRC.UID.<TAG.GamblingDevice>.MORE=<SRC.UID.<TAG.GamblingDevice>.MORE>+((<SRC.TAG.Bet>*2)+-<SRC.TAG.Bet>) // Move win counter
+    ELSE // Loosing number
+      SRC.SYSMESSAGE You have lost <EVAL <SRC.TAG.Bet>> gold.
+      TRY SRC.UID.<TAG.GamblingDevice>.MORE2=<SRC.UID.<TAG.GamblingDevice>.MORE>+<SRC.TAG.Bet> // Move loss counter
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+  ENDIF
+  TAG.GamblingDevice=
+  TAG.Bet=
+
+ON=0 Black
+  IF <SRC.RESTEST=<<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    VAR.NUMBER=(<EVAL RAND(27)>+1)
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on Black
+    IF (<VAR.NUMBER>=01) | (<VAR.NUMBER>=03) | (<VAR.NUMBER>=05) | (<VAR.NUMBER>=07) | (<VAR.NUMBER>=09) | (<VAR.NUMBER>=012) | (<VAR.NUMBER>=014) | (<VAR.NUMBER>=016) | (<VAR.NUMBER>=017) | (<VAR.NUMBER>=019) | (<VAR.NUMBER>=021) | (<VAR.NUMBER>=023) | (<VAR.NUMBER>=025) | (<VAR.NUMBER>=027) | (<VAR.NUMBER>=030) | (<VAR.NUMBER>=032) | (<VAR.NUMBER>=034) | (<VAR.NUMBER>=036)
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on red <EVAL <VAR.NUMBER>>
+    ELSEIF (<VAR.NUMBER>=037) | (<VAR.NUMBER>=038)
+      IF (<VAR.NUMBER>=037) // 37 is used as 0
+        TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 0
+      ELSE // 38 is used as 00
+        TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 00
+      ENDIF
+    ELSE
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on black <EVAL <VAR.NUMBER>>
+    ENDIF
+    IF (<VAR.NUMBER>=02) | (<VAR.NUMBER>=04) | (<VAR.NUMBER>=06) | (<VAR.NUMBER>=08) | (<VAR.NUMBER>=010) | (<VAR.NUMBER>=011) | (<VAR.NUMBER>=013) | (<VAR.NUMBER>=015) | (<VAR.NUMBER>=017) | (<VAR.NUMBER>=022) | (<VAR.NUMBER>=024) | (<VAR.NUMBER>=026) | (<VAR.NUMBER>=028) | (<VAR.NUMBER>=029) | (<VAR.NUMBER>=031) | (<VAR.NUMBER>=033) | (<VAR.NUMBER>=035)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=(<SRC.TAG.Bet>*2)
+      SRC.ACT.BOUNCE
+      SOUND=0032
+      SRC.SYSMESSAGE You have won <EVAL <SRC.TAG.Bet>*2> gold.
+      TRY SRC.UID.<TAG.GamblingDevice>.MORE=<SRC.UID.<TAG.GamblingDevice>.MORE>+((<SRC.TAG.Bet>*2)+-<SRC.TAG.Bet>) // Move win counter
+    ELSE // Loosing number
+      SRC.SYSMESSAGE You have lost <EVAL <SRC.TAG.Bet>> gold.
+      TRY SRC.UID.<TAG.GamblingDevice>.MORE2=<SRC.UID.<TAG.GamblingDevice>.MORE>+<SRC.TAG.Bet> // Move loss counter
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+  ENDIF
+  TAG.GamblingDevice=
+  TAG.Bet=
+
+ON=0 Red
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    VAR.NUMBER=(<EVAL RAND(27)>+1)
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on Red
+    IF (<VAR.NUMBER>=01) | (<VAR.NUMBER>=03) | (<VAR.NUMBER>=05) | (<VAR.NUMBER>=07) | (<VAR.NUMBER>=09) | (<VAR.NUMBER>=012) | (<VAR.NUMBER>=014) | (<VAR.NUMBER>=016) | (<VAR.NUMBER>=017) | (<VAR.NUMBER>=019) | (<VAR.NUMBER>=021) | (<VAR.NUMBER>=023) | (<VAR.NUMBER>=025) | (<VAR.NUMBER>=027) | (<VAR.NUMBER>=030) | (<VAR.NUMBER>=032) | (<VAR.NUMBER>=034) | (<VAR.NUMBER>=036)
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on red <EVAL <VAR.NUMBER>>
+    ELSEIF (<VAR.NUMBER>=037) | (<VAR.NUMBER>=038)
+      IF (<VAR.NUMBER>=037) // 37 is used as 0
+        TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 0
+      ELSE // 38 is used as 00
+        TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on green 00
+      ENDIF
+    ELSE
+      TRY SRC.UID.<TAG.GamblingDevice>.EMOTE=stop, the ball lands on black <EVAL <VAR.NUMBER>>
+    ENDIF
+    IF (<VAR.NUMBER>=01) | (<VAR.NUMBER>=03) | (<VAR.NUMBER>=05) | (<VAR.NUMBER>=07) | (<VAR.NUMBER>=09) | (<VAR.NUMBER>=012) | (<VAR.NUMBER>=014) | (<VAR.NUMBER>=016) | (<VAR.NUMBER>=017) | (<VAR.NUMBER>=019) | (<VAR.NUMBER>=021) | (<VAR.NUMBER>=023) | (<VAR.NUMBER>=025) | (<VAR.NUMBER>=027) | (<VAR.NUMBER>=030) | (<VAR.NUMBER>=032) | (<VAR.NUMBER>=034) | (<VAR.NUMBER>=036)
+      SRC.NEWITEM=i_gold
+      SRC.ACT.AMOUNT=(<SRC.TAG.Bet>*2)
+      SRC.ACT.BOUNCE
+      SOUND=0032
+      SRC.SYSMESSAGE You have won <EVAL <SRC.TAG.Bet>*2)> gold.
+      TRY SRC.UID.<TAG.GamblingDevice>.MORE=<SRC.UID.<TAG.GamblingDevice>.MORE>+((<SRC.TAG.Bet>*2)+-<SRC.TAG.Bet>) // Move win counter
+    ELSE // Loosing number
+      SRC.SYSMESSAGE You have lost <EVAL <SRC.TAG.Bet>> gold.
+      TRY SRC.UID.<TAG.GamblingDevice>.MORE2=<SRC.UID.<TAG.GamblingDevice>.MORE>+<SRC.TAG.Bet> // Move loss counter
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+  ENDIF
+  TAG.GamblingDevice=
+  TAG.Bet=
+
+ON=0 0 // Counts as #37
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=37
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=37
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=37
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=37
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=37
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=37
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=37
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=37
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=37
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=37
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=37
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=37
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 0
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 00 // Counts as #38
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=38
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=38
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=38
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=38
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=38
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=38
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=38
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=38
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=38
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=38
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=38
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=38
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 00
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 1
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=1
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=1
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=1
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=1
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=1
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=1
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=1
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=1
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=1
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=1
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=1
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=1
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 1
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 2
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=2
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=2
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=2
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=2
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=2
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=2
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=2
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=2
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=2
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=2
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=2
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=2
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 2
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 3
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=3
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=3
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=3
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=3
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=3
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=3
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=3
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=3
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=3
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=3
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=3
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=3
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 3
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 4
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=4
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=4
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=4
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=4
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=4
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=4
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=4
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=4
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=4
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=4
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=4
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=4
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 4
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 5
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=5
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=5
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=5
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=5
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=5
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=5
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=5
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=5
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=5
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=5
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=5
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=5
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 5
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 6
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=6
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=6
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=6
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=6
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=6
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=6
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=6
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=6
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=6
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=6
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=6
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=6
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 6
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 7
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=7
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=7
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=7
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=7
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=7
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=7
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=7
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=7
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=7
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=7
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=7
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 7
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 8
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=8
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=8
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=8
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=8
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=8
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=8
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=8
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=8
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=8
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=8
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=8
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=8
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 8
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 9
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=9
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=9
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=9
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=9
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=9
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=9
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=9
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=9
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=9
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=9
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=9
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=9
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 9
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 10
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=10
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=10
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=10
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=10
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=10
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=10
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=10
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=10
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=10
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=10
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=10
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=10
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 10
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 More Numbers...
+ITEMMENU menu_roulette_numbers_2
+
+[MENU menu_roulette_numbers_2]
+What do you wish to bet on?
+
+ON=0 11
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=11
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=11
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=11
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=11
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=11
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=11
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=11
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=11
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=11
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=11
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=11
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=11
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 11
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 12
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=12
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=12
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=12
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=12
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=12
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=12
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=12
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=12
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=12
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=12
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=12
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=12
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 12
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 13
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=13
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=13
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=13
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=13
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=13
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=13
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=13
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=13
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=13
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=13
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=13
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=13
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 13
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 14
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=14
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=14
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=14
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=14
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=14
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=14
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=14
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=14
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=14
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=14
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=14
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=14
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 14
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 15
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=15
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=15
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=15
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=15
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=15
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=15
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=15
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=15
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=15
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=15
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=15
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=15
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 15
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 16
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=16
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=16
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=16
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=16
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=16
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=16
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=16
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=16
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=16
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=16
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=16
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=16
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 16
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 17
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=17
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=17
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=17
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=17
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=17
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=17
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=17
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=17
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=17
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=7
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=17
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=17
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 17
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 18
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=18
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=18
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=18
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=18
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=18
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=18
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=18
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=18
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=18
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=18
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=18
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=18
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 18
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 19
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=19
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=19
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=19
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=19
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=19
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=19
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=19
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=19
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=19
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=19
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=19
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=19
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 19
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 20
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=20
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=20
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=20
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=20
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=20
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=20
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=20
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=20
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=20
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=20
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=20
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=20
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 20
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 21
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=21
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=21
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=21
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=21
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=21
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=21
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=21
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=21
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=21
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=21
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=21
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=21
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 21
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 22
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=22
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=22
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=22
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=22
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=22
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=22
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=22
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=22
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=22
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=22
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=22
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=22
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 22
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 23
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=23
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=23
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=23
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=23
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=23
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=23
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=23
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=23
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=23
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=23
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=23
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=23
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 23
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 24
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=24
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=24
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=24
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=24
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=24
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=24
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=24
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=24
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=24
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=24
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=24
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=24
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 24
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 25
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=25
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=25
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=25
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=25
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=25
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=25
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=25
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=25
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=25
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=25
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=25
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=25
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 25
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.\
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 More Numbers...
+ITEMMENU menu_roulette_numbers_3
+
+ON=0 Previous Menu...
+ITEMMENU menu_roulette_numbers
+
+[MENU menu_roulette_numbers_3]
+What do you wish to bet on?
+
+ON=0 26
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=26
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=26
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=26
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=26
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=26
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=26
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=26
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=26
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=26
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=26
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=26
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=26
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 26
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 27
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=27
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=27
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=27
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=27
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=27
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=27
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=27
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=27
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=27
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=27
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=27
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=27
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 27
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 28
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=28
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=28
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=28
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=28
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=28
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=28
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=28
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=28
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=28
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=28
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=28
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=28
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 28
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 29
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=29
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=29
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=29
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=29
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=29
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=29
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=29
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=29
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=29
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=29
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=29
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=29
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 29
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 30
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=30
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=30
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=30
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=30
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=30
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=30
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=30
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=30
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=30
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=30
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=30
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=30
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 30
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 31
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=31
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=31
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=31
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=31
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=31
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=31
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=31
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=31
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=31
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=31
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=31
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=31
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 31
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 32
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=32
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=32
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=32
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=32
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=32
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=32
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=32
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=32
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=32
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=32
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=32
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=32
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 32
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 33
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=33
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=33
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=33
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=33
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=33
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=33
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=33
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=33
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=33
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=33
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=33
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=33
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 33
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 34
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=34
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=34
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=34
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=34
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=34
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=34
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=34
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=34
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=34
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=34
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=34
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=34
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 34
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 35
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=35
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=35
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=35
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=35
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=35
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=35
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=35
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=35
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=35
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=35
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=35
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=35
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 35
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 36
+  IF <SRC.RESTEST=<SRC.TAG.Bet> i_gold>
+    SRC.CONSUME=<SRC.TAG.Bet> i_gold
+    IF (<TAG.Bet_1>=0)
+      TAG.Bet_1=36
+    ELSEIF (<TAG.Bet_2>=0)
+      TAG.Bet_2=36
+    ELSEIF (<TAG.Bet_3>=0)
+      TAG.Bet_3=36
+    ELSEIF (<TAG.Bet_4>=0)
+      TAG.Bet_4=36
+    ELSEIF (<TAG.Bet_5>=0)
+      TAG.Bet_5=36
+    ELSEIF (<TAG.Bet_6>=0)
+      TAG.Bet_6=36
+    ELSEIF (<TAG.Bet_7>=0)
+      TAG.Bet_7=36
+    ELSEIF (<TAG.Bet_8>=0)
+      TAG.Bet_8=36
+    ELSEIF (<TAG.Bet_9>=0)
+      TAG.Bet_9=36
+    ELSEIF (<TAG.Bet_10>=0)
+      TAG.Bet_10=36
+    ELSEIF (<TAG.Bet_11>=0)
+      TAG.Bet_11=36
+    ELSEIF (<TAG.Bet_12>=0)
+      TAG.Bet_12=36
+    ENDIF
+    EMOTE=place <EVAL <SRC.TAG.Bet>> gold on 36
+    ITEMMENU=menu_roulette_confirmation
+  ELSE
+    SRC.SYSMESSAGE It looks like you have gambled your money away already, go pawn some stuff.
+    ITEMMENU=menu_roulette_confirmation
+  ENDIF
+
+ON=0 Previous Menu...
+ITEMMENU menu_roulette_numbers_2
+
+// **************************************************
+// Characters
+// **************************************************
+
+[CHARDEF c_h_pawnshop]
+NAME=#NAMES_HUMANMALE the Pawn Shop Owner
+ID=C_MAN
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_TRAP,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=jobprovisioner
+TSPEECH=spk_shopkeep
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+TEVENTS=e_Human_HearUnk
+TEVENTS=e_Human_Needs
+TEVENTS=e_Human_ConvInit
+TEVENTS=e_Human_Greet
+TEVENTS=e_Human_Space
+TEVENTS=e_Human_Refuse
+TEVENTS=e_Human_Environ
+
+ON=@Create
+NPC=brain_vendor
+COLOR=colors_skin
+STR={66 80}
+DEX={61 75}
+INT={66 80}
+
+ARMSLORE={15.0 38.0}
+ItemID={35.0 55.0}
+FENCING={15.0 38.0}
+SWORDSMANSHIP={15.0 38.0}
+WRESTLING={15.0 38.0}
+MACEFIGHTING={15.0 38.0}
+TACTICS={15.0 35.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=RANDOM_LIGHT
+ITEM=i_shirt_plain
+COLOR=0481
+ITEM=random_pants
+COLOR={001b 0002 0027 002c 0029}
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_coin_purse
+
+BUY=VENDOR_B_PROVISIONER
+BUY=VENDOR_B_ARMORER
+BUY=VENDOR_B_CARPENTER
+BUY=VENDOR_B_DEED_TEMPLATE
+BUY=VENDOR_B_FURTRADER
+BUY=VENDOR_B_COBBLER
+BUY=VENDOR_B_VEGSELLER
+BUY=VENDOR_B_ALCHEMIST
+BUY=VENDOR_B_MAGE_SHOP
+BUY=VENDOR_S_TAILOR
+BUY=VENDOR_B_TINKER
+BUY=VENDOR_B_SHIP
+BUY=VENDOR_B_MAGIC_ARMOR
+BUY=VENDOR_B_MAGIC_WEAPONS
+BUY=VENDOR_B_COLOURED_ARMOR
+
+CATEGORY=Civilized
+SUBSECTION=Tradesmen
+DESCRIPTION=Casino Pawn Shop (male)
+
+[CHARDEF c_h_pawnshop_f]
+NAME=#NAMES_HUMANFEMALE the Pawn Shop Owner
+ID=C_WOMAN
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_TRAP,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=jobprovisioner
+TSPEECH=spk_shopkeep
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+TEVENTS=e_Human_HearUnk
+TEVENTS=e_Human_Needs
+TEVENTS=e_Human_ConvInit
+TEVENTS=e_Human_Greet
+TEVENTS=e_Human_Space
+TEVENTS=e_Human_Refuse
+TEVENTS=e_Human_Environ
+
+ON=@Create
+NPC=brain_vendor
+COLOR=colors_skin
+STR={66 80}
+DEX={61 75}
+INT={66 80}
+
+ARMSLORE={15.0 38.0}
+ItemID={35.0 55.0}
+FENCING={15.0 38.0}
+SWORDSMANSHIP={15.0 38.0}
+WRESTLING={15.0 38.0}
+MACEFIGHTING={15.0 38.0}
+TACTICS={15.0 35.0}
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=i_shirt_plain
+COLOR=0482
+ITEM=random_skirt
+COLOR={001b 0002 0027 002c 0029}
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_coin_purse
+
+BUY=VENDOR_B_PROVISIONER
+BUY=VENDOR_B_ARMORER
+BUY=VENDOR_B_CARPENTER
+BUY=VENDOR_B_DEED_TEMPLATE
+BUY=VENDOR_B_FURTRADER
+BUY=VENDOR_B_COBBLER
+BUY=VENDOR_B_VEGSELLER
+BUY=VENDOR_B_ALCHEMIST
+BUY=VENDOR_B_MAGE_SHOP
+BUY=VENDOR_S_TAILOR
+BUY=VENDOR_B_TINKER
+BUY=VENDOR_B_SHIP
+BUY=VENDOR_B_MAGIC_ARMOR
+BUY=VENDOR_B_MAGIC_WEAPONS
+BUY=VENDOR_B_COLOURED_ARMOR
+
+CATEGORY=Civilized
+SUBSECTION=Tradesmen
+DESCRIPTION=Casino Pawn Shop (female)
+
+[EOF]

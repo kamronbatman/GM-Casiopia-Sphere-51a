@@ -1,0 +1,69 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+VERSION=0.54
+
+// ADMIN section
+//
+// First some information about the server.
+//
+// Note that ID= has to be unique on the network your server
+// is running on, must be between 1 and 64, and is not updated on a rehash.
+// PORT=x specifies which port uplink server should use when authenticating (clients
+// use which ever port the game server is listening to)
+
+[COMMENT IRC LOCALSERVER irc1.sphereserver.com]
+DESCRIPTION=[10.1.1.1] SphereServer, Boston, MA, USA
+PORT=6667
+NICK=B]]
+ACCOUNT_SECURITY=0
+ADMINLINE=SphereServer IRC Chat
+ADMINLINE=Magichat Software IRC server
+ADMINLINE=IRC Admins <westypete@hotmail.com>
+ADMIN_USER=noneya
+ADMIN_IP_OR_HOST_MASK=ntserver.electrotechdesign.com
+ADMIN_PASSWORD=
+ADMIN_HOST_MASK=*@*.bellatlantic.net
+
+// UPLINKS and REMOTE SERVERS section
+//
+// The Connection and Allowing connection lines (also known as C/N lines)
+// define what servers the server connects to (UPLINK), and which servers are
+// allowed to connect (REMOTE SERVER).
+//
+// In a CNLINE, the (optional) HOST_MASK= field tells the server to represent itself
+// with "hostmask" dot-seperated fields stripped from its servername
+// and replaced with "*.".
+// (For example, if HOST_MASK=2 and the local server name is
+// "irc.sub.domain.com" it would be sent as "*.domain.com". This allows
+// for easier routing and linking of new servers.)
+
+[COMMENT IRC CNLINE irc2.sphereserver.com]
+IP=10.1.1.10
+HOST_OR_IP=*
+PASSWORD=passwd
+PORT=6667
+HOST_MASK=0
+AUTOCONECT=1
+
+// It is possible to show a different Message of the Day to a connecting
+// client depending on its origin.
+[COMMENT IRC MOTD *.*.*.*]
+PATH=g:\Sphere\Sphere.MOTD
+
+[COMMENT IRC MOTD *.ballatlantic.net]
+PATH=g:\Sphere\BellAtlantic.MOTD
+
+[COMMENT IRC KLINE]
+HOST_IP_MASK=*.au
+IP_MASK=192.168.*
+USER_MASK=*luser
+PATH=g:\sphere\klines\martians.txt
+
+[EOF]

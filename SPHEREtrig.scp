@@ -1,0 +1,1511 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+//See revisions file.
+//
+// NOTE: ASSUME THIS FILE IS IN SORTED ORDER !
+//
+// This file is for testing purposes. The following triggers are not yet finished.
+// Put item action triggers here.
+// Attach a trigger to an item by saying /SET TYPE 1000
+// trigger types are > 1000
+// [TRIG 1000]
+//
+// Sample trigger commands:
+//
+// ONTRIGGER=DCLICK		// Do this if the item is dclicked.
+// ONTRIGGER=STEP		// We got stepped on.
+// ONTRIGGER=TIMER		// My timer has expired.
+// ONTRIGGER=DAMAGE		// I have been damaged in some way
+// ONTRIGGER=SPELL		// cast some spell on me.
+// ONTRIGGER=HEAR		// I hear this said ?
+// ONTRIGGER=EQUIP		// I have been unequipped
+// ONTRIGGER=UNEQUIP
+// SRC.xxx				// Refer to or Set an attribute on the char that caused this.
+// TRIGGER DCLICK 1001 	// Call another trigger function
+// RETURN 1				// cancel normal usage flow.
+// RETURN 0				// allow normal default item usage.
+// IF ELSE ENDIF ELSEIF
+// <ATTRIBUTENAME>	inside brackets are replaced with the value of the attribute name.
+// VAR xxx=123		// Create/Set a system variable to hold this value.
+//
+
+[PLOTITEM 0]
+// Limit us to only using 1 advance gate.
+// Use /SET MORE2 1 on the advance gate to use this plot bit.
+ONTRIGGER=STEP
+ IF ((<TYPE>==59) && (<MORE2>&1))
+  SRC.MESSAGE Sorry you can only use one advance gate
+  RETURN 1
+ ENDIF
+
+ONTRIGGER=DCLICK // dclicking is the same as STEP
+ TRIGGER=STEP
+
+//This is the old Plotitem2 notes and setup for those who wish to revert, simply uncomment.
+//and then delete the NEW Plotitem2.
+//[PLOTITEM 2]
+// If the player has this plot bit set. All items the player effects go thru this plot script.
+// Mage plot flag.
+//ONTRIGGER=EQUIP	// If we are equipping some sort of a weapon/armor. Say no way.
+// IF <TYPE>==10	// make sure it is acceptable armor.
+//  SRC.MESSAGE Mages are restricted in armor worn.
+//  RETURN 1
+//  ENDIF
+// IF <TYPE>==15
+//  SRC.MESSAGE Mages cannot equip bows of any sort.
+//  RETURN 1
+// ENDIF
+// IF (( <TYPE>>=11 && <TYPE><=14 ) || <TYPE>==75 )
+// Some sort of weapon
+// ITEM_WEAPON_MACE_SMITH,	// 11 = Can be used for smithing
+// ITEM_WEAPON_MACE_SHARP,	// 12 = war axe can be used to cut/chop trees.
+// ITEM_WEAPON_SWORD,		// 13 =
+// ITEM_WEAPON_FENCE,		// 14 = can't be used to chop trees. (make kindling)
+//  SRC.MESSAGE Mages are restricted in weapons use.
+//  RETURN 0
+// ENDIF
+
+[PLOTITEM 2] // Plot1=04
+// If the player has this plot bit set. All items the player effects go thru this plot script.
+//In the previous version Mage=Necromancer.  If the word "necromancer" doesn't fit with your
+//shard, just copy this into SPHEREtrig2.scp when supported, and change it -- or chane it here.
+// Necromancer plot flag.
+ONTRIGGER=EQUIP // If we are equipping some sort of a weapon/armor. Say no way.
+IF <TYPE>==10 // make sure it is acceptable armor.
+SRC.MESSAGE Necromancers are restricted in armor worn.
+RETURN 1
+ENDIF
+IF <TYPE>==15
+SRC.MESSAGE Necromancers cannot use bows of any sort.
+RETURN 1
+ELSEIF (( <ID>=00f43 \\ <ID>=00f44 ))
+SRC.MESSAGE Necromancers are restricted in weapons.
+RETURN 1
+ELSEIF <ID>=00f45
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f46
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f47
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f48
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f49
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f4a
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f4b
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f4c
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f5e
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f5f
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f60
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f61
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b5
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b6
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b7
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b8
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b9
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013ba
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013fa
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013fb
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013fe
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013ff
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0143e
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0143f
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01440
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01441
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01442
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01443
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f47
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f48
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0e87
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0e88
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0f62
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0f63
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01400
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01401
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01402
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01403
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01404
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01405
+SRC.MESSAGE Necromancers are restricted in bladed weapons.
+RETURN 1
+ENDIF
+
+
+//This is the old plotitem3 included here for your edification - see how it was added to
+//[PLOTITEM 3]
+// Cleric plot flag.
+//ONTRIGGER=STEP // Clerics detect unholy items just by stepping on them.
+// IF <ATTR>&0300
+//  SRC.MESSAGE You detect unholy ground.
+//  ATTR=<ATTR>|01	// identify the item
+// ENDIF
+
+[PLOTITEM 3] // PLOT1=08
+// Cleric plot flag.
+
+ONTRIGGER=STEP // Clerics detect unholy items just by stepping on them.
+IF <ATTR>&0300
+SRC.MESSAGE You detect unholy ground.
+ATTR=<ATTR>\01 // identify the item
+
+ONTRIGGER=EQUIP
+IF <TYPE>==15
+SRC.MESSAGE Clerics cannot equip bows of any sort.
+RETURN 1
+ELSEIF <TYPE>=12
+SRC.MESSAGE Clerics cannot use bladed weapons.
+RETURN 1
+ELSEIF (( <ID>=00f43 \\ <ID>=00f44 ))
+SRC.MESSAGE Clerics can use a hatchet to cut trees.
+RETURN 0
+ELSEIF <ID>=00f45
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f46
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f47
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f48
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f49
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f4a
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f4b
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f4c
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f5e
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f5f
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f60
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f61
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b5
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b6
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b7
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013b8
+SRC.MESSAGE Unfortunately clerics a
+ELSEIF <ID>=013b9
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013ba
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013fa
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013fb
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013fe
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=013ff
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0143e
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0143f
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01440
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01441
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01442
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01443
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f47
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=00f48
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0e87
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0e88
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0f62
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=0f63
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01400
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01401
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01402
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01403
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01404
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ELSEIF <ID>=01405
+SRC.MESSAGE Unfortunately clerics are restricted in bladed weapons.
+RETURN 1
+ENDIF
+
+[PLOTITEM 4] // Plot1=010
+// If the player has this plot bit set. All items the player effects go thru this plot script.
+// War-Mage plot flag.
+ONTRIGGER=EQUIP // If we are equipping some sort of a weapon/armor. Say no way.
+IF <TYPE>==10 // make sure it is acceptable armor.
+SRC.MESSAGE War-Mages are restricted in armor worn.
+RETURN 1
+ENDIF
+IF <TYPE>==15
+SRC.MESSAGE War-Mages cannot equip bows of any sort.
+RETURN 1
+ENDIF
+
+[PLOTITEM 5] // Plot1=020
+// If the player has this plot bit set. All items the player effects go thru this plot script.
+// Warrior plot flag.
+ONTRIGGER=DCLICK // If we are equipping some sort of a weapon/armor. Say no way.
+IF <ATTR>==01024 // make sure it is a spellbook, if so disallow.
+SRC.MESSAGE Warriors & Craftsmen cannot use magic.
+RETURN 1
+ELSEIF <TYPE>==16
+SRC.MESSAGE Warriors & Craftsman cannot use wands.
+RETURN 1
+ENDIF
+
+[PLOTITEM 6] // Plot1=040
+// If the player has this plot bit set. All items the player effects go thru this plot script.
+// Thief plot flag.
+ONTRIGGER=DCLICK // If we are equipping some sort of a weapon/armor. Say no way.
+IF <ATTR>==01024 // make sure it is a spellbook, if so disallow.
+SRC.MESSAGE Rogues cannot cast spells.
+RETURN 1
+ONTRIGGER=EQUIP // If we are equipping some sort of a weapon/armor. Say no way.
+IF <TYPE>==10 // make sure it is acceptable armor.
+SRC.MESSAGE Rogues are restricted in armor worn.
+RETURN 1
+ENDIF
+
+[PLOTITEM 7] // PLOT1=080
+//Ranger Plotbit
+ONTRIGGER=EQUIP
+IF (( <TYPE>=11 \\ <TYPE>=13 \\ <TYPE>=14 \\ <TYPE>=75 ))
+// Some sort of weapon
+// ITEM_WEAPON_MACE_SMITH, // 11 = Can be used for smithing
+// ITEM_WEAPON_MACE_SHARP, // 12 = war axe can be used to cut/chop trees.
+// ITEM_WEAPON_SWORD, // 13 =
+// ITEM_WEAPON_FENCE, // 14 = can't be used to chop trees. (make kindling)
+SRC.MESSAGE Rangers cannot use maces or swords.
+RETURN 1
+ENDIF
+
+[PLOTITEM 8] // Plot1=100
+// If the player has this plot bit set. All items the player effects go thru this plot script.
+// Mages plot flag.
+ONTRIGGER=EQUIP // If we are equipping some sort of a weapon/armor. Say no way.
+IF <TYPE>==10 // make sure it is acceptable armor.
+SRC.MESSAGE Mages are restricted in armor worn.
+RETURN 1
+ENDIF
+IF <TYPE>==15
+SRC.MESSAGE Mages cannot equip bows of any sort.
+RETURN 1
+ELSEIF <TYPE>=12
+SRC.MESSAGE Mages are restricted in weapon use.
+RETURN 1
+ELSEIF <TYPE>=13
+SRC.MESSAGE Mages are restricted in weapon use.
+RETURN 1
+ELSEIF <TYPE>=14
+SRC.MESSAGE Mages are restricted in weapon use.
+RETURN 1
+ELSEIF <TYPE>=11
+SRC.MESSAGE Mages are restricted in weapon use.
+RETURN 1
+ENDIF
+
+[REGION 1]
+ONTRIGGER=ENTER
+	IF <SRC.PLOT2>&1
+		SRC.MESSAGE You feel welcome back at the sanctuary.
+	ELSE
+		SRC.PLOT1=<SRC.PLOT2>|1
+		SRC.MESSAGE You have reached the sanctuary !
+		SRC.MESSAGE You feel more powerful !
+		SRC.STR=<SRC.STR>+10
+	ENDIF
+	RETURN 0
+
+ONTRIGGER=EXIT
+	SRC.MESSAGE You continue on for more danger.
+
+[REGION 2]
+ONTRIGGER=ENTER
+	if <SRC.STR> < 40
+		SRC.MESSAGE You are too weak to proceed.
+		RETURN 1
+	ELSE
+		SRC.MESSAGE You feel a great danger in this area.
+		RETURN 0
+	ENDIF
+
+ONTRIGGER=EXIT
+	SRC.MESSAGE You feel a relief to leave this area.
+	RETURN 0
+
+[REGION 65000]
+// Unclaimed regions.
+ONTRIGGER=ENTER
+SRC.MIDILIST=9,27,29,30,31,43
+ONTRIGGER=PERIODIC
+SRC.MIDILIST=9,27,29,30,31,43
+
+[REGION 65001]
+// Brit
+ONTRIGGER=ENTER
+SRC.MIDILIST=9,10
+ONTRIGGER=PERIODIC
+SRC.MIDILIST=9,10
+
+[REGION 65002]
+// Lord brit castle.
+ONTRIGGER=ENTER
+SRC.MIDILIST=13
+ONTRIGGER=PERIODIC
+SRC.MIDILIST=13
+
+[REGION 65003]
+// Guard tower.
+ONTRIGGER=ENTER
+SRC.MIDILIST=27
+ONTRIGGER=PERIODIC
+SRC.MIDILIST=27
+
+[REGION 65003]
+// Lord Blackthorne's Castle
+ONTRIGGER=ENTER
+SRC.MIDILIST=44
+ONTRIGGER=PERIODIC
+SRC.MIDILIST=44
+
+[REGION 65005]
+// Bucs den
+ONTRIGGER=ENTER
+SRC.MIDILIST=11
+ONTRIGGER=PERIODIC
+SRC.MIDILIST=11
+
+[REGION 65010]
+// Spooky outdoor area.
+ONTRIGGER=ENTER
+SRC.MIDILIST=41
+ONTRIGGER=PERIODIC
+SRC.MIDILIST=41
+
+[REGION 65100]
+// Water/Ocean boat sounds
+ONTRIGGER=PERIODIC
+ALLCLIENTS SFX={025,1,026,1,027,1,010,1,011,1,012,1,013,1}
+
+[REGION 65103]
+// Dungeon sounds Actually should be the same day or night really.
+ONTRIGGER=PERIODIC
+ALLCLIENTS SFX={021f,1,0243,1,0244,1,0245,1}
+
+[REGION 65104]
+// Plains night and day.
+ONTRIGGER=PERIODIC
+ALLCLIENTS SFX={0a,1,0b,1}
+
+[REGION 65105]
+// Forest Day and night.
+ONTRIGGER=PERIODIC
+IF <SECTOR.NIGHTTIME>
+ALLCLIENTS SFX={00,2,01,2,02,2,07d,1}
+ELSE
+ALLCLIENTS SFX={08,10,09,10,0219,1,07d,1}
+ENDIF
+
+[REGION 65106]
+// Jungle Day and night.
+ONTRIGGER=PERIODIC
+IF <SECTOR.NIGHTTIME>
+ALLCLIENTS SFX={0c,2,0d,2,0b3,1}
+ELSE
+ALLCLIENTS SFX={03,2,04,2,05,2,0b3,1}
+ENDIF
+
+[REGION 65107]
+// Swamp Day and night.
+ONTRIGGER=PERIODIC
+ALLCLIENTS SFX={0e,10,0f,10,022,1,023,1,024,1,0267,1}
+
+[REGION 65200]
+ONTRIGGER=ENTER
+LIGHT
+SRC.MESSAGE Oh-OHHH!
+ONTRIGGER=EXIT
+SRC.LIGHT
+SRC.MESSAGE Whew !!
+
+[TRIG 1000]
+// Land Mine
+
+ONTRIGGER=STEP
+ IF <MORE>==0
+  EFFECT=3,036b0	// explosion
+  SOUND=SPELL_EXPLOSION
+  SRC.DAMAGE=5-20	// damage the person who stepped here.
+  MORE=1
+  TIMER=30	// reset in 30 seconds.
+ ELSE
+  SAY Click
+ ENDIF
+ RETURN 0	// allow player to walk here.
+
+ONTRIGGER=TIMER
+ MORE=0
+ RETURN 1	// don't allow decay
+
+ONTRIGGER=DCLICK
+ IF <SRC.SKILLCHECK TINKERING 30> // make chance of disarm based on tinkering ?
+  MORE=1
+  TIMER=60
+  MESSAGE Mine is disarmed
+ ELSE
+  MESSAGE You fail to disarm the Mine!
+  IF RAND(2)
+   TRIGGER STEP
+  ELSE
+   MESSAGE The mine does not go off. Close one!
+  ENDIF
+ ENDIF
+ RETURN 1			// No further processing required.
+
+[TRIG 1002]
+// Gate to allow only mages into Wind.
+ONTRIGGER=STEP
+ IF <SRC.MAGERY> > 70.0
+  SRC.MESSAGE Welcome to Wind 1!
+  SRC.GO Wind	// or proper x,y,z address for Wind
+ ELSE
+  SRC.MESSAGE You are not a worthy mage to enter Wind!
+ ENDIF
+ RETURN 1
+
+[TRIG 1003]
+// Trapped chest.
+ONTRIGGER=DCLICK
+ IF <SRC.TINKERING>>=30
+  SRC.MESSAGE You disarm the trap and open the chest.
+  TYPE=1
+  RETURN 0
+ ELSE
+  SRC.MESSAGE You fail to disarm the trap.
+  IF RAND(2)
+   SRC.MESSAGE The trap does not go off. Lucky.
+   TYPE=1
+   RETURN 0
+  ELSE
+   EFFECT=3,036b0
+   SOUND=SPELL_EXPLOSION
+   SRC.DAMAGE=20-35
+   TYPE=1
+   RETURN 0
+  ENDIF
+ ENDIF
+
+[TRIG 1004]
+// Good noto res gate.
+ONTRIGGER=STEP
+ IF <SRC.KARMA> < 0
+  SRC.MESSAGE You are not fit to be here evil one!
+  RETURN 1
+ ENDIF
+ IF ! ( <SRC.FLAGS> & 2 )	// Are they dead ?
+  SRC.MESSAGE You feel you are on holy ground.
+  RETURN 0
+ ENDIF
+ SRC.MESSAGE Return to life friend of goodness.
+ SRC.RESURRECT
+ RETURN 1
+
+ONTRIGGER=DCLICK // dclicking is the same as STEP
+ TRIGGER=STEP
+
+[TRIG 1005]
+// santas bag. This item should be a container as well
+// the bag should be LINKed to the nearby santa.
+ONTRIGGER=DCLICK // try to get something out of santas bag.
+	IF <LINK.UID> == 0
+		SPEAK Santas bag must be LINKed to Santa
+		RETURN 1
+	ENDIF
+	LINK.SPEAK HoHoHo Hello <SRC.NAME>
+	IF <SRC.PLOT2> & 1
+		LINK.SPEAK I'm sorry <SRC.NAME> but you have already received your gift. Please leave some for others.
+		RETURN 1
+	ENDIF
+	DORAND 3
+		LINK.SPEAK Have you been good this year ?
+		LINK.SPEAK Please help yourself to my goodies.
+		LINK.SPEAK HoHoHo
+	ENDDO
+	// Dupe an item in santas bag. and give to clicker.
+
+	VAR.SANTAGIFTCOUNT=<COUNT>
+	SRC.NEWDUPE <FINDCONT( RAND(SANTAGIFTCOUNT)).UID>
+	SRC.ACT.BOUNCE
+	SRC.PLOT2=<SRC.PLOT2>|1
+	RETURN 1
+
+[TRIG 1010]
+// Some other trigger.
+// Vending machine.
+ONTRIGGER=DCLICK
+if <SRC.RESTEST 10 GOLD>
+	SRC.NEWITEM={ HAM 1 APPLE 1 LOAF_BREAD 1 BACON 1 COOKED_RIBS 1 SAUSAGES 1}
+	SRC.ACT.BOUNCE	// put it in your pack.
+	SRC.CONSUME=10 GOLD
+	SRC.MESSAGE That will be 10 Gold Thank Thee.
+	MORE2=10.0*<SRC.TACTICS>
+	SOUND 0F7
+	RETURN 1
+ELSE
+	MESSAGE You lack 10 Gold to pay.
+ENDIF
+
+[TRIG 1011]
+// Cursed statue of sex change.
+// Make sure they are not polymorphed first.
+ONTRIGGER=DCLICK
+IF ( <SRC.FLAGS> & 0400 )
+	// Unpolymorph them.
+	SRC.SPELLEFFECT dispel 1000
+ENDIF
+IF ( <SRC.BODY> == 0190 )
+	SRC.BODY=0191
+ELSEIF ( <SRC.BODY> == 0191 )
+	SRC.BODY=0190
+ELSE
+	RETURN 1
+ENDIF
+
+// Nice magic effect.
+SRC.NEWITEM=03709
+SRC.ACT.ATTR 04010
+SRC.ACT.TIMER 2
+SRC.SOUND=SPELL_EXPLOSION
+SRC.UPDATE
+REMOVE	// gets rid of the object. There are other ways to do this.
+RETURN 1
+
+[TRIG 1012]
+// just a test for FINDLAYER. What is weapon in hand ?
+ONTRIGGER=DCLICK
+	if <SRC.FINDLAYER(1).UID>
+		SAY Hi <SRC.NAME> Nice <SRC.FINDLAYER(1).NAME> You have there.
+	ELSEIF <SRC.FINDLAYER(2).UID>
+		SAY Hi <SRC.NAME> Nice 2 handed <SRC.FINDLAYER(2).NAME> You have there.
+	ELSE
+		SAY Dangerous to go unarmed in these parts.
+	ENDIF
+	if ! <SRC.FINDLAYER(20).UID>
+		SAY You should become a caped crusader!
+	ELSE
+		SAY Wow nice <SRC.FINDLAYER(20).NAME>. You look like BatMan!
+	ENDIF
+
+	RETURN 1
+
+ONTRIGGER=STEP
+	TRIGGER=DCLICK
+
+[TRIG 1101]
+//LEVEL1MAP Deciphering
+ONTRIGGER=DCLICK
+	IF ! <SRC.RESTEST 1 0e85>
+		SRC.MESSAGE=Where is your Pickaxe?
+		RETURN 1
+	ENDIF
+	IF (<SRC.CARTOGRAPHY><50.0)
+		SRC.MESSAGE=You're not a good enough cartographer for this!
+		RETURN 1
+	ENDIF
+	// MOREP = the treasure location = MOREX,MOREY
+	IF (<MORE><0FFFF)
+		ID=04ff1
+		MORE1=((<MOREX> -180)*010000)+(<MOREY> -180)
+		MORE2=((<MOREX> +180)*010000)+(<MOREY> +180)
+		PIN=105,105	// dead center.
+		SRC.HOME=<SRC.P>
+		SRC.P=<MOREP>
+		SRC.NEWITEM=<VAR.TMTILES> //Place trigger random tile on UO Map
+		SRC.ACT.TYPE=1111
+		SRC.ACT.TIMER=-1
+		SRC.ACT.ATTR=8010
+		SRC.ACT.LINK=UID
+		SRC.P=<SRC.HOME>	// put us back where we really are.
+		RETURN 0
+	ENDIF
+
+[TRIG 1102]
+//LEVEL2MAP Deciphering
+ONTRIGGER=DCLICK
+ IF ! <SRC.RESTEST 1 0e85>
+  SRC.MESSAGE=Where is your Pickaxe?
+  RETURN 1
+ ENDIF
+ IF (<SRC.CARTOGRAPHY><60.0)
+  SRC.MESSAGE=You're not a good enough cartographer for this!
+  RETURN 1
+ ENDIF
+	// MOREP = the treasure location = MOREX,MOREY
+	IF (<MORE><0FFFF)
+		ID=04ff2
+		MORE1=((<MOREX> -180)*010000)+(<MOREY> -180)
+		MORE2=((<MOREX> +180)*010000)+(<MOREY> +180)
+		PIN=105,105	// dead center.
+
+		SRC.HOME=<SRC.P>
+		SRC.P=<MOREP>
+		SRC.NEWITEM=<VAR.TMTILES> //Place trigger random tile on UO Map
+		SRC.ACT.TYPE=1112
+		SRC.ACT.TIMER=-1
+		SRC.ACT.ATTR=8010
+		SRC.ACT.LINK=UID
+		SRC.P=<SRC.HOME>	// put us back where we really are.
+		RETURN 0
+	ENDIF
+
+[TRIG 1103]
+//LEVEL3MAP Deciphering
+ONTRIGGER=DCLICK
+ IF ! <SRC.RESTEST 1 0e85>
+  SRC.MESSAGE=Where is your Pickaxe?
+  RETURN 1
+ ENDIF
+ IF (<SRC.CARTOGRAPHY><70.0)
+  SRC.MESSAGE=You're not a good enough cartographer for this!
+  RETURN 1
+ ENDIF
+	IF (<MORE><0FFFF)
+		ID=04ff3
+		MORE1=((<MOREX> -180)*010000)+(<MOREY> -180)
+		MORE2=((<MOREX> +180)*010000)+(<MOREY> +180)
+		PIN=105,105	// dead center.
+
+		SRC.HOME=<SRC.P>
+		SRC.P=<MOREP>
+		SRC.NEWITEM=<VAR.TMTILES> //Place trigger random tile on UO Map
+		SRC.ACT.TYPE=1113
+		SRC.ACT.TIMER=-1
+		SRC.ACT.ATTR=8010
+		SRC.ACT.LINK=UID
+		SRC.P=<SRC.HOME>	// put us back where we really are.
+		RETURN 0
+	ENDIF
+
+[TRIG 1104]
+//LEVEL4MAP Deciphering
+ONTRIGGER=DCLICK
+ IF ! <SRC.RESTEST 1 0e85>
+  SRC.MESSAGE=Where is your Pickaxe?
+  RETURN 1
+ ENDIF
+ IF (<SRC.CARTOGRAPHY><80.0)
+  SRC.MESSAGE=You're not a good enough cartographer for this!
+  RETURN 1
+ ENDIF
+	IF (<MORE><0FFFF)
+		ID=04ff4
+		MORE1=((<MOREX> -180)*010000)+(<MOREY> -180)
+		MORE2=((<MOREX> +180)*010000)+(<MOREY> +180)
+		PIN=105,105	// dead center.
+
+		SRC.HOME=<SRC.P>
+		SRC.P=<MOREP>
+		SRC.NEWITEM=<VAR.TMTILES> //Place trigger random tile on UO Map
+		SRC.ACT.TYPE=1114
+		SRC.ACT.TIMER=-1
+		SRC.ACT.ATTR=8010
+		SRC.ACT.LINK=UID
+		SRC.P=<SRC.HOME>	// put us back where we really are.
+		RETURN 0
+	ENDIF
+
+[TRIG 1105]
+//LEVEL5MAP Deciphering
+ONTRIGGER=DCLICK
+ IF ! <SRC.RESTEST 1 0e85>
+  SRC.MESSAGE=Where is your Pickaxe?
+  RETURN 1
+ ENDIF
+ IF (<SRC.CARTOGRAPHY><90.0)
+  SRC.MESSAGE=You're not a good enough cartographer for this!
+  RETURN 1
+ ENDIF
+	IF (<MORE><0FFFF)
+		ID=04ff5
+		MORE1=((<MOREX> -180)*010000)+(<MOREY> -180)
+		MORE2=((<MOREX> +180)*010000)+(<MOREY> +180)
+		PIN=105,105	// dead center.
+
+		SRC.HOME=<SRC.P>
+		SRC.P=<MOREP>
+		SRC.NEWITEM=<VAR.TMTILES> //Place trigger random tile on UO Map
+		SRC.ACT.TYPE=1115
+		SRC.ACT.TIMER=-1
+		SRC.ACT.ATTR=8010
+		SRC.ACT.LINK=UID
+		SRC.P=<SRC.HOME>	// put us back where we really are.
+		RETURN 0
+	ENDIF
+
+[TRIG 1111]
+//LEVEL1MAP Treasure map Chest Spawn
+ONTRIGGER=DCLICK
+ IF <DISTANCE>>0
+  RETURN 1
+ ENDIF
+ IF (<SRC.FINDLAYER(1).ID>==0e85) && (<SRC.RESTEST 1 04ff1>) && (<SRC.MINING>>50.0)
+  SRC.ANIM=0B
+  SOUND=0126
+  SRC.NEWITEM=TM_LOOT_1 //Treasure map random poor loot
+  IF <SRC.DIR>==0
+   SRC.MOVE=0,1
+  ELSEIF <SRC.DIR>==1
+   SRC.MOVE=-1,1
+  ELSEIF <SRC.DIR>==2
+   SRC.MOVE=-1,0
+  ELSEIF <SRC.DIR>==3
+   SRC.MOVE=-1,-1
+  ELSEIF <SRC.DIR>==4
+   SRC.MOVE=0,-1
+  ELSEIF <SRC.DIR>==5
+   SRC.MOVE=1,-1
+  ELSEIF <SRC.DIR>==6
+   SRC.MOVE=1,0
+  ELSEIF <SRC.DIR>==7
+   SRC.MOVE=1,1
+  ENDIF
+  SRC.MESSAGE=WOW a treasure !! OOPS!!
+  SRC.CONSUME=1 04ff1 //Consumes Treasure Map in Player
+  SRC.NEWITEM=04ffa //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffa //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffa //Treasure map very easy monster spawn
+  REMOVE
+  RETURN 1
+ ENDIF
+RETURN 1
+
+[TRIG 1112]
+//LEVEL2MAP Treasure map Chest Spawn
+ONTRIGGER=DCLICK
+ IF <DISTANCE>>0
+  RETURN 1
+ ENDIF
+ IF (<SRC.FINDLAYER(1).ID>==0e85) && (<SRC.RESTEST 1 04ff2>) && (<SRC.MINING>>60.0)
+  SRC.ANIM=0B
+  SOUND=0126
+  SRC.NEWITEM=TM_LOOT_2 //Treasure map random poor loot
+  IF <SRC.DIR>==0
+   SRC.MOVE=0,1
+  ELSEIF <SRC.DIR>==1
+   SRC.MOVE=-1,1
+  ELSEIF <SRC.DIR>==2
+   SRC.MOVE=-1,0
+  ELSEIF <SRC.DIR>==3
+   SRC.MOVE=-1,-1
+  ELSEIF <SRC.DIR>==4
+   SRC.MOVE=0,-1
+  ELSEIF <SRC.DIR>==5
+   SRC.MOVE=1,-1
+  ELSEIF <SRC.DIR>==6
+   SRC.MOVE=1,0
+  ELSEIF <SRC.DIR>==7
+   SRC.MOVE=1,1
+  ENDIF
+  SRC.MESSAGE=WOW a treasure !! OOPS!!
+  SRC.CONSUME=1 04ff2 //Consumes Treasure Map in Player
+  SRC.NEWITEM=04ffb //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffb //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffb //Treasure map very easy monster spawn
+  REMOVE
+  RETURN 1
+ ENDIF
+RETURN 1
+
+[TRIG 1113]
+//LEVEL3MAP Treasure map Chest Spawn
+ONTRIGGER=DCLICK
+ IF <DISTANCE>>0
+  RETURN 1
+ ENDIF
+ IF (<SRC.FINDLAYER(1).ID>==0e85) && (<SRC.RESTEST 1 04ff3>) && (<SRC.MINING>>70.0)
+  SRC.ANIM=0B
+  SOUND=0126
+  SRC.NEWITEM=TM_LOOT_3 //Treasure map random poor loot
+  IF <SRC.DIR>==0
+   SRC.MOVE=0,1
+  ELSEIF <SRC.DIR>==1
+   SRC.MOVE=-1,1
+  ELSEIF <SRC.DIR>==2
+   SRC.MOVE=-1,0
+  ELSEIF <SRC.DIR>==3
+   SRC.MOVE=-1,-1
+  ELSEIF <SRC.DIR>==4
+   SRC.MOVE=0,-1
+  ELSEIF <SRC.DIR>==5
+   SRC.MOVE=1,-1
+  ELSEIF <SRC.DIR>==6
+   SRC.MOVE=1,0
+  ELSEIF <SRC.DIR>==7
+   SRC.MOVE=1,1
+  ENDIF
+  SRC.MESSAGE=WOW a treasure !! OOPS!!
+  SRC.CONSUME=1 04ff3 //Consumes Treasure Map in Player
+  SRC.NEWITEM=04ffc //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffc //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffc //Treasure map very easy monster spawn
+  REMOVE
+  RETURN 1
+ ENDIF
+RETURN 1
+
+[TRIG 1114]
+//LEVEL4MAP Treasure map Chest Spawn
+ONTRIGGER=DCLICK
+ IF <DISTANCE>>0
+  RETURN 1
+ ENDIF
+ IF (<SRC.FINDLAYER(1).ID>==0e85) && (<SRC.RESTEST 1 04ff4>) && (<SRC.MINING>>80.0)
+  SRC.ANIM=0B
+  SOUND=0126
+  SRC.NEWITEM=TM_LOOT_4 //Treasure map random poor loot
+  IF <SRC.DIR>==0
+   SRC.MOVE=0,1
+  ELSEIF <SRC.DIR>==1
+   SRC.MOVE=-1,1
+  ELSEIF <SRC.DIR>==2
+   SRC.MOVE=-1,0
+  ELSEIF <SRC.DIR>==3
+   SRC.MOVE=-1,-1
+  ELSEIF <SRC.DIR>==4
+   SRC.MOVE=0,-1
+  ELSEIF <SRC.DIR>==5
+   SRC.MOVE=1,-1
+  ELSEIF <SRC.DIR>==6
+   SRC.MOVE=1,0
+  ELSEIF <SRC.DIR>==7
+   SRC.MOVE=1,1
+  ENDIF
+  SRC.MESSAGE=WOW a treasure !! OOPS!!
+  SRC.CONSUME=1 04ff4 //Consumes Treasure Map in Player
+  SRC.NEWITEM=04ffd //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffd //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffd //Treasure map very easy monster spawn
+  REMOVE
+  RETURN 1
+ ENDIF
+RETURN 1
+
+[TRIG 1115]
+//LEVEL5MAP Treasure map Chest Spawn
+ONTRIGGER=DCLICK
+ IF <DISTANCE>>0
+  RETURN 1
+ ENDIF
+ IF (<SRC.FINDLAYER(1).ID>==0e85) && (<SRC.RESTEST 1 04ff5>) && (<SRC.MINING>>90.0)
+  SRC.ANIM=0B
+  SOUND=0126
+  SRC.NEWITEM=TM_LOOT_5 //Treasure map random poor loot
+  IF <SRC.DIR>==0
+   SRC.MOVE=0,1
+  ELSEIF <SRC.DIR>==1
+   SRC.MOVE=-1,1
+  ELSEIF <SRC.DIR>==2
+   SRC.MOVE=-1,0
+  ELSEIF <SRC.DIR>==3
+   SRC.MOVE=-1,-1
+  ELSEIF <SRC.DIR>==4
+   SRC.MOVE=0,-1
+  ELSEIF <SRC.DIR>==5
+   SRC.MOVE=1,-1
+  ELSEIF <SRC.DIR>==6
+   SRC.MOVE=1,0
+  ELSEIF <SRC.DIR>==7
+   SRC.MOVE=1,1
+  ENDIF
+  SRC.MESSAGE=WOW a treasure !! OOPS!!
+  SRC.CONSUME=1 04ff5 //Consumes Treasure Map in Player
+  SRC.NEWITEM=04ffe //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffe //Treasure map very easy monster spawn
+  SRC.NEWITEM=04ffe //Treasure map very easy monster spawn
+  REMOVE
+  RETURN 1
+ ENDIF
+RETURN 1
+
+[TRIG 1120]
+//***Creating Monster on Opening of Treasure Chest depending on Map Difficulty
+ONTRIGGER=DCLICK
+ IF <MORE>==01
+  MORE=02
+  TIMER=900
+  SOUND=01FE
+  IF <MORE2>==01
+   SRC.NEWITEM=04ffa //Treasure map random very easy monster spawn
+   SRC.NEWITEM=04ffa //Treasure map random very easy monster spawn
+   SRC.NEWITEM=04ffa //Treasure map random very easy monster spawn
+   RETURN 1
+  ELSEIF <MORE2>==02
+   SRC.NEWITEM=04ffb //Treasure map random easy monster spawn
+   SRC.NEWITEM=04ffb //Treasure map random easy monster spawn
+   SRC.NEWITEM=04ffb //Treasure map random easy monster spawn
+   RETURN 1
+  ELSEIF <MORE2>==03
+   SRC.NEWITEM=04ffc //Treasure map random average monster spawn
+   SRC.NEWITEM=04ffc //Treasure map random average monster spawn
+   SRC.NEWITEM=04ffc //Treasure map random average monster spawn
+   RETURN 1
+  ELSEIF <MORE2>==04
+   SRC.NEWITEM=04ffd //Treasure map random hard monster spawn
+   SRC.NEWITEM=04ffd //Treasure map random hard monster spawn
+   SRC.NEWITEM=04ffd //Treasure map random hard monster spawn
+   RETURN 1
+  ELSEIF <MORE2>==05
+   SRC.NEWITEM=04ffe //Treasure map random very hard monster spawn
+   SRC.NEWITEM=04ffe //Treasure map random very hard monster spawn
+   SRC.NEWITEM=04ffe //Treasure map random very hard monster spawn
+   RETURN 1
+  ENDIF
+ ENDIF
+ IF (<MORE>==02) && (<TIMER>>700)
+  SRC.MESSAGE=You can't open the chest yet!
+  RETURN 1
+ ELSEIF (<MORE>==02) && (<TIMER><701)
+  TYPE=01
+  ATTR=012  //activate decay after opening
+  TIMER=650
+  RETURN 0
+ ENDIF
+
+[trig 1121]
+ON=DCLICK
+MORE=(10 * <SRC.TACTICS>)
+
+
+//contributions gap
+
+[TRIG 3000]
+//Guild Members Only Door
+//Set the door to the Triger Type #, then Link the DOOR to the GUILDSTONE
+//DO NOT LINK THE GUILDSTONE TO THE DOOR - YOUR GUILDSTONE WILL DISAPPEAR IN THE NEXT SAVE.
+ONTRIGGER=DCLICK
+if (<SRC.MEMORYFINDTYPE.0400.LINK> == <LINK>)
+  MOREP=<P>
+  SRC.MESSAGE You've been allowed to pass through the door magically.
+  SRC.GO <MOREP>
+else
+  SRC.MESSAGE The door seems magically locked.
+ENDIF
+RETURN 1
+
+//Race Triggers. Assign these to Alchemy Symbols or Moongates(depends on preference).
+//settype ##### = (Trigger Number[1200 for example would be for the human]) Suggestions for
+//using these are to close off a room of some sort and add this "SRC.P=5564 1344 0" type of
+//statement after "SRC.FIX" so they will be teleported elsewhere and in turn forces them to
+//choose a Race.
+
+[TRIG 1200]
+ONTRIGGER=STEP
+		      SRC.NAME=<SRC.NAME> the Human
+		      SRC.FIX
+		      SRC.SYSMESSAGE Please Select Your Starting Town.
+
+[TRIG 1201]
+ONTRIGGER=STEP
+		      SRC.NAME=<SRC.NAME> the Elf
+		      SRC.COLOR=8460
+		      SRC.FIX
+		      SRC.SYSMESSAGE Please Select Your Class.
+
+[TRIG 1202]
+ONTRIGGER=STEP
+		      SRC.NAME=<SRC.NAME> the Dark-Elf
+		      SRC.COLOR=8455
+		      SRC.FIX
+		      SRC.SYSMESSAGE Please Select Your Class.
+
+[TRIG 1203]
+ONTRIGGER=STEP
+		      SRC.NAME=<SRC.NAME> the Wood-Elf
+		      SRC.COLOR=858a
+		      SRC.FIX
+		      SRC.SYSMESSAGE Please Select Your Class.
+
+[TRIG 1204]
+ONTRIGGER=STEP
+		      SRC.NAME=<SRC.NAME> the Barbarian
+		      SRC.COLOR=840c
+		      SRC.FIX
+		      SRC.SYSMESSAGE Please Select Your Class.
+
+[TRIG 1205]
+ONTRIGGER=STEP
+		      SRC.NAME=<SRC.NAME> the Dwarf
+		      SRC.COLOR=841a
+		      SRC.FIX
+		      SRC.SYSMESSAGE Please Select Your Class.
+
+[TRIG 1206]
+//War-Mage Gate
+ONTRIGGER=STEP
+IF <SRC.PLOT1> == 010
+SRC.MESSAGE Thou canst only use a gate once.
+TIMER=60
+RETURN 1
+ELSE
+SRC.PLOT1=010
+SRC.MESSAGE Thou art now a Mage of War !
+SRC.EFFECT=FX_BLESS_EFFECT
+SRC.SOUND=SPELL_BLESS
+SRC.ARCHERY=<SRC.ARCHERY>=0
+SRC.MEDITATION=<SRC.MEDITATION>=0
+SRC.ALCHEMY=<SRC.ALCHEMY>=0
+SRC.PARRYING=<SRC.PARRYING>=0
+SRC.ADDITEM 1f4a
+SRC.TITLE=a War-Mage
+SRC.FIX
+TIMER=10
+RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+RETURN 1
+
+[TRIG 1207]
+//Warrior Gate
+
+ONTRIGGER=STEP
+IF <SRC.PLOT1> == 020
+SRC.MESSAGE Thou canst only use a gate once.
+TIMER=60
+RETURN 1
+ELSE
+SRC.PLOT1=020
+SRC.MESSAGE Thou art now a Warrior !
+SRC.EFFECT=FX_BLESS_EFFECT
+SRC.SOUND=SPELL_BLESS
+SRC.MAGERY=<SRC.MAGERY>=0
+SRC.ALCHEMY=<SRC.ALCHEMY>=0
+SRC.STEALING=<SRC.STEALING>=0
+SRC.STEALTH=<SRC.STEALTH>=0
+SRC.TITLE=a Warrior
+SRC.FIX
+TIMER=10
+RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+RETURN 1
+
+[TRIG 1208]
+//Rogue Gate
+ONTRIGGER=STEP
+IF <SRC.PLOT1> == 040
+SRC.MESSAGE Thou canst only use a gate once.
+TIMER=60
+RETURN 1
+ELSE
+SRC.PLOT1=040
+SRC.MESSAGE Thou art now a Rogue!
+SRC.EFFECT=FX_BLESS_EFFECT
+SRC.SOUND=SPELL_BLESS
+SRC.MAGERY=<SRC.MAGERY>=0
+SRC.ALCHEMY=<SRC.ALCHEMY>=0
+SRC.SWORDSMANSHIP=<SRC.SWORDSMANSHIP>=0
+SRC.MACEFIGHTING=<SRC.MACEFIGHTING>=0
+SRC.PARRYING=<SRC.PARRYING>=0
+SRC.TITLE=a Rogue
+SRC.FIX
+TIMER=10
+RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+RETURN 1
+
+[TRIG 1209]
+//Mage Gate
+
+ONTRIGGER=STEP
+IF <SRC.PLOT1> == 0100
+SRC.MESSAGE Thou canst only use a gate once.
+TIMER=60
+RETURN 1
+ELSE
+SRC.PLOT1=0100
+SRC.MESSAGE Thou art now a Mage!
+SRC.EFFECT=FX_BLESS_EFFECT
+SRC.ADDITEM 0df0
+SRC.SOUND=SPELL_BLESS
+SRC.PARRYING=<SRC.PARRYING>=0
+SRC.SWORDSMANSHIP=<SRC.SWORDSMANSHIP>=0
+SRC.FENCING=<SRC.FENCING>=0
+SRC.STEALING=<SRC.STEALING>=0
+SRC.STEALTH=<SRC.STEALTH>=0
+SRC.TITLE=a Mage
+SRC.FIX
+TIMER=10
+RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+RETURN 1
+
+[TRIG 1210]
+//Cleric Gate
+
+ONTRIGGER=STEP
+IF <SRC.PLOT1> == 08
+SRC.MESSAGE Thou canst only use a gate once.
+TIMER=60
+RETURN 1
+ELSE
+SRC.PLOT1=08
+SRC.MESSAGE Thou art now a Cleric!
+SRC.EFFECT=FX_BLESS_EFFECT
+SRC.SOUND=SPELL_BLESS
+SRC.SWORDSMANSHIP=<SRC.SWORDSMANSHIP>=0
+SRC.FENCING=<SRC.FENCING>=0
+SRC.ARCHERY=<SRC.ARCHERY>=0
+SRC.STEALING=<SRC.STEALING>=0
+SRC.STEALTH=<SRC.STEALTH>=0
+SRC.BEGGING=<SRC.BEGGING>=0
+SRC.TITLE=a Cleric
+SRC.FIX
+TIMER=10
+RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+RETURN 1
+
+[TRIG 1211]
+//Craftsman Gate
+
+ONTRIGGER=STEP
+IF <SRC.PLOT1> == 020
+SRC.MESSAGE Thou canst only use a gate once.
+TIMER=60
+RETURN 1
+ELSE
+SRC.PLOT1=020
+SRC.MESSAGE Thou art now a Craftsman!
+SRC.EFFECT=FX_BLESS_EFFECT
+SRC.SOUND=SPELL_BLESS
+SRC.BLACKSMITHING=<SRC.BLACKSMITHING> + 50
+SRC.ARMSLORE=<SRC.ARMSLORE> + 50
+SRC.CARPENTRY=<SRC.CARPENTRY> + 50
+SRC.ALCHEMY=<SRC.ALCHEMY> + 50
+SRC.TINKERING=<SRC.TINKERING> + 50
+SRC.LUMBERJACKING=<SRC.LUMBERJACKING> + 50
+SRC.MINING=<SRC.MINING> + 50
+SRC.MAGERY=<SRC.MAGERY>=0
+SRC.STEALING=<SRC.STEALING>=0
+SRC.STEALTH=<SRC.STEALTH>=0
+SRC.SNOOPING=<SRC.SNOOPING>=0
+SRC.TITLE=a Craftsman
+SRC.FIX
+SRC.P=5535 1371 0
+TIMER=10
+RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+RETURN 1
+
+[TRIG 1212]
+//Necromancer Gate
+
+ONTRIGGER=STEP
+IF <SRC.PLOT1> == 04
+SRC.MESSAGE Thou canst only use a gate once.
+TIMER=60
+RETURN 1
+ELSE
+SRC.PLOT1=04
+SRC.MESSAGE Thou art now a dreaded Necromancer!
+SRC.EFFECT=FX_BLESS_EFFECT
+SRC.SOUND=SPELL_BLESS
+SRC.PARRYING=<SRC.PARRYING>=0
+SRC.SWORDSMANSHIP=<SRC.SWORDSMANSHIP>=0
+SRC.FENCING=<SRC.FENCING>=0
+SRC.STEALING=<SRC.STEALING>=0
+SRC.STEALTH=<SRC.STEALTH>=0
+SRC.TITLE=a Necromancer
+SRC.FIX
+TIMER=10
+RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+RETURN 1
+
+[TRIG 1213]
+//Ranger Gate
+
+ONTRIGGER=STEP
+IF <SRC.PLOT1> == 080
+SRC.MESSAGE Thou canst only use a gate once.
+TIMER=60
+RETURN 1
+ELSE
+SRC.PLOT1=080
+SRC.MESSAGE Thou art now a Ranger!
+SRC.EFFECT=FX_BLESS_EFFECT
+SRC.SOUND=SPELL_BLESS
+SRC.ADDITEM 13b1
+SRC.ADDITEM 13af
+SRC.ANATOMY=<SRC.ANATOMY> + 50
+SRC.ANIMALLORE=<SRC.ANIMALLORE> + 50
+SRC.CARPENTRY=<SRC.CARPENTRY> + 50
+SRC.ALCHEMY=<SRC.ALCHEMY>=0
+SRC.LUMBERJACKING=<SRC.LUMBERJACKING> + 150
+SRC.STEALING=<SRC.STEALING>=0
+SRC.STEALTH=<SRC.STEALTH>=0
+SRC.SNOOPING=<SRC.SNOOPING>=0
+SRC.TITLE=a Ranger
+SRC.FIX
+TIMER=10
+RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+RETURN 1
+
+-----------------------------
+
+[TRIG 1400]
+// test trigger
+ONTRIGGER=STEP
+IF !(<VAR.CNT>>1)
+VAR.CNT=1
+ENDIF
+IF (<VAR.CNT>=1)
+SAY You stepped on me
+VAR.WHO=<SRC.UID>
+VAR.CNT=2
+TIMER=1
+ENDIF
+RETURN 1
+
+ONTRIGER=TIMER
+IF !(<UID.WHO.P>==<P>)
+VAR.CNT=1
+TIMER=-1
+ENDIF
+RETURN 1
+
+-----------------------------
+
+[TRIG 1401]
+// test trigger
+ONTRIGGER=STEP
+	VAR.TEMP=<VALSTR STRLEN(<SRC.NAME>)>
+	SAY <SRC.NAME> stepped on me <VAR.TEMP>
+	//SRC.MESSAGE You have <SRC.RESTEST INGOTS> ingots
+	SRC.MESSAGE You have <SRC.RESTEST IRON_INGOT> ingots
+
+[TRIG 1402]
+ONTRIGGER=STEP
+ IF <TIMER>>0
+  RETURN 1
+ ENDIF
+SRC.MESSAGE <SRC.FINDLAYER(1).ID> <SRC.FINDLAYER(2).ID> <SRC.FINDLAYER(4).ID> <SRC.FINDLAYER(5).ID>
+SRC.MESSAGE <SRC.FINDLAYER(6).ID> <SRC.FINDLAYER(7).ID> <SRC.FINDLAYER(10).ID> <SRC.FINDLAYER(13).ID>
+SRC.MESSAGE <SRC.FINDLAYER(17).ID> <SRC.FINDLAYER(19).ID> <SRC.FINDLAYER(24).ID>
+
+ONTRIGGER=TIMER
+ MORE=0
+ RETURN 1
+
+[TRIG 2000]
+ONTRIGGER=DCLICK
+IF (<SRC.ACCOUNT.PLEVEL>>3)
+TOME 29
+RETURN 1
+ELSE
+IF (<SRC.UID> == <LINK.MORE>)
+TOME 20
+SRC.SYSMESSAGE Welcome back to the house, friend! 
+RETURN 1
+ELSE
+IF (<SRC.UID> == <LINK.MORE2>)
+TOME 20
+SRC.SYSMESSAGE Welcome back to the house, friend! 
+RETURN 1
+ELSE
+IF (<SRC.UID> == <MORE2>)
+TOME 20
+SRC.SYSMESSAGE Welcome back to the house, friend! 
+RETURN 1
+ELSE
+TOME 22
+SRC.SYSMESSAGE This house is properly placed.
+SRC.SYSMESSAGE This house is of modern design.
+RETURN 1
+ENDIF
+
+[TRIG 2001] 
+ONTRIGGER=DCLICK
+IF (<SRC.ACCOUNT.PLEVEL>>3)
+TOME 29
+RETURN 1
+ELSE
+IF (<SRC.UID> == <LINK.MORE>)
+TOME 21
+SRC.SYSMESSAGE Welcome back to the house, friend! 
+RETURN 1
+ELSE
+IF (<SRC.UID> == <LINK.MORE2>)
+TOME 21
+SRC.SYSMESSAGE Welcome back to the house, friend! 
+RETURN 1
+ELSE
+IF (<SRC.UID> == <MORE2>)
+TOME 21
+SRC.SYSMESSAGE Welcome back to the house, friend! 
+RETURN 1
+ELSE
+TOME 22
+SRC.SYSMESSAGE This house is properly placed.
+SRC.SYSMESSAGE This house is of modern design.
+RETURN 1
+ENDIF
+
+[TRIG 2002]
+ONTRIGGER=DCLICK
+LINK.MORE=<SRC.SERIAL> 
+LINK.MORE2=0
+LINK.AMOUNT=0
+MORE2=0
+SRC.SYSMESSAGE You have claimed ownership of this house!
+TYPE 2001
+LINK.TYPE 2001
+RETURN 1

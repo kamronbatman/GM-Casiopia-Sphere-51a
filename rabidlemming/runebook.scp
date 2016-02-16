@@ -1,0 +1,397 @@
+// Rune book.
+// 03/12/2001 - made some changes to allow use in diff map planes and z levels.
+
+VERSION=0.55
+
+[FUNCTION f_runebook_mark]
+	// just find a free slot.
+	if (<tag.charges_1>==0)
+		tag.charges_1=<more1>
+		tag.morep_1=<morep>
+		tag.name_1=<name>
+	elseif (<tag.charges_2>==0)
+		tag.charges_2=<more1>
+		tag.morep_2=<morep>
+		tag.name_2=<name>
+	elseif (<tag.charges_3>==0)
+		tag.charges_3=<more1>
+		tag.morep_3=<morep>
+		tag.name_3=<name>
+	elseif (<tag.charges_4>==0)
+		tag.charges_4=<more1>
+		tag.morep_4=<morep>
+		tag.name_4=<name>
+	elseif (<tag.charges_5>==0)
+		tag.charges_5=<more1>
+		tag.morep_5=<morep>
+		tag.name_5=<name>
+	elseif (<tag.charges_6>==0)
+		tag.charges_6=<more1>
+		tag.morep_6=<morep>
+		tag.name_6=<name>
+	elseif (<tag.charges_7>==0)
+		tag.charges_7=<more1>
+		tag.morep_7=<morep>
+		tag.name_7=<name>
+	elseif (<tag.charges_8>==0)
+		tag.charges_8=<more1>
+		tag.morep_8=<morep>
+		tag.name_8=<name>
+	elseif (<tag.charges_9>==0)
+		tag.charges_9=<more1>
+		tag.morep_9=<morep>
+		tag.name_9=<name>
+	elseif (<tag.charges_10>==0)
+		tag.charges_10=<more1>
+		tag.morep_10=<morep>
+		tag.name_10=<name>
+	elseif (<tag.charges_11>==0)
+		tag.charges_11=<more1>
+		tag.morep_11=<morep>
+		tag.name_11=<name>
+	elseif (<tag.charges_12>==0)
+		tag.charges_12=<more1>
+		tag.morep_12=<morep>
+		tag.name_12=<name>
+	elseif (<tag.charges_13>==0)
+		tag.charges_13=<more1>
+		tag.morep_13=<morep>
+		tag.name_13=<name>
+	elseif (<tag.charges_14>==0)
+		tag.charges_14=<more1>
+		tag.morep_14=<morep>
+		tag.name_14=<name>
+	elseif (<tag.charges_15>==0)
+		tag.charges_15=<more1>
+		tag.morep_15=<morep>
+		tag.name_15=<name>
+	elseif (<tag.charges_16>==0)
+		tag.charges_16=<more1>
+		tag.morep_16=<morep>
+		tag.name_16=<name>
+	else
+		src.sysmessage This runebook is full!
+		return 1
+	endif
+	src.sysmessage The location is marked
+	return 0
+
+[ITEMDEF i_book_rune]
+NAME=Rune Book
+ID=i_spellbook
+TYPE=t_script // start type so we get the tags.
+WEIGHT=1
+VALUE={1024 2048}
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Magical Items
+DESCRIPTION=Rune Book (Blank)
+
+ON=@CREATE
+	TYPE=T_RUNE	// change the type here so we can use it like a rune.
+	ATTR=attr_newbie
+	COLOR=0386
+
+	tag.charges_1=0
+	tag.name_1=Empty
+	tag.charges_2=0
+	tag.name_2=Empty
+	tag.charges_3=0
+	tag.name_3=Empty
+	tag.charges_4=0
+	tag.name_4=Empty
+	tag.charges_5=0
+	tag.name_5=Empty
+	tag.charges_6=0
+	tag.name_6=Empty
+	tag.charges_7=0
+	tag.name_7=Empty
+	tag.charges_8=0
+	tag.name_8=Empty
+	tag.charges_9=0
+	tag.name_9=Empty
+	tag.charges_10=0
+	tag.name_10=Empty
+	tag.charges_11=0
+	tag.name_11=Empty
+	tag.charges_12=0
+	tag.name_12=Empty
+	tag.charges_13=0
+	tag.name_13=Empty
+	tag.charges_14=0
+	tag.name_14=Empty
+	tag.charges_15=0
+	tag.name_15=Empty
+	tag.charges_16=0
+	tag.name_16=Empty
+
+ON=@SpellEffect
+// I am being marked like a rune ?
+	if ( <argn1> != id(s_mark) )
+		return 0	// no idea what to do with this.
+	endif
+	more1=10	// charges
+	morep=<src.p>	// where am i now ?
+	name=<src.region.name>
+	return <f_runebook_mark>
+
+ON=@DCLICK
+	dialog d_book_rune
+	return 1
+
+ON=@TARGON_ITEM
+	if (<src.targ.baseid>!=i_rune_marker)
+		src.sysmessage You can't use this item on a runebook!
+		return 1
+	elseif (<src.targ.morex>==0) || (<src.targ.morey>==0) || (<src.targ.more1>==0)
+		src.sysmessage You can't use a blank rune!
+		return 1
+	endif
+	more1=<src.targ.more1>
+	morep=<src.targ.morep>
+	name=<src.targ.name>
+	f_runebook_mark
+	src.sound=79
+	src.sysmessage The rune was succesfully added
+	src.targ.remove
+	return 1
+
+[FUNCTION f_runebook_button_click]
+	if (<more1> ==0 )				//Check charges
+		src.sysmessage This slot is empty!
+		more2=0
+		return 1
+	endif
+	more2=<more1>-1
+	// start casting the spell.
+	src.act=<uid>	// the book acts line the rune
+	src.actarg1=s_recall	// cast the recall spell.
+	src.skill skill_magery		// start casting
+	return 1
+
+[DIALOG d_Book_Rune]
+0, 0	// location on the screen.
+page 0
+gumppic 100 10 2200 //background book
+gumppic 125 50 57
+gumppic 145 50 58
+gumppic 160 50 58
+gumppic 175 50 58
+gumppic 190 50 58
+gumppic 205 50 58
+gumppic 220 50 58
+gumppic 230 50 59
+gumppic 290 50 57
+gumppic 310 50 58
+gumppic 325 50 58
+gumppic 340 50 58
+gumppic 355 50 58
+gumppic 370 50 58
+gumppic 385 50 58
+gumppic 395 50 59
+button 130 20 2472 2473 1 0 1
+text 158 22 0 0 //Drop Rune
+page 1
+button 130 65 2103 2104 1 0 11
+button 130 80 2103 2104 1 0 12
+button 130 95 2103 2104 1 0 13
+button 130 110 2103 2104 1 0 14
+button 130 125 2103 2104 1 0 15
+button 130 140 2103 2104 1 0 16
+button 130 155 2103 2104 1 0 17
+button 130 170 2103 2104 1 0 18
+button 290 65 2103 2104 1 0 19
+button 290 80 2103 2104 1 0 20
+button 290 95 2103 2104 1 0 21
+button 290 110 2103 2104 1 0 22
+button 290 125 2103 2104 1 0 23
+button 290 140 2103 2104 1 0 24
+button 290 155 2103 2104 1 0 25
+button 290 170 2103 2104 1 0 26
+croppedtext 145 60 115 17 0 2
+croppedtext 145 75 115 17 0 3
+croppedtext 145 90 115 17 0 4
+croppedtext 145 105 115 17 0 5
+croppedtext 145 120 115 17 0 6
+croppedtext 145 135 115 17 0 7
+croppedtext 145 150 115 17 0 8
+croppedtext 145 165 115 17 0 9
+croppedtext 305 60 115 17 0 10
+croppedtext 305 75 115 17 0 11
+croppedtext 305 90 115 17 0 12
+croppedtext 305 105 115 17 0 13
+croppedtext 305 120 115 17 0 14
+croppedtext 305 135 115 17 0 15
+croppedtext 305 150 115 17 0 16
+croppedtext 305 165 115 17 0 17
+
+[DIALOG d_Book_Rune TEXT]
+Drop Rune
+.
+<tag.name_1>
+<tag.name_2>
+<tag.name_3>
+<tag.name_4>
+<tag.name_5>
+<tag.name_6>
+<tag.name_7>
+<tag.name_8>
+<tag.name_9>
+<tag.name_10>
+<tag.name_11>
+<tag.name_12>
+<tag.name_13>
+<tag.name_14>
+<tag.name_15>
+<tag.name_16>
+
+[DIALOG d_Book_Rune BUTTON]
+ONBUTTON=1
+	target Choose a marked rune
+	return 1
+
+ONBUTTON=11
+	more1=<tag.charges_1>			
+	morep=<tag.morep_1>			
+	f_runebook_button_click
+	tag.charges_1=<more2>
+	if (<more2> == 0)
+		tag.name_1=Empty
+	endif
+
+ONBUTTON=12
+	more1=<tag.charges_2>			
+	morep=<tag.morep_2>			
+	f_runebook_button_click
+	tag.charges_2=<more2>
+	if (<more2> == 0)
+		tag.name_2=Empty
+	endif
+
+ONBUTTON=13
+	more1=<tag.charges_3>			
+	morep=<tag.morep_3>			
+	f_runebook_button_click
+	tag.charges_3=<more2>
+	if (<more2> == 0)
+		tag.name_3=Empty
+	endif
+
+ONBUTTON=14
+	more1=<tag.charges_4>			
+	morep=<tag.morep_4>			
+	f_runebook_button_click
+	tag.charges_4=<more2>
+	if (<more2> == 0)
+		tag.name_4=Empty
+	endif
+
+ONBUTTON=15
+	more1=<tag.charges_5>			
+	morep=<tag.morep_5>			
+	f_runebook_button_click
+	tag.charges_5=<more2>
+	if (<more2> == 0)
+		tag.name_5=Empty
+	endif
+
+ONBUTTON=16
+	more1=<tag.charges_6>			
+	morep=<tag.morep_6>			
+	f_runebook_button_click
+	tag.charges_6=<more2>
+	if (<more2> == 0)
+		tag.name_6=Empty
+	endif
+
+ONBUTTON=17
+	more1=<tag.charges_7>			
+	morep=<tag.morep_7>			
+	f_runebook_button_click
+	tag.charges_7=<more2>
+	if (<more2> == 0)
+		tag.name_7=Empty
+	endif
+
+ONBUTTON=18
+	more1=<tag.charges_8>			
+	morep=<tag.morep_8>			
+	f_runebook_button_click
+	tag.charges_8=<more2>
+	if (<more2> == 0)
+		tag.name_8=Empty
+	endif
+
+ONBUTTON=19
+	more1=<tag.charges_9>			
+	morep=<tag.morep_9>			
+	f_runebook_button_click
+	tag.charges_9=<more2>
+	if (<more2> == 0)
+		tag.name_9=Empty
+	endif
+
+ONBUTTON=20
+	more1=<tag.charges_10>			
+	morep=<tag.morep_10>			
+	f_runebook_button_click
+	tag.charges_10=<more2>
+	if (<more2> == 0)
+		tag.name_10=Empty
+	endif
+
+ONBUTTON=21
+	more1=<tag.charges_11>			
+	morep=<tag.morep_11>			
+	f_runebook_button_click
+	tag.charges_11=<more2>
+	if (<more2> == 0)
+		tag.name_11=Empty
+	endif
+
+ONBUTTON=22
+	more1=<tag.charges_12>			
+	morep=<tag.morep_12>			
+	f_runebook_button_click
+	tag.charges_12=<more2>
+	if (<more2> == 0)
+		tag.name_12=Empty
+	endif
+
+ONBUTTON=23
+	more1=<tag.charges_13>			
+	morep=<tag.morep_13>			
+	f_runebook_button_click
+	tag.charges_13=<more2>
+	if (<more2> == 0)
+		tag.name_13=Empty
+	endif
+
+ONBUTTON=24
+	more1=<tag.charges_14>			
+	morep=<tag.morep_14>			
+	f_runebook_button_click
+	tag.charges_14=<more2>
+	if (<more2> == 0)
+		tag.name_14=Empty
+	endif
+
+ONBUTTON=25
+	more1=<tag.charges_15>
+	morep=<tag.morep_15>
+	f_runebook_button_click
+	tag.charges_15=<more2>
+	if (<more2> == 0)
+		tag.name_15=Empty
+	endif
+
+ONBUTTON=26
+	more1=<tag.charges_16>			
+	morep=<tag.morep_16>
+	f_runebook_button_click
+	tag.charges_16=<more2>
+	if (<more2> == 0)
+		tag.name_16=Empty
+	endif
+
+[EOF]

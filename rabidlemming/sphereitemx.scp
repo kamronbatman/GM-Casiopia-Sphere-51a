@@ -1,0 +1,305 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+VERSION=0.54
+
+[ITEMDEF I_WINDOW]
+ID=I_TARGET
+RESOURCES=2 I_SAND, 2 I_BOARD
+
+ON=@Create
+COLOR=colors_white
+
+[ITEMDEF I_flagstone_RED]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_red
+
+[ITEMDEF I_flagstone_GRAY]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_gray
+
+[ITEMDEF i_stone_slate]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_gray
+
+[ITEMDEF I_STONE_RED]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_red
+
+[ITEMDEF I_STONE_COBBLE]
+ID=i_rock_plain
+
+ON=@Create
+COLOR=colors_brown
+
+[ITEMDEF i_PALM]
+ID=i_TREE_COCONUTPALM
+
+[ITEMDEF I_FROSTINGBOWL]
+ID=i_bowl_dough
+
+ON=@Create
+COLOR=colors_yellow
+
+[ITEMDEF i_CAKEPAN]
+ID=I_BASKET
+
+ON=@Create
+COLOR=colors_gray
+
+[ITEMDEF i_JAR]
+ID=i_JAR_HONEY
+NAME=Empty Honey Jar
+
+[ITEMDEF i_LINEN]
+ID=i_CLOTH
+VALUE=2
+NAME=Linen
+RESOURCES=6 i_flax_bundle
+WEIGHT=1
+
+ON=@Create
+COLOR=colors_yellow
+
+[ITEMDEF i_PAPER]
+ID=i_bedroll_open
+NAME=Paper
+VALUE=2
+RESOURCES=1 I_BOARD, 1 T_WATER
+SKILLMAKE=CARPENTRY 15.7, t_carpentry
+WEIGHT=.1
+
+[ITEMDEF i_PARCHMENT]
+ID=i_bedroll_open
+VALUE=2
+NAME=Parchment
+RESOURCES=1 i_PAPER, 1 i_CLOTH
+SKILLMAKE=CARPENTRY 20.7, t_carpentry
+WEIGHT=1
+
+[ITEMDEF i_CROP_HERB]
+ID=i_plant_grasses
+NAME=Herbs
+
+[ITEMDEF i_KNITTING_NEEDLES]
+ID=i_axel
+VALUE=5
+WEIGHT=1
+NAME=Knitting Needles
+RESOURCES=1 i_board
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Knitting Needles
+
+[ITEMDEF I_SCREW]
+ID=i_hinge
+VALUE=1
+WEIGHT=.2
+NAME=Screw
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Screw
+
+[ITEMDEF I_EBONY]
+ID=i_reag_blackmoor
+NAME=Ebony
+WEIGHT=1
+CATEGORY=Provisions - Jewels and Jewelery
+SUBSECTION=Jewels
+DESCRIPTION=Ebony
+
+[ITEMDEF I_IVORY]
+ID=i_bone_spine
+NAME=Ivory
+WEIGHT=1
+CATEGORY=Provisions - Jewels and Jewelery
+SUBSECTION=Jewels
+DESCRIPTION=Ivory
+
+ON=@Create
+COLOR=colors_white
+
+[ITEMDEF i_HAIR_DYEs]
+ID=i_TESTTUBE_RACK_FULL
+TYPE=T_HAIR_DYE
+NAME=Hair Dyes
+WEIGHT=4
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Hair Dyes
+
+ON=@Create
+COLOR=colors_hair
+
+[ITEMDEF I_RIBBON]
+ID=i_yarn_ball
+NAME=Ribbon
+WEIGHT=1
+
+ON=@Create
+COLOR=colors_all
+
+[ITEMDEF I_HINGES_BRASS]
+ID=i_hinge
+NAME=Brass Hinges
+WEIGHT=.5
+RESOURCES=3 i_ingot_iron, 1 i_cloth
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Brass Hinges
+
+ON=@Create
+COLOR=color_o_gold
+
+[ITEMDEF I_SEWING_NEEDLE]
+ID=I_SCORP
+VALUE=1
+NAME=Sewing needle
+WEIGHT=.1
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Sewing Needle
+
+ON=@Create
+COLOR=color_metal
+
+[ITEMDEF I_DIE]
+ID=I_GEM_SAPPHIRE
+NAME=Die
+WEIGHT=.2
+RESOURCES3=1 i_bone, 1 i_ink
+
+ON=@Create
+COLOR=colors_white
+
+[ITEMDEF I_INK_POT]
+ID=I_SPITTOON
+NAME=Inkpot
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Artists
+DESCRIPTION=Inkpot
+
+ON=@Create
+COLOR=color_gray_dk
+
+[ITEMDEF I_BRUSH]
+ID=I_REAG_DAEMON_BONE
+NAME=Paint Brush
+WEIGHT=1
+RESOURCES=1 i_hair_cut, 1 i_board
+CATEGORY=Items by Professions
+SUBSECTION=Artists
+DESCRIPTION=Paint Brush
+
+ON=@Create
+COLOR=colors_brown
+
+[ITEMDEF I_BLOODSTONE]
+ID=i_rock_7
+NAME=Bloodstone
+WEIGHT=2
+RESOURCES=1 i_rock_7, 2 i_blood
+CATEGORY=Items by Professions
+SUBSECTION=Necromancer
+DESCRIPTION=Bloodstone
+
+ON=@Create
+COLOR=colors_blood
+
+[ITEMDEF I_MARBLE]
+ID=i_rock_3   //ROCK
+TYPE=t_AROCK
+NAME=Marble
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=Jeweler
+DESCRIPTION=Marble
+
+ON=@Create
+COLOR=color_snow
+
+[ITEMDEF I_TOMATO_SAUCE]
+ID=i_bottle_red    //RED BOTTLE
+NAME=Tomato Sauce
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Tomato Sauce
+
+[ITEMDEF i_TREE_SAPLING_PLANTED]
+ID=i_PLANT_WEED
+NAME=Planted Tree Sapling
+WEIGHT=4
+CATEGORY=Vegetation
+SUBSECTION=Planted Plants
+DESCRIPTION=Planted Tree Sapling
+
+[ITEMDEF I_BAMBOO]
+ID=i_staff_quarter
+RESOURCES=2 i_PLANT_CATTAILS
+CATEGORY=Vegetation
+SUBSECTION=Sticks and Wood
+DESCRIPTION=Bamboo
+
+ON=@Create
+COLOR=09a
+
+[ITEMDEF I_CAT_GUT]
+ID=i_FLESH_ENTRAILS
+NAME=Cat Gut
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Bowyer
+DESCRIPTION=Cat Gut
+
+[ITEMDEF I_PEG]
+ID=i_BANNER_HANGER_NE
+NAME=Peg
+CATEGORY=Provisions - Armor
+SUBSECTION=Decorative Armor
+DESCRIPTION=Peg
+
+[ITEMDEF I_ORC_SKULL]
+ID=i_bone_skull
+NAME=Orc Skull
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Orc Skull
+
+[ITEMDEF I_WAX_SEAL]
+ID=I_GEM_TOURMALINE
+NAME=Wax Seal
+RESOURCES=1 I_BEESWAX
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Wax Seal
+
+[ITEMDEF I_VELVET]
+ID=i_FLESH_ENTRAILS
+NAME=Velvet
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Velvet
+
+[EOF]
+

@@ -1,0 +1,901 @@
+
+
+
+//// House Vending Stones
+//// Idea Stolen From Casio, Credit Will GOTO Raven-GM:P
+
+//*************************************************************************
+////Cont House And Ship Deeds Raven-GM
+
+
+[7a01]
+// House Deed VENDING MACHINE 
+// Deed to a Large Blacksmithy Shop = 180000
+NAME=Deed to a Large Blacksmithy Shop For 180000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Large Blacksmithy Shop
+ONTRIGGER=DCLICK
+VAR.COST=180000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4228
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a02]
+// House Deed VENDING MACHINE 
+// Deed to a Large Marble Patio House = 199000
+NAME=Deed to a Large Marble Patio House For 199000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Large Marble Patio House
+ONTRIGGER=DCLICK
+VAR.COST=199000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4229
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a03]
+// House Deed VENDING MACHINE 
+// Deed to a Wizards Tower = 88500
+NAME=Deed to a Wizards Tower For 88500gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Wizards Tower
+ONTRIGGER=DCLICK
+VAR.COST=88500
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=422a
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a04]
+// House Deed VENDING MACHINE 
+// Deed to a Two Story Log Cabin = 97800
+NAME=Deed to a Two Story Log Cabin For 97800gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Two Story Log Cabin
+ONTRIGGER=DCLICK
+VAR.COST=97800
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=422b
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a05]
+// House Deed VENDING MACHINE 
+// Deed to a Sandstone Patio House = 90900
+NAME=Deed to a Sandstone Patio House For 90900gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Sandstone Patio House
+ONTRIGGER=DCLICK
+VAR.COST=90900
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=422c
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a06]
+// House Deed VENDING MACHINE 
+// Deed to a Two Story Villa = 136500
+NAME=Deed to a Two Story Villa For 136500gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Two Story Villa
+ONTRIGGER=DCLICK
+VAR.COST=136500
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=422d
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a07]
+// House Deed VENDING MACHINE 
+// Deed to a Small Stone Shop = 60600
+NAME=Deed to a Small Stone Shop For 60600gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Small Stone Shop
+ONTRIGGER=DCLICK
+VAR.COST=60600
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=422e
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a08]
+// House Deed VENDING MACHINE 
+// Deed to a Small Marble Shop = 60600
+NAME=Deed to a Small Marble Shop For 60600gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Small Marble Shop
+ONTRIGGER=DCLICK
+VAR.COST=60600
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=422f
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+//// Ship Vending Deeds, Yes Using The Same Stolen Code From Casio..
+//// Coded By Raven-GM
+
+
+[7a09]
+// Ship Deed VENDING MACHINE 
+// Deed to a small ship = 14000
+NAME=Deed to a small ship For 14000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a small ship
+ONTRIGGER=DCLICK
+VAR.COST=14000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4240
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a0a]
+// Ship Deed VENDING MACHINE 
+// Deed to a small dragon ship = 15000
+NAME=Deed to a small dragon ship For 15000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a small dragon ship
+ONTRIGGER=DCLICK
+VAR.COST=15000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4241
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a0b]
+// Ship Deed VENDING MACHINE 
+// Deed to a medium ship = 17000
+NAME=Deed to a medium ship For 17000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a medium ship
+ONTRIGGER=DCLICK
+VAR.COST=17000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4242
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+[7a0c]
+// Ship Deed VENDING MACHINE 
+// Deed to a medium dragon ship = 18000
+NAME=Deed to a medium dragon ship For 18000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a medium dragon ship
+ONTRIGGER=DCLICK
+VAR.COST=18000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4243
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a0d]
+// Ship Deed VENDING MACHINE 
+// Deed to a long ship = 20000
+NAME=Deed to a long ship For 20000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a long ship
+ONTRIGGER=DCLICK
+VAR.COST=20000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4244
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a0e]
+// Ship Deed VENDING MACHINE 
+//Deed to a long dragon ship = 21000
+NAME=Deed to a long dragon ship For 21000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a long dragon ship
+ONTRIGGER=DCLICK
+VAR.COST=21000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4245
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+////End House And Ship Deeds
+
+
+[7a0f]
+// House Deed VENDING MACHINE 
+// Small House Deed = 43800
+NAME=Deed to a Small Stone and Plaster House For 43800gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-Small Stone And Plaster house
+
+ONTRIGGER=DCLICK
+VAR.COST=43800
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4200
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+[7a10]
+// House Deed VENDING MACHINE 
+// Small House Deed = 46000
+NAME=Deed to a Small Stone House For 46000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-Small Stone House
+ONTRIGGER=DCLICK
+VAR.COST=46000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4202
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+[7a11]
+// House Deed VENDING MACHINE 
+// Small House Deed = 46000
+NAME=Deed to a Small Brick House For 46000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-Small Brick House
+ONTRIGGER=DCLICK
+VAR.COST=46000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4204
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+[7a12]
+// House Deed VENDING MACHINE 
+// Small House Deed = 44000
+NAME=Deed to a Small Wood House For 44000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-Small Wood House
+ONTRIGGER=DCLICK
+VAR.COST=44000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4206
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+[7a13]
+// House Deed VENDING MACHINE 
+// Small House Deed = 44000
+NAME=Deed to a Small Wood and Plaster House For 44000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-Small Wood and Plaster House
+ONTRIGGER=DCLICK
+VAR.COST=44000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4208
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+[7a14]
+// House Deed VENDING MACHINE 
+// Small House Deed = 42000
+NAME=Deed to a Small Wood House Thatched Roof For 42000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-Small Wood House Thatched Roof
+ONTRIGGER=DCLICK
+VAR.COST=42000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4210
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a15]
+// House Deed VENDING MACHINE 
+// A Tent Deed = 22000
+NAME=Deed to a Blue Tent For 22000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Blue Tent
+ONTRIGGER=DCLICK
+VAR.COST=22000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4212
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a16]
+// House Deed VENDING MACHINE 
+// A tent Deed = 22000
+NAME=Deed to a Green Tent For 22000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Green Tent
+ONTRIGGER=DCLICK
+VAR.COST=22000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4214
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+[7a17]
+// House Deed VENDING MACHINE 
+// Three Room House Deed = 144500
+NAME=Deed to a Three Room House For 144500gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Three Room House
+ONTRIGGER=DCLICK
+VAR.COST=144500
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4216
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a18]
+// House Deed VENDING MACHINE 
+// Deed to a Two Story Wood and Plaster House = 193000
+NAME=Deed to a Two Story Wood and Plaster House For 193000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Two Story Wood and Plaster House
+ONTRIGGER=DCLICK
+VAR.COST=193000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4218
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a19]
+// House Deed VENDING MACHINE 
+// Deed to a Two Story Stone and Plaster House = 195000
+NAME=Deed to a Two Story Stone and Plaster House For 195000gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Two Story Stone and Plaster House
+ONTRIGGER=DCLICK
+VAR.COST=195000
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4220
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a1a]
+// House Deed VENDING MACHINE 
+// Deed to a Tower = 433200
+NAME=Deed to a Tower For 433200gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Tower
+ONTRIGGER=DCLICK
+VAR.COST=433200
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4222
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a1b]
+// House Deed VENDING MACHINE 
+// Deed to a Keep = 655200
+NAME=Deed to a Keep For 655200gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Keep
+ONTRIGGER=DCLICK
+VAR.COST=655200
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4224
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END
+
+
+
+[7a1c]
+// House Deed VENDING MACHINE 
+// Deed to a Castle = 1020800
+NAME=Deed to a Castle For 1020800gp
+ID=0ed5
+ATTR=08010
+COLOR=0378
+
+CATEGORY=!GameMongerCustom
+SUBSECTION=TownItems
+DESCRIPTION=Vend-a Castle
+ONTRIGGER=DCLICK
+VAR.COST=1020800
+IF <SRC.RESTEST <VAR.COST> GOLD>
+	SRC.MESSAGE That will be <VAR.COST> Gold Thank Thee.
+	SRC.CONSUME=<VAR.COST> GOLD
+	SOUND 0032
+
+	SRC.NEWITEM=4226
+	SRC.ACT.AMOUNT=1
+	SRC.ACT.BOUNCE // put it in your pack.
+	SOUND=0048
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds to pay for the requested item.
+	MESSAGE You require <VAR.COST> Gold.
+ENDIF
+RETURN 1
+// END

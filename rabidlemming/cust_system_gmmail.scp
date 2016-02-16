@@ -1,0 +1,319 @@
+[itemdef i_mail_GM]
+id=i_guildstone
+name=gm mail system
+type=t_script
+
+on=@create
+attr=010
+tag.member1=
+tag.member2=
+tag.member3=
+tag.member4=
+tag.member5=
+tag.member6=
+tag.member7=
+tag.member8=
+tag.member9=
+tag.member10=
+
+on=@dclick
+dialog d_gmmail
+return 1
+
+on=@targon_item
+if (<src.targ.cont.cont>==<src.uid> )
+if (<src.targ.type>==t_book)
+src.targ.name=<src.name>
+var.x=<src.act.tag.select>
+src.act=<src.targ>
+src.act.cont=<var.x>
+src.update
+return 1
+else
+src.message that is not a message!!
+return 1
+endif
+else
+src.message the message must be in your possession
+return 1
+endif
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=Mail System
+DESCRIPTION=GM Mail System
+
+[dialog d_gmmail]
+0,0
+resizepic 100 60 2620 550 480
+button 130 480 4008 4010 1 1 1
+button 130 510 4020 4022 1 1 12
+button 130 150 4029 4031 1 1 2
+button 130 180 4029 4031 1 1 3
+button 130 210 4029 4031 1 1 4
+button 130 240 4029 4031 1 1 5
+button 130 270 4029 4031 1 1 6
+button 130 300 4029 4031 1 1 7
+button 130 330 4029 4031 1 1 8
+button 130 360 4029 4031 1 1 9
+button 130 390 4029 4031 1 1 10
+button 130 420 4029 4031 1 1 11
+text 200 150 3 0
+text 200 180 3 1
+text 200 210 3 2
+text 200 240 3 3
+text 200 270 3 4
+text 200 300 3 5
+text 200 330 3 6
+text 200 360 3 7
+text 200 390 3 8
+text 200 420 3 9
+text 200 120 3 10
+text 130 130 3 11
+text 165 480 3 12
+text 180 80 3 13
+text 165 510 3 14
+text 380 150 95 15
+text 380 170 95 16
+text 380 190 95 17
+text 380 210 95 18
+text 380 290 95 19
+text 380 310 95 20
+text 430 350 31 21
+text 380 370 31 22
+
+[dialog d_gmmail text]
+<tag.member1n>
+<tag.member2n>
+<tag.member3n>
+<tag.member4n>
+<tag.member5n>
+<tag.member6n>
+<tag.member7n>
+<tag.member8n>
+<tag.member9n>
+<tag.member10n>
+Registered Members
+send
+Register (GM only)
+GM MAIL SYSTEM
+Wipe list (ADMIN only)
+Write your message in a book
+Select the GM you want to mail
+target the book with the message
+and it will be send to the GM
+Messages will NOT be anonymous
+Abuse will be punished
+this system is 
+NOT a substitute for pages!!!
+
+[dialog d_gmmail button]
+
+onbutton=1
+if !(<src.isgm> )
+src.message You are not a GM!!
+return 1
+endif
+
+if (<src.uid>==<tag.member1> )||(<src.uid>==<tag.member2> )||(<src.uid>==<tag.member3> )||(<src.uid>==<tag.member4> )||(<src.uid>==<tag.member5> )||(<src.uid>==<tag.member6> )||(<src.uid>==<tag.member7> )(<src.uid>==<tag.member8> )||(<src.uid>==<tag.member9> )||(<src.uid>==<tag.member10> )
+
+src.message allready on list
+return 1
+endif
+
+if !(0<tag.member1> )
+tag.member1=<src.uid>
+tag.member1n=<src.name>
+return 1
+endif
+
+if !(0<tag.member2> )
+tag.member2=<src.uid>
+tag.member2n=<src.name>
+return 1
+endif
+
+if !(0<tag.member3> )
+tag.member3=<src.uid>
+tag.member3n=<src.name>
+return 1
+endif
+
+if !(0<tag.member4> )
+tag.member4=<src.uid>
+tag.member4n=<src.name>
+return 1
+endif
+
+if !(0<tag.member5> )
+tag.member5=<src.uid>
+tag.member5n=<src.name>
+return 1
+endif
+
+if !(0<tag.member6> )
+tag.member6=<src.uid>
+tag.member6n=<src.name>
+return 1
+endif
+
+if !(0<tag.member7> )
+tag.member7=<src.uid>
+tag.member7n=<src.name>
+return 1
+endif
+
+if !(0<tag.member8> )
+tag.member8=<src.uid>
+tag.member8n=<src.name>
+return 1
+endif
+
+if !(0<tag.member9> )
+tag.member9=<src.uid>
+tag.member9n=<src.name>
+return 1
+endif
+
+if !(0<tag.member10> )
+tag.member10=<src.uid>
+tag.member10n=<src.name>
+return 1
+endif
+
+src.message the list cannot handle more members
+return 1
+
+
+onbutton=2
+if (0<tag.member1> )
+target Select message to send
+tag.select=<tag.member1>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=3
+if (0<tag.member2> )
+target Select message to send
+tag.select=<tag.member2>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=4
+if (0<tag.member3> )
+target Select message to send
+tag.select=<tag.member3>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=5
+if (0<tag.member4> )
+target Select message to send
+tag.select=<tag.member4>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=6
+if (0<tag.member5> )
+target Select message to send
+tag.select=<tag.member5>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=7
+if (0<tag.member6> )
+target Select message to send
+tag.select=<tag.member6>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=8
+if (0<tag.member7> )
+target Select message to send
+tag.select=<tag.member7>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=9
+if (0<tag.member8> )
+target Select message to send
+tag.select=<tag.member8>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=10
+if (0<tag.member9> )
+target Select message to send
+tag.select=<tag.member9>
+src.act=<uid>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=11
+if (0<tag.member10> )
+target Select message to send
+tag.select=<tag.member10>
+return 1
+else
+src.message Empty slot
+return 1
+endif
+
+onbutton=12
+if (<src.account.plevel> >=6)
+tag.member1=
+tag.member1n=
+tag.member2=
+tag.member2n=
+tag.member3=
+tag.member3n=
+tag.member4=
+tag.member4n=
+tag.member5=
+tag.member5n=
+tag.member6=
+tag.member6n=
+tag.member7=
+tag.member7n=
+tag.member8=
+tag.member8n=
+tag.member9=
+tag.member9n=
+tag.member10=
+tag.member10n=
+else
+src.message You are not an Admin

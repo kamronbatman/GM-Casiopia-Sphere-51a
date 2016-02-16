@@ -1,0 +1,183 @@
+[TYPEDEF t_locked_item_deed]
+ON=@DCLICK
+  // Make container
+  SRC.NEWITEM=<MORE>
+  VAR.ContainerUID=<SRC.ACT.UID>
+  VAR.KEY=<SRC.ACT.SERIAL>
+  SRC.ACT.MORE=<VAR.ContainerUID>
+  SRC.ACT.TYPE=t_container_locked
+  SRC.ACT.BOUNCE
+  // Make key inside container
+  SRC.NEWITEM=i_key_copper
+  SRC.ACT.NAME=Key to:locked <UID.<VAR.ContainerUID>.NAME>
+  SRC.ACT.MORE=<VAR.KEY>
+  SRC.ACT.CONT=<VAR.ContainerUID>
+  // Make key in players pack
+  SRC.NEWITEM=i_key_copper
+  SRC.ACT.NAME=Key to:locked <UID.<VAR.ContainerUID>.NAME>
+  SRC.ACT.MORE=<VAR.KEY> 
+  SRC.ACT.BOUNCE
+
+  REMOVE
+  
+[ITEMDEF i_deed_locked_metal_brass]
+ID=i_deed
+NAME=Deed to Locked Metal Brass Chest
+TYPE=t_locked_item_deed
+VALUE=3000-4000
+
+SKILLMAKE=TINKERING 80.0
+RESOURCES=i_deed,i_chest_metal_brass
+RESOURCES2=i_chest_metal_brass, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_chest_metal_brass
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Metal Brass Chest
+
+[ITEMDEF i_deed_locked_wooden_brass]
+ID=i_deed
+NAME=Deed to Locked Wood/Brass Chest
+TYPE=t_locked_item_deed
+VALUE=2000-3000
+
+SKILLMAKE=TINKERING 70.0
+RESOURCES=i_deed,i_chest_wooden_brass
+RESOURCES2=i_chest_wooden_brass, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_chest_wooden_brass
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Wood/Brass Chest
+
+[ITEMDEF i_deed_locked_chest_metal]
+ID=i_deed
+NAME=Deed to Locked Metal Chest
+TYPE=t_locked_item_deed
+VALUE=2000-3000
+
+SKILLMAKE=TINKERING 75.0
+RESOURCES=i_deed,i_chest_metal
+RESOURCES2=i_chest_metal, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_chest_metal
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Metal Chest
+
+[ITEMDEF i_deed_locked_box_metal]
+ID=i_deed
+NAME=Deed to Locked Metal Box
+TYPE=t_locked_item_deed
+VALUE=300-400
+
+SKILLMAKE=TINKERING 50.0
+RESOURCES=i_deed,i_box_brass
+RESOURCES2=i_box_brass, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_box_brass
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Metal Box
+
+[ITEMDEF i_deed_locked_box_wood]
+ID=i_deed
+NAME=Deed to Locked Wooden Box
+TYPE=t_locked_item_deed
+VALUE=200-300
+
+SKILLMAKE=TINKERING 50.0
+RESOURCES=i_deed,i_box_wood
+RESOURCES2=i_box_wood, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_box_wood
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Wooden Box
+
+[ITEMDEF i_deed_locked_bureau]
+ID=i_deed
+NAME=Deed to Locked Chest of Drawers (light wood)
+TYPE=t_locked_item_deed
+VALUE=500-600
+
+SKILLMAKE=TINKERING 70.0
+RESOURCES=i_deed,i_bureau
+RESOURCES2=i_bureau, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_bureau
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Chest of Drawers (light wood)
+
+[ITEMDEF i_deed_locked_bureau_2]
+ID=i_deed
+NAME=Deed to Locked Chest of Drawers (dark wood)
+TYPE=t_locked_item_deed
+VALUE=500-600
+
+SKILLMAKE=TINKERING 70.0
+RESOURCES=i_deed,i_bureau_2
+RESOURCES2=i_bureau_2, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_bureau_2
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Chest of Drawers (dark wood)
+
+[ITEMDEF i_deed_locked_armoir_dk]
+ID=i_deed
+NAME=Deed to Locked Armoir (dark wood)
+TYPE=t_locked_item_deed
+VALUE=600-700
+
+SKILLMAKE=TINKERING 73.6
+RESOURCES=i_deed,i_armoir_dk
+RESOURCES2=i_armoir_dk, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_armoir_dk
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Armoir (dark wood)
+
+[ITEMDEF i_deed_locked_armoir_lt]
+ID=i_deed
+NAME=Deed to Locked Armoir (light wood)
+TYPE=t_locked_item_deed
+VALUE=600-700
+
+SKILLMAKE=TINKERING 73.6
+RESOURCES=i_deed,i_armoir_lt
+RESOURCES2=i_armoir_lt, 2 i_springs, 2 i_gears
+
+ON=@Create
+  ATTR=attr_newbie
+  MORE=i_armoir_lt
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Locked Containers
+DESCRIPTION=Locked Armoir (light wood)

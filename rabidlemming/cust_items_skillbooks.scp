@@ -1,0 +1,1018 @@
+[ITEMDEF i_book_bowcraft_grandmaster]
+ID=0fef
+NAME=The Grandmaster Bowyer
+VALUE=25
+
+ON=@Create
+MORE=b_bowcraft_grandmaster
+
+CATEGORY=Items by Professions
+Subsection=Profession Guides
+Description=The Grandmaster Bowyer
+
+[BOOK b_bowcraft_grandmaster]
+PAGES=8
+TITLE=The Grandmaster Bowyer
+AUTHOR=Admin Star
+
+[BOOK b_bowcraft_grandmaster 1]
+We have special bows
+and arrows on this
+shard that are 
+craftable. This book
+will show what
+special things you can
+make at apprentice
+level.
+   
+[BOOK b_bowcraft_grandmaster 2]
+At this level you can
+make 4 types of
+arrows. Each being
+craftable when you 
+have the combination 
+of 50 Bowcraft and
+20 Alchemy. 
+
+[BOOK b_bowcraft_grandmaster 3]
+Here is a list
+of what each requires.
+
+Energy Arrow:
+1shaft,1feather and
+1 black pearl
+
+Frost Arrow:
+1shaft,1feather and
+one spider's silk.
+
+[BOOK b_bowcraft_grandmaster 4]
+Poison Arrows:
+1 shaft, 1 feather and
+1 nightshade.
+
+Fire Arrows:
+1 shaft,1 feather and
+1 sulphorous ash.
+
+[BOOK b_bowcraft_grandmaster 5]
+When you get to the
+upper levels of
+Bowcrafting,you will
+be able to craft some
+of our special bows.
+Heres a list of them 
+with what skill and
+items you need.
+
+[BOOK b_bowcraft_grandmaster 6]
+The Inferno Bow
+Skill level is 87.8 you
+need 7 magic logs and 1
+explosion scroll.
+The Lightning Bow
+Skill level is 87.8 you
+need 7magic logs and 1
+explosion scroll.
+   
+[BOOK b_bowcraft_grandmaster 7]
+The Ranger Bows
+leave open wounds on
+your opponent.
+The Ranger's
+Crossbow is skill
+level 89.8 and you
+need 14 ancient logs.
+
+[BOOK b_bowcraft_grandmaster 8]
+The Ranger's Heavy
+Crossbow
+is skill level 91.5
+you need 14 ancient
+logs.
+
+[ITEMDEF i_book_barbarian_weapons]
+ID=0fef
+NAME=The Barbarian Weapons
+VALUE=25
+
+ON=@Create
+COLOR=011e
+MORE=b_barbarian_weapons
+
+CATEGORY=Items by Professions
+SUBSECTION=Profession Guides
+DESCRIPTION=The Barbarian Weapons
+
+[BOOK b_barbarian_weapons]
+PAGES=12
+TITLE=The Barbarian Weapons
+AUTHOR=Admin Star
+
+[Book b_barbarian_weapons 1]
+We have a seried of
+weapons called
+Barbarian Weapons.
+These weapons are all
+craftable with the 
+Blacksmithing skill.
+Each weapon requires
+regular ingots and an
+
+[BOOK b_barbarian_weapons 2]
+item called Soul
+Potion.This special
+potion is droped by
+the Barbarian Spirit.
+Here is a list of the
+weapons along with
+what skill level and
+#of ingots for each.
+
+[BOOK b_barbarian_weapons 3]
+Barbarian Pitchfork:
+Blacksmithing 50.0
+requires 5 iron ingots
+Barbarian Dagger:
+Blacksmithing 56.7
+requires 3 iron ingots
+Barbarian Mace:
+Blacksmithing 70.8
+
+[BOOK b_barbarian_weapons 4]
+requires 6 iron ingots
+Barbarian Maul:
+Blacksmithing 75.5
+requires 10 iron ingots
+Barbarian Cutlass:
+Blacksmithing 80.2
+requires 8 iron ingots
+Barbarian Viking
+
+[BOOK b_barbarian_weapons 5]
+Sword:
+Blacksmithing 80.2
+requires 14iron ingots
+Barbarian Longsword:
+Blacksmithing 83.8
+requires 12 iron ingots
+Barbarian Battle Axe:
+Blacksmithing 83.8
+
+[BOOK b_barbarian_weapons 6]
+requires 14 iron ingots
+Barbarian War Mace:
+Blacksmithing 83.8
+requires 14 iron ingots
+Barbarian Double Axe:
+Blacksmithing 85.0
+requires 12 iron ingots
+Barbarian Scimitar:
+
+[BOOK b_barbarian_weapons 7]
+Blacksmithing 87.3
+requires 10 iron ingots
+Barbarian 2 Hand Axe
+Blacksmithing 88.5
+requires 16 iron ingots
+Babarian
+Executioners Axe:
+Blacksmithing 89.7
+
+[BOOK b_barbarian_weapons 8]
+requires 16iron ingots
+Barbarian Axe:
+blacksmithing 89.7
+requires 14iron ingots
+Barbarian War
+Hammer:
+Blacksmithing 89.7
+requires 16 iron ingots
+
+[BOOK b_barbarian_weapons 9]
+Barbarian Broadsword:
+Blacksmithing 90.8
+requires 10irong ingots
+Barbarian Kryss:
+Blacksmithing 92.0
+requires 8 iron ingots
+Barbarian War Fork:
+Blacksmithing 93.2
+
+[BOOK b_barbarian_weapons 10]
+requires 12iron ingots
+Barbarian Bardiche:
+Blacksmithing 94.4
+requires 18iron ingots
+Barbarian Halbred:
+Blacksmithing 94.4
+requires 20iron ingots
+Barbarian War Axe:
+
+[BOOK b_barbarian_weapons 11]
+Blacksmithing 94.4
+requires 16iron ingots
+Barbarian Katana:
+Blacksmithing 99.1
+requires 8 iron ingots
+Barbarian Spear:
+Blacksmithing 100.0
+requires 12iron ingots
+
+[BOOK b_barbarian_weapons 12]
+Barbarian Short Spear:
+Blacksmithing 100.0
+requires 6 iron ingots
+
+[ITEMDEF i_book_welcome]
+ID=0fef
+NAME=Welcome to Celtic Underworld
+VALUE=25
+
+ON=@Create
+MORE=b_welcome
+
+CATEGORY=Items by Professions
+SUBSECTION=Profession Guides
+DESCRIPTION=Welcome to Celtic Underworld
+
+[BOOK b_welcome]
+PAGES=22
+TITLE=Welcome to Celtic Underworld
+AUTHOR=Admin Star
+
+[BOOK b_welcome 1]
+Welcome to Celtic
+Underworld. We have
+added a lot of new and
+fun things, so be sure
+to check everything
+out. The public 
+libraries hold valuable
+information so if you
+
+[BOOK b_welcome 2]
+get some free time be
+sure to check them out
+as well.
+Our stat cap is 300
+Our skill cap is 800
+One important thing is
+we have staff/player
+meetings weekly
+
+[BOOK b_welcome 3]
+(Monday nights at
+9pm eastern)that are
+valuable to attend.
+Good newbie areas to 
+fight on are the 
+begining levels of all
+the dungeons.
+
+[BOOK b_welcome 4]
+Here is a list of the 
+rules, You are expected 
+and responsible for
+knowing them. We 
+won't take ignorance as
+an excuse.
+
+[BOOK b_welcome 5]
+General Rules:
+1.Staff has ultimate
+right to judge the
+legality of a situation.
+If you feel you were 
+jailed unfairly please
+do not cause problems
+with the staff jailing
+
+[BOOK b_welcome 6]
+you,rather take it up
+with and admin.
+2.We do not tolerate
+any type of
+harrassment. If you 
+Harrass a GM you risk
+ban.
+3.We do not tolerate
+
+[BOOK b_welcome 7]
+bug abuse.If you are 
+caught using or telling
+about bugs you will be
+severly punished. If
+you question if it is a 
+bug please page to find
+out.
+4.We do not replace
+
+[BOOK b_welcome 8]
+items.If it was lost 
+due to GM error or
+illegal bug abuse WE 
+NEED PROOF or 
+nothing can be done.
+5.You are not allowed
+to name you
+character,Guild or
+
+[BOOK b_welcome 9]
+Guild title anything
+racist,sexist,
+anti-ethnic,
+anti-gay, or anything
+hate based or 
+deamening to another
+player or staff.
+
+[BOOK b_welcome 10]
+Account Rules:
+1.Each player is 
+allowed only one
+account. Multiple 
+accounts will be
+banned!!
+2.Your account is
+your responsibility.
+
+[BOOK b_welcome 11]
+This means if you
+share or give out your
+account info to a 
+friend, it is your
+responsibility ti make
+sure that they do not
+do anything that will
+jeapordize the 
+
+[BOOK b_welcome 12]
+account. If one
+character is jailed,all
+characters on the 
+account are jailed and
+will remain that way
+until the time is up.
+
+[BOOK b_welcome 13]
+Gameplay Rules:
+Here are a few more
+may be added.
+1.House killing with
+area affect spells is
+illegal.
+2.No placing houses
+in caves, on the road
+
+[BOOK b_welcome 14]
+ways, or so that it
+blocks off a path.
+Houses such as this 
+will be deleted on
+sight.
+3.No advertising
+other shards.(I mean
+really this is rude!)
+
+[BOOK b_welcome 15]
+4.AFK macroing is 
+allowed,if the server
+gets overly lagged, you
+may be disconnected.
+About Paging a GM:
+1.If you have a 
+question or problem
+please, don't hesitate
+
+[BOOK b_welcome 16]
+to page.There are a 
+couple things we do not
+want you paging about.
+Do not page for events,
+too see if someone else
+is on-line, to be
+ressurected or 
+teleported somewhere.
+
+[BOOK b_welcome 17]
+Also do not page
+demanding that we
+come to you 
+immediatly. The GMs
+on-line might already 
+be in the middle of 
+something or afk. We
+will get to you as soon
+
+[BOOK b_welcome 18]
+as possible.
+2.We have filled the 
+libraries with rules,
+information about
+skills and quests.
+Please take the time to
+look at this before 
+paging a GM about.
+
+[BOOK b_welcome 19]
+those things.
+3.If you page for a
+GM and they haven't 
+answered before you
+have to go afk please 
+write your question or
+problem in a book in
+your backpack. This
+
+[BOOK b_welcome 20]
+way we can answer 
+and take care of your
+problem as soon as we
+can.
+4.Paging to ask for 
+free items will only
+get you jail time.
+5.Do not page or bug
+
+[BOOK b_welcome 21]
+the staff about trying
+to get yourself a staff
+position. We hire
+staff from the player 
+base but we go by hard
+working, honest, long
+time players. If you
+are interested please
+
+[BOOK b_welcome 22]
+use the email system
+rather then paging. If
+you are persistant we
+will jail you.
+
+Thank you and I hope
+you enjoy your time
+with us. :)
+
+
+[ITEMDEF i_book_magery]
+ID=0fef
+NAME=Magery Book
+VALUE=25
+
+ON=@Create
+MORE=b_magery
+
+CATEGORY=Items by Professions
+SUBSECTION=Profession Guides
+DESCRIPTION=Magery Book
+
+[BOOK b_magery]
+Pages=10
+TITLE=Magery Book
+AUTHOR=Admin Star
+
+[BOOK b_magery 1]
+Here is a basic guide to
+gaining Magery Skill.
+First I'd like to tell
+you that if you are 
+going to macro magery
+that this is a very
+expensive skill to get
+up esp. for newbies.
+
+[BOOK b_magery 2]
+However,if you do 
+wish to macro it I'd
+like to suggest casting
+poison on yourself(do
+not worry you won't 
+die from being 
+poisoned)
+This is the 
+cheapest way to
+
+[BOOK b_magery 3]
+macro. If you have
+more money to play 
+with I would suggest 
+going with nightsight 
+or clumsy.
+I would also like to 
+point out that having 
+high inscription will
+
+[BOOK b_magery 4]
+actually make you cast
+a more powerful
+Protection, Magic
+Resistance and
+Reactive Armor
+spells.
+Having a high poioning
+skill will make your
+
+[BOOK b_magery 5]
+poison spell more
+powerful.
+Now here is a list of
+how much mana and 
+what skill you 
+need to have for each
+spell circle.
+
+[BOOK b_magery 6]
+The minimum skill=
+2% chance of casting
+it.
+
+The Max Skill=
+99% chance of casting
+it.
+
+[BOOK b_magery 7]
+Circle One:
+   Int Needed:4
+   Min Skill: 1.1
+   Max Skill: 40.1
+Circle Two:
+   Int Needed:6
+   Min Skill: 6.1
+   Max Skill: 50.1
+
+[BOOK b_magery 8]
+Circle Three:
+   Int Needed:9
+   Min Skill: 16.1
+   Max Skill: 60.1
+Circle Four:
+   Int Needed:11
+   Min Skill: 26.1
+   Max SKill: 70.1
+
+[BOOK b_magery 9]
+Cirlce Five:
+   Int Needed: 14
+   Min Skill: 36.1
+   Max Skill: 80.1
+Circle Six:
+   Int Needed: 20
+   Min Skill: 51.8
+   Max Skill: 90.1
+
+[BOOK b_magery 10]
+Circle Seven:
+   Int Needed: 40
+   Min Skill: 66.1
+   Max Skill: GM
+Circle Eight:
+   Int Needed: 50
+   Min Skill: 80.1
+   Max Skill: GM
+
+
+
+[ITEMDEF i_book_tailoring_one]
+ID=0fef
+NAME=Tailoring Book 1: Clothing
+VALUE=25
+
+ON=@Create
+MORE=b_tailoring_one
+
+CATEGORY=Items by Professions
+SUBSECTION=Profession Guides
+DESCRIPTION=Tailoring Book 1
+
+[BOOK b_tailoring_one]
+PAGES=11
+TITLE=Tailoring Book 1: Clothing
+AUTHOR=Admin Star
+
+[BOOK b_tailoring_one 1]
+Here is a list of what
+you can make at 
+certain skill levels.
+When doing tailoring
+you will need a sewing 
+kit as well as the
+required amount of
+cloth.
+
+[BOOK b_tailoring_one 2]
+Hats:
+
+Bandana:
+2 Cloth,< 2.5 Skill
+Skullcap:
+2 Cloth,< 2.5 Skill
+Floppy Hat:
+11 Cloth, 6.2 Skill
+
+[BOOK b_tailoring_one 3]
+Wide Hat:
+12 Cloth, 6.2 Skill
+Cap:
+11 Cloth, 6.2 Skill
+Straw Hat:
+10 Cloth, 6.2 Skill
+Bonnet:
+11 Cloth, 6.2 Skill
+
+[BOOK b_tailoring_one 4]
+Feathered Hat:
+12 Cloth, 6.2 Skill
+Tricorne Hat:
+12 Cloth, 6.2 Skill
+Tall Hat:
+12 Cloth, 6.7 Skill
+Wizards Hat:
+15 Cloth, 7.2 Skill
+
+[BOOK b_tailoring_one 5]
+Jesters Hat:
+15 Cloth, 7.2 Skill
+
+
+Miscellaneous:
+
+Body Sash:
+4 Cloth, 4.1 Skill
+
+[BOOK b_tailoring_one 6]
+Half Apron:
+6 Cloth, 20.7 Skill
+
+Full Apron:
+10 Cloth, 29.0 Skill
+
+Oil Cloth:
+1 Cloth, 74.6 Skill
+
+[BOOK b_tailoring_one 7]
+Pants and Skirts:
+
+Kilt:
+8 Cloth, 20.7 Skill
+Fancy Pants (long):
+8 Cloth, 24.8 Skill
+Skirt:
+10 Cloth, 29.0 Skill
+
+[BOOK b_tailoring_one 8]
+Clothing:
+
+Doublet:
+8 Cloth,< 2.5 Skill
+Tunic:
+12 Cloth,< 2.5 Skill
+Jester's Suit:
+24 Cloth, 8.2 Skill
+
+[BOOK b_tailoring_one 9]
+Surcoat:
+14 Cloth, 8.2 Skill
+Fancy Dress:
+12 Cloth, 12.4 Skill
+Shirt:
+8 Cloth, 20.7 Skill
+Fancy Shirt:
+8 Cloth, 24.8 Skill
+
+[BOOK b_tailoring_one 10]
+Plain Dress:
+10 Cloth, 33.1 Skill
+
+Cloak:
+14 Cloth, 41.4 Skill
+
+Robe:
+16 Cloth, 53.9 SKill
+
+[BOOK b_tailoring_one 11]
+Footwear:   Sandles:
+4 Hides, 12.4 Skill
+Shoes:
+6 Hides, 16.5 Skill
+Boots:
+8 Hides, 33.1 Skill
+Thigh Boots:
+10 Hides, 41.4 Skill
+
+
+
+[ITEMDEF i_book_tailoring_two]
+ID=0fef
+NAME=Tailoring Book 2: Armors
+VALUE=25
+
+ON=@Create
+MORE=b_tailoring_two
+
+CATEGORY=Items by Professions
+SUBSECTION=Profession Guides
+DESCRIPTION=Tailoring Book 2: Armors
+
+[BOOK b_tailoring_two]
+PAGES=18
+TITLE=Tailoring Book 2: Armor
+AUTHOR=Admin Star
+
+[BOOK b_tailoring_two 1]
+Here is the list of all
+the different types of
+craftable leather
+armors, including our
+new dragonskin
+armors.
+
+[BOOK b_tailoring_two 2]
+Female Leather
+Armor:
+Leather Brassiere:
+6 Hides, 58.0 Skill
+Leather Skirt:
+6 Hides, 58.0 Skill
+Leather Shorts:
+8 Hides, 62.2 Skill
+
+[BOOK b_tailoring_two 3]
+One Piece Leather:
+8 Hides, 62.2 Skill
+
+Brassiere Studded:
+8 Hides, 82.9 Skill
+
+One Piece Studded:
+10 Hides, 87.1 Skill
+
+[BOOK b_tailoring_two 4]
+Leather Armor:
+
+Cap:
+2 Hides, 6.8 Skill
+Gloves:
+3 Hides, 51.8 Skill
+Gorget:
+4 Hides, 53.9 Skill
+
+[BOOK b_tailoring_two 5]
+Sleeves:
+4 Hides, 53.9 Skill
+
+Leggings: 
+10 Hides, 66.3 Skill
+
+Tunic:
+12 Hides, 70.5 Skill
+
+[BOOK b_tailoring_two 6]
+Studded Leather:
+
+Gorget:
+6 Hides, 78.8 Skill
+
+Gloves:
+8 Hides, 82.9 Skill
+
+[BOOK b_tailoring_two 7]
+Sleeves:
+10 Hides, 87.1 Skill
+
+Leggings:
+12 Hides, 91.2 Skill
+
+Tunic: 
+14 Hides, 95.4 Skill
+
+[BOOK b_tailoring_two 8]
+Arctic Leather:
+(Fur=Polarbear Fur,
+Hide=cut up)
+
+Cap: 6 Fur,3 Hide,
+65.4 Skill
+Gloves: 9 Fur,4 Hide,
+66.8 Skill
+
+[BOOK b_tailoring_two 9]
+Tunic: 36 Fur,
+18 Hide, 67.2 Skill
+Gorget:12 Fur,6 Hide
+69.0 Skill
+Leggings:30 Fur,
+15 Hides, 69.0 Skill
+Shoes:12 Fur,6 Hide
+69.0 Skill
+
+[BOOK b_tailoring_two 10]
+Sleeves: 12 Fur,
+6 Hides, 69.0 Skill
+
+Dragonskin leather:
+(Regular Dragon Hide)
+
+Cap:
+6 Hides, 75.4 Skill
+
+[BOOK b_tailoring_two 11]
+Gloves:
+9 Hides, 76.8 Skill
+Tunic:
+36 Hides, 77.2 Skill
+Gorget:
+12 Hides, 79.0 Skill
+Leggings:
+30 Hides, 79.0 Skill
+
+[BOOK b_tailoring_two 12]
+Shield:
+20 Hides, 79.0 Skill
+
+Shoes: 
+12 Hides, 79.0 Skill
+
+Sleeves:
+12 Hides, 79.0 Skill
+
+[BOOK b_tailoring_two 13]
+Drakeskin Leather:
+
+
+Cap:
+6 Hides, 65.4 Skill
+
+Gloves:
+9 Hides, 66.8 Skill
+
+[BOOK b_tailoring_two 14]
+Tunic:
+36 Hides, 67.2 Skill
+
+Gorget:
+12 Hides, 69.0 Skill
+
+Leggings:
+30 Hides, 69.0 Skill
+
+[BOOK b_tailoring_two 15]
+Shield:
+20 hides, 69.0 Skill
+
+Shoes:
+12 Hides, 69.0 Skill
+
+Sleeves:
+12 Hides, 69.0 Skill
+
+[BOOK b_tailoring_two 16]
+Wyrmskin Leather:
+
+Studded Cap:
+6 Hides, 95.4 Skill
+
+Studded Gloves:
+9 Hides, 91.8 Skill
+
+[BOOK b_tailoring_two 17]
+Studded Sleeves:
+12 Hides, 96.3 Skill
+
+Studded Gorget:
+12 Hides, 97.2 Skill
+
+Shoes: 
+12 Hides, 97.2 Skill
+
+[BOOK b_tailoring_two 18]
+Studded Leggings:
+30 Hides, GM Skill
+
+Shield:
+20 Hides, GM Skill
+
+Studded Tunic:
+36 Hides, GM Skill
+
+[ITEMDEF i_book_reg_alchemy]
+ID=0fef
+NAME=Book of Alchemy 1 (regular reagents)
+Value=25
+
+ON=@Create
+MORE=b_alchemy_one
+
+CATEGORY=Items by Professions
+SUBSECTION=Profession Guides
+DESCRIPTION=Book of Alchemy 1
+
+[BOOK b_alchemy_one]
+PAGES=11
+TITLE=Book of Alchemy 1 (regular reagents)
+AUTHOR=Admin Star
+
+[BOOK b_alchemy_one 1]
+Here is the basic guide
+to Alchemy.This will
+show you what is 
+required for each pot
+to be made and the
+minimum skill needed
+to make it. (This is 
+regular reagents only)
+
+[BOOK b_alchemy_one 2]
+Agility Pots (blue):
+1 Bloodmoss
+Max Stam +10
+Min. Skill= 15.1
+Greater Agility:
+3 Bloodmoss
+Max Stam +20
+Min. Skill= 35.1
+
+[BOOK b_alchemy_one 3]
+Lesser Cure(Orange):
+1 Garlic Cures Poison
+Min. Skill= 0.0
+Cure:  3 Garlic
+Min. Skill= 25.1
+Greater Cure:
+6 Garlic 
+Min. Skill= 65.1
+
+[BOOK b_alchemy_one 4]
+Lesser Explosion:
+(Purple) 3 Ash
+Min. Skill= 5.1
+Explosion: 5 Ash
+Min. Skill= 35.1
+Greater Explosion:
+10 Ash
+Min. Skill= 65.1
+
+[BOOK b_alchemy_one 5]
+Lesser Heal(Yellow):
+1 Ginseng
+3-10 HP Heal
+Min Skill=0.0
+Heal:
+3 Ginseng
+6-20 HP Heal
+Min. Skill= 15.1
+
+[BOOK b_alchemy_one 6]
+Greater Heal:
+7 Ginseng
+9-30 HP Heal
+Min. Skill= 55.1
+
+[BOOK b_alchemy_one 7]
+Lesser Poison(green):
+1 Nightshade
+Min. Skill=0.0
+2.5%HP per 2.5 sec.
+Poison:
+2 Nightshade
+Min Skill= 15.1
+5%HP per 2 sec.
+
+[BOOK b_alchemy_one 8]
+Greater Poison:
+4 Nighshades
+Min. Skill= 55.1
+8%HP per 5 sec
+Deadly Posion:
+8 Nighshades
+Min. Skill= 90.1
+15%HP per 5 sec.
+
+[BOOK b_alchemy_one 9]
+Refresh (red)
+1 Blackpearl
++25% stamina
+Min. Skill= 15.1
+Total Refresh:
+5 Blackpearl
+Full stamina
+Min Skill= 25.1
+
+[BOOK b_alchemy_one 10]
+Strength (white)
+2 Mandrake Root
+Max Health +10
+Min Skill= 25.1
+Greater Strength:
+5 Mandrake Root
+Max Health +20
+Min Skill= 45.1
+
+[BOOK b_alchemy_one 11]
+Nightsight
+1 Spiders Silk
+Light until dawn
+Min. Skill= 0.0
+
+[EOF]

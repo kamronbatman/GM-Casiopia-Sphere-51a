@@ -1,0 +1,4859 @@
+// ***********************************************************************
+// All items converted to sphere 54+ standards by Rabid Lemming
+// ***********************************************************************
+
+//###########################
+//Vicomec Armor
+//###########################
+
+[ITEMDEF i_vicomec_platemail_chest]
+NAME=vicomec platemail
+ID=i_platemail_chest
+DEFNAME=i_vicomec_platemail_chest
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=25 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Platemail
+
+[ITEMDEF i_vicomec_platemail_arms]
+NAME=vicomec platemail arms
+ID=i_platemail_arms
+DEFNAME=i_vicomec_platemail_arms
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=12 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Platemail arms
+
+[ITEMDEF i_vicomec_platemail_leggings]
+NAME=vicomec platemail legs
+ID=i_platemail_leggings
+DEFNAME=i_vicomec_platemail_leggings
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+
+RESOURCES=20 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Platemail legs
+
+[ITEMDEF i_vicomec_platemail_helm]
+NAME=vicomec plate helm
+ID=i_platemail_helm
+DEFNAME=i_vicomec_platemail_helm
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Platemail Helm
+
+[ITEMDEF i_vicomec_platemail_gorget]
+NAME=vicomec platemail gorget
+ID=i_platemail_gorget
+DEFNAME=i_vicomec_platemail_gorget
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=10 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Platemail Gorget
+
+[ITEMDEF i_vicomec_platemail_gauntlets]
+NAME=vicomec platemail gauntlets
+ID=i_platemail_gloves
+DEFNAME=i_vicomec_platemail_gauntlets
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=12 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Platemail Gauntlets
+
+[ITEMDEF i_vicomec_female_plate]
+NAME=vicomec female platemail
+ID=i_armor_female_plate
+DEFNAME=i_vicomec_female_plate
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=22 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Female Platemail
+
+[ITEMDEF i_vicomec_chainmail_coif]
+NAME=vicomec chainmail coif
+ID=i_chainmail_coif
+DEFNAME=i_vicomec_chainmail_coif
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.5
+RESOURCES=10 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Chainmail Coif
+
+[ITEMDEF i_vicomec_chainmail_leggings]
+NAME=vicomec chainmail leggings
+ID=i_chainmail_leggings
+DEFNAME=i_vicomec_chainmail_leggings
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=18 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Chainmail Leggings
+
+[ITEMDEF i_vicomec_chainmail_tunic]
+NAME=Vicomec Chainmail Tunic
+ID=i_chainmail_tunic
+DEFNAME=i_vicomec_chainmail_tunic
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=22 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Chainmail Tunic
+
+[ITEMDEF i_vicomec_ringmail_leggings]
+NAME=vicomec ringmail leggings
+ID=i_ringmail_leggings
+DEFNAME=i_vicomec_ringmail_leggings
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Ringmail Leggings
+
+[ITEMDEF i_vicomec_ringmail_sleeves]
+NAME=vicomec ringmail sleeves
+ID=i_ringmail_sleeves
+DEFNAME=i_vicomec_ringmail_sleeves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Ringmail Sleeves
+
+[ITEMDEF i_vicomec_ringmail_gauntlets]
+NAME=vicomec ringmail gloves
+ID=i_ringmail_gloves
+DEFNAME=i_vicomec_ringmail_gauntlets
+TYPE=t_armor
+ARMOR=65
+REQSTR=20
+WEIGHT=.2
+RESOURCES=12 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Ringmail gloves
+
+[ITEMDEF i_vicomec_ringmail_tunic]
+NAME=vicomec ringmail tunic
+ID=i_ringmail_tunic
+DEFNAME=i_vicomec_ringmail_tunic
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=20 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Ringmail Tunic
+
+[ITEMDEF i_vicomec_shield_buckler]
+NAME=vicomec buckler
+ID=i_shield_buckler
+DEFNAME=i_vicomec_shield_buckler
+TYPE=t_armor
+ARMOR=12
+REQSTR=65
+WEIGHT=.5
+RESOURCES=10 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={31 41}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Buckler 
+
+[ITEMDEF i_vicomec_shield_heater]
+NAME=vicomec heater shield
+ID=i_shield_heater
+DEFNAME=i_vicomec_shield_heater
+TYPE=t_armor
+ARMOR=28
+REQSTR=75
+WEIGHT=.8
+RESOURCES=18 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={51 65}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Heater 
+
+[ITEMDEF i_vicomec_shield_round_metal]
+NAME=vicomec metal shield
+ID=i_shield_round_metal
+DEFNAME=i_vicomec_shield_round_metal
+TYPE=t_armor
+ARMOR=16
+REQSTR=70
+WEIGHT=.6
+RESOURCES=12 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Metal Sheild
+
+[ITEMDEF i_vicomec_helm_closed]
+NAME=vicomec closed helm
+ID=i_helm_closed
+DEFNAME=i_vicomec_helm_closed
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Closed Helm
+
+[ITEMDEF i_vicomec_helm_open]
+NAME=vicomec helmet
+ID=i_helm_open
+DEFNAME=i_vicomec_helm_open
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Helm
+
+[ITEMDEF i_vicomec_bascinet]
+NAME=vicomec bascinet
+ID=i_bascinet
+DEFNAME=i_vicomec_bascinet
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Bascinet
+
+[ITEMDEF i_vicomec_helm_nose]
+NAME=vicomec nose helm
+ID=i_helm_nose
+DEFNAME=i_vicomec_helm_nose
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_vicomec
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vicomec
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vicomec Armor
+DESCRIPTION=Vicomec Nose Helm
+
+//########################
+//Terocir 
+//########################
+
+[ITEMDEF i_terocir_platemail_chest]
+NAME=terocir platemail
+ID=i_platemail_chest
+DEFNAME=i_terocir_platemail_chest
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=25 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Platemail
+
+[ITEMDEF i_terocir_platemail_arms]
+NAME=terocir platemail arms
+ID=i_platemail_arms
+DEFNAME=i_terocir_platemail_arms
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Platemail arms
+
+[ITEMDEF i_terocir_platemail_leggings]
+NAME=terocir platemail legs
+ID=i_platemail_leggings
+DEFNAME=i_terocir_platemail_leggings
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=20 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Platemail legs
+
+[ITEMDEF i_terocir_platemail_helm]
+NAME=terocir plate helm
+ID=i_platemail_helm
+DEFNAME=i_terocir_platemail_helm
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Platemail Helm
+
+[ITEMDEF i_terocir_platemail_gorget]
+NAME=terocir platemail gorget
+ID=i_platemail_gorget
+DEFNAME=i_terocir_platemail_gorget
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=10 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Platemail Gorget
+
+[ITEMDEF i_terocir_platemail_gauntlets]
+NAME=terocir platemail gauntlets
+ID=i_platemail_gloves
+DEFNAME=i_terocir_platemail_gauntlets
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=12 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Platemail Gauntlets
+
+[ITEMDEF i_terocir_female_plate]
+NAME=terocir female platemail
+ID=i_armor_female_plate
+DEFNAME=i_terocir_female_plate
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=22 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={65 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Female Platemail
+
+[ITEMDEF i_terocir_chainmail_coif]
+NAME=terocir chainmail coif
+ID=i_chainmail_coif
+DEFNAME=i_terocir_chainmail_coif
+TYPE=t_armor
+ARMOR=70
+REQSTR=100
+WEIGHT=.5
+RESOURCES=10 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Chainmail Coif
+
+[ITEMDEF i_terocir_chainmail_leggings]
+NAME=terocir chainmail leggings
+ID=i_chainmail_leggings
+DEFNAME=i_terocir_chainmail_leggings
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=20 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Chainmail Leggings
+
+[ITEMDEF i_terocir_chainmail_tunic]
+NAME=terocir chainmail tunic
+ID=i_chainmail_tunic
+DEFNAME=i_terocir_chainmail_tunic
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=20 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Chainmail Tunic
+
+[ITEMDEF i_terocir_ringmail_leggings]
+NAME=terocir ringmail leggings
+ID=i_ringmail_leggings
+DEFNAME=i_terocir_ringmail_leggings
+TYPE=t_armor
+ARMOR=28
+REQSTR=65
+WEIGHT=.5
+RESOURCES=18 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Ringmail Leggings
+
+[ITEMDEF i_terocir_ringmail_sleeves]
+NAME=terocir ringmail sleeves
+ID=i_ringmail_sleeves
+DEFNAME=i_terocir_ringmail_sleeves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Ringmail Sleeves
+
+[ITEMDEF i_terocir_ringmail_gloves]
+NAME=terocir ringmail gloves
+ID=i_ringmail_gloves
+DEFNAME=i_terocir_ringmail_gloves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.2
+RESOURCES=12 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Ringmail gloves
+
+[ITEMDEF i_terocir_ringmail_tunic]
+NAME=terocir ringmail tunic
+ID=i_ringmail_tunic
+DEFNAME=i_terocir_ringmail_tunic
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=18 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Ringmail Tunic
+
+[ITEMDEF i_terocir_shield_buckler]
+NAME=terocir buckler
+ID=i_shield_buckler
+DEFNAME=i_terocir_shield_buckler
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=10 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Buckler 
+
+[ITEMDEF i_terocir_shield_heater]
+NAME=terocir heater shield
+ID=i_shield_heater
+DEFNAME=i_terocir_shield_heater
+TYPE=t_armor
+ARMOR=28
+REQSTR=75
+WEIGHT=.8
+RESOURCES=18 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={31 37}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Heater 
+
+[ITEMDEF i_terocir_shield_round_metal]
+NAME=terocir metal shield
+ID=i_shield_round_metal
+DEFNAME=i_terocir_shield_round_metal
+TYPE=t_armor
+ARMOR=16
+REQSTR=70
+WEIGHT=.6
+RESOURCES=12 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={51 65}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Metal Sheild
+
+[ITEMDEF i_terocir_helm_closed]
+NAME=terocir closed helm
+ID=i_helm_closed
+DEFNAME=i_terocir_helm_closed
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Closed Helm
+
+[ITEMDEF i_terocir_helm_open]
+NAME=terocir helmet
+ID=i_helm_open
+DEFNAME=i_terocir_helm_open
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Helm
+
+[ITEMDEF i_terocir_bascinet]
+NAME=terocir bascinet
+ID=i_bascinet
+DEFNAME=i_terocir_bascinet
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Bascinet
+
+[ITEMDEF i_terocir_helm_nose]
+NAME=terocir nose helm
+ID=i_helm_nose
+DEFNAME=i_terocir_helm_nose
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_terocir
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_terocir
+HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Terocir Armor
+DESCRIPTION=Terocir Nose Helm
+
+//###########################
+//Marik Armor
+//###########################
+
+[ITEMDEF i_marik_platemail_chest]
+NAME=marik platemail
+ID=i_platemail_chest
+DEFNAME=i_marik_platemail_chest
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=25 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Platemail
+
+[ITEMDEF i_marik_platemail_arms]
+NAME=marik platemail arms
+ID=i_platemail_arms
+DEFNAME=i_marik_platemail_arms
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Platemail arms
+
+[ITEMDEF i_marik_platemail_leggings]
+NAME=marik platemail legs
+ID=i_platemail_leggings
+DEFNAME=i_marik_platemail_leggings
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=20 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Platemail legs
+
+[ITEMDEF i_marik_platemail_gorget]
+NAME=marik platemail gorget
+ID=i_platemail_gorget
+DEFNAME=i_marik_platemail_gorget
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=10 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Platemail Gorget
+
+[ITEMDEF i_marik_platemail_gauntlets]
+NAME=marik platemail gauntlets
+ID=i_platemail_gloves
+DEFNAME=i_marik_platemail_gauntlets
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=16 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Platemail Gauntlets
+
+[ITEMDEF i_marik_female_plate]
+NAME=marik female platemail
+ID=i_armor_female_plate
+DEFNAME=i_marik_female_plate
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=22 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Female Platemail
+
+[ITEMDEF i_marik_chainmail_coif]
+NAME=marik chainmail coif
+ID=i_chainmail_coif
+DEFNAME=i_marik_chainmail_coif
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.5
+RESOURCES=10 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Chainmail Coif
+
+[ITEMDEF i_marik_chainmail_leggings]
+NAME=marik chainmail leggings
+ID=i_chainmail_leggings
+DEFNAME=i_marik_chainmail_leggings
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=18 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Chainmail Leggings
+
+[ITEMDEF i_marik_chainmail_tunic]
+NAME=marik chainmail tunic
+ID=i_chainmail_tunic
+DEFNAME=i_marik_chainmail_tunic
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=20 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Chainmail Tunic
+
+[ITEMDEF i_marik_ringmail_leggings]
+NAME=marik ringmail leggings
+ID=i_ringmail_leggings
+DEFNAME=i_marik_ringmail_leggings
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=18 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Ringmail Leggings
+
+[ITEMDEF i_marik_ringmail_sleeves]
+NAME=marik ringmail sleeves
+ID=i_ringmail_sleeves
+DEFNAME=i_marik_ringmail_sleeves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Ringmail Sleeves
+
+[ITEMDEF i_marik_ringmail_gloves]
+NAME=marik ringmail gloves
+ID=i_ringmail_gloves
+DEFNAME=i_marik_ringmail_gloves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.2
+RESOURCES=12 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Ringmail gloves
+
+[ITEMDEF i_marik_ringmail_tunic]
+NAME=marik ringmail tunic
+ID=i_ringmail_tunic
+DEFNAME=i_marik_ringmail_tunic
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=18 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Ringmail Tunic
+
+[ITEMDEF i_marik_shield_buckler]
+NAME=marik buckler
+ID=i_shield_buckler
+DEFNAME=i_marik_shield_buckler
+TYPE=t_armor
+ARMOR=12
+REQSTR=65
+WEIGHT=.5
+RESOURCES=10 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Buckler 
+
+[ITEMDEF i_marik_shield_heater]
+NAME=marik heater shield
+ID=i_shield_heater
+DEFNAME=i_marik_shield_heater
+TYPE=t_armor
+ARMOR=28
+REQSTR=75
+WEIGHT=.8
+RESOURCES=18 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Heater 
+
+[ITEMDEF i_marik_sheild_round_metal]
+NAME=marik metal shield
+ID=i_shield_round_metal
+DEFNAME=i_marik_sheild_round_metal
+TYPE=t_armor
+ARMOR=16
+REQSTR=70
+WEIGHT=.6
+RESOURCES=12 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Metal Sheild
+
+[ITEMDEF i_marik_helm_closed]
+NAME=marik closed helm
+ID=i_helm_closed
+DEFNAME=i_marik_helm_closed
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Closed Helm
+
+[ITEMDEF i_marik_helm_open]
+NAME=marik helmet
+ID=i_helm_open
+DEFNAME=i_marik_helm_open
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Helm
+
+[ITEMDEF i_marik_bascinet]
+NAME=marik bascinet
+ID=i_bascinet
+DEFNAME=i_marik_bascinet
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Bascinet
+
+[ITEMDEF i_marik_helm_nose]
+NAME=marik nose helm
+ID=i_helm_nose
+DEFNAME=i_marik_helm_nose
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Nose Helm
+
+[ITEMDEF i_marik_platemail_helm]
+NAME=Marik Plate Helm
+ID=i_platemail_helm
+DEFNAME=i_marik_platemail_helm
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_marik
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_marik
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Marik Armor
+DESCRIPTION=Marik Platemail Helm
+
+//###########################
+//Inferno Armor
+//###########################
+
+[ITEMDEF i_inferno_platemail_chest]
+NAME=inferno platemail
+ID=i_platemail_chest
+DEFNAME=i_inferno_platemail_chest
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=25 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Platemail
+
+[ITEMDEF i_inferno_platemail_arms]
+NAME=inferno platemail arms
+ID=i_platemail_arms
+DEFNAME=i_inferno_platemail_arms
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Platemail arms
+
+[ITEMDEF i_inferno_platemail_leggings]
+NAME=inferno platemail legs
+ID=i_platemail_leggings
+DEFNAME=i_inferno_platemail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=20 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Platemail legs
+
+[ITEMDEF i_inferno_platemail_gorget]
+NAME=inferno platemail gorget
+ID=i_platemail_gorget
+DEFNAME=i_inferno_platemail_gorget
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=10 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Platemail Gorget
+
+[ITEMDEF i_inferno_platemail_gauntlets]
+NAME=inferno platemail gauntlets
+ID=i_platemail_gloves
+DEFNAME=i_inferno_platemail_gauntlets
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Platemail Gauntlets
+
+[ITEMDEF i_inferno_female_plate]
+NAME=inferno female platemail
+ID=i_armor_female_plate
+DEFNAME=i_inferno_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=22 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Female Platemail
+
+[ITEMDEF i_inferno_chainmail_coif]
+NAME=inferno chainmail coif
+ID=i_chainmail_coif
+DEFNAME=i_inferno_chainmail_coif
+TYPE=t_armor
+ARMOR=53
+REQSTR=70
+WEIGHT=.5
+RESOURCES=10 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Chainmail Coif
+
+[ITEMDEF i_inferno_chainmail_leggings]
+NAME=inferno chainmail leggings
+ID=i_chainmail_leggings
+DEFNAME=i_inferno_chainmail_leggings
+TYPE=t_armor
+ARMOR=53
+REQSTR=70
+WEIGHT=.7
+RESOURCES=18 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Chainmail Leggings
+
+[ITEMDEF i_inferno_chainmail_tunic]
+NAME=inferno chainmail tunic
+ID=i_chainmail_tunic
+DEFNAME=i_inferno_chainmail_tunic
+TYPE=t_armor
+ARMOR=53
+REQSTR=70
+WEIGHT=.7
+RESOURCES=18 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Chainmail Tunic
+
+[ITEMDEF i_inferno_ringmail_leggings]
+NAME=inferno ringmail leggings
+ID=i_ringmail_leggings
+DEFNAME=i_inferno_ringmail_leggings
+TYPE=t_armor
+ARMOR=50
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Ringmail Leggings
+
+[ITEMDEF i_inferno_ringmail_sleeves]
+NAME=inferno ringmail sleeves
+ID=i_ringmail_sleeves
+DEFNAME=i_inferno_ringmail_sleeves
+TYPE=t_armor
+ARMOR=50
+REQSTR=65
+WEIGHT=.5
+RESOURCES=14 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Ringmail Sleeves
+
+[ITEMDEF i_inferno_ringmail_gloves]
+NAME=inferno ringmail gloves
+ID=i_ringmail_gloves
+DEFNAME=i_inferno_ringmail_gloves
+TYPE=t_armor
+ARMOR=50
+REQSTR=65
+WEIGHT=.2
+RESOURCES=12 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Ringmail gloves
+
+[ITEMDEF i_inferno_ringmail_tunic]
+NAME=inferno ringmail tunic
+ID=i_ringmail_tunic
+DEFNAME=i_inferno_ringmail_tunic
+TYPE=t_armor
+ARMOR=50
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Ringmail Tunic
+
+[ITEMDEF i_inferno_shield_buckler]
+NAME=inferno buckler
+ID=i_shield_buckler
+DEFNAME=i_inferno_shield_buckler
+TYPE=t_armor
+ARMOR=37
+REQSTR=65
+WEIGHT=.5
+RESOURCES=10 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Buckler 
+
+[ITEMDEF i_inferno_shield_heater]
+NAME=inferno heater shield
+ID=i_shield_heater
+DEFNAME=i_inferno_shield_heater
+TYPE=t_armor
+ARMOR=53
+REQSTR=75
+WEIGHT=.8
+RESOURCES=18 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={31 37}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Heater 
+
+[ITEMDEF i_inferno_shield_round_metal]
+NAME=inferno metal shield
+ID=i_shield_round_metal
+DEFNAME=i_inferno_shield_round_metal
+TYPE=t_armor
+ARMOR=41
+REQSTR=70
+WEIGHT=.6
+RESOURCES=14 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={51 65}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Metal Sheild
+
+[ITEMDEF i_inferno_helm_closed]
+NAME=inferno closed helm
+ID=i_helm_closed
+DEFNAME=i_inferno_helm_closed
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Closed Helm
+
+[ITEMDEF i_inferno_helm_open]
+NAME=inferno helmet
+ID=i_helm_open
+DEFNAME=i_inferno_helm_open
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Helm
+
+[ITEMDEF i_inferno_bascinet]
+NAME=inferno bascinet
+ID=i_bascinet
+DEFNAME=i_inferno_bascinet
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Bascinet
+
+[ITEMDEF i_inferno_helm_nose]
+NAME=inferno nose helm
+ID=i_helm_nose
+DEFNAME=i_inferno_helm_nose
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Nose Helm
+
+[ITEMDEF i_inferno_platemail_helm]
+NAME=inferno plate helm
+ID=i_platemail_helm
+DEFNAME=i_inferno_platemail_helm
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_inferno
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_inferno
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Inferno Armor
+DESCRIPTION=Inferno Platemail Helm
+
+//###########################
+//Provain Armor
+//###########################
+
+[ITEMDEF i_provain_platemail_chest]
+NAME=provain platemail
+ID=i_platemail_chest
+DEFNAME=i_provain_platemail_chest
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=25 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Platemail
+
+[ITEMDEF i_provain_platemail_arms]
+NAME=provain platemail arms
+ID=i_platemail_arms
+DEFNAME=i_provain_platemail_arms
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Platemail arms
+
+[ITEMDEF i_provain_platemail_leggings]
+NAME=provain platemail legs
+ID=i_platemail_leggings
+DEFNAME=i_provain_platemail_leggings
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Platemail legs
+
+[ITEMDEF i_provain_platemail_gorget]
+NAME=provain platemail gorget
+ID=i_platemail_gorget
+DEFNAME=i_provain_platemail_gorget
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=10 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Platemail Gorget
+
+[ITEMDEF i_provain_platemail_gauntlets]
+NAME=provain platemail gauntlets
+ID=i_platemail_gloves
+DEFNAME=i_provain_platemail_gauntlets
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=16 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Platemail Gauntlets
+
+[ITEMDEF i_provain_female_plate]
+NAME=provain female platemail
+ID=i_armor_female_plate
+DEFNAME=i_provain_female_plate
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=22 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Female Platemail
+
+[ITEMDEF i_provain_chainmail_coif]
+NAME=provain chainmail coif
+ID=i_chainmail_coif
+DEFNAME=i_provain_chainmail_coif
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.5
+RESOURCES=10 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Chainmail Coif
+
+[ITEMDEF i_provain_chainmail_leggings]
+NAME=provain chainmail leggings
+ID=i_chainmail_leggings
+DEFNAME=i_provain_chainmail_leggings
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=18 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Chainmail Leggings
+
+[ITEMDEF i_provain_chainmail_tunic]
+NAME=provain chainmail tunic
+ID=i_chainmail_tunic
+DEFNAME=i_provain_chainmail_tunic
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=20 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Chainmail Tunic
+
+[ITEMDEF i_provain_ringmail_leggings]
+NAME=provain ringmail leggings
+ID=i_ringmail_leggings
+DEFNAME=i_provain_ringmail_leggings
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Ringmail Leggings
+
+[ITEMDEF i_provain_ringmail_sleeves]
+NAME=provain ringmail sleeves
+ID=i_ringmail_sleeves
+DEFNAME=i_provain_ringmail_sleeves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=14 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Ringmail Sleeves
+
+[ITEMDEF i_provain_ringmail_gloves]
+NAME=provain ringmail gloves
+ID=i_ringmail_gloves
+DEFNAME=i_provain_ringmail_gloves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.2
+RESOURCES=14 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Ringmail gloves
+
+[ITEMDEF i_provain_ringmail_tunic]
+NAME=provain ringmail tunic
+ID=i_ringmail_tunic
+DEFNAME=i_provain_ringmail_tunic
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=18 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Ringmail Tunic
+
+[ITEMDEF i_provain_shield_buckler]
+NAME=provain buckler
+ID=i_shield_buckler
+DEFNAME=i_provain_shield_buckler
+TYPE=t_armor
+ARMOR=12
+REQSTR=65
+WEIGHT=.5
+RESOURCES=10 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Buckler 
+
+[ITEMDEF i_provain_shield_heater]
+NAME=provain heater shield
+ID=i_shield_heater
+DEFNAME=i_provain_shield_heater
+TYPE=t_armor
+ARMOR=28
+REQSTR=75
+WEIGHT=.8
+RESOURCES=18 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={31 37}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Heater 
+
+[ITEMDEF i_provain_shield_round_metal]
+NAME=provain metal shield
+ID=i_shield_round_metal
+DEFNAME=i_provain_shield_round_metal
+TYPE=t_armor
+ARMOR=16
+REQSTR=70
+WEIGHT=.6
+RESOURCES=14 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={51 65}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Metal Sheild
+
+[ITEMDEF i_provain_helm_closed]
+NAME=provain closed helm
+ID=i_helm_closed
+DEFNAME=i_provain_helm_closed
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+COLOR=783
+WEIGHT=.5
+RESOURCES=14 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Closed Helm
+
+[ITEMDEF i_provain_helm_open]
+NAME=provain helmet
+ID=i_helm_open
+DEFNAME=i_provain_helm_open
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Helm
+
+[ITEMDEF i_provain_bascinet]
+NAME=provain bascinet
+ID=i_bascinet
+DEFNAME=i_provain_bascinet
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Bascinet
+
+[ITEMDEF i_provain_helm_nose]
+NAME=provain nose helm
+ID=i_helm_nose
+DEFNAME=i_provain_helm_nose
+TYPE=45
+ARMOR=75
+REQSTR=40
+WEIGHT=.5
+RESOURCES=14 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Nose Helm
+
+[ITEMDEF i_provain_platemail_helm]
+NAME=provain plate helm
+ID=i_platemail_helm
+DEFNAME=i_provain_platemail_helm
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_provain
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_provain
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Provain Armor
+DESCRIPTION=Provain Platemail Helm
+
+//###########################
+//Brazen Armor
+//###########################
+
+[ITEMDEF i_brazen_platemail_chest]
+NAME=brazen platemail
+ID=i_platemail_chest
+DEFNAME=i_brazen_platemail_chest
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=25 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Platemail
+
+[ITEMDEF i_brazen_platemail_arms]
+NAME=brazen platemail arms
+ID=i_platemail_arms
+DEFNAME=i_brazen_platemail_arms
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Platemail arms
+
+[ITEMDEF i_brazen_platemail_leggings]
+NAME=brazen platemail legs
+ID=i_platemail_leggings
+DEFNAME=i_brazen_platemail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=20 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Platemail legs
+
+[ITEMDEF i_brazen_platemail_gorget]
+NAME=brazen platemail gorget
+ID=i_platemail_gorget
+DEFNAME=i_brazen_platemail_gorget
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=10 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Platemail Gorget
+
+[ITEMDEF i_brazen_platemail_gauntlets]
+NAME=brazen platemail gauntlets
+ID=i_platemail_gloves
+DEFNAME=i_brazen_platemail_gauntlets
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Platemail Gauntlets
+
+[ITEMDEF i_brazen_female_plate]
+NAME=brazen female platemail
+ID=i_armor_female_plate
+DEFNAME=i_brazen_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=22 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Female Platemail
+
+[ITEMDEF i_brazen_chainmail_coif]
+NAME=brazen chainmail coif
+ID=i_chainmail_coif
+DEFNAME=i_brazen_chainmail_coif
+TYPE=t_armor
+ARMOR=53
+REQSTR=70
+WEIGHT=.5
+RESOURCES=10 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Chainmail Coif
+
+[ITEMDEF i_brazen_chainmail_leggings]
+NAME=brazen chainmail leggings
+ID=i_chainmail_leggings
+DEFNAME=i_brazen_chainmail_leggings
+TYPE=t_armor
+ARMOR=53
+REQSTR=70
+WEIGHT=.7
+RESOURCES=18 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Chainmail Leggings
+
+[ITEMDEF i_brazen_chainmail_tunic]
+NAME=brazen chainmail tunic
+ID=i_chainmail_tunic
+DEFNAME=i_brazen_chainmail_tunic
+TYPE=t_armor
+ARMOR=53
+REQSTR=70
+WEIGHT=.7
+RESOURCES=20 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Chainmail Tunic
+
+[ITEMDEF i_brazen_ringmail_leggings]
+NAME=brazen ringmail leggings
+ID=i_ringmail_leggings
+DEFNAME=i_brazen_ringmail_leggings
+TYPE=t_armor
+ARMOR=50
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Ringmail Leggings
+
+[ITEMDEF i_brazen_ringmail_sleeves]
+NAME=brazen ringmail sleeves
+ID=i_ringmail_sleeves
+DEFNAME=i_brazen_ringmail_sleeves
+TYPE=t_armor
+ARMOR=50
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Ringmail Sleeves
+
+[ITEMDEF i_brazen_ringmail_gloves]
+NAME=brazen ringmail gloves
+ID=i_ringmail_gloves
+DEFNAME=i_brazen_ringmail_gloves
+TYPE=t_armor
+ARMOR=50
+REQSTR=65
+WEIGHT=.2
+RESOURCES=14 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Ringmail gloves
+
+[ITEMDEF i_brazen_ringmail_tunic]
+NAME=brazen ringmail tunic
+ID=i_ringmail_tunic
+DEFNAME=i_brazen_ringmail_tunic
+TYPE=t_armor
+ARMOR=50
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Ringmail Tunic
+
+[ITEMDEF i_brazen_shield_buckler]
+NAME=brazen buckler
+ID=i_shield_buckler
+DEFNAME=i_brazen_shield_buckler
+TYPE=t_armor
+ARMOR=37
+REQSTR=65
+WEIGHT=.5
+RESOURCES=10 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Buckler 
+
+[ITEMDEF i_brazen_shield_heater]
+NAME=brazen heater shield
+ID=i_shield_heater
+DEFNAME=i_brazen_shield_heater
+TYPE=t_armor
+ARMOR=53
+REQSTR=30
+WEIGHT=.8
+RESOURCES=18 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={31 37}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Heater 
+
+[ITEMDEF i_brazen_shield_round_metal]
+NAME=brazen metal shield
+ID=i_shield_round_metal
+DEFNAME=i_brazen_shield_round_metal
+TYPE=t_armor
+ARMOR=41
+REQSTR=70
+WEIGHT=.6
+RESOURCES=12 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={51 65}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Metal Sheild
+
+[ITEMDEF i_brazen_helm_closed]
+NAME=brazen closed helm
+ID=i_helm_closed
+DEFNAME=i_brazen_helm_closed
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Closed Helm
+
+[ITEMDEF i_brazen_helm_open]
+NAME=brazen helmet
+ID=i_helm_open
+DEFNAME=i_brazen_helm_open
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Helm
+
+[ITEMDEF i_brazen_bascinet]
+NAME=brazen bascinet
+ID=i_bascinet
+DEFNAME=i_brazen_bascinet
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Bascinet
+
+[ITEMDEF i_brazen_helm_nose]
+NAME=brazen nose helm
+ID=i_helm_nose
+DEFNAME=i_brazen_helm_nose
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Nose Helm
+
+[ITEMDEF i_brazen_platemail_helm]
+NAME=brazen plate helm
+ID=i_platemail_helm
+DEFNAME=i_brazen_platemail_helm
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_brazen
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_brazen
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Brazen Armor
+DESCRIPTION=Brazen Platemail Helm
+
+//###########################
+//Sanexim Armor
+//###########################
+
+[ITEMDEF i_sanexim_platemail_chest]
+NAME=sanexim platemail
+ID=i_platemail_chest
+DEFNAME=i_sanexim_platemail_chest
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=25 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Platemail
+
+[ITEMDEF i_sanexim_platemail_arms]
+NAME=sanexim platemail arms
+ID=i_platemail_arms
+DEFNAME=i_sanexim_platemail_arms
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Platemail arms
+
+[ITEMDEF i_sanexim_platemail_leggings]
+NAME=sanexim platemail legs
+ID=i_platemail_leggings
+DEFNAME=i_sanexim_platemail_leggings
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=20 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Platemail legs
+
+[ITEMDEF i_sanexim_platemail_gorget]
+NAME=sanexim platemail gorget
+ID=i_platemail_gorget
+DEFNAME=i_sanexim_platemail_gorget
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+VALUE=1000
+RESOURCES=10 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Platemail Gorget
+
+[ITEMDEF i_sanexim_platemail_gauntlets]
+NAME=sanexim platemail gauntlets
+ID=i_platemail_gloves
+DEFNAME=i_sanexim_platemail_gauntlets
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=16 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Platemail Gauntlets
+
+[ITEMDEF i_sanexim_female_plate]
+NAME=sanexim female platemail
+ID=i_armor_female_plate
+DEFNAME=i_sanexim_female_plate
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=22 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Female Platemail
+
+[ITEMDEF i_sanexim_chainmail_coif]
+NAME=sanexim chainmail coif
+ID=i_chainmail_coif
+DEFNAME=i_sanexim_chainmail_coif
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.5
+RESOURCES=10 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Chainmail Coif
+
+[ITEMDEF i_sanexim_chainmail_leggings]
+NAME=sanexim chainmail leggings
+ID=i_chainmail_leggings
+DEFNAME=i_sanexim_chainmail_leggings
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=18 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Chainmail Leggings
+
+[ITEMDEF i_sanexim_chainmail_tunic]
+NAME=sanexim chainmail tunic
+ID=i_chainmail_tunic
+DEFNAME=i_sanexim_chainmail_tunic
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=20 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Chainmail Tunic
+
+[ITEMDEF i_sanexim_ringmail_leggings]
+NAME=sanexim ringmail leggings
+ID=i_ringmail_leggings
+DEFNAME=i_sanexim_ringmail_leggings
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Ringmail Leggings
+
+[ITEMDEF i_sanexim_ringmail_sleeves]
+NAME=sanexim ringmail sleeves
+ID=i_ringmail_sleeves
+DEFNAME=i_sanexim_ringmail_sleeves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Ringmail Sleeves
+
+[ITEMDEF i_sanexim_ringmail_gloves]
+NAME=sanexim ringmail gloves
+ID=i_ringmail_gloves
+DEFNAME=i_sanexim_ringmail_gloves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.2
+RESOURCES=14 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Ringmail gloves
+
+[ITEMDEF i_sanexim_ringmail_tunic]
+NAME=sanexim ringmail tunic
+ID=i_ringmail_tunic
+DEFNAME=i_sanexim_ringmail_tunic
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=18 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Ringmail Tunic
+
+[ITEMDEF i_sanexim_shield_buckler]
+NAME=sanexim buckler
+ID=i_shield_buckler
+DEFNAME=i_sanexim_shield_buckler
+TYPE=t_armor
+ARMOR=12
+REQSTR=65
+WEIGHT=.5
+RESOURCES=10 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Buckler 
+
+[ITEMDEF i_sanexim_shield_heater]
+NAME=sanexim heater shield
+ID=i_shield_heater
+DEFNAME=i_sanexim_shield_heater
+TYPE=t_armor
+ARMOR=28
+REQSTR=75
+WEIGHT=.8
+RESOURCES=18 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={31 37}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Heater 
+
+[ITEMDEF i_sanexim_shield_round_metal]
+NAME=sanexim metal shield
+ID=i_shield_round_metal
+DEFNAME=i_sanexim_shield_round_metal
+TYPE=t_armor
+ARMOR=16
+REQSTR=70
+WEIGHT=.6
+RESOURCES=12 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={51 65}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Metal Sheild
+
+[ITEMDEF i_sanexim_helm_closed]
+NAME=sanexim closed helm
+ID=i_helm_closed
+DEFNAME=i_sanexim_helm_closed
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Closed Helm
+
+[ITEMDEF i_sanexim_helm_open]
+NAME=sanexim helmet
+ID=i_helm_open
+DEFNAME=i_sanexim_helm_open
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Helm
+
+[ITEMDEF i_sanexim_bascinet]
+NAME=sanexim bascinet
+ID=i_bascinet
+DEFNAME=i_sanexim_bascinet
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Bascinet
+
+[ITEMDEF i_sanexim_helm_nose]
+NAME=sanexim nose helm
+ID=i_helm_nose
+DEFNAME=i_sanexim_helm_nose
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Nose Helm
+
+[ITEMDEF i_sanexim_platemail_helm]
+NAME=sanexim plate helm
+ID=i_platemail_helm
+DEFNAME=i_sanexim_platemail_helm
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_sanexim
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_sanexim
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Sanexim Armor
+DESCRIPTION=Sanexim Platemail Helm
+
+//###########################
+//Freoric Armor
+//###########################
+
+[ITEMDEF i_freoric_platemail_chest]
+NAME=freoric platemail
+ID=i_platemail_chest
+DEFNAME=i_freoric_platemail_chest
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=25 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Platemail
+
+[ITEMDEF i_freoric_platemail_arms]
+NAME=freoric platemail arms
+ID=i_platemail_arms
+DEFNAME=i_freoric_platemail_arms
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=18 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Platemail arms
+
+[ITEMDEF i_freoric_platemail_leggings]
+NAME=freoric platemail legs
+ID=i_platemail_leggings
+DEFNAME=i_freoric_platemail_leggings
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=20 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Platemail legs
+
+[ITEMDEF i_freoric_platemail_gorget]
+NAME=freoric platemail gorget
+ID=i_platemail_gorget
+DEFNAME=i_freoric_platemail_gorget
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=10 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Platemail Gorget
+
+[ITEMDEF i_freoric_platemail_gauntlets]
+NAME=freoric platemail gauntlets
+ID=i_platemail_gloves
+DEFNAME=i_freoric_platemail_gauntlets
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=16 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Platemail Gauntlets
+
+[ITEMDEF i_freoric_female_plate]
+NAME=freoric female platemail
+ID=i_armor_female_plate
+DEFNAME=i_freoric_female_plate
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=22 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Female Platemail
+
+[ITEMDEF i_freoric_chainmail_coif]
+NAME=freoric chainmail coif
+ID=i_chainmail_coif
+DEFNAME=i_freoric_chainmail_coif
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.5
+RESOURCES=10 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Chainmail Coif
+
+[ITEMDEF i_freoric_chainmail_leggings]
+NAME=freoric chainmail leggings
+ID=i_chainmail_leggings
+DEFNAME=i_freoric_chainmail_leggings
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=18 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Chainmail Leggings
+
+[ITEMDEF i_freoric_chainmail_tunic]
+NAME=freoric chainmail tunic
+ID=i_chainmail_tunic
+DEFNAME=i_freoric_chainmail_tunic
+TYPE=t_armor
+ARMOR=28
+REQSTR=70
+WEIGHT=.7
+RESOURCES=20 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Chainmail Tunic
+
+[ITEMDEF i_freoric_ringmail_leggings]
+NAME=freoric ringmail leggings
+ID=i_ringmail_leggings
+DEFNAME=i_freoric_ringmail_leggings
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=18 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Ringmail Leggings
+
+[ITEMDEF i_freoric_ringmail_sleeves]
+NAME=freoric ringmail sleeves
+ID=i_ringmail_sleeves
+DEFNAME=i_freoric_ringmail_sleeves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=16 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Ringmail Sleeves
+
+[ITEMDEF i_freoric_ringmail_gloves]
+NAME=freoric ringmail gloves
+ID=i_ringmail_gloves
+DEFNAME=i_freoric_ringmail_gloves
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.2
+RESOURCES=14 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Ringmail gloves
+
+[ITEMDEF i_freoric_ringmail_tunic]
+NAME=freoric ringmail tunic
+ID=i_ringmail_tunic
+DEFNAME=i_freoric_ringmail_tunic
+TYPE=t_armor
+ARMOR=25
+REQSTR=65
+WEIGHT=.5
+RESOURCES=18 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Ringmail Tunic
+
+[ITEMDEF i_freoric_shield_buckler]
+NAME=freoric buckler
+ID=i_shield_buckler
+DEFNAME=i_freoric_shield_buckler
+TYPE=t_armor
+ARMOR=12
+REQSTR=65
+WEIGHT=.5
+RESOURCES=10 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={41 51}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Buckler 
+
+[ITEMDEF i_freoric_shield_heater]
+NAME=freoric heater shield
+ID=i_shield_heater
+DEFNAME=i_freoric_shield_heater
+TYPE=t_armor
+ARMOR=28
+REQSTR=75
+WEIGHT=.8
+RESOURCES=18 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={31 37}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Heater 
+
+[ITEMDEF i_freoric_shield_round_metal]
+NAME=freoric metal shield
+ID=i_shield_round_metal
+DEFNAME=i_freoric_shield_round_metal
+TYPE=t_armor
+ARMOR=16
+REQSTR=70
+WEIGHT=.6
+RESOURCES=14 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={51 65}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Metal Sheild
+
+[ITEMDEF i_freoric_helm_closed]
+NAME=freoric closed helm
+ID=i_helm_closed
+DEFNAME=i_freoric_helm_closed
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={50 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Closed Helm
+
+[ITEMDEF i_freoric_helm_open]
+NAME=freoric helmet
+ID=i_helm_open
+DEFNAME=i_freoric_helm_open
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Helm
+
+[ITEMDEF i_freoric_bascinet]
+NAME=freoric bascinet
+ID=i_bascinet
+DEFNAME=i_freoric_bascinet
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Bascinet
+
+[ITEMDEF i_freoric_helm_nose]
+NAME=freoric nose helm
+ID=i_helm_nose
+DEFNAME=i_freoric_helm_nose
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=14 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Nose Helm
+
+[ITEMDEF i_freoric_platemail_helm]
+NAME=freoric plate helm
+ID=i_platemail_helm
+DEFNAME=i_freoric_platemail_helm
+TYPE=t_armor
+ARMOR=45
+REQSTR=75
+WEIGHT=.5
+RESOURCES=15 i_ingot_freoric
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_freoric
+HITPOINTS={50 60}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Freoric Armor
+DESCRIPTION=Freoric Platemail Helm
+
+[ITEMDEF 050d3]
+NAME=GM Crystal of Find Killer
+DEFNAME=i_find_killer
+ID=01f19
+
+ON=@Create
+COLOR=07ad
+
+ON=@DCLICK
+  IF <SRC.GM>=1
+     TARGET=What body do you want to examine?
+     RETURN 1
+  ELSE
+     SRC.JAIL
+     SRC.STONE
+     SRC.SYSMESSAGE=This is a GM only item how did you get it?
+     RETURN 1
+  ENDIF
+
+ON=@TARGON_ITEM
+     LINK=<SRC.TARG.MORE2>
+     SRC.MESSAGE=<LINK.ACCOUNT>, <LINK.NAME>, <LINK.SERIAL> is the killer!
+     LINK=<MORE>
+     RETURN 1
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=Tools
+DESCRIPTION=Crystal of Find Killer
+
+[ITEMDEF 050d4]
+NAME=Hesaphitian Hammer
+DEFNAME=i_hesaphitian_hammer
+ID=I_HAMMERPICK
+SKILL=BLACKSMITHING
+
+ON=@Create
+COLOR=0794
+HITPOINTS=2000
+
+ON=@EQUIP
+  SRC.BLACKSMITHING=<SRC.BLACKSMITHING>+5.0
+  SRC.SYSMESSAGE=You feel very skilled.
+  RETURN 0
+
+ON=@UNEQUIP
+  SRC.BLACKSMITHING=<SRC.BLACKSMITHING>+-5.0
+  SRC.SYSMESSAGE=You feel less skilled.
+  RETURN 0
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Hesaphitian
+DESCRIPTION=Hesaphitian Hammer
+
+[ITEMDEF i_shivess_platemail_chest]
+NAME=shivess platemail
+DEFNAME=i_shivess_platemail_chest
+ID=I_PLATEMAIL_CHEST
+TYPE=t_armor
+ARMOR=70
+REQSTR=50
+WEIGHT=5
+VALUE=300
+RESOURCES=25 i_ingot_shivess
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=079e
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Shivess Armor
+DESCRIPTION=Shivess Platemail
+
+[ITEMDEF i_shivess_platemail_leggings]
+NAME=shivess plate legs
+DEFNAME=i_shivess_platemail_leggings
+ID=i_PLATEMAIL_LEGGINGS
+TYPE=t_armor
+ARMOR=70
+REQSTR=50
+WEIGHT=5
+VALUE=300
+RESOURCES=20 i_ingot_shivess
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=079e
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Shivess Armor
+DESCRIPTION=Shivess Platemail Legs
+
+[ITEMDEF i_shivess_platemail_arms]
+NAME=shivess plate arms
+DEFNAME=i_shivess_platemail_arms
+ID=i_PLATEMAIL_ARMS
+TYPE=t_armor
+ARMOR=70
+REQSTR=50
+WEIGHT=5
+VALUE=300
+RESOURCES=16 i_ingot_shivess
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=079e
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Shivess Armor
+DESCRIPTION=Shivess Platemail Arms
+
+[ITEMDEF i_shivess_platemail_gorget]
+NAME=shivess plate gorget
+DEFNAME=i_shivess_platemail_gorget
+ID=i_PLATEMAIL_GORGET
+TYPE=t_armor
+ARMOR=70
+REQSTR=50
+WEIGHT=6
+VALUE=300
+RESOURCES=10 i_ingot_shivess
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=079e
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Shivess Armor
+DESCRIPTION=Shivess Platemail Gorget
+
+[ITEMDEF i_shivess_platemail_gauntlets]
+NAME=shivess plate gauntlets
+DEFNAME=i_shivess_platemail_gauntlets
+ID=i_PLATEMAIL_GLOVES
+TYPE=t_armor
+ARMOR=70
+REQSTR=50
+WEIGHT=5
+VALUE=300
+RESOURCES=16 i_ingot_shivess
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=079e
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Shivess Armor
+DESCRIPTION=Shivess Platemail Gauntlets
+
+[ITEMDEF i_shivess_platemail_helm]
+NAME=shivess plate helm
+DEFNAME=i_shivess_platemial_helm
+ID=i_PLATEMAIL_HELM
+TYPE=t_armor
+ARMOR=70
+REQSTR=50
+WEIGHT=5
+VALUE=300
+RESOURCES=15 i_ingot_shivess
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=079e
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Shivess Armor
+DESCRIPTION=Shivess Platemail Helm
+
+[ITEMDEF 050dc]
+NAME=Hesaphitian Pickaxe
+ID=i_PICKAXE
+SKILL=T_WEAPON_MACE_PICK
+
+ON=@Create
+COLOR=0794
+HITPOINTS={31 60}
+
+ON=@EQUIP
+  SRC.MINING=<SRC.MINING>+5.0
+  SRC.SYSMESSAGE=You feel very skilled.
+  RETURN 0
+
+ON=@UNEQUIP
+  SRC.MINING=<SRC.MINING>+-5.0
+  SRC.SYSMESSAGE=You feel less skilled.
+  RETURN 0
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Hesaphitian
+DESCRIPTION=Hesaphitian Pickaxe
+
+[ITEMDEF 050dd]
+NAME=hesaphitian coin%s
+ID=i_GOLD
+VALUE=15
+PILE=1
+
+ON=@Create
+COLOR=0794
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Hesaphitian
+DESCRIPTION=Hesaphitian Coins
+
+//###########################
+//Vinatol Armor
+//###########################
+
+[ITEMDEF i_vinatol_shield_heater]
+ID=i_shield_heater
+NAME=vinatol heater shield
+DEFNAME=i_vinatol_shield_heater
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=8
+RESOURCES=18 i_ingot_vinatol
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vinatol
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vinatol Armor
+DESCRIPTION=Vinatol Heater
+
+[ITEMDEF i_vinatol_platemail_chest]
+ID=i_platemail_chest
+NAME=vinatol platemail
+DEFNAME=i_vinatol_platemail_chest
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=10
+RESOURCES=25 i_ingot_vinatol
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vinatol
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vinatol Armor
+DESCRIPTION=Vinatol Platemail
+
+[ITEMDEF i_vinatol_platemail_leggings]
+ID=i_platemail_leggings
+NAME=vinatol platemail legs
+DEFNAME=i_vinatol_platemail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=15
+RESOURCES=20 i_ingot_vinatol
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vinatol
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vinatol Armor
+DESCRIPTION=Vinatol Platemail Legs
+
+[ITEMDEF i_vinatol_platemail_arms]
+ID=i_platemail_arms
+NAME=vinatol platemail arms
+DEFNAME=i_vinatol_platemail_arms
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=5
+VALUE=10000
+RESOURCES=18 i_ingot_vinatol
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vinatol
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vinatol Armor
+DESCRIPTION=Vinatol Platemail Arms
+
+[ITEMDEF i_vinatol_platemail_helm]
+ID=i_platemail_helm
+NAME=vinatol platemail helm
+DEFNAME=i_vinatol_platemail_helm
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=5
+RESOURCES=15 i_ingot_vinatol
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vinatol
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vinatol Armor
+DESCRIPTION=Vinatol Platemail Helm
+
+[ITEMDEF i_vinatol_platemail_gorget]
+ID=i_platemail_gorget
+NAME=vinatol platemail gorget
+DEFNAME=i_vinatol_platemail_gorget
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=2
+RESOURCES=10 i_ingot_vinatol
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vinatol
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vinatol Armor
+DESCRIPTION=Vinatol Platemail Gorget
+
+[ITEMDEF i_vinatol_platemail_gauntlets]
+ID=i_platemail_gloves
+NAME=vinatol platemail gaunlets
+DEFNAME=i_vinatol_platemail_gauntlets
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=2
+RESOURCES=16 i_ingot_vinatol
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vinatol
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored	
+SUBSECTION=Vinatol Armor
+DESCRIPTION=Vinatol Platemail Gaunlets
+
+[ITEMDEF i_vinatol_female_plate]
+ID=i_armor_female_plate
+NAME=vinatol female platemail
+DEFNAME=i_vinatol_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=75
+WEIGHT=4
+VALUE=10000
+RESOURCES=22 i_ingot_vinatol
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+COLOR=color_o_vinatol
+HITPOINTS={55 70}
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Vinatol Armor
+DESCRIPTION=Vinatol Female Platemail
+
+[ITEMDEF i_deed_stone_cooking_hearth]
+//Stone Cooking Hearth by Thadius - Tranquillus Decorum
+NAME=Stone Cooking Hearth Deed
+ID=i_deed
+
+ON=@DCLICK
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 1
+  MOREY=<MOREY>
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00917 //block 1
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+  SOUND 0042
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 1
+  MOREY=<MOREY> - 1
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00918 //block 2
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 1
+  MOREY=<MOREY> - 2
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00917 //block 3
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 1
+  MOREY=<MOREY> - 3
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00b40 //counter 1
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 1
+  MOREY=<MOREY> - 3
+  MOREZ=<MOREZ> + 6
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=009f3 //pot on counter 1
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 2
+  MOREY=<MOREY>
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00918 //block 4
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 2
+  MOREY=<MOREY> - 1
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00917 //block 5, center
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 2
+  MOREY=<MOREY> - 1
+  MOREZ=<MOREZ> + 3
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00fac //this is the fire pit
+  SRC.ACT.TYPE=23
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 2
+  MOREY=<MOREY> - 1
+  MOREZ=<MOREZ> + 3
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00974 //this is the cauldron
+  SRC.ACT.TYPE=23
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 2
+  MOREY=<MOREY> - 2
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00918 //block 6
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 2
+  MOREY=<MOREY> - 3
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00b40 //counter 2
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 2
+  MOREY=<MOREY> - 3
+  MOREZ=<MOREZ> + 6
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00ec3 //cleaver on counter 2
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 2
+  MOREY=<MOREY> - 3
+  MOREZ=<MOREZ> + 7
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=009be //silverware on counter 2
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 3
+  MOREY=<MOREY>
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00917 //block 7
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 3
+  MOREY=<MOREY>
+  MOREZ=<MOREZ> + 3
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=01be1 //logs
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 3
+  MOREY=<MOREY> - 1
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00918 //block 8
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 3
+  MOREY=<MOREY> - 2
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00917 //block 9
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 3
+  MOREY=<MOREY> - 3
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=00b40 //counter 3
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 3
+  MOREY=<MOREY> - 3
+  MOREZ=<MOREZ> + 6
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=009e0 //pot on counter 3
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  MOREP=<SRC.P>
+  MOREX=<MOREX> - 3
+  MOREY=<MOREY> - 3
+  MOREZ=<MOREZ> + 7
+  SRC.HOME=<MOREP>
+  SRC.NEWITEM=009e2
+  //pan on counter 3
+  SRC.ACT.ATTR=0010
+  SRC.ACT.P=<SRC.HOME>
+
+  REMOVE
+  RETURN 1
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Deeds
+DESCRIPTION=Stone Cooking Hearth
+
+[ITEMDEF i_glass_sword]
+ID=i_sword_broad
+NAME=glass sword
+TYPE=t_weapon_sword
+DAM=1750-2000
+SPEED=50
+SKILL=Swordsmanship
+REQSTR=30
+TWOHANDS=N
+WEIGHT=3
+
+ON=@Create
+  MORE=0001
+  HITPOINTS=0
+  COLOR=080f
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Swords
+DESCRIPTION=Glass Sword
+
+[ITEMDEF 07f7b]
+ID=i_deed
+NAME=Deed to a Polar Bear Rug
+VALUE=45000
+SKILLMAKE=TAILORING 95.0
+MATERIALS=100 i_fur_light
+
+ON=@DCLICK
+  SRC.NEWITEM=01e49
+  SRC.ACT.MOVE=1, 1
+  SRC.NEWITEM=01e4a
+  SRC.ACT.MOVE=0, 1
+  SRC.NEWITEM=01e4b
+  SRC.ACT.MOVE=-1, 1
+  SRC.NEWITEM=01e4e
+  SRC.ACT.MOVE=1, 0
+  SRC.NEWITEM=01e4d
+  SRC.ACT.MOVE=0, 0
+  SRC.NEWITEM=01e4c
+  SRC.ACT.MOVE=-1, 0, 0
+  SRC.NEWITEM=01e51
+  SRC.ACT.MOVE=-1, -1
+  SRC.NEWITEM=01e50
+  SRC.ACT.MOVE=0, -1
+  SRC.NEWITEM=01e4f
+  SRC.ACT.MOVE=1, -1
+  REMOVE
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Item Deeds
+DESCRIPTION=Polar Bear Deed (a)
+
+[ITEMDEF 07f7c]
+ID=i_deed
+NAME=Deed to a Bear Rug
+VALUE=45000
+SKILLMAKE=TAILORING 90.0
+MATERIALS=100 i_fur_light
+
+ON=@DCLICK
+  SRC.NEWITEM=01e49
+  SRC.ACT.MOVE=1, 1
+  SRC.NEWITEM=01e4a
+  SRC.ACT.MOVE=0, 1
+  SRC.NEWITEM=01e4b
+  SRC.ACT.MOVE=-1, 1
+  SRC.NEWITEM=01e4e
+  SRC.ACT.MOVE=1, 0
+  SRC.NEWITEM=01e4d
+  SRC.ACT.MOVE=0, 0
+  SRC.NEWITEM=01e4c
+  SRC.ACT.MOVE=-1, 0, 0
+  SRC.NEWITEM=01e51
+  SRC.ACT.MOVE=-1, -1
+  SRC.NEWITEM=01e50
+  SRC.ACT.MOVE=0, -1
+  SRC.NEWITEM=01e4f
+  SRC.ACT.MOVE=1, -1
+  REMOVE
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Item Deeds
+DESCRIPTION=Polar Bear Deed (b)
+
+[ITEMDEF 07f7d]
+NAME=Deed to a Large Forge
+ID=i_deed
+VALUE=45000
+SKILLMAKE=BLACKSMITHING 78.9, CARPENTRY 80.0
+MATERIALS=100 i_ingot_iron, 5 i_log
+
+ON=@DCLICK
+  SRC.NEWITEM=0197a
+  SRC.ACT.MOVE=-1,1
+  SRC.NEWITEM=0197e
+  SRC.ACT.MOVE=0,1
+  SRC.NEWITEM=01983
+  SRC.ACT.MOVE=1,1
+  REMOVE
+
+ON=@Create
+  ATTR=attr_newbie
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Item Deeds
+DESCRIPTION=Large Forge Deed
+
+[ITEMDEF 07f7e] //Barber Scissors
+NAME=Barber's Scissors
+ID=00dfc
+
+ON=@DCLICK
+  IF <SRC.RESTEST 10 GOLD>
+    IF ( <SRC.FLAGS> & 0400 ) // Polymorphed
+      SRC.SYSMESSAGE You can not use these in your current state.
+    ELSE
+      IF <SRC.BODY>=0191
+         SRC.TAG.HAIRCOLOR=<SRC.FINDLAYER(11).COLOR>
+         SRC.ITEMMENU m_hair
+         RETURN 1
+      ELSE
+         SRC.TAG.HAIRCOLOR=<SRC.FINDLAYER(11).COLOR>
+         SRC.TAG.BEARDCOLOR=<SRC.FINDLAYER(16).COLOR>
+         SRC.ITEMMENU m_haircut 
+         RETURN 1
+      ENDIF
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE You do not have enough money.
+    RETURN 1
+  ENDIF
+  TAG.HAIRCOLOR.REMOVE
+  TAG.BEARDCOLOR.REMOVE
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Barber Scissors (working)
+DUPELIST=0dfd
+
+[ITEMDEF 07f7f]
+ID=011fa
+NAME=Polar Bear Fur
+WEIGHT=1
+VALUE=20-40
+
+ON=@Create
+  COLOR=08fd
+
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Polar Bear Fur
+
+[ITEMDEF 07f8b]
+NAME=Potion of Full Rejuvenation
+ID=00efc
+TYPE=22
+//MATERIALS=
+WEIGHT=1
+
+ON=@Create
+COLOR=0794
+
+ON=@DCLICK
+  SRC.SYSMESSAGE You feel much better.
+  SRC.HITS=<SRC.STR>
+  SRC.MANA=<SRC.INT>
+  REMOVE
+  RETURN 1
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Potions
+DESCRIPTION=Full Rejuvenation Potion
+
+[ITEMDEF 07f8f]
+ID=00c0b // 1183 Alternate
+NAME=Banking (double click to access)
+DEFNAME=i_banking_sign
+
+ON=@Create
+  COLOR=golden_amror_color
+
+ON=@DCLICK
+  SRC.BANKSELF
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Town Items
+DESCRIPTION=Banking Sign (to access bank from)
+DUPELIST=0c0c
+
+// ***************************
+// Begin non-numbered items
+// ***************************
+
+[ITEMDEF i_sugar]
+ID=i_flour_sack
+NAME=Sack of Sugar
+WEIGHT=5
+
+ON=@Create
+  COLOR=0005
+
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Sack of Sugar
+
+[ITEMDEF i_throwing_axe]
+NAME=throwing axe (in works)
+ID=i_axe
+TYPE=t_weapon_mace_smith
+RESOURCES=1 i_axe,1 i_log
+SKILL=swordsmanship
+
+ON=@DCLICK
+  IF (<TIMER> >= 1)
+    SRC.SYSMESSAGE Your arm is still tired from the last throw.
+    RETURN 1
+  ELSE
+    TARGET You raise the axe and aim...
+  ENDIF
+
+ON=@TARGON_CHAR
+  IF (<SRC.TARG.DISTANCE> < 9) & (<SRC.TARG.DISTANCE> > 1)
+    IF (<SRC.TARG.SERIAL> != <SRC.SERIAL>)
+      SOUND 0239 // Axe throw sound
+      SRC.ANIM 20 // Throw animation
+      SRC.TARG.EFFECT=0,i_axe,7
+      UNEQUIP
+      SRC.TARG.SOUND=140
+      IF <SRC.TARG.OBODY>=c_man
+        SOUND={0154 0155 0156 0157 0158 0159}
+      ELSEIF <SRC.TARG.OBODY>=c_woman
+        SOUND={014b 014c 014d 014e 014f}
+      ELSE
+        BARK=3
+      ENDIF
+      SRC.TARG.HITS=<SRC.TARG.HITS>-RAND(10)
+      SRC.TARG.UPDATE
+      SRC.UPDATE
+      SRC.SYSMESSAGE You hit <SRC.TARG.NAME> with a throwing axe!
+      SRC.TARG.SYSMESSAGE <src.name> threw an axe at you!
+      TIMER=(10)
+      RETURN 1
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE You are not at the correct range to throw at <SRC.TARG.NAME>.
+  ENDIF
+
+ON=@TARGON_ITEM
+  SRC.SYSMESSAGE You could throw it there, but why bother.
+  RETURN 1
+
+ON=@TARGON_GROUND
+  RETURN 1
+
+ON=@TIMER
+  TIMER=0
+  RETURN 1
+
+ON=@Create
+  COLOR=07a1
+  HITPOINS={5-10}
+  TIMER=0
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Axes
+DESCRIPTION=Throwing Axe
+
+[ITEMDEF I_BOOKOFHELL]
+NAME=Book of Hell
+ID=i_BOOK_OPEN
+RESOURCES=i_book_closed,i_scroll_curse
+SKILLMAKE=INSCRIPTION 100.0
+
+CATEGORY=Trigger Items
+SUBSECTION=Magic Items
+DESCRIPTION=Book of Hell
+
+ON=@Create
+MORE=b_hitchhiker // some book number
+
+ON=@DCLICK
+  SRC.EFFECT=3,i_FIRE_COLUMN,6,15,1	// flamestrike
+  SRC.SOUND=snd_SPELL_FLAMESTRIKE
+  SRC.DAMAGE={5 20}	// damage the person who did this
+  TIMER=4
+
+ON=@TIMER
+  SPEAK Run away !
+  RETURN 1
+
+[ITEMDEF I_FIRE_STORM]
+// Fire Storm
+NAME=a Fire Storm
+ID=i_fx_explode
+TYPE=T_SPELL
+
+CATEGORY=TFL Additions
+SUBSECTION=Animations
+DESCRIPTION=Fire Storm Piece
+
+ON=@Create
+	ATTR=attr_magic|attr_move_never
+	MORE=0
+	MOREP=42,55,99
+	TIMER=1
+
+ON=@DCLICK
+  MORE=<MORE>+1
+  IF (<MORE> > 15)
+	   REMOVE
+		RETURN 1
+  ENDIF
+  MOREP=<LINK.P>
+  VAR.NEG=RAND(2)
+  VAR.TX=RAND(6)
+  IF (<VAR.NEG> == 1)
+	   MOREX= <MOREX> - <VAR.TX>
+  ELSE
+	   MOREX= <MOREX> + <VAR.TX>
+  ENDIF
+  VAR.NEG=RAND(2)
+  VAR.TY=RAND(6)
+  IF (<VAR.NEG> == 1)
+	   MOREY= <MOREY> - <VAR.TY>
+  ELSE
+	   MOREY= <MOREY> + <VAR.TY>
+  ENDIF
+  ATTR=attr_move_never|attr_invis|attr_magic  //set invs
+  P=<MOREP>
+  ATTR=attr_magic|attr_move_never  //unhide object, shos it at new location
+  MOREP=42,55,99
+  TIMER=1
+  RETURN 1
+
+[ITEMDEF i_pile_snow]
+ID=00913
+NAME=pile of snow
+TYPE=t_script
+VALUE=10000-15000
+
+ON=@Create
+  COLOR=0481
+  ATTR=attr_newbie|attr_move_always
+  TIMER=20
+
+ON=@DCLICK
+  IF (<TIMER> >= 1)
+    SRC.SYSMESSAGE The snow is not ready to be packed yet.
+    SRC.SYSMESSAGE Keep trying.
+    RETURN 1
+  ELSE
+    TARGET You carefully pack the snow into a ball...
+
+ON=@TARGON_CHAR
+  IF (<SRC.TARG.SERIAL> != <SRC.SERIAL>)
+    IF (<SRC.TARG.RESTEST 1 i_pile_snow> )
+      SRC.ANIM 11
+      SRC.TARG.EFFECT=0,0f27,7
+      SRC.TARG.ANIM 20
+      SRC.TARG.NEWITEM=i_snow_debris
+      SRC.TARG.ACT.P=<src.targ.p>
+      SOUND 0145
+      SRC.SYSMESSAGE You hit <SRC.TARG.NAME> with a snowball!
+      SRC.TARG.SYSMESSAGE <src.name> threw a snowball at you!
+      TIMER=(10)
+      RETURN 1
+    ELSE
+      SRC.SYSMESSAGE You can only throw a snowball at something that can throw one back.
+      TIMER=(10)
+      RETURN 1
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE You cannot throw a snowball at yourself!
+    TIMER=(10)
+    RETURN 1
+  ENDIF
+
+ON=@TARGON_ITEM
+  SRC.SYSMESSAGE That isn't a person!!
+  TIMER=(10)
+  RETURN 1
+
+ON=@TARGON_GROUND
+  RETURN 1
+
+ON=@TIMER
+  TIMER=0
+  RETURN 1
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Misc
+DESCRIPTION=Pile of Snow
+
+[ITEMDEF i_snow_debris]
+NAME=snow debris
+TYPE=t_none
+ID=03728
+
+ON=@Create
+  ATTR=attr_decay
+  COLOR=0482
+  TIMER=1
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Misc
+DESCRIPTION=Snow Debris
+
+[ITEMDEF i_gladiator_net]
+ID=00dc9
+NAME=warrior's net%s
+TYPE=t_script
+PILE=1
+VALUE=2000-3000
+
+ON=@DCLICK
+  IF <SRC.RESTEST 1 i_gladiator_net>
+    TARGET You perpare to throw the net...
+  ELSE
+    SRC.SYSMESSAGE You must have the net on you to throw it.
+  ENDIF
+
+ON=@TARGON_CHAR
+IF (<SRC.TARG.DISTANCE> < 2)
+  IF (<SRC.TARG.SERIAL> != <SRC.SERIAL>)
+    AMOUNT=<AMOUNT> - 1
+    SRC.SFX=00239 // Net throw sound
+    SRC.ANIM=0020 // Throw animation
+    SRC.TARG.EFFECT=0,i_net_thrown,7
+    SRC.TARG.SPELLEFFECT=s_paralyze,1 // Set to frozen
+    SRC.TARG.UPDATE
+    SRC.UPDATE
+    UPDATE
+    SRC.SYSMESSAGE You cought <SRC.TARG.NAME> in your net!
+    SRC.TARG.SYSMESSAGE <src.name> cought you in a net!
+    IF <AMOUNT>=0
+      REMOVE
+    ENDIF
+    RETURN 1
+  ENDIF
+ELSE
+  SRC.SYSMESSAGE You are too far away to capture <SRC.TARG.NAME>.
+ENDIF
+
+ON=@TARGON_ITEM
+  SRC.SYSMESSAGE You could throw it there, but why bother.
+  RETURN 1
+
+ON=@TARGON_GROUND
+  RETURN 1
+
+ON=@Create
+  ATTR=attr_move_always
+  AMOUNT={3-5}
+  TIMER=-1
+  COLOR=colors_brown
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Weapons
+DESCRIPTION=A Warrior's Net
+
+[ITEMDEF i_gladiator_net_thrown]
+ID=00dca
+NAME=warrior's net%s
+
+ON=@Create
+  COLOR=colors_brown
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Weapons
+DESCRIPTION=A Warrior's Net (thrown)
+
+[ITEMDEF i_yttrium_hammer]
+ID=i_hammer_sledge
+DEFNAME=i_yttri_hammer
+NAME=yttrium enchanting hammer
+TYPE=t_weapon_mace_smith
+SKILL=Mace Fighting
+REQSTR=80
+TWOHANDS=Y
+LAYER=1
+VALUE=25000-30000
+
+ON=@DCLICK
+  IF <SRC.BLACKSMITHING>>99.9
+    TARGET Select the armor or weapon to enchant.
+    RETURN=1
+  ELSE
+    SRC.SYSMESSAGE Only a gm blacksmith may use this.
+    RETURN=1
+  ENDIF
+
+ON=@TARGON_ITEM
+  IF (<SRC.TARG.TYPE>=t_armor) || (<SRC.TARG.TYPE>=t_weapon_mace_smith) || (<SRC.TARG.TYPE>=t_weapon_mace_sharp) || (<SRC.TARG.TYPE>=t_weapon_sword) || (<SRC.TARG.TYPE>=t_weapon_fence) || (<SRC.TARG.TYPE>=t_weapon_bow) || (<SRC.TARG.TYPE>=t_weapon_axe) || (<SRC.TARG.TYPE>=t_weapon_xbow)
+    SRC.TARG.MOREY=(<SRC.TARG.MOREY>+(<EVAL RAND(2)>*200)+400))
+    SRC.TARG.ATTR=attr_identified|attr_magic|attr_blessed2
+    SRC.TARG.UPDATE
+    SRC.UPDATE
+    SRC.ANIM=31
+    SRC.SOUND=snd_SPELL_BLESS
+    REMOVE
+  ELSE
+    SRC.SYSMESSAGE You can not enchant this item.
+    RETURN=0
+  ENDIF
+
+ON=@Create
+  COLOR=color_o_inferno
+  HITPOINTS={31 60}
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Yttrium
+DESCRIPTION=Yttrium Enchanting Hammer
+DUPELIST=00fb5
+
+[ITEMDEF i_spear_jousting]
+ID=01402
+NAME=Jousting Spear
+WEIGHT=1
+SPEED=255
+TYPE=it_weapon_fence
+TWOHANDS=N
+LAYER=1
+
+ON=@DAMAGE
+  SRC.FINDLAYER(25).REMOVE
+  SRC.FLAGS=<SRC.FLAGS> &~0800000000
+  SRC.SFX=00ac
+  SRC.UPDATE
+
+ON=@Create
+  HITPOINTS=255
+
+CATEGORY=!CU Shard Miscellaneous 
+SUBSECTION=Weapons
+DESCRIPTION=Jousting Spear
+DUPELIST=01403
+
+[ITEMDEF i_trap_kit]
+ID=01eba
+NAME=trap kit
+TYPE=t_script
+VALUE=200-300
+
+ON=@DCLICK
+  TARGET Which container do you wish to trap?
+  RETURN=1
+
+ON=@TARGON_ITEM
+  IF <SRC.TARG.TYPE>=t_trapped_container // Container is trapped
+    IF <SRC.RemoveTrap><500 // Must have over 50 skill to even have a chance to disarm
+      SRC.SYSMESSAGE Your Remove Trap skill is too low to disarm this trap.
+    ELSE // They have the skill to disarm
+      IF ((<SRC.RemoveTrap>/10)+(<EVAL RAND(25)>) > 75.0) // Succede at disarm
+        IF <SRC.RemoveTrap>>899
+          SRC.SYSMESSAGE You quickly dispose of the trap with no worries.
+        ELSEIF <SRC.RemoveTrap>>799
+          SRC.SYSMESSAGE You disarmed the trap and didnt even break a sweat.
+        ELSEIF <SRC.RemoveTrap>>699
+          SRC.SYSMESSAGE You use your skill and carefully disarm the trap.
+        ELSEIF <SRC.RemoveTrap>>599
+          SRC.SYSMESSAGE You use all your skill and barely manage to disarm the trap.
+        ELSEIF <SRC.RemoveTrap>>499
+          SRC.SYSMESSAGE You amazingly beat the odds and disarm the trap.
+        ENDIF
+      ELSE // Fail at disarming
+        SRC.DAMAGE=<MOREX>/10
+        SRC.SYSMESSAGE You trigger the trap while trying to disarm it.
+      ENDIF
+      SRC.TARG.TYPE=t_container
+      SRC.TARG.UPDATE
+    ENDIF
+  ELSEIF (<SRC.TARG.ID>=009ab) || (<SRC.TARG.ID>=00e3c) || (<SRC.TARG.ID>=009aa) || (<SRC.TARG.ID>=009a8) || (<SRC.TARG.ID>=009a9) || (<SRC.TARG.ID>=00e40) || (<SRC.TARG.ID>=00e42) || (<SRC.TARG.ID>=00fae)
+    IF <SRC.RESTEST=1 i_springs> // If they have a spring
+      IF <SRC.RESTEST=1 i_bottle_purple> // If they have a purple pot
+        SRC.CONSUME=1 i_springs
+        SRC.CONSUME=1 i_bottle_purple
+        SRC.EMOTE setting a trap on a <SRC.TARG.NAME>
+        SRC.ANIM=18
+        SOUND=004b
+        SRC.TARG.TYPE=t_trapped_container
+        SRC.TARG.MOREX=<SRC.TINKERING>
+        SRC.TARG.UPDATE
+      ELSE
+        SRC.SYSMESSAGE You need an explosion potion to set a trap.
+      ENDIF      
+    ELSE
+      SRC.SYSMESSAGE You need a spring to set a trap.
+    ENDIF
+  ELSEIF <SRC.TARG.ID>=00e77 // Open barrel
+    SRC.SYSMESSAGE You can not set a trap on this, it has no lid.
+  ELSE
+    SRC.SYSMESSAGE You can not trap this.
+  ENDIF
+
+ON=@TARGON_CHAR
+  SRC.SYSMESSAGE You must be a complete moron trying to trap a person.
+
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Trap Kit
+DUPELIST=01ebb
+
+[ITEMDEF I_FIRE_STORM]
+// Fire Storm
+NAME=a Fire Storm
+ID=i_fx_explode
+TYPE=T_SPELL
+
+CATEGORY=TFL Additions
+SUBSECTION=Animations
+DESCRIPTION=Fire Storm Piece
+
+ON=@Create
+	ATTR=attr_magic|attr_move_never
+	MORE=0
+	MOREP=42,55,99
+	TIMER=1
+
+ON=@DCLICK
+  MORE=<MORE>+1
+  IF (<MORE> > 15)
+	   REMOVE
+		RETURN 1
+  ENDIF
+  MOREP=<LINK.P>
+  VAR.NEG=RAND(2)
+  VAR.TX=RAND(6)
+  IF (<VAR.NEG> == 1)
+	   MOREX= <MOREX> - <VAR.TX>
+  ELSE
+	   MOREX= <MOREX> + <VAR.TX>
+  ENDIF
+  VAR.NEG=RAND(2)
+  VAR.TY=RAND(6)
+  IF (<VAR.NEG> == 1)
+	   MOREY= <MOREY> - <VAR.TY>
+  ELSE
+	   MOREY= <MOREY> + <VAR.TY>
+  ENDIF
+  ATTR=attr_move_never|attr_invis|attr_magic  //set invs
+  P=<MOREP>
+  ATTR=attr_magic|attr_move_never  //unhide object, shos it at new location
+  MOREP=42,55,99
+  TIMER=1
+  RETURN 1
+
+[ITEMDEF i_guillotine_of_justice]
+NAME=Guillotine of Justice
+ID=0125e
+TYPE=t_script
+
+// ASK TO SELECT VICTIMS HEAD
+ON=@DCLICK
+  TARGET Whos head do you wish to submit?
+  RETURN 1
+
+ON=@TARGON_ITEM
+  IF (<SRC.TARG.ID> != i_flesh_head_2) | (<SRC.TARG.ID> != i_flesh_head) 
+    SRC.SYSMESSAGE Only heads of evil villans can be used on this.
+    RETURN 1
+  ENDIF
+  IF (<SRC.TARG.LINK> == 04fffffff)
+    SRC.SYSMESSAGE It must be a player's head.
+    RETURN 1
+  ENDIF 
+  IF (<SRC.TARG.LINK.KILLS> < 4)
+    SRC.SYSMESSAGE Only heads of murderers may be brought to justice.
+    RETURN 1
+  ENDIF
+  IF ( !(<SRC.TARG.LINK.FAME> > 2000) )
+    SRC.MESSAGE Only heads of truly famous and evil villans are worth a reward... 
+    RETURN 1
+  ELSE
+
+  SRC.NEWITEM=01c18 // create a trophy
+  SRC.ACT.COLOR=0038 // color it gold
+  SRC.ACT.NAME=Trophy of Justice - issued to <SRC.NAME> for killing <SRC.TARG.LINK.NAME> // Set Trophy ingraving
+  SRC.ACT.BOUNCE  // Put trophy in their backpack
+  // START OF STAT LOSS
+  SOUND=0015d
+  SRC.TARG.LINK.STR=(<SRC.TARG.LINK.STR>+-1)
+  SRC.TARG.LINK.DEX=(<SRC.TARG.LINK.DEX>+-1)
+  SRC.TARG.LINK.INT=(<SRC.TARG.LINK.INT>+-1)
+  SRC.TARG.LINK.FAME=(<SRC.TARG.LINK.FAME>+(-500))
+  SRC.FAME=<SRC.FAME>+250
+  SRC.KARMA=<SRC.KARMA>+250
+
+  // START OF BOUNTY SECTION
+  VAR.KILLS=<SRC.TARG.LINK.KILLS>
+  VAR.BOUNTY=<VAR.KILLS>*500
+  IF ( <VAR.KILLS> > 4 ) // start of bounty
+    SRC.MESSAGE You receive a bounty of Gold Coins!
+    SRC.TARG.LINK.KILLS=(<SRC.TARG.LINK.KILLS>+-2)   // SUBTRACT 2 FROM MURDERERS KILLS
+    SRC.NEWITEM=i_gold
+    SRC.ACT.AMOUNT=<VAR.BOUNTY>
+    SRC.ACT.BOUNCE
+    SRC.MESSAGE You have claimed the bounty!
+  ELSE
+  SRC.MESSAGE There was no bounty on this head!
+  ENDIF // end of bounty
+
+  SRC.TARG.REMOVE // remove the head
+  SRC.RESEND
+  RETURN 1
+  ENDIF
+
+ON=@Create
+  ATTR=attr_move_never|attr_owned
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Town Items
+DESCRIPTION=Guillotene of Justice
+
+[ITEMDEF i_lord_wood_elf]
+ID=I_SWORD_VIKING
+NAME=Arboreal Sword
+DAM={40-50}
+
+ON=@Create
+  COLOR=00593
+  HITPOINTS=5000
+  ATTR=attr_newbie
+
+ON=@Equip
+  IF <SRC.FAME>>=9000 
+    IF <SRC.BODY>=C_Man
+      NAME=Lord <SRC.NAME>'s Arboreal Sword
+    ELSEIF <SRC.BODY>=C_Woman
+      NAME=Lady <SRC.NAME>'s Arboreal Sword
+    ENDIF
+    LINK=<SRC.SERIAL>
+    TIMER=1
+    RETURN 0
+  ELSE
+    SRC.SYSMESSAGE=You are not worthy enough to wield this weapon.
+    RETURN 1
+  ENDIF
+
+ON=@UNEQUIP
+  TIMER=-1
+
+ON=@TIMER
+  CONT.NEWITEM=i_sprout
+  LINK.ACT.TIMER=1
+  LINK.ACT.ATTR=attr_decay
+  LINK.ACT.P=<CONT.P>
+  TIMER=1
+  RETURN 1
+
+[ITEMDEF i_sprout]
+ID=00cb0
+NAME=Sprout
+
+ON=@Create
+ATTR=attr_decay
+TIMER=1
+
+ON=@TIMER
+  IF <MOREX>=0
+    ID=00c8e
+    MOREX=1
+    UPDATE
+    TIMER=1
+    RETURN 1
+  ELSE
+    ID=00c88
+    MOREX=2
+    UPDATE
+    TIMER=1
+    RETURN 1
+  ENDIF
+
+[ITEMDEF i_potion_smoke]
+ID=i_bottle_WHITE
+NAME=smoke potion
+TYPE=t_potion
+
+RESOURCES=i_reag_volcanic_ash 2, i_reag_brimstone 6 i_bottle_EMPTY
+SKILLMAKE=ALCHEMY 85.0
+
+ON=@DCLICK
+  IF !(<SRC.FINDLAYER(50).ID> > 0)
+    SRC.NEWITEM=03728
+    SRC.ACT.TIMER=1
+    SRC.ACT.ATTR=attr_decay|attr_move_never
+    SRC.ACT.P=<SRC.P>
+    SRC.FLAGS=<SRC.FLAGS>|0800000
+    SRC.UPDATE
+  ENDIF
+
+ON=@Create
+  COLOR=0791
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Potion (Dark Gray)(Smoke)
+
+[ITEMDEF i_helm_orc_evil] 
+NAME=evil orc helm
+ID=i_helm_orc
+TYPE=t_armor
+FLIP=1
+ARMOR=20
+REQSTR=1
+VALUE=1,10
+WEIGHT=5
+
+ON=@Create
+  HITPOINTS={31 70}
+  COLOR=03c1
+
+ON=@EQUIP
+  IF <SRC.KARMA> < -500
+    SRC.SYSMESSAGE You can't lose any more karma from wearing this item!
+  ELSE
+    SRC.KARMA=<SRC.KARMA>+-200
+    SRC.SYSMESSAGE=You have a lost some karma!
+  ENDIF
+
+  SRC.TAG.STR=<SRC.STR>
+  SRC.TAG.DEX=<SRC.DEX>
+  SRC.TAG.INT=<SRC.INT>
+
+  SRC.STR=<SRC.STR>+10
+  IF <SRC.DEX> = <SRC.INT>
+    SRC.INT=<SRC.INT>+-10
+  ELSE
+  IF <SRC.DEX> < <SRC.INT>
+    SRC.INT=<SRC.INT>+-10
+  ELSE
+    SRC.DEX=<SRC.DEX>+-10
+  ENDIF
+  ENDIF
+
+ON=@UNEQUIP
+  SRC.STR=<SRC.TAG.STR>
+  SRC.DEX=<SRC.TAG.DEX>
+  SRC.INT=<SRC.TAG.INT>
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Helmets
+DESCRIPTION=Evil Orc Helm
+DUPELIST=01f0c
+
+[ITEMDEF i_flour_mill_crank_e]
+ID=i_flour_mill_crank
+SKILL=Cooking
+
+ON=@Dclick
+  IF <SRC.RESTEST=1 i_wheat_sheaf>
+    ID=i_flour_mill_crank_2
+    UPDATE
+    TIMER=5
+    SRC.CONSUME=1 i_wheat_sheaf
+    SRC.MAKEITEM=i_flour_sack
+  ELSE
+    SRC.SYSMESSAGE You need a sheaf of wheat to get flour.
+  ENDIF
+
+ON=@Timer
+  ID=i_flour_mill_crank
+  TIMER=-1
+  RETURN=1
+
+ON=@Create
+  ATTR=attr_move_never
+
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Flour Mill (functional crank)
+
+[ITEMDEF i_flour_mill_crank_n]
+ID=i_flour_mill_crank_6
+SKILL=Cooking
+
+ON=@Dclick
+  IF <SRC.RESTEST=1 i_wheat_sheaf>
+    ID=01935
+    UPDATE
+    TIMER=5
+    SRC.CONSUME=1 i_wheat_sheaf
+    SRC.MAKEITEM=i_flour_sack
+  ELSE
+    SRC.SYSMESSAGE You need a sheaf of wheat to get flour.
+  ENDIF
+
+ON=@Timer
+  ID=i_flour_mill_crank_6
+  TIMER=-1
+  RETURN=1
+
+ON=@Create
+  ATTR=attr_move_never
+
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Flour Mill Crank (functional crank)
+
+[ITEMDEF i_collapsed_cavern]
+ID=04f2
+NAME=collapsed cavern floor
+FLIP=0
+
+ON=@CLICK
+  SAY=the floor of the cavern seems to have collapsed here - a faint light is visible at the bottom of the pit
+  RETURN=1
+
+ON=@DCLICK
+  SRC.SYSMESSAGE=You jump into the hole.
+  SRC.P=<MOREP>
+  SRC.UPDATE
+  IF (<SRC.BODY> = c_man)
+    DORAND 6
+      SRC.SFX=snd_HUMAN_MOOMPH01
+      SRC.SFX=snd_HUMAN_MOOMPH02
+      SRC.SFX=snd_HUMAN_MOOMPH03
+      SRC.SFX=snd_HUMAN_MOOMPH04
+      SRC.SFX=snd_HUMAN_MOOMPH05
+      SRC.SFX=snd_HUMAN_MOOMPH13
+    ENDRAND
+    SRC.ANIM=22
+  ELSEIF (<SRC.BODY> = c_woman)
+    DORAND 5
+      SRC.SFX=snd_HUMAN_FOOMPH01
+      SRC.SFX=snd_HUMAN_FOOMPH06
+      SRC.SFX=snd_HUMAN_FOOMPH07
+      SRC.SFX=snd_HUMAN_FOOMPH08
+      SRC.SFX=snd_HUMAN_FOOMPH09
+    ENDRAND
+    SRC.ANIM=22
+  ELSE
+    SRC.BARK=3
+  ENDIF
+
+ON=@Create
+  COLOR=01
+  MOREP=5452,1362,0
+
+CATEGORY=Buildings - Floors
+SUBSECTION=Cave Floor
+DESCRIPTION=Collapsed Cavern Floor
+
+[ITEMDEF i_shear_leggings]
+ID=i_pants_long
+NAME=shear leggings
+
+ON=@EQUIP
+COLOR=color_transparent
+UPDATE
+
+ON=@UNEQUIP
+COLOR=07ca
+UPDATE
+
+ON=@Create
+COLOR=07ca
+UPDATE
+
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Shear Leggings
+
+[ITEMDEF i_shear_female_top]
+ID=i_armor_female_bustier_studded
+NAME=shear female top
+
+ON=@EQUIP
+COLOR=color_transparent
+UPDATE
+
+ON=@UNEQUIP
+COLOR=07ca
+UPDATE
+
+ON=@Create
+COLOR=07ca
+UPDATE
+
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Shear Female Top
+
+[ITEMDEF i_shear_female_clothing]
+ID=i_armor_female_leather
+NAME=shear female clothing
+
+ON=@EQUIP
+COLOR=color_transparent
+UPDATE
+
+ON=@UNEQUIP
+COLOR=07ca
+UPDATE
+
+ON=@Create
+COLOR=07ca
+UPDATE
+
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Shear Female Top
+
+[ITEMDEF 01c0e]
+DEFNAME=i_machinegun
+NAME=machinegun
+
+[ITEMDEF 01c0f]
+DEFNAME=i_machinegun_clip
+NAME=machinegun clip
+
+[ITEMDEF 01c10]
+DEFNAME=i_cattle_prod
+NAME=cattle prod
+
+[ITEMDEF 01c11]
+DEFNAME=i_holy_hand_grenade
+NAME=holy hand grenade
+
+ON=@DCLICK
+TARGET=Who will thou smite with thy <NAME>?
+
+ON=@TARGON_CHAR
+IF (<SRC.TARG.ID>=c_m_evil_rabbit)
+  SRC.TARG.INVUL=0
+  SRC.TARG.SPELLEFFECT=s_explosion
+  SRC.TARG.HITS=0
+ENDIF
+
+[ITEMDEF i_druid_staff]
+ID=i_crook_thin
+NAME=druid's staff
+
+ON=@CLICK
+  IF <EVAL <MOREY>> < 10
+    VAR.Prefix=lesser
+  ELSEIF <EVAL <MOREY>> < 20
+    VAR.Prefix=
+  ELSEIF <EVAL <MOREY>> < 25
+    VAR.Prefix=greater
+  ENDIF
+
+  MESSAGE=<VAR.Prefix> <NAME> (<MOREX> charges)
+  RETURN=1
+
+ON=@CLICK
+  IF <EVAL <MOREY>> < 10
+    VAR.Prefix=lesser
+  ELSEIF <EVAL <MOREY>> < 20
+    VAR.Prefix=
+  ELSEIF <EVAL <MOREY>> < 25
+    VAR.Prefix=greater
+  ENDIF
+  MESSAGE=<VAR.Prefix> <NAME> (<MOREX> charges)
+  RETURN=1
+
+ON=@EQUIP
+  SFX=01e0
+  MOREX=<MOREX>+-1
+  SRC.Taming=(<SRC.Taming> + <MOREY>)
+
+ON=@UNEQUIP
+  SFX=01e1
+  SRC.Taming=(<SRC.Taming> +- <MOREY>)
+
+ON=@Create
+  ATTR=attr_magic
+  COLOR=07af
+  HITPOINTS={11 40}
+  MOREX={20 50}
+  MOREY={5 25}
+
+CATEGORY=!CU Shard Miscellaneous
+SUBSECTION=Magic Items
+DESCRIPTION=Druid's Staff
+
+[EOF]

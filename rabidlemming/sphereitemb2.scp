@@ -1,0 +1,9585 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, July 14, 2000
+//
+VERSION=0.54
+
+[ITEMDEF 07e1]
+DEFNAME=i_bridge
+RESOURCES=15 I_ROPE, 5 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Suspension Bridge
+DESCRIPTION=@
+DUPELIST=07e2,07e3,07e4,07e5,07e6,07e7,07e8,07e9,07ea,07eb,07ec,07ed,07ee,07ef,07f0,07f1,07f2,07f3,07f4,07f5,07f6,07f7,07f8,07f9,07fa,07fb,07fc,07fd,07fe,07ff,0800,0801,0802,0803,0804,0805,0806,0807,0808,0809,080a,080b,080c,080d,080e,080f,0810,0811,0812,0813,0814,0815,0816,0817,0818
+
+[ITEMDEF 07e2]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07e3]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07e4]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07e5]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07e6]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07e7]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07e8]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07e9]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07ea]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07eb]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07ec]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07ed]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07ee]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07ef]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f0]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f1]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f2]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f3]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f4]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f5]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f6]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f7]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f8]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07f9]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07fa]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07fb]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07fc]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07fd]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07fe]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 07ff]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0800]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0801]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0802]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0803]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0804]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0805]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0806]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0807]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0808]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0809]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 080a]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 080b]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 080c]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 080d]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 080e]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 080f]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0810]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0811]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0812]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0813]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0814]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0815]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0816]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0817]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0818]
+//suspension bridge
+DUPEITEM=07e1
+
+[ITEMDEF 0821]
+DEFNAME=i_fence_iron
+RESOURCES=25 i_ingot_iron
+CATEGORY=Buildings - Fences
+SUBSECTION=Iron Fence
+DESCRIPTION=@
+DUPELIST=0822,0823,0849,084a,084b
+
+[ITEMDEF 0822]
+//iron fence
+DUPEITEM=0821
+
+[ITEMDEF 0823]
+//iron fence
+DUPEITEM=0821
+
+[ITEMDEF 0824]
+DEFNAME=i_gate_iron
+RESOURCES=25 i_ingot_iron
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Iron Gate
+DESCRIPTION=@ (n / sw)
+DUPELIST=0825,0826,0827,0828,0829,082a,082b,082c,082d,082e,082f,0830,0831,0832,0833
+
+[ITEMDEF 0825]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@
+
+[ITEMDEF 0826]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0827]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@
+
+[ITEMDEF 0828]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 0829]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@
+
+[ITEMDEF 082a]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 082b]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@
+
+[ITEMDEF 082c]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 082d]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@
+
+[ITEMDEF 082e]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 082f]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@
+
+[ITEMDEF 0830]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0831]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@
+
+[ITEMDEF 0832]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0833]
+//iron gate
+DUPEITEM=0824
+DESCRIPTION=@
+
+[ITEMDEF 0834]
+//stone stairs
+DUPEITEM=071e
+
+[ITEMDEF 0835]
+//wooden fence
+DUPEITEM=03b3
+
+[ITEMDEF 0836]
+//wooden fence
+DUPEITEM=03b3
+
+[ITEMDEF 0837]
+//wooden fence
+DUPEITEM=03b3
+
+[ITEMDEF 0838]
+//wooden post
+DUPEITEM=03b3
+
+[ITEMDEF 0839]
+DEFNAME=i_gate_wood
+RESOURCES=25 I_BOARD
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Wooden Gate
+DESCRIPTION=@ (n / sw)
+DUPELIST=083a,083b,083c,083d,083e,083f,0840,0841,0842,0843,0844,0845,0846,0847,0848
+
+[ITEMDEF 083a]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@
+
+[ITEMDEF 083b]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 083c]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@
+
+[ITEMDEF 083d]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 083e]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@
+
+[ITEMDEF 083f]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 0840]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@
+
+[ITEMDEF 0841]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 0842]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@
+
+[ITEMDEF 0843]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 0844]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@
+
+[ITEMDEF 0845]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0846]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@
+
+[ITEMDEF 0847]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0848]
+//wooden gate
+DUPEITEM=0839
+DESCRIPTION=@
+
+[ITEMDEF 0849]
+//iron fence
+DUPEITEM=0821
+
+[ITEMDEF 084a]
+//iron fence
+DUPEITEM=0821
+
+[ITEMDEF 084b]
+//iron fence
+DUPEITEM=0821
+
+[ITEMDEF 084c]
+DEFNAME=i_gate_iron_2
+RESOURCES=25 i_ingot_iron
+TYPE=T_DOOR
+DUPELIST=084d,084e,084f,0850,0851,0852,0853,0854,0855,0856,0857,0858,0859,085a,085b
+
+[ITEMDEF 084d]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 084e]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 084f]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0850]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0851]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0852]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0853]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0854]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0855]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0856]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0857]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0858]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 0859]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 085a]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 085b]
+//iron gate
+DUPEITEM=084c
+
+[ITEMDEF 085c]
+DEFNAME=i_gate_wood_2
+RESOURCES=25 I_BOARD
+CATEGORY=Buildings - Fences
+SUBSECTION=Wooden Fence 2
+DESCRIPTION=@
+DUPELIST=085d,085e,085f,0860,0861,0862,0863,0864,0865,0877,0878
+
+[ITEMDEF 085d]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 085e]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 085f]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 0860]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 0861]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 0862]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 0863]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 0864]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 0865]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 0866]
+DEFNAME=i_gate_wood_3
+RESOURCES=25 I_BOARD
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Wooden Gate 2
+DESCRIPTION=@ (n / sw)
+DUPELIST=0867,0868,0869,086a,086b,086c,086d,086e,086f,0870,0871,0872,0873,0874,0875
+
+[ITEMDEF 0867]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@
+
+[ITEMDEF 0868]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0869]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@
+
+[ITEMDEF 086a]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 086b]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@
+
+[ITEMDEF 086c]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 086d]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@
+
+[ITEMDEF 086e]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 086f]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@
+
+[ITEMDEF 0870]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 0871]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@
+
+[ITEMDEF 0872]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0873]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@
+
+[ITEMDEF 0874]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0875]
+//wooden gate
+DUPEITEM=0866
+DESCRIPTION=@
+
+[ITEMDEF 0876]
+//stone stairs
+DUPEITEM=071e
+
+[ITEMDEF 0877]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 0878]
+//wooden fence
+DUPEITEM=085c
+
+[ITEMDEF 087a]
+DEFNAME=i_ramp_wood
+RESOURCES=25 I_BOARD
+CATEGORY=Buildings - Stairs
+SUBSECTION=Wooden Ramp
+DESCRIPTION=@
+DUPELIST=087b,087c,087d
+
+[ITEMDEF 087b]
+//wooden ramp
+DUPEITEM=087a
+
+[ITEMDEF 087c]
+//wooden ramp
+DUPEITEM=087a
+
+[ITEMDEF 087d]
+//wooden ramp
+DUPEITEM=087a
+
+[ITEMDEF 087e]
+DEFNAME=i_railing_wood
+RESOURCES=15 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Wooden Rail
+DESCRIPTION=@
+DUPELIST=087f,0880,0881,0882,0883,0884,0885,0886,0887,0888,0889
+
+[ITEMDEF 087f]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0880]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0881]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0882]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0883]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0884]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0885]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0886]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0887]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0888]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 0889]
+//wooden rail
+DUPEITEM=087e
+
+[ITEMDEF 088a]
+DEFNAME=i_fence_wood_2
+RESOURCES=25 I_BOARD
+CATEGORY=Buildings - Fences
+SUBSECTION=Wooden Fence 3
+DESCRIPTION=@
+DUPELIST=088b
+
+[ITEMDEF 088b]
+//wooden fence
+DUPEITEM=088a
+
+[ITEMDEF 0899]
+DEFNAME=i_ladder_wood
+RESOURCES=15 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Wooden Ladder 1
+DESCRIPTION=@
+DUPELIST=089b
+
+[ITEMDEF 089a]
+//wooden ladder
+DUPELIST=089c
+RESOURCES=15 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Wooden Ladder 2
+DESCRIPTION=@
+
+[ITEMDEF 089b]
+//wooden ladder
+DUPEITEM=0899
+
+[ITEMDEF 089c]
+//wooden ladder
+DUPEITEM=089a
+
+[ITEMDEF 089d]
+//wooden ladder
+DUPELIST=089e
+// HEIGHT=14 // not 12 like it says.
+RESOURCES=15 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Wooden Ladder 3
+DESCRIPTION=@
+
+[ITEMDEF 089e]
+//wooden ladder
+DUPEITEM=089d
+
+[ITEMDEF 089f]
+DEFNAME=i_ladder_wood_2
+RESOURCES=15 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Wooden Ladder 2
+DESCRIPTION=@
+DUPELIST=08a0,08a1,08a2,08a3,08a4
+
+[ITEMDEF 08a0]
+//wooden ladder
+DUPEITEM=089f
+
+[ITEMDEF 08a1]
+//wooden ladder
+DUPEITEM=089f
+
+[ITEMDEF 08a2]
+//wooden ladder
+DUPEITEM=089f
+
+[ITEMDEF 08a3]
+//wooden ladder
+DUPEITEM=089f
+
+[ITEMDEF 08a4]
+//wooden ladder
+DUPEITEM=089f
+
+[ITEMDEF 08a5]
+DEFNAME=i_ladder_rope
+RESOURCES=10 I_ROPE
+CATEGORY=Buildings - Other
+SUBSECTION=Rope Ladder
+DESCRIPTION=@
+DUPELIST=08a6
+
+[ITEMDEF 08a6]
+//rope ladder
+DUPEITEM=08a5
+
+[ITEMDEF 08ae]
+DEFNAME=i_banister_wood
+RESOURCES=15 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Wooden Bannister
+DESCRIPTION=@
+DUPELIST=08af,08b0,08b1,08b2,08b3,08b4,08b5,08b6,08b7,08b8,08b9,08ba,08bb,08bc,08bd,08be,08bf,08c0,08c1,08c2,08c3,08c4,08c5,08c6,08c7,08c8,08c9,08ca
+
+[ITEMDEF 08af]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b0]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b1]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b2]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b3]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b4]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b5]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b6]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b7]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b8]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08b9]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08ba]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08bb]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08bc]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08bd]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08be]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08bf]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c0]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c1]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c2]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c3]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c4]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c5]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c6]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c7]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c8]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08c9]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08ca]
+//wooden banister
+DUPEITEM=08ae
+
+[ITEMDEF 08cb]
+DEFNAME=i_edging_wood
+RESOURCES=5 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Edging
+DESCRIPTION=@
+DUPELIST=08cc,08cd,08ce
+
+[ITEMDEF 08cc]
+//edging
+DUPEITEM=08cb
+
+[ITEMDEF 08cd]
+//edging
+DUPEITEM=08cb
+
+[ITEMDEF 08ce]
+//edging
+DUPEITEM=08cb
+
+[ITEMDEF 08cf]
+DEFNAME=i_fireplace_stone
+RESOURCES=20 i_ingot_iron, 300 i_rock_plain, 25 i_stone_marble
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Fireplace 1
+DESCRIPTION=@ (empty)
+DUPELIST=08d0,08d3,08d4
+
+[ITEMDEF 08d0]
+//fireplace
+DUPEITEM=08cf
+
+[ITEMDEF 08d1]
+DEFNAME=i_chimney_stone
+RESOURCES=300 i_rock_plain
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Chimney 1
+DESCRIPTION=@
+DUPELIST=08d2,08d5,08d6,08d9
+
+[ITEMDEF 08d2]
+//chimney
+DUPEITEM=08d1
+
+[ITEMDEF 08d3]
+//fireplace
+DUPEITEM=08cf
+
+[ITEMDEF 08d4]
+//fireplace
+DUPEITEM=08cf
+
+[ITEMDEF 08d5]
+//chimney
+DUPEITEM=08d1
+
+[ITEMDEF 08d6]
+//chimney
+DUPEITEM=08d1
+
+[ITEMDEF 08d7]
+DEFNAME=i_chimney_stone_2
+RESOURCES=300 i_rock_plain
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Chimney 2
+DESCRIPTION=@
+DUPELIST=08d8,08dc,08dd
+
+[ITEMDEF 08d8]
+//chimney
+DUPEITEM=08d7
+
+[ITEMDEF 08d9]
+//chimney
+DUPEITEM=08d1
+
+[ITEMDEF 08da]
+DEFNAME=i_fireplace_stone_2
+RESOURCES=20 i_ingot_iron, 300 i_rock_plain, 25 i_stone_marble
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Fireplace 2
+DESCRIPTION=@ (empty)
+DUPELIST=08db,08de,08df
+
+[ITEMDEF 08db]
+//fireplace
+DUPEITEM=08da
+
+[ITEMDEF 08dc]
+//chimney
+DUPEITEM=08d7
+
+[ITEMDEF 08dd]
+//chimney
+DUPEITEM=08d7
+
+[ITEMDEF 08de]
+//fireplace
+DUPEITEM=08da
+
+[ITEMDEF 08df]
+//fireplace
+DUPEITEM=08da
+
+[ITEMDEF 08e0]
+//stalagmites
+TYPE=T_ROCK
+CATEGORY=Buildings - Floors
+SUBSECTION=Cave Floor
+DESCRIPTION=Stalagmites
+DUPELIST=08e1,08e2,08e3,08e4,08e5,08e6,08e7,08e8,08e9,08ea
+
+[ITEMDEF 08e1]
+//stalagmites
+DUPEITEM=08e0
+
+[ITEMDEF 08e2]
+//flowstone
+DUPEITEM=08e0
+DESCRIPTION=Flowstone
+
+[ITEMDEF 08e3]
+//flowstone
+DUPEITEM=08e0
+DESCRIPTION=Flowstone
+
+[ITEMDEF 08e4]
+//stalagmites
+DUPEITEM=08e0
+
+[ITEMDEF 08e5]
+//stalagmites
+DUPEITEM=08e0
+
+[ITEMDEF 08e6]
+//flowstone
+DUPEITEM=08e0
+DESCRIPTION=Flowstone
+
+[ITEMDEF 08e7]
+//stalagmites
+DUPEITEM=08e0
+
+[ITEMDEF 08e8]
+//flowstone
+DUPEITEM=08e0
+DESCRIPTION=Flowstone
+
+[ITEMDEF 08e9]
+//stalagmites
+DUPEITEM=08e0
+
+[ITEMDEF 08ea]
+//stalagmites
+DUPEITEM=08e0
+
+[ITEMDEF 08eb]
+DEFNAME=i_rail_stone
+RESOURCES=20 i_rock_plain
+CATEGORY=Buildings - Other
+SUBSECTION=Stone Rail 1
+DESCRIPTION=@
+DUPELIST=08ec,08ed,08ee
+
+[ITEMDEF 08ec]
+//stone rail
+DUPEITEM=08eb
+
+[ITEMDEF 08ed]
+//stone rail
+DUPEITEM=08eb
+
+[ITEMDEF 08ee]
+//stone rail
+DUPEITEM=08eb
+
+[ITEMDEF 08ef]
+DEFNAME=i_rail_stone_2
+RESOURCES=20 i_rock_plain, 10 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Stone Rail 2
+DESCRIPTION=@
+DUPELIST=08f0,08f1,08f2
+
+[ITEMDEF 08f0]
+//stone rail
+DUPEITEM=08ef
+
+[ITEMDEF 08f1]
+//stone rail
+DUPEITEM=08ef
+
+[ITEMDEF 08f2]
+//stone rail
+DUPEITEM=08ef
+
+[ITEMDEF 08f3]
+DEFNAME=i_rail_stone_3
+RESOURCES=20 i_stone_sand, 10 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Sandstone Rail
+DESCRIPTION=@
+DUPELIST=08f4,08f5,08f6
+
+[ITEMDEF 08f4]
+//sandstone rail
+DUPEITEM=08f3
+
+[ITEMDEF 08f5]
+//sandstone rail
+DUPEITEM=08f3
+
+[ITEMDEF 08f6]
+//sandstone rail
+DUPEITEM=08f3
+
+[ITEMDEF 08f7]
+DEFNAME=i_rail_stone_4
+RESOURCES=20 i_rock_plain, 10 I_BOARD
+CATEGORY=Buildings - Other
+SUBSECTION=Stone Rail 3
+DESCRIPTION=@
+DUPELIST=08f8,08f9,08fa,08fb,08fc
+
+[ITEMDEF 08f8]
+//stone rail
+DUPEITEM=08f7
+
+[ITEMDEF 08f9]
+//stone rail
+DUPEITEM=08f7
+
+[ITEMDEF 08fa]
+//stone rail
+DUPEITEM=08f7
+
+[ITEMDEF 08fb]
+//stone rail
+DUPEITEM=08f7
+
+[ITEMDEF 08fc]
+//stone rail
+DUPEITEM=08f7
+
+[ITEMDEF 0911]
+//dirt patch
+CATEGORY=Ground Tiles
+SUBSECTION=Dirt Patch
+DESCRIPTION=@
+DUPELIST=0912,0913,0914
+
+[ITEMDEF 0912]
+//dirt patch
+DUPEITEM=0911
+
+[ITEMDEF 0913]
+//dirt patch
+DUPEITEM=0911
+
+[ITEMDEF 0914]
+//dirt patch
+DUPEITEM=0911
+
+[ITEMDEF 0915]
+DEFNAME=i_stone_steps
+RESOURCES=40 i_rock_plain
+CATEGORY=Buildings - Stairs
+SUBSECTION=Stone Step
+DESCRIPTION=@
+DUPELIST=0916,0917,0918
+
+[ITEMDEF 0916]
+//stone step
+DUPEITEM=0915
+
+[ITEMDEF 0917]
+//stone step
+DUPEITEM=0915
+
+[ITEMDEF 0918]
+//stone step
+DUPEITEM=0915
+
+[ITEMDEF 091a]
+DEFNAME=i_beehive
+TYPE=t_bee_hive
+VALUE=2
+WEIGHT=6
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Beehive
+
+[ITEMDEF 091b]
+//bees
+DEFNAME=i_bee_swarm
+TYPE=t_trap_active
+VALUE=2
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Bees
+DUPELIST=091c,091d,091e,091f,0920,0921,0922
+
+[ITEMDEF 091c]
+//bees
+DUPEITEM=091b
+
+[ITEMDEF 091d]
+//bees
+DUPEITEM=091b
+
+[ITEMDEF 091e]
+//bees
+DUPEITEM=091b
+
+[ITEMDEF 091f]
+//bees
+DUPEITEM=091b
+
+[ITEMDEF 0920]
+//bees
+DUPEITEM=091b
+
+[ITEMDEF 0921]
+//bees
+DUPEITEM=091b
+
+[ITEMDEF 0922]
+//bees
+DUPEITEM=091b
+
+[ITEMDEF 092b]
+DEFNAME=i_oven_stone
+RESOURCES=20 i_ingot_iron, 300 i_rock_plain, 25 i_stone_marble
+TYPE=T_FIRE
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Oven 1
+DESCRIPTION=@
+DUPELIST=092c,092d,092e,092f,0930,0931,0932,0933,0934,0943,0944
+
+[ITEMDEF 092c]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 092d]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 092e]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 092f]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 0930]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 0931]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 0932]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 0933]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 0934]
+//oven
+DUPEITEM=092b
+
+[ITEMDEF 0935]
+DEFNAME=i_fireplace_stone_3
+RESOURCES=20 i_ingot_iron, 300 i_rock_plain, 25 i_stone_marble
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Fireplace 1
+DESCRIPTION=@ (unlit)
+DUPELIST=0936
+
+[ITEMDEF 0936]
+//fireplace
+DUPEITEM=0935
+
+[ITEMDEF 0937]
+DEFNAME=i_fireplace_stone_4
+RESOURCES=20 i_ingot_iron, 300 i_rock_plain, 25 i_stone_marble
+TYPE=T_FIRE
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Fireplace 1
+DESCRIPTION=@
+DUPELIST=0938,0939,093a,093b,093c,093d,093e,093f,0940,0941,0942,0945,0946,0947,0948,0949,094a,094b,094c,094d,094e,094f,0950,0956,0957,0958,0959,095a,095b,095c,095d,095e,0961,0962,0963,0964,0965,0966,0967,0968,0969,096a,096b,096c
+
+[ITEMDEF 0938]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0939]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 093a]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 093b]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 093c]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 093d]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 093e]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 093f]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0940]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0941]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0942]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0943]
+//fireplace
+DUPEITEM=092b
+
+[ITEMDEF 0944]
+//fireplace
+DUPEITEM=092b
+
+[ITEMDEF 0945]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0946]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0947]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0948]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0949]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 094a]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 094b]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 094c]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 094d]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 094e]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 094f]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0950]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0951]
+DEFNAME=i_fireplace_stone_5
+RESOURCES=20 i_ingot_iron, 300 i_rock_plain, 25 i_stone_marble
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Fireplace 2
+DESCRIPTION=@ (unlit)
+DUPELIST=0952,095f,0960
+
+[ITEMDEF 0952]
+//fireplace
+DUPEITEM=0951
+
+[ITEMDEF 0953]
+DEFNAME=i_fireplace_stone_6
+RESOURCES=20 i_ingot_iron, 300 i_rock_plain, 25 i_stone_marble
+TYPE=T_FIRE
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Fireplace 2
+DESCRIPTION=@
+DUPELIST=0954,0955
+
+[ITEMDEF 0954]
+//fireplace
+DUPEITEM=0953
+
+[ITEMDEF 0955]
+//fireplace
+DUPEITEM=0953
+
+[ITEMDEF 0956]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0957]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0958]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0959]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 095a]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 095b]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 095c]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 095d]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 095e]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 095f]
+//fireplace
+DUPEITEM=0951
+
+[ITEMDEF 0960]
+//fireplace
+DUPEITEM=0951
+
+[ITEMDEF 0961]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0962]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0963]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0964]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0965]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0966]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0967]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0968]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0969]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 096a]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 096b]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 096c]
+//fireplace
+DUPEITEM=0937
+
+[ITEMDEF 0970]
+DEFNAME=i_bowl_stew
+TYPE=T_FOOD
+RESOURCES=1 I_WATER, 1 i_POT,1 I_FLOUR_SACK,
+VALUE={2 4}
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Stew
+DUPELIST=0971,0972,0973
+
+[ITEMDEF 0971]
+//stew
+DUPEITEM=0970
+
+[ITEMDEF 0972]
+//stew
+DUPEITEM=0970
+
+[ITEMDEF 0973]
+//stew
+DUPEITEM=0970
+
+[ITEMDEF 0974]
+DEFNAME=i_cauldron
+RESOURCES=20 i_ingot_iron
+WEIGHT=30
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Cauldron
+DUPELIST=0975
+
+[ITEMDEF 0975]
+//cauldron
+DUPEITEM=0974
+
+[ITEMDEF 0976]
+DEFNAME=i_bacon_slab
+TYPE=T_FOOD_RAW
+TDATA1=i_bacon_slice
+RESOURCES=1 I_HAM, 1 I_BOARD
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Slab of Bacon
+DUPELIST=0977
+
+[ITEMDEF 0977]
+//slab of bacon
+DUPEITEM=0976
+
+[ITEMDEF 0978]
+// DEFNAME2=BACON
+DEFNAME=i_bacon_slice
+TYPE=T_FOOD
+RESOURCES=1 I_HAM
+VALUE={2 4}
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Slice of Bacon
+DUPELIST=0979
+
+[ITEMDEF 0979]
+//slice of bacon
+DUPEITEM=0978
+
+[ITEMDEF 097a]
+// raw_fish
+DEFNAME=i_fish_cut_raw
+TYPE=T_FOOD_RAW
+TDATA1=i_fish_cut_cooked
+VALUE=3
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fish Steak (Raw)
+
+[ITEMDEF 097b]
+// Cooked_fish
+DEFNAME=i_fish_cut_cooked
+RESOURCES=1 I_FISH_SMALL
+TYPE=T_FOOD
+VALUE=3
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fish Steak (Cooked)
+
+[ITEMDEF 097c]
+DEFNAME=i_cheese_wedge
+RESOURCES=5 i_pitcher_milk, 1 i_reag_fertile_DIRT
+TYPE=T_FOOD
+VALUE={3 5}
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Wedge of Cheese
+
+[ITEMDEF 097d]
+DEFNAME=i_cheese_cut
+RESOURCES=4 i_pitcher_milk, 1 i_reag_fertile_DIRT
+TYPE=T_FOOD
+VALUE={6 10}
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Cut Cheese
+
+[ITEMDEF 097e]
+// DEFNAME2=CHEESE
+DEFNAME=i_cheese_wheel
+RESOURCES=5 i_pitcher_milk, 1 i_reag_fertile_DIRT
+TYPE=T_FOOD
+VALUE={22 28}
+WEIGHT=0.2
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Wheel of Cheese
+
+[ITEMDEF 097f]
+DEFNAME=i_fry_pan
+RESOURCES=1 i_ore_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Frypan
+
+[ITEMDEF 0980]
+DEFNAME=i_curtain_2
+RESOURCES=10 I_CLOTH, 1 i_ingot_gold
+DYE=1
+CATEGORY=Decoration - Curtains
+SUBSECTION=Curtain 01
+DESCRIPTION=@
+DUPELIST=0981,0982,0983,0984,0985,0986,0987,0988,0989,098b
+
+[ITEMDEF 0981]
+//CURTAIN=Red, straight against NE wall
+DUPEITEM=0980
+
+[ITEMDEF 0982]
+//CURTAIN=Red. ruffled against NE wall
+DUPEITEM=0980
+
+[ITEMDEF 0983]
+//CURTAIN=Reg, gathered to right bottom with black cord against NE wall
+DUPEITEM=0980
+
+[ITEMDEF 0984]
+//curtains skinny red NE wall
+DUPEITEM=0980
+
+[ITEMDEF 0985]
+//curtains Red, str. slight wafting bottom left crnr against NE wall
+DUPEITEM=0980
+
+[ITEMDEF 0986]
+//curtains
+DUPEITEM=0980
+
+[ITEMDEF 0987]
+//curtains skinny red NE wall, slight wafting at bottom
+DUPEITEM=0980
+
+[ITEMDEF 0988]
+//CURTAIN=Red, straight against Nw wall
+DUPEITEM=0980
+
+[ITEMDEF 0989]
+//curtains red looks like 1/4th a curtain panel
+//Diagonal brown sashed curtain on NW wall
+DUPEITEM=0980
+
+[ITEMDEF 098a]
+DEFNAME=i_wood_board
+RESOURCES=1 I_LOG
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Wooden Boards
+
+[ITEMDEF 098b]
+//curtains
+DUPEITEM=0980
+
+[ITEMDEF 098c]
+DEFNAME=i_bread_french
+TYPE=T_FOOD
+VALUE={4 8}
+WEIGHT=0.5
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=French Bread
+
+SKILLMAKE=COOKING 15.0
+RESOURCES=1 i_FLOUR_SACK
+RESOURCES2=1 i_bowl_dough,1 i_water,2 I_EGG,1 i_POT
+
+[ITEMDEF 098d]
+//jugs of cider
+DUPEITEM=09c8
+
+[ITEMDEF 098e]
+//jugs of cider
+DUPEITEM=09c8
+
+[ITEMDEF 0990]
+DEFNAME=i_basket
+TYPE=T_CONTAINER
+TDATA2=041
+RESOURCES=3 I_STRAW
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Basket
+
+[ITEMDEF 0991]
+DEFNAME=i_tray
+RESOURCES=3 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Tray
+DUPELIST=0992
+
+[ITEMDEF 0992]
+DEFNAME=i_tray_2
+DUPEITEM=0991
+
+[ITEMDEF 0993]
+DEFNAME=i_basket_fruit
+RESOURCES=3 I_STRAW
+TYPE=T_FOOD
+VALUE={4 7}
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fruit Basket
+
+[ITEMDEF 0994]
+// DEFNAME2=pear
+DEFNAME=i_fruit_pear
+TYPE=T_FRUIT
+VALUE=1
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Pear
+DUPELIST=0172d
+
+[ITEMDEF 0995]
+DEFNAME=i_mug_ceramic
+RESOURCES=3 i_ingot_iron
+RESOURCES2=1 I_CLAY
+SKILLMAKE=TINKERING 42.0,t_tinker_tools
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Ceramic Mug
+DUPELIST=0996,0997,09ca
+
+[ITEMDEF 0996]
+//ceramic mug
+DUPEITEM=0995
+
+[ITEMDEF 0997]
+//ceramic mug
+DUPEITEM=0995
+
+[ITEMDEF 0998]
+DEFNAME=i_mug
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Mug
+DUPELIST=0999
+
+[ITEMDEF 0999]
+//mug
+DUPEITEM=0998
+
+[ITEMDEF 099a]
+DEFNAME=i_goblet
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Goblet
+
+SKILLMAKE=TINKERING 42.0,t_tinker_tools
+RESOURCES=3 i_ingot_iron
+RESOURCES2=1 I_SAND
+
+[ITEMDEF 099b]
+DEFNAME=i_bottle_liquor
+RESOURCES=1 i_reag_fertile_DIRT, 1 I_WATER, 1 i_wheat_sheaf, 1 I_BOTTLE_empty
+TYPE=T_BOOZE
+VALUE={6 10}
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Bottle of Liquor
+DUPELIST=099c,099d,099e
+
+[ITEMDEF 099c]
+DUPEITEM=099b
+
+[ITEMDEF 099d]
+//bottles of liquor
+DUPEITEM=099b
+
+[ITEMDEF 099e]
+//bottles of liquor
+DUPEITEM=099b
+
+[ITEMDEF 099f]
+DEFNAME=i_bottle_ale
+RESOURCES=1 i_reag_fertile_DIRT, 1 I_WATER, 1 i_wheat_sheaf, 1 I_BOTTLE
+TYPE=T_BOOZE
+VALUE={6 10}
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Bottle of Ale
+DUPELIST=09a0,09a1,09a2
+
+[ITEMDEF 09a0]
+DUPEITEM=099f
+
+[ITEMDEF 09a1]
+//bottles of ale
+DUPEITEM=099f
+
+[ITEMDEF 09a2]
+//bottles of ale
+DUPEITEM=099f
+
+[ITEMDEF 09a3]
+DEFNAME=i_fork
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fork
+DUPELIST=09a4
+
+[ITEMDEF 09a4]
+//fork
+DUPEITEM=09a3
+
+[ITEMDEF 09a5]
+DEFNAME=i_knife
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Knife
+DUPELIST=09a6
+
+[ITEMDEF 09a6]
+DUPEITEM=09a5
+
+[ITEMDEF 09a7]
+DEFNAME=i_pitcher_glass
+TYPE=T_PITCHER_EMPTY
+TDATA1=i_pitcher_glass
+FLIP=1
+RESOURCES=6 i_GLASS
+RESOURCES2=1 I_SAND
+VALUE=50
+WEIGHT=2
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Empty Glass Pitcher
+DUPELIST=0ff6,0ff7
+
+[ITEMDEF 09a8]
+DEFNAME=i_box_brass
+TYPE=T_CONTAINER
+TDATA2=04b
+//TDATA2=043	// no lock?
+FLIP=1
+WEIGHT=5
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Brass Box  (N)
+DUPELIST=0e80
+SKILLMAKE=TINKERING 40.0,t_tinker_tools
+RESOURCES=5 i_ingot_iron, 5 i_log
+RESOURCES2=3 i_ingot_iron,1 i_nails,2 i_hinge
+
+[ITEMDEF 09a9]
+// DEFNAME2=SMALL_CRATE_2
+DEFNAME=i_crate_small
+RESOURCES=8 i_board
+TYPE=t_container
+TDATA2=044
+FLIP=1
+WEIGHT=3
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Wooden Crate (Small)
+DUPELIST=0e7e
+RESOURCES2=6 i_board,1 i_nails,2 i_hinge
+SKILLMAKE=CARPENTRY 10.0, t_carpentry
+
+[ITEMDEF 09aa]
+// DEFNAME2=WOODEN_BOX_2
+DEFNAME=i_box_wood
+RESOURCES=10 i_board
+TYPE=T_CONTAINER
+TDATA2=040
+FLIP=1
+WEIGHT=4
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Wooden Box (W)
+SKILLMAKE=CARPENTRY 21.0, t_carpentry
+DUPELIST=0e7d
+RESOURCES2=9 i_board
+
+[ITEMDEF 09ab]
+//DEFNAME2=METAL_CHEST_4
+DEFNAME=i_chest_metal
+TYPE=T_CONTAINER
+TDATA2=04a
+FLIP=1
+WEIGHT=20
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Metal Chest (N)
+DUPELIST=0e7c
+SKILLMAKE=TINKERING 75.0,t_tinker_tools
+RESOURCES=20 i_ingot_iron, 2 i_board
+RESOURCES2=3 i_ingot_iron,1 i_nails,2 i_hinge
+
+[ITEMDEF 09ac]
+DEFNAME=i_basket_bushel
+TYPE=T_CONTAINER
+TDATA2=041
+RESOURCES=3 I_STRAW
+WEIGHT=5
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Large Basket
+
+[ITEMDEF 09ad]
+DEFNAME=i_pitcher_milk
+//? TYPE=T_CONTAINER
+TYPE=T_DRINK
+TDATA1=i_pitcher_glass
+FLIP=1
+RESOURCES=i_pitcher_glass
+RESOURCES2=i_pitcher_glass, 1 i_milk
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Milk (Pitcher)
+DUPELIST=09f0
+
+[ITEMDEF 09ae]
+DEFNAME=i_plate_dirty
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Plate
+
+[ITEMDEF 09af]
+DEFNAME=i_plate_food
+RESOURCES=1 i_ingot_iron, 1 T_FOOD
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Plate of Food
+DUPELIST=09d8,09d9,09db
+
+[ITEMDEF 09b0]
+DEFNAME=i_pouch
+TYPE=T_CONTAINER
+TDATA2=03c
+FLIP=1
+DYE=1
+WEIGHT=1
+DUPELIST=0e79
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Pouch
+SKILLMAKE=TAILORING 10.0, t_sewing_kit
+RESOURCES=2 i_hides_cut
+RESOURCES2=2 i_hide
+
+[ITEMDEF 09b1]
+DEFNAME=i_basket_2
+TYPE=T_CONTAINER
+TDATA2=03F
+RESOURCES=3 I_STRAW
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Small Basket
+
+[ITEMDEF 09b2]
+DEFNAME=i_bankbox
+NAME=Bank Box
+LAYER=layer_bankbox
+TYPE=T_EQ_BANK_BOX
+TDATA2=04a
+
+[ITEMDEF 09b3]
+DEFNAME=i_goblet_2
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Goblet
+
+SKILLMAKE=TINKERING 42.0,t_tinker_tools
+RESOURCES=3 i_ingot_iron
+RESOURCES2=1 I_SAND
+
+[ITEMDEF 09b6]
+DEFNAME=i_eggs_fried
+RESOURCES=1 i_EGGS_FRESH
+TYPE=T_FOOD
+VALUE={5 9}
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fried Eggs
+
+[ITEMDEF 09b7]
+//DEFNAME2=COOKED_BIRD
+DEFNAME=i_bird_cooked
+RESOURCES=1 I_BIRD_RAW
+TYPE=T_FOOD
+WEIGHT=0.5
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Cooked Bird
+DUPELIST=09b8
+
+[ITEMDEF 09b8]
+//cooked bird
+DUPEITEM=09b7
+
+[ITEMDEF 09ba]
+//raw bird
+DUPEITEM=09b9
+
+[ITEMDEF 09bc]
+//roast pig
+DUPEITEM=09bb
+
+[ITEMDEF 09bd]
+DEFNAME=i_silverware
+RESOURCES=1 i_ingot_silver
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Silverware
+DUPELIST=09be
+
+[ITEMDEF 09be]
+//silverware
+DUPEITEM=09bd
+
+[ITEMDEF 09bf]
+DEFNAME=i_goblet_3
+RESOURCES=1 I_SAND
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Goblet
+DUPELIST=09cb
+
+[ITEMDEF 09c0]
+DEFNAME=i_sausages
+RESOURCES=1 I_reag_GARLIC, 1 I_HAM
+TYPE=T_FOOD
+VALUE={12 16}
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Sausages
+DUPELIST=09c1
+
+[ITEMDEF 09c1]
+//sausages
+DUPEITEM=09c0
+
+[ITEMDEF 09c2]
+DEFNAME=i_spoon
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Spoon
+DUPELIST=09c3
+
+[ITEMDEF 09c3]
+//spoon
+DUPEITEM=09c2
+
+[ITEMDEF 09c4]
+DEFNAME=i_bottles_wine
+RESOURCES=1 I_BOTTLE, 1 i_fruit_grapes, 1 i_reag_fertile_dirt
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Bottles of Wine
+DUPELIST=09c5,09c6
+
+[ITEMDEF 09c5]
+//bottles of wine
+DUPEITEM=09c4
+
+[ITEMDEF 09c6]
+//bottles of wine
+DUPEITEM=09c4
+
+[ITEMDEF 09c7]
+DEFNAME=i_bottle_wine
+RESOURCES=1 I_BOTTLE, 1 i_fruit_grapes, 1 i_reag_fertile_dirt
+TYPE=T_BOOZE
+VALUE={6 10}
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Bottle of Wine
+
+[ITEMDEF 09c8]
+DEFNAME=i_jug_cider
+RESOURCES=1 I_BOTTLE, 1 i_fruit_apple, 1 i_WATER, 1 i_reag_fertile_dirt
+TYPE=T_BOOZE
+VALUE={12 18}
+WEIGHT=11
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Jug of Cider
+DUPELIST=098d,098e
+
+[ITEMDEF 09ca]
+DUPEITEM=0995
+
+[ITEMDEF 09cb]
+//goblet
+DUPEITEM=09bf
+
+[ITEMDEF 09d3]
+//ham
+DUPEITEM=09c9
+
+[ITEMDEF 09d4]
+DEFNAME=i_silverware_2
+RESOURCES=3 i_ingot_silver
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Silverware
+DUPELIST=09d5
+
+[ITEMDEF 09d5]
+//silverware
+DUPEITEM=09d4
+
+[ITEMDEF 09d6]
+DEFNAME=i_pitcher
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Pitcher
+
+SKILLMAKE=TINKERING 42.0,t_tinker_tools
+RESOURCES=3 i_ingot_iron
+RESOURCES2=2 I_SAND
+
+[ITEMDEF 09d7]
+DEFNAME=i_plate
+RESOURCES=1 I_CLAY
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Plate
+
+[ITEMDEF 09d8]
+//plate of food
+DUPEITEM=09af
+
+[ITEMDEF 09d9]
+//plate of food
+DUPEITEM=09af
+
+[ITEMDEF 09da]
+DEFNAME=i_plate_dirty_2
+RESOURCES=1 I_PLATE, 1 I_DIRT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Plate
+
+[ITEMDEF 09db]
+DUPEITEM=09af
+
+[ITEMDEF 09dc]
+DEFNAME=i_pot_dirty
+RESOURCES=1 I_POT, 1 I_DIRT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Pot
+
+[ITEMDEF 09dd]
+DEFNAME=i_pot_dirty_2
+RESOURCES=1 I_POT_2, 1 I_DIRT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Pot
+
+[ITEMDEF 09de]
+DEFNAME=i_frypan_dirty
+RESOURCES=1 I_FRYPAN, 1 I_DIRT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Frypan
+
+[ITEMDEF 09df]
+DEFNAME=i_pot_dirty_3
+RESOURCES=1 I_POT_3, 1 I_DIRT
+
+[ITEMDEF 09e0]
+DEFNAME=i_pot
+RESOURCES=3 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Pot
+
+[ITEMDEF 09e1]
+DEFNAME=i_pot_2
+RESOURCES=3 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Pot
+
+[ITEMDEF 09e2]
+DEFNAME=i_frypan
+RESOURCES=3 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Frypan
+
+[ITEMDEF 09e3]
+//pot
+DEFNAME=i_pot_3
+RESOURCES=3 i_ingot_iron
+
+[ITEMDEF 09e4]
+//pot
+DEFNAME=i_pot_4
+RESOURCES=3 i_ingot_iron
+
+[ITEMDEF 09e5]
+//pot
+DEFNAME=i_pot_5
+RESOURCES=3 i_ingot_iron
+
+[ITEMDEF 09e6]
+DEFNAME=i_pot_dirty_4
+RESOURCES=1 I_POT_4, 1 I_DIRT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Pot
+
+[ITEMDEF 09e7]
+DEFNAME=i_pot_dirty_5
+RESOURCES=1 I_POT_5, 1 I_DIRT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Pot
+
+[ITEMDEF 09e8]
+DEFNAME=i_pot_dirty_6
+RESOURCES=1 I_PAN, 1 I_DIRT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Pot
+
+[ITEMDEF 09e9]
+DEFNAME=i_cake
+TYPE=T_FOOD
+VALUE={8 12}
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Cake
+
+SKILLMAKE=COOKING 30.0
+RESOURCES=3 i_FLOUR_SACK
+
+[ITEMDEF 09ea]
+DEFNAME=i_muffin
+RESOURCES=1 i_bowl_dough, 1 I_TRAY
+TYPE=T_FOOD
+VALUE={2 4}
+WEIGHT=0.1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Muffin
+
+[ITEMDEF 09eb]
+DEFNAME=i_muffins
+WEIGHT=0.5
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Muffins
+
+SKILLMAKE=COOKING 10.0
+RESOURCES=1 i_FLOUR_SACK
+RESOURCES2=1 i_bowl_dough,1 i_TRAY
+
+[ITEMDEF 09ec]
+// DEFNAME2=HONEY_OBJ
+DEFNAME=i_jar_honey
+RESOURCES3=1 I_HONEY, 1 I_JAR
+TYPE=T_FOOD
+VALUE={2 4}
+WEIGHT=0.5
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Jar of Honey
+
+[ITEMDEF 09ed]
+DEFNAME=i_kettle
+RESOURCES=5 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Kettle
+
+[ITEMDEF 09ee]
+DEFNAME=i_mug_ale
+RESOURCES3=1 I_MUG, 1 i_reag_fertile_DIRT, 1 I_WATER, 1 I_BARLEY, 1 i_wheat_sheaf
+TYPE=T_BOOZE
+TDATA1=I_MUG
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Mug of Ale
+DUPELIST=09ef
+
+[ITEMDEF 09ef]
+//mug of ale
+DUPEITEM=09ee
+
+[ITEMDEF 09f0]
+DUPEITEM=09ad
+
+[ITEMDEF 09f1]
+// DEFNAME2=RAW_RIBS
+DEFNAME=i_ribs_raw
+TYPE=t_meat_raw
+TDATA1=i_ribs_cooked
+VALUE=3
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Ribs (Raw)
+
+[ITEMDEF 09f2]
+// DEFNAME2=COOKED_RIBS
+DEFNAME=i_ribs_cooked
+RESOURCES=1 i_ribs_raw
+TYPE=T_FOOD
+VALUE={12 24}
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Ribs (Cooked)
+
+[ITEMDEF 09f3]
+DEFNAME=i_pan
+RESOURCES=3 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Pan
+
+[ITEMDEF 09f4]
+DEFNAME=i_fork_2
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fork
+
+[ITEMDEF 09f5]
+DEFNAME=i_fork_3
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fork
+
+[ITEMDEF 09f6]
+DEFNAME=i_knife_3
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Knife
+
+[ITEMDEF 09f7]
+DEFNAME=i_knife_4
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Knife
+
+[ITEMDEF 09f8]
+DEFNAME=i_spoon_2
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Spoon
+
+[ITEMDEF 09f9]
+DEFNAME=i_spoon_3
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Spoon
+
+[ITEMDEF 09fa]
+DEFNAME=i_muffins_2
+RESOURCES=1 i_bowl_dough, 1 I_TRAY
+WEIGHT=0.5
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Muffins
+
+[ITEMDEF 09fb]
+DEFNAME=i_sconce
+TYPE=t_light_out
+TDATA3=i_sconce_lit
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Sconce (Unlit) (W)
+DUPELIST=09fc
+SKILLMAKE=TINKERING 30.0
+RESOURCES=1 i_ingot_iron, 1 I_CANDLE
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 09fc]
+DUPEITEM=09fb
+
+[ITEMDEF 09fd]
+DEFNAME=i_sconce_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_sconce
+TDATA4=i_sconce_lit
+RESOURCES=i_sconce
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Sconce (Lit) (W)
+DUPELIST=09fe,09ff
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 09fe]
+//wall sconce against NW Wall
+DUPEITEM=09fd
+
+[ITEMDEF 09ff]
+//wall sconce against NW wall
+DUPEITEM=09fd
+
+[ITEMDEF 0a00]
+DEFNAME=i_sconce2
+RESOURCES=i_sconce2_empty, 1 I_CANDLE
+TYPE=T_LIGHT_OUT
+TDATA3=i_sconce2_lit
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Sconce (Unlit) (N)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a01]
+DEFNAME=i_sconce2_empty
+RESOURCES=1 i_ingot_iron
+SKILLMAKE=TINKERING 30.0
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Sconce (Empty) (N)
+
+[ITEMDEF 0a02]
+DEFNAME=i_sconce2_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_sconce2
+TDATA4=i_sconce2_lit
+RESOURCES=i_sconce2
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Sconce (Lit) (N)
+DUPELIST=0a03,0a04
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a03]
+DUPEITEM=0a02
+
+[ITEMDEF 0a04]
+DUPEITEM=0a02
+
+[ITEMDEF 0a05]
+DEFNAME=i_torch_wall
+RESOURCES=i_torch_wall_empty, I_TORCH
+TYPE=T_LIGHT_OUT
+TDATA3=i_torch_wall_lit
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Torch (Unlit) (W)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a06]
+DEFNAME=i_torch_wall_empty
+SKILLMAKE=TINKERING 40.0
+RESOURCES=1 i_ingot_iron
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Torch Holder (Empty) (W)
+
+[ITEMDEF 0a07]
+DEFNAME=i_torch_wall_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_torch_wall
+TDATA4=i_torch_wall_lit
+RESOURCES=i_torch_wall
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Torch (Lit) (W)
+DUPELIST=0a08,0a09
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a08]
+//wall torch
+DUPEITEM=0a07
+
+[ITEMDEF 0a09]
+//wall torch
+DUPEITEM=0a07
+
+[ITEMDEF 0a0a]
+DEFNAME=i_torch_wall2
+TYPE=T_LIGHT_OUT
+TDATA3=i_torch_wall2_lit
+RESOURCES=i_torch_wall2_empty, I_TORCH
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Torch (Unlit) (N)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a0b]
+DEFNAME=i_torch_wall2_empty
+RESOURCES=1 i_ingot_iron
+SKILLMAKE=TINKERING 40.0
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Torch Stand (Empty) (N)
+
+[ITEMDEF 0a0c]
+DEFNAME=i_torch_wall2_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_torch_wall2
+TDATA4=i_torch_wall2_lit
+RESOURCES=i_torch_wall2
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Wall Torch (Lit) (N)
+DUPELIST=0a0d,0a0e
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a0d]
+//wall torch
+DUPEITEM=0a0c
+
+[ITEMDEF 0a0e]
+//wall torch
+DUPEITEM=0a0c
+
+[ITEMDEF 0a0f]
+DEFNAME=i_candle_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_candle
+TDATA4=0
+RESOURCES=i_CANDLE
+WEIGHT=2
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle (Lit)
+DUPELIST=0a10,0a11
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a10]
+DUPEITEM=0a0f
+
+[ITEMDEF 0a11]
+DUPEITEM=0a0f
+
+[ITEMDEF 0a12]
+DEFNAME=i_torch_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_torch
+TDATA4=0
+RESOURCES=i_TORCH
+WEIGHT=1
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Torches
+DESCRIPTION=Torch (Lit)
+DUPELIST=0a13,0a14
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a13]
+//torch
+DUPEITEM=0a12
+
+[ITEMDEF 0a14]
+//torch
+DUPEITEM=0a12
+
+[ITEMDEF 0a15]
+DEFNAME=i_lantern_lit
+RESOURCES=i_lantern
+TYPE=T_LIGHT_LIT
+TDATA3=i_lantern
+TDATA4=i_lantern
+WEIGHT=2
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lanterns
+DESCRIPTION=Lantern (Lit)
+DUPELIST=0a16,0a17,0a1a,0a1b,0a1c,0a22,0a23,0a24
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a16]
+//lantern
+DUPEITEM=0a15
+
+[ITEMDEF 0a17]
+//lantern
+DUPEITEM=0a15
+
+[ITEMDEF 0a18]
+DEFNAME=i_lantern
+TYPE=T_LIGHT_OUT
+TDATA3=i_lantern_lit
+WEIGHT=2
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lanterns
+DESCRIPTION=Lantern (Unlit)
+
+SKILLMAKE=CARPENTRY 40.0, t_carpentry
+RESOURCES=5 i_board
+RESOURCES2=1 I_SAND,1 i_ingot_iron,1 i_OIL_FLASK
+DUPELIST=0a1d,0a25
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a19]
+DEFNAME=i_plate_dirty_3
+RESOURCES=1 I_PLATE, 1 I_DIRT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Dirty Plate
+
+[ITEMDEF 0a1a]
+DUPEITEM=0a15
+
+[ITEMDEF 0a1b]
+//hanging lantern
+DUPEITEM=0a15
+
+[ITEMDEF 0a1c]
+//hanging lantern
+DUPEITEM=0a15
+
+[ITEMDEF 0a1d]
+//hanging lantern (unlit)
+DUPEITEM=0a18
+
+[ITEMDEF 0a1e]
+DEFNAME=i_flour_bowl
+RESOURCES=1 i_bowl_wood, 1 i_flour_sack
+TYPE=T_FOOD
+WEIGHT=4
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Bowl of Flour
+
+[ITEMDEF 0a1f]
+DEFNAME=i_lantern_post
+RESOURCES=5 I_BOARD
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lanterns
+DESCRIPTION=Lantern Post (WE)
+DUPELIST=0a20
+
+[ITEMDEF 0a20]
+DUPEITEM=0a1f
+
+[ITEMDEF 0a22]
+DUPEITEM=0a15
+
+[ITEMDEF 0a23]
+//lantern
+DUPEITEM=0a15
+
+[ITEMDEF 0a24]
+//lantern
+DUPEITEM=0a15
+
+[ITEMDEF 0a25]
+//lantern (unlit)
+DUPEITEM=0a18
+
+[ITEMDEF 0a26]
+DEFNAME=i_candle2
+TYPE=T_LIGHT_OUT
+TDATA3=i_candle2_lit
+RESOURCES=1 i_ingot_copper, 1 I_CANDLE
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Long Candle (Unlit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a27]
+DEFNAME=i_candleabra
+TYPE=T_LIGHT_OUT
+TDATA3=i_candleabra_lit
+RESOURCES=3 i_ingot_copper, 3 I_CANDLE
+SKILLMAKE=TINKERING 50.0
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candlabra (Unlit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a28]
+DEFNAME=i_candle
+TYPE=T_LIGHT_OUT
+LAYER=layer_hand2	// problem in TILEDATA.MUL
+TDATA3=i_candle_lit
+RESOURCES=1 i_BEESWAX, 1 I_CLOTH
+VALUE={4 8}
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle (Unlit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a29]
+DEFNAME=i_candleabra2
+TYPE=T_LIGHT_OUT
+TDATA3=i_candleabra2_lit
+RESOURCES=5 i_ingot_iron, 1 I_BEEHIVE, 1 I_CLOTH
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candlabra (Unlit) (Stand)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0a2a]
+// chair - bar stool
+DEFNAME=i_chair_stool_bar
+TYPE=T_CHAIR
+FLIP=1
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Barstool (Cross Bars)
+
+SKILLMAKE=CARPENTRY 11.0, t_carpentry
+RESOURCES=9 i_log
+RESOURCES2=5 i_board
+
+[ITEMDEF 0a2b]
+// chair - dark stool
+DEFNAME=i_chair_stool
+DUPELIST=0b5e
+TYPE=T_CHAIR
+FLIP=1
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Barstool
+SKILLMAKE=CARPENTRY 11.0, t_carpentry
+RESOURCES=9 i_log
+RESOURCES2=4 i_board
+
+[ITEMDEF 0a2c]
+DEFNAME=i_bureau
+RESOURCES=5 I_BOARD, 10 I_NAILS, 3 I_DRAWER
+TYPE=T_CONTAINER
+TDATA2=051
+FLIP=1
+VALUE={150 180}
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Chest of Drawers (Light Wood)(SW)
+DUPELIST=0a34
+
+[ITEMDEF 0a2d]
+DEFNAME=i_drawer
+RESOURCES=5 I_BOARD, 2 I_NAILS
+TYPE=T_CONTAINER
+TDATA2=051
+FLIP=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Drawer (Light Wood)
+DUPELIST=0a2e,0a2f,0a35,0a36,0a37
+
+[ITEMDEF 0a2e]
+//drawer
+DUPEITEM=0a2d
+
+[ITEMDEF 0a2f]
+//drawer
+DUPEITEM=0a2d
+
+[ITEMDEF 0a30]
+DEFNAME=i_bureau_2
+TYPE=T_CONTAINER
+TDATA2=048
+FLIP=1
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Chest of Drawers (Dark Wood) (SW)
+DUPELIST=0a38
+
+SKILLMAKE=CARPENTRY 85.0, t_carpentry
+RESOURCES=25 i_log
+RESOURCES2=5 i_board,10 i_nails,3 i_DRAWER
+
+[ITEMDEF 0a31]
+DEFNAME=i_drawer_2
+TYPE=T_CONTAINER
+TDATA2=048
+FLIP=1
+RESOURCES=25 i_log
+RESOURCES2=5 i_board,10 i_nails,3 i_DRAWER
+SKILLMAKE=CARPENTRY 85.0, t_carpentry
+
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Drawer (Dark Wood)
+DUPELIST=0a32,0a33,0a39,0a3a,0a3b
+
+[ITEMDEF 0a32]
+//drawer
+DUPEITEM=0a31
+
+[ITEMDEF 0a33]
+//drawer
+DUPEITEM=0a31
+
+[ITEMDEF 0a34]
+//chest of drawers facing SE, light wood
+DUPEITEM=0a2c
+
+[ITEMDEF 0a35]
+//drawer
+DUPEITEM=0a2d
+
+[ITEMDEF 0a36]
+//drawer
+DUPEITEM=0a2d
+
+[ITEMDEF 0a37]
+//drawer
+DUPEITEM=0a2d
+
+[ITEMDEF 0a38]
+//chest of drawers facing SE, dark wood
+DUPEITEM=0a30
+
+[ITEMDEF 0a39]
+//drawer
+DUPEITEM=0a31
+
+[ITEMDEF 0a3a]
+//drawer
+DUPEITEM=0a31
+
+[ITEMDEF 0a3b]
+//drawer
+DUPEITEM=0a31
+
+[ITEMDEF 0a3c]
+DEFNAME=i_dresser
+RESOURCES=8 I_BOARD, 20 I_NAILS, 6 I_DRESSER_DRAWER, 1 i_ingot_silver, 5 I_SAND
+TYPE=T_CONTAINER
+TDATA2=051
+FLIP=1
+WEIGHT=30
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Dresser (Vanity)
+DUPELIST=0a3d,0a44,0a45
+
+[ITEMDEF 0a3d]
+//dresser
+DUPEITEM=0a3c
+
+[ITEMDEF 0a3e]
+//drawer
+DEFNAME=i_dresser_drawer
+RESOURCES=2 I_BOARD, 2 I_NAILS
+TYPE=T_CONTAINER
+TDATA2=051
+FLIP=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Drawer (Vanity)
+DUPELIST=0a3f,0a40,0a41,0a42,0a43,0a46,0a47,0a48,0a49,0a4a,0a4b
+
+[ITEMDEF 0a3f]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a40]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a41]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a42]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a43]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a44]
+//dresser
+DUPEITEM=0a3c
+
+[ITEMDEF 0a45]
+//dresser
+DUPEITEM=0a3c
+
+[ITEMDEF 0a46]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a47]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a48]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a49]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a4a]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a4b]
+//drawer
+DUPEITEM=0a3e
+
+[ITEMDEF 0a4c]
+//dark wood armoire standing open facing SW
+DEFNAME=i_armoir_dk
+RESOURCES=35 i_log
+TYPE=T_CONTAINER
+TDATA2=04e
+FLIP=1
+WEIGHT=25
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Armoire (Dark Wood)
+DUPELIST=0a4d,0a50,0a51
+RESOURCES2=20 i_board,6 i_nails,4 i_hinge
+SKILLMAKE=CARPENTRY 84.2, t_carpentry
+
+[ITEMDEF 0a4d]
+//armoire standing open dark wood facing SW
+DUPEITEM=0a4c
+
+[ITEMDEF 0a4e]
+//armoire standing open light wood facing SW
+DEFNAME=i_armoir_lt
+TYPE=T_CONTAINER
+TDATA2=04f
+FLIP=1
+SKILLMAKE=CARPENTRY 84.2, t_carpentry
+RESOURCES=35 i_log
+RESOURCES2=20 i_board,6 i_nails,4 i_hinge
+WEIGHT=9
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Armoire (Light Wood)
+DUPELIST=0a4f,0a52,0a53
+
+[ITEMDEF 0a4f]
+//armoire standing closed light wood facing SW
+DUPEITEM=0a4e
+
+[ITEMDEF 0a50]
+//armoire standing open dark wood facing SE
+DUPEITEM=0a4c
+
+[ITEMDEF 0a51]
+//armoire standing closed dark wood facing SE
+DUPEITEM=0a4c
+
+[ITEMDEF 0a52]
+//armoire standing open light wood facing SE
+DUPEITEM=0a4e
+
+[ITEMDEF 0a53]
+//armoire standing closed light wood facing SE
+DUPEITEM=0a4e
+
+[ITEMDEF 0a55]
+//Bedroll unrolled
+DEFNAME=i_bedroll
+TYPE=T_BEDROLL
+RESOURCES=5 I_CLOTH, 1 I_CANVAS, 50 I_FEATHER, 1 i_hides_cut
+WEIGHT=5
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed Roll (Unrolled)
+DUPELIST=0a56
+
+[ITEMDEF 0a56]
+//bedroll
+DUPEITEM=0a55
+
+[ITEMDEF 0a57]
+//bedroll rolled up
+DEFNAME=i_bedroll_2
+TYPE=T_BEDROLL
+RESOURCES=i_bedroll
+VALUE={4 8}
+WEIGHT=5
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bedroll (Rolled Up)
+DUPELIST=0a58,0a59
+
+[ITEMDEF 0a58]
+//bedroll
+DUPEITEM=0a57
+
+[ITEMDEF 0a59]
+//bedroll
+DUPEITEM=0a57
+
+[ITEMDEF 0a5a]
+//brown twin lower half, from head against NW wall
+DEFNAME=i_bed_1
+TYPE=T_BED
+TDATA1=0
+RESOURCES=30 I_BOARD, 1 i_bedroll, 10 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (Brown) (NW Wall)
+DUPELIST=0a5b
+
+[ITEMDEF 0a5b]
+//brown twin bed upper half, from head against NW wall
+DUPEITEM=0a5a
+
+[ITEMDEF 0a5c]
+//gray twin bed lower half, from head against NE wall
+DEFNAME=i_bed_2
+TYPE=T_BED
+TDATA1=0
+RESOURCES=30 I_BOARD, 1 i_bedroll, 10 I_NAILS, 1 I_PILLOW
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (Grey) (NE)
+DUPELIST=0a5d
+
+[ITEMDEF 0a5d]
+//gray twin bed upper half, from head against NW wall
+DUPEITEM=0a5c
+
+[ITEMDEF 0a5e]
+//white twin bed upper half, from head against NE wall
+DEFNAME=i_bed_3
+TYPE=T_BED
+TDATA1=0
+RESOURCES=30 I_BOARD, 1 i_bedroll, 10 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (White) (NE)
+DUPELIST=0a5f
+
+[ITEMDEF 0a5f]
+//white twin bed lower half, from head against NE wall
+DUPEITEM=0a5e
+
+[ITEMDEF 0a60]
+//white twin bed upper half, from head against NW wall
+DEFNAME=i_bed_4
+TYPE=T_BED
+TDATA1=0
+RESOURCES=30 I_BOARD, 1 i_bedroll, 10 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (White) (NW)
+DUPELIST=0a61
+
+[ITEMDEF 0a61]
+//white twin bed lower half, from head against NW wall
+DUPEITEM=0a60
+
+[ITEMDEF 0a62]
+//gray twin bed lower half, from head against NW wall
+DEFNAME=i_bed_5
+TYPE=T_BED
+TDATA1=0
+RESOURCES=30 I_BOARD, 1 i_bedroll, 10 I_NAILS, 1 I_PILLOW
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (Grey) (NE)
+DUPELIST=0a63
+
+[ITEMDEF 0a63]
+//gray twin bed upper half, from head against NE wall
+DUPEITEM=0a62
+
+[ITEMDEF 0a64]
+//brown twin bed upper half, from head against NE wall
+DEFNAME=i_bed_6
+TYPE=T_BED
+TDATA1=0
+RESOURCES=30 I_BOARD, 1 i_bedroll, 10 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (Brown) (NE)
+DUPELIST=0a65
+
+[ITEMDEF 0a65]
+//brown twin bed lower half, from head against NE wall
+DUPEITEM=0a64
+
+[ITEMDEF 0a66]
+//white twin bed upper half, from head against NE wall with gray sheet & pillow
+DEFNAME=i_bed_7
+TYPE=T_BED
+TDATA1=0
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (White) (NE)
+DUPELIST=0a67
+
+SKILLMAKE=CARPENTRY 94.7, TAILORING 75.0, t_carpentry, t_sewing_kit
+RESOURCES=40 i_board, 100 i_cloth
+RESOURCES2=40 i_board,1 i_bedroll,10 i_nails,1 i_pillow
+
+[ITEMDEF 0a67]
+//white twin bed upper half, from head against NE wall with gray sheet
+DUPEITEM=0a66
+
+[ITEMDEF 0a68]
+//twin bed bottom half, from head against NE wall with gray blanket
+DEFNAME=i_bed_8
+TYPE=T_BED
+TDATA1=0
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (Gray Blankets) (NE)
+
+SKILLMAKE=CARPENTRY 94.7, TAILORING 75.0, t_carpentry, t_sewing_kit
+RESOURCES=100 i_log, 100 i_cloth
+RESOURCES2=30 i_board,1 i_bedroll,10 i_nails,1 i_BLANKET
+
+[ITEMDEF 0a69]
+//white twin bed upper half, from head against NW wall with gray sheet & pillow
+DEFNAME=i_bed_9
+TYPE=T_BED
+TDATA1=0
+WEIGHT=20
+SKILLMAKE=CARPENTRY 94.7, TAILORING 75.0, t_carpentry, t_sewing_kit
+RESOURCES=100 i_log, 100 i_cloth
+RESOURCES2=30 i_board,1 i_bedroll,10 i_nails,1 i_SHEET,1 i_pillow
+
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (Grey Blankets) (NW)
+
+[ITEMDEF 0a6a]
+//white twin bed upper half, from head against NW wall with gray sheet
+DEFNAME=i_bed_10
+TYPE=T_BED
+TDATA1=0
+RESOURCES=30 I_BOARD, 1 i_bedroll, 10 I_NAILS, 1 I_SHEET, 1 I_PILLOW
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (Gray Blankets) (NW)
+
+[ITEMDEF 0a6b]
+//twin bed bottom half, from head against NW wall with gray blanket
+DEFNAME=i_bed_11
+TYPE=T_BED
+TDATA1=0
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Twin Bed (Gray Blanket) (NW)
+
+SKILLMAKE=CARPENTRY 94.7, TAILORING 75.0, t_carpentry, t_sewing_kit
+RESOURCES=100 i_log,100 i_cloth
+RESOURCES2=30 i_board,1 i_bedroll,10 i_nails,1 i_SHEET,1 i_pillow
+
+[ITEMDEF 0a6c]
+//folded blanket
+DEFNAME=i_blanket
+RESOURCES=5 I_CLOTH
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Folded Blanket
+DUPELIST=0a6d,0a6e,0a6f
+
+[ITEMDEF 0a6d]
+//folded blanket
+DUPEITEM=0a6c
+
+[ITEMDEF 0a6e]
+//folded blanket
+DUPEITEM=0a6c
+
+[ITEMDEF 0a6f]
+//folded blanket
+DUPEITEM=0a6c
+
+[ITEMDEF 0a70]
+//fancy double bed headboard against NW wall - W CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_12
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed (HeadBoard) (NW Wall - West Corner)
+
+[ITEMDEF 0a71]
+//fancy double bed foot corner against NW & NE wall - S CORNER PIECE
+//must be  overlapped
+DEFNAME=i_bed_13
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed (Foot) (NW & NE Wall)
+
+[ITEMDEF 0a72]
+//fancy double bed foot corner against NW wall - E CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_14
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed (Foot) (NW Wall - East Corner)
+
+[ITEMDEF 0a73]
+//fancy double bed headboard corner against NW wall - N CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_15
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed (Head) (NW Wall - N Corner)
+
+[ITEMDEF 0a74]
+//fancy double bed head corner against NE wall - E CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_16
+TYPE=T_BED
+TDATA1=0
+DYE=1
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed (Head) (NE Wall - E Corner)
+
+SKILLMAKE=CARPENTRY 94.7, TAILORING 75.0, t_carpentry, t_sewing_kit
+RESOURCES=150 i_log,150 i_cloth
+RESOURCES2=50 i_board,2 i_bedroll,20 i_nails,2 i_SHEET,2 i_pillow
+
+[ITEMDEF 0a75]
+//fancy double bed foot corner against NE & NW wall - S CORNER PIECE
+//must be  overlapped
+DEFNAME=i_bed_17
+TYPE=T_BED
+TDATA1=0
+DYE=1
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed (Foot) (NE - NW Wall)
+
+SKILLMAKE=CARPENTRY 94.7, TAILORING 75.0, t_carpentry, t_sewing_kit
+RESOURCES=150 i_log, 150 i_cloth
+RESOURCES2=50 i_board,2 i_bedroll,20 i_nails,2 i_SHEET,2 i_pillow
+
+[ITEMDEF 0a76]
+//fancy double bed foot against NE wall - W CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_18
+TYPE=T_BED
+TDATA1=0
+DYE=1
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed (Foot) (NE Wall - W Corner)
+
+SKILLMAKE=CARPENTRY 94.7, TAILORING 75.0, t_carpentry, t_sewing_kit
+RESOURCES=150 i_log, 150 i_cloth
+RESOURCES2=50 i_board,2 i_bedroll,20 i_nails,2 i_SHEET,2 i_pillow
+
+[ITEMDEF 0a77]
+//fancy double bed header against NE wall - N CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_19
+TYPE=T_BED
+TDATA1=0
+DYE=1
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed (Head) (NE Wall - N Corner)
+
+SKILLMAKE=CARPENTRY 94.7, TAILORING 75.0, t_carpentry, t_sewing_kit
+RESOURCES=150 i_log, 150 i_cloth
+RESOURCES2=50 i_board,2 i_bedroll,20 i_nails,2 i_SHEET,2 i_pillow
+
+[ITEMDEF 0a78]
+//Fancy Bed with Blankets
+//fancy double bed foot corner against NE wall - S CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_20
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets
+
+[ITEMDEF 0a79]
+//Fancy Bed with Blankets
+//fancy double bed foot corner against NW wall - E CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_21
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets (Foot) (NW Wall - E Corner)
+
+[ITEMDEF 0a7a]
+//Fancy Bed with Blankets
+//fancy double bed headboard against NW wall - W CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_22
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets (Head) (NW Wall - W Corner)
+
+[ITEMDEF 0a7b]
+//Fancy Bed with Blankets
+//fancy double bed headboard corner against NW wall - N CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_23
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW, 2 I_BLANKET
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets (Head) (NW Wall - N Corner)
+
+[ITEMDEF 0a7c]
+//Fancy Bed with Blankets & Pillows, covers turned down
+//fancy double bed foot corner against NW wall - E CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_24
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW, 2 I_BLANKET
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets Covers Turned (Foot) (NW Wall - E Corner)
+
+[ITEMDEF 0a7d]
+//Fancy Bed with Blankets & Pillows, covers turned down
+//fancy double bed headboard against NW wall - W CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_25
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW, 2 I_BLANKET
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets Covers Turned(NW Wall - W Corner)
+
+[ITEMDEF 0a7e]
+//Fancy Bed with Blankets
+//fancy double bed foot corner against NW & NE wall - S CORNER PIECE
+//must be  overlapped
+DEFNAME=i_bed_26
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW, 2 I_BLANKET
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets Covers Turned (NW - NE Wall S Corner)
+
+[ITEMDEF 0a7f]
+//Fancy Bed with Blankets & Pillows, covers turned down
+//fancy double bed headboard against NE wall - W CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_27
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW, 2 I_BLANKET
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets Covers Turned (Head) (NE Wall - W Corner)
+
+[ITEMDEF 0a80]
+//Fancy Bed with Blankets
+//fancy double bed headboard corner against NE wall - N CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_28
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW, 2 I_BLANKET
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets (Head) (NE Wall - N Corner)
+
+[ITEMDEF 0a81]
+//Fancy Bed with Blankets
+//fancy double bed headboard corner against NE wall - E CORNER PIECE
+//must be overlapped
+DEFNAME=i_bed_29
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW, 2 I_BLANKET
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Fancy Dbl Bed w/ Blankets (Head) (NE Wall- E Corner)
+
+[ITEMDEF 0a82]
+//bed
+DEFNAME=i_bed_30
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 I_BOARD, 2 i_bedroll, 20 I_NAILS, 2 I_SHEET, 2 I_PILLOW, 2 I_BLANKET
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed
+DUPELIST=0a83,0a84,0a85,0a86,0a87,0a88,0a89,0a8a,0a8b,0a8c,0a8d,0a8e,0a8f,0a90,0a91
+
+[ITEMDEF 0a83]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a84]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a85]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a86]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a87]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a88]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a89]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a8a]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a8b]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a8c]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a8d]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a8e]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a8f]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a90]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a91]
+//bed
+DUPEITEM=0a82
+
+[ITEMDEF 0a92]
+//folded sheet
+RESOURCES=5 I_CLOTH
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Folded Sheet
+
+[ITEMDEF 0a93]
+//folded sheet
+RESOURCES=5 I_CLOTH
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Folded Sheet
+
+[ITEMDEF 0a94]
+//folded rich sheet
+RESOURCES=6 I_CLOTH, 1 I_LINEN
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Folded Sheet (Rich)
+
+[ITEMDEF 0a95]
+//folded rich sheet
+RESOURCES=6 I_CLOTH, 1 I_LINEN
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Folded Sheet (Rich)
+
+[ITEMDEF 0a97]
+DEFNAME=i_bookcase_full
+//bookcase
+//dark wood, full of books facing SW
+RESOURCES=8 I_BOARD, 2 I_NAILS, 20 I_BOOK_SM
+SKILLMAKE=CARPENTRY 36.5, t_carpentry
+TYPE=T_CONTAINER
+TDATA2=04d
+FLIP=1
+VALUE={120 150}
+WEIGHT=10
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bookcase
+DESCRIPTION=Bookcase (Dark Wood) (Books)
+DUPELIST=0a98,0a99,0a9a,0a9b,0a9c
+
+[ITEMDEF 0a98]
+//bookcase
+//dark wood full of books facing SW
+DUPEITEM=0a97
+
+[ITEMDEF 0a99]
+//bookcase
+//dark wood, full of books facing SE
+DUPEITEM=0a97
+
+[ITEMDEF 0a9a]
+//bookcase
+//dark wood, full of books facing SE
+DUPEITEM=0a97
+
+[ITEMDEF 0a9b]
+//bookcase
+//dark wood full of books facing SW
+DUPEITEM=0a97
+
+[ITEMDEF 0a9c]
+//bookcase
+//dark wood full of books facing SE
+DUPEITEM=0a97
+
+[ITEMDEF 0a9d]
+//wooden bookshelf
+//empty shelves but shows books if double clicked
+//Dark wood facing SW
+DEFNAME=i_bookcase
+TYPE=T_CONTAINER
+TDATA2=04d
+FLIP=1
+TDATA2=04d
+WEIGHT=20
+DUPELIST=0a9e
+
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bookcase
+DESCRIPTION=Bookcase (Dark Wood) (Empty)
+
+SKILLMAKE=CARPENTRY 31.5, t_carpentry
+RESOURCES=25 i_log
+RESOURCES2=8 i_board,2 i_nails
+
+[ITEMDEF 0a9e]
+//wooden bookshelf
+//empty shelves but shows books if double clicked
+//Dark wood facing SE
+DUPEITEM=0a9d
+
+[ITEMDEF 0a9f]
+DEFNAME=i_displaycase_rail_custom_edge
+//display case rail edge E
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0aa0,0aa1,0aa2
+
+[ITEMDEF 0aa0]
+//custom display case rail edge S
+DUPEITEM=0a9f
+
+[ITEMDEF 0aa1]
+//custom display case rail edge W
+DUPEITEM=0a9f
+
+[ITEMDEF 0aa2]
+//custom display case rail edge N
+DUPEITEM=0a9f
+
+[ITEMDEF 0aa3]
+DEFNAME=i_displaycase_rail_custom_corner
+//custom display case base nw corner
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0aa4,0aa5,0b18
+
+[ITEMDEF 0aa4]
+//custom display case base ne corner
+DUPEITEM=0aa3
+
+[ITEMDEF 0aa5]
+//custom display case base sw corner
+DUPEITEM=0aa3
+
+[ITEMDEF 0aa9]
+//rug
+RESOURCES=5 I_WOOL, 1 I_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Rug 1
+DESCRIPTION=@
+DUPELIST=0aaa,0aab,0aac,0aad,0aae,0aaf,0ab0,0ab1,0ab2
+
+[ITEMDEF 0aaa]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0aab]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0aac]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0aad]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0aae]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0aaf]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0ab0]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0ab1]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0ab2]
+//rug
+DUPEITEM=0aa9
+
+[ITEMDEF 0ab3]
+//rug
+RESOURCES=5 I_WOOL, 1 I_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Rug 2
+DESCRIPTION=@
+DUPELIST=0ab4,0ab5,0ab6,0ab7,0ab8,0ab9,0aba,0abb,0abc
+
+[ITEMDEF 0ab4]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0ab5]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0ab6]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0ab7]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0ab8]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0ab9]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0aba]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0abb]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0abc]
+//rug
+DUPEITEM=0ab3
+
+[ITEMDEF 0abd]
+//carpet
+RESOURCES=5 I_WOOL, 1 I_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Carpet 1
+DESCRIPTION=@
+DUPELIST=0abe,0abf,0ac0,0ac1,0ac2,0ac3,0ac4,0ac5,0af6,0af7,0af8,0af9,0afa,0afb
+
+[ITEMDEF 0abe]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0abf]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0ac0]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0ac1]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0ac2]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0ac3]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0ac4]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0ac5]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0ac6]
+//carpet
+RESOURCES=5 I_WOOL, 1 I_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Carpet 2
+DESCRIPTION=@
+DUPELIST=0ac7,0ac8,0ac9,0aca,0acb,0acc,0acd,0ace,0acf,0ad0
+
+[ITEMDEF 0ac7]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0ac8]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0ac9]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0aca]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0acb]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0acc]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0acd]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0ace]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0acf]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0ad0]
+//carpet
+DUPEITEM=0ac6
+
+[ITEMDEF 0ad1]
+//carpet
+RESOURCES=5 I_WOOL, 1 I_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Carpet 3
+DESCRIPTION=@
+DUPELIST=0ad2,0ad3,0ad4,0ad5,0ad6,0ad7,0ad8,0ad9
+
+[ITEMDEF 0ad2]
+//carpet
+DUPEITEM=0ad1
+
+[ITEMDEF 0ad3]
+//carpet
+DUPEITEM=0ad1
+
+[ITEMDEF 0ad4]
+//carpet
+DUPEITEM=0ad1
+
+[ITEMDEF 0ad5]
+//carpet
+DUPEITEM=0ad1
+
+[ITEMDEF 0ad6]
+//carpet
+DUPEITEM=0ad1
+
+[ITEMDEF 0ad7]
+//carpet
+DUPEITEM=0ad1
+
+[ITEMDEF 0ad8]
+//carpet
+DUPEITEM=0ad1
+
+[ITEMDEF 0ad9]
+//carpet
+DUPEITEM=0ad1
+
+[ITEMDEF 0ada]
+//carpet
+RESOURCES=5 I_WOOL, 1 I_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Carpet 4
+DESCRIPTION=@
+DUPELIST=0adb,0adc,0add,0ade,0adf,0ae0,0ae1,0ae2
+
+[ITEMDEF 0adb]
+//carpet
+DUPEITEM=0ada
+
+[ITEMDEF 0adc]
+//carpet
+DUPEITEM=0ada
+
+[ITEMDEF 0add]
+//carpet
+DUPEITEM=0ada
+
+[ITEMDEF 0ade]
+//carpet
+DUPEITEM=0ada
+
+[ITEMDEF 0adf]
+//carpet
+DUPEITEM=0ada
+
+[ITEMDEF 0ae0]
+//carpet
+DUPEITEM=0ada
+
+[ITEMDEF 0ae1]
+//carpet
+DUPEITEM=0ada
+
+[ITEMDEF 0ae2]
+//carpet
+DUPEITEM=0ada
+
+[ITEMDEF 0ae3]
+//carpet
+RESOURCES=5 I_WOOL, 1 I_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Carpet 5
+DESCRIPTION=@
+DUPELIST=0ae4,0ae5,0ae6,0ae7,0ae8,0ae9,0aea,0aeb
+
+[ITEMDEF 0ae4]
+//carpet
+DUPEITEM=0ae3
+
+[ITEMDEF 0ae5]
+//carpet
+DUPEITEM=0ae3
+
+[ITEMDEF 0ae6]
+//carpet
+DUPEITEM=0ae3
+
+[ITEMDEF 0ae7]
+//carpet
+DUPEITEM=0ae3
+
+[ITEMDEF 0ae8]
+//carpet
+DUPEITEM=0ae3
+
+[ITEMDEF 0ae9]
+//carpet
+DUPEITEM=0ae3
+
+[ITEMDEF 0aea]
+//carpet
+DUPEITEM=0ae3
+
+[ITEMDEF 0aeb]
+//carpet
+DUPEITEM=0ae3
+
+[ITEMDEF 0aec]
+//carpet
+RESOURCES=5 I_WOOL, 1 I_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Carpet 6
+DESCRIPTION=@
+DUPELIST=0aed,0aee,0aef,0af0,0af1,0af2,0af3,0af4,0af5
+
+[ITEMDEF 0aed]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0aee]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0aef]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0af0]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0af1]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0af2]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0af3]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0af4]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0af5]
+//carpet
+DUPEITEM=0aec
+
+[ITEMDEF 0af6]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0af7]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0af8]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0af9]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0afa]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0afb]
+//carpet
+DUPEITEM=0abd
+
+[ITEMDEF 0afd]
+DEFNAME=i_displaycase_rail_long_end
+//long display case rail end e
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0aff,0b03,0b05
+
+[ITEMDEF 0afe]
+DEFNAME=i_displaycase_rail_long_center
+//long display case rail center e-w
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0b04
+
+[ITEMDEF 0aff]
+//long display case rail end w
+DUPEITEM=0afd
+
+[ITEMDEF 0b00]
+DEFNAME=i_displaycase_base_long_end
+//long display case base e
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0b02,0b06,0b08,0b19
+
+[ITEMDEF 0b01]
+DEFNAME=i_displaycase_base_long_center
+//long display case base center e-w
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0b07
+
+[ITEMDEF 0b02]
+//long display case base w
+DUPEITEM=0b00
+
+[ITEMDEF 0b03]
+//long display case rail end s
+DUPEITEM=0afd
+
+[ITEMDEF 0b04]
+//long display case rail center n-s
+DUPEITEM=0afe
+
+[ITEMDEF 0b05]
+//long display case rail end n
+DUPEITEM=0afd
+
+[ITEMDEF 0b06]
+//long display case base s
+DUPEITEM=0b00
+
+[ITEMDEF 0b07]
+//long display case base center n-s
+DUPEITEM=0b01
+
+[ITEMDEF 0b08]
+//long display case base n
+DUPEITEM=0b00
+
+[ITEMDEF 0b09]
+DEFNAME=i_displaycase_1_base
+//display case base n-s
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0b0a
+
+[ITEMDEF 0b0a]
+//display case base e-w
+DUPEITEM=0b09
+
+[ITEMDEF 0b0b]
+DEFNAME=i_displaycase_1_rail
+//display case base n-s
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0b0c
+
+[ITEMDEF 0b0c]
+//display case base e-w
+DUPEITEM=0b0b
+
+[ITEMDEF 0b0d]
+DEFNAME=i_displaycase_2_base
+//display case base n-s
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0b0e
+
+[ITEMDEF 0b0e]
+//display case
+DUPEITEM=0b0d
+
+[ITEMDEF 0b0f]
+DEFNAME=i_displaycase_base_custom_block
+//Custom display case center block
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+
+[ITEMDEF 0b10]
+DEFNAME=i_displaycase_base_custom_corner
+//Custom display case corner nw
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0b11,0b12,0b13
+
+[ITEMDEF 0b11]
+//Custom display case corner se
+DUPEITEM=0b10
+
+[ITEMDEF 0b12]
+//Custom display case corner sw
+DUPEITEM=0b10
+
+[ITEMDEF 0b13]
+//Custom display case corner ne
+DUPEITEM=0b10
+
+[ITEMDEF 0b14]
+DEFNAME=i_displaycase_base_custom_edge
+//Custom display case edge e
+RESOURCES=15 I_BOARD, 2 I_NAILS, 6 I_SAND, 2 I_CLOTH
+CATEGORY=Decoration - Furniture
+SUBSECTION=Display Case
+DESCRIPTION=@
+DUPELIST=0b15,0b16,0b17
+
+[ITEMDEF 0b15]
+//Custom display case edge s
+DUPEITEM=0b14
+
+[ITEMDEF 0b16]
+//Custom display case edge w
+DUPEITEM=0b14
+
+[ITEMDEF 0b17]
+//Custom display case edge n
+DUPEITEM=0b14
+
+[ITEMDEF 0b18]
+//custom display case base se corner
+DUPEITEM=0aa3
+
+[ITEMDEF 0b19]
+//unused
+DUPEITEM=0b00
+
+[ITEMDEF 0b1a]
+//candle
+DEFNAME=i_candle2_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_candle2
+TDATA4=0
+RESOURCES=i_candle2
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle
+DUPELIST=0b1b,0b1c
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b1b]
+//candle
+DUPEITEM=0b1a
+
+[ITEMDEF 0b1c]
+//candle
+DUPEITEM=0b1a
+
+[ITEMDEF 0b1d]
+//candelabra
+DEFNAME=i_candleabra_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_candleabra
+TDATA4=i_candleabra
+RESOURCES=i_candleabra
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candelabra
+DUPELIST=0b1e,0b1f
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b1e]
+//candelabra
+DUPEITEM=0b1d
+
+[ITEMDEF 0b1f]
+//candelabra
+DUPEITEM=0b1d
+
+[ITEMDEF 0b20]
+//lamp post
+DEFNAME=i_lamppost1_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_lamppost1
+TDATA4=i_lamppost1_lit
+RESOURCES=i_lamppost1
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lamps
+DESCRIPTION=Lamp Post
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b21]
+//lamp post empty
+DEFNAME=i_lamppost1
+TYPE=T_LIGHT_OUT
+TDATA3=i_lamppost1_lit
+RESOURCES=1 I_CANDLE, 20 i_ingot_iron, 2 I_SAND
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lamps
+DESCRIPTION=Lamp Post (unlit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b22]
+//lamp post
+DEFNAME=i_lamppost2_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_lamppost2
+TDATA4=i_lamppost2_lit
+RESOURCES=i_lamppost2
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lamps
+DESCRIPTION=Lamp Post (lit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b23]
+//lamp post unlit
+DEFNAME=i_lamppost2
+TYPE=T_LIGHT_OUT
+TDATA3=i_lamppost2_lit
+RESOURCES=1 I_CANDLE, 20 i_ingot_iron, 2 I_SAND
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lamps
+DESCRIPTION=Lamp Post (Unlit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b24]
+//lamp post fancy lit
+DEFNAME=i_lamppost3_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_lamppost3
+TDATA4=i_lamppost3_lit
+RESOURCES=i_lamppost3
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lamps
+DESCRIPTION=Lamp Post (Fancy Lit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b25]
+//fancy lamp post unlit
+DEFNAME=i_lamppost3
+TYPE=T_LIGHT_OUT
+TDATA3=i_lamppost3_lit
+RESOURCES=1 I_CANDLE, 25 i_ingot_iron, 4 I_SAND
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Lamps
+DESCRIPTION=Lamp Post (Fancy Unlit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b26]
+//candelabra lit
+DEFNAME=i_candleabra2_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_candleabra2
+TDATA4=i_candleabra2
+RESOURCES=i_candleabra2
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candelabra Lit
+DUPELIST=0b27,0b28
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b27]
+//candelabra lit
+DUPEITEM=0b26
+
+[ITEMDEF 0b28]
+//candelabra
+DUPEITEM=0b26
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0b2c]
+// bench - dark wooden bench n-s
+DEFNAME=i_bench_wood_dark
+DUPELIST=0b2d
+TYPE=T_CHAIR
+FLIP=1
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Wooden Bench (Dark)
+
+RESOURCES=17 i_log
+RESOURCES2=20 i_board,4 i_nails
+SKILLMAKE=CARPENTRY 52.6, t_carpentry
+
+[ITEMDEF 0b2d]
+// bench - dark wooden bench e-w
+DUPEITEM=0b2c
+
+[ITEMDEF 0b2e]
+// chair - dark rough wood chair - N
+DEFNAME=i_chair_wood_rough_dark
+TYPE=T_CHAIR
+FLIP=1
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Wooden Chair (Dark)
+DUPELIST=0b2f,0b30,0b31
+
+SKILLMAKE=CARPENTRY 25.0, t_carpentry
+RESOURCES=17 i_log
+RESOURCES2=20 i_board,4 i_nails
+
+[ITEMDEF 0b2f]
+// chair - dark rough wood chair - W
+DUPEITEM=0b2e
+
+[ITEMDEF 0b30]
+// chair - dark rough wood chair - E
+DUPEITEM=0b2e
+
+[ITEMDEF 0b31]
+// chair - dark rough wood chair - S
+DUPEITEM=0b2e
+
+[ITEMDEF 0b32]
+// chair - throne - N
+DEFNAME=i_chair_throne
+DUPELIST=0b33
+TYPE=T_CHAIR
+FLIP=1
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Throne
+SKILLMAKE=CARPENTRY 52.6, t_carpentry
+RESOURCES=17 i_log
+RESOURCES2=40 i_board,10 i_nails,5 i_cloth,100 i_feather
+
+[ITEMDEF 0b33]
+// chair - throne - W
+DUPEITEM=0b32
+
+[ITEMDEF 0b34]
+// table - dark rough board nightstand/table end - n/s grain
+//DEFNAME2=i_TABLE
+//DEFNAME2=TABLE_1
+DEFNAME=i_table_nightstand
+TYPE=t_table
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Nightstand, end piece
+DUPELIST=0b35,0b36,0b3a,0b3c
+SKILLMAKE=CARPENTRY 42.1, t_carpentry
+RESOURCES=17 i_log
+RESOURCES2=10 i_board,4 i_nails
+
+[ITEMDEF 0b35]
+// table - dark rough board nightstand/table end - e/w grain
+// DEFNAME2=TABLE_2
+DUPEITEM=0b34
+
+[ITEMDEF 0b36]
+// table - identical to 0b35, no need to define
+// Duped only for backward compatibility
+DUPEITEM=0b34
+
+[ITEMDEF 0b37]
+DEFNAME=i_table_nightstand_ext
+// table - dark Rough board nightstand top, no legs n-s
+// poor graphic, doesn't mesh with table end for extention
+RESOURCES=6 I_BOARD, 1 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table Top (No legs)
+DUPELIST=0b38,0b39
+
+[ITEMDEF 0b38]
+// table - dark Rough board nightstand top, no legs e-w
+// poor graphic, doesn't mesh with table end for extention
+DUPEITEM=0b37
+
+[ITEMDEF 0b39]
+// table top same as 0b38, no need to define
+// duped only for backward compatibility
+// poor graphic, doesn't mesh with table end for extention
+DUPEITEM=0b37
+
+[ITEMDEF 0b3a]
+// table - identical to 0b34, no need to define
+// Duped only for backward compatibility
+DUPEITEM=0b34
+
+[ITEMDEF 0b3c]
+// table - identical to 0b34, no need to define
+// Duped only for backward compatibility
+// poor graphic, doesn't mesh with table end
+DUPEITEM=0b34
+
+[ITEMDEF 0b3d]
+//counter
+RESOURCES=10 I_BOARD, 4 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Counter
+
+[ITEMDEF 0b3e]
+//counter
+RESOURCES=10 I_BOARD, 4 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Counter
+
+[ITEMDEF 0b3f]
+//counter
+RESOURCES=10 I_BOARD, 4 I_NAILS
+VALUE={200 300}
+WEIGHT=4
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Counter
+
+[ITEMDEF 0b40]
+//counter
+RESOURCES=10 I_BOARD, 4 I_NAILS
+VALUE={200 300}
+WEIGHT=4
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Counter
+
+[ITEMDEF 0b41]
+//water trough
+DEFNAME=i_trough_water
+RESOURCES=15 i_log
+TYPE=T_WATER_WASH
+//WEIGHT=10
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Water Trough
+SKILLMAKE=CARPENTRY 80.0, t_carpentry
+DUPELIST=0b42,0b43,0b44
+RESOURCES2=10 i_board,4 i_nails,4 i_ingot_iron
+
+[ITEMDEF 0b42]
+//water trough
+DUPEITEM=0b41
+
+[ITEMDEF 0b43]
+//water trough
+DUPEITEM=0b41
+
+[ITEMDEF 0b44]
+//water trough
+DUPEITEM=0b41
+
+[ITEMDEF 0b45]
+//large vase
+RESOURCES=5 I_CLAY
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Vases & Pots
+DESCRIPTION=Large Vase 1
+
+[ITEMDEF 0b46]
+//vase
+RESOURCES=2 I_CLAY
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Vases & Pots
+DESCRIPTION=Small Vase 1
+
+[ITEMDEF 0b47]
+//large vase
+RESOURCES=5 I_CLAY
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Vases & Pots
+DESCRIPTION=Large Vase 2
+
+[ITEMDEF 0b48]
+//vase
+RESOURCES=2 I_CLAY
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Vases & Pots
+DESCRIPTION=Small Vase 2
+
+[ITEMDEF 0b49]
+// table - writing table E Facing, light wood
+// DEFNAME2=TABLE_3
+DEFNAME=i_table_writing
+TYPE=t_table
+WEIGHT=4
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Writing Table
+DUPELIST=0b4a,0b4b,0b4c
+SKILLMAKE=CARPENTRY 63.1, t_carpentry
+RESOURCES=17 i_log
+RESOURCES2=10 i_board,2 i_nails
+
+[ITEMDEF 0b4a]
+// table - writing table S Facing, light wood
+// DEFNAME2=TABLE_4
+DUPEITEM=0b49
+
+[ITEMDEF 0b4b]
+// table - writing table N Facing, light wood
+DUPEITEM=0b49
+
+[ITEMDEF 0b4c]
+// table - writing table W Facing, light wood
+//DEFNAME2=TABLE_6
+DUPEITEM=0b49
+
+[ITEMDEF 0b4e]
+// chair - fancy wooden chair w/ gray cushion, dyeable - W
+DEFNAME=i_chair_wood_fancy_cushion
+DUPELIST=0b4f,0b50,0b51
+TYPE=T_CHAIR
+FLIP=1
+SKILLMAKE=CARPENTRY 42.1, t_carpentry
+RESOURCES=15 i_log
+RESOURCES2=5 i_board,2 i_nails,1 i_cloth,10 i_feather
+DYE=1
+VALUE={50 70}
+WEIGHT=3
+
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Chair (Gray Cushion)
+
+[ITEMDEF 0b4f]
+// chair - fancy wooden chair w/ gray cushion, dyeable - N
+DUPEITEM=0b4e
+
+[ITEMDEF 0b50]
+// chair - fancy wooden chair w/ gray cushion, dyeable - S
+DUPEITEM=0b4e
+
+[ITEMDEF 0b51]
+// chair - fancy wooden chair w/ gray cushion, dyeable - E
+DUPEITEM=0b4e
+
+[ITEMDEF 0b52]
+// chair - Wood chair with gray cushion, dyeable - W
+DEFNAME=i_chair_wood_cushion
+DUPELIST=0b53,0b54,0b55
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=15 i_log
+SKILLMAKE=CARPENTRY 42.1, t_carpentry
+RESOURCES2=5 i_board,2 i_nails,1 i_cloth,10 i_feather
+
+DYE=1
+VALUE={50 70}
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Chair (Gray Cushion)
+
+[ITEMDEF 0b53]
+// chair - Wood chair with gray cushion, dyeable - N
+DUPEITEM=0b52
+
+[ITEMDEF 0b54]
+// chair - Wood chair with gray cushion, dyeable - S
+DUPEITEM=0b52
+
+[ITEMDEF 0b55]
+// chair - Wood chair with gray cushion, dyeable - E
+DUPEITEM=0b52
+
+[ITEMDEF 0b56]
+// chair - light wood chair - W
+DEFNAME=i_chair_wood
+DUPELIST=0b57,0b58,0b59
+TYPE=T_CHAIR
+FLIP=1
+SKILLMAKE=CARPENTRY 21.0, t_carpentry
+RESOURCES=13 i_log
+RESOURCES2=5 i_board,2 i_nails
+
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Chair (Light Wood)
+
+[ITEMDEF 0b57]
+// chair - light wood chair - N
+DUPEITEM=0b56
+
+[ITEMDEF 0b58]
+// chair - light wood chair - E
+DUPEITEM=0b56
+
+[ITEMDEF 0b59]
+// chair - light wood chair - S
+DUPEITEM=0b56
+
+[ITEMDEF 0b5a]
+// chair - light wood chair with bamboo wicker seat - W
+DEFNAME=i_chair_wood_bamboo
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=13 i_log
+SKILLMAKE=CARPENTRY 21.0, t_carpentry
+RESOURCES2=5 i_board,2 i_nails
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Chair
+DUPELIST=0b5b,0b5c,0b5d
+
+[ITEMDEF 0b5b]
+// chair - light wood chair with bamboo wicker seat - N
+DUPEITEM=0b5a
+
+[ITEMDEF 0b5c]
+// chair - light wood chair with bamboo wicker seat - S
+DUPEITEM=0b5a
+
+[ITEMDEF 0b5d]
+// chair - light wood chair with bamboo wicker seat - E
+DUPEITEM=0b5a
+
+[ITEMDEF 0b5e]
+// chair - light stool
+DUPEITEM=0a2b
+
+[ITEMDEF 0b5f]
+// bench - rough board bench end - S
+// bench - picnic table bench end - S
+DEFNAME=i_bench_board_rough_end
+DUPELIST=0b60,0b65,0b66
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=4 I_BOARD, 2 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench
+
+[ITEMDEF 0b60]
+// bench - rough board bench end - N
+// bench - picnic table bench end - N
+DUPEITEM=0b5f
+
+[ITEMDEF 0b61]
+// bench - rough board bench ext - n-s
+// bench - picnic table bench ext - n-s
+TYPE=t_chair
+DUPELIST=0b67
+
+[ITEMDEF 0b62]
+// bench - Smooth wood bench end - S
+DEFNAME=i_bench_wood_smooth_end
+DUPELIST=0b63,0b68,0b69
+FLIP=1
+TYPE=T_CHAIR
+RESOURCES=4 I_BOARD, 2 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench
+
+[ITEMDEF 0b63]
+// bench - Smooth wood bench end - N
+DUPEITEM=0b62
+
+[ITEMDEF 0b64]
+DEFNAME=i_bench_wood_smooth_ext
+// bench - Smooth wood bench ext - n-s
+DUPELIST=0b6a
+TYPE=t_chair
+
+[ITEMDEF 0b65]
+// bench - rough board bench end - E
+// bench - picnic table bench end - E
+DUPEITEM=0b5f
+
+[ITEMDEF 0b66]
+// bench - rough board bench end - W
+// bench - picnic table bench end - W
+DUPEITEM=0b5f
+
+[ITEMDEF 0b67]
+// bench - rough board bench ext - e-w
+// bench - picnic table bench ext - e-w
+DUPEITEM=0b61
+
+[ITEMDEF 0b68]
+// bench - Smooth wood bench end - E
+DUPEITEM=0b62
+
+[ITEMDEF 0b69]
+// bench - Smooth wood bench end - W
+DUPEITEM=0b62
+
+[ITEMDEF 0b6a]
+// bench - Smooth wood bench ext - e-w
+DUPEITEM=0b64
+
+[ITEMDEF 0b6b]
+// table - narrow smooth wood table end - S
+DEFNAME=i_table_wood_smooth_narrow_end
+// DEFNAME2=i_TABLE_7
+TYPE=t_table
+RESOURCES=6 I_BOARD, 3 I_NAILS
+VALUE={50 70}
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table
+DUPELIST=0b6c,0b7e,0b7f,0b87
+
+[ITEMDEF 0b6c]
+// table - narrow smooth wood table end - N
+DUPEITEM=0b6b
+
+[ITEMDEF 0b6d]
+// table - narrow smooth wood table extention n/s
+DEFNAME=i_table_wood_smooth_narrow_ext
+DUPELIST=0b80
+
+[ITEMDEF 0b6e]
+// table - solid wood table end - S
+DEFNAME=i_table_wood_solid_end
+DUPELIST=0b6f,0b81,0b82
+
+[ITEMDEF 0b6f]
+// table - solid wood table end - N
+DUPEITEM=0b6e
+
+[ITEMDEF 0b70]
+// table - custom solid wood table corner SW
+// n-s grain
+DEFNAME=i_table_wood_solid_custom_corner_ns
+DUPELIST=0b71,0b72,0b73
+
+[ITEMDEF 0b71]
+// table - custom solid wood table corner SE
+// n-s grain
+DUPEITEM=0b70
+
+[ITEMDEF 0b72]
+// table - custom solid wood table corner NE
+// n-s grain
+DUPEITEM=0b70
+
+[ITEMDEF 0b73]
+// table - custom solid wood table corner NE
+// also can be used as center piece to extend table n-s
+// n-s grain
+DUPEITEM=0b70
+
+[ITEMDEF 0b74]
+// table - custom solid wood table center N or S
+// use to extend table e-w
+// n-s grain
+DEFNAME=i_table_wood_solid_custom_ext
+
+[ITEMDEF 0b75]
+// table - narrow rough board table end - S
+// narrow picnic table - S
+DEFNAME=i_table_board_rough_end
+DUPELIST=0b76,0b88,0b89
+
+[ITEMDEF 0b76]
+// table - narrow rough board table end - N
+// narrow picnic table - N
+DUPEITEM=0b75
+
+[ITEMDEF 0b77]
+// table - custom rough board table corner - SW
+// n-s grain
+DEFNAME=i_table_board_rough_corner
+DUPELIST=0b78,0b79,0b7a
+
+[ITEMDEF 0b78]
+// table - custom rough board table corner - SE
+// n-s grain
+DUPEITEM=0b77
+
+[ITEMDEF 0b79]
+// table - custom rough board table corner - NE
+// n-s grain
+DUPEITEM=0b77
+
+[ITEMDEF 0b7a]
+// table - custom rough board table corner - NW
+// n-s grain
+DUPEITEM=0b77
+
+[ITEMDEF 0b7b]
+// table - custom rough board table extention
+// Also used as extention for narrow n-s
+// n-s grain
+
+[ITEMDEF 0b7c]
+// table - Small rough wood table
+DEFNAME=i_table_wood_rough_small
+TYPE=T_TABLE
+
+RESOURCES=23 i_log
+RESOURCES2=6 i_board,3 i_nails
+SKILLMAKE=CARPENTRY 63.1, t_carpentry
+
+DUPELIST=0b8f
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table
+
+[ITEMDEF 0b7d]
+// table - Small rough board table
+// picnic table n-s
+DEFNAME=i_table_wood_rough_board
+TYPE=T_TABLE
+
+RESOURCES=27 i_log
+RESOURCES2=6 i_board,3 i_nails
+SKILLMAKE=CARPENTRY 40.0, t_carpentry
+
+DUPELIST=0b90
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table
+
+[ITEMDEF 0b7e]
+// table - narrow smooth wood table end - E
+DUPEITEM=0b6b
+
+[ITEMDEF 0b7f]
+// table - narrow smooth wood table end - W
+DUPEITEM=0b6b
+
+[ITEMDEF 0b80]
+// table - narrow smooth wood table extention e/w
+DUPEITEM=0b6d
+
+[ITEMDEF 0b81]
+// table - solid wood table end - E
+DUPEITEM=0b6e
+
+[ITEMDEF 0b82]
+// table - solid wood table end - W
+DUPEITEM=0b6e
+
+[ITEMDEF 0b83]
+// table - custom solid wood table corner - NE
+// e-w grain
+DEFNAME=i_table_wood_solid_custom_corner_ew
+DUPELIST=0b84,0b85,0b86
+
+[ITEMDEF 0b84]
+// table - custom solid wood table corner - SE
+// e-w grain
+DUPEITEM=0b83
+
+[ITEMDEF 0b85]
+// table - custom solid wood table corner - SW
+// e-w grain
+DUPEITEM=0b83
+
+[ITEMDEF 0b86]
+// table - custom solid wood table corner - NW
+// e-w grain
+DUPEITEM=0b83
+
+[ITEMDEF 0b87]
+// table - custom solid wood table extention
+// e-w grain
+DUPEITEM=0b6b
+
+[ITEMDEF 0b88]
+// table - narrow rough board table end -  E
+// narrow picnic table - E
+DUPEITEM=0b75
+
+[ITEMDEF 0b89]
+// table - narrow rough board table end -  W
+// narrow picnic table - W
+DUPEITEM=0b75
+
+[ITEMDEF 0b8a]
+// table - custom rough board table corner - NE
+// e-w grain
+DEFNAME=i_table_board_rough_custom_corner_ew
+DUPELIST=0b8b,0b8c,0b8d
+
+[ITEMDEF 0b8b]
+// table - custom rough board table corner - SE
+// e-w grain
+DUPEITEM=0b8a
+
+[ITEMDEF 0b8c]
+// table - custom rough board table corner - SW
+// e-w grain
+DUPEITEM=0b8a
+
+[ITEMDEF 0b8d]
+// table - custom rough board table corner - NW
+// e-w grain
+//Also used as extention for narrow e-w
+DUPEITEM=0b8a
+
+[ITEMDEF 0b8e]
+// table - narrow rough board extention e-w
+DEFNAME=i_table_board_rough_ext
+
+[ITEMDEF 0b8f]
+// table - Small rough wood table
+DUPEITEM=0b7c
+
+[ITEMDEF 0b90]
+// table - Small rough board table
+// picnic table e-w
+DUPEITEM=0b7d
+
+[ITEMDEF 0b91]
+// bench - high-backed bench along wall - E
+// bench - high-backed bench - pew - E
+DEFNAME=i_bench_wood_highback
+DUPELIST=0b92
+FLIP=1
+TYPE=T_CHAIR
+RESOURCES=20 I_BOARD, 6 i_nails
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench
+
+[ITEMDEF 0b92]
+// bench - high-backed bench along wall - W
+// bench - high-backed bench - pew - W
+DUPEITEM=0b91
+
+[ITEMDEF 0b93]
+// bench - high-backed bench along wall - S
+// bench - high-backed bench - pew - S
+// DUPEITEM=0b91
+TYPE=t_chair
+
+[ITEMDEF 0b94]
+// bench - high-backed bench along wall - N
+// bench - high-backed bench - pew - N
+// DUPEITEM=0b91
+TYPE=t_chair
+
+[ITEMDEF 0b95]
+//library
+RESOURCES=3 I_BOARD, i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Library
+DUPELIST=0b96
+
+[ITEMDEF 0b96]
+//library
+DUPEITEM=0b95
+
+[ITEMDEF 0b97]
+//wooden signpost
+RESOURCES=2 I_BOARD, 2 I_HINGE
+FLIP=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Sign Posts
+DESCRIPTION=Wooden Sign Post
+DUPELIST=0b98
+
+[ITEMDEF 0b98]
+//wooden signpost
+DUPEITEM=0b97
+
+[ITEMDEF 0b99]
+//wooden signpost
+RESOURCES=2 I_BOARD, 2 I_HINGE
+FLIP=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Sign Posts
+DESCRIPTION=Wooden Sign Post
+DUPELIST=0b9a
+
+[ITEMDEF 0b9a]
+//wooden signpost
+DUPEITEM=0b99
+
+[ITEMDEF 0b9b]
+//metal signpost
+RESOURCES=2 i_ingot_iron, 2 I_HINGE
+FLIP=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Sign Posts
+DESCRIPTION=Metal Sign Post
+DUPELIST=0b9c
+
+[ITEMDEF 0b9c]
+//metal signpost
+DUPEITEM=0b9b
+
+[ITEMDEF 0b9d]
+//metal signpost
+RESOURCES=2 i_ingot_iron, 2 I_HINGE
+FLIP=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Sign Posts
+DESCRIPTION=Metal Sign Post
+DUPELIST=0b9e
+
+[ITEMDEF 0b9e]
+//metal signpost
+DUPEITEM=0b9d
+
+[ITEMDEF 0b9f]
+//metal signpost
+RESOURCES=2 i_ingot_iron, 2 I_HINGE
+FLIP=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Sign Posts
+DESCRIPTION=Metal Sign Post
+DUPELIST=0ba0
+
+[ITEMDEF 0ba0]
+//metal signpost
+DUPEITEM=0b9f
+
+[ITEMDEF 0ba1]
+//metal signpost
+RESOURCES=2 i_ingot_iron, 2 I_HINGE
+FLIP=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Sign Posts
+DESCRIPTION=Metal Sign Post
+DUPELIST=0ba2
+
+[ITEMDEF 0ba2]
+//metal signpost
+DUPEITEM=0ba1
+
+[ITEMDEF 0ba3]
+//Bakery
+DEFNAME=i_sign_bakery
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Bakery
+DUPELIST=0ba4
+
+[ITEMDEF 0ba4]
+//Bakery
+DUPEITEM=0ba3
+
+[ITEMDEF 0ba5]
+//Tailor
+DEFNAME=i_sign_tailor
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Tailor
+DUPELIST=0ba6
+
+[ITEMDEF 0ba6]
+//Tailor
+DUPEITEM=0ba5
+
+[ITEMDEF 0ba7]
+//Tinker
+DEFNAME=i_sign_tinker
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Tinker
+DUPELIST=0ba8
+
+[ITEMDEF 0ba8]
+//Tinker
+DUPEITEM=0ba7
+
+[ITEMDEF 0ba9]
+//Butcher
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Butcher
+DUPELIST=0baa
+
+[ITEMDEF 0baa]
+//Butcher
+DUPEITEM=0ba9
+
+[ITEMDEF 0bab]
+//Healer
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Healer
+DUPELIST=0bac
+
+[ITEMDEF 0bac]
+//Healer
+DUPEITEM=0bab
+
+[ITEMDEF 0bad]
+//Mage
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Mage
+DUPELIST=0bae
+
+[ITEMDEF 0bae]
+//Mage
+DUPEITEM=0bad
+
+[ITEMDEF 0baf]
+//Woodworker
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Woodworker
+DUPELIST=0bb0
+
+[ITEMDEF 0bb0]
+//Woodworker
+DUPEITEM=0baf
+
+[ITEMDEF 0bb1]
+//Customs
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Customs
+DUPELIST=0bb2
+
+[ITEMDEF 0bb2]
+//Customs
+DUPEITEM=0bb1
+
+[ITEMDEF 0bb3]
+//Inn
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Inn
+DUPELIST=0bb4
+
+[ITEMDEF 0bb4]
+//Inn
+DUPEITEM=0bb3
+
+[ITEMDEF 0bb5]
+//Shipwright
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Shipwright
+DUPELIST=0bb6
+
+[ITEMDEF 0bb6]
+//Shipwright
+DUPEITEM=0bb5
+
+[ITEMDEF 0bb7]
+//Stables
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Stables
+DUPELIST=0bb8
+
+[ITEMDEF 0bb8]
+//Stables
+DUPEITEM=0bb7
+
+[ITEMDEF 0bb9]
+//Barber Shop
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Barber Shop
+DUPELIST=0bba
+
+[ITEMDEF 0bba]
+//Barber Shop
+DUPEITEM=0bb9
+
+[ITEMDEF 0bbb]
+//Bard
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Bard
+DUPELIST=0bbc
+
+[ITEMDEF 0bbc]
+//Bard
+DUPEITEM=0bbb
+
+[ITEMDEF 0bbd]
+//Fletcher
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Fletcher
+DUPELIST=0bbe
+
+[ITEMDEF 0bbe]
+//Fletcher
+DUPEITEM=0bbd
+
+[ITEMDEF 0bbf]
+//Armourer
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Armourer
+DUPELIST=0bc0
+
+[ITEMDEF 0bc0]
+//Armourer
+DUPEITEM=0bbf
+
+[ITEMDEF 0bc1]
+//Jeweler
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Jewler
+DUPELIST=0bc2
+
+[ITEMDEF 0bc2]
+//Jeweler
+DUPEITEM=0bc1
+
+[ITEMDEF 0bc3]
+//Tavern
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Tavern
+DUPELIST=0bc4
+
+[ITEMDEF 0bc4]
+//Tavern
+DUPEITEM=0bc3
+
+[ITEMDEF 0bc5]
+//Reagent Shop
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Reagent Shop
+DUPELIST=0bc6
+
+[ITEMDEF 0bc6]
+//Reagent Shop
+DUPEITEM=0bc5
+
+[ITEMDEF 0bc7]
+//Blacksmith
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Blacksmith
+DUPELIST=0bc8
+
+[ITEMDEF 0bc8]
+//Blacksmith
+DUPEITEM=0bc7
+
+[ITEMDEF 0bc9]
+//Painter
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Painter
+DUPELIST=0bca
+
+[ITEMDEF 0bca]
+//Painter
+DUPEITEM=0bc9
+
+[ITEMDEF 0bcb]
+//Provisioner
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Provisioner
+DUPELIST=0bcc
+
+[ITEMDEF 0bcc]
+//Provisioner
+DUPEITEM=0bcb
+
+[ITEMDEF 0bcd]
+//Bowyer
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Bowyer
+DUPELIST=0bce
+
+[ITEMDEF 0bce]
+//Bowyer
+DUPEITEM=0bcd
+
+[ITEMDEF 0bcf]
+//wooden sign
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=067
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Blank
+DESCRIPTION=Wooden Blank
+DUPELIST=0bd0
+
+[ITEMDEF 0bd0]
+//wooden sign
+DUPEITEM=0bcf
+
+[ITEMDEF 0bd1]
+//brass sign
+DEFNAME=i_sign_brass
+TYPE=T_SIGN_GUMP
+TDATA2=064
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Blank
+DESCRIPTION=Brass Blank
+DUPELIST=0bd2 
+
+ON=@DCLICK
+IF <SRC.TARG.LINK.BASEID>==0
+RETURN 0
+ELSE
+IF (<SRC.UID> == <LINK.MORE>)
+MORE2 0
+TYPE 2001
+LINK.TYPE 2001 DIALOG d_house_menu_own
+RETURN 1
+ELSE
+DIALOG d_house_nonown
+SRC.SYSMESSAGE This house is properly placed.
+SRC.SYSMESSAGE This house is of modern design.
+RETURN 1
+ENDIF
+
+[ITEMDEF 0bd2]
+//brass sign
+DEFNAME=i_sign_brass_2
+DUPEITEM=0bd1
+
+[ITEMDEF 0bd3]
+//Armaments Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Armaments Guild
+DUPELIST=0bd4
+
+[ITEMDEF 0bd4]
+//Armaments Guild
+DUPEITEM=0bd3
+
+[ITEMDEF 0bd5]
+//Armourers Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Armourers Guild
+DUPELIST=0bd6
+
+[ITEMDEF 0bd6]
+//Armourers Guild
+DUPEITEM=0bd5
+
+[ITEMDEF 0bd7]
+//Blacksmiths Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Blacksmiths Guild
+DUPELIST=0bd8
+
+[ITEMDEF 0bd8]
+//Blacksmiths Guild
+DUPEITEM=0bd7
+
+[ITEMDEF 0bd9]
+//Weapons Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Weapons Guild
+DUPELIST=0bda
+
+[ITEMDEF 0bda]
+//Weapons Guild
+DUPEITEM=0bd9
+
+[ITEMDEF 0bdb]
+//Bardic Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Bardic Guild
+DUPELIST=0bdc
+
+[ITEMDEF 0bdc]
+//Bardic Guild
+DUPEITEM=0bdb
+
+[ITEMDEF 0bdd]
+//Barters  Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Barters Guild
+DUPELIST=0bde
+
+[ITEMDEF 0bde]
+//Barters  Guild
+DUPEITEM=0bdd
+
+[ITEMDEF 0bdf]
+//Provisioner Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Provisioner Guild
+DUPELIST=0be0
+
+[ITEMDEF 0be0]
+//Provisioner Guild
+DUPEITEM=0bdf
+
+[ITEMDEF 0be1]
+//Traders  Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Traders Guild
+DUPELIST=0be2
+
+[ITEMDEF 0be2]
+//Traders  Guild
+DUPEITEM=0be1
+
+[ITEMDEF 0be3]
+//Cooks  Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Cooks Guild
+DUPELIST=0be4
+
+[ITEMDEF 0be4]
+//Cooks  Guild
+DUPEITEM=0be3
+
+[ITEMDEF 0be5]
+//Healers  Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Healers Guild
+DUPELIST=0be6
+
+[ITEMDEF 0be6]
+//Healers  Guild
+DUPEITEM=0be5
+
+[ITEMDEF 0be7]
+//Mages  Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Mages Guild
+DUPELIST=0be8
+
+[ITEMDEF 0be8]
+//Mages  Guild
+DUPEITEM=0be7
+
+[ITEMDEF 0be9]
+//Sorcerers  Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Sorcerers Guild
+DUPELIST=0bea
+
+[ITEMDEF 0bea]
+//Sorcerers Guild
+DUPEITEM=0be9
+
+[ITEMDEF 0beb]
+//Illusionist Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Illusionist Guild
+DUPELIST=0bec
+
+[ITEMDEF 0bec]
+//Illusionist Guild
+DUPEITEM=0beb
+
+[ITEMDEF 0bed]
+//Miners Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Miners Guild
+DUPELIST=0bee
+
+[ITEMDEF 0bee]
+//Miners Guild
+DUPEITEM=0bed
+
+[ITEMDEF 0bef]
+//Archers Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Archers Guild
+DUPELIST=0bf0
+
+[ITEMDEF 0bf0]
+//Archers Guild
+DUPEITEM=0bef
+
+[ITEMDEF 0bf1]
+//Seamens Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Seamens Guild
+DUPELIST=0bf2
+
+[ITEMDEF 0bf2]
+//Seamens Guild
+DUPEITEM=0bf1
+
+[ITEMDEF 0bf3]
+//Fishermens Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Fishermans Guild
+DUPELIST=0bf4
+
+[ITEMDEF 0bf4]
+//Fishermens Guild
+DUPEITEM=0bf3
+
+[ITEMDEF 0bf5]
+//Sailors Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Sailors Guild
+DUPELIST=0bf6
+
+[ITEMDEF 0bf6]
+//Sailors Guild
+DUPEITEM=0bf5
+
+[ITEMDEF 0bf7]
+//Shipwrights Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Shipwrights Guild
+DUPELIST=0bf8
+
+[ITEMDEF 0bf8]
+//Shipwrights Guild
+DUPEITEM=0bf7
+
+[ITEMDEF 0bf9]
+//Tailors Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Tailors Guild
+DUPELIST=0bfa
+
+[ITEMDEF 0bfa]
+//Tailors Guild
+DUPEITEM=0bf9
+
+[ITEMDEF 0bfb]
+//Thieves Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Thieves Guild
+DUPELIST=0bfc
+
+[ITEMDEF 0bfc]
+//Thieves Guild
+DUPEITEM=0bfb
+
+[ITEMDEF 0bfd]
+//Rogues Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Rogues Guild
+DUPELIST=0bfe
+
+[ITEMDEF 0bfe]
+//Rogues Guild
+DUPEITEM=0bfd
+
+[ITEMDEF 0bff]
+//Assassins Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Assassins Guild
+DUPELIST=0c00
+
+[ITEMDEF 0c00]
+//Assassins Guild
+DUPEITEM=0bff
+
+[ITEMDEF 0c01]
+//Tinkers Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Tinkers Guild
+DUPELIST=0c02
+
+[ITEMDEF 0c02]
+//Tinkers Guild
+DUPEITEM=0c01
+
+[ITEMDEF 0c03]
+//Warriors Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Warriors Guild
+DUPELIST=0c04
+
+[ITEMDEF 0c04]
+//Warriors Guild
+DUPEITEM=0c03
+
+[ITEMDEF 0c05]
+//Cavalry Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Cavalry Guild
+DUPELIST=0c06
+
+[ITEMDEF 0c06]
+//Cavalry Guild
+DUPEITEM=0c05
+
+[ITEMDEF 0c07]
+//Fighters  Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Fighters Guild
+DUPELIST=0c08
+
+[ITEMDEF 0c08]
+//Fighters Guild
+DUPEITEM=0c07
+
+[ITEMDEF 0c09]
+//Merchants Guild
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Guild
+DESCRIPTION=Merchants Guild
+DUPELIST=0c0a
+
+[ITEMDEF 0c0a]
+//Merchants Guild
+DUPEITEM=0c09
+
+[ITEMDEF 0c0b]
+//Bank
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Bank
+DUPELIST=0c0c
+
+[ITEMDEF 0c0c]
+//Bank
+DUPEITEM=0c0b
+
+[ITEMDEF 0c0d]
+//Theatre
+TYPE=T_SIGN_GUMP
+FLIP=1
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=Theatre
+DUPELIST=0c0e
+
+[ITEMDEF 0c0e]
+//Theatre
+DUPEITEM=0c0d
+
+[ITEMDEF 0c10]
+// chair - broken wooden bamboo wicker seat chair - N
+DEFNAME=i_chair_wood_bamboo_broken
+DUPELIST=0c11
+
+RESOURCES=5 i_BOARD
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Chair
+
+[ITEMDEF 0c11]
+// chair - broken wooden bamboo wicker seat chair - W
+DUPEITEM=0c10
+
+[ITEMDEF 0c12]
+//broken armoire
+RESOURCES=10 i_BOARD
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Armoire
+DUPELIST=0c13
+
+[ITEMDEF 0c13]
+//broken armoire
+DUPEITEM=0c12
+
+[ITEMDEF 0c14]
+//ruined bookcase
+RESOURCES=4 I_BOARD, 1 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Bookcase
+DUPELIST=0c15
+
+[ITEMDEF 0c15]
+//ruined bookcase
+DUPEITEM=0c14
+
+[ITEMDEF 0c16]
+DEFNAME=i_book_damaged
+RESOURCES=20 I_PAPER, 1 I_THREAD, 1 I_HIDE
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Books
+
+[ITEMDEF 0c17]
+//chair - chair covered with a sheet - N
+DEFNAME=i_chair_covered
+DUPELIST=0c18
+FLIP=1
+TYPE=T_CHAIR
+RESOURCES=1 i_CHAIR_WOOD, 1 I_SHEET
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Chair (Covered)
+
+[ITEMDEF 0c18]
+//chair - chair covered with a sheet - W
+DUPEITEM=0c17
+
+[ITEMDEF 0c19]
+// chair - broken seat - wooden bamboo wicker seat chair - N
+DEFNAME=i_chair_wood_bamboo_broken_noseat
+DUPELIST=0c1a
+
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Chair
+
+[ITEMDEF 0c1a]
+// chair - broken seat - wooden bamboo wicker seat chair - W
+DUPEITEM=0c19
+
+[ITEMDEF 0c1b]
+// chair - broken fancy wooden chair - N
+DEFNAME=i_chair_wood_fancy_cushion_broken
+DUPELIST=0c1c,0c1d,0c1e
+RESOURCES=5 I_BOARD, 1 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Chair
+
+[ITEMDEF 0c1c]
+// chair - broken fancy wooden chair  - W
+DUPEITEM=0c1b
+
+[ITEMDEF 0c1d]
+// chair - broken fancy wooden chair  - E
+DUPEITEM=0c1b
+
+[ITEMDEF 0c1e]
+// chair - broken fancy wooden chair  - S
+DUPEITEM=0c1b
+
+[ITEMDEF 0c1f]
+//broken clock
+RESOURCES=1 I_CLOCK_FRAME, 1 I_PARCHMENT, 1 I_BOARD
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Clock
+
+[ITEMDEF 0c20]
+//broken dresser
+RESOURCES=5 I_BOARD, 10 I_NAILS, 2 I_DRESSER_DRAWER, 1 I_SAND
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Dresser (Vanity)
+DUPELIST=0c21,0c22,0c23
+
+[ITEMDEF 0c21]
+//broken dresser
+DUPEITEM=0c20
+
+[ITEMDEF 0c22]
+//broken dresser
+DUPEITEM=0c20
+
+[ITEMDEF 0c23]
+//broken dresser
+DUPEITEM=0c20
+
+[ITEMDEF 0c24]
+//broken furniture
+RESOURCES=5 I_BOARD, 8 I_NAILS, 1 I_DRESSER_DRAWER
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Dresser
+DUPELIST=0c25
+
+[ITEMDEF 0c25]
+//broken furniture
+DUPEITEM=0c24
+
+[ITEMDEF 0c26]
+//ruined bed
+DEFNAME=i_bed_ruined
+TYPE=T_BED
+TDATA1=0
+RESOURCES=5 I_BOARD, 8 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Bed
+
+[ITEMDEF 0c27]
+//ruined bed
+DEFNAME=i_bed_ruined_2
+TYPE=T_BED
+TDATA1=0
+RESOURCES=5 I_BOARD, 8 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Bed
+
+[ITEMDEF 0c28]
+//ruined bed
+DEFNAME=i_bed_ruined_3
+TYPE=T_BED
+TDATA1=0
+RESOURCES=5 I_BOARD, 8 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Bed
+
+[ITEMDEF 0c29]
+//ruined bed
+DEFNAME=i_bed_ruined_4
+TYPE=T_BED
+TDATA1=0
+RESOURCES=5 I_BOARD, 8 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Bed
+
+[ITEMDEF 0c2a]
+//ruined bed
+DEFNAME=i_bed_ruined_5
+TYPE=T_BED
+TDATA1=0
+RESOURCES=5 I_BOARD, 8 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Bed
+
+[ITEMDEF 0c2b]
+//ruined bed
+DEFNAME=i_bed_ruined_6
+TYPE=T_BED
+TDATA1=0
+RESOURCES=5 I_BOARD, 8 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Bed
+
+[ITEMDEF 0c2c]
+//ruined painting
+DEFNAME=i_painting_ruined
+RESOURCES=5 I_BOARD, 8 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Painting
+
+[ITEMDEF 0c2d]
+//debris
+DEFNAME=i_debris
+RESOURCES=3 I_BOARD, 1 I_NAILS, 2 I_DIRT
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Debris
+
+[ITEMDEF 0c2e]
+//debris
+DEFNAME=i_debris_2
+RESOURCES=3 I_BOARD, 1 I_NAILS, 2 I_DIRT
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Debris
+
+[ITEMDEF 0c2f]
+//debris
+DEFNAME=i_debris_3
+RESOURCES=3 I_BOARD, 1 I_NAILS, 2 I_DIRT
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Debris
+
+[ITEMDEF 0c30]
+//debris
+DEFNAME=i_debris_4
+RESOURCES=3 I_BOARD, 1 I_NAILS, 2 I_DIRT
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Debris
+
+[ITEMDEF 0c31]
+//sheets
+DEFNAME=i_sheet
+RESOURCES=1 i_TABLE_NIGHTSTAND, 1 I_cloth
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Covered Ottoman
+
+[ITEMDEF 0c32]
+//sheets
+DEFNAME=i_sheet_2
+RESOURCES=1 i_TABLE_NIGHTSTAND, 1 I_SHEET
+DYE=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Sheets
+DUPELIST=0c33,0c34,0c35,0c36
+
+[ITEMDEF 0c33]
+//sheets
+DUPEITEM=0c32
+
+[ITEMDEF 0c34]
+//sheets
+DUPEITEM=0c32
+
+[ITEMDEF 0c35]
+//sheets
+DUPEITEM=0c32
+
+[ITEMDEF 0c36]
+//sheets
+DUPEITEM=0c32
+
+[ITEMDEF 0c39]
+DEFNAME=i_pegbaord
+RESOURCES=2 I_BOARD
+CATEGORY=Decoration - Furniture
+SUBSECTION=PegBoard
+DESCRIPTION=@
+DUPELIST=0c3a
+
+[ITEMDEF 0c3a]
+DUPEITEM=0c39
+
+[ITEMDEF 0c3b]
+DEFNAME=i_dried_flowers
+RESOURCES=1 I_CROP_FLOWER
+CATEGORY=Vegetation
+SUBSECTION=Dried Vegetation
+DESCRIPTION=Dried Flowers
+DUPELIST=0c3c
+
+[ITEMDEF 0c3c]
+DUPEITEM=0c3b
+
+[ITEMDEF 0c3d]
+//dried flowers
+DEFNAME=i_dried_flowers_3
+RESOURCES=1 I_CROP_flower
+CATEGORY=Vegetation
+SUBSECTION=Dried Vegetation
+DESCRIPTION=Dried Flowers
+DUPELIST=0c3e
+
+[ITEMDEF 0c3e]
+//dried flowers
+DUPEITEM=0c3d
+
+[ITEMDEF 0c3f]
+//dried onions
+DEFNAME=i_dried_onions
+RESOURCES=1 I_CROP_ONION
+CATEGORY=Vegetation
+SUBSECTION=Dried Vegetation
+DESCRIPTION=Dried Onions
+DUPELIST=0c40
+
+[ITEMDEF 0c40]
+//dried onions
+DUPEITEM=0c3f
+
+[ITEMDEF 0c41]
+//dried herbs
+DEFNAME=i_dried_herbs
+RESOURCES=1 I_CROP_HERB
+CATEGORY=Vegetation
+SUBSECTION=Dried Vegetation
+DESCRIPTION=Dried Herbs
+DUPELIST=0c42
+
+[ITEMDEF 0c42]
+//dried herbs
+DUPEITEM=0c41
+
+[ITEMDEF 0c43]
+//Beekeeper
+DEFNAME=i_sign_beekeeper
+RESOURCES=2 I_BOARD, 1 i_ingot_iron
+CATEGORY=Decoration - Signs
+SUBSECTION=Trade
+DESCRIPTION=BeeKeeper
+DUPELIST=0c44
+
+[ITEMDEF 0c44]
+//Beekeeper
+DUPEITEM=0c43
+
+[ITEMDEF 0c45]
+//flowers
+DEFNAME=i_crop_flower_3
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Flowers
+DUPELIST=0c46,0c47,0c48,0c49,0c4a,0c4b,0c4c,0c4d,0c4e
+
+[ITEMDEF 0c46]
+//flowers
+
+DUPEITEM=0c45
+
+[ITEMDEF 0c47]
+//flowers
+
+DUPEITEM=0c45
+
+[ITEMDEF 0c48]
+//flowers
+
+DUPEITEM=0c45
+
+[ITEMDEF 0c49]
+//flowers
+
+DUPEITEM=0c45
+
+[ITEMDEF 0c4a]
+//flowers
+
+DUPEITEM=0c45
+
+[ITEMDEF 0c4b]
+//flowers
+
+DUPEITEM=0c45
+
+[ITEMDEF 0c4c]
+//flowers
+
+DUPEITEM=0c45
+
+[ITEMDEF 0c4d]
+//flowers
+
+DUPEITEM=0c45
+
+[ITEMDEF 0c4e]
+//flowers
+DUPEITEM=0c45
+
+[ITEMDEF 0c4f]
+//cotton plant - mature
+DEFNAME=i_crop_cotton
+TYPE=T_CROPS
+TDATA1=i_crop_cotton1
+TDATA2=0
+TDATA3=i_COTTON
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cotton Plant
+DUPELIST=0c50
+
+[ITEMDEF 0c50]
+//cotton (adult)
+DUPEITEM=0c4f
+
+[ITEMDEF 0c51]
+//cotton plant (immature)
+DEFNAME=i_crop_cotton1
+TYPE=T_CROPS
+TDATA1=i_crop_cotton1
+TDATA2=i_crop_cotton2
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cotton Plant Uprooted
+DUPELIST=0c52
+
+[ITEMDEF 0c52]
+DUPEITEM=0c51
+
+[ITEMDEF 0c53]
+//cotton plant (mid age)
+DEFNAME=i_crop_cotton2
+TYPE=T_CROPS
+TDATA1=i_crop_cotton1
+TDATA2=i_crop_cotton
+DUPELIST=0c54
+
+[ITEMDEF 0c54]
+//cotton plant (mid age)
+DUPEITEM=0c53
+
+[ITEMDEF 0c55]
+//wheat
+DEFNAME=i_crop_wheat3
+TYPE=T_CROPS
+TDATA1=i_crop_WHEAT1
+TDATA2=i_crop_WHEAT4
+DUPELIST=0c56
+
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Wheat
+
+[ITEMDEF 0c56]
+//wheat
+DUPEITEM=0c55
+
+[ITEMDEF 0c57]
+//wheat
+DEFNAME=i_crop_wheat4
+TYPE=T_CROPS
+TDATA1=i_crop_WHEAT1
+TDATA2=i_crop_WHEAT
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Wheat
+DUPELIST=0c59
+
+[ITEMDEF 0c58]
+//wheat
+DUPEITEM=0c5a
+
+[ITEMDEF 0c59]
+//wheat
+DUPEITEM=0c57
+
+[ITEMDEF 0c5a]
+//wheat
+DEFNAME=i_crop_wheat
+TYPE=T_CROPS
+TDATA1=i_crop_WHEAT1
+TDATA2=0
+TDATA3=i_wheat_sheaf
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Wheat
+DUPELIST=0c58,0c5b
+
+[ITEMDEF 0c5b]
+//wheat
+DUPEITEM=0c5a
+
+[ITEMDEF 0c5c]
+//Watermelon
+DEFNAME=i_fruit_watermelon
+TYPE=T_FRUIT
+TDATA1=i_crop_vines1
+VALUE=2
+WEIGHT=2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Watermelon
+DUPELIST=0c5d
+
+[ITEMDEF 0c5d]
+//watermelon
+DUPEITEM=0c5c
+
+[ITEMDEF 0c5e]
+//vines (ground)
+DEFNAME=i_crop_vines1
+TYPE=T_CROPS
+TDATA1=i_crop_vines1
+TDATA2=i_crop_vines2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Vines
+
+ON=@Create
+// lots of vines grown fruit.
+FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_gourd1, i_fruit_gourd2, i_fruit_cantelope, i_fruit_honeydewmelon, i_fruit_squash }
+
+[ITEMDEF 0c5f]
+//vines
+DEFNAME=i_crop_vines
+TYPE=T_CROPS
+TDATA1=i_crop_vines1
+TDATA2=-1	// pops out a fruit.
+TDATA3=0 // can be many fruits
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Vines
+
+ON=@Create
+// lots of vines grown fruit.
+FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_gourd1, i_fruit_gourd2, i_fruit_cantelope, i_fruit_honeydewmelon, i_fruit_squash }
+
+[ITEMDEF 0c60]
+//vines
+DEFNAME=i_crop_vines2
+TYPE=T_CROPS
+TDATA1=i_crop_vines1
+TDATA2=i_crop_vines
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Vines
+
+ON=@Create
+// lots of vines grown fruit.
+FRUIT={ i_fruit_watermelon, i_fruit_pumpkin, i_fruit_gourd1, i_fruit_gourd2, i_fruit_cantelope, i_fruit_honeydewmelon, i_fruit_squash }
+
+[ITEMDEF 0c61]
+//Turnip
+// DEFNAME2=TURNIP_1
+DEFNAME=i_crop_turnip1
+TYPE=T_CROPS
+TDATA1=i_crop_turnip1
+TDATA2=i_crop_turnip
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Turnip
+
+[ITEMDEF 0c62]
+//turnip
+DEFNAME=i_crop_turnip
+TYPE=T_CROPS
+TDATA1=i_crop_turnip1
+TDATA2=0
+TDATA3=i_fruit_turnip
+VALUE=2
+WEIGHT=0.1
+DUPELIST=0c63
+
+[ITEMDEF 0c63]
+//turnip
+DUPEITEM=0c62
+
+[ITEMDEF 0c64]
+//Gourd (yellow)
+//DEFNAME2=GOURD_1
+DEFNAME=i_fruit_gourd1
+TYPE=T_FRUIT
+TDATA1=i_crop_vines1
+VALUE=2
+WEIGHT=1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Gourd (Yellow)
+DUPELIST=0c65
+
+[ITEMDEF 0c65]
+//gourd
+DUPEITEM=0c64
+
+[ITEMDEF 0c66]
+//green gourd
+//DEFNAME2=GOURD_2
+DEFNAME=i_fruit_gourd2
+TYPE=T_FRUIT
+TDATA1=i_crop_vines1
+VALUE=2
+WEIGHT=1
+DUPELIST=0c67
+
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Gourd (Green)
+
+[ITEMDEF 0c67]
+//green gourd
+DUPEITEM=0c66
+
+[ITEMDEF 0c68]
+//sprouts - no idea what they sprout into ?
+DEFNAME=i_crop_sprouts1
+TYPE=T_CROPS
+TDATA1=i_crop_sprouts1
+TDATA2=i_crop_sprouts2
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Sprouts
+
+[ITEMDEF 0c69]
+//sprouts
+DEFNAME=i_crop_sprouts2
+TYPE=T_CROPS
+TDATA1=i_crop_sprouts1
+TDATA2=0 // not sure what this turns into.
+TDATA3=0 // not sure what this turns into.
+
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Sprouts
+
+ON=@Create
+FRUIT=0	// not sure what this turns into ?
+
+[ITEMDEF 0c6a]
+//Pumpkin
+DEFNAME=i_fruit_pumpkin
+TYPE=T_FRUIT
+TDATA1=i_crop_vines1
+VALUE=2
+WEIGHT=1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Pumpkin
+DUPELIST=0c6b,0c6c
+
+[ITEMDEF 0c6b]
+//pumpkin
+DUPEITEM=0c6a
+
+[ITEMDEF 0c6c]
+//pumpkin - smaller
+DUPEITEM=0c6a
+
+[ITEMDEF 0c6d]
+//Onion
+// ONION_OBJ
+DEFNAME=i_fruit_onion
+RESOURCES=I_CROP_ONION
+TYPE=T_FRUIT
+TDATA1=i_crop_onion
+VALUE={2 4}
+WEIGHT=1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Onion
+DUPELIST=0c6e
+
+[ITEMDEF 0c6e]
+//onion
+DUPEITEM=0c6d
+
+[ITEMDEF 0c6f]
+//onions
+DEFNAME=i_crop_onion
+TYPE=T_CROPS
+TDATA1=i_crop_onion
+TDATA2=0
+TDATA3=i_fruit_onion
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Onions
+
+[ITEMDEF 0c70]
+// DEFANAME2=HEAD_OF_LETTUCE
+//Head of Lettuce
+DEFNAME=i_fruit_lettuce
+TYPE=T_FRUIT
+VALUE=2
+WEIGHT=1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Lettuce
+DUPELIST=0c71
+
+[ITEMDEF 0c71]
+//lettuce
+DUPEITEM=0c70
+
+[ITEMDEF 0c72]
+//Squash
+DEFNAME=i_fruit_squash
+TYPE=T_FRUIT
+TDATA1=i_crop_vines1
+VALUE=2
+WEIGHT=1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Squash
+DUPELIST=0c73
+
+[ITEMDEF 0c73]
+//squash
+DUPEITEM=0c72
+
+[ITEMDEF 0c74]
+//Honeydew Melon
+// DEFNAME2=MELON
+DEFNAME=i_fruit_honeydewmelon
+TYPE=T_FRUIT
+TDATA1=i_crop_vines1
+VALUE=2
+WEIGHT=1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Honeydew Melon
+DUPELIST=0c75
+
+[ITEMDEF 0c75]
+//honeydew melon
+DUPEITEM=0c74
+
+[ITEMDEF 0c76]
+//carrots
+DEFNAME=i_crop_carrot
+TYPE=T_CROPS
+TDATA1=i_crop_carrot
+TDATA2=0
+TDATA3=i_fruit_carrot
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Carrots
+
+[ITEMDEF 0c77]
+//Carrot
+DEFNAME=i_fruit_carrot
+RESOURCES=1 i_crop_carrot
+TYPE=T_FRUIT
+TDATA1=i_crop_carrot
+VALUE={2 4}
+WEIGHT=0.1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Carrot
+DUPELIST=0c78
+
+[ITEMDEF 0c78]
+//carrot
+DUPEITEM=0c77
+
+[ITEMDEF 0c79]
+//Cantaloupe
+DEFNAME=i_fruit_cantelope
+TYPE=T_FRUIT
+TDATA1=i_crop_vines1
+VALUE=2
+WEIGHT=1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Cantaloupe
+DUPELIST=0c7a
+
+[ITEMDEF 0c7a]
+//cantaloupe
+DUPEITEM=0c79
+
+[ITEMDEF 0c7c]
+//Head of Cabbage
+DUPEITEM=0c7b
+
+[ITEMDEF 0c7b]
+//cabbage
+DEFNAME=i_fruit_cabbage
+TYPE=T_FRUIT
+WEIGHT=0.5
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DUPELIST=0c7c
+DESCRIPTION=Cabbage
+
+[ITEMDEF 0c7d]
+//corn stalk
+DEFNAME=i_crop_corn
+TYPE=T_CROPS
+TDATA1=i_crop_corn1
+TDATA2=0
+TDATA3=i_fruit_corn
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Corn Stalk
+
+ON=@Create
+FRUIT=i_FRUIT_CORN
+
+[ITEMDEF 0c7e]
+//corn stalk
+DEFNAME=i_crop_corn1
+TYPE=T_CROPS
+TDATA1=i_crop_corn1
+TDATA2=i_crop_corn
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Corn Stalk
+
+ON=@Create
+FRUIT=i_FRUIT_CORN
+
+[ITEMDEF 0c7f]
+//Ear of Corn
+// DEFNAME2=CORN
+DEFNAME=i_fruit_corn
+RESOURCES=I_CROP_CORN
+TYPE=T_FOOD
+VALUE={2 4}
+WEIGHT=0.2
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Ear of Corn
+DUPELIST=0c80,0c81,0c82
+
+[ITEMDEF 0c80]
+//ear of corn
+DUPEITEM=0c7f
+
+[ITEMDEF 0c81]
+//ear of corn
+DUPEITEM=0c7f
+
+[ITEMDEF 0c82]
+//ear of corn
+DUPEITEM=0c7f
+
+[ITEMDEF 0c83]
+//campion flowers
+DEFNAME=i_flower_campion
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Campion Flowers
+
+[ITEMDEF 0c84]
+//foxglove flowers
+DEFNAME=i_flower_foxglove
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Foxglove Flowers
+
+[ITEMDEF 0c85]
+//orfluer flowers
+DEFNAME=i_flower_orfluer
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Orfluer Flowers
+
+[ITEMDEF 0c86]
+//red poppies
+DEFNAME=i_flower_redpoppies
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Red Poppies
+
+[ITEMDEF 0c87]
+//campion flowers
+DEFNAME=i_flower_campion_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=campion Flowers
+
+[ITEMDEF 0c88]
+//snowdrops
+DEFNAME=i_flower_snowdrops
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Snowdrops
+
+[ITEMDEF 0c89]
+//campion flowers
+DEFNAME=i_flower_campion_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Campion Flowers
+
+[ITEMDEF 0c8a]
+//foxglove flowers
+DEFNAME=i_flower_foxglove_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Foxglove Flowers
+
+[ITEMDEF 0c8b]
+//white flowers
+DEFNAME=i_flower_white
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=White Flowers
+
+[ITEMDEF 0c8c]
+//white flowers
+DEFNAME=i_flower_white_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=White Flowers
+
+[ITEMDEF 0c8d]
+//white poppies
+DEFNAME=i_flower_whitepoppies_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=White Poppies
+
+[ITEMDEF 0c8e]
+//snowdrops
+DEFNAME=i_flower_snowdrops_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Snowdrops
+
+[ITEMDEF 0c8f]
+//hedge
+DEFNAME=i_plant_hedge_1
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Hedge
+
+[ITEMDEF 0c90]
+//hedge
+DEFNAME=i_plant_hedge_2
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Hedge
+
+[ITEMDEF 0c91]
+//untrimmed hedge
+DEFNAME=i_plant_hedge_3
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Untrimmed Hedge
+
+[ITEMDEF 0c92]
+//untrimmed hedge
+DEFNAME=i_plant_hedge_4
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Untrimmed Hedge
+
+[ITEMDEF 0c93]
+//blade plant
+DEFNAME=i_plant_blade
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Blade plant
+
+[ITEMDEF 0c94]
+//bulrushes
+DEFNAME=i_plant_bulrushes
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Bulrushes
+
+[ITEMDEF 0c95]
+//coconut palm
+DEFNAME=i_tree_coconutpalm
+VALUE=2
+// TYPE=t_tree
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Coconut Palm
+
+ON=@Create
+FRUIT=i_fruit_coconut
+
+[ITEMDEF 0c96]
+//date palm
+DEFNAME=i_tree_datepalm
+// TYPE=t_tree
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Date Palm
+
+ON=@Create
+FRUIT=i_fruit_dates
+
+[ITEMDEF 0c97]
+//elephant ear plant
+DEFNAME=i_plant_elephantear
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Elephant Ear Plant
+
+[ITEMDEF 0c98]
+//fan plant
+DEFNAME=i_plant_fan
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Fan Plant
+
+[ITEMDEF 0c99]
+//small palm
+DEFNAME=i_plant_smallpalm
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Small Palm
+
+[ITEMDEF 0c9a]
+//small palm
+DEFNAME=i_plant_smallpalm_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Small Palm
+
+[ITEMDEF 0c9b]
+//small palm
+DEFNAME=i_plant_smallpalm_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Small Palm
+
+[ITEMDEF 0c9c]
+//small palm
+DEFNAME=i_plant_smallpalm_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Small Palm
+
+[ITEMDEF 0c9d]
+//small palm
+DEFNAME=i_plant_smallpalm_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Small Palm
+
+[ITEMDEF 0c9e]
+//tree
+DEFNAME=i_tree_ohii
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree
+
+[ITEMDEF 0c9f]
+//fern
+DEFNAME=i_plant_fern
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION= Fern
+
+[ITEMDEF 0ca0]
+//fern
+DEFNAME=i_plant_fern_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Fern
+
+[ITEMDEF 0ca1]
+//large fern
+DEFNAME=i_plant_fern_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Large Fern
+
+[ITEMDEF 0ca2]
+//fern
+DEFNAME=i_plant_fern_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Fern
+
+[ITEMDEF 0ca3]
+//fern
+DEFNAME=i_plant_fern_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Fern
+
+[ITEMDEF 0ca4]
+//fern
+DEFNAME=i_plant_fern_6
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Fern
+
+[ITEMDEF 0ca5]
+//pampas grass
+DEFNAME=i_plant_pampasgrass
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Pampas Grass
+
+[ITEMDEF 0ca6]
+//ponytail palm (too small for wood)
+DEFNAME=i_plant_pampasgrass_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Ponytail Palm
+
+[ITEMDEF 0ca7]
+//rushes
+DEFNAME=i_plant_rushes
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Rushes
+
+[ITEMDEF 0ca8]
+//small banana tree (too small for wood)
+DEFNAME=i_foliage_banana_small
+VALUE=1
+TYPE=t_foliage
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Banana Tree (Small)
+
+[ITEMDEF 0ca9]
+//snake plant
+DEFNAME=i_plant_snake
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Snake Plant
+
+[ITEMDEF 0caa]
+//banana tree
+DEFNAME=i_tree_banana
+VALUE=2
+TYPE=t_foliage
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Banana Tree
+
+ON=@Create
+FRUIT=i_fruit_banana
+
+[ITEMDEF 0cab]
+//banana tree
+DEFNAME=i_tree_banana_2
+VALUE=2
+TYPE=t_foliage
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Banana Tree
+
+ON=@Create
+FRUIT=i_fruit_banana
+
+[ITEMDEF 0cac]
+//grasses
+DEFNAME=i_plant_grasses
+VALUE=1
+TYPE=T_GRASS
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Grasses
+DUPELIST=0cad,0cae,0caf,0cb0,0cb1,0cb2,0cb3,0cb4,0cb5,0cb6,0cb9,0cba,0cbb,0cbc,0cbd
+
+[ITEMDEF 0cad]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cae]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0caf]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cb0]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cb1]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cb2]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cb3]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cb4]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cb5]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cb6]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cb7]
+//cattails
+DEFNAME=i_plant_cattails
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cattails
+TYPE=t_grass
+DUPELIST=0cb8
+
+[ITEMDEF 0cb8]
+//cattails
+DUPEITEM=0cb7
+
+[ITEMDEF 0cb9]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cba]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cbb]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cbc]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cbd]
+//grasses
+DUPEITEM=0cac
+
+[ITEMDEF 0cbe]
+//poppies
+DEFNAME=i_plant_poppies
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Poppies
+
+[ITEMDEF 0cbf]
+//poppies
+DEFNAME=i_plant_poppies_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Poppies
+
+[ITEMDEF 0cc0]
+//orfluer flowers
+DEFNAME=i_flower_orfluer_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Orfluer Flowers
+
+[ITEMDEF 0cc1]
+//orfluer flowers
+DEFNAME=i_flower_orfluer_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Orfluer Flowers
+
+[ITEMDEF 0cc3]
+//muck
+DEFNAME=i_flower_muck
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Muck
+TYPE=t_trap_active
+
+[ITEMDEF 0cc4]
+//pampas grass
+DEFNAME=i_plant_pampasgrass_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Pampas Grass
+
+[ITEMDEF 0cc5]
+//grasses
+DEFNAME=i_plant_grasses_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Grasses
+TYPE=t_grass
+
+[ITEMDEF 0cc6]
+//grasses
+DEFNAME=i_plant_grasses_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Grasses
+TYPE=t_grass
+
+[ITEMDEF 0cc7]
+//weed
+DEFNAME=i_plant_weed
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Weed
+
+[ITEMDEF 0cc8]
+//juniper bush
+DEFNAME=i_plant_juniper
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Juniper Bush
+
+[ITEMDEF 0cc9]
+//spider tree too small for wood yield
+DEFNAME=i_plant_spider
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Spider Tree
+
+[ITEMDEF 0cca]
+//tree small black branches, no foliage
+DEFNAME=i_tree_trunk
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree (Brown) (No Foliage)
+
+[ITEMDEF 0ccb]
+//tree gray (dead?) no foliage
+DEFNAME=i_tree_trunk_2
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree (Dark Brown) (No Foliage)
+
+[ITEMDEF 0ccc]
+//tree brown, no foliage
+DEFNAME=i_tree_trunk_3
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree (Light Brown) (No Foliage)
+
+[ITEMDEF 0ccd]
+//tree
+DEFNAME=i_tree_4
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree (Gray) (No Foliage)
+
+[ITEMDEF 0cce]
+//leaves
+DEFNAME=i_foliage_4
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves
+
+[ITEMDEF 0ccf]
+//leaves
+DEFNAME=i_foliage_4fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves
+
+[ITEMDEF 0cd0]
+//tree warm brown, no foliage
+DEFNAME=i_tree_3
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree - (Warm Brown)
+
+[ITEMDEF 0cd1]
+//leaves
+DEFNAME=i_foliage_3
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves
+
+[ITEMDEF 0cd2]
+//leaves
+DEFNAME=i_foliage_3_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves
+
+[ITEMDEF 0cd3]
+//tree
+DEFNAME=i_tree_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree
+TYPE=t_tree
+
+[ITEMDEF 0cd4]
+//leaves
+DEFNAME=i_foliage_5
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves
+
+[ITEMDEF 0cd5]
+//leaves
+DEFNAME=i_foliage_5_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves
+
+[ITEMDEF 0cd6]
+//cedar tree
+DEFNAME=i_tree_cedar
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cedar Tree
+
+[ITEMDEF 0cd7]
+//cedar needles
+DEFNAME=i_foliage_cedar
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cedar Needles
+
+[ITEMDEF 0cd8]
+//cedar tree
+DEFNAME=i_tree_cedar2
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cedar Tree
+
+[ITEMDEF 0cd9]
+//cedar needles
+DEFNAME=i_foliage_cedar2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cedar Needles
+TYPE=t_tree
+
+[ITEMDEF 0cda]
+//oak tree
+DEFNAME=i_tree_oak
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Oak Tree
+
+[ITEMDEF 0cdb]
+//oak leaves
+DEFNAME=i_foliage_oak
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Oak Leaves
+TYPE=t_tree
+
+[ITEMDEF 0cdc]
+//oak leaves
+DEFNAME=i_foliage_oak_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Oak Leaves
+TYPE=t_tree
+
+[ITEMDEF 0cdd]
+//oak tree
+DEFNAME=i_tree_oak2
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Oak Tree
+
+[ITEMDEF 0cde]
+//oak leaves
+DEFNAME=i_foliage_oak2
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Oak Leaves
+TYPE=t_tree
+
+[ITEMDEF 0cdf]
+//oak leaves
+DEFNAME=i_foliage_oak2_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Oak Leaves
+TYPE=t_tree
+
+[ITEMDEF 0ce0]
+//walnut tree
+DEFNAME=i_tree_walnut
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Walnut Tree
+
+[ITEMDEF 0ce1]
+//walnut leaves
+DEFNAME=i_foliage_walnut
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Walnut Leaves
+
+[ITEMDEF 0ce2]
+//walnut leaves
+DEFNAME=i_foliage_walnut_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Walnut Leaves
+
+[ITEMDEF 0ce3]
+//walnut tree
+DEFNAME=i_tree_walnut2
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Walnut Tree
+
+[ITEMDEF 0ce4]
+//walnut leaves
+DEFNAME=i_foliage_walnut2
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Walnut Leaves
+
+[ITEMDEF 0ce5]
+//walnut leaves
+DEFNAME=i_foliage_walnut2_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Walnut Leaves
+
+[ITEMDEF 0ce6]
+//willow tree
+DEFNAME=i_tree_trunk_willow
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Willow Tree
+
+[ITEMDEF 0ce7]
+//willow leaves
+DEFNAME=i_tree_leaves_willow
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Willow Leaves
+
+[ITEMDEF 0ce8]
+//willow leaves
+DEFNAME=i_tree_leaves_willow_2
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Willow Leaves
+
+[ITEMDEF 0ce9]
+//sapling too small for wood yield
+DEFNAME=i_tree_sapling
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Sapling
+
+[ITEMDEF 0cea]
+//sapling
+DEFNAME=i_tree_sapling_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Sapling
+
+[ITEMDEF 0ceb]
+//vines
+DEFNAME=i_crop_vines_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Vines
+
+[ITEMDEF 0cec]
+//vines
+DUPEITEM=0ceb
+
+[ITEMDEF 0ced]
+//vines
+DUPEITEM=0ceb
+
+[ITEMDEF 0cee]
+//vines
+DUPEITEM=0ceb
+
+[ITEMDEF 0cef]
+//vines
+DUPEITEM=0ceb
+
+[ITEMDEF 0cf0]
+//vines
+DUPEITEM=0ceb
+
+[ITEMDEF 0cf1]
+//vines
+DUPEITEM=0ceb
+
+[ITEMDEF 0cf2]
+//vines
+DUPEITEM=0ceb
+
+[ITEMDEF 0cf3]
+//fallen log
+DEFNAME=i_log_fallen
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Fallen Log
+
+[ITEMDEF 0cf4]
+//fallen log
+DUPEITEM=0cf3
+
+[ITEMDEF 0cf5]
+//fallen log
+DUPEITEM=0cf3
+
+[ITEMDEF 0cf6]
+//fallen log
+DUPEITEM=0cf3
+
+[ITEMDEF 0cf7]
+//fallen log
+DUPEITEM=0cf3
+
+[ITEMDEF 0cf8]
+//cypress tree
+DEFNAME=i_tree_cyprus
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cyprus Tree
+
+[ITEMDEF 0cf9]
+//cypress leaves
+DEFNAME=i_foliage_cyprus
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cyprus Leaves
+
+[ITEMDEF 0cfa]
+//cypress leaves
+DEFNAME=i_foliage_cyprus_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Leaves
+
+[ITEMDEF 0cfb]
+//cypress tree
+DEFNAME=i_tree_cyprus2
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Tree
+
+[ITEMDEF 0cfc]
+//cypress leaves
+DEFNAME=i_foliage_cyprus2
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Leaves
+
+[ITEMDEF 0cfd]
+//cypress leaves
+DEFNAME=i_foliage_cyprus2_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Leaves
+
+[ITEMDEF 0cfe]
+//cypress tree
+DEFNAME=i_tree_cyprus3
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Tree
+
+[ITEMDEF 0cff]
+//cypress leaves
+DEFNAME=i_foliage_cyprus3
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Leaves
+
+[ITEMDEF 0d00]
+//cypress leaves
+DEFNAME=i_foliage_cyprus3_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Leaves
+
+[ITEMDEF 0d01]
+//cypress tree
+DEFNAME=i_tree_cyprus4
+TYPE=t_tree
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Tree
+
+[ITEMDEF 0d02]
+//cypress leaves
+DEFNAME=i_foliage_cyprus4
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Leaves
+
+[ITEMDEF 0d03]
+//cypress leaves
+DEFNAME=i_foliage_cyprus4_fall
+TYPE=t_foliage
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Cypress Leaves
+
+[ITEMDEF 0d04]
+//water plants
+DEFNAME=i_plant_water
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Water Plants
+
+[ITEMDEF 0d05]
+//reeds
+DEFNAME=i_plant_reed
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Reeds
+
+[ITEMDEF 0d06]
+//lilypad
+DEFNAME=i_plant_lilypad
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lilypad
+
+[ITEMDEF 0d07]
+//lilypad
+DEFNAME=i_plant_lilypad_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lilypad
+
+[ITEMDEF 0d08]
+//lilypad
+DEFNAME=i_plant_lilypad_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lilypad
+
+[ITEMDEF 0d09]
+//lilypad
+DEFNAME=i_plant_lilypad_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lilypad
+
+[ITEMDEF 0d0a]
+//lilypad
+DEFNAME=i_plant_lilypad_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lilypad
+
+[ITEMDEF 0d0b]
+//lilypads
+DEFNAME=i_plant_lilypad_6
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lilypads
+
+[ITEMDEF 0d0c]
+//mushrooms
+DEFNAME=i_crop_mushroom
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Mushrooms
+DESCRIPTION=@
+DUPELIST=0d0d,0d0e,0d0f,0d10,0d11,0d12,0d13,0d14,0d15,0d16,0d17,0d18,0d19
+
+[ITEMDEF 0d0d]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d0e]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d0f]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d10]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d11]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d12]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d13]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d14]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d15]
+//mushrooms
+DUPEITEM=0d0c
+
+[ITEMDEF 0d16]
+//mushroom
+DUPEITEM=0d0c
+
+[ITEMDEF 0d17]
+//mushroom
+DUPEITEM=0d0c
+
+[ITEMDEF 0d18]
+//mushroom
+DUPEITEM=0d0c
+
+[ITEMDEF 0d19]
+//mushroom
+DUPEITEM=0d0c
+
+[ITEMDEF 0d1a]
+//grapes
+DUPEITEM=09d1
+
+[ITEMDEF 0d1b]
+//grapevines
+DEFNAME=i_crop_grapevine
+TYPE=t_crops
+TDATA1=i_crop_grapevine
+TDATA2=0
+TDATA3=i_fruit_grapes
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Grapevines
+DUPELIST=0d1c,0d1d,0d1e,0d1f,0d20,0d21,0d22,0d23,0d24
+
+[ITEMDEF 0d1c]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d1d]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d1e]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d1f]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d20]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d21]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d22]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d23]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d24]
+//grapevines
+DUPEITEM=0d1b
+
+[ITEMDEF 0d25]
+//cactus
+DEFNAME=i_plant_cactus
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 1
+
+[ITEMDEF 0d26]
+//cactus
+DEFNAME=i_plant_cactus_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 2
+
+[ITEMDEF 0d27]
+//cactus
+DEFNAME=i_plant_cactus_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 3
+
+[ITEMDEF 0d28]
+//cactus
+DEFNAME=i_plant_cactus_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 4
+TYPE=t_trap_active
+
+[ITEMDEF 0d29]
+//flowers
+DEFNAME=i_crop_flower_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 4 (Flowers)
+
+[ITEMDEF 0d2a]
+//cactus
+DEFNAME=i_plant_cactus_5
+TYPE=t_trap_active
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 5
+
+[ITEMDEF 0d2b]
+//flowers
+DEFNAME=i_crop_flower_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 5 (Flowers)
+
+[ITEMDEF 0d2c]
+//cactus
+DEFNAME=i_plant_cactus_6
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 6
+
+[ITEMDEF 0d2d]
+//flowers
+DEFNAME=i_crop_flower_6
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 6 (Flowers)
+
+[ITEMDEF 0d2e]
+//cactus
+DEFNAME=i_plant_cactus_7
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 7
+
+[ITEMDEF 0d2f]
+//flowers
+DEFNAME=i_crop_flower_7
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Cactus 7 (Flowers)
+
+[ITEMDEF 0d30]
+//century plant
+DEFNAME=i_plant_century
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Century Plant
+
+[ITEMDEF 0d31]
+//century plant
+DEFNAME=i_plant_century_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Century Plant
+
+[ITEMDEF 0d32]
+//grasses
+DEFNAME=i_plant_grass
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Grasses
+TYPE=t_grass
+
+[ITEMDEF 0d33]
+//grasses
+DEFNAME=i_plant_grass_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Grasses
+TYPE=t_grass
+
+[ITEMDEF 0d34]
+//morning glories
+DEFNAME=i_flower_morningglory
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Morning Glories
+
+[ITEMDEF 0d35]
+//pipe cactus
+DEFNAME=i_plant_cactus_8
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Pipe Cactus
+
+[ITEMDEF 0d36]
+//flowers
+DEFNAME=i_crop_flower_8
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Flowers
+
+[ITEMDEF 0d37]
+//yucca
+DEFNAME=i_plant_yucca
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Yucca
+DUPELIST=0d38
+
+[ITEMDEF 0d38]
+//yucca
+DUPEITEM=0d37
+
+[ITEMDEF 0d39]
+//turnip
+DEFNAME=i_fruit_turnip
+VALUE=1
+TYPE=T_FRUIT
+TDATA1=i_crop_turnip1
+WEIGHT=1
+CATEGORY=Vegetation
+SUBSECTION=Fruits and Vegetables
+DESCRIPTION=Turnip
+DUPELIST=0d3a
+
+[ITEMDEF 0d3a]
+//turnip
+DUPEITEM=0d39
+
+[ITEMDEF 0d3f]
+//brambles
+DEFNAME=i_plant_bramble
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Brambles
+DUPELIST=0d40
+
+[ITEMDEF 0d41]
+//tree
+DEFNAME=i_tree_trunk_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree 01 (1/4)
+TYPE=t_tree
+
+[ITEMDEF 0d42]
+//tree
+DEFNAME=i_tree_trunk_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree 01 (2/4)
+TYPE=t_tree
+
+[ITEMDEF 0d43]
+//tree
+DEFNAME=i_tree_trunk_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree 01 (3/4)
+TYPE=t_tree
+
+[ITEMDEF 0d44]
+//tree
+DEFNAME=i_tree_trunk_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree 01 (4/4)
+TYPE=t_tree
+
+[ITEMDEF 0d45]
+//leaves
+DEFNAME=i_tree_leaves_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (01/15)
+
+[ITEMDEF 0d46]
+//leaves
+DEFNAME=i_tree_leaves_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (02/15)
+
+[ITEMDEF 0d47]
+//leaves
+DEFNAME=i_tree_leaves_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (03/15)
+
+[ITEMDEF 0d48]
+//leaves
+DEFNAME=i_tree_leaves_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (04/15)
+
+[ITEMDEF 0d49]
+//leaves
+DEFNAME=i_tree_leaves_part_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (05/15)
+
+[ITEMDEF 0d4a]
+//leaves
+DEFNAME=i_tree_leaves_part_6
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (06/15)
+
+[ITEMDEF 0d4b]
+//leaves
+DEFNAME=i_tree_leaves_part_7
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (07/15)
+
+[ITEMDEF 0d4c]
+//leaves
+DEFNAME=i_tree_leaves_part_8
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (08/15)
+
+[ITEMDEF 0d4d]
+//leaves
+DEFNAME=i_tree_leaves_part_9
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (09/15)
+
+[ITEMDEF 0d4e]
+//leaves
+DEFNAME=i_tree_leaves_part_10
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (10/15)
+
+[ITEMDEF 0d4f]
+//leaves
+DEFNAME=i_tree_leaves_part_11
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (11/15)
+
+[ITEMDEF 0d50]
+//leaves
+DEFNAME=i_tree_leaves_part_12
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (12/15)
+
+[ITEMDEF 0d51]
+//leaves
+DEFNAME=i_tree_leaves_part_13
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (13/15)
+
+[ITEMDEF 0d52]
+//leaves
+DEFNAME=i_tree_leaves_part_14
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (14/15)
+
+[ITEMDEF 0d53]
+//leaves
+DEFNAME=i_tree_leaves_part_15
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 01 (15/15)
+
+[ITEMDEF 0d54]
+//vines
+DEFNAME=i_vines_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 01 (01/03)
+
+[ITEMDEF 0d55]
+//vines
+DEFNAME=i_vines_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 01 (02/03)
+
+[ITEMDEF 0d56]
+//vines
+DEFNAME=i_vines_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 01 (03/03)
+
+[ITEMDEF 0d57]
+//tree pieces
+DEFNAME=i_tree_trunk_2_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 01 (01/05)
+TYPE=t_tree
+
+[ITEMDEF 0d58]
+//tree pieces
+DEFNAME=i_tree_trunk_2_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 01 (02/05)
+TYPE=t_tree
+
+[ITEMDEF 0d59]
+//tree pieces
+DEFNAME=i_tree_trunk_2_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 01 (03/05)
+TYPE=t_tree
+
+[ITEMDEF 0d5a]
+//tree pieces
+DEFNAME=i_tree_trunk_2_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 01 (04/05)
+TYPE=t_tree
+
+[ITEMDEF 0d5b]
+//tree pieces
+DEFNAME=i_tree_trunk_2_part_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 01 (05/05)
+TYPE=t_tree
+
+[ITEMDEF 0d5c]
+//leaves
+DEFNAME=i_tree_leaves_2_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (01/14)
+
+[ITEMDEF 0d5d]
+//leaves
+DEFNAME=i_tree_leaves_2_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (02/14)
+
+[ITEMDEF 0d5e]
+//leaves
+DEFNAME=i_tree_leaves_2_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (03/14)
+
+[ITEMDEF 0d5f]
+//leaves
+DEFNAME=i_tree_leaves_2_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (04/14)
+
+[ITEMDEF 0d60]
+//leaves
+DEFNAME=i_tree_leaves_2_part_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (05/14)
+
+[ITEMDEF 0d61]
+//leaves
+DEFNAME=i_tree_leaves_2_part_6
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (06/14)
+
+[ITEMDEF 0d62]
+//leaves
+DEFNAME=i_tree_leaves_2_part_7
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (07/14)
+
+[ITEMDEF 0d63]
+//leaves
+DEFNAME=i_tree_leaves_2_part_8
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (08/14)
+
+[ITEMDEF 0d64]
+//leaves
+DEFNAME=i_tree_leaves_2_part_9
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (09/14)
+
+[ITEMDEF 0d65]
+//leaves
+DEFNAME=i_tree_leaves_2_part_10
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (10/14)
+
+[ITEMDEF 0d66]
+//leaves
+DEFNAME=i_tree_leaves_2_part_11
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (11/14)
+
+[ITEMDEF 0d67]
+//leaves
+DEFNAME=i_tree_leaves_2_part_12
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (12/14)
+
+[ITEMDEF 0d68]
+//leaves
+DEFNAME=i_tree_leaves_2_part_13
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (13/14)
+
+[ITEMDEF 0d69]
+//leaves
+DEFNAME=i_tree_leaves_2_part_14
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 02 (14/14)
+
+[ITEMDEF 0d6a]
+//vines
+DEFNAME=i_vines_2_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 02 (01/04)
+
+[ITEMDEF 0d6b]
+//vines
+DEFNAME=i_vines_2_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 02 (02/04)
+
+[ITEMDEF 0d6c]
+//vines
+DEFNAME=i_vines_2_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 02 (03/04)
+
+[ITEMDEF 0d6d]
+//vines
+DEFNAME=i_vines_2_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 02 (04/04)
+
+[ITEMDEF 0d6e]
+//tree pieces
+DEFNAME=i_tree_trunk_3_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 02 (01/05)
+TYPE=t_tree
+
+[ITEMDEF 0d6f]
+//tree pieces
+DEFNAME=i_tree_trunk_3_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 02 (02/05)
+TYPE=t_tree
+
+[ITEMDEF 0d70]
+//tree pieces
+DEFNAME=i_tree_trunk_3_part_3
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 02 (03/05)
+TYPE=t_tree
+
+[ITEMDEF 0d71]
+//tree pieces
+DEFNAME=i_tree_trunk_3_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 02 (04/05)
+TYPE=t_tree
+
+[ITEMDEF 0d72]
+//tree pieces
+DEFNAME=i_tree_trunk_3_part_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Pieces 02 (05/05)
+TYPE=t_tree
+
+[ITEMDEF 0d73]
+//leaves
+DEFNAME=i_tree_leaves_3_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (01/13)
+
+[ITEMDEF 0d74]
+//leaves
+DEFNAME=i_tree_leaves_3_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (02/13)
+
+[ITEMDEF 0d75]
+//leaves
+DEFNAME=i_tree_leaves_3_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (03/13)
+
+[ITEMDEF 0d76]
+//leaves
+DEFNAME=i_tree_leaves_3_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (04/13)
+
+[ITEMDEF 0d77]
+//leaves
+DEFNAME=i_tree_leaves_3_part_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (05/13)
+
+[ITEMDEF 0d78]
+//leaves
+DEFNAME=i_tree_leaves_3_part_6
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (06/13)
+
+[ITEMDEF 0d79]
+//leaves
+DEFNAME=i_tree_leaves_3_part_7
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (07/13)
+
+[ITEMDEF 0d7a]
+//leaves
+DEFNAME=i_tree_leaves_3_part_8
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (08/13)
+
+[ITEMDEF 0d7b]
+//leaves
+DEFNAME=i_tree_leaves_3_part_9
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (09/13)
+
+[ITEMDEF 0d7c]
+//leaves
+DEFNAME=i_tree_leaves_3_part_10
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (10/13)
+
+[ITEMDEF 0d7d]
+//leaves
+DEFNAME=i_tree_leaves_3_part_11
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (11/13)
+
+[ITEMDEF 0d7e]
+//leaves
+DEFNAME=i_tree_leaves_3_part_12
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (12/13)
+
+[ITEMDEF 0d7f]
+//leaves
+DEFNAME=i_tree_leaves_3_part_13
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 03 (13/13)
+
+[ITEMDEF 0d80]
+//vines
+DEFNAME=i_vines_3_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 03 (01/04)
+
+[ITEMDEF 0d81]
+//vines
+DEFNAME=i_vines_3_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 03 (02/04)
+
+[ITEMDEF 0d82]
+//vines
+DEFNAME=i_vines_3_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 03 (03/04)
+
+[ITEMDEF 0d83]
+//vines
+DEFNAME=i_vines_3_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 03 (04/04)
+
+[ITEMDEF 0d84]
+//tree
+DEFNAME=i_tree_trunk_4_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree 02 (01/03)
+TYPE=t_tree
+
+[ITEMDEF 0d85]
+//tree
+DEFNAME=i_tree_trunk_4_part_2
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree 02 (02/03)
+
+[ITEMDEF 0d86]
+//tree
+DEFNAME=i_tree_trunk_4_part_3
+VALUE=1
+TYPE=t_tree
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree 02 (03/03)
+
+[ITEMDEF 0d87]
+//leaves
+DEFNAME=i_tree_leaves_4_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (01/10)
+
+[ITEMDEF 0d88]
+//leaves
+DEFNAME=i_tree_leaves_4_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (02/10)
+
+[ITEMDEF 0d89]
+//leaves
+DEFNAME=i_tree_leaves_4_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (03/10)
+
+[ITEMDEF 0d8a]
+//leaves
+DEFNAME=i_tree_leaves_4_part_4
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (04/10)
+
+[ITEMDEF 0d8b]
+//leaves
+DEFNAME=i_tree_leaves_4_part_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (05/10)
+
+[ITEMDEF 0d8c]
+//leaves
+DEFNAME=i_tree_leaves_4_part_6
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (06/10)
+
+[ITEMDEF 0d8d]
+//leaves
+DEFNAME=i_tree_leaves_4_part_7
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (07/10)
+
+[ITEMDEF 0d8e]
+//leaves
+DEFNAME=i_tree_leaves_4_part_8
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (08/10)
+
+[ITEMDEF 0d8f]
+//leaves
+DEFNAME=i_tree_leaves_4_part_9
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (09/10)
+
+[ITEMDEF 0d90]
+//leaves
+DEFNAME=i_tree_leaves_4_part_10
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Leaves 04 (10/10)
+
+[ITEMDEF 0d91]
+//vines
+DEFNAME=i_vines_4_part_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 04 (01/03)
+
+[ITEMDEF 0d92]
+//vines
+DEFNAME=i_vines_4_part_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 04 (02/03)
+
+[ITEMDEF 0d93]
+//vines
+DEFNAME=i_vines_4_part_3
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Vines 04 (03/03)
+
+[ITEMDEF 0d94]
+//apple tree
+DEFNAME=i_tree_trunk_apple_1_1
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Apple Tree
+
+[ITEMDEF 0d95]
+//leaves
+DEFNAME=i_tree_leaves_apple_1_1
+VALUE=1
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Apple Tree Foliage
+
+[ITEMDEF 0d96]
+//apple tree foliage
+DEFNAME=i_tree_leaves_apple_1_2
+VALUE=1
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Apple Tree Foliage
+
+ON=@Create
+FRUIT=i_fruit_apple
+
+[ITEMDEF 0d97]
+//fall leaves
+DEFNAME=i_tree_leaves_apple_1_3
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Apple Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_APPLE
+
+[ITEMDEF 0d98]
+//apple tree foliage
+DEFNAME=i_tree_trunk_apple_1_4
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Apple Tree Foliage
+
+[ITEMDEF 0d99]
+//leaves
+DEFNAME=i_tree_leaves_apple_2_1
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Apple Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_APPLE
+
+[ITEMDEF 0d9a]
+//apple tree foliage
+DEFNAME=i_tree_leaves_apple_2_2
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Apple Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_APPLE
+
+[ITEMDEF 0d9b]
+//fall leaves
+DEFNAME=i_tree_leaves_apple_2_3
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Apple Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_APPLE
+
+[ITEMDEF 0d9c]
+//peach tree
+DEFNAME=i_tree_trunk_peach_1_1
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Peach Tree
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0d9d]
+//leaves
+DEFNAME=i_tree_leaves_peach_1_1
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Peach Tree Leaves
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0d9e]
+//peach tree foliage
+DEFNAME=i_tree_leaves_peach_1_2
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Peach Tree Leaves
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0d9f]
+//fall leaves
+DEFNAME=i_tree_leaves_peach_1_3
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Peach Tree Leaves
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0da0]
+//peach tree foliage
+DEFNAME=i_tree_trunk_peach_2_1
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Peach Tree Leaves
+
+[ITEMDEF 0da1]
+//leaves
+DEFNAME=i_tree_leaves_peach_2_1
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Peach Tree Leaves
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0da2]
+//peach tree foliage
+DEFNAME=i_tree_leaves_peach_2_2
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Peach Tree Leaves
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0da3]
+//fall leaves
+DEFNAME=i_tree_leaves_peach_2_3
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Peach Tree Leaves
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0da4]
+//pear tree too small to yield wood
+DEFNAME=i_tree_trunk_pear_1_1
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Pear Tree
+
+[ITEMDEF 0da5]
+//leaves
+DEFNAME=i_tree_leaves_pear_1_1
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Pear Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0da6]
+//pear tree foliage
+DEFNAME=i_tree_leaves_pear_1_2
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Pear Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0da7]
+//fall leaves
+DEFNAME=i_tree_leaves_pear_1_3
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Pear Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0da8]
+//pear tree foliage
+DEFNAME=i_tree_trunk_pear_2_1
+VALUE=2
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Pear Tree Foliage
+
+[ITEMDEF 0da9]
+//leaves
+DEFNAME=i_tree_leaves_pear_2_1
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Pear Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0daa]
+//pear tree foliage
+DEFNAME=i_tree_leaves_pear_2_2
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Pear Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0dab]
+//fall leaves
+DEFNAME=i_tree_leaves_pear_2_3
+VALUE=2
+TYPE=T_FOLIAGE
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Pear Tree Foliage
+
+ON=@Create
+FRUIT=i_FRUIT_PEACH
+
+[ITEMDEF 0dac]
+//tree stump
+DEFNAME=i_tree_stump
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Stump
+
+[ITEMDEF 0dad]
+//tree stump
+DEFNAME=i_tree_stump_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Trees
+DESCRIPTION=Tree Stump
+
+[ITEMDEF 0db8]
+//hedge
+DEFNAME=i_plant_hedge
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Hedge
+
+[ITEMDEF 0db9]
+//hedge
+DEFNAME=i_plant_hedge_5
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Hedge
+
+[ITEMDEF 0dba]
+//seaweed
+DEFNAME=i_plant_seaweed
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Seaweed
+
+[ITEMDEF 0dbb]
+//seaweed
+DEFNAME=i_plant_seaweed_2
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Seaweed
+
+[ITEMDEF 0dbc]
+//lilly pad
+DEFNAME=i_plant_lilypad_7
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lily Pad
+
+[ITEMDEF 0dbd]
+//lilly pad
+DEFNAME=i_plant_lilypad_8
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lily Pad
+
+[ITEMDEF 0dbe]
+//lilly pads
+DEFNAME=i_plant_lilypad_9
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Lily Pads
+
+[ITEMDEF 0dc1]
+//water lilly
+DEFNAME=i_plant_lilypad_10
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Water Lily
+
+[ITEMDEF 0dc2]
+//water lilly
+DEFNAME=i_plant_lilypad_11
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Water Lily
+
+[ITEMDEF 0dc3]
+//water lilly
+DEFNAME=i_plant_lilypad_12
+VALUE=1
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Water Lily
+
+[ITEMDEF 0d40]
+//brambles
+DUPEITEM=0d3f
+
+[ITEMDEF 0dae]
+//wheat
+DEFNAME=i_crop_wheat2
+TYPE=t_crops
+TDATA1=i_crop_wheat1
+TDATA2=i_crop_wheat3
+DUPELIST=0daf
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Wheat
+
+[ITEMDEF 0daf]
+//wheat
+DUPEITEM=0dae
+
+[ITEMDEF 0db0]
+//bed
+DEFNAME=i_bed_31
+TYPE=T_BED
+TDATA1=0
+RESOURCES=30 I_BOARD, 1 i_bedroll, 10 I_NAILS
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed
+DUPELIST=0db1,0db2,0db3,0db4,0db5
+
+[ITEMDEF 0db1]
+//bed
+DUPEITEM=0db0
+
+[ITEMDEF 0db2]
+//bed
+DUPEITEM=0db0
+
+[ITEMDEF 0db3]
+//bed
+DUPEITEM=0db0
+
+[ITEMDEF 0db4]
+//bed
+DUPEITEM=0db0
+
+[ITEMDEF 0db5]
+//bed
+DUPEITEM=0db0
+
+[ITEMDEF 0dbf]
+//Fishing Pole
+DEFNAME=i_fishing_pole
+TYPE=T_FISH_POLE
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=Fisherman
+DESCRIPTION=Fishing Pole
+RESOURCES=5 i_cloth
+SKILLMAKE=CARPENTRY 68.4, TAILORING 40.0, t_carpentry
+DUPELIST=0dc0
+RESOURCES2=1 i_log,1 i_thread
+
+[ITEMDEF 0dc0]
+//fishing pole
+DUPEITEM=0dbf
+
+[ITEMDEF 0dc8]
+//fishing net
+DEFNAME=i_fishing_net
+RESOURCES=10 I_ROPE, 10 I_THREAD, 4 I_SHELL
+CATEGORY=Items by Professions
+SUBSECTION=Fisherman
+DESCRIPTION=Fishing Net
+
+[ITEMDEF 0dc9]
+//fishing net
+DEFNAME=i_fishing_net_2
+RESOURCES=10 I_ROPE, 10 I_THREAD, 4 I_SHELL
+CATEGORY=Items by Professions
+SUBSECTION=Fisherman
+DESCRIPTION=Fishing Net
+
+[ITEMDEF 0dca]
+//fishing net
+DEFNAME=i_fishing_net_3
+RESOURCES=10 I_ROPE, 10 I_THREAD, 4 I_SHELL
+CATEGORY=Items by Professions
+SUBSECTION=Fisherman
+DESCRIPTION=Fishing Net
+
+[ITEMDEF 0dcb]
+//fishing net
+DEFNAME=i_fishing_net_4
+RESOURCES=10 I_ROPE, 10 I_THREAD, 4 I_SHELL
+CATEGORY=Items by Professions
+SUBSECTION=Fisherman
+DESCRIPTION=Fishing Net
+DUPELIST=0dd0,0dd1,0dd2,0dd3,0dd4,0dd5
+
+[ITEMDEF 0dcc]
+//fishing weight
+DEFNAME=i_fishing_weight
+WEIGHT=1
+RESOURCES=1 i_ingot_iron
+CATEGORY=Items by Professions
+SUBSECTION=Fisherman
+DESCRIPTION=Fishing Weight
+DUPELIST=0dcd,0dce,0dcf
+
+[ITEMDEF 0dcd]
+//fishing weight
+DUPEITEM=0dcc
+
+[ITEMDEF 0dce]
+//fishing weight
+DUPEITEM=0dcc
+
+[ITEMDEF 0dcf]
+//fishing weight
+DUPEITEM=0dcc
+
+[ITEMDEF 0dd0]
+//fishing net
+DUPEITEM=0dcb
+
+[ITEMDEF 0dd1]
+//fishing net
+DUPEITEM=0dcb
+
+[ITEMDEF 0dd2]
+//fishing net
+DUPEITEM=0dcb
+
+[ITEMDEF 0dd3]
+//fishing net
+DUPEITEM=0dcb
+
+[ITEMDEF 0dd4]
+//fishing net
+DUPEITEM=0dcb
+
+[ITEMDEF 0dd5]
+//fishing net
+DUPEITEM=0dcb
+
+[ITEMDEF 0dd6]
+//Small Fish
+DEFNAME=i_fish_small
+TYPE=t_fish
+VALUE=2
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Fisherman
+DESCRIPTION=Small Fish
+DUPELIST=0dd7,0dd8,0dd9
+
+[ITEMDEF 0dd7]
+//small fish
+DUPEITEM=0dd6
+
+[ITEMDEF 0dd8]
+//small fish
+DUPEITEM=0dd6
+
+[ITEMDEF 0dd9]
+//small fish
+DUPEITEM=0dd6
+
+[ITEMDEF 0dda]
+//red moongate animated (full)
+DEFNAME=i_moongate_red
+RESOURCES=i_scroll_gate_travel
+TYPE=t_telepad
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Moongates
+DESCRIPTION=Red Moongate (Animated)
+DUPELIST=0ddb,0ddc,0ddd,0dde
+
+[ITEMDEF 0ddb]
+//red moongate frame of animation
+DUPEITEM=0dda
+
+[ITEMDEF 0ddc]
+//red moongate fast animated
+DUPEITEM=0dda
+
+[ITEMDEF 0ddd]
+//red moongate
+DUPEITEM=0dda
+
+[ITEMDEF 0dde]
+//red moongate
+DUPEITEM=0dda
+
+[ITEMDEF 0de1]
+//Kindling
+DEFNAME=i_kindling
+TYPE=T_KINDLING
+RESOURCES=1 I_LOG
+SKILLMAKE=BOWCRAFT 0.0
+REPLICATE=1
+WEIGHT=1
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Campfires
+DESCRIPTION=Kindling
+DUPELIST=0de2
+
+[ITEMDEF 0de2]
+//kindling
+DUPEITEM=0de1
+
+[ITEMDEF 0de3]
+//campfire
+DEFNAME=i_campfire
+TYPE=T_CAMPFIRE
+RESOURCES=i_kindling
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Campfires
+DESCRIPTION=Campfire
+DUPELIST=0de4,0de5,0de6,0de7,0de8
+
+[ITEMDEF 0de4]
+//campfire
+DUPEITEM=0de3
+
+[ITEMDEF 0de5]
+//campfire
+DUPEITEM=0de3
+
+[ITEMDEF 0de6]
+//campfire
+DUPEITEM=0de3
+
+[ITEMDEF 0de7]
+//campfire
+DUPEITEM=0de3
+
+[ITEMDEF 0de8]
+//campfire
+DUPEITEM=0de3
+
+[ITEMDEF 0de9]
+//embers
+DEFNAME=i_ember_lit
+TYPE=t_CAMPFIRE
+VALUE=2
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Campfires
+DESCRIPTION=Embers
+
+[ITEMDEF 0dea]
+//burned wood
+DEFNAME=i_ember
+TYPE=t_garbage
+RESOURCES=1 I_KINDLING
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Campfires
+DESCRIPTION=Burned Wood
+
+[ITEMDEF 0def]
+//raw cotton, pile of
+DUPEITEM=0df9
+
+[ITEMDEF 0df0]
+//Black Staff
+//Using fencing type below
+DEFNAME=i_staff_black
+TYPE=T_WEAPON_MACE_STAFF
+FLIP=1
+DAM=8,33
+//SPEED=35
+SKILL=Macefighting
+REQSTR=35
+TWOHANDS=Y
+WEIGHT=6
+CATEGORY=Provisions - Weapons
+SUBSECTION=Staves
+DESCRIPTION=Black Staff
+DUPELIST=0df1
+SKILLMAKE=CARPENTRY 50.0, t_carpentry
+RESOURCES=8 i_log
+RESOURCES2=1 i_log
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 0df1]
+//black staff
+DUPEITEM=0df0
+
+[ITEMDEF 0df2]
+//wand
+DEFNAME=i_wand_1
+RESOURCES=2 i_ingot_silver, 2 i_ingot_gold, 1 I_GEM_DIAMOND
+TYPE=T_WAND
+DAM=2,6
+//SPEED=35
+REQSTR=1
+TWOHANDS=N
+VALUE={16 24}
+WEIGHT=5
+CATEGORY=Provisions - Weapons
+SUBSECTION=Wands
+DESCRIPTION=Wand
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 0df3]
+//wand
+DEFNAME=i_wand_2
+RESOURCES=2 i_ingot_silver, 2 i_ingot_gold, 1 I_GEM_DIAMOND
+TYPE=T_WAND
+DAM=2,6
+//SPEED=35
+REQSTR=1
+TWOHANDS=N
+VALUE={16 24}
+WEIGHT=5
+CATEGORY=Provisions - Weapons
+SUBSECTION=Wands
+DESCRIPTION=Wand
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 0df4]
+//wand
+DEFNAME=i_wand_3
+RESOURCES=1 I_LOG, 1 I_GEM_DIAMOND
+TYPE=T_WAND
+DAM=2,6
+//SPEED=35
+REQSTR=1
+TWOHANDS=N
+VALUE={16 24}
+WEIGHT=5
+CATEGORY=Provisions - Weapons
+SUBSECTION=Wands
+DESCRIPTION=Wand
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 0df5]
+//wand
+DEFNAME=i_wand_4
+RESOURCES=1 I_LOG, 1 I_GEM_DIAMOND
+TYPE=T_WAND
+DAM=2,6
+REQSTR=1
+TWOHANDS=N
+VALUE={16 24}
+WEIGHT=5
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Wands
+DESCRIPTION=Wand
+
+ON=@Create
+HITPOINTS={31 70}
+
+[EOF]

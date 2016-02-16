@@ -1,0 +1,5255 @@
+//****************************************************************************
+//SPHERE by : Menasoft (c)1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, July 14, 2000
+//
+VERSION=0.54
+
+[ITEMDEF 01c3c]
+DEFNAME=i_casket_wood_2
+RESOURCES=32 i_BOARD, 2 i_NAILS
+WEIGHT=32
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Coffin
+DESCRIPTION=@
+DUPELIST=01c3d,01c3e,01c3f,01c40,01c41,01c42,01c43,01c44,01c45,01c46,01c47,01c48,01c49,01c4a,01c4b,01c4c,01c4d,01c4e,01c4f,01c50,01c51,01c52,01c53,01c54,01c55,01c56,01c57,01c58,01c59,01c5a,01c5b,01c5c,01c5d,01c5e,01c5f
+
+[ITEMDEF 01c3d]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c3e]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c3f]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c40]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c41]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c42]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c43]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c44]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c45]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c46]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c47]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c48]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c49]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c4a]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c4b]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c4c]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c4d]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c4e]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c4f]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c50]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c51]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c52]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c53]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c54]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c55]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c56]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c57]
+//coffin
+DUPEITEM=01c3c
+
+[ITEMDEF 01c58]
+//coffin lid
+DUPEITEM=01c3c
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c59]
+//coffin lid
+DUPEITEM=01c3c
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c5a]
+//coffin lid
+DUPEITEM=01c3c
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c5b]
+//coffin lid
+DUPEITEM=01c3c
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c5c]
+//coffin lid
+DUPEITEM=01c3c
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c5d]
+//coffin lid
+DUPEITEM=01c3c
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c5e]
+//coffin lid
+DUPEITEM=01c3c
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c5f]
+//coffin lid
+DUPEITEM=01c3c
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c60]
+DEFNAME=i_sarcophagus
+RESOURCES=42 i_stone_sand
+WEIGHT=42
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Sarcophagus
+DESCRIPTION=@
+DUPELIST=01c61,01c62,01c63,01c64,01c65,01c66,01c67,01c68,01c69,01c6a,01c6b,01c6c,01c6d,01c6e,01c6f,01c70,01c71,01c72,01c73,01c74,01c75,01c76,01c77,01c78,01c79,01c7a,01c7b,01c7c,01c7d,01c7e,01c7f,01c80,01c81,01c82,01c83,01c84,01c85,01c86,01c87,01c88,01c89,01c8a,01c8b,01c8c,01c8d,01c8e,01c8f,01c90,01c91,01c92,01c93,01c94,01c95,01c96,01c97,01c98,01c99,01c9a,01c9b,01c9c,01c9d,01c9e,01c9f,01ca0,01ca1,01ca2,01ca3,01ca4,01ca5,01ca6,01ca7,01ca8,01ca9,01caa,01cab,01cac,01cad,01cae,01caf,01cb0,01cb1,01cb2,01cb3,01cb4,01cb5,01cb6,01cb7,01cb8,01cb9,01cba,01cbb,01cbc,01cbd,01cbe,01cbf
+
+[ITEMDEF 01c61]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c62]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c63]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c64]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c65]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c66]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c67]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c68]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c69]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c6a]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c6b]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c6c]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c6d]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c6e]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c6f]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c70]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c71]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c72]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c73]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c74]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c75]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c76]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c77]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c78]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c79]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c7a]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c7b]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c7c]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c7d]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c7e]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c7f]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c80]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c81]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c82]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c83]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c84]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c85]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c86]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c87]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c88]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c89]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c8a]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c8b]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c8c]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c8d]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c8e]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c8f]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c90]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c91]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c92]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c93]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c94]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c95]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c96]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c97]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c98]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c99]
+//sarcophagus
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01c9a]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c9b]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c9c]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c9d]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c9e]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01c9f]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca0]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca1]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca2]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca3]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca4]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca5]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca6]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca7]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca8]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01ca9]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01caa]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cab]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cac]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cad]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01cae]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01caf]
+//sarcophagus lid
+DUPEITEM=01c60
+DESCRIPTION=@ Lid
+
+[ITEMDEF 01cb0]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb1]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb2]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb3]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb4]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb5]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb6]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb7]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb8]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cb9]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cba]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cbb]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cbc]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cbd]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cbe]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cbf]
+//sarcophagus
+DUPEITEM=01c60
+
+[ITEMDEF 01cc8]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cc9]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cca]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01ccb]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01ccc]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01ccd]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cce]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01ccf]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd0]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd1]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd2]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd3]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd4]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd5]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd6]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd7]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd8]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cd9]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cda]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cdb]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cdc]
+//blood
+DUPEITEM=01cc7
+
+[ITEMDEF 01cf2]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cf3]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cf4]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cf5]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cf6]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cf7]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cf8]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cf9]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cfa]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cfb]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cfc]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cfd]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cfe]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01cff]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d00]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d01]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d02]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d03]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d04]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d05]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d06]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d07]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d08]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d09]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d0a]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d0b]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d0c]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d0d]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d0e]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d0f]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d10]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d11]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d12]
+//blood
+DUPEITEM=01cf1
+
+[ITEMDEF 01d13]
+DEFNAME=i_casket_wood_2_with_body
+RESOURCES=32 i_BOARD, 2 i_NAILS, i_BODY_SHROUDED
+WEIGHT=32
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Body
+DESCRIPTION=@
+DUPELIST=01d14,01d15,01d16,01d17,01d18,01d19,01d1a,01d1b,01d1c,01d1d,01d1e,01d1f,01d20,01d21,01d22,01d23,01d24,01d25,01d26,01d27,01d28,01d29,01d2a,01d2b,01d2c,01d2d,01d2e,01d2f,01d30,01d31,01d32,01d33,01d34,01d35,01d36,01d37,01d38,01d39,01d3a,01d3b,01d3c,01d3d,01d3e,01d3f,01d40,01d41,01d42,01d43,01d44,01d45,01d46,01d47,01d48,01d49,01d4a,01d4b
+
+[ITEMDEF 01d14]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d15]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d16]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d17]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d18]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d19]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d1a]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d1b]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d1c]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d1d]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d1e]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d1f]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d20]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d21]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d22]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d23]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d24]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d25]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d26]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d27]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d28]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d29]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d2a]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d2b]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d2c]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d2d]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d2e]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d2f]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d30]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d31]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d32]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d33]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d34]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d35]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d36]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d37]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d38]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d39]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d3a]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d3b]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d3c]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d3d]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d3e]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d3f]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d40]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d41]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d42]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d43]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d44]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d45]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d46]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d47]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d48]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d49]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d4a]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d4b]
+//body
+DUPEITEM=01d13
+
+[ITEMDEF 01d4c]
+DEFNAME=i_casket_wood_2_with_skeleton
+RESOURCES=32 i_BOARD, 2 i_NAILS, i_SKELETON
+WEIGHT=32
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Skeletons
+DESCRIPTION=@
+DUPELIST=01d4d,01d4e,01d4f,01d50,01d51,01d52,01d53,01d54,01d55,01d56,01d57,01d58,01d59,01d5a,01d5b,01d5c,01d5d,01d5e,01d5f,01d60,01d61,01d62,01d63,01d64,01d65,01d66,01d67,01d68,01d69,01d6a,01d6b,01d6c,01d6d,01d6e,01d6f,01d70,01d71,01d72,01d73,01d74,01d75,01d76,01d77,01d78,01d79,01d7a,01d7b,01d7c,01d7d,01d7e,01d7f,01d80,01d81,01d82,01d83,01d84,01d85,01d86,01d87,01d88,01d89
+
+[ITEMDEF 01d4d]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d4e]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d4f]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d50]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d51]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d52]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d53]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d54]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d55]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d56]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d57]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d58]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d59]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d5a]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d5b]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d5c]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d5d]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d5e]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d5f]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d60]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d61]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d62]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d63]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d64]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d65]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d66]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d67]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d68]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d69]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d6a]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d6b]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d6c]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d6d]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d6e]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d6f]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d70]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d71]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d72]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d73]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d74]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d75]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d76]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d77]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d78]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d79]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d7a]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d7b]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d7c]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d7d]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d7e]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d7f]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d80]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d81]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d82]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d83]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d84]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d85]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d86]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d87]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d88]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d89]
+//skeleton
+DUPEITEM=01d4c
+
+[ITEMDEF 01d8a]
+DEFNAME=i_BODY_SHROUDED
+RESOURCES=7 i_CLOTH, i_corpse_blank
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Body in wrappings
+DESCRIPTION=@
+DUPELIST=01d8b,01d8c,01d8d
+
+[ITEMDEF 01d8b]
+//body
+DUPEITEM=01d8a
+
+[ITEMDEF 01d8c]
+//body
+DUPEITEM=01d8a
+
+[ITEMDEF 01d8d]
+//body
+DUPEITEM=01d8a
+
+[ITEMDEF 01d8e]
+DEFNAME=i_skeleton
+WEIGHT=18
+RESOURCES=i_bone_skull, i_bone_jaw, 16 i_BONE, i_bone_pelvis, i_bone_ribcage, 10 i_BONE SHARDS, i_bone_spine
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Skeletons
+DESCRIPTION=@
+DUPELIST=01d8f,01d90,01d91
+
+[ITEMDEF 01d8f]
+DEFNAME=i_skeleton_sw_part_2
+DUPEITEM=01d8e
+
+[ITEMDEF 01d90]
+DEFNAME=i_skeleton_se_part_1
+DUPEITEM=01d8e
+
+[ITEMDEF 01d91]
+DEFNAME=i_skeleton_se_part_2
+DUPEITEM=01d8e
+
+[ITEMDEF 01d92]
+DEFNAME=i_blood_drips
+TYPE=T_BLOOD
+//WEIGHT=.1
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Bloodstains on walls
+DESCRIPTION=Bloodstains
+DUPELIST=01d93,01d94,01d95,01d96
+
+[ITEMDEF 01d93]
+//blood
+DUPEITEM=01d92
+
+[ITEMDEF 01d94]
+//blood
+DUPEITEM=01d92
+
+[ITEMDEF 01d95]
+//blood
+DUPEITEM=01d92
+
+[ITEMDEF 01d96]
+//blood
+DUPEITEM=01d92
+
+[ITEMDEF 01d97]
+DEFNAME=i_ankh_sacrifice
+TYPE=t_light_lit
+TDATA4=i_ankh_sacrifice
+RESOURCES=10 i_rock_plain, 3 i_BLOOD
+WEIGHT=30
+CATEGORY=Miscellaneous
+SUBSECTION=Ankhs
+DESCRIPTION=Ankh of Sacrifice
+DUPELIST=01d98,01e5c,01e5d
+
+[ITEMDEF 01d98]
+//ank of sacrifice
+DUPEITEM=01d97
+
+[ITEMDEF 01d99]
+DEFNAME=i_TRAP_SPIKE_LARGE
+RESOURCES=20 i_ingot_iron, 2 i_BLOOD
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Spike Trap
+DUPELIST=01d9a,01d9b,01d9c,01d9d,01d9e
+
+[ITEMDEF 01d9a]
+//spike trap
+DUPEITEM=01d99
+
+[ITEMDEF 01d9b]
+//spike trap
+DUPEITEM=01d99
+
+[ITEMDEF 01d9c]
+//spike trap
+DUPEITEM=01d99
+
+[ITEMDEF 01d9d]
+//spike trap
+DUPEITEM=01d99
+
+[ITEMDEF 01d9e]
+//spike trap
+DUPEITEM=01d99
+
+[ITEMDEF 01da5]
+// table - Small rough wood table end - S
+DEFNAME=i_TABLE_WOOD_ROUGH_SMALL_END
+RESOURCES=16 i_BOARD, i_NAILS
+WEIGHT=16
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table
+DUPELIST=01da6,01da9,01daa
+
+[ITEMDEF 01da6]
+// table - Small rough wood table end - N
+DUPEITEM=01da5
+
+[ITEMDEF 01da7]
+// table - Small rough board table end - S
+DEFNAME=i_TABLE_BOARD_ROUGH_SMALL_END
+DUPELIST=01da8,01dab,01dac
+
+[ITEMDEF 01da8]
+// table - Small rough board table end - N
+DUPEITEM=01da7
+
+[ITEMDEF 01da9]
+// table - Small rough wood table end - E
+DUPEITEM=01da5
+
+[ITEMDEF 01daa]
+// table - Small rough wood table end - W
+DUPEITEM=01da5
+
+[ITEMDEF 01dab]
+// table - Small rough board table end - E
+DUPEITEM=01da7
+
+[ITEMDEF 01dac]
+// table - Small rough board table end - W
+DUPEITEM=01da7
+
+[ITEMDEF 01dad]
+//body
+DUPEITEM=01D9F
+
+[ITEMDEF 01dae]
+//head
+DUPEITEM=01DA0
+
+[ITEMDEF 01daf]
+//right arm
+DUPEITEM=01DA1
+
+[ITEMDEF 01db0]
+//left arm
+DUPEITEM=01DA2
+
+[ITEMDEF 01db1]
+//right leg
+DUPEITEM=01DA3
+
+[ITEMDEF 01db2]
+//left leg
+DUPEITEM=01DA4
+
+[ITEMDEF 01db3]
+DEFNAME=i_barrel_broken
+RESOURCES=16 i_BOARD, 2 i_BARREL_HOOP, I_BARREL
+WEIGHT=21
+//broken barrel
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Broken Barrel
+DUPELIST=01db4,01db5,01db6
+
+[ITEMDEF 01db4]
+//broken barrel
+DUPEITEM=01db3
+
+[ITEMDEF 01db5]
+//broken barrel
+DUPEITEM=01db3
+
+[ITEMDEF 01db6]
+//broken barrel
+DUPEITEM=01db3
+
+[ITEMDEF 01db7]
+//barrel hoops
+DEFNAME=i_barrel_hoop
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Barrel Hoops
+
+[ITEMDEF 01db8]
+//barrel lid
+DEFNAME=i_barrel_lid
+CATEGORY=Decoration - Furniture
+SUBSECTION=Broken Furniture
+DESCRIPTION=Barrel Lid
+WEIGHT=2
+
+[ITEMDEF 01db9]
+//leather cap
+DEFNAME=i_leather_cap
+TYPE=t_armor_leather
+FLIP=1
+SKILLMAKE=TAILORING 6.8, t_sewing_kit
+RESOURCES=2 i_hides_cut,1 i_thread
+ARMOR=13
+CATEGORY=Provisions - Armor
+SUBSECTION=Leather Armor
+DESCRIPTION=Leather Cap
+DUPELIST=01dba
+
+[ITEMDEF 01dba]
+//leather cap
+DUPEITEM=01db9
+
+[ITEMDEF 01dbb]
+// table - sandstone table end - S
+DEFNAME=i_table_sandstone_end
+TYPE=t_table
+RESOURCES=30 i_stone_sand
+WEIGHT=60
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Sandstone Table
+DUPELIST=01dbc,01dbe,01dbf
+
+[ITEMDEF 01dbc]
+// table - sandstone table end - N
+DUPEITEM=01dbb
+
+[ITEMDEF 01dbd]
+// table - sandstone table extention n-s
+DEFNAME=i_table_sandstone_ext
+DUPELIST=01dc0
+
+[ITEMDEF 01dbe]
+// table - sandstone table end - E
+DUPEITEM=01dbb
+
+[ITEMDEF 01dbf]
+// table - sandstone table end - W
+DUPEITEM=01dbb
+
+[ITEMDEF 01dc0]
+// table - sandstone table extention e-w
+DUPEITEM=01dbd
+
+[ITEMDEF 01dc1]
+// table - marble table end - S
+DEFNAME=i_table_marble_end
+TYPE=t_table
+RESOURCES=30 i_MARBLE
+WEIGHT=60
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Marble Table
+DUPELIST=01dc2,01dc4,01dc5
+
+[ITEMDEF 01dc2]
+// table - marble table end - N
+DUPEITEM=01dc1
+
+[ITEMDEF 01dc3]
+DEFNAME=i_table_marble_ext
+// table - marble table extention n-s
+DUPELIST=01dc6
+
+[ITEMDEF 01dc4]
+// table - marble table end - E
+DUPEITEM=01dc1
+
+[ITEMDEF 01dc5]
+// table - marble table end - W
+DUPEITEM=01dc1
+
+[ITEMDEF 01dc6]
+// table - marble table extention e-w
+DUPEITEM=01dc3
+
+[ITEMDEF 01dc7]
+// bench - Sandstone bench end - S
+DEFNAME=i_bench_sandstone_end
+DUPELIST=01dc8,01dca,01dcb
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=6 i_stone_sand
+WEIGHT=12
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Sandstone Bench
+
+[ITEMDEF 01dc8]
+// bench - Sandstone bench end - N
+DUPEITEM=01dc7
+
+[ITEMDEF 01dc9]
+// bench - Sandstone bench extention - n-s
+DEFNAME=i_bench_sandstone_ext
+DUPELIST=01dcc
+TYPE=t_chair
+
+[ITEMDEF 01dca]
+// bench - Sandstone bench end - E
+DUPEITEM=01dc7
+
+[ITEMDEF 01dcb]
+// bench - Sandstone bench end - W
+DUPEITEM=01dc7
+
+[ITEMDEF 01dcc]
+// bench - Sandstone bench extention - e-w
+DUPEITEM=01dc9
+
+[ITEMDEF 01dcd]
+// bench - Marble bench end - S
+DEFNAME=i_bench_marble_end
+DUPELIST=01dce,01dd0,01dd1
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=6 i_MARBLE
+WEIGHT=12
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Marble Bench
+
+[ITEMDEF 01dce]
+// bench - Marble bench end - N
+DUPEITEM=01dcd
+
+[ITEMDEF 01dcf]
+// bench - Marble bench ext - n-s
+DEFNAME=i_bench_marble_ext
+DUPELIST=01dd2
+TYPE=t_chair
+
+[ITEMDEF 01dd0]
+// bench - Marble bench end - E
+DUPEITEM=01dcd
+
+[ITEMDEF 01dd1]
+// bench - Marble bench end - W
+DUPEITEM=01dcd
+
+[ITEMDEF 01dd2]
+// bench - Marble bench ext - n-s
+// this is also n-s, can it be redeffed to use sandstone ID ??
+// DEFNAME=i_bench_marble_ext_ew
+// ID=i_BENCH_SANDSTONE_EXT
+// COLOR=00 // set color to match marble
+DUPEITEM=01dcf
+
+[ITEMDEF 01dd3]
+DEFNAME=i_rug_worn
+RESOURCES=2 i_CLOTH
+WEIGHT=2
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Rug 3
+DESCRIPTION=@
+DUPELIST=01dd4,01dd5,01dd6,01dd7,01dd8,01dd9,01dda,01ddb,01ddc,01ddd,01dde,01ddf,01de0,01de1,01de2,01de3,01de4,01de5,01de6,01de7,01de8,01de9,01dea,01deb,01dec,01ded,01dee
+
+[ITEMDEF 01dd4]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dd5]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dd6]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dd7]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dd8]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dd9]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dda]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01ddb]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01ddc]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01ddd]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dde]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01ddf]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de0]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de1]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de2]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de3]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de4]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de5]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de6]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de7]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de8]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01de9]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dea]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01deb]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dec]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01ded]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01dee]
+//rug
+DUPEITEM=01dd3
+
+[ITEMDEF 01def]
+//rug
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Rug 4
+DESCRIPTION=@
+DUPELIST=01df0,01df1,01df2,01df3,01df4,01df5,01df6,01df7,01df8,01df9,01dfa,01dfb,01dfc
+
+[ITEMDEF 01df0]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df1]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df2]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df3]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df4]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df5]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df6]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df7]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df8]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01df9]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01dfa]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01dfb]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01dfc]
+//rug
+DUPEITEM=01def
+
+[ITEMDEF 01dfe]
+//dirt
+DUPEITEM=01dfd
+
+[ITEMDEF 01dff]
+//dirt
+DUPEITEM=01dfd
+
+[ITEMDEF 01e00]
+//dirt
+DUPEITEM=01dfd
+
+[ITEMDEF 01e01]
+DEFNAME=i_mud
+RESOURCES=1 i_DIRT, i_WATER
+WEIGHT=1
+CATEGORY=Ground Tiles
+SUBSECTION=Mud and Footprints
+DESCRIPTION=Mud
+
+[ITEMDEF 01e02]
+//mud
+CATEGORY=Ground Tiles
+SUBSECTION=Mud and Footprints
+DESCRIPTION=Mud
+
+[ITEMDEF 01e03]
+//footprints
+CATEGORY=Ground Tiles
+SUBSECTION=Mud and Footprints
+DESCRIPTION=Footprints
+
+[ITEMDEF 01e04]
+//footprints
+CATEGORY=Ground Tiles
+SUBSECTION=Mud and Footprints
+DESCRIPTION=Footprints
+
+[ITEMDEF 01e05]
+//footprints
+CATEGORY=Ground Tiles
+SUBSECTION=Mud and Footprints
+DESCRIPTION=Footprints
+
+[ITEMDEF 01e06]
+//footprints
+CATEGORY=Ground Tiles
+SUBSECTION=Mud and Footprints
+DESCRIPTION=Footprints
+
+[ITEMDEF 01e07]
+//stain
+CATEGORY=Ground Tiles
+SUBSECTION=Stain
+DESCRIPTION=@
+DUPELIST=01e08,01e09,01e0a,01e0b,01e0c,01e0d,01e0e
+
+[ITEMDEF 01e08]
+//stain
+DUPEITEM=01e07
+
+[ITEMDEF 01e09]
+//stain
+DUPEITEM=01e07
+
+[ITEMDEF 01e0a]
+//stain
+DUPEITEM=01e07
+
+[ITEMDEF 01e0b]
+//stain
+DUPEITEM=01e07
+
+[ITEMDEF 01e0c]
+//stain
+DUPEITEM=01e07
+
+[ITEMDEF 01e0d]
+//stain
+DUPEITEM=01e07
+
+[ITEMDEF 01e0e]
+//stain
+DUPEITEM=01e07
+
+[ITEMDEF 01e0f]
+DEFNAME=i_PLANT_CACTUS_POTTED
+RESOURCES=i_POT, i_PLANT_CACTUS
+WEIGHT=8
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Cactuses
+DESCRIPTION=Cactus 1
+
+[ITEMDEF 01e10]
+DEFNAME=i_PLANT_CACTUS_POTTED_2
+RESOURCES=i_POT, i_PLANT_CACTUS
+WEIGHT=8
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Cactuses
+DESCRIPTION=Cactus 2
+
+[ITEMDEF 01e11]
+DEFNAME=i_PLANT_CACTUS_POTTED_3
+RESOURCES=i_POT, i_PLANT_CACTUS
+WEIGHT=8
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Cactuses
+DESCRIPTION=Cactus 3
+
+[ITEMDEF 01e12]
+DEFNAME=i_PLANT_CACTUS_POTTED_4
+RESOURCES=i_POT, i_PLANT_CACTUS
+WEIGHT=8
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Cactuses
+DESCRIPTION=Cactus 4
+
+[ITEMDEF 01e13]
+DEFNAME=i_PLANT_CACTUS_POTTED_5
+RESOURCES=i_POT, i_PLANT_CACTUS
+WEIGHT=8
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Cactuses
+DESCRIPTION=Cactus 5
+
+[ITEMDEF 01e14]
+DEFNAME=i_PLANT_CACTUS_POTTED_6
+RESOURCES=i_POT, i_PLANT_CACTUS
+WEIGHT=8
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Cactuses
+DESCRIPTION=Cactus 6
+
+[ITEMDEF 01e16]
+//raw fish, cut open facing NE
+DUPEITEM=01e15
+
+[ITEMDEF 01e18]
+//raw fish, cut open, minus head, facing NE
+DUPEITEM=01e17
+
+[ITEMDEF 01e1a]
+//fish head facing NE
+DUPEITEM=01e19
+
+[ITEMDEF 01e1c]
+DEFNAME=i_fish_cooked
+RESOURCES=1 I_fish_RAW
+//Fish (cooked) facing NW
+WEIGHT=1
+TYPE=T_FOOD
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fish (Cooked)
+DUPELIST=01e1d,01e1e,01e1f
+
+[ITEMDEF 01e1d]
+//cooked fish facing NE
+DUPEITEM=01e1c
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Fish (Cooked)
+
+[ITEMDEF 01e1e]
+DEFNAME=i_fish_cooked_small
+//small cooked fish
+DUPEITEM=01e1c
+
+[ITEMDEF 01e1f]
+DEFNAME=i_ham_slices
+//sliced ham
+DUPEITEM=01e1c
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Ham (Sliced)
+
+[ITEMDEF 01e20]
+DEFNAME=i_BOOK_OPEN_red
+RESOURCES=20 i_PAPER, i_THREAD, i_HIDE
+WEIGHT=2
+//red book, opened on the ground facing down
+TYPE=T_BOOK
+CATEGORY=Items by Professions
+SUBSECTION=Scribe
+DESCRIPTION=Red Book (Open and Face Down)
+
+[ITEMDEF 01e21]
+DEFNAME=i_BOOK_OPEN_two_brown
+RESOURCES=2 i_BOOK_OPEN
+WEIGHT=4
+//2 brown books, opened on the ground facing down
+CATEGORY=Items by Professions
+SUBSECTION=Scribe
+DESCRIPTION=Brown Books (Open and Face Down)
+
+[ITEMDEF 01e22]
+DEFNAME=i_BOOK_OPEN_two_red
+RESOURCES=2 i_BOOK_OPEN
+WEIGHT=4
+//2 red books opened facing up
+CATEGORY=Items by Professions
+SUBSECTION=Scribe
+DESCRIPTION=Red Books (Open and Face Up)
+
+[ITEMDEF 01e23]
+DEFNAME=i_BOOK_OPEN_two_blue
+RESOURCES=2 i_BOOK_OPEN
+WEIGHT=4
+//2 blue books opened facing up
+CATEGORY=Items by Professions
+SUBSECTION=Scribe
+DESCRIPTION=Blue Books (Open and Face Up)
+
+[ITEMDEF 01e24]
+DEFNAME=i_BOOK_OPEN_3_red
+RESOURCES=2 i_BOOK_OPEN
+WEIGHT=4
+//stack of several books
+CATEGORY=Items by Professions
+SUBSECTION=Scribe
+DESCRIPTION=Stack of Books
+
+[ITEMDEF 01e25]
+DEFNAME=i_BOOK_OPEN_two_green
+RESOURCES=6 i_BOOK_OPEN
+WEIGHT=12
+//another stack of several books
+CATEGORY=Items by Professions
+SUBSECTION=Scribe
+DESCRIPTION=Stack of Books
+
+[ITEMDEF 01e26]
+DEFNAME=i_oar_part_1
+RESOURCES=2 i_LOG
+WEIGHT=4
+CATEGORY=Ship Parts
+SUBSECTION=Oar
+DESCRIPTION=@
+DUPELIST=01e28
+
+[ITEMDEF 01e27]
+DEFNAME=i_oar_part_2
+RESOURCES=1 i_LOG, i_BOARD
+WEIGHT=3
+CATEGORY=Ship Parts
+SUBSECTION=Oar
+DESCRIPTION=@
+DUPELIST=01e29
+
+[ITEMDEF 01e28]
+//oar
+CATEGORY=Ship Parts
+SUBSECTION=Oar
+DESCRIPTION=@
+DUPEITEM=01E26
+
+[ITEMDEF 01e29]
+//oar
+CATEGORY=Ship Parts
+SUBSECTION=Oar
+DESCRIPTION=@
+DUPEITEM=01E27
+
+[ITEMDEF 01e2a]
+DEFNAME=i_OAR_DOUBLE
+CATEGORY=Ship Parts
+SUBSECTION=Oar
+DESCRIPTION=@s
+DUPELIST=01e2b
+
+[ITEMDEF 01e2b]
+//oars
+CATEGORY=Ship Parts
+SUBSECTION=Oar
+DESCRIPTION=@s
+DUPEITEM=01E2A
+
+[ITEMDEF 01e2c]
+DEFNAME=i_pickpocket_dip
+TYPE=T_TRAIN_PICKPOCKET
+SKILLMAKE=CARPENTRY 80.0, TAILORING 60.0, t_sewing_kit, t_carpentry
+RESOURCES=65 i_log,65 i_cloth
+RESOURCES3=1 i_TRAINING_DUMMY, 10 i_BELL, 2 i_LOG, i_ROPE, i_shirt_plain, i_pants_short, i_CAP
+//WEIGHT=60
+CATEGORY=Items by Professions
+SUBSECTION=Thief
+DESCRIPTION=Pickpocket Dip
+DUPELIST=01e2d,01ec0,01ec1,01ec2,01ec3,01ec4,01ec5
+
+[ITEMDEF 01e2d]
+//pickpocket dip
+DUPEITEM=01e2c
+CATEGORY=Items by Professions
+SUBSECTION=Thief
+DESCRIPTION=Pickpocket Dip
+
+[ITEMDEF 01e2e]
+//dartboard facing SW
+DEFNAME=i_dartboard
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Dartboard
+RESOURCES=5 i_log
+SKILLMAKE=CARPENTRY 15.7, t_carpentry
+DUPELIST=01e2f
+RESOURCES2=3 i_board,1 i_cloth
+
+[ITEMDEF 01e2f]
+//dartboard facing SE
+DUPEITEM=01e2e
+
+[ITEMDEF 01e30]
+DEFNAME=i_dartboard_axe
+RESOURCES=1 i_DARTBOARD, i_axe
+WEIGHT=2
+//TYPE=T_GAME_BOARD
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Dartboard (Axe)
+DUPELIST=01e31
+
+[ITEMDEF 01e31]
+//dartboard w/axe facing SW
+DUPEITEM=01e30
+
+[ITEMDEF 01e32]
+DEFNAME=i_dartboard_knives
+RESOURCES=1 i_DARTBOARD, 3 i_DAGGER
+WEIGHT=5
+//dartboard w/knives facing SE
+//TYPE=T_GAME_BOARD
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Dartboard (Knives)
+DUPELIST=01e33
+
+[ITEMDEF 01e33]
+//dartboard w/knives facing SW
+DUPEITEM=01e32
+
+[ITEMDEF 01e34]
+DEFNAME=i_scarecrow
+RESOURCES=4 i_LOG, 14 i_STRAW, i_ROPE, i_hat_straw
+WEIGHT=23
+CATEGORY=Items by Professions
+SUBSECTION=Farmer
+DESCRIPTION=Scarecrow
+DUPELIST=01e35
+
+[ITEMDEF 01e35]
+//scarecrow
+DUPEITEM=01e34
+
+[ITEMDEF 01e36]
+DEFNAME=i_RUG_BEARSKIN_1
+RESOURCES3=2 I_CORPSE_BEAR, 5 i_THREAD, 4 i_CANVAS
+WEIGHT=20
+//bearskin rug brown
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Bearskin Carpet
+DESCRIPTION=@
+DUPELIST=01e37,01e38,01e39,01e3a,01e3b,01e3c,01e3d,01e3e,01e40,01e41,01e42,01e43,01e44,01e45,01e46,01e47,01e48
+
+[ITEMDEF 01e37]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e38]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e39]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e3a]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e3b]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e3c]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e3d]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e3e]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e40]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e41]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e42]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e43]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e44]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e45]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e46]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e47]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e48]
+//bearskin rug
+DUPEITEM=01e36
+
+[ITEMDEF 01e49]
+DEFNAME=i_RUG_BEARSKIN_2
+RESOURCES3=2 I_CORPSE_BEAR, 5 i_THREAD, 4 i_CANVAS
+WEIGHT=20
+//bearskin rug white
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Polar Bear Rug
+DESCRIPTION=@
+DUPELIST=01e4a,01e4b,01e4c,01e4d,01e4e,01e4f,01e50,01e51,01e53,01e54,01e55,01e56,01e57,01e58,01e59,01e5a,01e5b
+
+[ITEMDEF 01e4a]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e4b]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e4c]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e4d]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e4e]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e4f]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e50]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e51]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e53]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e54]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e55]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e56]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e57]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e58]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e59]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e5a]
+//bearskin rug
+DUPEITEM=01e49
+
+[ITEMDEF 01e5b]
+//bearskin
+DUPEITEM=01e49
+
+[ITEMDEF 01e5c]
+DEFNAME=i_ankh_sacrifice_2
+DUPEITEM=01d97
+
+[ITEMDEF 01e5d]
+DUPEITEM=01d97
+
+[ITEMDEF 01e5e]
+DEFNAME=i_bulletin_board
+TYPE=T_BBOARD
+TDATA2=0866
+DUPELIST=01e5f
+
+RESOURCES=20 i_BOARD, 4 i_CLOTH, i_NAILS, i_PAPER, i_FEATHER, i_INK_POT
+SKILLMAKE=CARPENTRY 90.0, t_carpentry
+
+CATEGORY=Miscellaneous
+SUBSECTION=Bulletin Board
+DESCRIPTION=@
+
+[ITEMDEF 01e5f]
+DEFNAME=i_bulletin_board_2
+DUPEITEM=01e5e
+
+[ITEMDEF 01e60]
+DEFNAME=i_trophy_bearhead
+WEIGHT=3
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Trophies
+DESCRIPTION=Bear
+DUPELIST=01e67
+RESOURCES=15 i_log,10 i_hides_cut
+SKILLMAKE=CARPENTRY 72.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+
+[ITEMDEF 01e61]
+DEFNAME=i_trophy_deerhead
+RESOURCES=15 i_log,10 i_hides_cut
+WEIGHT=3
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Trophies
+DESCRIPTION=Deer
+DUPELIST=01e68
+SKILLMAKE=CARPENTRY 72.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+RESOURCES2=1 i_corpse_deer,5 i_board,1 i_nails,1 i_wool
+
+[ITEMDEF 01e62]
+DEFNAME=i_trophy_fish
+RESOURCES=15 i_log,10 i_hides_cut
+WEIGHT=3
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Trophies
+DESCRIPTION=Fish
+DUPELIST=01e69
+SKILLMAKE=CARPENTRY 72.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+RESOURCES2=1 i_fish_big_1,5 i_board,1 i_nails,1 i_wool
+
+[ITEMDEF 01e63]
+DEFNAME=i_trophy_gorillahead
+RESOURCES=15 i_log,10 i_hides_cut
+WEIGHT=3
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Trophies
+DESCRIPTION=Gorilla
+DUPELIST=01e6a
+SKILLMAKE=CARPENTRY 72.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+
+[ITEMDEF 01e64]
+DEFNAME=i_trophy_orchead
+RESOURCES=15 i_log,10 i_hides_cut
+WEIGHT=3
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Trophies
+DESCRIPTION=Orc
+DUPELIST=01e6b
+SKILLMAKE=CARPENTRY 72.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+RESOURCES2=1 i_corpse_orc,5 i_board,1 i_nails,1 i_wool
+
+[ITEMDEF 01e65]
+DEFNAME=i_trophy_polarbearhead
+RESOURCES=15 i_log,10 i_hides_cut
+WEIGHT=3
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Trophies
+DESCRIPTION=Polar Bear
+DUPELIST=01e6c
+SKILLMAKE=CARPENTRY 72.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+
+[ITEMDEF 01e66]
+DEFNAME=i_trophy_trollhead
+RESOURCES=15 i_log,10 i_hides_cut
+WEIGHT=3
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Trophies
+DESCRIPTION=Troll
+DUPELIST=01e6d
+SKILLMAKE=CARPENTRY 72.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+
+[ITEMDEF 01e67]
+DUPEITEM=01e60
+
+[ITEMDEF 01e68]
+DUPEITEM=01e61
+
+[ITEMDEF 01e69]
+DUPEITEM=01e62
+
+[ITEMDEF 01e6a]
+DUPEITEM=01e63
+
+[ITEMDEF 01e6b]
+DUPEITEM=01e64
+
+[ITEMDEF 01e6c]
+DUPEITEM=01e65
+
+[ITEMDEF 01e6d]
+DUPEITEM=01e66
+
+[ITEMDEF 01e6e]
+DEFNAME=i_board_unfinished
+RESOURCES=1 i_BOARD
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Board
+
+[ITEMDEF 01e6f]
+// chair - unfinished fancy wooden chair w/missing cushion - N
+DEFNAME=i_chair_wood_fancy_unfinished
+DUPELIST=01e78
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=2 i_LATHEWORK_UNFINISHED, i_BOARD_UNFINISHED, I_NAILS
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Unfinished Chair
+
+[ITEMDEF 01e70]
+DEFNAME=i_drawer_unfinished
+RESOURCES=2 i_BOARD_UNFINISHED
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Unfinished Drawer
+
+[ITEMDEF 01e71]
+DEFNAME=i_bureau_unfinished
+RESOURCES=3 i_BOARD_UNFINISHED, I_NAILS
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Unfinished Chest of Drawers
+
+[ITEMDEF 01e72]
+// table - upside down wood table corner - 1
+DEFNAME=i_table_unfinished
+RESOURCES=4 i_BOARD_UNFINISHED, i_TABLE_LEG_UNFINISHED, I_NAILS
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Unfinished Table
+DUPELIST=01e7b
+
+[ITEMDEF 01e73]
+// table - table legs for e-w table
+DEFNAME=i_table_leg_unfinished
+RESOURCES=3 i_BOARD_UNFINISHED
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Table Legs
+DUPELIST=01e7c
+
+[ITEMDEF 01e74]
+// table - single table leg - laying down e-w
+// decoration
+DEFNAME=i_table_leg_unfinished_2
+RESOURCES=1 i_BOARD_UNFINISHED
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Table Leg
+DUPELIST=01e7d
+
+[ITEMDEF 01e75]
+// table - solid table leg end, pair leaning on each other
+DEFNAME=i_table_leg_unfinished_3
+RESOURCES=4 i_BOARD_UNFINISHED
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Table Legs
+
+[ITEMDEF 01e76]
+DEFNAME=i_bookcase_unfinished
+RESOURCES=8 i_BOARD_UNFINISHED
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Unfinished Shelves
+
+[ITEMDEF 01e77]
+DEFNAME=i_board_unfinished_2
+RESOURCES=1 i_BOARD
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Board
+
+[ITEMDEF 01e78]
+// chair - unfinished fancy wooden chair w/missing cushion - W
+DUPEITEM=01e6f
+
+[ITEMDEF 01e79]
+DEFNAME=i_drawer_unfinished_2
+RESOURCES=2 i_BOARD_UNFINISHED
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Unfinished Drawer
+
+[ITEMDEF 01e7a]
+DEFNAME=i_bureau_unfinished_2
+RESOURCES=3 i_BOARD_UNFINISHED, I_NAILS
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Unfinished Chest of Drawers
+
+[ITEMDEF 01e7b]
+// table - upside down wood table corner - 2
+DUPEITEM=01e72
+
+[ITEMDEF 01e7c]
+// table - table legs for n-s table
+// decoration
+DUPEITEM=01e73
+
+[ITEMDEF 01e7d]
+// table - single table leg - laying down n-s
+// decoration
+DUPEITEM=01e74
+
+[ITEMDEF 01e7e]
+DEFNAME=i_bookcase_unfinished_2
+RESOURCES=8 i_BOARD_UNFINISHED
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Unfinished Shelves
+
+[ITEMDEF 01e7f]
+// chair - rough board stool/nightstand
+DEFNAME=i_chair_stool_BOARD_ROUGH
+SKILLMAKE=CARPENTRY 10.0, t_carpentry
+RESOURCES=8 i_board
+
+[ITEMDEF 01e80]
+//small light wooden crate against NE wall
+// not the same as i_crate_small (diff wood)
+DEFNAME=i_crate_small_2
+TYPE=t_container
+TDATA2=044
+FLIP=1
+WEIGHT=3
+SKILLMAKE=CARPENTRY 10.0, t_carpentry
+RESOURCES=8 i_board
+RESOURCES2=6 i_board,1 i_nails,2 i_hinge
+DUPELIST=01e81
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Wooden Crate (Small)
+
+[ITEMDEF 01e81]
+//small light wooden crate against NW wall
+DUPEITEM=01e80
+
+[ITEMDEF 01e82]
+DEFNAME=i_lathework_unfinished
+RESOURCES=4 i_BOARD, i_NAILS
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Lathe Work
+
+[ITEMDEF 01e94]
+DEFNAME=i_CHICKEN_SPITTED
+RESOURCES=1 i_CHICKEN_PLUCKED, i_SPIT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Chicken on a Spit
+
+[ITEMDEF 01e95]
+DEFNAME=i_RABBIT_SPITTED
+RESOURCES=1 i_RABBIT_SKINNED, i_SPIT
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Rabbit on a Spit
+
+[ITEMDEF 01e96]
+DEFNAME=i_spit
+RESOURCES=2 i_ingot_iron
+WEIGHT=3
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Spit
+
+[ITEMDEF 01e97]
+DEFNAME=i_CHICKEN_SPITTED_2
+RESOURCES=1 i_CHICKEN_PLUCKED, I_SPIT
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Chicken on a Spit
+
+[ITEMDEF 01e98]
+DEFNAME=i_RABBIT_SPITTED_2
+RESOURCES=1 i_RABBIT_SKINNED, I_SPIT
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Rabbit on a Spit
+
+[ITEMDEF 01e99]
+DEFNAME=i_spit_2
+RESOURCES=2 i_ingot_iron
+WEIGHT=3
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Spit
+
+[ITEMDEF 01e9a]
+DEFNAME=i_hook_and_pulley
+RESOURCES3=1 i_PULLEY, i_ROPE, i_HOOK
+CATEGORY=Buildings - Other
+SUBSECTION=Hooks, Pulleys and Winches
+DESCRIPTION=Hook
+DUPELIST=01e9b
+
+[ITEMDEF 01e9b]
+DUPEITEM=01e9a
+
+[ITEMDEF 01e9c]
+DEFNAME=i_pullies
+RESOURCES3=2 i_PULLEY, i_ROPE
+CATEGORY=Buildings - Other
+SUBSECTION=Hooks, Pulleys and Winches
+DESCRIPTION=Pulley
+DUPELIST=01e9d,01e9e,01e9f
+
+[ITEMDEF 01e9d]
+DUPEITEM=01e9c
+
+[ITEMDEF 01e9e]
+DUPEITEM=01e9c
+
+[ITEMDEF 01e9f]
+DUPEITEM=01e9c
+
+[ITEMDEF 01ea0]
+DEFNAME=i_rope_bundle
+RESOURCES=1 i_ROPE
+WEIGHT=1
+CATEGORY=Buildings - Other
+SUBSECTION=Hooks, Pulleys and Winches
+DESCRIPTION=Rope
+DUPELIST=01ea1,01ea2
+
+[ITEMDEF 01ea1]
+DUPEITEM=01ea0
+
+[ITEMDEF 01ea2]
+DUPEITEM=01ea0
+
+[ITEMDEF 01ea3]
+DEFNAME=i_net
+RESOURCES=5 i_ROPE
+WEIGHT=5
+CATEGORY=Buildings - Other
+SUBSECTION=Hooks, Pulleys and Winches
+DESCRIPTION=Net
+DUPELIST=01ea4,01ea5,01ea6
+
+[ITEMDEF 01ea4]
+DUPEITEM=01ea3
+
+[ITEMDEF 01ea5]
+DUPEITEM=01ea3
+
+[ITEMDEF 01ea6]
+DUPEITEM=01ea3
+
+[ITEMDEF 01ea7]
+//Worldgem bit plain and small (see fancy bit at 1f13)
+DEFNAME=i_worldgem_bit
+VALUE=1
+TYPE=T_SPAWN_CHAR
+CATEGORY=Provisions - GM Items
+SUBSECTION=Special Items
+DESCRIPTION=Worldgem Bit
+
+[ITEMDEF 01ea8]
+DEFNAME=i_winch
+RESOURCES=5 i_ROPE, 2 I_GEARS, 20 i_ingot_iron
+WEIGHT=17
+CATEGORY=Buildings - Other
+SUBSECTION=Hooks, Pulleys and Winches
+DESCRIPTION=Winch
+DUPELIST=01ea9,01eaa,01eab,01eac,01ead,01eae,01eaf
+
+[ITEMDEF 01ea9]
+DUPEITEM=01ea8
+
+[ITEMDEF 01eaa]
+DUPEITEM=01ea8
+
+[ITEMDEF 01eab]
+DUPEITEM=01ea8
+
+[ITEMDEF 01eac]
+DUPEITEM=01ea8
+
+[ITEMDEF 01ead]
+DUPEITEM=01ea8
+
+[ITEMDEF 01eae]
+DUPEITEM=01ea8
+
+[ITEMDEF 01eaf]
+DUPEITEM=01ea8
+
+[ITEMDEF 01eb0]
+DEFNAME=i_ribs_BURNED
+RESOURCES=1 i_ribs_raw
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Burned Food
+
+[ITEMDEF 01eb1]
+DEFNAME=i_barrel_staves
+RESOURCES=5 i_BOARD
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Barrel Staves
+DUPELIST=01eb2,01eb3,01eb4
+
+[ITEMDEF 01eb2]
+DUPEITEM=01eb1
+
+[ITEMDEF 01eb3]
+DUPEITEM=01eb1
+
+[ITEMDEF 01eb4]
+DUPEITEM=01eb1
+
+[ITEMDEF 01eb5]
+DEFNAME=i_barrel_unfinished
+RESOURCES=3 i_BARREL_STAVES
+WEIGHT=3
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Unfinished Barrel
+
+[ITEMDEF 01eb6]
+DEFNAME=i_toolkit_empty
+RESOURCES=2 i_hide, i_ingot_iron
+WEIGHT=3
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Empty Tool Kit
+
+[ITEMDEF 01eb7]
+DEFNAME=i_toolcase_empty
+RESOURCES=2 i_hide, i_ingot_iron
+WEIGHT=3
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Empty Tool Case
+
+[ITEMDEF 01eb8]
+DEFNAME=i_toolkit
+RESOURCES=i_TOOLKIT_EMPTY, 4 i_ingot_iron,1 i_log
+SKILLMAKE=TINKERING 50.0,t_tinker_tools
+WEIGHT=6
+TYPE=t_carpentry
+DUPELIST=01eb9
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Tool Kit
+
+[ITEMDEF 01eb9]
+DUPEITEM=01eb8
+
+[ITEMDEF 01eba]
+DEFNAME=i_toolcase
+RESOURCES=i_TOOLCASE_EMPTY, 4 i_ingot_iron,1 i_log
+SKILLMAKE=TINKERING 50.0,t_tinker_tools
+WEIGHT=6
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Tool Case
+DUPELIST=01ebb
+
+[ITEMDEF 01ebb]
+DUPEITEM=01eba
+
+[ITEMDEF 01ebc]
+DEFNAME=i_tinker_tools
+TYPE=T_TINKER_TOOLS
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Tinker's Tools
+SKILLMAKE=TINKERING 35.0,t_tinker_tools
+RESOURCES=4 i_ingot_iron
+
+[ITEMDEF 01ebd]
+//Food for animals only? Is there a distinction?
+DEFNAME=i_wheat_sheaf
+//RESOURCES=20 I_CROP_WHEAT
+TYPE=t_grain
+VALUE=5
+WEIGHT=10
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Sheaf of Wheat
+
+[ITEMDEF 01ebe]
+DEFNAME=i_crop_wheat1
+TYPE=T_CROPS
+TDATA1=i_crop_wheat1
+TDATA2=i_crop_wheat2
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Wheat Sprouts
+DUPELIST=01ebf
+
+[ITEMDEF 01ebf]
+DUPEITEM=01ebe
+
+[ITEMDEF 01ec0]
+DEFNAME=i_pickpocket_dip_n
+DUPEITEM=01e2c
+CATEGORY=Items by Professions
+SUBSECTION=Thief
+DESCRIPTION=Pickpocket Dip (w)
+
+[ITEMDEF 01ec1]
+DUPEITEM=01e2c
+
+[ITEMDEF 01ec2]
+DUPEITEM=01e2c
+
+[ITEMDEF 01ec3]
+DEFNAME=i_pickpocket_dip_w
+DUPEITEM=01e2c
+CATEGORY=Items by Professions
+SUBSECTION=Thief
+DESCRIPTION=Pickpocket Dip (n)
+
+[ITEMDEF 01ec4]
+DUPEITEM=01e2c
+
+[ITEMDEF 01ec5]
+DUPEITEM=01e2c
+
+[ITEMDEF 01ec6]
+CATEGORY=Animations
+SUBSECTION=Falling Coins
+DESCRIPTION=@
+DUPELIST=01ec7,01ec8,01ec9
+
+[ITEMDEF 01ec7]
+DUPEITEM=01ec6
+
+[ITEMDEF 01ec8]
+DUPEITEM=01ec6
+
+[ITEMDEF 01ec9]
+DUPEITEM=01ec6
+
+[ITEMDEF 01eca]
+DEFNAME=i_PYLON_STONE
+RESOURCES=1 i_rock_plain
+CATEGORY=Buildings - Other
+SUBSECTION=Stone Pylon
+DESCRIPTION=Dark @
+
+[ITEMDEF 01ecb]
+DEFNAME=i_PYLON_STONE_LIGHT
+RESOURCES=1 i_rock_plain
+CATEGORY=Buildings - Other
+SUBSECTION=Stone Pylon
+DESCRIPTION=Light @
+
+[ITEMDEF 01ecc]
+DEFNAME=i_PYLON_STONE_SAND
+RESOURCES=1 i_stone_sand
+CATEGORY=Buildings - Other
+SUBSECTION=Stone Pylon
+DESCRIPTION=Sandstone Pylon
+
+[ITEMDEF 01ecd]
+//blinking green communications crystal casting light
+DEFNAME=i_crystal_green
+RESOURCES=10 i_GEM_EMERALD
+NAME=Communication Crystal
+TYPE=T_COMM_CRYSTAL
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Communication Crystals
+DESCRIPTION=Communication Crystal (green)
+DUPELIST=01ece,01ecf
+
+[ITEMDEF 01ece]
+//green (off?)communications crystal casting light
+DUPEITEM=01ecd
+
+[ITEMDEF 01ecf]
+//bright green (on) communications crystal casting light
+DUPEITEM=01ecd
+
+[ITEMDEF 01ed0]
+//blinking red communications crystal casting light
+DEFNAME=i_crystal_red
+RESOURCES=10 i_GEM_RUBY
+NAME=Communication Crystal
+TYPE=T_COMM_CRYSTAL
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Communication Crystals
+DESCRIPTION=Communication Crystal (red)
+DUPELIST=01ed1,01ed2
+
+[ITEMDEF 01ed1]
+//red communications crystal casting light
+DUPEITEM=01ed0
+
+[ITEMDEF 01ed2]
+//bright red (on) communications crystal casting light
+DUPEITEM=01ed0
+
+[ITEMDEF 01ed3]
+DEFNAME=i_target
+RESOURCES=1 i_BOARD, i_CLOTH
+WEIGHT=2
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Target
+DESCRIPTION=@
+DUPELIST=01ed4,01ed5,01ed6,01ed7,01ed8
+
+[ITEMDEF 01ed4]
+//target
+DUPEITEM=01ed3
+
+[ITEMDEF 01ed5]
+//target
+DUPEITEM=01ed3
+
+[ITEMDEF 01ed6]
+//target
+DUPEITEM=01ed3
+
+[ITEMDEF 01ed7]
+//target
+DUPEITEM=01ed3
+
+[ITEMDEF 01ed8]
+//target
+DUPEITEM=01ed3
+
+[ITEMDEF 01ed9]
+//magical door (looks like animated stone mask with blue sparklies)
+CATEGORY=Animations
+SUBSECTION=Magic Door
+DESCRIPTION=@
+DUPELIST=01eda,01edb,01edc,01edd,01ede,01edf,01ee0,01ee1
+
+[ITEMDEF 01eda]
+//magical door
+DUPEITEM=01ed9
+
+[ITEMDEF 01edb]
+//magical door
+DUPEITEM=01ed9
+
+[ITEMDEF 01edc]
+//magical door
+DUPEITEM=01ed9
+
+[ITEMDEF 01edd]
+//magical door
+DUPEITEM=01ed9
+
+[ITEMDEF 01ede]
+//magical door
+DUPEITEM=01ed9
+
+[ITEMDEF 01edf]
+//magical door
+DUPEITEM=01ed9
+
+[ITEMDEF 01ee0]
+//magical door
+DUPEITEM=01ed9
+
+[ITEMDEF 01ee1]
+//magical door
+DUPEITEM=01ed9
+
+[ITEMDEF 01ee2]
+//magical door
+DEFNAME=i_DOOR_MAGICAL
+CATEGORY=Animations
+SUBSECTION=Magical Door 2
+DESCRIPTION=@
+DUPELIST=01ee3,01ee4,01ee5,01ee6,01ee7,01ee8,01ee9,01eea,01eeb,01eec,01eed,01eee,01eef,01ef0,01ef1,01ef2,01ef3
+
+[ITEMDEF 01ee3]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ee4]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ee5]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ee6]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ee7]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ee8]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ee9]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01eea]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01eeb]
+//magical door
+DUPEITEM=01ee2
+CATEGORY=Animations
+SUBSECTION=Magical Door 3
+DESCRIPTION=@
+
+[ITEMDEF 01eec]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01eed]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01eee]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01eef]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ef0]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ef1]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ef2]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ef3]
+//magical door
+DUPEITEM=01ee2
+
+[ITEMDEF 01ef4]
+//magical door
+
+CATEGORY=Animations
+SUBSECTION=Magical Door 4
+DESCRIPTION=@
+DUPELIST=01ef5,01ef6,01ef7,01ef8,01ef9,01efa,01efb,01efc
+
+[ITEMDEF 01ef5]
+//magical door
+DUPEITEM=01ef4
+
+[ITEMDEF 01ef6]
+//magical door
+DUPEITEM=01ef4
+
+[ITEMDEF 01ef7]
+//magical door
+DUPEITEM=01ef4
+
+[ITEMDEF 01ef8]
+//magical door
+DUPEITEM=01ef4
+
+[ITEMDEF 01ef9]
+//magical door
+DUPEITEM=01ef4
+
+[ITEMDEF 01efa]
+//magical door
+DUPEITEM=01ef4
+
+[ITEMDEF 01efb]
+//magical door
+DUPEITEM=01ef4
+
+[ITEMDEF 01efc]
+//magical door
+DUPEITEM=01ef4
+
+[ITEMDEF 01efd]
+//Fancy Shirt
+DEFNAME=i_shirt_fancy
+RESOURCES=8 i_cloth
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=4
+DUPELIST=01efe
+DESCRIPTION=Fancy Shirt
+SUBSECTION=Shirts & Robes
+CATEGORY=Provisions - Clothes
+SKILLMAKE=TAILORING 27.2, t_sewing_kit
+RESOURCES2=8 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01efe]
+//fancy shirt
+DUPEITEM=01efd
+
+[ITEMDEF 01eff]
+//Fancy Dress
+DEFNAME=i_dress_full
+RESOURCES=12 i_cloth
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Fancy Dress
+DUPELIST=01f00
+SKILLMAKE=TAILORING 13.6, t_sewing_kit
+RESOURCES2=12 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 30}
+
+[ITEMDEF 01f00]
+//fancy dress
+DUPEITEM=01eff
+
+[ITEMDEF 01f01]
+// DEFNAME2=PLAIN_DRESS
+DEFNAME=i_dress_plain
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+RESOURCES=10 i_cloth
+SKILLMAKE=TAILORING 36.3, t_sewing_kit
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Plain Dress
+DUPELIST=01f02
+RESOURCES2=10 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 30}
+
+[ITEMDEF 01f02]
+//plain dress
+DUPEITEM=01f01
+
+[ITEMDEF 01f03]
+DEFNAME=i_robe
+RESOURCES=16 i_cloth
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=7
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Robe
+DUPELIST=01f04
+SKILLMAKE=TAILORING 59.0, t_sewing_kit
+RESOURCES2=16 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01f04]
+//robe
+DUPEITEM=01f03
+
+[ITEMDEF 01f05]
+DUPEITEM=01085
+
+[ITEMDEF 01f06]
+DEFNAME=i_bracelet_silver
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=1 i_ingot_silver
+WEIGHT=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Jewelry
+DESCRIPTION=Silver Bracelet
+
+[ITEMDEF 01f07]
+DEFNAME=i_earrings_silver
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=1 i_ingot_silver
+WEIGHT=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Jewelry
+DESCRIPTION=Silver Earrings
+
+[ITEMDEF 01f08]
+DEFNAME=i_necklace_silver
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=1 i_ingot_silver
+WEIGHT=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Jewelry
+DESCRIPTION=Silver Necklace
+
+[ITEMDEF 01f09]
+DEFNAME=i_ring_silver
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=1 i_ingot_silver
+WEIGHT=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Jewelry
+DESCRIPTION=Silver Ring
+
+[ITEMDEF 01f0a]
+DEFNAME=i_necklace_silver_beads
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=1 i_ingot_silver
+WEIGHT=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Jewelry
+DESCRIPTION=Silver Beads
+
+[ITEMDEF 01f0b]
+DEFNAME=i_helm_orc
+TYPE=t_armor_leather
+FLIP=1
+ARMOR=20
+REQSTR=1
+VALUE=1,10
+WEIGHT=5
+CATEGORY=Provisions - Armor
+SUBSECTION=Helmets
+DESCRIPTION=Orc Helm
+DUPELIST=01f0c
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 01f0c]
+//Orc Helm
+DUPEITEM=01f0b
+
+[ITEMDEF 01f0d]
+//morning glory
+
+CATEGORY=Vegetation
+SUBSECTION=Plants and Flowers
+DESCRIPTION=Morning Glory
+DUPELIST=01f0e,01f0f,01f10,01f11,01f12
+
+[ITEMDEF 01f0e]
+//morning glory
+DUPEITEM=01f0d
+
+[ITEMDEF 01f0f]
+//morning glory
+DUPEITEM=01f0d
+
+[ITEMDEF 01f10]
+//morning glory
+DUPEITEM=01f0d
+
+[ITEMDEF 01f11]
+//morning glory
+DUPEITEM=01f0d
+
+[ITEMDEF 01f12]
+//morning glory
+DUPEITEM=01f0d
+
+[ITEMDEF 01f13]
+//fancy medium sized worldgem bit (see plain at 01ea7)
+DEFNAME=i_worldgem_lg
+TYPE=T_SPAWN_CHAR
+CATEGORY=Provisions - GM Items
+SUBSECTION=Special Items
+DESCRIPTION=Large Worldgem Bit
+
+[ITEMDEF 01f14]
+//recall rune
+//DEFNAME2=RUNE
+//DEFNAME2=MARKER_TALISMAN_1
+DEFNAME=i_rune_marker
+TYPE=T_RUNE
+VALUE={16 20}
+//RESOURCES=
+WEIGHT=1
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Magical Items
+DESCRIPTION=Recall Rune
+DUPELIST=01f15,01f16,01f17
+
+[ITEMDEF 01f15]
+//recall rune
+DUPEITEM=01f14
+
+[ITEMDEF 01f16]
+//recall rune
+DUPEITEM=01f14
+
+[ITEMDEF 01f17]
+//Recall Rune
+DUPEITEM=01f14
+
+[ITEMDEF 01f18]
+//statue
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Multifaced Bust
+
+[ITEMDEF 01f19]
+//blinking, glowing green magical crystal
+DEFNAME=i_crystal_green_big
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Magic Crystal
+DESCRIPTION=@
+DUPELIST=01f1a,01f1b
+
+[ITEMDEF 01f1a]
+//green magical crystal
+DUPEITEM=01f19
+
+[ITEMDEF 01f1b]
+//glowing green magical crystal
+DUPEITEM=01f19
+
+[ITEMDEF 01f1c]
+//blinking, glowing purple magical crystal
+DEFNAME=i_crystal_purple
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Magic Crystal
+DESCRIPTION=@
+DUPELIST=01f1d,01f1e
+
+[ITEMDEF 01f1d]
+//purple magical crystal
+DUPEITEM=01f1c
+
+[ITEMDEF 01f1e]
+//glowing purple magical crystal
+DUPEITEM=01f1c
+
+[ITEMDEF 01f1f]
+//spinning double head - magic?
+DEFNAME=i_fx_spin_head
+CATEGORY=Animations
+SUBSECTION=Spinning Double Head
+DESCRIPTION=@
+DUPELIST=01f20,01f21,01f22
+
+[ITEMDEF 01f20]
+//head
+DUPEITEM=01f1f
+
+[ITEMDEF 01f21]
+//head
+DUPEITEM=01f1f
+
+[ITEMDEF 01f22]
+//head
+DUPEITEM=01f1f
+
+[ITEMDEF 01f24]
+//bedroll square
+DEFNAME=i_bedroll_open
+TYPE=T_BEDROLL
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Bedroll Tile
+DESCRIPTION=@
+DUPELIST=01f25,01f26,01f27
+
+[ITEMDEF 01f25]
+//bedroll square
+DUPEITEM=01f24
+
+[ITEMDEF 01f26]
+//bedroll square
+DUPEITEM=01f24
+
+[ITEMDEF 01f27]
+//bedroll square
+DUPEITEM=01f24
+
+[ITEMDEF 01f28]
+DEFNAME=i_sign_blank
+TYPE=T_SIGN_GUMP
+TDATA2=067
+FLIP=1
+RESOURCES=2 I_BOARD, i_ingot_iron, I_NAILS
+WEIGHT=3
+CATEGORY=Decoration - Signs
+SUBSECTION=Blank
+DESCRIPTION=Blank sign
+DUPELIST=01f29
+
+[ITEMDEF 01f29]
+//sign
+DUPEITEM=01f28
+
+[ITEMDEF 01f2a]
+DEFNAME=i_pedestal
+RESOURCES=6 i_rock_plain
+WEIGHT=12
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Pedestal
+DESCRIPTION=@
+
+[ITEMDEF 01f2b]
+DEFNAME=i_brazier
+TYPE=T_FIRE
+RESOURCES=10 I_EMBER, 12 i_ingot_iron
+WEIGHT=15
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Brazier
+DESCRIPTION=Brazier
+
+[ITEMDEF 01f2d]
+DEFNAME=i_scroll_reactive_armor
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=1
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 10.0, MAGERY 5.0
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 1st Circle
+DESCRIPTION=Reactive Armor
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_reactive_armor
+MOREY={10 50}
+
+[ITEMDEF 01f2e]
+DEFNAME=i_scroll_clumsy
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=1
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 10.0, MAGERY 5.0
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 1st Circle
+DESCRIPTION=Clumsy Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_clumsy
+MOREY={10 50}
+
+[ITEMDEF 01f2f]
+DEFNAME=i_scroll_create_food
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=1
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_ginseng, i_reag_mandrake_root
+SKILLMAKE=INSCRIPTION 10.0, MAGERY 5.0
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 1st Circle
+DESCRIPTION=Create Food Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_create_food
+MOREY={10 50}
+
+[ITEMDEF 01f30]
+DEFNAME=i_scroll_feeblemind
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=1
+RESOURCES=i_scroll_blank, i_reag_nightshade, i_reag_ginseng
+SKILLMAKE=INSCRIPTION 10.0, MAGERY 5.0
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 1st Circle
+DESCRIPTION=Feeblemind Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_feeblemind
+MOREY={10 50}
+
+[ITEMDEF 01f31]
+DEFNAME=i_scroll_heal
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=1
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_ginseng, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 10.0, MAGERY 5.0
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 1st Circle
+DESCRIPTION=Heal Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_heal
+MOREY={10 50}
+
+[ITEMDEF 01f32]
+DEFNAME=i_scroll_magic_arrow
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 10.0, MAGERY 5.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=1
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 1st Circle
+DESCRIPTION=Magic Arrow Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_magic_arrow
+MOREY={10 50}
+
+[ITEMDEF 01f33]
+DEFNAME=i_scroll_night_sight
+RESOURCES=i_scroll_blank, i_reag_nightshade, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 10.0, MAGERY 5.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=1
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 1st Circle
+DESCRIPTION=Night Sight Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_night_sight
+MOREY={10 50}
+
+[ITEMDEF 01f34]
+DEFNAME=i_scroll_weaken
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 10.0, MAGERY 5.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=1
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 1st Circle
+DESCRIPTION=Weaken Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_weaken
+MOREY={10 50}
+
+[ITEMDEF 01f35]
+DEFNAME=i_scroll_agility
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root
+SKILLMAKE=INSCRIPTION 20.0, MAGERY 10.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=2
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 2nd Circle
+DESCRIPTION=Agility Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_agility
+MOREY={20 60}
+
+[ITEMDEF 01f36]
+DEFNAME=i_scroll_cunning
+RESOURCES=i_scroll_blank, i_reag_mandrake_root, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 20.0, MAGERY 10.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=2
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 2nd Circle
+DESCRIPTION=Cunning Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_cunning
+MOREY={20 60}
+
+[ITEMDEF 01f37]
+DEFNAME=i_scroll_cure
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_ginseng
+SKILLMAKE=INSCRIPTION 20.0, MAGERY 10.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=2
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 2nd Circle
+DESCRIPTION=Cure Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_cure
+MOREY={20 60}
+
+[ITEMDEF 01f38]
+DEFNAME=i_scroll_harm
+RESOURCES=i_scroll_blank, i_reag_nightshade, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 20.0, MAGERY 10.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=2
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 2nd Circle
+DESCRIPTION=Harm Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_harm
+MOREY={20 60}
+
+[ITEMDEF 01f39]
+DEFNAME=i_scroll_magic_trap
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 20.0, MAGERY 10.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=2
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 2nd Circle
+DESCRIPTION=Magic Trap Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_magic_trap
+MOREY={20 60}
+
+[ITEMDEF 01f3a]
+DEFNAME=i_scroll_magic_untrap
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 20.0, MAGERY 10.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=2
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 2nd Circle
+DESCRIPTION=Magic Remove Trap Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_magic_untrap
+MOREY={20 60}
+
+[ITEMDEF 01f3b]
+DEFNAME=i_scroll_protection
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_ginseng, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 20.0, MAGERY 10.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=2
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 2nd Circle
+DESCRIPTION=Protection Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_protection
+MOREY={20 60}
+
+[ITEMDEF 01f3c]
+DEFNAME=i_scroll_strength
+RESOURCES=i_scroll_blank, i_reag_mandrake_root, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 20.0, MAGERY 10.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=2
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 2nd Circle
+DESCRIPTION=Strength Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_strength
+MOREY={20 60}
+
+[ITEMDEF 01f3d]
+DEFNAME=i_scroll_bless
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_mandrake_root
+SKILLMAKE=INSCRIPTION 30.0, MAGERY 20.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=3
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 3rd Circle
+DESCRIPTION=Bless Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_bless
+MOREY={30 70}
+
+[ITEMDEF 01f3e]
+DEFNAME=i_scroll_fireball
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 30.0, MAGERY 20.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=3
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 3rd Circle
+DESCRIPTION=Fireball Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_fireball
+MOREY={30 70}
+
+[ITEMDEF 01f3f]
+DEFNAME=i_scroll_magic_lock
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_garlic, i_reag_ginseng, i_reag_mandrake_root, i_reag_nightshade, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 30.0, MAGERY 20.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=3
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 3rd Circle
+DESCRIPTION=Magic Lock Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_magic_lock
+MOREY={30 70}
+
+[ITEMDEF 01f40]
+DEFNAME=i_scroll_poison
+RESOURCES=i_scroll_blank, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 30.0, MAGERY 20.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=3
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 3rd Circle
+DESCRIPTION=Poison Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_poison
+MOREY={30 70}
+
+[ITEMDEF 01f41]
+DEFNAME=i_scroll_telekinesis
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root
+SKILLMAKE=INSCRIPTION 30.0, MAGERY 20.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=3
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 3rd Circle
+DESCRIPTION=telekinesis Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_telekinesis
+MOREY={30 70}
+
+[ITEMDEF 01f42]
+DEFNAME=i_scroll_teleport
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root
+SKILLMAKE=INSCRIPTION 30.0, MAGERY 20.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=3
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 3rd Circle
+DESCRIPTION=Teleport Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_teleport
+MOREY={30 70}
+
+[ITEMDEF 01f43]
+DEFNAME=i_scroll_unlock
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 30.0, MAGERY 20.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=3
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 3rd Circle
+DESCRIPTION=Unlock Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_unlock
+MOREY={30 70}
+
+[ITEMDEF 01f44]
+DEFNAME=i_scroll_wall_of_stone
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_garlic
+SKILLMAKE=INSCRIPTION 30.0, MAGERY 20.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=3
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 3rd Circle
+DESCRIPTION=Wall of Stone Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_wall_of_stone
+MOREY={30 70}
+
+[ITEMDEF 01f45]
+DEFNAME=i_scroll_archcure
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_ginseng, i_reag_mandrake_root
+SKILLMAKE=INSCRIPTION 40.0, MAGERY 30.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=4
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 4th Circle
+DESCRIPTION=Archcure Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_archcure
+MOREY={40 75}
+
+[ITEMDEF 01f46]
+DEFNAME=i_scroll_archprotection
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_ginseng, i_reag_mandrake_root, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 40.0, MAGERY 30.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=4
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 4th Circle
+DESCRIPTION=Arch Protection Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_archprotection
+MOREY={40 75}
+
+[ITEMDEF 01f47]
+DEFNAME=i_scroll_curse
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_nightshade, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 40.0, MAGERY 30.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=4
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 4th Circle
+DESCRIPTION=Curse Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_curse
+MOREY={40 75}
+
+[ITEMDEF 01f48]
+DEFNAME=i_scroll_fire_field
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 40.0, MAGERY 30.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=4
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 4th Circle
+DESCRIPTION=Fire Field Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_fire_field
+MOREY={40 75}
+
+[ITEMDEF 01f49]
+DEFNAME=i_scroll_greater_heal
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_ginseng, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 40.0, MAGERY 30.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=4
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 4th Circle
+DESCRIPTION=Greater Heal Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_greater_heal
+MOREY={40 75}
+
+[ITEMDEF 01f4a]
+DEFNAME=i_scroll_lightning
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_mandrake_root, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 40.0, MAGERY 30.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=4
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 4th Circle
+DESCRIPTION=Lightning Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_lightning
+MOREY={40 75}
+
+[ITEMDEF 01f4b]
+DEFNAME=i_scroll_mana_drain
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 40.0, MAGERY 30.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=4
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 4th Circle
+DESCRIPTION=Mana Drain Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_mana_drain
+MOREY={40 75}
+
+[ITEMDEF 01f4c]
+DEFNAME=i_scroll_recall
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_blood_moss, i_reag_mandrake_root
+SKILLMAKE=INSCRIPTION 40.0, MAGERY 30.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=4
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 4th Circle
+DESCRIPTION=Recall Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_recall
+MOREY={40 75}
+
+[ITEMDEF 01f4d]
+DEFNAME=i_scroll_blade_spirits
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_mandrake_root, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 50.0, MAGERY 40.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=5
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 5th Circle
+DESCRIPTION=Blade Spirits Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_blade_spirits
+MOREY={50 80}
+
+[ITEMDEF 01f4e]
+DEFNAME=i_scroll_dispel_field
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_garlic, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 50.0, MAGERY 40.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=5
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 5th Circle
+DESCRIPTION=Dispel Field Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_dispel_field
+MOREY={50 80}
+
+[ITEMDEF 01f4f]
+DEFNAME=i_scroll_incognito
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_garlic, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 50.0, MAGERY 40.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=5
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 5th Circle
+DESCRIPTION=Incognito Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_incognito
+MOREY={50 80}
+
+[ITEMDEF 01f50]
+DEFNAME=i_scroll_magic_reflection
+NAME=Magic Reflection	
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 50.0, MAGERY 40.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=5
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 5th Circle
+DESCRIPTION=Magic Reflection Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_magic_reflection
+MOREY={50 80}
+
+[ITEMDEF 01f51]
+DEFNAME=i_scroll_mind_blast
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_mandrake_root, i_reag_nightshade, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 50.0, MAGERY 40.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=5
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 5th Circle
+DESCRIPTION=Mind Blast Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_mind_blast
+MOREY={50 80}
+
+[ITEMDEF 01f52]
+DEFNAME=i_scroll_paralyze
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 50.0, MAGERY 40.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=5
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 5th Circle
+DESCRIPTION=Paralyze Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_paralyze
+MOREY={50 80}
+
+[ITEMDEF 01f53]
+DEFNAME=i_scroll_poison_field
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_nightshade, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 50.0, MAGERY 40.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=5
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 5th Circle
+DESCRIPTION=Poison Field Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_poison_field
+MOREY={50 80}
+
+[ITEMDEF 01f54]
+DEFNAME=i_scroll_summon_creature
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 50.0, MAGERY 40.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=5
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 5th Circle
+DESCRIPTION=Summon Creature Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_summon_creature
+MOREY={50 80}
+
+[ITEMDEF 01f55]
+DEFNAME=i_scroll_dispel
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_mandrake_root, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 60.0, MAGERY 50.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=6
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 6th Circle
+DESCRIPTION=Dispel Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_dispel
+MOREY={60 85}
+
+[ITEMDEF 01f56]
+DEFNAME=i_scroll_energy_bolt
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 60.0, MAGERY 50.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=6
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 6th Circle
+DESCRIPTION=Energy Bolt Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_energy_bolt
+MOREY={60 85}
+
+[ITEMDEF 01f57]
+DEFNAME=i_scroll_explosion
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_mandrake_root, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 60.0, MAGERY 50.0
+TYPE=T_SCROLL
+VALUE={60 64}
+WEIGHT=1
+//CIRCLE=6
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 6th Circle
+DESCRIPTION=Explosion Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_explosion
+MOREY={60 85}
+
+[ITEMDEF 01f58]
+DEFNAME=i_scroll_invisibility
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 60.0, MAGERY 50.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=6
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 6th Circle
+DESCRIPTION=Invisibility Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_invisibility
+MOREY={60 85}
+
+[ITEMDEF 01f59]
+DEFNAME=i_scroll_mark
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_blood_moss, i_reag_mandrake_root
+SKILLMAKE=INSCRIPTION 60.0, MAGERY 50.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=6
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 6th Circle
+DESCRIPTION=Mark Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_mark
+MOREY={60 85}
+
+[ITEMDEF 01f5a]
+DEFNAME=i_scroll_mass_curse
+RESOURCES=i_scroll_blank, i_reag_garlic, i_reag_mandrake_root, i_reag_nightshade, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 60.0, MAGERY 50.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=6
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 6th Circle
+DESCRIPTION=Mass Curse Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_mass_curse
+MOREY={60 85}
+
+[ITEMDEF 01f5b]
+DEFNAME=i_scroll_paralyze_field
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_ginseng, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 60.0, MAGERY 50.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=6
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 6th Circle
+DESCRIPTION=Paralyze Field Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_paralyzation_field
+MOREY={60 85}
+
+[ITEMDEF 01f5c]
+DEFNAME=i_scroll_reveal
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 60.0, MAGERY 50.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=6
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 6th Circle
+DESCRIPTION=Reveal Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_reveal
+MOREY={60 85}
+
+[ITEMDEF 01f5d]
+DEFNAME=i_scroll_chain_lightning
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_blood_moss, i_reag_mandrake_root, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 70.0, MAGERY 60.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=7
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 7th Circle
+DESCRIPTION=Chain Lightning Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_chain_lightning
+MOREY={70 90}
+
+[ITEMDEF 01f5e]
+DEFNAME=i_scroll_energy_field
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_mandrake_root, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 70.0, MAGERY 60.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=7
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 7th Circle
+DESCRIPTION=Energy Field Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_energy_field
+MOREY={70 90}
+
+[ITEMDEF 01f5f]
+DEFNAME=i_scroll_flamestrike
+RESOURCES=i_scroll_blank, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 70.0, MAGERY 60.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=7
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 7th Circle
+DESCRIPTION=Flame Strike Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_flamestrike
+MOREY={70 90}
+
+[ITEMDEF 01f60]
+DEFNAME=i_scroll_gate_travel
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_mandrake_root, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 70.0, MAGERY 60.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=7
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 7th Circle
+DESCRIPTION=Gate Travel Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_gate_travel
+MOREY={70 90}
+
+[ITEMDEF 01f61]
+DEFNAME=i_scroll_mana_vampire
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 70.0, MAGERY 60.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=7
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 7th Circle
+DESCRIPTION=Mana Vampire Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_mana_vampire
+MOREY={70 90}
+
+[ITEMDEF 01f62]
+DEFNAME=i_scroll_mass_dispel
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_garlic, i_reag_mandrake_root, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 70.0, MAGERY 60.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=7
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 7th Circle
+DESCRIPTION=Mass Dispel Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_mass_dispel
+MOREY={70 90}
+
+[ITEMDEF 01f63]
+DEFNAME=i_scroll_meteor_swarm
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 70.0, MAGERY 60.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=7
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 7th Circle
+DESCRIPTION=Meteor Storm Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_meteor_swarm
+MOREY={70 90}
+
+[ITEMDEF 01f64]
+DEFNAME=i_scroll_polymorph
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 70.0, MAGERY 60.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=7
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 7th Circle
+DESCRIPTION=Polymorph Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_polymorph
+MOREY={70 90}
+
+[ITEMDEF 01f65]
+DEFNAME=i_scroll_earthquake
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_ginseng, i_reag_mandrake_root, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 80.0, MAGERY 70.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=8
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 8th Circle
+DESCRIPTION=Earthquake Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_earthquake
+MOREY={80 100}
+
+[ITEMDEF 01f66]
+DEFNAME=i_scroll_energy_vortex
+RESOURCES=i_scroll_blank, i_reag_black_pearl, i_reag_blood_moss, i_reag_mandrake_root, i_reag_nightshade
+SKILLMAKE=INSCRIPTION 80.0, MAGERY 70.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=8
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 8th Circle
+DESCRIPTION=Energy Vortex Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_energy_vortex
+MOREY={80 100}
+
+[ITEMDEF 01f67]
+DEFNAME=i_scroll_resurrection
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_garlic, i_reag_ginseng
+SKILLMAKE=INSCRIPTION 80.0, MAGERY 70.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=8
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 8th Circle
+DESCRIPTION=Resurrection Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_resurrection
+MOREY={80 100}
+
+[ITEMDEF 01f68]
+DEFNAME=i_scroll_summon_elem_air
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 80.0, MAGERY 70.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=8
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 8th Circle
+DESCRIPTION=Summon Elemental Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_summon_elem_air
+MOREY={80 100}
+
+[ITEMDEF 01f69]
+DEFNAME=i_scroll_summon_daemon
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 80.0, MAGERY 70.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=8
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 8th Circle
+DESCRIPTION=Summon Deamon Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_summon_daemon
+MOREY={80 100}
+
+[ITEMDEF 01f6a]
+DEFNAME=i_scroll_summon_elem_earth
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 80.0, MAGERY 70.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=8
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 8th Circle
+DESCRIPTION=Summon Earth Elemental Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_summon_elem_earth
+MOREY={80 100}
+
+[ITEMDEF 01f6b]
+DEFNAME=i_scroll_summon_elem_fire
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk, i_reag_sulfur_ash
+SKILLMAKE=INSCRIPTION 80.0, MAGERY 70.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=8
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 8th Circle
+DESCRIPTION=Summon Fire Elemental Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_summon_elem_fire
+MOREY={80 100}
+
+[ITEMDEF 01f6c]
+DEFNAME=i_scroll_summon_elem_water
+RESOURCES=i_scroll_blank, i_reag_blood_moss, i_reag_mandrake_root, i_reag_spider_silk
+SKILLMAKE=INSCRIPTION 80.0, MAGERY 70.0
+TYPE=T_SCROLL
+WEIGHT=1
+//CIRCLE=8
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - 8th Circle
+DESCRIPTION=Summon Water Elemental Scroll
+
+ON=@Create
+ATTR=ATTR_MAGIC
+MOREX=s_summon_elem_water
+MOREY={80 100}
+
+[ITEMDEF 01f6d]
+//unnamed scroll dark green border
+DEFNAME=i_scroll_x_green2
+TYPE=T_SCROLL
+//DEFNAME2=SCROLL_SUMMON_UNDEAD
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Scrolls - Unnamed
+DESCRIPTION=Unnamed scroll
+DUPELIST=01f6e
+
+[ITEMDEF 01f6e]
+//unnamed scroll dark green border
+DUPEITEM=01f6d
+
+[ITEMDEF 01f6f]
+//unnamed scroll teal border
+DEFNAME=i_scroll_x_teal2
+TYPE=T_SCROLL
+//DEFNAME2=SCROLL_ANIMATE_DEAD
+DUPELIST=01f70
+
+[ITEMDEF 01f70]
+//unnamed scroll teal border
+DUPEITEM=01f6f
+
+[ITEMDEF 01f71]
+//unnamed scroll brown border
+DEFNAME=i_scroll_x_brown2
+TYPE=T_SCROLL
+//DEFNAME2=SCROLL_BONE_ARMOR
+DUPELIST=01f72
+
+[ITEMDEF 01f72]
+//unnamed scroll brown border
+DUPEITEM=01f71
+
+[ITEMDEF 01f73]
+//small fur
+TYPE=t_FUR
+DUPELIST=01f74,01f75,01f76
+
+[ITEMDEF 01f74]
+//small fur
+DUPEITEM=01f73
+
+[ITEMDEF 01f75]
+//small fur
+DUPEITEM=01f73
+
+[ITEMDEF 01f76]
+//small fur
+DUPEITEM=01f73
+
+[ITEMDEF 01f77]
+//small tan fur
+TYPE=t_FUR
+DUPELIST=01f78,01f79,01f7a
+
+[ITEMDEF 01f78]
+//small tan fur
+DUPEITEM=01f77
+
+[ITEMDEF 01f79]
+//small tan fur
+DUPEITEM=01f77
+
+[ITEMDEF 01f7a]
+//small tan fur
+DUPEITEM=01f77
+
+[ITEMDEF 01f7b]
+DEFNAME=i_doublet
+RESOURCES=8 I_CLOTH, I_THREAD
+SKILLMAKE=TAILORING 22.7, t_sewing_kit
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Doublet
+DUPELIST=01f7c
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01f7c]
+//doublet
+DUPEITEM=01f7b
+
+[ITEMDEF 01f7d]
+DEFNAME=i_glass_of_cider
+RESOURCES3=1 I_CIDER, I_GLASS
+WEIGHT=1
+TYPE=T_BOOZE
+TDATA1=i_glass
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Glass of Cider
+DUPELIST=01f7e,01f7f,01f80
+
+[ITEMDEF 01f7e]
+//glass of cider
+DUPEITEM=01f7d
+
+[ITEMDEF 01f7f]
+//glass of cider
+DUPEITEM=01f7d
+
+[ITEMDEF 01f80]
+//glass of cider
+DUPEITEM=01f7d
+
+[ITEMDEF 01f81]
+DEFNAME=i_glass
+RESOURCES=4 I_SAND
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Glass
+DUPELIST=01f82,01f83,01f84
+
+[ITEMDEF 01f82]
+//glass
+DUPEITEM=01f81
+
+[ITEMDEF 01f83]
+//glass
+DUPEITEM=01f81
+
+[ITEMDEF 01f84]
+//glass
+DUPEITEM=01f81
+
+[ITEMDEF 01f85]
+DEFNAME=i_glass_of_liquor
+RESOURCES3=1 I_LIQUOR, I_GLASS
+WEIGHT=1
+TYPE=T_BOOZE
+TDATA1=i_glass
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Glass of Liquor
+DUPELIST=01f86,01f87,01f88
+
+[ITEMDEF 01f86]
+//glass of liquor
+DUPEITEM=01f85
+
+[ITEMDEF 01f87]
+//glass of liquor
+DUPEITEM=01f85
+
+[ITEMDEF 01f88]
+//glass of liquor
+DUPEITEM=01f85
+
+[ITEMDEF 01f89]
+DEFNAME=i_glass_of_milk
+RESOURCES=I_GLASS
+RESOURCES2=I_GLASS, I_MILK
+WEIGHT=1
+TYPE=T_DRINK
+TDATA1=I_GLASS
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Glass of Milk
+DUPELIST=01f8a,01f8b,01f8c
+
+[ITEMDEF 01f8a]
+//glass of milk
+DUPEITEM=01f89
+
+[ITEMDEF 01f8b]
+//glass of milk
+DUPEITEM=01f89
+
+[ITEMDEF 01f8c]
+//glass of milk
+DUPEITEM=01f89
+
+[ITEMDEF 01f8d]
+DEFNAME=i_glass_of_wine
+RESOURCES3=1 I_WINE, I_GLASS
+WEIGHT=1
+TYPE=T_BOOZE
+TDATA1=i_glass
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Glass of Wine
+DUPELIST=01f8e,01f8f,01f90
+
+[ITEMDEF 01f8e]
+//glass of wine
+DUPEITEM=01f8d
+
+[ITEMDEF 01f8f]
+//glass of wine
+DUPEITEM=01f8d
+
+[ITEMDEF 01f90]
+//glass of wine
+DUPEITEM=01f8d
+
+[ITEMDEF 01f91]
+DEFNAME=i_glass_of_water
+RESOURCES=1 I_WATER, I_GLASS
+WEIGHT=1
+TYPE=T_DRINK
+TDATA1=I_GLASS
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Glass of Water
+DUPELIST=01f92,01f93,01f94
+
+[ITEMDEF 01f92]
+//glass of water
+DUPEITEM=01f91
+
+[ITEMDEF 01f93]
+//glass of water
+DUPEITEM=01f91
+
+[ITEMDEF 01f94]
+//glass of water
+DUPEITEM=01f91
+
+[ITEMDEF 01f95]
+//DEFNAME=ALE_PITCHER
+DEFNAME=i_pitcher_ale
+TYPE=T_BOOZE
+TDATA1=i_pitcher_glass
+FLIP=1
+RESOURCES=i_hay_sheaf, I_PITCHER_GLASS
+RESOURCES3=I_ALE, I_PITCHER_GLASS
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Pitcher of Ale
+DUPELIST=01f96
+//DEFNAME2=ALE_PITCHER_2
+
+[ITEMDEF 01f96]
+//pitcher of ale
+DUPEITEM=01f95
+
+[ITEMDEF 01f97]
+//DEFNAME2=CIDER_PITCHER_2
+DEFNAME=i_pitcher_cider
+TYPE=T_BOOZE
+TDATA1=i_pitcher_glass
+FLIP=1
+RESOURCES=i_fruit_apple, I_PITCHER_GLASS
+RESOURCES3=I_CIDER, I_PITCHER_GLASS
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Pitcher of Cider
+DUPELIST=01f98
+
+[ITEMDEF 01f98]
+//pitcher of cider
+DUPEITEM=01f97
+
+[ITEMDEF 01f99]
+//Pitcher of Liquor
+DEFNAME=i_pitcher_liquor
+TYPE=T_BOOZE
+TDATA1=i_pitcher_glass
+RESOURCES=i_fruit_corn, I_PITCHER_GLASS
+RESOURCES3=I_LIQUOR, I_PITCHER_GLASS
+WEIGHT=5
+FLIP=1
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Pitcher of Liquor
+DUPELIST=01f9a
+//DEFNAME2=LIQUOR_PITCHER_2
+
+[ITEMDEF 01f9a]
+//pitcher of liquor
+DUPEITEM=01f99
+
+[ITEMDEF 01f9b]
+DEFNAME=i_pitcher_wine
+TYPE=T_BOOZE
+TDATA1=i_pitcher_glass
+RESOURCES=i_fruit_grapes, I_PITCHER_GLASS
+RESOURCES3=I_WINE, I_PITCHER_GLASS
+FLIP=1
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Pitcher of Wine
+DUPELIST=01f9c
+//DEFNAME2=WINE_PITCHER_2
+
+[ITEMDEF 01f9c]
+//pitcher of wine
+DUPEITEM=01f9b
+
+[ITEMDEF 01f9d]
+//pitcher of water
+DUPEITEM=0ff8
+
+[ITEMDEF 01f9e]
+//pitcher of water
+DUPEITEM=0ff8
+
+[ITEMDEF 01f9f]
+//Jester's Suit
+DEFNAME=i_jester_suit
+RESOURCES=24 i_cloth
+WEIGHT=5
+TYPE=T_CLOTHING
+ARMOR=7
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Jester's Suit
+DUPELIST=01fa0
+SKILLMAKE=TAILORING 9.0, t_sewing_kit
+RESOURCES2=24 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01fa0]
+//Jester's Suit
+DUPEITEM=01f9f
+
+[ITEMDEF 01fa1]
+//Tunic
+DEFNAME=i_tunic
+RESOURCES=12 i_cloth
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Tunic
+DUPELIST=01fa2
+SKILLMAKE=TAILORING 0.1, t_sewing_kit
+RESOURCES2=12 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01fa2]
+//Tunic
+DUPEITEM=01fa1
+
+[ITEMDEF 01fa3]
+//wave
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Wave
+DESCRIPTION=@
+DUPELIST=01fa4,01fa5,01fa6,01fa7,01fa8,01fa9,01faa,01fab,01fac,01fad,01fae,01faf,01fb0,01fb1,01fb2,01fb3,01fb4,01fb5,01fb6,01fb7,01fb8,01fb9,01fba,01fbb,01fbc,01fbd,01fbe,01fbf,01fc0,01fc1,01fc2,01fc3,01fc4,01fc5,01fc6,01fc7,01fc8,01fc9,01fca
+
+[ITEMDEF 01fa4]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fa5]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fa6]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fa7]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fa8]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fa9]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01faa]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fab]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fac]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fad]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fae]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01faf]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb0]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb1]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb2]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb3]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb4]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb5]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb6]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb7]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb8]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fb9]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fba]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fbb]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fbc]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fbd]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fbe]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fbf]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc0]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc1]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc2]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc3]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc4]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc5]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc6]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc7]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc8]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fc9]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fca]
+//wave
+DUPEITEM=01fa3
+
+[ITEMDEF 01fcb]
+//summon moongate
+DEFNAME=i_moongate_black_fx
+TYPE=t_light_lit
+TDATA4=0
+CATEGORY=Animations
+SUBSECTION=Black Moongate
+DESCRIPTION=@
+DUPELIST=01fcc,01fcd,01fce,01fcf,01fd0,01fd1,01fd2,01fd3
+
+[ITEMDEF 01fcc]
+//summon moongate
+DUPEITEM=01fcb
+
+[ITEMDEF 01fcd]
+//summon moongate
+DUPEITEM=01fcb
+
+[ITEMDEF 01fce]
+//summon moongate
+DUPEITEM=01fcb
+
+[ITEMDEF 01fcf]
+//summon moongate
+DUPEITEM=01fcb
+
+[ITEMDEF 01fd0]
+//summon moongate
+DUPEITEM=01fcb
+
+[ITEMDEF 01fd1]
+//summon moongate
+DUPEITEM=01fcb
+
+[ITEMDEF 01fd2]
+//summon moongate
+DUPEITEM=01fcb
+
+[ITEMDEF 01fd3]
+//summon moongate
+DUPEITEM=01fcb
+
+[ITEMDEF 01fd4]
+//moongate
+DEFNAME=i_moongate_black
+TYPE=t_telepad
+DUPELIST=01fd5,01fd6,01fd7,01fd8
+
+[ITEMDEF 01fd5]
+//moongate
+DUPEITEM=01fd4
+
+[ITEMDEF 01fd6]
+//moongate
+DUPEITEM=01fd4
+
+[ITEMDEF 01fd7]
+//moongate
+DUPEITEM=01fd4
+
+[ITEMDEF 01fd8]
+//moongate
+DUPEITEM=01fd4
+
+[ITEMDEF 01fde]
+//summon moongate
+DEFNAME=i_moongate_gray_fx
+TYPE=t_light_lit
+TDATA4=0
+CATEGORY=Animations
+SUBSECTION=Gray Moongate
+DESCRIPTION=@
+DUPELIST=01fdf,01fe0,01fe1,01fe2,01fe3,01fe4,01fe5,01fe6
+
+[ITEMDEF 01fdf]
+//summon moongate
+DUPEITEM=01fde
+
+[ITEMDEF 01fe0]
+//summon moongate
+DUPEITEM=01fde
+
+[ITEMDEF 01fe1]
+//summon moongate
+DUPEITEM=01fde
+
+[ITEMDEF 01fe2]
+//summon moongate
+DUPEITEM=01fde
+
+[ITEMDEF 01fe3]
+//summon moongate
+DUPEITEM=01fde
+
+[ITEMDEF 01fe4]
+//summon moongate
+DUPEITEM=01fde
+
+[ITEMDEF 01fe5]
+//summon moongate
+DUPEITEM=01fde
+
+[ITEMDEF 01fe6]
+//summon moongate
+DUPEITEM=01fde
+
+[ITEMDEF 01fe7]
+//summon moongate
+DEFNAME=i_moongate_gray
+TYPE=t_telepad
+DUPELIST=01fe8,01fe9,01fea,01feb
+
+[ITEMDEF 01fe8]
+//summon moongate
+DUPEITEM=01fe7
+
+[ITEMDEF 01fe9]
+//summon moongate
+DUPEITEM=01fe7
+
+[ITEMDEF 01fea]
+//summon moongate
+DUPEITEM=01fe7
+
+[ITEMDEF 01feb]
+//summon moongate
+DUPEITEM=01fe7
+
+[ITEMDEF 01fed]
+DEFNAME=i_door_metal_bar_2
+RESOURCES=10 i_ingot_iron
+WEIGHT=10
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Barred Metal Door 2
+DESCRIPTION=@ (n / sw)
+DUPELIST=01fef,01ff1,01ff3,01ff5,01ff7,01ff9,01ffb
+
+[ITEMDEF 01fee]
+//barred metal door
+DEFNAME=i_door_metal_bar_2_o
+TYPE=T_DOOR_OPEN
+DESCRIPTION=@
+DUPELIST=01ff0,01ff2,01ff4,01ff6,01ff8,01ffa,01ffc
+
+[ITEMDEF 01fef]
+//barred metal door
+DUPEITEM=01fed
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 01ff0]
+//barred metal door
+DUPEITEM=01fee
+DESCRIPTION=@
+
+[ITEMDEF 01ff1]
+//barred metal door
+DUPEITEM=01fed
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 01ff2]
+//barred metal door
+DUPEITEM=01fee
+DESCRIPTION=@
+
+[ITEMDEF 01ff3]
+//barred metal door
+DUPEITEM=01fed
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 01ff4]
+//barred metal door
+DUPEITEM=01fee
+DESCRIPTION=@
+
+[ITEMDEF 01ff5]
+//barred metal door
+DUPEITEM=01fed
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 01ff6]
+//barred metal door
+DUPEITEM=01fee
+DESCRIPTION=@
+
+[ITEMDEF 01ff7]
+//barred metal door
+DUPEITEM=01fed
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 01ff8]
+//barred metal door
+DUPEITEM=01fee
+DESCRIPTION=@
+
+[ITEMDEF 01ff9]
+//barred metal door
+DUPEITEM=01fed
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 01ffa]
+//barred metal door
+DUPEITEM=01fee
+DESCRIPTION=@
+
+[ITEMDEF 01ffb]
+//barred metal door
+DUPEITEM=01fed
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 01ffc]
+//barred metal door
+DUPEITEM=01fee
+DESCRIPTION=@
+
+[ITEMDEF 01ffd]
+DEFNAME=i_surcoat
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Surcoat
+DUPELIST=01ffe
+
+SKILLMAKE=TAILORING 25.0, t_sewing_kit
+RESOURCES=14 i_cloth
+RESOURCES2=14 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01ffe]
+//surcoat
+DUPEITEM=01ffd
+
+[EOF]

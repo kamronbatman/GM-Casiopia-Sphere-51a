@@ -1,0 +1,165 @@
+This script adds a little control to the state of looting throughout the shard. 
+It can be used either with permanent settings (in which case it needs an object), or with volatile (on reboot) settings. 
+
+You can alter this by changing ONE single line to the UID of the object. If you don't do it, it'll use VARs to store the info. To start using an object just do: 
+1) .add i_tag_store 
+and place the tag store in a safe place (eg, the star chamber - it'll be invisible anyway). 
+2) dclick on the stone to get its UID 
+3) Go to the line of script below where it reads CHANGE HERE, and place the UID you got. 
+
+There, all the code will be affected by this change. The pleasure of using variable variable variables. :E 
+
+NOTES: 
+* This script also contains a fix not to allow resurrection of corpses by PCs. If by some oddity you want to remove it, just remove the whole ON =@SpellEffect trigger 
+* This script also adds corpses decaying into bones. The idea was taken from a script in the sphereboards, posted by Rylix, originally posted by Admin Diana (I think, correct me if I'm wrong). 
+If you want to remove that, just remove the ON=@Timer trigger below. 
+* This script replaces the original object for corpses. This is completly straightforward, just make sure the script is loading after sphereitemb7.scp 
+
+On a final note, feel free to post any suggestions/comments on this. 
+
+To use the script, just type .loot, and check the syntax. It allows one of 5 parameters: 
+
+.loot region - toggles the setting for this region 
+.loot world - toggles the setting for the world 
+.loot warn - toggles warning the body owners of someone peering into the corpse 
+.loot debug - prints wether it's using global variables or an object to store the above settings 
+.loot status - show the state of the above options 
+
+The script itself: 
+--------------------------------------------------------------------------------- 
+
+[FUNCTION f_settings_loot] 
+VAR.LOOT_UID = 04000868f // CHANGE HERE 
+if ( <UID.<VAR.LOOT_UID>.uid> & <UID.<VAR.LOOT_UID>.baseid> == i_tag_store ) 
+VAR.LOOT = UID.<VAR.LOOT_UID>.TAG 
+VAR.LOOT.NAME = <UID.<var.LOOT_UID>.name> 
+else 
+VAR.LOOT = VAR.GLOBAL 
+VAR.LOOT_NAME = Global Variable 
+endif 
+
+
+[FUNCTION f_loot_aux] 
+VAR.NOLOOT_REGION = Disabled 
+if ( 0<<var.loot>.NOLOOT.<region.uid>> ) 
+VAR.NOLOOT_REGION = Enabled 
+endif 
+
+VAR.NOLOOT_WORLD = Disabled 
+if ( 0<<var.loot>.NOLOOT> ) 
+VAR.NOLOOT_WORLD = Enabled 
+endif 
+
+VAR.NOLOOT_WARN = off 
+if ( 0<<var.loot>.WARNLOOT> ) 
+VAR.NOLOOT_WARN = ON 
+endif 
+
+
+[FUNCTION loot] 
+f_settings_loot 
+
+if ( !strcmp( "<args>", "warn" ) ) 
+TRY <var.loot>.WARNLOOT = <eval !(0<<var.loot>.WARNLOOT>)> 
+sysmessage Using settings from: <VAR.LOOT.NAME> 
+loot_aux 
+sysmessage * Loot warnings are <var.noloot_warn>. 
+return 0 
+elseif ( !strcmp( "<args>", "region" ) ) 
+TRY <var.loot>.NOLOOT.<region.uid> = <eval !(0<<var.loot>.NOLOOT.<region.uid>>)> 
+f_loot_aux 
+sysmessage * Looting is <var.noloot_region> here in <region.name> <var.noloot_msg>. 
+return 0 
+elseif ( !strcmp( "<args>", "world" ) ) 
+TRY <var.loot>.NOLOOT = <eval !(0<<var.loot>.NOLOOT>)> 
+sysmessage * Looting is <var.noloot_world> worldwide. 
+f_loot_aux 
+return 0 
+elseif ( !strcmp( "<args>", "debug" ) ) 
+sysmessage Using settings from: <VAR.LOOT.NAME> 
+return 0 
+elseif ( !strcmp( "<args>", "status" ) ) 
+else 
+SYSMESSAGE Usage: .loot [region/world/warn/status/debug] 
+return 1 
+endif 
+
+f_loot_aux 
+if ( !strcmp( <VAR.NOLOOT_WORLD>, <VAR.NOLOOT_REGION> ) ) 
+VAR.NOLOOT_MSG = and 
+else 
+VAR.NOLOOT_MSG = but 
+endif 
+
+sysmessage Using settings from: <VAR.LOOT.NAME> 
+sysmessage Loot warnings are <var.noloot_warn>. 
+sysmessage Looting is <var.noloot_region> here in <region.name> <var.noloot_msg> <var.noloot_world> worldwide. 
+
+
+[ITEMDEF 02006] 
+DEFNAME = i_corpse 
+TYPE = T_CORPSE 
+TDATA2 = 09 
+
+ON=@DClick 
+IF !( (<AMOUNT>==400)||(<AMOUNT>==401) ) 
+RETURN 0 
+ENDIF 
+
+IF ( <LINK> == 04fffffff ) 
+RETURN 0 
+ENDIF 
+
+if ( (<LINK> == <SRC.UID>) || <SRC.ISGM> ) // Owner and GMs 
+return 0 
+endif 
+
+f_settings_loot // get the settings 
+
+if ( 0<<var.loot>.NOLOOT> ) 
+src.sysmessage Looting from players is currently disabled. 
+return 1 
+endif 
+
+if ( 0<<var.loot>.NOLOOT.<region.uid>> ) 
+src.sysmessage Looting from players is currently disabled in this area. 
+return 1 
+endif 
+
+if ( 0<<var.loot>.WARNLOOT> & (<RESCOUNT> > 1) ) 
+LINK.SYSMESSAGE You feel <SRC.NAME> peering over your possessions. 
+endif 
+return 1 
+
+// disallow corpses from being resurrected 
+ON=@SpellEffect 
+if ( <SRC.NPC> || <SRC.isgm> ) 
+return 0 
+endif 
+if ( <argn> == 59 ) 
+SRC.action = -1 
+return 1 
+endif 
+
+// decay into bones 
+ON=@TIMER 
+IF !( (<AMOUNT>==400)||(<AMOUNT>==401) ) 
+RETURN 0 
+ENDIF 
+
+IF ( <LINK> = 04fffffff ) 
+RETURN 0 
+ENDIF 
+
+ID = i_bones 
+TYPE = t_container 
+TIMER = 600 
+AMOUNT= 1 
+COLOR = 0 
+NAME = remains of <LINK.NAME> 
+LINK = 0 
+ATTR = attr_decay|attr_move_never 
+UPDATEX 
+MOVE 0,0,1 
+FIX 
+RETURN 1

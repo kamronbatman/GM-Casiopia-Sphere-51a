@@ -1,0 +1,275 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+VERSION=0.54
+
+[ITEMDEF 04054]     // change ID # to next in sphereitems2.scp
+NAME=Dark Elf Stronghold
+TYPE=47
+
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Dark Elf Stronghold
+MULTIREGION=-10,-17,12,17
+
+[ITEMDEF 04055]     // change ID # to next in sphereitems2.scp
+NAME=High Elf Town
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=High Elf Town
+MULTIREGION=-19,-20,24,20
+
+[ITEMDEF 04056]     // change ID # to next in sphereitems2.scp
+NAME=Wood Elf Tree House
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Wood Elf Tree House
+MULTIREGION=-2,-10,10,17
+
+[ITEMDEF 04057]     // change ID # to next in sphereitems2.scp
+NAME=Viking Town (west)
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Viking Town (west)
+
+MULTIREGION=-11,-17,15,18
+
+[ITEMDEF 04058]     // change ID # to next in sphereitems2.scp
+NAME=Viking Town (east)
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Viking Town (east)
+MULTIREGION=-19,-23,17,24
+
+[ITEMDEF 04059]     // change ID # to next in sphereitems2.scp
+NAME=Guild Tower
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Guild Tower
+MULTIREGION=-7,-7,15,13
+
+[ITEMDEF 0405a]     // change ID # to next in sphereitems2.scp
+NAME=Guild Training Compound
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Guild Training Compound
+MULTIREGION=-14,-12,14,16
+
+[ITEMDEF 0405b]     // change ID # to next in sphereitems2.scp
+NAME=Two Story Large Patio House
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Two Story Large Patio House
+MULTIREGION=-8,-7,10,8
+
+[ITEMDEF 0405d]     // change ID # to next in sphereitems2.scp
+NAME=Stone Fountain
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Stone Fountain
+MULTIREGION=-3,-3,3,3
+
+[ITEMDEF 0405e]     // change ID # to next in sphereitems2.scp
+NAME=Plain Stone Fountain
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Plain Stone Fountain
+MULTIREGION=-3,-3,3,3
+
+[ITEMDEF 0405f]     // change ID # to next in sphereitems2.scp
+NAME=Marble Fountain
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Marble Fountain
+MULTIREGION=-3,-3,4,4
+
+[ITEMDEF 04061]     // change ID # to next in sphereitems2.scp
+NAME=Vampire Liquor Store
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Vampire Liquor Store
+MULTIREGION=-8,-10,9,9
+
+[ITEMDEF 04062]     // change ID # to next in sphereitems2.scp
+NAME=Human Castle
+TYPE=47
+CATEGORY=Multis
+SUBSECTION=Custom Structures
+DESCRIPTION=Human Castle
+MULTIREGION=-10,-12,13,14
+
+[ITEMDEF 0791a]     // change ID # to next in sphereitems2.scp
+NAME=deed to Dark Elf Stronghold
+ID=i_DEED
+
+ON=@Create
+  MORE=4054           // change #### to the multi id #
+
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Dark Elf Stronghold
+
+[ITEMDEF 0791b]     // change ID # to next in sphereitems2.scp
+NAME=deed to High Elf Town
+ID=I_DEED
+
+ON=@Create
+  MORE=4055           // change #### to the multi id #
+
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a High Elf Town
+
+[ITEMDEF 0791c]     // change ID # to next in sphereitems2.scp
+NAME=deed to Wood Elf Tree House
+ID=I_DEED
+
+ON=@Create
+  MORE=4056           // change #### to the multi id #
+
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Wood Elf Tree House
+
+[ITEMDEF 0791d]     // change ID # to next in sphereitems2.scp
+NAME=deed to Viking Town (west)
+ID=I_DEED
+
+ON=@Create
+  MORE=4057          // change #### to the multi id #
+
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Viking Town (west)
+
+[ITEMDEF 0791e]     // change ID # to next in sphereitems2.scp
+NAME=deed to Viking Town (east)
+ID=I_DEED
+
+ON=@CREATE
+  MORE=4058           // change #### to the multi id #
+
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Viking Town (east)
+
+[ITEMDEF 0791f]     // change ID # to next in sphereitems2.scp
+NAME=deed to Guild Tower
+ID=I_DEED
+
+ON=@Create
+MORE=4059           // change #### to the multi id #
+
+BUYVALUE=850900
+SELLVALUE=425450
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Guild Tower
+
+[ITEMDEF 07920]     // change ID # to next in sphereitems2.scp
+NAME=deed to Guild Training Compound
+ID=i_DEED
+
+ON=@Create
+MORE=405a           // change #### to the multi id #
+
+BUYVALUE=578000
+SELLVALUE=289000
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Guild Training Compound
+
+[ITEMDEF 07921]     // change ID # to next in sphereitems2.scp
+NAME=deed to Two Story Large Patio House
+ID=i_DEED
+
+ON=@Create
+MORE=405b           // change #### to the multi id #
+
+BUYVALUE=345000
+SELLVALUE=172500
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Two Story Large Patio House
+
+[ITEMDEF 07922]     // change ID # to next in sphereitems2.scp
+NAME=deed to Stone Fountain
+ID=i_DEED
+
+ON=@Create
+MORE=405d           // change #### to the multi id #
+
+BUYVALUE=50000
+SELLVALUE=25000
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Stone Fountain
+
+[ITEMDEF 07923]     // change ID # to next in sphereitems2.scp
+NAME=deed to Plain Stone Fountain
+ID=i_DEED
+
+ON=@Create
+MORE=405e           // change #### to the multi id #
+
+BUYVALUE=50000
+SELLVALUE=25000
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Plain Stone Fountain
+
+[ITEMDEF 07924]     // change ID # to next in sphereitems2.scp
+NAME=deed to Marble Fountain
+ID=i_DEED
+
+ON=@Create
+MORE=405f           // change #### to the multi id #
+
+BUYVALUE=50000
+SELLVALUE=25000
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Marble Fountain
+
+[ITEMDEF 07925]     // change ID # to next in sphereitems2.scp
+NAME=deed to Vampire Liquor Store
+ID=i_DEED
+
+ON=@Create
+MORE=4061           // change #### to the multi id #
+
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Vampire Liquor Store
+
+[ITEMDEF 07926]     // change ID # to next in sphereitems2.scp
+NAME=deed to Human Castle
+ID=i_DEED
+
+ON=@Create
+MORE=4062           // change #### to the multi id #
+
+Category=Provisions - Deeds
+SUBSECTION=Custom House Deeds
+DESCRIPTION=Deed to a Human Castle
+
+[EOF]

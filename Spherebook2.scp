@@ -1,0 +1,73 @@
+//GameMonger.com 
+//Copyright 1999-2000 Innovative Network Designs Corporation / GameMonger.com 
+//This file may be edited for personal use, but may not be distributed in whole or in part, in any format.
+//
+
+[EMAILMSG 1]
+This is an automated email from <SERV.SERVNAME> to <EMAIL>
+We need to warn you that your account <ACCOUNT> 
+has not been used since <LASTCONNECTDATE>.
+Since we are a free test server our policy is to delete accounts 
+that have not been used in roughly 60 days.
+Please check the main page at <SERV.URL> or 
+contact us at <SERV.ADMINEMAIL> if you want to put a hold on your account.
+Thank You
+<SERV.ADMINEMAIL>
+
+[EMAILMSG 2]
+This is an automated email from <SERV.SERVNAME> to <EMAIL>
+Thank you for registering your new account <ACCOUNT>
+Your new password is <PASSWORD>
+You registered your account on <LASTCONNECTDATE>
+Since we are a free test server our policy is to delete accounts 
+that have not been used in roughly 60 days.
+Please check the main page at <SERV.URL> or 
+contact us at <SERV.ADMINEMAIL>
+Thank You
+<SERV.ADMINEMAIL>
+
+[EMAILMSG 3]
+One line test from <SERV.SERVNAME>
+
+// Tips, Books and scrolls.
+
+[GUEST]
+Welcome Guest Traveller you have entered <SERV.SERVNAME>!
+A Guest account has been opened for you
+Your life in this world is transient at best.
+Consult with <SERV.ADMINEMAIL> for a permenant account.
+
+[MOTD]	// normal entry
+07/29/2001 : GameMonger.com
+-= Shard News =-
+Its been over a year since we have updated this, so I thought it should be updated.  We are busy trying to get the shard ready for updating.
+
+NEW MONSTERS:
+Many new monsters have been added into this shard, i.e. Veeshans and Hesaphitians
+
+NEW ITEMS:
+There are many new items added.  There are 10 new craftable ores, new carpentry menus, new tinkering menu, and bowcraft.
+
+[NEWBIE]
+Welcome Traveller you have entered <SERV.SERVNAME>!
+We welcome you and wish you luck on your journey. Please visit the website www.GameMonger.com/uo for news & updates regarding this shard. 
+Please make sure you have read and understand the rules at www.GameMonger.com/uo/rules.
+SkillGates are available and should be easily accessible from your current location - look for a fenced in Blue-MoonGate, this will teleport you to the SkillGates located in the city of Britain.
+
+[TIP 1]
+This shard has many many new creatures and items. New creatures can be instantly recognized by their names or appearance. Variations of OSI creatures will have extended names such as BRAWNY HEADLESS or ELDER GAZER.
+
+[TIP 2]
+Please make sure to check www.GameMonger.com for updates and news about this shard.
+
+[TIP 3]
+War is unhealthy for children and other living things.
+
+[TIP 4]
+Please make sure to check www.GameMonger.com for updates and news about this shard.
+
+[TIP 5]
+Please make sure to check www.GameMonger.com for updates and news about this shard.
+
+[TIP 6]
+Please make sure to check www.GameMonger.com for updates and news about this shard.

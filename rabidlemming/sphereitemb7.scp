@@ -1,0 +1,9036 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, July 14, 2000
+//
+VERSION=0.54
+
+[ITEMDEF 02005]
+// Invis marker
+DEFNAME=i_eq_marker
+
+[ITEMDEF 02006]
+//corpse (all corpses normally are here)
+DEFNAME=i_corpse
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Corpses
+DESCRIPTION=All Corpses (Ogre default)
+
+[ITEMDEF 02007]
+// used as a memory object
+DEFNAME=i_memory
+TYPE=T_EQ_MEMORY_OBJ
+LAYER=layer_special
+
+CATEGORY=Miscellaneous
+SUBSECTION=Bad Tiles
+DESCRIPTION=NonGen (Memory) Object
+
+[ITEMDEF 02008]
+//peasant
+
+[ITEMDEF 02009]
+//noble
+
+[ITEMDEF 0200a]
+//armourer
+
+[ITEMDEF 0200b]
+//baker
+
+[ITEMDEF 0200c]
+//bowyer
+
+[ITEMDEF 0200d]
+//butcher
+
+[ITEMDEF 0200e]
+//guard
+
+[ITEMDEF 0200f]
+//healer
+
+[ITEMDEF 02010]
+//innkeeper
+
+[ITEMDEF 02011]
+//jailer
+
+[ITEMDEF 02012]
+//jeweler
+
+[ITEMDEF 02013]
+//leatherworker
+
+[ITEMDEF 02014]
+//mage
+
+[ITEMDEF 02015]
+//pirate
+
+[ITEMDEF 02016]
+//provisioner
+
+[ITEMDEF 02017]
+//sailor
+
+[ITEMDEF 02018]
+//shipwright
+
+[ITEMDEF 02019]
+//tailor
+
+[ITEMDEF 0201a]
+//spinner
+
+[ITEMDEF 0201b]
+//tavernkeeper
+
+[ITEMDEF 0201c]
+//thief
+
+[ITEMDEF 0201d]
+//tinker
+
+[ITEMDEF 0201e]
+//weapon trainer
+
+[ITEMDEF 0201f]
+//weaponsmith
+
+[ITEMDEF 02020]
+//woodworker
+
+[ITEMDEF 02021]
+//sculptor
+
+[ITEMDEF 02022]
+//artist
+
+[ITEMDEF 02023]
+//alchemist
+
+[ITEMDEF 02024]
+//glassblower
+
+[ITEMDEF 02025]
+//musician
+
+[ITEMDEF 02026]
+//fisherman
+
+[ITEMDEF 02027]
+//waiter
+
+[ITEMDEF 02028]
+//animal trainer
+
+[ITEMDEF 02029]
+//rancher
+
+[ITEMDEF 0202a]
+//cobbler
+
+[ITEMDEF 0202b]
+//beggar
+
+[ITEMDEF 0202c]
+//scribe
+
+[ITEMDEF 0202d]
+//miner
+
+[ITEMDEF 0202e]
+//mayor
+
+[ITEMDEF 0202f]
+//gambler
+
+[ITEMDEF 02030]
+//brigand
+
+[ITEMDEF 02031]
+//architect
+
+[ITEMDEF 02032]
+//cartographer
+
+[ITEMDEF 02033]
+//gypsy
+
+[ITEMDEF 02034]
+//herbalist
+
+[ITEMDEF 02035]
+//judge
+
+[ITEMDEF 02036]
+//cook
+
+[ITEMDEF 0203b]
+DEFNAME=i_hair_short
+NAME=short hair
+TYPE=T_HAIR
+VALUE={8 12}
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Short Hair
+
+ON=@Create
+ATTR=attr_newbie
+TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_BUNS
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.act.more=1
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 0203c]
+DEFNAME=i_hair_long
+NAME=long hair
+TYPE=T_HAIR
+VALUE={8 12}
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Long Hair
+
+ON=@Create
+ATTR=attr_newbie
+
+ON=@TIMER
+	return 1
+
+[ITEMDEF 0203d]
+DEFNAME=i_hair_ponytail
+NAME=ponytail
+TYPE=T_HAIR
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Pony Tail
+
+ON=@Create
+ATTR=attr_newbie
+TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_LONG
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.act.more=1
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 0203e]
+DEFNAME=i_beard_long
+NAME=long beard
+TYPE=T_BEARD
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Long Beard
+
+ON=@Create
+	ATTR=attr_newbie
+
+ON=@TIMER
+	return 1
+
+[ITEMDEF 0203f]
+DEFNAME=i_beard_short
+NAME=short beard
+TYPE=T_BEARD
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Short Beard
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_beard_LONG
+	cont.act.color=<cont.findlayer(layer_beard).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 02040]
+DEFNAME=i_beard_goatee
+NAME=goatee
+TYPE=T_BEARD
+VALUE={8 12}
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Goatee
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_beard_short
+	cont.act.color=<cont.findlayer(layer_beard).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 02041]
+DEFNAME=i_beard_mustache
+NAME=mustache
+TYPE=T_BEARD
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Mustache
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_beard_GOATEE
+	cont.act.color=<cont.findlayer(layer_beard).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 02042]
+// Lord British Armor
+//**Since players won't use these should they have type assigned?
+DEFNAME=i_person_lord_british
+TYPE=T_ARMOR
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=Special Items
+DESCRIPTION=Lord British Armour
+
+ON=@Create
+HITPOINTS=150
+
+[ITEMDEF 02043]
+// Blackthorne Robe
+DEFNAME=i_person_black_thorne
+TYPE=T_ARMOR
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=Special Items
+DESCRIPTION=Blackthorne Robe
+
+ON=@Create
+HITPOINTS=150
+
+[ITEMDEF 02044]
+DEFNAME=i_hair_mohawk
+NAME=mohawk
+TYPE=T_HAIR
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Mohawk
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_SHORT
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.act.more=1
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 02045]
+DEFNAME=i_hair_pageboy
+NAME=pageboy
+TYPE=T_HAIR
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Pageboy
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_BUNS
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 02046]
+DEFNAME=i_hair_buns
+NAME=buns hair
+TYPE=T_HAIR
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Buns Hair
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_AFRO
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 02047]
+DEFNAME=i_hair_afro
+NAME=afro
+TYPE=T_HAIR
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Afro
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_LONG
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 02048]
+DEFNAME=i_hair_receding
+NAME=receeding hair
+TYPE=T_HAIR
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Receeding Hair
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_SHORT
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 02049]
+DEFNAME=i_hair_2_pigtails
+NAME=2 pig tails
+TYPE=T_HAIR
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Two Pig Tails
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_long
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 0204a]
+DEFNAME=i_hair_krisna
+NAME=krisna hair
+TYPE=T_HAIR
+VALUE={8 12}
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Krisna Hair
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_hair_RECEDING
+	cont.act.color=<cont.findlayer(layer_hair).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 0204b]
+DEFNAME=i_beard_short_med
+NAME=medium short beard
+TYPE=T_BEARD
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Medium Short Beard
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_beard_long
+	cont.act.color=<cont.findlayer(layer_beard).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 0204c]
+DEFNAME=i_beard_long_med
+NAME=medium long beard
+TYPE=T_BEARD
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Medium Short Beard
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_beard_LONG_MED
+	cont.act.color=<cont.findlayer(layer_beard).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 0204d]
+DEFNAME=i_beard_vandyke
+NAME=vandyke
+TYPE=T_BEARD
+VALUE={8 12}
+
+CATEGORY=Items by Professions
+SUBSECTION=Barber
+DESCRIPTION=Vandyke
+
+ON=@Create
+	ATTR=attr_newbie
+	TIMER=550000
+
+ON=@TIMER
+	if !<cont>	// on ground?
+		return 0
+	endif
+	if <cont.brain>	// players only
+		return 1
+	endif
+	cont.newitem=i_beard_short_med
+	cont.act.color=<cont.findlayer(layer_beard).color>
+	cont.equip <cont.act.uid>
+	return 1
+
+[ITEMDEF 0204E]
+DEFNAME=i_deathshroud
+NAME=Death Shroud
+TYPE=T_CLOTHING
+
+CATEGORY=Provisions - GM Items
+SUBSECTION=Special Items
+DESCRIPTION=Death Shroud
+
+[ITEMDEF 0204F]
+// GM Robe
+DEFNAME=i_robe_gm
+TYPE=T_CLOTHING
+//ATT=50
+ARMOR=500
+DYE=1
+DESCRIPTION=GM Robes
+SUBSECTION=GM Robes
+CATEGORY=Provisions - GM Items
+
+ON=@Create
+HITPOINTS=150
+
+[ITEMDEF 02050]
+// Dupre
+DEFNAME=i_dupre
+TYPE=T_ARMOR
+//ATT=50
+ARMOR=30
+
+ON=@Create
+HITPOINTS=150
+
+[ITEMDEF 02053]
+// hand (gaunlet) point north
+DEFNAME=i_handr_1
+DUPELIST=02054,02055,02056,02057,02058,02059,0205a
+
+[ITEMDEF 02054]
+DUPEITEM=02053
+
+[ITEMDEF 02055]
+DUPEITEM=02053
+
+[ITEMDEF 02056]
+DUPEITEM=02053
+
+[ITEMDEF 02057]
+DUPEITEM=02053
+
+[ITEMDEF 02058]
+DUPEITEM=02053
+
+[ITEMDEF 02059]
+DEFNAME=i_handr_7
+DUPEITEM=02053
+
+[ITEMDEF 0205a]
+DUPEITEM=02053
+
+[ITEMDEF 0206a]
+DEFNAME=i_hand_1
+DUPELIST=0206b,0206c,0206d,0206e,0206f,02070,02071
+
+[ITEMDEF 0206b]
+DUPEITEM=0206a
+
+[ITEMDEF 0206c]
+DUPEITEM=0206a
+
+[ITEMDEF 0206d]
+DUPEITEM=0206a
+
+[ITEMDEF 0206e]
+DUPEITEM=0206a
+
+[ITEMDEF 0206f]
+DUPEITEM=0206a
+
+[ITEMDEF 02070]
+DEFNAME=i_hand_7
+DUPEITEM=0206a
+
+[ITEMDEF 02071]
+DUPEITEM=0206a
+
+[ITEMDEF 02080]
+//Clumsy
+DEFNAME=i_rune_clumsy
+TYPE=T_SPELLICON
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+NAME=Clumsy
+
+[ITEMDEF 02081]
+//Create Food
+DEFNAME=i_rune_create_food
+TYPE=T_SPELLICON
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+NAME=Create Food
+
+[ITEMDEF 02082]
+//Feeblemind
+DEFNAME=i_rune_feeblemind
+TYPE=T_SPELLICON
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+NAME=Feeblemind
+
+[ITEMDEF 02083]
+//Heal
+DEFNAME=i_rune_heal
+TYPE=T_SPELLICON
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+NAME=Heal
+
+[ITEMDEF 02084]
+//Magic Arrow
+DEFNAME=i_rune_magic_arrow
+TYPE=T_SPELLICON
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+NAME=Magic Arrow
+
+[ITEMDEF 02085]
+//Night Sight
+DEFNAME=i_rune_night_sight
+TYPE=T_SPELLICON
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+NAME=Night Sight
+
+[ITEMDEF 02086]
+//Reactive Armor
+DEFNAME=i_rune_reactive_armor
+TYPE=T_SPELLICON
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+NAME=Reactive Armor
+
+[ITEMDEF 02087]
+//Weaken
+DEFNAME=i_rune_weaken
+TYPE=T_SPELLICON
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+NAME=Weaken
+
+[ITEMDEF 02088]
+//Agility
+DEFNAME=i_rune_agility
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+NAME=Agility
+
+[ITEMDEF 02089]
+//Cunning
+DEFNAME=i_rune_cunning
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+NAME=Cunning
+
+[ITEMDEF 0208a]
+//Cure
+DEFNAME=i_rune_cure
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+NAME=Cure
+
+[ITEMDEF 0208b]
+//Harm
+DEFNAME=i_rune_harm
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+NAME=Harm
+
+[ITEMDEF 0208c]
+//Magic Trap
+DEFNAME=i_rune_magic_trap
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+NAME=Magic Trap
+
+[ITEMDEF 0208d]
+//Magic Untrap
+DEFNAME=i_rune_magic_untrap
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+NAME=Magic Untrap
+
+[ITEMDEF 0208e]
+//Protection
+DEFNAME=i_rune_protection
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+NAME=Protection
+
+[ITEMDEF 0208f]
+//Strength
+DEFNAME=i_rune_strength
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+NAME=Strength
+
+[ITEMDEF 02090]
+//Bless
+DEFNAME=i_rune_bless
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+NAME=Bless
+
+[ITEMDEF 02091]
+//Fireball
+DEFNAME=i_rune_fireball
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+NAME=Fireball
+
+[ITEMDEF 02092]
+//Magic Lock
+DEFNAME=i_rune_magic_lock
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+NAME=Magic Lock
+
+[ITEMDEF 02093]
+//Poison
+DEFNAME=i_rune_poison
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+NAME=Poison
+
+[ITEMDEF 02094]
+//Telekinesis
+DEFNAME=i_rune_telekinesis
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+NAME=Telekinesis
+
+[ITEMDEF 02095]
+//Teleport
+DEFNAME=i_rune_teleport
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+NAME=Teleport
+
+[ITEMDEF 02096]
+//Magic Unlock
+DEFNAME=i_rune_unlock
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+NAME=Magic Unlock
+
+[ITEMDEF 02097]
+//Wall of Stone
+DEFNAME=i_rune_wall_of_stone
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+NAME=Wall of Stone
+
+[ITEMDEF 02098]
+//Archcure
+DEFNAME=i_rune_archcure
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+NAME=Archcure
+
+[ITEMDEF 02099]
+//Archprotection
+DEFNAME=i_rune_archprotection
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+NAME=Archprotection
+
+[ITEMDEF 0209a]
+//Curse
+DEFNAME=i_rune_curse
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+NAME=Curse
+
+[ITEMDEF 0209b]
+//Fire Field
+DEFNAME=i_rune_fire_field
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+NAME=Fire Field
+
+[ITEMDEF 0209c]
+//Greater Heal
+DEFNAME=i_rune_greater_heal
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+NAME=Greater Heal
+
+[ITEMDEF 0209d]
+//Lightning
+DEFNAME=i_rune_lightning
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+NAME=Lightning
+
+[ITEMDEF 0209e]
+//Mana Drain
+DEFNAME=i_rune_mana_drain
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+NAME=Mana Drain
+
+[ITEMDEF 0209f]
+//Recall
+DEFNAME=i_rune_recall
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+NAME=Recall
+
+[ITEMDEF 020a0]
+//Blade Spirits
+DEFNAME=i_rune_blade_spirits
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+NAME=Blade Spirits
+
+[ITEMDEF 020a1]
+//Dispel Field
+DEFNAME=i_rune_dispel_field
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+NAME=Dispel Field
+
+[ITEMDEF 020a2]
+//Incognito
+DEFNAME=i_rune_incognito
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+NAME=Incognito
+
+[ITEMDEF 020a3]
+//Magic Reflection
+DEFNAME=i_rune_magic_reflection
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+NAME=Magic Reflection
+
+[ITEMDEF 020a4]
+//Mind Blast
+DEFNAME=i_rune_mind_blast
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+NAME=Mind Blast
+
+[ITEMDEF 020a5]
+//Paralyze
+DEFNAME=i_rune_paralyze
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+NAME=Paralyze
+
+[ITEMDEF 020a6]
+//Poison Field
+DEFNAME=i_rune_poison_field
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+NAME=Poison Field
+
+[ITEMDEF 020a7]
+//Summon Creature
+DEFNAME=i_rune_summon_creature
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+NAME=Summon Creature
+
+[ITEMDEF 020a8]
+//Dispel
+DEFNAME=i_rune_dispel
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+NAME=Dispel
+
+[ITEMDEF 020a9]
+//Energy Bolt
+DEFNAME=i_rune_energy_bolt
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+NAME=Energy Bolt
+
+[ITEMDEF 020aa]
+//Explosion
+DEFNAME=i_rune_explosion
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+NAME=Explosion
+
+[ITEMDEF 020ab]
+//Invisibility
+DEFNAME=i_rune_invisibility
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+NAME=Invisibility
+
+[ITEMDEF 020ac]
+//Mark
+DEFNAME=i_rune_mark
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+NAME=Mark
+
+[ITEMDEF 020ad]
+//Mass Curse
+DEFNAME=i_rune_mass_curse
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+NAME=Mass Curse
+
+[ITEMDEF 020ae]
+//Paralyze Field
+DEFNAME=i_rune_paralyze_field
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+NAME=Paralyze Field
+
+[ITEMDEF 020af]
+//Reveal
+DEFNAME=i_rune_reveal
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+NAME=Reveal
+
+[ITEMDEF 020b0]
+//Chain Lightning
+DEFNAME=i_rune_chain_lightning
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+NAME=Chain Lightning
+
+[ITEMDEF 020b1]
+//Energy Field
+DEFNAME=i_rune_energy_field
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+NAME=Energy Field
+
+[ITEMDEF 020b2]
+//Flamestrike
+DEFNAME=i_rune_flamestrike
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+NAME=Flamestrike
+
+[ITEMDEF 020b3]
+//Gate Travel
+DEFNAME=i_rune_gate_travel
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+NAME=Gate Travel
+
+[ITEMDEF 020b4]
+//Mana Vampire
+DEFNAME=i_rune_mana_vampire
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+NAME=Mana Vampire
+
+[ITEMDEF 020b5]
+//Mass Dispell
+DEFNAME=i_rune_mass_dispel
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+NAME=Mass Dispell
+
+[ITEMDEF 020b6]
+//Meteor Swarm
+DEFNAME=i_rune_meteor_swarm
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+NAME=Meteor Swarm
+
+[ITEMDEF 020b7]
+//Polymorph
+DEFNAME=i_rune_polymorph
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+NAME=Polymorph
+
+[ITEMDEF 020b8]
+//Earthquake
+DEFNAME=i_rune_earthquake
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+NAME=Earthquake
+
+[ITEMDEF 020b9]
+//Energy Vortex
+DEFNAME=i_rune_energy_vortex
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+NAME=Energy Vortex
+
+[ITEMDEF 020ba]
+//Resurrection
+DEFNAME=i_rune_resurrection
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+NAME=Resurrection
+
+[ITEMDEF 020bb]
+//Summon Air
+DEFNAME=i_rune_summon_elem_air
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+NAME=Summon Air Elemental
+
+[ITEMDEF 020bc]
+//Summon Demon
+DEFNAME=i_rune_summon_daemon
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+NAME=Summon Deamon
+
+[ITEMDEF 020bd]
+//Summon Earth
+DEFNAME=i_rune_summon_elem_earth
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+NAME=Summon Earth Elemental
+
+[ITEMDEF 020be]
+//Summon Fire
+DEFNAME=i_rune_summon_elem_fire
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+NAME=Summon Fire Elemental
+
+[ITEMDEF 020bf]
+//Summon Water
+DEFNAME=i_rune_summon_elem_water
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+NAME=Summon Water Elemental
+
+[ITEMDEF 020c0]
+//Circle 1
+DEFNAME=i_spell_circle_1
+NAME=First Circle
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=First Circle
+DESCRIPTION=@
+
+[ITEMDEF 020c1]
+//Circle 2
+DEFNAME=i_spell_circle_2
+NAME=Second Circle
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Second Circle
+DESCRIPTION=@
+
+[ITEMDEF 020c2]
+//Circle 3
+DEFNAME=i_spell_circle_3
+NAME=Third Circle
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Third Circle
+DESCRIPTION=@
+
+[ITEMDEF 020c3]
+//Circle 4
+DEFNAME=i_spell_circle_4
+NAME=Fourth Circle
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fourth Circle
+DESCRIPTION=@
+
+[ITEMDEF 020c4]
+//Circle 5
+DEFNAME=i_spell_circle_5
+NAME=Fifth Circle
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Fifth Circle
+DESCRIPTION=@
+
+[ITEMDEF 020c5]
+//Circle 6
+DEFNAME=i_spell_circle_6
+NAME=Sixth Circle
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Sixth Circle
+DESCRIPTION=@
+
+[ITEMDEF 020c6]
+//Circle 7
+DEFNAME=i_spell_circle_7
+NAME=Seventh Circle
+TYPE=T_SPELLICON
+
+CATEGORY=Spell Icons
+SUBSECTION=Seventh Circle
+DESCRIPTION=@
+
+[ITEMDEF 020c7]
+//Circle 8
+DEFNAME=i_spell_circle_8
+NAME=Eighth Circle
+TYPE=T_SPELLICON
+
+// Character Frames (used for spawns)
+CATEGORY=Spell Icons
+SUBSECTION=Eighth Circle
+DESCRIPTION=@
+
+[ITEMDEF 020c8]
+DEFNAME=i_pet_ettin_2
+NAME=Ettin
+TYPE=T_FIGURINE
+TDATA3=c_ettin
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ettin
+
+[ITEMDEF 020c9]
+// Bad pic = don't use this !
+DEFNAME=i_pet_gorilla_junk
+NAME=Gorilla
+TYPE=T_FIGURINE
+TDATA3=c_gorilla
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Gorilla
+
+[ITEMDEF 020ca]
+DEFNAME=i_pet_lizman_2
+NAME=Lizardman
+TYPE=T_FIGURINE
+TDATA3=c_Lizardman
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Lizardman
+
+[ITEMDEF 020cb]
+DEFNAME=i_pet_ogre_2
+NAME=Ogre
+TYPE=T_FIGURINE
+TDATA3=c_ogre
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ogre
+
+[ITEMDEF 020cc]
+DEFNAME=i_pet_troll_2
+NAME=Troll
+TYPE=T_FIGURINE
+TDATA3=c_troll
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Troll
+
+[ITEMDEF 020cd]
+DEFNAME=i_pet_man_naked
+NAME=Man
+TYPE=T_FIGURINE
+TDATA3=c_man
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Man Naked
+
+[ITEMDEF 020ce]
+DEFNAME=i_pet_woman_naked
+NAME=Woman
+TYPE=T_FIGURINE
+TDATA3=c_woman
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Woman Naked
+
+[ITEMDEF 020cf]
+DEFNAME=i_pet_bear
+NAME=Bear
+TYPE=T_FIGURINE
+TDATA3=c_bear_brown
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Bear
+
+[ITEMDEF 020d0]
+DEFNAME=i_pet_rat_2
+NAME=Giant Rat
+TYPE=T_FIGURINE
+TDATA3=c_rat_giant
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Rat
+
+[ITEMDEF 020d1]
+DEFNAME=i_pet_chicken
+NAME=Chicken
+TYPE=T_FIGURINE
+TDATA3=c_chicken
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Chicken
+
+[ITEMDEF 020d2]
+DEFNAME=i_pet_corpser
+NAME=Corpser
+TYPE=T_FIGURINE
+TDATA3=c_corpser
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Corpser
+
+[ITEMDEF 020d3]
+DEFNAME=i_pet_daemon
+NAME=Daemon
+TYPE=T_FIGURINE
+TDATA3=c_daemon
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Daemon
+
+[ITEMDEF 020d4]
+DEFNAME=i_pet_deer
+NAME=Deer
+TYPE=T_FIGURINE
+TDATA3=c_stag
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Deer
+
+[ITEMDEF 020d5]
+DEFNAME=i_pet_dog_2
+NAME=Dog
+TYPE=T_FIGURINE
+TDATA3=c_dog
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Dog
+
+[ITEMDEF 020d6]
+DEFNAME=i_pet_dragon
+NAME=Dragon
+TYPE=T_FIGURINE
+TDATA3=c_DRAGON_GREEN
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Dragon
+
+[ITEMDEF 020d7]
+DEFNAME=i_pet_elem_earth
+NAME=Earth Elemental
+TYPE=T_FIGURINE
+TDATA3=c_elem_earth
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Earth Elemental
+
+[ITEMDEF 020d8]
+DEFNAME=i_pet_ettin
+NAME=Ettin
+TYPE=T_FIGURINE
+TDATA3=c_ettin
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ettin
+
+[ITEMDEF 020d9]
+DEFNAME=i_pet_garg
+NAME=Gargoyle
+TYPE=T_FIGURINE
+TDATA3=c_gargoyle
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Gargoyle
+
+[ITEMDEF 020da]
+DUPEITEM=02131
+
+[ITEMDEF 020db]
+DEFNAME=i_pet_griz
+NAME=Grizzly Bear
+TYPE=T_FIGURINE
+TDATA3=c_bear_grizzly
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Grizzly Bear
+
+[ITEMDEF 020dc]
+DEFNAME=i_pet_harpy
+NAME=Harpy
+TYPE=T_FIGURINE
+TDATA3=c_harpy
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Harpy
+
+[ITEMDEF 020dd]
+// light brown
+DEFNAME=i_pet_horse
+DUPEITEM=02120
+
+[ITEMDEF 020de]
+DEFNAME=i_pet_lizman
+NAME=Lizardman
+TYPE=T_FIGURINE
+TDATA3=c_Lizardman
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Lizard Man
+
+[ITEMDEF 020df]
+DEFNAME=i_pet_ogre
+NAME=Ogre
+TYPE=T_FIGURINE
+TDATA3=c_ogre
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ogre
+
+[ITEMDEF 020e0]
+DEFNAME=i_pet_orc
+NAME=Orc
+TYPE=T_FIGURINE
+TDATA3=c_orc
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Orc
+
+[ITEMDEF 020e1]
+DEFNAME=i_pet_bear_polar
+NAME=Polar Bear
+TYPE=T_FIGURINE
+TDATA3=c_bear_polar
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Polar Bear
+
+[ITEMDEF 020e2]
+DEFNAME=i_pet_rabbit_2
+TYPE=T_FIGURINE
+NAME=Rabbit
+TDATA3=c_rabbit
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Rabbit
+
+[ITEMDEF 020e3]
+DEFNAME=i_pet_ratman
+NAME=Rat Man
+TYPE=T_FIGURINE
+TDATA3=c_ratman
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Rat Man
+
+[ITEMDEF 020e4]
+DEFNAME=i_pet_scorp
+NAME=Scorpion
+TYPE=T_FIGURINE
+TDATA3=c_scorpion_giant
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Scorpion
+
+[ITEMDEF 020e5]
+DEFNAME=i_pet_snake_junk
+NAME=Serpent
+TYPE=T_FIGURINE
+TDATA3=c_snake
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Serpent
+
+[ITEMDEF 020e6]
+DEFNAME=i_pet_sheep
+NAME=Sheep
+TYPE=T_FIGURINE
+TDATA3=c_sheep_shorn
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Sheep
+
+[ITEMDEF 020e7]
+DEFNAME=i_pet_skeleton
+NAME=Skeleton
+TYPE=T_FIGURINE
+TDATA3=c_skeleton
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Skeleton
+
+[ITEMDEF 020e8]
+DEFNAME=i_pet_slime
+NAME=Slime
+TYPE=T_FIGURINE
+TDATA3=c_slime
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Slime
+
+[ITEMDEF 020e9]
+DEFNAME=i_pet_troll
+NAME=Troll
+TYPE=T_FIGURINE
+TDATA3=c_troll
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Troll
+
+[ITEMDEF 020ea]
+DEFNAME=i_pet_wolf
+NAME=Wolf
+TYPE=T_FIGURINE
+TDATA3=c_wolf
+VALUE={60 90}
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Wolf
+
+[ITEMDEF 020eb]
+//Wooly Sheep Frame
+DEFNAME=i_pet_sheep_wooly
+NAME=Sheep
+TYPE=T_FIGURINE
+TDATA3=c_SHEEP_WOOLLY
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Wolly Sheep
+
+[ITEMDEF 020ec]
+DEFNAME=i_pet_zombie
+NAME=Zombie
+TYPE=T_FIGURINE
+TDATA3=c_zombie
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Zombie
+
+[ITEMDEF 020ed]
+DEFNAME=i_pet_elem_air
+NAME=Air Elemental
+TYPE=T_FIGURINE
+TDATA3=c_elem_air
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Air Elemental
+
+[ITEMDEF 020ee]
+DEFNAME=i_pet_bird
+NAME=Bird
+TYPE=T_FIGURINE
+TDATA3=c_bird
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Bird
+
+[ITEMDEF 020ef]
+DEFNAME=i_pet_bull
+NAME=Bull
+TYPE=T_FIGURINE
+TDATA3=c_bull_brown_lt
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Bull (brown)
+
+[ITEMDEF 020f0]
+DEFNAME=i_pet_bull_brown_dk
+NAME=Bull
+TYPE=T_FIGURINE
+TDATA3=c_bull_brown_dk
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Bull (gray)
+
+[ITEMDEF 020f1]
+// More like a whale actually.
+DEFNAME=i_pet_dolphin
+NAME=Dolphin
+TYPE=T_FIGURINE
+TDATA3=c_dolphin
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Dolphin
+
+[ITEMDEF 020f2]
+DEFNAME=i_pet_eagle_2
+NAME=Eagle
+TYPE=T_FIGURINE
+TDATA3=c_eagle
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Eagle
+
+[ITEMDEF 020f3]
+DEFNAME=i_pet_elem_fire
+NAME=Fire Elemental
+TYPE=T_FIGURINE
+TDATA3=c_elem_fire
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Fire Elemental
+
+[ITEMDEF 020f4]
+DEFNAME=i_pet_gazer
+NAME=Gazer
+TYPE=T_FIGURINE
+TDATA3=c_gazer
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Gazer
+
+[ITEMDEF 020f5]
+DEFNAME=i_pet_gorilla
+NAME=Gorilla
+TYPE=T_FIGURINE
+TDATA3=c_gorilla
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Gorilla
+
+[ITEMDEF 020f6]
+DEFNAME=i_pet_llama
+NAME=Llama
+TYPE=T_FIGURINE
+TDATA3=c_llama
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Llama
+
+[ITEMDEF 020f7]
+// don't use this it looks like crap.
+DEFNAME=i_pet_panther_junk
+TYPE=T_FIGURINE
+TDATA3=c_panther
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Panther (looks terrible)
+
+[ITEMDEF 020f8]
+DEFNAME=i_pet_lich
+NAME=Liche
+TYPE=T_FIGURINE
+TDATA3=c_liche
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Liche
+
+[ITEMDEF 020f9]
+DEFNAME=i_pet_mongbat
+NAME=Mong Bat
+TYPE=T_FIGURINE
+TDATA3=c_mongbat
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Mongbat
+
+[ITEMDEF 020fa]
+DEFNAME=i_pet_reaper
+NAME=Reaper
+TYPE=T_FIGURINE
+TDATA3=c_reaper
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Reaper
+
+[ITEMDEF 020fb]
+DEFNAME=i_pet_shark
+NAME=Shark
+TYPE=T_FIGURINE
+TDATA3=c_sea_serpent
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Shark
+
+[ITEMDEF 020fc]
+DEFNAME=i_pet_snake
+NAME=Snake
+TYPE=T_FIGURINE
+TDATA3=c_snake
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Snake
+
+[ITEMDEF 020fd]
+DEFNAME=i_pet_spider_giant
+NAME=Giant Spider
+TYPE=T_FIGURINE
+TDATA3=c_spider_giant
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Giant Spider
+
+[ITEMDEF 020fe]
+DEFNAME=i_pet_snake_giant
+NAME=Snake
+TYPE=T_FIGURINE
+TDATA3=c_snake_giant
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Snake
+
+[ITEMDEF 020ff]
+DEFNAME=i_pet_walrus
+NAME=Walrus
+TYPE=T_FIGURINE
+TDATA3=c_WALRUS
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Walrus
+
+[ITEMDEF 02100]
+DEFNAME=i_pet_wisp
+NAME=Wisp
+TYPE=T_FIGURINE
+TDATA3=c_wisp
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Wisp
+
+[ITEMDEF 02101]
+DEFNAME=i_pet_pig
+NAME=Pig
+TYPE=T_FIGURINE
+TDATA3=c_pig
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Pig
+
+[ITEMDEF 02102]
+// bigger panther.
+DEFNAME=i_pet_panther_2
+NAME=Panther
+TYPE=T_FIGURINE
+TDATA3=c_panther
+VALUE=300
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Panther
+
+[ITEMDEF 02103]
+DEFNAME=i_pet_cow
+NAME=Cow
+TDATA3=c_cow_bw
+TYPE=T_FIGURINE
+VALUE=300
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Cow (black & white)
+
+[ITEMDEF 02106]
+DEFNAME=i_pet_man
+NAME=Man
+TYPE=T_FIGURINE
+TDATA3=c_H_VENDOR
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Man
+
+[ITEMDEF 02107]
+DEFNAME=i_pet_woman
+NAME=Woman
+TYPE=T_FIGURINE
+TDATA3=c_H_VENDOR_f
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Woman
+
+[ITEMDEF 02108]
+DEFNAME=i_pet_goat
+NAME=Goat
+TYPE=T_FIGURINE
+TDATA3=c_goat
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Goat
+
+[ITEMDEF 02109]
+DEFNAME=i_pet_ghoul
+NAME=Ghoul
+TYPE=T_FIGURINE
+TDATA3=c_ghoul
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ghoul
+
+[ITEMDEF 0210a]
+DEFNAME=i_pet_headless
+NAME=Headless
+TYPE=T_FIGURINE
+TDATA3=c_headless
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Headless
+
+[ITEMDEF 0210b]
+DEFNAME=i_pet_elem_water
+NAME=Water Elemental
+TYPE=T_FIGURINE
+TDATA3=c_elem_water
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Water Elemental
+
+[ITEMDEF 02118]
+DEFNAME=i_pet_bear_black
+NAME=Black Bear
+VALUE={100 150}
+TYPE=T_FIGURINE
+TDATA3=c_a_black_bear
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Black Bear
+
+[ITEMDEF 02119]
+//big cat
+DEFNAME=i_pet_panther
+NAME=Panther
+TYPE=T_FIGURINE
+TDATA3=c_panther
+VALUE={100 150}
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Panther
+
+[ITEMDEF 0211a]
+DEFNAME=i_pet_raven
+NAME=Bird
+TYPE=T_FIGURINE
+TDATA3=c_BIRD_RAVEN
+VALUE={4 8}
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Bird
+
+[ITEMDEF 0211b]
+DEFNAME=i_pet_cat
+NAME=Cat
+TYPE=T_FIGURINE
+TDATA3=c_cat
+VALUE={25 40}
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Cat
+
+[ITEMDEF 0211c]
+DEFNAME=i_pet_dog
+NAME=Dog
+VALUE={25 40}
+TYPE=T_FIGURINE
+TDATA3=c_dog
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Dog
+
+[ITEMDEF 0211d]
+DEFNAME=i_pet_eagle
+NAME=Eagle
+TYPE=T_FIGURINE
+TDATA3=c_eagle
+VALUE={40 80}
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Eagle
+
+[ITEMDEF 0211e]
+//grizzly bear
+DEFNAME=i_pet_grizzly
+NAME=Grizzly Bear
+TYPE=T_FIGURINE
+TDATA3=c_bear_grizzly
+VALUE={150 200}
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Grizzly Bear
+
+[ITEMDEF 0211f]
+//horse frame, gray
+DEFNAME=i_pet_horse_gray
+NAME=Gray Horse
+TYPE=T_FIGURINE
+TDATA3=c_horse_gray
+VALUE={280 400}
+SKILLMAKE=MAGERY 35.0
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Horse (gray)
+
+[ITEMDEF 02120]
+//horse frame
+DEFNAME=i_pet_horse_brown_lt
+NAME=Horse
+TYPE=T_FIGURINE
+TDATA3=c_horse_brown_lt
+VALUE={280 400}
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Horse (light brown)
+DUPELIST=020dd
+
+[ITEMDEF 02121]
+//horse frame dark brown
+DEFNAME=i_pet_horse_brown_dk
+VALUE={280 400}
+TYPE=T_FIGURINE
+TDATA3=c_horse_brown_dk
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Horse (dark brown)
+
+[ITEMDEF 02122]
+//wolf
+DEFNAME=i_pet_wolf_gray
+TYPE=T_FIGURINE
+TDATA3=c_a_wolf_gray
+VALUE={75 125}
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Wolf
+
+[ITEMDEF 02123]
+//rat
+DEFNAME=i_pet_rat
+Name=Rat
+TYPE=T_FIGURINE
+TDATA3=c_a_rat_sewer
+VALUE={2 3}
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Rat
+
+[ITEMDEF 02124]
+//horse warm tan
+DEFNAME=i_pet_horse_tan
+Name=Horse
+TYPE=T_FIGURINE
+TDATA3=c_horse_tan
+VALUE={280 400}
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Horse (tan)
+
+[ITEMDEF 02125]
+DEFNAME=i_pet_rabbit
+Name=Rabbit
+VALUE={10 16}
+TYPE=T_FIGURINE
+TDATA3=c_rabbit
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Rabbit
+
+[ITEMDEF 02126]
+DEFNAME=i_pet_horse_pack
+NAME=Pack Horse
+TYPE=T_FIGURINE
+TDATA3=c_horse_pack
+VALUE={580 800}
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Pack Horse
+
+[ITEMDEF 02127]
+DEFNAME=i_pet_llama_pack
+Name=Pack Llama
+TYPE=T_FIGURINE
+TDATA3=c_llama_pack
+VALUE={300 380}
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Pack Llama
+
+[ITEMDEF 0212a]
+DEFNAME=i_pet_terathan_war
+NAME=Terethan
+TYPE=T_FIGURINE
+TDATA3=c_TERATHAN_WARRIOR
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Terethan
+
+[ITEMDEF 0212b]
+DEFNAME=i_pet_terathan_drone
+NAME=Terethan
+TYPE=T_FIGURINE
+TDATA3=c_terathan_drone
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Terethan
+
+[ITEMDEF 0212c]
+DEFNAME=i_pet_terathan_queen
+NAME=Terethan
+TYPE=T_FIGURINE
+TDATA3=c_terathan_matriarch
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Terethan
+
+[ITEMDEF 0212d]
+DEFNAME=i_pet_titan
+NAME=Titan
+TYPE=T_FIGURINE
+TDATA3=c_titan
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Titan
+
+[ITEMDEF 0212e]
+DEFNAME=i_pet_cyclops
+NAME=Cyclops
+TYPE=T_FIGURINE
+TDATA3=c_cyclops
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Cyclops
+
+[ITEMDEF 0212f]
+DEFNAME=i_pet_toad_giant
+NAME=Giant Toad
+TYPE=T_FIGURINE
+TDATA3=c_toad_giant
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Giant Toad
+
+[ITEMDEF 02130]
+DEFNAME=i_pet_bullfrog
+NAME=Bull Frog
+TYPE=T_FIGURINE
+TDATA3=c_bullfrog
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Bull Frog
+
+[ITEMDEF 02131]
+DEFNAME=i_pet_croc
+NAME=Crocodile
+TYPE=T_FIGURINE
+TDATA3=c_ALLIGATOR
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Crocodile
+
+DUPELIST=020da
+
+[ITEMDEF 02132]
+DEFNAME=i_pet_ophid_mage
+NAME=Ophidian
+TYPE=T_FIGURINE
+TDATA3=c_OPHIDIAN_mage
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ophidian
+
+[ITEMDEF 02133]
+DEFNAME=i_pet_ophid_war
+NAME=Ophidian
+TYPE=T_FIGURINE
+TDATA3=c_OPHIDIAN_warrior
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ophidian
+
+[ITEMDEF 02134]
+DEFNAME=i_pet_ophid_queen
+NAME=Ophidian
+TYPE=T_FIGURINE
+TDATA3=c_OPHIDIAN_queen
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ophidian
+
+[ITEMDEF 02135]
+DEFNAME=i_pet_ostard_desert
+Name=Ostard
+TYPE=T_FIGURINE
+TDATA3=c_OSTARD_Desert
+VALUE={280 400}
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ostard
+
+[ITEMDEF 02136]
+DEFNAME=i_pet_ostard_zostrich
+Name=Ostard
+TYPE=T_FIGURINE
+TDATA3=c_OSTARD_Zostrich
+VALUE={280 400}
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ostard
+
+[ITEMDEF 02137]
+DEFNAME=i_pet_ostard_forest
+Name=Ostard
+TYPE=T_FIGURINE
+TDATA3=c_OSTARD_Forest
+VALUE={280 400}
+
+CATEGORY=Miscellaneous
+SUBSECTION=Character Icons
+DESCRIPTION=Ostard
+
+[ITEMDEF 0213f]
+// stars
+NAME=stars
+DUPELIST=02140,02141,02142,02143,02144
+
+[ITEMDEF 02140]
+DUPEITEM=0213f
+
+[ITEMDEF 02141]
+DUPEITEM=0213f
+
+[ITEMDEF 02142]
+DUPEITEM=0213f
+
+[ITEMDEF 02143]
+DUPEITEM=0213f
+
+[ITEMDEF 02144]
+DUPEITEM=0213f
+
+[ITEMDEF 0215a]
+// rattan wall.
+DUPELIST=0215b,0215c
+
+[ITEMDEF 0215b]
+// rattan wall.
+DUPEITEM=0215a
+
+[ITEMDEF 0215c]
+// rattan wall.
+DUPEITEM=0215a
+
+[ITEMDEF 02166]
+// cave wall
+DUPELIST=02167,02168,02169
+
+[ITEMDEF 02167]
+// cave wall
+DUPEITEM=02166
+
+[ITEMDEF 02168]
+// cave wall
+DUPEITEM=02166
+
+[ITEMDEF 02169]
+// cave wall
+DUPEITEM=02166
+
+[ITEMDEF 02198]
+//nodraw
+
+CATEGORY=Miscellaneous
+SUBSECTION=Bad Tiles
+DESCRIPTION=No Draw Tile
+DUPELIST=021a4,021bc
+
+[ITEMDEF 021a4]
+//no draw
+DUPEITEM=02198
+
+[ITEMDEF 021bc]
+//nodraw
+DUPEITEM=02198
+
+[ITEMDEF 0233c]
+// serpant pillar
+DUPELIST=0233d,0233e,0233f,02340,02341,02342,02343,02344,02345,02346,02347,02348,02349,0234a
+
+[ITEMDEF 0233d]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 0233e]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 0233f]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02340]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02341]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02342]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02343]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02344]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02345]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02346]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02347]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02348]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02349]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 0234a]
+// serpant pillar
+DUPEITEM=0233c
+
+[ITEMDEF 02710]
+//tightrope
+DUPELIST=02711
+
+[ITEMDEF 02711]
+//tightrope
+DUPEITEM=02710
+
+[ITEMDEF 02ac0]
+//unused
+
+[ITEMDEF 02ad8]
+//unused
+
+[ITEMDEF 02adf]
+//unused
+
+[ITEMDEF 02ae3]
+//unused
+
+[ITEMDEF 02af8]
+//shopkeeper contain
+DEFNAME=i_vendorbox
+NAME=Vendor Box
+TYPE=T_EQ_VENDOR_BOX
+TDATA2=04a
+
+[ITEMDEF 02b97]
+//unused
+
+[ITEMDEF 02b98]
+//unused
+
+[ITEMDEF 02b99]
+//unused
+
+[ITEMDEF 031f4]
+//dirt
+CATEGORY=Ground Tiles
+SUBSECTION=Dirt
+DESCRIPTION=@
+DUPELIST=031f5,031f6,031f7,031f8,031f9,031fa,031fb
+
+[ITEMDEF 031f5]
+//dirt
+
+DUPEITEM=031f4
+
+[ITEMDEF 031f6]
+//dirt
+
+DUPEITEM=031f4
+
+[ITEMDEF 031f7]
+//dirt
+
+DUPEITEM=031f4
+
+[ITEMDEF 031f8]
+//dirt
+
+DUPEITEM=031f4
+
+[ITEMDEF 031f9]
+//dirt
+
+DUPEITEM=031f4
+
+[ITEMDEF 031fa]
+//dirt
+
+DUPEITEM=031f4
+
+[ITEMDEF 031fb]
+//dirt
+
+DUPEITEM=031f4
+
+[ITEMDEF 03209]
+//swamp
+
+CATEGORY=Ground Tiles
+SUBSECTION=Swamp
+DESCRIPTION=@
+DUPELIST=0320a,0324b,0324c,0324d,0324e,0324f,03250,03251,03252,03253,03254,03255,03256,03257,03258,03259,0325a,0325b,0325c,0325d,0325e,0325f,03260,03261,03262,03263,03264,03265,03266,03267,03268,03269,0326a,0326b,0326c,0326d,0326e,0326f,03270,03271,03272,03273,03274,03275,03276,03277,03278,03279,0327a,0327b,0327c,0327d,0327e,0327f,03280,03281,03282,03283,03284,03285
+
+[ITEMDEF 0320a]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0320d]
+//swamp
+
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Swamp
+DESCRIPTION=@
+DUPELIST=0320e,0320f,03210,03211,03213,03214,03215,03216,03217,03218,0321a,0321b,0321c,0321d,0321e,03220,03221,03222,03223,03224,03226,03227,03228,03229,0322a,0322c,0322d,0322e,0322f,03230,03231,03232,03233,03234,03236,03237,03238,03239,0323a,0323b,0323c,0323d,0323e,0323f,03241,03242,03243,03244,03245,03246,03247,03248,03249,0324a
+
+[ITEMDEF 0320e]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0320f]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03210]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03211]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03213]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03214]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03215]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03216]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03217]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03218]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0321a]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0321b]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0321c]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0321d]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0321e]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03220]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03221]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03222]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03223]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03224]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03226]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03227]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03228]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03229]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0322a]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0322c]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0322d]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0322e]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0322f]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03230]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03231]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03232]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03233]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03234]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03236]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03237]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03238]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03239]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0323a]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0323b]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0323c]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0323d]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0323e]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0323f]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03241]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03242]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03243]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03244]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03245]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03246]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03247]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03248]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 03249]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0324a]
+//swamp
+
+DUPEITEM=0320d
+
+[ITEMDEF 0324b]
+//stump
+
+DUPEITEM=03209
+DESCRIPTION=Stump
+
+[ITEMDEF 0324c]
+//stump
+
+DUPEITEM=03209
+DESCRIPTION=Stump
+
+[ITEMDEF 0324d]
+//stump
+
+DUPEITEM=03209
+DESCRIPTION=Stump
+
+[ITEMDEF 0324e]
+//sunken log
+
+DUPEITEM=03209
+DESCRIPTION=Sunken Log
+
+[ITEMDEF 0324f]
+//sunken log
+
+DUPEITEM=03209
+DESCRIPTION=Sunken Log
+
+[ITEMDEF 03250]
+//sunken log
+
+DUPEITEM=03209
+DESCRIPTION=Sunken Log
+
+[ITEMDEF 03251]
+//sunken log
+
+DUPEITEM=03209
+DESCRIPTION=Sunken Log
+
+[ITEMDEF 03252]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03253]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03254]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03255]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03256]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03257]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03258]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03259]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0325a]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0325b]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0325c]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0325d]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0325e]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0325f]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03260]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03261]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03262]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03263]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03264]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03265]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03266]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03267]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03268]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03269]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0326a]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0326b]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0326c]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0326d]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0326e]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0326f]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03270]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03271]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03272]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03273]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03274]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03275]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03276]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03277]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03278]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03279]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0327a]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0327b]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0327c]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0327d]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0327e]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 0327f]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03280]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03281]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03282]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03283]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03284]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03285]
+//swamp
+
+DUPEITEM=03209
+
+[ITEMDEF 03286]
+//lava
+DEFNAME=i_lava_edge2
+TYPE=t_lava
+CATEGORY=Ground Tiles
+SUBSECTION=Lava
+DESCRIPTION=@
+DUPELIST=03287,03288,03289,0328a,0328b,0328c,0328d,0328e,0328f,03290,03291,03292,03293,03294,03295,03296,03297,03298,03299,0329a,0329b,0329c,0329d,0329e,0329f,032a0,032a1,032a2,032a3,032a4,032a5,032a6,032a7,032a8,032a9,032aa,032ab,032ac,032ad,032ae,032af,032b0,032b1
+
+[ITEMDEF 03287]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03288]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03289]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0328a]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0328b]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0328c]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0328d]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0328e]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0328f]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03290]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03291]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03292]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03293]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03294]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03295]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03296]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03297]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03298]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 03299]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0329a]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0329b]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0329c]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0329d]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0329e]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 0329f]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a0]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a1]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a2]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a3]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a4]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a5]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a6]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a7]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a8]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032a9]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032aa]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032ab]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032ac]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032ad]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032ae]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032af]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032b0]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032b1]
+//lava
+
+DUPEITEM=03286
+
+[ITEMDEF 032d5]
+//dirt
+
+[ITEMDEF 03421]
+//rock
+TYPE=T_ROCK
+
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Boulder in water
+DESCRIPTION=@
+DUPELIST=03422,03423,03424,03425,03426,03427,03428,03429
+
+[ITEMDEF 03422]
+//rock
+DUPEITEM=03421
+
+[ITEMDEF 03423]
+//rock
+DUPEITEM=03421
+
+[ITEMDEF 03424]
+//rock
+DUPEITEM=03421
+
+[ITEMDEF 03425]
+//
+DUPEITEM=03421
+
+[ITEMDEF 03426]
+//rock
+DUPEITEM=03421
+
+[ITEMDEF 03427]
+//rock
+DUPEITEM=03421
+
+[ITEMDEF 03428]
+//rock
+DUPEITEM=03421
+
+[ITEMDEF 03429]
+//rock
+DUPEITEM=03421
+
+[ITEMDEF 0342c]
+//rock
+TYPE=T_ROCK
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Boulder in water
+DESCRIPTION=@
+DUPELIST=0342d,0342e,0342f,03430,03431,03432,03433,03434,03435
+
+[ITEMDEF 0342d]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 0342e]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 0342f]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 03430]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 03431]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 03432]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 03433]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 03434]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 03435]
+//rock
+DUPEITEM=0342c
+
+[ITEMDEF 0343b]
+//lava
+DEFNAME=i_lava_bubble
+TYPE=t_lava
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Lava
+DESCRIPTION=@
+DUPELIST=0343c,0343d,0343e,0343f,03440,03441,03442,03443,03444,03445,03447,03448,03449,0344a,0344b,0344c,0344e,0344f,03450,03451,03452,03453,03454,03455,03456,03457,03459,0345a,0345b,0345c,0345d,0345e,0345f,03460,03462,03463,03464,03465,03466,03468,03469,0346a,0346b,0346c
+
+[ITEMDEF 0343c]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0343d]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0343e]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0343f]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03440]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03441]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03442]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03443]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03444]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03445]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03447]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03448]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03449]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0344a]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0344b]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0344c]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0344e]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0344f]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03450]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03451]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03452]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03453]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03454]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03455]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03456]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03457]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03459]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0345a]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0345b]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0345c]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0345d]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0345e]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0345f]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03460]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03462]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03463]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03464]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03465]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03466]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03468]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 03469]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0346a]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0346b]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0346c]
+//lava
+
+DUPEITEM=0343b
+
+[ITEMDEF 0346e]
+//water
+TYPE=T_WATER
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Water
+DESCRIPTION=@
+DUPELIST=0346f,03470,03471,03472,03473,03474,03475,03476,03477,03478,03479,0347a,0347b,0347c,0347d,0347e,0347f,03480,03481,03482,03483,03484,03485
+
+[ITEMDEF 0346f]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03470]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03471]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03472]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03473]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03474]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03475]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03476]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03477]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03478]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03479]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 0347a]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 0347b]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 0347c]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 0347d]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 0347e]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 0347f]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03480]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03481]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03482]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03483]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03484]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03485]
+//water
+
+DUPEITEM=0346e
+
+[ITEMDEF 03486]
+//rock
+TYPE=T_ROCK
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Small rock in water
+DESCRIPTION=@
+DUPELIST=03487,03488,03489,0348a
+
+[ITEMDEF 03487]
+//rock
+DUPEITEM=03486
+
+[ITEMDEF 03488]
+//rock
+DUPEITEM=03486
+
+[ITEMDEF 03489]
+//rock
+DUPEITEM=03486
+
+[ITEMDEF 0348a]
+//rock
+DUPEITEM=03486
+
+[ITEMDEF 0348b]
+//rocks
+TYPE=T_ROCK
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Small rock in water
+DESCRIPTION=@
+DUPELIST=0348c,0348d,0348e,0348f
+
+[ITEMDEF 0348c]
+//rocks
+DUPEITEM=0348b
+
+[ITEMDEF 0348d]
+//rocks
+DUPEITEM=0348b
+
+[ITEMDEF 0348e]
+//rocks
+DUPEITEM=0348b
+
+[ITEMDEF 0348f]
+//rocks
+DUPEITEM=0348b
+
+[ITEMDEF 03490]
+//whirlpool
+
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Whirlpool
+DESCRIPTION=@
+DUPELIST=03491,03492
+
+[ITEMDEF 03491]
+//whirlpool
+DUPEITEM=03490
+
+[ITEMDEF 03492]
+//whirlpool
+DUPEITEM=03490
+
+[ITEMDEF 03494]
+//water
+TYPE=T_WATER
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Water
+DESCRIPTION=@
+DUPELIST=03495,03496,03497,03498,0349a,0349b,0349c,0349d,0349e,034a0,034a1,034a2,034a3,034a4,034a6,034a7,034a8,034a9,034aa,034ab
+
+[ITEMDEF 03495]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 03496]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 03497]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 03498]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 0349a]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 0349b]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 0349c]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 0349d]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 0349e]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a0]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a1]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a2]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a3]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a4]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a6]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a7]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a8]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034a9]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034aa]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034ab]
+//water
+
+DUPEITEM=03494
+
+[ITEMDEF 034ac]
+//rock
+TYPE=T_ROCK
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Small rock in water
+DESCRIPTION=@
+DUPELIST=034ad,034ae,034af
+
+[ITEMDEF 034ad]
+//rock
+
+DUPEITEM=034ac
+
+[ITEMDEF 034ae]
+//rock
+
+DUPEITEM=034ac
+
+[ITEMDEF 034af]
+//rock
+
+DUPEITEM=034ac
+
+[ITEMDEF 034b0]
+//rocks
+TYPE=T_ROCK
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Small rock in water
+DESCRIPTION=@
+DUPELIST=034b1,034b2,034b3,034b4
+
+[ITEMDEF 034b1]
+//rocks
+
+DUPEITEM=034b0
+
+[ITEMDEF 034b2]
+//rocks
+
+DUPEITEM=034b0
+
+[ITEMDEF 034b3]
+//rocks
+
+DUPEITEM=034b0
+
+[ITEMDEF 034b4]
+//rocks
+
+DUPEITEM=034b0
+
+[ITEMDEF 034b5]
+//whirlpool
+
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Whirlpool
+DESCRIPTION=@
+DUPELIST=034b6,034b7
+
+[ITEMDEF 034b6]
+//whirlpool
+
+DUPEITEM=034b5
+
+[ITEMDEF 034b7]
+//whirlpool
+
+DUPEITEM=034b5
+
+[ITEMDEF 034b8]
+//water
+TYPE=T_WATER
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Water
+DESCRIPTION=@
+DUPELIST=034b9,034ba,034bb,034bd,034be,034bf,034c0,034c2,034c3,034c4,034c5,034c7,034c8,034c9,034ca,034d1,034d2,034d3,034d4,034d5
+
+[ITEMDEF 034b9]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034ba]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034bb]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034bd]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034be]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034bf]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034c0]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034c2]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034c3]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034c4]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034c5]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034c7]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034c8]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034c9]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034ca]
+//water
+
+DUPEITEM=034b8
+
+[ITEMDEF 034d1]
+//ripples
+
+DUPEITEM=034b8
+
+[ITEMDEF 034d2]
+//ripples
+
+DUPEITEM=034b8
+
+[ITEMDEF 034d3]
+//ripples
+
+DUPEITEM=034b8
+
+[ITEMDEF 034d4]
+//ripples
+
+DUPEITEM=034b8
+
+[ITEMDEF 034d5]
+//ripples
+
+DUPEITEM=034b8
+
+[ITEMDEF 034d7]
+//dirt
+
+[ITEMDEF 034ed]
+//waterfall
+TYPE=T_WATER
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Waterfall
+DESCRIPTION=@
+DUPELIST=034ee,034ef,034f0,034f1,034f2,034f3,034f4,034f5,034f6,034f7,034f8,034f9,034fa,034fb,034fc,034fd,034fe,034ff,03500,03501,03502,03503,03504,03505,03506,03507,03508,03509,0350a,0350b,0350c,0350d,0350e,0350f,03510,03511,03512,03513,03514,03515,03516,03517,03518,03519,0351a,0351b,0351c,0351d,0351e,0351f,03520,03521,03522,03523,03524,03525,03526,03527,03528
+
+[ITEMDEF 034ee]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034ef]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f0]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f1]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f2]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f3]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f4]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f5]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f6]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f7]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f8]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034f9]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034fa]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034fb]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034fc]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034fd]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034fe]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 034ff]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03500]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03501]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03502]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03503]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03504]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03505]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03506]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03507]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03508]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03509]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0350a]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0350b]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0350c]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0350d]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0350e]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0350f]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03510]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03511]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03512]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03513]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03514]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03515]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03516]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03517]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03518]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03519]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0351a]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0351b]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0351c]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0351d]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0351e]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0351f]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03520]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03521]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03522]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03523]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03524]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03525]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03526]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03527]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 03528]
+//waterfall
+
+DUPEITEM=034ed
+
+[ITEMDEF 0352d]
+//splash
+TYPE=T_WATER
+CATEGORY=Ground Tiles (animated)
+SUBSECTION=Water
+DESCRIPTION=Splash
+DUPELIST=0352e,0352f,03530
+
+[ITEMDEF 0352e]
+//splash
+
+DUPEITEM=0352d
+
+[ITEMDEF 0352f]
+//splash
+
+DUPEITEM=0352d
+
+[ITEMDEF 03530]
+//splash
+
+DUPEITEM=0352d
+
+[ITEMDEF 03546]
+//lava
+
+[ITEMDEF 03547]
+//lava
+
+CATEGORY=Ground Tiles
+SUBSECTION=Lava
+DESCRIPTION=@
+DUPELIST=03548,03549,0354a,0354b,0354c,0354d,0354e,0354f,03550,03551,03552,03553,03554,03555,03556,03557,03558,03559,0355a,0355b,0355c,0355d,0355e,0355f,03560,03561
+TYPE=t_lava
+
+[ITEMDEF 03548]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03549]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0354a]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0354b]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0354c]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0354d]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0354e]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0354f]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03550]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03551]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03552]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03553]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03554]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03555]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03556]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03557]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03558]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03559]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0355a]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0355b]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0355c]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0355d]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0355e]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 0355f]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03560]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03561]
+//lava
+
+DUPEITEM=03547
+
+[ITEMDEF 03584]
+// These items should appear in a gump only !
+// White
+NAME=Checker
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 03585]
+// White
+NAME=Bishop
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 03586]
+// White
+NAME=Rook
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 03587]
+NAME=Queen
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 03588]
+// White
+NAME=Knight
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 03589]
+// White
+NAME=Pawn
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 0358a]
+// White
+NAME=King
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 0358b]
+// Dark
+NAME=Checker
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 0358c]
+// Dark
+NAME=Bishop
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 0358d]
+//Dark
+NAME=Rook
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 0358e]
+//Dark
+NAME=Queen
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 0358f]
+//Dark
+NAME=Knight
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 03590]
+//Dark
+NAME=Pawn
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 03591]
+//Dark
+NAME=King
+TYPE=T_GAME_PIECE
+
+[ITEMDEF 035f6]
+//sand
+
+[ITEMDEF 035f7]
+//sand
+
+[ITEMDEF 035f8]
+//sand
+
+[ITEMDEF 035f9]
+//sand
+
+[ITEMDEF 035fa]
+//sand
+
+[ITEMDEF 035fb]
+//sand
+
+[ITEMDEF 035fc]
+//sand
+
+[ITEMDEF 035fd]
+//sand
+
+[ITEMDEF 035fe]
+//sand
+
+[ITEMDEF 035ff]
+//sand
+
+[ITEMDEF 03600]
+//sand
+
+[ITEMDEF 03601]
+//sand
+
+[ITEMDEF 036b0]
+//explosion
+DEFNAME=i_fx_explode
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Explosion 1
+DESCRIPTION=@
+DUPELIST=036b1,036b2,036b3,036b4,036b5,036b6,036b7,036b8,036b9,036ba,036bb,036bc
+
+[ITEMDEF 036b1]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036b2]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036b3]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036b4]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036b5]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036b6]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036b7]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036b8]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036b9]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036ba]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036bb]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036bc]
+//explosion
+DUPEITEM=036b0
+
+[ITEMDEF 036bd]
+//explosion
+DEFNAME=i_fx_explosion_2
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Explosion 2
+DESCRIPTION=@
+DUPELIST=036be,036bf,036c0,036c1,036c2,036c3,036c4,036c5,036c6,036c7,036c8,036c9
+
+[ITEMDEF 036be]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036bf]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c0]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c1]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c2]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c3]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c4]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c5]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c6]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c7]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c8]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036c9]
+//explosion
+DUPEITEM=036bd
+
+[ITEMDEF 036ca]
+//explosion
+DEFNAME=i_fx_explosion_3
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Explosion 3
+DESCRIPTION=@
+DUPELIST=036cb,036cc,036cd,036ce,036cf,036d0,036d1,036d2,036d3
+
+[ITEMDEF 036cb]
+//explosion
+DUPEITEM=036ca
+
+[ITEMDEF 036cc]
+//explosion
+DUPEITEM=036ca
+
+[ITEMDEF 036cd]
+//explosion
+DUPEITEM=036ca
+
+[ITEMDEF 036ce]
+//explosion
+DUPEITEM=036ca
+
+[ITEMDEF 036cf]
+//explosion
+DUPEITEM=036ca
+
+[ITEMDEF 036d0]
+//explosion
+DUPEITEM=036ca
+
+[ITEMDEF 036d1]
+//explosion
+DUPEITEM=036ca
+
+[ITEMDEF 036d2]
+//explosion
+DUPEITEM=036ca
+
+[ITEMDEF 036d3]
+//explosion
+
+DUPEITEM=036ca
+
+[ITEMDEF 036d4]
+//large fireball
+DEFNAME=i_fx_fireball
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Large Fireball
+DESCRIPTION=@
+DUPELIST=036d5,036d6,036d7,036d8,036d9,036da,036db,036dc,036dd,036de,036df,036e0,036e1,036e2,036e3
+
+[ITEMDEF 036d5]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036d6]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036d7]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036d8]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036d9]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036da]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036db]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036dc]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036dd]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036de]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036df]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036e0]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036e1]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036e2]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036e3]
+//large fireball
+DUPEITEM=036d4
+
+[ITEMDEF 036e4]
+//small fireball
+DEFNAME=i_fx_fireball_small
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Small Fireball
+DESCRIPTION=@
+DUPELIST=036e5,036e6,036e7,036e8,036e9,036ea,036eb,036ec,036ed,036ee,036ef,036f0,036f1,036f2,036f3
+
+[ITEMDEF 036e5]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036e6]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036e7]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036e8]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036e9]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036ea]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036eb]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036ec]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036ed]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036ee]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036ef]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036f0]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036f1]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036f2]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036f3]
+//small fireball
+DUPEITEM=036e4
+
+[ITEMDEF 036f4]
+//fire snake
+DEFNAME=i_fx_firesnake
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Fire Snake
+DESCRIPTION=@
+DUPELIST=036f5,036f6,036f7,036f8,036f9,036fa,036fb,036fc,036fd
+
+[ITEMDEF 036f5]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036f6]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036f7]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036f8]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036f9]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036fa]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036fb]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036fc]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036fd]
+//fire snake
+DUPEITEM=036f4
+
+[ITEMDEF 036fe]
+//explosion ball
+DEFNAME=i_fx_explode_ball
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Explosion Ball
+DESCRIPTION=@
+DUPELIST=036ff,03700,03701,03702,03703,03704,03705,03706,03707,03708
+
+[ITEMDEF 036ff]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03700]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03701]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03702]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03703]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03704]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03705]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03706]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03707]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03708]
+//explosion ball
+DUPEITEM=036fe
+
+[ITEMDEF 03709]
+//fire column
+DEFNAME=i_fire_column
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Fire Column
+DESCRIPTION=@
+DUPELIST=0370a,0370b,0370c,0370d,0370e,0370f,03710,03711,03712,03713,03714,03715,03716,03717,03718,03719,0371a,0371b,0371c,0371d,0371e,0371f,03720,03721,03722,03723,03724,03725,03726,03727
+
+[ITEMDEF 0370a]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0370b]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0370c]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0370d]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0370e]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0370f]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03710]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03711]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03712]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03713]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03714]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03715]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03716]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03717]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03718]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03719]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0371a]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0371b]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0371c]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0371d]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0371e]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 0371f]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03720]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03721]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03722]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03723]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03724]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03725]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03726]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03727]
+//fire column
+DUPEITEM=03709
+
+[ITEMDEF 03728]
+//smoke
+DEFNAME=i_fx_smoke
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Smoke
+DESCRIPTION=@
+DUPELIST=03729,0372a,0372b,0372c,0372d,0372e,0372f,03730,03731,03732,03733,03734
+
+[ITEMDEF 03729]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 0372a]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 0372b]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 0372c]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 0372d]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 0372e]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 0372f]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 03730]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 03731]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 03732]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 03733]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 03734]
+//smoke
+DUPEITEM=03728
+
+[ITEMDEF 03735]
+//animated smoke
+DEFNAME=i_fx_smoke_small
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Smoke (small)
+DESCRIPTION=@
+DUPELIST=03736
+
+[ITEMDEF 03736]
+//animated smoke
+DUPEITEM=03735
+
+[ITEMDEF 0373a]
+//sparkle
+DEFNAME=i_fx_bless_effect
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Blue Sparkle
+DESCRIPTION=@
+DUPELIST=0373b,0373c,0373d,0373e,0373f,03740,03741,03742,03743,03744,03745,03746,03747,03748,03749
+
+[ITEMDEF 0373b]
+//sparkle
+DUPEITEM=0373a
+
+[ITEMDEF 0373c]
+//sparkle
+DUPEITEM=0373a
+
+[ITEMDEF 0373d]
+//sparkle
+DUPEITEM=0373a
+
+[ITEMDEF 0373e]
+//sparkle
+DUPEITEM=0373a
+
+[ITEMDEF 0373f]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03740]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03741]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03742]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03743]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03744]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03745]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03746]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03747]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03748]
+//sparkle
+
+DUPEITEM=0373a
+
+[ITEMDEF 03749]
+//sparkle
+DUPEITEM=0373a
+
+[ITEMDEF 0374a]
+//sparkle
+DEFNAME=i_fx_curse
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Red Sparkle
+DESCRIPTION=@
+DUPELIST=0374b,0374c,0374d,0374e,0374f,03750,03751,03752,03753,03754,03755,03756,03757,03758,03759
+
+[ITEMDEF 0374b]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 0374c]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 0374d]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 0374e]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 0374f]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03750]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03751]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03752]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03753]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03754]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03755]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03756]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03757]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03758]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 03759]
+//sparkle
+
+DUPEITEM=0374a
+
+[ITEMDEF 0375a]
+//sparkle
+DEFNAME=i_fx_sparkle
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Blue/Gold Sparkle 1
+DESCRIPTION=@
+DUPELIST=0375b,0375c,0375d,0375e,0375f,03760,03761,03762,03763,03764,03765,03766,03767,03768,03769
+
+[ITEMDEF 0375b]
+//sparkle
+DUPEITEM=0375a
+
+[ITEMDEF 0375c]
+//sparkle
+DUPEITEM=0375a
+
+[ITEMDEF 0375d]
+//sparkle
+DUPEITEM=0375a
+
+[ITEMDEF 0375e]
+//sparkle
+DUPEITEM=0375a
+
+[ITEMDEF 0375f]
+//sparkle
+DUPEITEM=0375a
+
+[ITEMDEF 03760]
+//sparkle
+
+DUPEITEM=0375a
+
+[ITEMDEF 03761]
+//sparkle
+
+DUPEITEM=0375a
+
+[ITEMDEF 03762]
+//sparkle
+
+DUPEITEM=0375a
+
+[ITEMDEF 03763]
+//sparkle
+
+DUPEITEM=0375a
+
+[ITEMDEF 03764]
+//sparkle
+
+DUPEITEM=0375a
+
+[ITEMDEF 03765]
+//sparkle
+
+DUPEITEM=0375a
+
+[ITEMDEF 03766]
+//sparkle
+
+DUPEITEM=0375a
+
+[ITEMDEF 03767]
+//sparkle
+
+DUPEITEM=0375a
+
+[ITEMDEF 03768]
+//sparkle
+DUPEITEM=0375a
+
+[ITEMDEF 03769]
+//sparkle
+DUPEITEM=0375a
+
+[ITEMDEF 0376a]
+//sparkle
+DEFNAME=i_fx_heal_effect
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Blue/Gold Sparkle 2
+DESCRIPTION=@
+DUPELIST=0376b,0376c,0376d,0376e,0376f,03770,03771,03772,03773,03774,03775,03776,03777,03778
+
+[ITEMDEF 0376b]
+//sparkle
+DUPEITEM=0376a
+
+[ITEMDEF 0376c]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 0376d]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 0376e]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 0376f]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03770]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03771]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03772]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03773]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03774]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03775]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03776]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03777]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03778]
+//sparkle
+
+DUPEITEM=0376a
+
+[ITEMDEF 03779]
+//sparkle
+DEFNAME=i_fx_sparkle_2
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Blue/Purple Sparkle
+DESCRIPTION=@
+DUPELIST=0377a,0377b,0377c,0377d,0377e,0377f,03780,03781,03782,03783,03784,03785,03786,03787,03788
+
+[ITEMDEF 0377a]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 0377b]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 0377c]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 0377d]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 0377e]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 0377f]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03780]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03781]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03782]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03783]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03784]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03785]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03786]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03787]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03788]
+//sparkle
+
+DUPEITEM=03779
+
+[ITEMDEF 03789]
+//death vortex
+DEFNAME=i_fx_vortex
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Energy Vortex
+DESCRIPTION=@
+DUPELIST=0378a,0378b,0378c,0378d,0378e,0378f,03790,03791,03792,03793,03794,03795,03796,03797,03798,03799,0379a,0379b,0379c,0379d
+
+[ITEMDEF 0378a]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0378b]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0378c]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0378d]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0378e]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0378f]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03790]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03791]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03792]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03793]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03794]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03795]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03796]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03797]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03798]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 03799]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0379a]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0379b]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0379c]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0379d]
+//death vortex
+
+DUPEITEM=03789
+
+[ITEMDEF 0379e]
+//glowing arrow
+DEFNAME=i_fx_glow_arrow
+TYPE=t_spell
+CATEGORY=Miscellaneous
+SUBSECTION=Weirdness
+DESCRIPTION=Glowing Arrow
+
+[ITEMDEF 0379f]
+//small bolt
+DEFNAME=i_fx_ebolt
+TYPE=t_spell
+CATEGORY=Miscellaneous
+SUBSECTION=Weirdness
+DESCRIPTION=Small Bolt
+
+[ITEMDEF 037a0]
+//field of blades
+DEFNAME=i_fx_blade_field
+TYPE=t_trap_Active
+CATEGORY=Animations
+SUBSECTION=Field of Blades
+DESCRIPTION=@
+DUPELIST=037a1,037a2,037a3,037a4,037a5,037a6,037a7,037a8,037a9,037aa,037ab,037ac,037ad,037ae,037af,037b0,037b1,037b2,037b3,037b4,037b5,037b6,037b7,037b8
+
+[ITEMDEF 037a1]
+//field of blades
+DUPEITEM=037a0
+
+[ITEMDEF 037a2]
+//field of blades
+DUPEITEM=037a0
+
+[ITEMDEF 037a3]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037a4]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037a5]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037a6]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037a7]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037a8]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037a9]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037aa]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037ab]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037ac]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037ad]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037ae]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037af]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b0]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b1]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b2]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b3]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b4]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b5]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b6]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b7]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b8]
+//field of blades
+
+DUPEITEM=037a0
+
+[ITEMDEF 037b9]
+//glow
+DEFNAME=i_fx_glow
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Glow 1
+DESCRIPTION=@
+DUPELIST=037ba,037bb,037bc,037bd
+
+[ITEMDEF 037ba]
+//glow
+
+DUPEITEM=037b9
+
+[ITEMDEF 037bb]
+//glow
+
+DUPEITEM=037b9
+
+[ITEMDEF 037bc]
+//glow
+
+DUPEITEM=037b9
+
+[ITEMDEF 037bd]
+//glow
+
+DUPEITEM=037b9
+
+[ITEMDEF 037be]
+//glow
+DEFNAME=i_fx_glow2
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Glow 2
+DESCRIPTION=@
+DUPELIST=037bf,037c0,037c1,037c2,037c3
+
+[ITEMDEF 037bf]
+//glow
+
+DUPEITEM=037be
+
+[ITEMDEF 037c0]
+//glow
+
+DUPEITEM=037be
+
+[ITEMDEF 037c1]
+//glow
+
+DUPEITEM=037be
+
+[ITEMDEF 037c2]
+//glow
+
+DUPEITEM=037be
+
+[ITEMDEF 037c3]
+//glow
+
+DUPEITEM=037be
+
+[ITEMDEF 037c4]
+//glow
+DEFNAME=i_fx_glow_spike
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Glow 3
+DESCRIPTION=@
+DUPELIST=037c5,037c6,037c7,037c8,037c9,037ca,037cb
+
+[ITEMDEF 037c5]
+//glow
+
+DUPEITEM=037c4
+
+[ITEMDEF 037c6]
+//glow
+
+DUPEITEM=037c4
+
+[ITEMDEF 037c7]
+//glow
+
+DUPEITEM=037c4
+
+[ITEMDEF 037c8]
+//glow
+
+DUPEITEM=037c4
+
+[ITEMDEF 037c9]
+//glow
+
+DUPEITEM=037c4
+
+[ITEMDEF 037ca]
+//glow
+
+DUPEITEM=037c4
+
+[ITEMDEF 037cb]
+//glow
+
+DUPEITEM=037c4
+
+[ITEMDEF 037cc]
+//death vortex
+DEFNAME=i_fx_vortex_full
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Energy Vortex
+DESCRIPTION=@
+DUPELIST=037cd,037ce,037cf,037d0,037d1,037d2,037d3,037d4,037d5,037d6,037d7,037d8,037d9,037da,037db,037dc,037dd,037de,037df,037e0,037e1,037e2,037e3,037e4
+
+[ITEMDEF 037cd]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037ce]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037cf]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d0]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d1]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d2]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d3]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d4]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d5]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d6]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d7]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d8]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037d9]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037da]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037db]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037dc]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037dd]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037de]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037df]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037e0]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037e1]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037e2]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037e3]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037e4]
+//death vortex
+
+DUPEITEM=037cc
+
+[ITEMDEF 037eb]
+//field of blades
+DEFNAME=i_fx_blade_spirit_1
+TYPE=t_trap_active
+CATEGORY=Animations
+SUBSECTION=Blade Spirits
+DESCRIPTION=@
+DUPELIST=037ec,037ed,037ee,037ef,037f0,037f1,037f2,037f3,037f4,037f5,037f6,037f7,037f8,037f9,037fa,037fb,037fc,037fd,037fe,037ff,03800,03801,03802,03803,03804,03805,03806,03807,03808,03809,0380a,0380b,0380c,0380d,0380e,0380f
+
+[ITEMDEF 037ec]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037ed]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037ee]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037ef]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f0]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f1]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f2]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f3]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f4]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f5]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f6]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f7]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f8]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037f9]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037fa]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037fb]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037fc]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037fd]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037fe]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 037ff]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03800]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03801]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03802]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03803]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03804]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03805]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03806]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03807]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03808]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 03809]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 0380a]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 0380b]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 0380c]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 0380d]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 0380e]
+//field of blades
+
+DUPEITEM=037eb
+
+[ITEMDEF 0380f]
+//field of blades
+DUPEITEM=037eb
+
+[ITEMDEF 03818]
+DEFNAME=i_fx_energy_ray
+TYPE=t_spell
+CATEGORY=Miscellaneous
+SUBSECTION=Weirdness
+DESCRIPTION=Strange White Squiggle
+
+[ITEMDEF 03914]
+//Field of Poison
+DEFNAME=i_fx_poison_field
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Poison Field
+DESCRIPTION=@ East/West
+DUPELIST=03915,03916,03917,03918,03919,0391a,0391b,0391c,0391d,0391e,0391f,03920,03921,03922,03923,03924,03925,03926,03927,03928,03929
+
+[ITEMDEF 03915]
+//Field of Poison
+
+DUPEITEM=03914
+
+[ITEMDEF 03916]
+//Field of Poison
+
+DUPEITEM=03914
+
+[ITEMDEF 03917]
+//Field of Poison
+
+DUPEITEM=03914
+
+[ITEMDEF 03918]
+//Field of Poison
+
+DUPEITEM=03914
+
+[ITEMDEF 03919]
+//Field of Poison
+
+DUPEITEM=03914
+
+[ITEMDEF 0391a]
+//Field of Poison
+
+DUPEITEM=03914
+
+[ITEMDEF 0391b]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 0391c]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 0391d]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 0391e]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 0391f]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03920]
+//Field of Poison
+DEFNAME=i_fx_poison_field_ns
+DUPEITEM=03914
+CATEGORY=Animations
+SUBSECTION=Poison Field
+DESCRIPTION=@ North/South
+
+[ITEMDEF 03921]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03922]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03923]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03924]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03925]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03926]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03927]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03928]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03929]
+//Field of Poison
+DUPEITEM=03914
+
+[ITEMDEF 03946]
+//field of energy
+DEFNAME=i_fx_energy_field
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Energy Field
+DESCRIPTION=@
+DUPELIST=03947,03948,03949,0394a,0394b,0394c,0394d,0394e,0394f,03950,03951,03952,03953,03954,03955,03956,03957,03958,03959,0395a,0395b,0395c,0395d,0395e,0395f,03960,03961,03962,03963,03964
+
+[ITEMDEF 03947]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03948]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03949]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0394a]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0394b]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0394c]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0394d]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0394e]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0394f]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03950]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03951]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03952]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03953]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03954]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03955]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03956]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03957]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03958]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03959]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0395a]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0395b]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0395c]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0395d]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0395e]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 0395f]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03960]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03961]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03962]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03963]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03964]
+//field of energy
+
+DUPEITEM=03946
+
+[ITEMDEF 03967]
+//field of paralysis
+DEFNAME=i_fx_field_paralyze
+TYPE=t_spell
+CATEGORY=Animations
+SUBSECTION=Paralysis Field
+DESCRIPTION=@
+DUPELIST=03968,03969,0396a,0396b,0396c,0396d,0396e,0396f,03970,03971,03972,03973,03974,03975,03976,03977,03978,03979,0397a,0397b,0397c,0397d,0397e,0397f,03980,03981,03982,03983,03984,03985,03986,03987,03988,03989,0398a
+
+[ITEMDEF 03968]
+//field of paralysis
+DUPEITEM=03967
+
+[ITEMDEF 03969]
+//field of paralysis
+DUPEITEM=03967
+
+[ITEMDEF 0396a]
+//field of paralysis
+DUPEITEM=03967
+
+[ITEMDEF 0396b]
+//field of paralysis
+DUPEITEM=03967
+
+[ITEMDEF 0396c]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0396d]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0396e]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0396f]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03970]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03971]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03972]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03973]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03974]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03975]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03976]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03977]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03978]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03979]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0397a]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0397b]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0397c]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0397d]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0397e]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0397f]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03980]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03981]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03982]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03983]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03984]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03985]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03986]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03987]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03988]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 03989]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0398a]
+//field of paralysis
+
+DUPEITEM=03967
+
+[ITEMDEF 0398c]
+//Field of fire
+DEFNAME=i_fx_field_fire
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Fire Field 1
+DESCRIPTION=@
+DUPELIST=0398d,0398e,0398f,03990,03991,03992,03993,03994,03995,03e27
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0398d]
+//Field of fire
+
+DUPEITEM=0398c
+
+[ITEMDEF 0398e]
+//Field of fire
+
+DUPEITEM=0398c
+
+[ITEMDEF 0398f]
+//Field of fire
+
+DUPEITEM=0398c
+
+[ITEMDEF 03990]
+//Field of fire
+
+DUPEITEM=0398c
+
+[ITEMDEF 03991]
+//Field of fire
+
+DUPEITEM=0398c
+
+[ITEMDEF 03992]
+//Field of fire
+
+DUPEITEM=0398c
+
+[ITEMDEF 03993]
+//Field of fire
+
+DUPEITEM=0398c
+
+[ITEMDEF 03994]
+//Field of fire
+
+DUPEITEM=0398c
+
+[ITEMDEF 03995]
+//Field of fire
+DUPEITEM=0398c
+
+[ITEMDEF 03996]
+//Field of fire
+DEFNAME=i_fx_field_fire_ns
+TYPE=t_fire
+CATEGORY=Animations
+SUBSECTION=Fire Field 2
+DESCRIPTION=@
+DUPELIST=03997,03998,03999,0399a,0399b,0399c,0399d,0399e,0399f,03e31
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 03997]
+//Field of fire
+
+DUPEITEM=03996
+
+[ITEMDEF 03998]
+//Field of Fire
+
+DUPEITEM=03996
+
+[ITEMDEF 03999]
+//Field of fire
+
+DUPEITEM=03996
+
+[ITEMDEF 0399a]
+//Field of fire
+
+DUPEITEM=03996
+
+[ITEMDEF 0399b]
+//Field of fire
+
+DUPEITEM=03996
+
+[ITEMDEF 0399c]
+//Field of fire
+
+DUPEITEM=03996
+
+[ITEMDEF 0399d]
+//Field of fire
+
+DUPEITEM=03996
+
+[ITEMDEF 0399e]
+//Field of fire
+
+DUPEITEM=03996
+
+[ITEMDEF 0399f]
+//Field of Fire
+DUPEITEM=03996
+
+[ITEMDEF 03d64]
+//dead orc captain
+DEFNAME=i_corpse_orc_cap
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Alpha Corpses
+DESCRIPTION=Orc Captain
+
+[ITEMDEF 03d65]
+//corpse of orc
+DEFNAME=i_corpse_orc
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Alpha Corpses
+DESCRIPTION=Orc
+
+[ITEMDEF 03d66]
+//corpse of skeleton
+DEFNAME=i_corpse_skel
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Alpha Corpses
+DESCRIPTION=Skeleton
+
+[ITEMDEF 03d67]
+//corpse
+DEFNAME=i_corpse_blank
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Alpha Corpses
+DESCRIPTION=Human
+
+[ITEMDEF 03d68]
+//corpse
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Alpha Corpses
+DESCRIPTION=Human
+
+[ITEMDEF 03d69]
+//deer corpse
+DEFNAME=i_corpse_deer
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Alpha Corpses
+DESCRIPTION=Deer
+
+[ITEMDEF 03d6a]
+//wolf corpse
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Alpha Corpses
+DESCRIPTION=Wolf
+
+[ITEMDEF 03d6b]
+//corpse of rabbit
+TYPE=T_CORPSE
+TDATA2=09
+CATEGORY=Miscellaneous
+SUBSECTION=Alpha Corpses
+DESCRIPTION=Rabbit
+
+[ITEMDEF 03dc5]
+//unused
+
+[ITEMDEF 03dc8]
+//unused
+
+[ITEMDEF 03dff]
+//bench dark stone against NE wall
+DEFNAME=i_bench_5
+TYPE=T_CHAIR
+FLIP=1
+VALUE={80 100}
+//RESOURCES=
+WEIGHT=5
+
+CATEGORY=Decoration - Furniture
+SUBSECTION=Stone Bench
+DESCRIPTION=@ (n)
+DUPELIST=03e00
+
+[ITEMDEF 03e00]
+//bench dark stone against NW wall
+DUPEITEM=03dff
+
+DESCRIPTION=@ (w)
+
+[ITEMDEF 03e27]
+//animated wall of flames
+DUPEITEM=0398c
+
+[ITEMDEF 03e31]
+//wall of flames
+DUPEITEM=03996
+
+[ITEMDEF 03e3f]
+TYPE=T_SHIP_OTHER
+CATEGORY=Ship Parts
+SUBSECTION=Ship Side
+DESCRIPTION=Ship Side
+
+[ITEMDEF 03e40]
+//ship (plank)
+TYPE=T_SHIP_PLANK
+
+CATEGORY=Ship Parts
+SUBSECTION=Gang Plank
+DESCRIPTION=Gang Plank
+
+[ITEMDEF 03e41] (sail tip and side piece)
+//ship
+TYPE=T_SHIP_SIDE_LOCKED
+
+CATEGORY=Ship Parts
+SUBSECTION=Ship Side
+DESCRIPTION=Ship Side
+
+[ITEMDEF 03e42]
+//ship (sail tip and plank)
+TYPE=T_SHIP_PLANK
+
+CATEGORY=Ship Parts
+SUBSECTION=Ship Side
+DESCRIPTION=Ship Side
+
+[ITEMDEF 03e43]
+//dragon prow
+TYPE=T_SHIP_OTHER
+
+CATEGORY=Ship Parts
+SUBSECTION=Dragon Prow
+DESCRIPTION=@
+//DUPELIST=03e44,03e45,03e46,03e47,03e48,03e49,03e56
+DUPELIST=03e44,03e45,03e46,03e47,03e48,03e49,03e56
+
+[ITEMDEF 03e44]
+//dragon prow
+
+DUPEITEM=03e43
+
+[ITEMDEF 03e45]
+//dragon prow
+
+DUPEITEM=03e43
+
+[ITEMDEF 03e46]
+//dragon prow
+
+DUPEITEM=03e43
+
+[ITEMDEF 03e47]
+//dragon prow
+
+DUPEITEM=03e43
+
+[ITEMDEF 03e48]
+//dragon prow
+
+DUPEITEM=03e43
+
+[ITEMDEF 03e49]
+//dragon prow
+
+DUPEITEM=03e43
+
+[ITEMDEF 03e4a]
+//tiller man
+DEFNAME=i_ship_tillerman
+TYPE=T_SHIP_TILLER
+
+CATEGORY=Ship Parts
+SUBSECTION=Tillerman
+DESCRIPTION=@
+//DUPELIST=03e4b,03e4c,03e4d,03e4e,03e4f,03e50,03e51,03e52,03e53,03e54,03e55,03e5d,03e5e,03e5f,03e60,03e62,03e63,03e75,03e77,03ebd,03ebf,03ec1,03ec2,03ec3,03ec4,03ec5,03ec6
+
+[ITEMDEF 03e4b]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e4c]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e4d]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e4e]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e4f]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e50]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e51]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e52]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e53]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e54]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e55]
+//tiller man
+TYPE=T_SHIP_TILLER
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e56]
+//dragon prow
+//TYPE=T_SHIP_OTHER
+DUPEITEM=03e43
+
+[ITEMDEF 03e57]
+//mast
+TYPE=T_SHIP_OTHER
+
+CATEGORY=Ship Parts
+SUBSECTION=Mast
+DESCRIPTION=@
+//DUPELIST=03e5a,03e6c,03e72,03ec8,03ecb,03ed0,03edd,03ee2
+
+[ITEMDEF 03e58]
+//spar
+TYPE=T_SHIP_OTHER
+
+CATEGORY=Ship Parts
+SUBSECTION=Spar
+DESCRIPTION=@
+//DUPELIST=03e6e,03e70,03ecd,03ece,03ecf,03ed1,03ed2
+
+[ITEMDEF 03e59]
+//sail
+TYPE=T_SHIP_OTHER
+
+CATEGORY=Ship Parts
+SUBSECTION=Sail
+DESCRIPTION=@
+//DUPELIST=03e5b,03e5c,03e6a,03e6b,03e6d,03e71,03e73,03e74,03ec9,03eca,03ecc,03edc,03ede,03edf,03ee0,03ee1,03ee3
+
+[ITEMDEF 03e5a]
+//mast
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e57
+
+[ITEMDEF 03e5b]
+//sail
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03e5c]
+//sail
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03e5d]
+//tiller
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e5e]
+//tiller
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e5f]
+//tiller
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e60]
+//tiller
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e61]
+//deck
+
+CATEGORY=Ship Parts
+SUBSECTION=Deck
+DESCRIPTION=@
+//DUPELIST=03e7a,03e83,03e88,03e8b,03e8f,03e98,03ea1,03eaa,03eac,03ead,03eb0,03ec0
+
+[ITEMDEF 03e62]
+//tiller
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e63]
+//tiller
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e64]
+//hold
+//should this be a container type instead?
+
+CATEGORY=Ship Parts
+SUBSECTION=Hold
+DESCRIPTION=@
+//DUPELIST=03e92,03eaf,03eb7
+
+[ITEMDEF 03e65]
+//hatch
+DEFNAME=i_ship_hatch_e
+TYPE=T_SHIP_HOLD
+TDATA2=04c
+CATEGORY=Ship Parts
+SUBSECTION=Hatch
+DESCRIPTION=@
+DUPELIST=03e93,03eae,03eb9
+
+[ITEMDEF 03e66]
+//ship
+TYPE=T_SHIP_OTHER
+
+CATEGORY=Ship Parts
+SUBSECTION=Ship Side
+DESCRIPTION=Ship Side
+
+[ITEMDEF 03e67]
+//ship
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e68]
+//prow
+TYPE=T_SHIP_OTHER
+
+CATEGORY=Ship Parts
+SUBSECTION=Prow
+DESCRIPTION=@
+//DUPELIST=03e69,03e95,03e96,03e97,03e9a,03eb4,03eba
+
+[ITEMDEF 03e69]
+//prow
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e68
+
+[ITEMDEF 03e6a]
+//sail
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03e6b]
+//sail
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03e6c]
+//mast
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e57
+
+[ITEMDEF 03e6d]
+//sail
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03e6e]
+//spar
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e58
+
+[ITEMDEF 03e6f]
+//rudder
+TYPE=T_SHIP_OTHER
+
+CATEGORY=Ship Parts
+SUBSECTION=Rudder
+DESCRIPTION=@
+//DUPELIST=03e76,03e78,03ebb,03ebc,03ebe
+
+[ITEMDEF 03e70]
+//spar
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e58
+
+[ITEMDEF 03e71]
+//sail
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03e72]
+//mast
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e57
+
+[ITEMDEF 03e73]
+//sail
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03e74]
+//sail
+TYPE=T_SHIP_OTHER
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03e75]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e76]
+//rudder
+
+//DUPEITEM=03e6f
+
+[ITEMDEF 03e77]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03e78]
+//rudder
+
+//DUPEITEM=03e6f
+
+[ITEMDEF 03e79]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e7a]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03e7b]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e7c]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e7d]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e7e]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e7f]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e80]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e81]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e83]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03e84]
+//gang plank
+TYPE=T_SHIP_PLANK
+TDATA1=03e85
+CATEGORY=Ship Parts
+SUBSECTION=Gang Plank
+DESCRIPTION=@
+//DUPELIST=03e86,03e89,03ed3,03ed4,03ed5
+
+[ITEMDEF 03e85]
+//ship
+TYPE=T_SHIP_SIDE
+TDATA1=03e84
+
+[ITEMDEF 03e86]
+//gang plank
+TYPE=T_SHIP_PLANK
+TDATA1=03e87
+
+[ITEMDEF 03e87]
+//ship
+TYPE=T_SHIP_SIDE
+TDATA1=03e86
+
+[ITEMDEF 03e88]
+//deck
+
+[ITEMDEF 03e89]
+//gang plank
+TYPE=T_SHIP_PLANK
+TDATA1=03e8a
+
+[ITEMDEF 03e8a]
+//ship
+DEFNAME=i_ship_plank_n_c
+TYPE=T_SHIP_SIDE
+TDATA1=03e89
+
+[ITEMDEF 03e8b]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03e8c]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e8d]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e8e]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e8f]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03e90]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e91]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e92]
+//hold
+
+//DUPEITEM=03e64
+
+[ITEMDEF 03e93]
+//hatch
+DEFNAME=i_ship_hatch_w
+DUPEITEM=i_ship_hatch_e
+
+[ITEMDEF 03e94]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e95]
+//prow
+
+//DUPEITEM=03e68
+
+[ITEMDEF 03e96]
+//prow
+
+//DUPEITEM=03e68
+
+[ITEMDEF 03e97]
+//prow
+
+//DUPEITEM=03e68
+
+[ITEMDEF 03e98]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03e9a]
+//prow
+
+//DUPEITEM=03e68
+
+[ITEMDEF 03e9b]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e9c]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e9d]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03e9e]
+//ship
+
+[ITEMDEF 03e9f]
+//ship (really used as horse equipped)
+DEFNAME=i_mt_horse_tan
+TYPE=T_EQ_HORSE
+LAYER=layer_horse
+TDATA3=c_horse_tan
+
+[ITEMDEF 03ea0]
+//ship (really used as horse equipped)
+DEFNAME=i_mt_horse_gray
+TYPE=T_EQ_HORSE
+LAYER=layer_horse
+TDATA3=c_horse_gray
+
+[ITEMDEF 03ea1]
+//ship deck (really used as horse equipped)
+DEFNAME=i_mt_horse_brown_lt
+TYPE=T_EQ_HORSE
+LAYER=layer_horse
+TDATA3=c_horse_brown_lt
+
+[ITEMDEF 03ea2]
+//ship (really used as horse equipped)
+DEFNAME=i_mt_horse_brown_dk
+TYPE=T_EQ_HORSE
+LAYER=layer_horse
+TDATA3=c_horse_brown_dk
+
+[ITEMDEF 03ea3]
+//ship (really used as horse equipped)
+DEFNAME=i_mt_ostard_desert
+TYPE=T_EQ_HORSE
+LAYER=layer_horse
+TDATA3=c_ostard_desert
+
+[ITEMDEF 03ea4]
+//ship (really used as horse equipped)
+DEFNAME=i_mt_ostard_zostrich
+TYPE=T_EQ_HORSE
+LAYER=layer_horse
+TDATA3=c_ostard_zostrich
+
+[ITEMDEF 03ea5]
+//ship (really used as horse equipped)
+DEFNAME=i_mt_ostard_forest
+TYPE=T_EQ_HORSE
+LAYER=layer_horse
+TDATA3=c_OSTARD_Forest
+
+[ITEMDEF 03ea6]
+//ship (really used as horse equipped)
+DEFNAME=i_mt_llama
+TYPE=T_EQ_HORSE
+LAYER=layer_horse
+TDATA3=c_LLAMA
+
+[ITEMDEF 03ea7]
+//ship
+
+[ITEMDEF 03ea8]
+//ship
+//DUPEITEM=03e66
+
+[ITEMDEF 03ea9]
+//ship
+TYPE=T_SHIP_SIDE
+TDATA1=03ed3
+CATEGORY=Ship Parts
+SUBSECTION=Ship Door
+DESCRIPTION=Ship Door
+
+[ITEMDEF 03eaa]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03eab]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03eac]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03ead]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03eae]
+//hatch
+DEFNAME=i_ship_hatch_n
+DUPEITEM=i_ship_hatch_e
+
+[ITEMDEF 03eaf]
+//hold
+//DUPEITEM=03e64
+
+[ITEMDEF 03eb0]
+//deck
+//DUPEITEM=03e61
+
+[ITEMDEF 03eb1]
+//ship
+TYPE=T_SHIP_SIDE
+TDATA1=03ed5
+
+[ITEMDEF 03eb2]
+//ship
+TYPE=T_SHIP_SIDE
+TDATA1=03ed4
+
+[ITEMDEF 03eb3]
+//stern
+CATEGORY=Ship Parts
+SUBSECTION=Stern
+DESCRIPTION=@
+//DUPELIST=03eb8
+
+[ITEMDEF 03eb4]
+//prow
+
+//DUPEITEM=03e68
+
+[ITEMDEF 03eb5]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03eb6]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03eb7]
+//hold
+
+//DUPEITEM=03e64
+
+[ITEMDEF 03eb8]
+//stern
+
+//DUPEITEM=03eb3
+
+[ITEMDEF 03eb9]
+//hatch
+DEFNAME=i_ship_hatch_s
+DUPEITEM=i_ship_hatch_e
+
+[ITEMDEF 03eba]
+//prow
+
+//DUPEITEM=03e68
+
+[ITEMDEF 03ebb]
+//rudder
+
+//DUPEITEM=03e6f
+
+[ITEMDEF 03ebc]
+//rudder
+
+//DUPEITEM=03e6f
+
+[ITEMDEF 03ebd]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03ebe]
+//rudder
+
+//DUPEITEM=03e6f
+
+[ITEMDEF 03ebf]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03ec0]
+//deck
+
+//DUPEITEM=03e61
+
+[ITEMDEF 03ec1]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03ec2]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03ec3]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03ec4]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03ec5]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03ec6]
+//tiller
+
+//DUPEITEM=03e4a
+
+[ITEMDEF 03ec8]
+//mast
+
+//DUPEITEM=03e57
+
+[ITEMDEF 03ec9]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03eca]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03ecb]
+//mast
+
+//DUPEITEM=03e57
+
+[ITEMDEF 03ecc]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03ecd]
+//spar
+
+//DUPEITEM=03e58
+
+[ITEMDEF 03ece]
+//spar
+
+//DUPEITEM=03e58
+
+[ITEMDEF 03ecf]
+//spar
+
+//DUPEITEM=03e58
+
+[ITEMDEF 03ed0]
+//mast
+
+//DUPEITEM=03e57
+
+[ITEMDEF 03ed1]
+//spar
+
+//DUPEITEM=03e58
+
+[ITEMDEF 03ed2]
+//spar
+
+//DUPEITEM=03e58
+
+[ITEMDEF 03ed3]
+//gang plank
+TYPE=T_SHIP_PLANK
+TDATA1=03ea9
+
+[ITEMDEF 03ed4]
+//gang plank
+TYPE=T_SHIP_PLANK
+TDATA1=03eb2
+
+[ITEMDEF 03ed5]
+//gang plank
+TYPE=T_SHIP_PLANK
+TDATA1=03eb1
+
+[ITEMDEF 03ed6]
+//NOINDEX
+
+[ITEMDEF 03ed8]
+//curtains
+
+CATEGORY=Decoration - Curtains
+SUBSECTION=Curtain 01
+DESCRIPTION=@
+DUPELIST=03ed9,03eda
+
+[ITEMDEF 03ed9]
+//curtains
+
+DUPEITEM=03ed8
+
+[ITEMDEF 03eda]
+//curtains
+
+DUPEITEM=03ed8
+
+[ITEMDEF 03edb]
+//curtains
+
+//DUPEITEM=03ed8
+
+[ITEMDEF 03edc]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03edd]
+//mast
+
+//DUPEITEM=03e57
+
+[ITEMDEF 03ede]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03edf]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03ee0]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03ee1]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03ee2]
+//mast
+
+//DUPEITEM=03e57
+
+[ITEMDEF 03ee3]
+//sail
+
+//DUPEITEM=03e59
+
+[ITEMDEF 03ee4]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03ee5]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03ee6]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03ee7]
+//ship
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03ee8]
+//strange yellow dot
+DEFNAME=i_fx_yellow_dot
+CATEGORY=Miscellaneous
+SUBSECTION=Weirdness
+DESCRIPTION=Strange Yellow Dot
+
+[ITEMDEF 03ee9]
+//ship parts
+
+//DUPEITEM=03e66
+
+[ITEMDEF 03eea]
+//
+
+[ITEMDEF 03eeb]
+//
+
+[ITEMDEF 03eec]
+//
+
+[ITEMDEF 03eed]
+//
+
+[ITEMDEF 03eee]
+//
+
+[ITEMDEF 03eef]
+//
+
+[ITEMDEF 03ef0]
+//
+
+[ITEMDEF 03ef1]
+//
+
+[ITEMDEF 03ef2]
+//
+
+[ITEMDEF 03ef3]
+//
+
+[ITEMDEF 03ef4]
+//
+
+[ITEMDEF 03ef5]
+//
+
+[ITEMDEF 03ef6]
+//
+
+[ITEMDEF 03ef7]
+//
+
+[ITEMDEF 03ef8]
+//
+
+[ITEMDEF 03ef9]
+//
+
+[ITEMDEF 03efa]
+//
+
+[ITEMDEF 03efb]
+//
+
+[ITEMDEF 03efc]
+//
+
+[ITEMDEF 03efd]
+//
+
+[ITEMDEF 03efe]
+//
+
+[ITEMDEF 03eff]
+//
+
+[ITEMDEF 03f00]
+//
+
+[ITEMDEF 03f01]
+//
+
+[ITEMDEF 03f02]
+//
+
+[ITEMDEF 03f03]
+//
+
+[ITEMDEF 03f04]
+//
+
+[ITEMDEF 03f05]
+//
+
+[ITEMDEF 03f06]
+//
+
+[ITEMDEF 03f07]
+//
+
+[ITEMDEF 03f08]
+//
+
+[ITEMDEF 03f09]
+//
+
+[ITEMDEF 03f0a]
+//
+
+[ITEMDEF 03f0b]
+//
+
+[ITEMDEF 03f0c]
+//
+
+[ITEMDEF 03f0d]
+//
+
+[ITEMDEF 03f0e]
+//
+
+[ITEMDEF 03f0f]
+//
+
+[ITEMDEF 03f10]
+//
+
+[ITEMDEF 03f11]
+//
+
+[ITEMDEF 03f12]
+//
+
+[ITEMDEF 03f13]
+//
+
+[ITEMDEF 03f14]
+//
+
+[ITEMDEF 03f15]
+//
+
+[ITEMDEF 03f16]
+//
+
+[ITEMDEF 03f17]
+//
+
+[ITEMDEF 03f18]
+//
+
+[ITEMDEF 03f19]
+//
+
+[ITEMDEF 03f1a]
+//
+
+[ITEMDEF 03f1b]
+//
+
+[ITEMDEF 03f1c]
+//
+
+[ITEMDEF 03f1d]
+//
+
+[ITEMDEF 03f1e]
+//
+
+[ITEMDEF 03f1f]
+//
+
+[ITEMDEF 03f20]
+//
+
+[ITEMDEF 03f21]
+//
+
+[ITEMDEF 03f22]
+//
+
+[ITEMDEF 03f23]
+//
+
+[ITEMDEF 03f24]
+//
+
+[ITEMDEF 03f25]
+//
+
+[ITEMDEF 03f26]
+//
+
+[ITEMDEF 03f27]
+//
+
+[ITEMDEF 03f28]
+//
+
+[ITEMDEF 03f29]
+//
+
+[ITEMDEF 03f2a]
+//
+
+[ITEMDEF 03f2b]
+//
+
+[ITEMDEF 03f2c]
+//
+
+[ITEMDEF 03f2d]
+//
+
+[ITEMDEF 03f2e]
+//
+
+[ITEMDEF 03f2f]
+//
+
+[ITEMDEF 03f30]
+//
+
+[ITEMDEF 03f31]
+//
+
+[ITEMDEF 03f32]
+//
+
+[ITEMDEF 03f33]
+//
+
+[ITEMDEF 03f34]
+//
+
+[ITEMDEF 03f35]
+//
+
+[ITEMDEF 03f36]
+//
+
+[ITEMDEF 03f37]
+//
+
+[ITEMDEF 03f38]
+//
+
+[ITEMDEF 03f39]
+//
+
+[ITEMDEF 03f3a]
+//
+
+[ITEMDEF 03f3b]
+//
+
+[ITEMDEF 03f3f]
+//ballista
+
+CATEGORY=Miscellaneous
+SUBSECTION=Ballista
+DESCRIPTION=@
+DUPELIST=03f40,03f41,03f42,03f43,03f44,03f45,03f46,03f47,03f48,03f49,03f4a,03f4b,03f4c,03f4d,03f4e,03f4f,03f50,03f51,03f52,03f53,03f54,03f55,03f56,03f57,03f58,03f59,03f5a,03f5b,03f5c,03f5d,03f5e,03f5f,03f60,03f61,03f62,03f63,03f64,03f65,03f66,03f67,03f68,03f69,03f6a,03f6b,03f6c,03f6d,03f6e,03f6f,03f70,03f71,03f72,03f73,03f74,03f75,03f76,03f77,03f78,03f79,03f7a,03f7b,03f7c,03f7d,03f7e,03f7f,03f80,03f81,03f82,03f83,03f84,03f85,03f86,03f87,03f88,03f89,03f8a,03f8b,03f8c,03f8d,03f8e,03f90,03f91,03f92,03f93,03f94,03f95,03f96,03f97,03f98,03f99,03f9a,03f9b,03f9c,03f9d,03f9e,03f9f,03fa0,03fa1,03fa2,03fa3,03fa4,03fa5,03fa6,03fa7,03fa8,03fa9,03faa,03fab,03fac,03fad,03fae,03faf,03fb0,03fb1,03fb2,03fb3,03fb4,03fb5,03fb6,03fb7,03fb8,03fb9,03fba,03fbb,03fbc,03fbd,03fbe,03fbf,03fc0,03fc1,03fc2,03fc3,03fc4,03fc5,03fc6,03fc7,03fc8,03fc9,03fca,03fcb,03fcc,03fcd,03fce,03fcf,03fd0,03fd1,03fd2,03fd3,03fd4,03fd5,03fd6,03fd7,03fd8,03fd9,03fda,03fdb,03fdc,03fdd,03fde,03fdf,03fe0,03fe2,03fe3,03fe4
+
+[ITEMDEF 03f40]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f41]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f42]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f43]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f44]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f45]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f46]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f47]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f48]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f49]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f4a]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f4b]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f4c]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f4d]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f4e]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f4f]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f50]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f51]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f52]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f53]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f54]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f55]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f56]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f57]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f58]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f59]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f5a]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f5b]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f5c]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f5d]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f5e]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f5f]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f60]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f61]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f62]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f63]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f64]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f65]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f66]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f67]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f68]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f69]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f6a]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f6b]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f6c]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f6d]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f6e]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f6f]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f70]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f71]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f72]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f73]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f74]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f75]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f76]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f77]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f78]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f79]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f7a]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f7b]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f7c]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f7d]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f7e]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f7f]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f80]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f81]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f82]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f83]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f84]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f85]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f86]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f87]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f88]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f89]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f8a]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f8b]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f8c]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f8d]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f8e]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f8f]
+//
+
+[ITEMDEF 03f90]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f91]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f92]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f93]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f94]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f95]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f96]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f97]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f98]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f99]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f9a]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f9b]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f9c]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f9d]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f9e]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03f9f]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa0]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa1]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa2]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa3]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa4]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa5]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa6]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa7]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa8]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fa9]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03faa]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fab]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fac]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fad]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fae]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03faf]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb0]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb1]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb2]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb3]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb4]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb5]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb6]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb7]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb8]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fb9]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fba]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fbb]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fbc]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fbd]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fbe]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fbf]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc0]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc1]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc2]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc3]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc4]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc5]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc6]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc7]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc8]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fc9]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fca]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fcb]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fcc]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fcd]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fce]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fcf]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd0]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd1]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd2]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd3]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd4]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd5]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd6]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd7]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd8]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fd9]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fda]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fdb]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fdc]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fdd]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fde]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fdf]
+//ballista
+
+DUPEITEM=03f3f
+
+[ITEMDEF 03fe0]
+//ballista
+DUPEITEM=03f3f
+
+[ITEMDEF 03fe2]
+//ballista
+DUPEITEM=03f3f
+
+[ITEMDEF 03fe3]
+//ballista
+DUPEITEM=03f3f
+
+[ITEMDEF 03fe4]
+//ballista
+DUPEITEM=03f3f
+
+[ITEMDEF 03ffe]
+//big horse
+NAME=horse
+
+[EOF]

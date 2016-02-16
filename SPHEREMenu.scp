@@ -1,0 +1,5304 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+// All menus in the game.
+// GM, Items, locations and Gumps
+
+[ADMIN 1]
+SPHERE Client Control Menu
+ON=GO: Go to the client's location.
+GOTARG //You are now going to the client.
+ON=SUMMONTO: Bring that client to you
+T.SUMMONTO //The client is summoned
+ON=SUMMONCAGE: Bring that client to you, in a cage.
+T.SUMMONCAGE //The client is summoned and in the cage
+ON=JAIL: Send the client to jail.
+T.JAIL //The client is in jail
+ON=KICK: Kick the client off the server.
+T.KICK //The client is kicked off the server
+ON=KILL: Kill the client's current character.
+T.KILL // The client is dead
+ON=RESURRECT: Resurrect the client's character.
+T.RESURRECT //The client is now alive
+ON=FOLLOW: Follow this character.
+T.FOLLOWED //This might be tricky
+ON=MESSAGETARG: Send a message
+EVERBTARG HEAR
+ON=EVERBTARG: Enter any verb on this target.
+EVERBTARG
+
+
+// GMMENU -------------------------------------
+
+[GMMENU 1] // GMMENU 1 is executed whenever someone presses the "Page GM" button
+SPHERE Main Support Menu
+ON=PAGE A GM: Sends a notice to the server administrators, if they are online. They can help you with almost all your in-game problems.
+GMMENU 3
+ON=WEB MENU: Provides a list of links to various websites.
+GMMENU 2
+ON=INFO: Shows the version of SPHERE this server is running.
+VERSION
+ON=SERVER STATUS: Shows some status information about this server.
+INFORMATION
+ON=GO TO THE HELP ROOM: This will teleport you to the The Abyss.
+GMMENU 4
+
+[GMMENU 2]
+Web Menu
+ON=SPHERE HOMEPAGE: Redirects you to the official SPHERE homepage.
+WEBLINK http:\\www.sphereserver.com
+
+[GMMENU 3]
+GM Page Menu
+ON=STUCK: Use this option if you cant move and need GM assistance.
+GMPAGE Stuck
+ON=ITEM PROBLEM: Use this if you have run into a problem with a specific item.
+GMPAGE Item Problem
+ON=BUG: Use this if you have found a bug that you would like to report to the GMs.
+GMPAGE Bug Report
+ON=INFO: Use this if you need helping information about some part of the game.
+GMPAGE Information
+ON=OTHER: Use this for anything not listed above.
+GMPAGE Other
+
+[GMMENU 4]
+Are you sure you want to be teleported to The Abyss? You will be stuck there until a GM teleports you back to the world.
+ON=YES, down we go!
+SYSMESSAGE This Feature Has Been Removed Due To Abuse By PLayers!!!
+//GOPLACE The Abyss
+ON=NO, I'd rather stay here.
+SYSMESSAGE Help request aborted.
+
+// This is the guildmaster initial selection screen for guildstones
+[GUILDMENU 1]
+<TARG.Name> (<TARG.MasterTitle> <TARG.Master>)
+ON=Recruit someone into the guild
+TARG.RECRUIT
+ON=View the current roster.
+TARG.VIEWROSTER
+ON=View the guild's charter.
+TARG.VIEWCHARTER
+ON=Declare your fealty. You are currently loyal to <TARG.LoyalTo>.
+TARG.DECLAREFEALTY
+ON=Toggle showing the guild's abbreviation in your name to unguilded people. Currently <TARG.AbbreviationToggle>.
+TARG.TOGGLEABBREVIATION
+ON=Resign from the guild.
+TARG.RESIGN
+ON=View list of candidates who have been sponsored to the guild.
+TARG.VIEWCANDIDATES
+ON=View list of guilds that <TARG.Name> has declared war on.
+TARG.VIEWENEMYS
+ON=View list of guilds that have declared war on <TARG.Name>.
+TARG.VIEWTHREATS
+ON=Access Guild <TARG.MasterGenderTitle> functions.
+TARG.MASTERMENU
+
+// This is the NON-guildmaster initial selection screen for guildstones
+[GUILDMENU 2]
+<TARG.Name> (<TARG.MasterTitle> <TARG.Master>)
+ON=Recruit someone into the guild
+TARG.RECRUIT
+ON=View the current roster.
+TARG.VIEWROSTER
+ON=View the guild's charter.
+TARG.VIEWCHARTER
+ON=Declare your fealty. You are currently loyal to <TARG.LoyalTo>.
+TARG.DECLAREFEALTY
+ON=Toggle showing the guild's abbreviation in your name to unguilded people. Currently <TARG.AbbreviationToggle>.
+TARG.TOGGLEABBREVIATION
+ON=Resign from the guild.
+TARG.RESIGN
+ON=View list of candidates who have been sponsored to the guild.
+TARG.VIEWCANDIDATES
+ON=View list of guilds that <TARG.Name> has declared war on.
+TARG.VIEWENEMYS
+ON=View list of guilds that have declared war on <TARG.Name>.
+TARG.VIEWTHREATS
+
+// Guild master functions.
+[GUILDMENU 3]
+<TARG.Name>, Guild <TARG.MasterGenderTitle> functions
+ON=Set the guild name.
+TARG.SETNAME
+ON=Set the guilds abbreviation.
+TARG.SETABBREVIATION
+ON=Change the alignment of guild. (currently a <TARG.AlignType> guild.)
+TARG.CHANGEALIGN
+ON=Set the guild's charter.
+TARG.SETCHARTER
+ON=Dismiss a member.
+TARG.DISMISSMEMBER
+ON=Declare war.
+TARG.DECLAREWAR
+ON=Declare peace.
+TARG.DECLAREPEACE
+ON=Accept a candidate seeking membership.
+TARG.ACCEPTCANDIDATE
+ON=Refuse a candidate seeking membership.
+TARG.REFUSECANDIDATE
+ON=Set the guildmaster's title.
+TARG.SETGMTITLE
+ON=Grant a title to another member.
+TARG.GRANTTITLE
+//Teleport this guildstone.
+//TARG.TELEPORT
+ON=Return to main menu.
+TARG.RETURNMAINMENU
+
+// Non-member view.
+[GUILDMENU 4]
+<TARG.Name> (<TARG.MasterTitle> <TARG.Master>)
+ON=View the guild's charter.
+TARG.VIEWCHARTER
+ON=View list of guilds that <TARG.Name> has declared war on.
+TARG.VIEWENEMYS
+ON=View list of guilds that have declared war on <TARG.Name>.
+TARG.VIEWTHREATS
+
+[GUILDMENU 5]
+Change the alignment of guild. (currently a <TARG.AlignType> guild.)
+ON=Chaos
+TARG.CHANGEALIGN 2
+ON=Neutral
+TARG.CHANGEALIGN 0
+ON=Order
+TARG.CHANGEALIGN 1
+
+// Town stones. mayor view
+[GUILDMENU 6]
+Town of <TARG.Name> (<TARG.MasterTitle> <TARG.Master>)
+ON=View the current citizenship.
+TARG.VIEWROSTER
+ON=View the town's charter.
+TARG.VIEWCHARTER
+ON=Vote for mayor. You are currently loyal to <TARG.LoyalTo>.
+TARG.DECLAREFEALTY
+ON=Resign from the town.
+TARG.RESIGN
+//ON=View list of those banished from the town.
+//TARG.VIEWBANISHED
+ON=View list of those applying for citizenship.
+TARG.VIEWCANDIDATES
+ON=View list of towns that <TARG.Name> has declared war on.
+TARG.VIEWENEMYS
+ON=View list of towns that have declared war on <TARG.Name>.
+TARG.VIEWTHREATS
+ON=Access Mayoral functions.
+TARG.MASTERMENU
+
+// This is the member, NON-mayor townstones
+[GUILDMENU 7]
+Town of <TARG.Name> (<TARG.MasterTitle> <TARG.Master>)
+ON=View the current citizenship.
+TARG.VIEWROSTER
+ON=View the town's charter.
+TARG.VIEWCHARTER
+ON=Vote for mayor. You are currently loyal to <TARG.LoyalTo>.
+TARG.DECLAREFEALTY
+ON=Resign from the town.
+TARG.RESIGN
+//ON=View list of those banished from the town.
+//TARG.VIEWBANISHED
+ON=View list of those applying for citizenship.
+TARG.VIEWCANDIDATES
+ON=View list of towns that <TARG.Name> has declared war on.
+TARG.VIEWENEMYS
+ON=View list of towns that have declared war on <TARG.Name>.
+TARG.VIEWTHREATS
+
+// Mayor functions.
+[GUILDMENU 8]
+Town of <TARG.Name>, Mayoral functions
+ON=Set the town name.
+TARG.SETNAME
+ON=Set the town's charter.
+TARG.SETCHARTER
+ON=Banish a citizen.
+TARG.DISMISSMEMBER
+ON=Declare war.
+TARG.DECLAREWAR
+ON=Declare peace.
+TARG.DECLAREPEACE
+ON=Accept a person seeking citizenship.
+TARG.ACCEPTCANDIDATE
+ON=Refuse a person seeking citizenship.
+TARG.REFUSECANDIDATE
+ON=Set the mayors's title.
+TARG.SETGMTITLE
+ON=Grant a title to a citizen.
+TARG.GRANTTITLE
+ON=Return to main menu.
+TARG.RETURNMAINMENU
+
+// Non-member view.
+[GUILDMENU 9]
+Town of <TARG.Name> (<TARG.MasterTitle> <TARG.Master>)
+ON=View the towns's charter.
+TARG.VIEWCHARTER
+ON=View list of towns that <TARG.Name> has declared war on.
+TARG.VIEWENEMYS
+ON=View list of towns that have declared war on <TARG.Name>.
+TARG.VIEWTHREATS
+ON=Apply for citizenship
+TARG.APPLYTOJOIN
+
+// ITEMMENUS SECTION -------------------------------------
+
+// Main start menu, used when /add with no parms are passed
+[ITEMMENU 1]
+SPHERE Main GM Menu
+ON=0 GameMaster Features
+ITEMMENU 2
+ON=0 Valuables
+ITEMMENU 16
+ON=0 NPCs
+ITEMMENU 20
+ON=0 Magic Items
+ITEMMENU 70
+ON=0 Tools & Trades
+ITEMMENU 82
+ON=0 Raw Materials
+ITEMMENU 93
+ON=0 Potions & Flasks
+ITEMMENU 275
+ON=0 Scattered Materials
+ITEMMENU 94
+ON=0 Weapons & Armor
+ITEMMENU 100
+ON=0 Magic Weapons & Armor
+ITEMMENU 120
+ON=0 Equipment & Items
+ITEMMENU 130
+ON=0 Clothing
+ITEMMENU 170
+ON=0 Banners & Signs
+ITEMMENU 180
+ON=0 Food
+ITEMMENU 200
+ON=0 Plants
+ITEMMENU 220
+ON=0 Rocks, Stones, Boulders
+ITEMMENU 270
+ON=0 Structures
+ITEMMENU 250
+
+// GM Features and Travel Places Menus
+[ITEMMENU 2]
+GameMaster Features
+ON=0 Items
+ITEMMENU 3
+ON=0 Travel to Places
+ITEMMENU 4
+ON=0 Hair & Beards
+ITEMMENU 274
+ON=0 House Deeds
+ITEMMENU 269
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 3]
+GameMaster Items
+ON=0 GM Robe (undyed)
+ADDITEM 204F
+ON=0 Master Key
+ADDITEM 1012
+ON=0 Teleport Rune
+ADDITEM 0E5E
+ON=0 Lord British Armor
+ADDITEM 2042
+ON=0 Blackthorne Robe
+ADDITEM 2043
+ON=0 Death Shroud
+ADDITEM 204E
+ON=0 PREVIOUS MENU
+ITEMMENU 2
+
+
+[ITEMMENU 4]
+Travel to Places
+ON=0 Special GM Areas
+ITEMMENU 5
+ON=0 Towns
+ITEMMENU 6
+ON=0 Councelor Halls
+ITEMMENU 7
+ON=0 Dungeons
+ITEMMENU 8
+ON=0 Shrines
+ITEMMENU 9
+ON=0 Graveyards
+ITEMMENU 10
+ON=0 Forts
+ITEMMENU 11
+ON=0 Sightings
+ITEMMENU 12
+ON=0 MoonGates
+ITEMMENU 13
+ON=0 T2A Locations
+ITEMMENU 14
+ON=0 PREVIOUS MENU
+ITEMMENU 2
+
+[ITEMMENU 5]
+Special GM Areas
+ON=0 Jail #1
+GO 5276 1164 0
+ON=0 Jail #2
+GO 5286 1164 0
+ON=0 Jail #3
+GO 5296 1164 0
+ON=0 Jail #4
+GO 5306 1164 0
+ON=0 Jail #5
+GO 5276 1174 0
+ON=0 Jail #6
+GO 5286 1174 0
+ON=0 Jail #7
+GO 5296 1174 0
+ON=0 Jail #8
+GO 5306 1174 0
+ON=0 Jail #9
+GO 5283 1184 0
+ON=0 Jail #10
+GO 5304 1184 0
+ON=0 Green Acres
+GO 5539 1102 0
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 6]
+Towns
+ON=0 Britain (center)
+go 1475 1645 20
+ON=0 Bucaneer's Den (docks)
+go 2736 2166 0
+ON=0 Cove (center)
+go 2246 1214 0
+ON=0 Jhelom (docks)
+go 1485 3695 0
+ON=0 Minoc (center)
+go 2466 443 15
+ON=0 Moonglow (bank)
+go 4471 1178 0
+ON=0 Nujel'm (center)
+go 3755 1243 0
+ON=0 Occlo (smithy)
+go 3642 2595 0
+ON=0 Serpents Hold (center)
+go 3021 3397 15
+ON=0 Skara Brae (provisioner)
+go 584 2227 0
+ON=0 Trinsic (center)
+go 1956 2780 10
+ON=0 Vesper (mage shop)
+go 3000 835 0
+ON=0 Wind (entrance)
+go 5166 245 15
+ON=0 Yew (empath abby)
+go 635 818 0
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 7]
+Councelor Halls
+ON=0 Moonglow
+go 4479 1126 0
+ON=0 Skara Brae
+go 619 2131 0
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 8]
+Dungeons
+ON=0 Covetous (entrance)
+go 2499 922 0
+ON=0 Deceit (entrance)
+go 4111 434 5
+ON=0 Despise (entrance)
+go 1301 1080 0
+ON=0 Destard (entrance)
+go 1176 2639 0
+ON=0 Hythloth (entrance)
+go 4722 3825 0
+ON=0 Shame (entrance)
+go 514 1561 0
+ON=0 Wrong (entrance)
+go 1276 238 10
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 9]
+Shrines
+ON=0 Chaos
+go 1453 854 0
+ON=0 Compassion
+go 1856 876 0
+ON=0 Honesty
+go 4216 563 0
+ON=0 Honor
+go 1729 3527 0
+ON=0 Humility
+go 4274 3699 0
+ON=0 Justice
+go 1301 632 16
+ON=0 Sacrifice
+go 3354 287 0
+ON=0 Spirituality
+go 1601 2488 0
+ON=0 Valor
+go 2493 3928 0
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 10]
+Graveyards
+ON=0 Britain
+go 1348 1500 20
+ON=0 Cove
+go 2442 1086 28
+ON=0 Moonglow
+go 4548 1307 0
+ON=0 Vesper
+go 2782 867 0
+ON=0 Yew
+go 724 1136 0
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 11]
+Forts
+ON=0 Cove Orc Fort
+go 2171 1332 0
+ON=0 Yew Brigand Camp
+go 885 1682 0
+ON=0 Yew Fort of the Damned
+go 972 768 0
+ON=0 Yew Orc Fort
+go 634 1500 0
+ON=0 PREVIOUS MENU
+
+TEMMENU 4
+
+[ITEMMENU 12]
+Sightings
+ON=0 Trapper's Camp
+go 3347 572 0
+ON=0 Fisherman's Huts
+go 2381 3485 3
+ON=0 Island Temple
+go 2494 3603 0
+ON=0 Hidden Valley Temple
+go 1659 2967 0
+ON=0 Inside Hedge Maze
+go 1152 2228 17
+ON=0 Outside Hedge Maze
+go 1260 2301 0
+ON=0 Crossroads West of Britain
+go 1012 1937 0
+ON=0 Ancient Ruins (Swamp North of Trinsic)
+go 1814 2421 0
+ON=0 Temple of Fire
+go 4595 3600 30
+ON=0 Fighting Pit
+go 1397 3745 235
+ON=0 Great Waterfall
+go 1322 544 30
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 13]
+MoonGates
+ON=0 Britain
+go 1338 1991 0
+ON=0 Jhelom
+go 1502 3769 0
+ON=0 Magincia
+go 3567 2138 28
+ON=0 Minoc/Vesper
+go 2705 691 0
+ON=0 Moonglow
+go 4470 1281 0
+ON=0 Skara Brae
+go 647 2067 0
+ON=0 Trinsic
+go 1826 2944 231
+ON=0 Yew
+go 769 747 0
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 14]
+T2A Locations
+ON=0 Delucia (bank)
+go 5270 3993 37
+ON=0 Papua (entrace)
+go 5745 3311 -3
+ON=0 Fire Dungeon (entrance)
+go 5760 2907 16
+ON=0 Ice Dungeon (entrance)
+go 1999 81 4
+ON=0 Terathan Keep (entrance)
+go 5451 3140 196
+ON=0 Ophidian Keep (level 1)
+go 5767 2633 0
+ON=0 Delucia Orc Fort
+go 5211 3630 0
+ON=0 City of the Dead
+go 5213 3667 0
+ON=0 Ruins in the Weeds
+go 5389 3233 0
+ON=0 Entraces & Exits to T2A
+ITEMMENU 15
+ON=0 PREVIOUS MENU
+ITEMMENU 4
+
+[ITEMMENU 15]
+Entraces & Exits to T2A
+ON=0 Britain Entrance
+go 1497 1641 20
+ON=0 Britain Exit
+go 6032 1494 5
+ON=0 Cove Entrance
+go 2399 199 0
+ON=0 Cove Exit
+go 6088 3676 18
+ON=0 Cove Entrance 2
+go 1628 3322 0
+ON=0 Cove Exit 2
+go 5154 4063 37
+ON=0 Serpent's Hold Entrance
+go 2923 3407 8
+ON=0 Serpent's Hold Exit
+go 5687 1422 40
+ON=0 Trinsic Entrance
+go 1981 2070 0
+ON=0 Trinsic Exit
+go 5128 3144 99
+ON=0 Trinsic Entrance 2
+go 5900 1410 0
+ON=0 Trinsic Exit 2
+go 5961 1408 0
+ON=0 Vesper Entrance
+go 2778 894 0
+ON=0 Vesper Exit
+go 5697 3656 0
+ON=0 PREVIOUS MENU
+ITEMMENU 14
+
+[ITEMMENU 16]
+Valuables
+ON=0EEF Gold Coins
+ADDITEM 0EEF
+ON=01BEB Gold Ingots
+ADDITEM 1BE9
+ON=01BF7 Silver Ingots
+ADDITEM 1BF5
+ON=01BE5 Coper Ingots
+ADDITEM 1BE3
+ON=01BF1 Iron Ingots
+ADDITEM 1BEF
+ON=01870 Gems
+ITEMMENU 17
+ON=01088 Jewelery
+ITEMMENU 67
+
+[ITEMMENU 17]
+Gems
+ON=0F2E Amethyst
+ADDITEM 0F2E
+ON=0F2C Citrine
+ADDITEM 0F2C
+ON=0F30 Diamond
+ADDITEM 0F30
+ON=0F10 Emerald
+ADDITEM 0F10
+ON=0F25 Piece of Amber
+ADDITEM 0F25
+ON=0F14 Ruby
+ADDITEM 0F14
+ON=0F1F Saphire
+ADDITEM 0F1F
+ON=0F21 Star Saphire
+ADDITEM 0F21
+ON=0F2D Tourmaline
+ADDITEM 0F2D
+
+[ITEMMENU 18]
+New GW Creatures
+ON=0 Skeleton Archer
+ADDNPC 0900
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 19]
+T2A Creatures (Ophidian & Terathan)
+ON=0 Ophidian Arch Mage
+ADDNPC 1044
+ON=0 Ophidian Mage
+ADDNPC 0055
+ON=0 Ophidian Knight
+ADDNPC 1048
+ON=0 Ophidian Matriarch
+ADDNPC 0057
+ON=0 Ophidian Warrior
+ADDNPC 0056
+ON=0 Terathan Avenger
+ADDNPC 1055
+ON=0 Terathan Drone
+ADDNPC 0047
+ON=0 Terathan Matriarch
+ADDNPC 0048
+ON=0 Terathan Warrior
+ADDNPC 0046
+ON=0 PREVIOUS MENU
+ITEMMENU 28
+
+[ITEMMENU 20]
+NPCs
+ON=0 Males
+ITEMMENU 21
+ON=0 Females
+ITEMMENU 22
+ON=0 Wild Animals
+ITEMMENU 23
+ON=0 Domestic Animals
+ITEMMENU 24
+ON=0 Living Creatures
+ITEMMENU 25
+ON=0 Undead Creatures
+ITEMMENU 26
+ON=0 Mythical Creatures
+ITEMMENU 27
+ON=0 New GW Creatures
+ITEMMENU 18
+ON=0 T2A Creatures
+ITEMMENU 28
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 21]
+Male NPCs
+ON=0 Shopkeepers
+ITEMMENU 30
+ON=0 Town Based
+ITEMMENU 40
+ON=0 Wilderness & Town Based
+ITEMMENU 41
+ON=0 Fighters & Guards
+ITEMMENU 42
+ON=0 Evil (Player Killers)
+ITEMMENU 43
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 22]
+Female NPCs
+ON=0 Shopkeepers
+ITEMMENU 45
+ON=0 Town Based
+ITEMMENU 52
+ON=0 Wilderness & Town Based
+ITEMMENU 53
+ON=0 Fighters & Guards
+ITEMMENU 54
+ON=0 Evil (Player Killers)
+ITEMMENU 55
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 23]
+Wild Animals
+ON=0 Forest
+ITEMMENU 60
+ON=0 Swamp
+ITEMMENU 61
+ON=0 Northern
+ITEMMENU 62
+ON=0 Sea
+ITEMMENU 63
+ON=0 Flying
+ITEMMENU 64
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 24]
+Domestic Animals
+ON=0 Horse (brown)
+ADDNPC 00CC
+ON=0 Horse (pale)
+ADDNPC 00E4
+ON=0 Horse (white)
+ADDNPC 00E2
+ON=0 Horse (tan)
+ADDNPC 00C8
+ON=0 Pack Horse
+ADDNPC 0123
+ON=0 Llama
+ADDNPC 00dc
+ON=0 Pack Llama
+ADDNPC 0124
+ON=0 Cow (light brown)
+ADDNPC 00e7
+ON=0 Cow (black & white)
+ADDNPC 00d8
+ON=0 Bull (light brown)
+ADDNPC 00e8
+ON=0 Bull (dark brown, spotted)
+ADDNPC 00e9
+ON=0 Pig
+ADDNPC 00CB
+ON=0 Sheep (wooly)
+ADDNPC 00CF
+ON=0 Goat
+ADDNPC 00d1
+ON=0 Cat
+ADDNPC 00c9
+ON=0 Dog
+ADDNPC 00D9
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 25]
+Living Creatures
+ON=0 Copser
+ADDNPC 0008
+ON=0 Harpy
+ADDNPC 001e
+ON=0 Mongbat (subterranean)
+ADDNPC 0027
+ON=0 Mongbat (arboreal)
+ADDNPC 1021
+ON=0 Ogre
+ADDNPC 0001
+ON=0 Ogre Lord
+ADDNPC 1040
+ON=0 Ettin, Lizmen, Orc, Ratmen, Troll
+ITEMMENU 29
+ON=0 Reaper
+ADDNPC 002f
+ON=0 Slime
+ADDNPC 0033
+ON=0 Giant Scorpion
+ADDNPC 0030
+ON=0 Giant Spider
+ADDNPC 001c
+ON=0 Giant Serpent
+ADDNPC 0015
+ON=0 Giant Rat
+ADDNPC 00D7
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 26]
+Undead Creatures
+ON=0 Spectre
+ADDNPC 001a
+ON=0 Headless
+ADDNPC 001f
+ON=0 Liche
+ADDNPC 0018
+ON=0 Liche Lord
+ADDNPC 1041
+ON=0 Skeleton
+ADDNPC 0032
+ON=0 Skeleton (with axe)
+ADDNPC 0038
+ON=0 Skeleton (with sword)
+ADDNPC 0039
+ON=0 Skeletal Knight
+ADDNPC 1047
+ON=0 Skeletal Mage
+ADDNPC 1046
+ON=0 Zombie
+ADDNPC 0003
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 27]
+Mythical Creatures
+ON=0 Air Elemental
+ADDNPC 000d
+ON=0 Earth Elemental
+ADDNPC 000e
+ON=0 Fire Elemental
+ADDNPC 000f
+ON=0 Water Elemental
+ADDNPC 0010
+ON=0 Wisp
+ADDNPC 003a
+ON=0 Dragon (red)
+ADDNPC 003b
+ON=0 Dragon (grey)
+ADDNPC 000c
+ON=0 Drake (red)
+ADDNPC 003d
+ON=0 Drake (grey)
+ADDNPC 003c
+ON=0 Daemon
+ADDNPC 0009
+ON=0 Balron (Elder Daemon)
+ADDNPC 1028
+ON=0 Daemon (with sword)
+ADDNPC 000A
+ON=0 Gargoyle
+ADDNPC 0004
+ON=0 Gazer
+ADDNPC 0016
+ON=0 Elder Gazer
+ADDNPC 1034
+ON=0 Sea Serpent
+ADDNPC 0096
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 28]
+T2A Creatures
+ON=0 Bullfrog
+ADDNPC 0051
+ON=0 Cyclops
+ADDNPC 004c
+ON=0 Frost Troll
+ADDNPC 1054
+ON=0 Giant Ice Serpent
+ADDNPC 1049
+ON=0 Imp
+ADDNPC 1023
+ON=0 Kraken
+ADDNPC 1024
+ON=0 Lava Lizard
+ADDNPC CE
+ON=0 Mummy
+ADDNPC 1022
+ON=0 Nightmare
+ADDNPC 1039
+ON=0 Phoenix
+ADDNPC 1042
+ON=0 Stone Gargoyle
+ADDNPC 1033
+ON=0 Stone Harpy
+ADDNPC 1020
+ON=0 Giant Toad
+ADDNPC 50
+ON=0 Titan
+ADDNPC 004b
+ON=0 Wyrm & Wyvern
+ITEMMENU 66
+ON=0 Ophidian's & Terathan's
+ITEMMENU 19
+ON=0 Ice Creatures & Ostards
+ITEMMENU 65
+ON=0 PREVIOUS MENU
+ITEMMENU 20
+
+[ITEMMENU 29]
+Ettin, Lizmen, Orc, Ratmen, Troll
+ON=0 Ettin
+ADDNPC 0002
+ON=0 Ettin (with axe)
+ADDNPC 0012
+ON=0 Lizardman
+ADDNPC 0021
+ON=0 Lizardman (with spear)
+ADDNPC 0023
+ON=0 Lizzardman (with mace)
+ADDNPC 0024
+ON=0 Orc
+ADDNPC 0011
+ON=0 Orc (with club)
+ADDNPC 0029
+ON=0 Orcish Mage
+ADDNPC 1058
+ON=0 Orc Captian
+ADDNPC 1057
+ON=0 Orc Lord
+ADDNPC 0007
+ON=0 Ratman
+ADDNPC 002a
+ON=0 Ratman (with warfork)
+ADDNPC 002c
+ON=0 Ratman (with sword)
+ADDNPC 002d
+ON=0 Troll
+ADDNPC 0036
+ON=0 Troll (with mace)
+ADDNPC 0037
+ON=0 Troll (with axe)
+ADDNPC 0035
+ON=0 PREVIOUS MENU
+ITEMMENU 25
+
+[ITEMMENU 30]
+Male Shopkeepers
+ON=0 Food
+ITEMMENU 31
+ON=0 Clothing
+ITEMMENU 32
+ON=0 Combat
+ITEMMENU 33
+ON=0 Magery
+ITEMMENU 34
+ON=0 Equipment
+ITEMMENU 35
+ON=0 Other
+ITEMMENU 36
+ON=0 PREVIOUS MENU
+ITEMMENU 21
+
+[ITEMMENU 31]
+Male Shopkeepers (food)
+ON=0 Butcher
+ADDNPC 0424
+ON=0 Baker
+ADDNPC 0416
+ON=0 Farmer
+ADDNPC 0430
+ON=0 Innkeeper
+ADDNPC 0532
+ON=0 Cook
+ADDNPC 0500
+ON=0 Waiter
+ADDNPC 0488
+ON=0 Miller
+ADDNPC 0454
+ON=0 Beekeeper
+ADDNPC 0420
+ON=0 Tavernkeeper
+ADDNPC 0538
+
+[ITEMMENU 32]
+Male Shopkeepers (cloths)
+ON=0 Cobbler
+ADDNPC 0428
+ON=0 Tailor
+ADDNPC 0506
+ON=0 Tanner
+ADDNPC 0482
+ON=0 Weaver
+ADDNPC 0502
+ON=0 Fur Trader
+ADDNPC 0432
+
+[ITEMMENU 33]
+Male Shopkeepers (Combat)
+ON=0 Blacksmith
+ADDNPC 0556
+ON=0 Weaponsmith (bladed)
+ADDNPC 0576
+ON=0 Weaponsmith (blunt)
+ADDNPC 0578
+ON=0 Armourer
+ADDNPC 0554
+ON=0 Bowyer
+ADDNPC 0546
+
+[ITEMMENU 34]
+Male Shopkeepers (Magery)
+ON=0 Mage
+ADDNPC 0492
+ON=0 Alchemist
+ADDNPC 0490
+ON=0 Herbalist
+ADDNPC 0442
+ON=0 Scribe
+ADDNPC 0476
+
+[ITEMMENU 35]
+Male Shopkeepers (Equip)
+ON=0 Provisioner
+ADDNPC 0534
+ON=0 Tinker
+ADDNPC 0512
+ON=0 Carpenter
+ADDNPC 0426
+ON=0 Architect
+ADDNPC 0412
+
+[ITEMMENU 36]
+Male Shopkeepers (Other)
+ON=0 Healer
+ADDNPC 0516
+ON=0 Jeweler
+ADDNPC 0536
+ON=0 MapMaker
+ADDNPC 0524
+ON=0 Animal Trainer
+ADDNPC 0548
+
+[ITEMMENU 40]
+Male Town Based
+ON=0 Banker
+ADDNPC 0418
+ON=0 Minter
+ADDNPC 0456
+ON=0 Town Crier
+ADDNPC 0584
+ON=0 Prisoner
+ADDNPC 0472
+ON=0 Thief
+ADDNPC 0560
+ON=Beggar
+ADDNPC 0558
+ON=0 Noble
+ADDNPC 0460
+ON=0 Mayor
+ADDNPC 0452
+ON=0 Gambler
+ADDNPC 0434
+ON=0 Judge
+ADDNPC 0446
+ON=0 Artist
+ADDNPC 0414
+ON=0 Sculptor
+ADDNPC 0478
+ON=0 Shipwright
+ADDNPC 0526
+ON=0 Veterinarian
+ADDNPC 0486
+ON=0 Glassblower
+ADDNPC 0436
+
+[ITEMMENU 41]
+Male Wilderness & Town
+ON=0 Peasent
+ADDNPC 0468
+ON=0 Wandering Healer
+ADDNPC 0516
+ON=0 Sailor
+ADDNPC 0530
+ON=0 Fisherman
+ADDNPC 0522
+ON=0 Shepherd
+ADDNPC 0480
+ON=0 Bard
+ADDNPC 0508
+ON=0 Gypsy
+ADDNPC 0440
+ON=0 Actor
+ADDNPC 0410
+ON=0 Monk
+ADDNPC 0458
+ON=0 Rancher
+ADDNPC 0474
+ON=0 Miner
+ADDNPC 0550
+
+[ITEMMENU 42]
+Male Fighters & Guards
+ON=0 Guard
+ADDNPC 0438
+ON=0 Jailor
+ADDNPC 0444
+ON=0 Mercenary
+ADDNPC 0568
+ON=0 Paladin
+ADDNPC 0570
+ON=0 Warrior
+ADDNPC 0566
+ON=0 Ranger
+ADDNPC 0542
+ON=0 Fighter
+ADDNPC 0564
+ON=0 Weapons Trainer
+ADDNPC 0572
+ON=0 Mage
+ADDNPC 0494
+
+[ITEMMENU 43]
+Male Evil (Player Killers)
+ON=0 Brigand
+ADDNPC 0422
+ON=0 Evil Mage
+ADDNPC 0496
+ON=0 Pirate
+ADDNPC 0470
+
+[ITEMMENU 45]
+Female Shopkeepers
+ON=0 Food
+ITEMMENU 46
+ON=0 Clothing
+ITEMMENU 47
+ON=0 Combat
+ITEMMENU 48
+ON=0 Magery
+ITEMMENU 49
+ON=0 Equipment
+ITEMMENU 50
+ON=0 Other
+ITEMMENU 51
+ON=0 PREVIOUS MENU
+ITEMMENU 22
+
+[ITEMMENU 46]
+Female Shopkeepers (food)
+ON=0 Butcher
+ADDNPC 0425
+ON=0 Baker
+ADDNPC 0417
+ON=0 Farmer
+ADDNPC 0431
+ON=0 Innkeeper
+ADDNPC 0533
+ON=0 Cook
+ADDNPC 0501
+ON=0 Waitress
+ADDNPC 0489
+ON=0 Miller
+ADDNPC 0455
+ON=0 Beekeeper
+ADDNPC 0421
+ON=0 Tavernkeeper
+ADDNPC 0539
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 47]
+Female Shopkeepers (cloths)
+ON=0 Cobbler
+ADDNPC 0429
+ON=0 Tailor
+ADDNPC 0507
+ON=0 Tanner
+ADDNPC 0483
+ON=0 Weaver
+ADDNPC 0503
+ON=0 Fur Trader
+ADDNPC 0433
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 48]
+Female Shopkeepers (Combat)
+ON=0 Blacksmith
+ADDNPC 0557
+ON=0 Weaponsmith (bladed)
+ADDNPC 0577
+ON=0 Weaponsmith (blunt)
+ADDNPC 0578
+ON=0 Armourer
+ADDNPC 0555
+ON=0 Bowyer
+ADDNPC 0547
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 49]
+Female Shopkeepers (Magery)
+ON=0 Mage
+ADDNPC 0493
+ON=0 Alchemist
+ADDNPC 0491
+ON=0 Herbalist
+ADDNPC 0443
+ON=0 Scribe
+ADDNPC 0477
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 50]
+Female Shopkeepers (Equip)
+ON=0 Provisioner
+ADDNPC 0535
+ON=0 Tinker
+ADDNPC 0513
+ON=0 Carpenter
+ADDNPC 0427
+ON=0 Architect
+ADDNPC 0413
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 51]
+Female Shopkeepers (Other)
+ON=0 Healer
+ADDNPC 0517
+ON=0 Jeweler
+ADDNPC 0537
+ON=0 MapMaker
+ADDNPC 0525
+ON=0 Animal Trainer
+ADDNPC 0549
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 52]
+Female Town Based
+ON=0 Banker
+ADDNPC 0419
+ON=0 Minter
+ADDNPC 0457
+ON=0 Town Crier
+ADDNPC 0584
+ON=0 Prisoner
+ADDNPC 0473
+ON=0 Thief
+ADDNPC 0561
+ON=0 Beggar
+ADDNPC 0559
+ON=0 Noble
+ADDNPC 0461
+ON=0 Mayor
+ADDNPC 0453
+ON=0 Gambler
+ADDNPC 0435
+ON=0 Judge
+ADDNPC 0447
+ON=0 Artist
+ADDNPC 0447
+ON=0 Sculptor
+ADDNPC 0479
+ON=0 Shipwright
+ADDNPC 0527
+ON=0 Veterinarian
+ADDNPC 0487
+ON=0 Glassblower
+ADDNPC 0437
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 53]
+Female Wilderness & Town
+ON=0 Peasant
+ADDNPC 0469
+ON=0 Wandering Healer
+ADDNPC 0519
+ON=0 Sailor
+ADDNPC 0531
+ON=0 Fisherwoman
+ADDNPC 0523
+ON=0 Shepherd
+ADDNPC 0481
+ON=0 Bard
+ADDNPC 0509
+ON=0 Gypsy
+ADDNPC 0441
+ON=0 Actress
+ADDNPC 0411
+ON=0 Monk
+ADDNPC 0459
+ON=0 Rancher
+ADDNPC 0475
+ON=0 Miner
+ADDNPC 0551
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 54]
+Female Fighters & Guards
+ON=0 Guard
+ADDNPC 0438
+ON=0 Jailor
+ADDNPC 0444
+ON=0 Mercenary
+ADDNPC 0568
+ON=0 Paladin
+ADDNPC 0570
+ON=0 Warrior
+ADDNPC 0566
+ON=0 Ranger
+ADDNPC 0542
+ON=0 Fighter
+ADDNPC 0564
+ON=0 Weapons Trainer
+ADDNPC 0572
+ON=0 Mage
+ADDNPC 0494
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 55]
+Female Evil (Player Killers)
+ON=0 Brigand
+ADDNPC 0423
+ON=0 Evil Mage
+ADDNPC 0497
+ON=0 Pirate
+ADDNPC 0471
+ON=0 PREVIOUS MENU
+ITEMMENU 45
+
+[ITEMMENU 60]
+Wild Animals (Forest & Jungle)
+ON=0 Brown Bear
+ADDNPC 00D3
+ON=0 Black Bear
+ADDNPC 1056
+ON=0 Grizzly Bear
+ADDNPC 00D4
+ON=0 Cougar
+ADDNPC 0600
+ON=0 Panther
+ADDNPC 00d6
+ON=0 Deer (Hind)
+ADDNPC 00ED
+ON=0 Deer (Hart)
+ADDNPC 00EA
+ON=0 Mountain Goat
+ADDNPC 1010
+ON=0 Boar
+ADDNPC 0122
+ON=0 Rabbit
+ADDNPC 00CD
+ON=0 Jackrabbit
+ADDNPC 1029
+ON=0 Rat
+ADDNPC 00ee
+ON=0 Sewer Rat
+ADDNPC 1030
+ON=0 Grey Wolf
+ADDNPC 1031
+ON=0 Timber Wolf
+ADDNPC 00e1
+ON=0 Gorilla
+ADDNPC 001d
+ON=0 PREVIOUS MENU
+ITEMMENU 23
+
+[ITEMMENU 61]
+Wild Animals (Swamp)
+ON=0 Alligator
+ADDNPC 00CA
+ON=0 Snake
+ADDNPC 0034
+ON=0 PREVIOUS MENU
+ITEMMENU 23
+
+[ITEMMENU 62]
+Wild Animals (Northern)
+ON=0 Polar Bear
+ADDNPC 00D5
+ON=0 Snow Leopard
+ADDNPC 1059
+ON=0 White Wolf
+ADDNPC 1032
+ON=0 PREVIOUS MENU
+ITEMMENU 23
+
+[ITEMMENU 63]
+Wild Animals (Sea)
+ON=0 Dolphin
+ADDNPC 0097
+ON=0 Walrus
+ADDNPC 00dd
+ON=0 PREVIOUS MENU
+ITEMMENU 23
+
+[ITEMMENU 64]
+Wild Animals (Flying)
+ON=0 Bird
+ADDNPC 0006
+ON=0 Tropical Bird
+ADDNPC 1060
+ON=0 Crow
+ADDNPC 1026
+ON=0 Raven
+ADDNPC 1061
+ON=0 Magpie
+ADDNPC 1027
+ON=0 Eagle
+ADDNPC 0005
+ON=0 Chicken
+ADDNPC 00D0
+
+[ITEMMENU 65]
+T2A Ice Creatures & Ostards
+ON=0 Ice Elemental
+ADDNPC 1018
+ON=0 Snow Elemental
+ADDNPC
+ON=0 Ice Fiend
+ADDNPC 1019
+ON=0 Ice Snake
+ADDNPC 1013
+ON=0 Oclock (Desert Ostard)
+ADDNPC 00d2
+ON=0 Zostrich (Frenzied Ostard)
+ADDNPC 00da
+ON=0 Orn (Forest Ostard)
+ADDNPC 00db
+ON=0 PREVIOUS MENU
+ITEMMENU 28
+
+[ITEMMENU 66]
+T2A Creatures (Wyrm & Wyvern)
+ON=0 White Wyrm
+ADDNPC 01011
+ON=0 Wyvern
+ADDNPC 01016
+ON=0 PREVIOUS MENU
+ITEMMENU 28
+
+[ITEMMENU 67]
+Valuables (Jewelery)
+ON=1085 Beaded Necklace
+ADD 01085
+ON=1f05 Beaded Necklace
+ADD 01f05
+ON=1088 Gold Necklace
+ADD 01088
+ON=1089 Gold Beaded Necklace
+ADD 01089
+ON=1f08 Silver Necklace
+ADD 01f08
+ON=1f0a Silver Beaded Necklace
+ADD 01f0a
+ON=1086 Gold Bracelet
+ADD 01086
+ON=1f06 Silver Bracelet
+ADD 01f06
+ON=1087 Gold Earrings
+ADD 01087
+ON=1f07 Silver Earrings
+ADD 01f07
+ON=108a Gold Ring
+ADD 0108a
+ON=1f09 Silver Ring
+ADD 01f09
+ON=108b Beads
+ADD 0108b
+
+[ITEMMENU 70]
+Magic Items
+ON=0 Spellbook (empty)
+ADD 0EFA
+ON=0 Recall Rune (unmarked)
+ADD 01F14
+ON=0 Crystal Ball
+ADD 0e2d
+ON=0 Wands
+ITEMMENU 81
+ON=0 Alchemy
+ITEMMENU 71
+ON=0 Spell Circle 1 Scrolls
+ITEMMENU 72
+ON=0 Spell Circle 2 Scrolls
+ITEMMENU 73
+ON=0 Spell Circle 3 Scrolls
+ITEMMENU 74
+ON=0 Spell Circle 4 Scrolls
+ITEMMENU 75
+ON=0 Spell Circle 5 Scrolls
+ITEMMENU 76
+ON=0 Spell Circle 6 Scrolls
+ITEMMENU 77
+ON=0 Spell Circle 7 Scrolls
+ITEMMENU 78
+ON=0 Spell Circle 8 Scrolls
+ITEMMENU 79
+ON=0 Reagents
+ITEMMENU 80
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 71]
+Magic Items (Alchemy)
+ON=0 Mortar
+ADD 0E9B
+ON=0 Empty Bottle
+ADD 0F0E
+ON=0 Black Potion
+ADD 0F06
+ON=0 Orange Potion
+ADD 0F07
+ON=0 Blue Potion
+ADD 0F08
+ON=0 White Potion
+ADD 0F09
+ON=0 Green Potion
+ADD 0F0A
+ON=0 Yellow Potion
+ADD 0F0B
+ON=0 Red Potion
+ADD 0F0C
+ON=0 Purple Potion
+ADD 0F0D
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 72]
+Magic Items (Spell Circle 1 Scrolls)
+ON=0 Reactive Armor Scroll
+ADD 01F2D
+ON=0 Clumsy Scroll
+ADD 01F2E
+ON=0 Create Food Scroll
+ADD 01F2F
+ON=0 Feeblemind Scroll
+ADD 01F30
+ON=0 Heal Scroll
+ADD 01F31
+ON=0 Magic Arrow Scroll
+ADD 01F32
+ON=0 Night Sight Scroll
+ADD 01F33
+ON=0 Weaken Scroll
+ADD 01F34
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 73]
+Magic Items (Spell Circle 2 Scrolls)
+ON=0 Agility Scroll
+ADD 01F35
+ON=0 Cunning Scroll
+ADD 01F36
+ON=0 Cure Scroll
+ADD 01F37
+ON=0 Harm Scroll
+ADD 01F38
+ON=0 Magic Trap Scroll
+ADD 01F39
+ON=0 Magic Untrap Scroll
+ADD 01F3A
+ON=0 Protection Scroll
+ADD 01F3B
+ON=0 Strength Scroll
+ADD 01F3C
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 74]
+Magic Items (Spell Circle 3 Scrolls)
+ON=0 Bless Scroll
+ADD 01F3D
+ON=0 Fireball Scroll
+ADD 01F3E
+ON=0 Magic Lock Scroll
+ADD 01F3F
+ON=0 Poison Scroll
+ADD 01F40
+ON=0 Telekenisis Scroll
+ADD 01F41
+ON=0 Teleport Scroll
+ADD 01F42
+ON=0 UnLock Scroll
+ADD 01F43
+ON=0 Wall of Stone Scroll
+ADD 01F44
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 75]
+Magic Items (Spell Circle 4 Scrolls)
+ON=0 Archcure Scroll
+ADD 1F45
+ON=0 Archprotection Scroll
+ADD 1F46
+ON=0 Curse Scroll
+ADD 1F47
+ON=0 Firefield Scroll
+ADD 1F48
+ON=0 Greater Heal Scroll
+ADD 1F49
+ON=0 Lightning Scroll
+ADD 1F4A
+ON=0 Mana Drain Scroll
+ADD 1F4B
+ON=0 Recall Scroll
+ADD 1F4C
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 76]
+Magic Items (Spell Circle 5 Scrolls)
+ON=0 Bladespirit Scroll
+ADD 1F4D
+ON=0 Dispell Field Scroll
+ADD 1F4E
+ON=0 Ingocnito Scroll
+ADD 1F4F
+ON=0 Magic Reflection Scroll
+ADD 1F50
+ON=0 Mind Blast Scroll
+ADD 1F51
+ON=0 Paralyze Scroll
+ADD 1F52
+ON=0 Poison Field Scroll
+ADD 1F53
+ON=0 Summon Creature Scroll
+ADD 1F54
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 77]
+Magic Items (Spell Circle 6 Scrolls)
+ON=0 Dispel Scroll
+ADD 1F55
+ON=0 Energy Bolt Scroll
+ADD 1F56
+ON=0 Explosion Scroll
+ADD 1F57
+ON=0 Invisibility Scroll
+ADD 1F58
+ON=0 Mark Scroll
+ADD 1F59
+ON=0 Mass Curse Scroll
+ADD 1F5A
+ON=0 Paralyze Field Scroll
+ADD 1F5B
+ON=0 Reveal Scroll
+ADD 1F5C
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 78]
+Magic Items (Spell Circle 7 Scrolls)
+ON=0 Chain Lightning Scroll
+ADD 1F5D
+ON=0 Energy Field Scroll
+ADD 1F5E
+ON=0 Flame Strike Scroll
+ADD 1F5F
+ON=0 Gate Travel Scroll
+ADD 1F60
+ON=0 Mana Vampire Scroll
+ADD 1F61
+ON=0 Mass Dispel Scroll
+ADD 1F62
+ON=0 Metor Swarm Scroll
+ADD 1F63
+ON=0 Ploymorph Scroll
+ADD 1F64
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 79]
+Magic Items (Spell Circle 8 Scrolls)
+ON=0 Earth Quake Scroll
+ADD 1F65
+ON=0 Energy Vortex Scroll
+ADD 1F66
+ON=0 Resurrection Scroll
+ADD 1F67
+ON=0 Air Elemental Scroll
+ADD 1F68
+ON=0 Daemon Scroll
+ADD 1F69
+ON=0 Earth Elemental Scroll
+ADD 1F6A
+ON=0 Fire Elemental Scroll
+ADD 1F6B
+ON=0 Water Elemental Scroll
+ADD 1F6C
+ON=0 PREVIOUS MENU
+ITEMMENU 70
+
+[ITEMMENU 80]
+Magic Items (Reagents)
+ON=0F7B Bloodmoss
+ADD 0F7B
+ON=0F7A Black Pearl
+ADD 0F7A
+ON=0F84 Garlic
+ADD 0F84
+ON=0F8D Spider Silk
+ADD 0F8D
+ON=0F8C Sulfurous Ash
+ADD 0F8C
+ON=0F85 Ginseng
+ADD 0F85
+ON=0F86 Mandrake Root
+ADD 0F86
+ON=0F88 Nightshade
+ADD 0F88
+
+[ITEMMENU 81]
+Magic Items (Wands)
+ON=0df2 Wand 1
+ADD 0df2
+ON=0df3 Wand 2
+ADD 0df3
+ON=0df4 Wand 3
+ADD 0df4
+ON=0df5 Wand 4
+ADD 0df5
+
+[ITEMMENU 82]
+Tools & Trades
+ON=0 Blacksmiths Tools
+ITEMMENU 83
+ON=0 Carpenters Tools
+ITEMMENU 84
+ON=0 Tailors Tools
+ITEMMENU 85
+ON=0 Bakers Tools
+ITEMMENU 86
+ON=0 Mages Tools
+ITEMMENU 87
+ON=0 Alchemists Tools
+ITEMMENU 88
+ON=0 BeeKeepers Tools
+ITEMMENU 89
+ON=0 Farmers Tools
+ITEMMENU 90
+ON=0 Tinkers Tools
+ITEMMENU 91
+ON=0 TavernKeepers Tools
+ITEMMENU 92
+ON=0 Fisherman Tools
+ITEMMENU 95
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 83]
+Tools & Trades (Smithing)
+ON=0fb1 Forge
+ADD 0fb1
+ON=019aa Brazier
+ADD 019aa
+ON=019bb Brazier 2
+ADD 019bb
+ON=0e31 Brazier 3
+ADD 0e31
+ON=0faf Anvil EW
+ADD 0faf
+ON=0fb0 Anvil NS
+ADD 0fb0
+ON=0fbb Tongs
+ADD 0fbb
+ON=013e3 Smith Hammer
+ADD 013e3
+ON=0197a Large Forge NS Part1
+ADD 0197a
+ON=0197e Large Forge NS Part2
+ADD 0197e
+ON=01985 Large Forge NS Part3
+ADD 01985
+ON=019a9 Large Forge NS Part1
+ADD 019a9
+ON=019a2 Large Forge NS Part2
+ADD 019a2
+ON=0199e Large Forge NS Part3
+ADD 0199e
+ON=01991 Large Forge EW Part1
+ADD 01991
+ON=0198a Large Forge EW Part2
+ADD 0198a
+ON=01986 Large Forge EW Part3
+ADD 01986
+ON=01992 Large Forge EW Part1
+ADD 01992
+ON=01996 Large Forge EW Part2
+ADD 01996
+ON=0199d Large Forge EW Part3
+ADD 0199d
+
+[ITEMMENU 84]
+Tools & Trades (Carpenter)
+ON=102a Hammer
+ADD 102a
+ON=102c Moulding Plane
+ADD 102c
+ON=102e Nails
+ADD 102e
+ON=1030 Jointing Plane
+ADD 1030
+ON=1032 Smoothing Plane
+ADD 1032
+ON=1034 Saw
+ADD 1034
+ON=1028 Dovetail Saw
+ADD 1028
+ON=1bdd Logs
+ADD 1bdd
+
+[ITEMMENU 85]
+Tools & Trades (Tailor)
+ON=1015 Spinning Wheel
+ADD 1015
+ON=1019 Spinning Wheel
+ADD 1019
+ON=105f Upright Loom EW Part1
+ADD 105f
+ON=1060 Upright Loom EW Part2
+ADD 1060
+ON=1061 Upright Loom NS Part1
+ADD 1061
+ON=1062 Upright Loom NS Part2
+ADD 1062
+ON=1049 Loom Bench NS
+ADD 1049
+ON=104a Loom Bench EW
+ADD 104a
+ON=0f9d Sewing Kit
+ADD 0f9d
+ON=0f9e Scissors
+ADD 0f9e
+ON=0e27 Hir Dye
+ADD 0e27
+
+[ITEMMENU 86]
+Tools & Trades (Baker)
+ON=103e Flour Sifter
+ADD 103e
+ON=1043 Rolling Pin
+ADD 1043
+ON=10e8 Small Wooden Spoon
+ADD 10e8
+ON=10e9 Large Wooden Spoon
+ADD 10e9
+
+[ITEMMENU 87]
+Tools & Trades (Mage)
+ON=0e34 Blank Scroll
+ADD 0e34
+ON=1f14 Unmarked Recall Rune
+ADD 1f14
+ON=F7B Reagents
+ITEMMENU 80
+ON=0df2 Wands
+ITEMMENU 81
+
+[ITEMMENU 88]
+Tools & Trades (Alchemist)
+ON=0e24 Empty Vial
+ADD 0e24
+ON=0f0e Empty Bottle
+ADD 0f0e
+ON=0e9b Mortar & Pestle
+ADD 0e9b
+ON=F7B Reagents
+ITEMMENU 80
+
+[ITEMMENU 89]
+Tools & Trades (Beekeeper)
+ON=091a Beehive
+ADD 091a
+ON=091b Bees
+ADD 091b
+
+[ITEMMENU 90]
+Tools & Trades (Farmer)
+ON=0e87 Pitchfork
+ADD 0e87
+ON=0f39 Shovel
+ADD 0f39
+ON=0f37 Saddle
+ADD 0f37
+ON=0f43 Hatchet
+ADD 0f43
+ON=0e85 Pickaxe
+ADD 0e85
+ON=0e86 Pickaxe
+ADD 0e86
+
+[ITEMMENU 91]
+Tools & Trades (Tinker)
+ON=1ebc Tinkers Tools
+ADD 1ebc
+ON=104f Clock Parts
+ADD 104f
+ON=1050 Clock Parts
+ADD 1050
+ON=104d Clock Frame
+ADD 104d
+ON=104e Clock Frame
+ADD 104e
+ON=104b Clock
+ADD 104b
+ON=104c Clock
+ADD 104c
+ON=1051 Axle
+ADD 1051
+ON=1052 Axle
+ADD 1052
+ON=1053 Gears
+ADD 1053
+ON=1054 Gears
+ADD 1054
+ON=1055 Hinge
+ADD 1055
+ON=1056 Hinge
+ADD 1056
+ON=1057 Sextant
+ADD Sextant
+ON=1058 Sextant
+ADD 1058
+ON=1059 Sextant Parts
+ADD 1059
+ON=105a Sextant Parts
+ADD 105a
+ON=105b Axle with Gears
+ADD 105b
+ON=105c Axle with Gears
+ADD 105c
+ON=105d Springs
+ADD 105d
+
+[ITEMMENU 92]
+Tools & Trades (Tavern)
+ON=09a3 Fork
+ADD 09a3
+ON=09a4 Fork
+ADD 09a4
+ON=09f4 Fork
+ADD 09f4
+ON=09f4 Fork
+ADD 09f4
+ON=09a5 Knife
+ADD 09a5
+ON=09a6 Knife
+ADD 09a6
+ON=09f6 Knife
+ADD 09f6
+ON=09f5 Knife
+ADD 09f5
+ON=09bd Silverware
+ADD 09bd
+ON=09be Silverware
+ADD 09be
+ON=09d4 Silverware
+ADD 09d4
+ON=09d5 Silverware
+ADD 09d5
+ON=09d6 Pitcher
+ADD 09d6
+ON=09d7 Plate
+ADD 09d7
+ON=09d8 Plate of Food
+ADD 09d8
+ON=09db Plate of Food
+ADD 09db
+ON=09bf Goblet
+ADD 09bf
+ON=09cb Goblet
+ADD 09cb
+ON=09c2 Spoon
+ADD 09c2
+ON=09c3 Spoon
+ADD 09c3
+ON=09f8 Spoon
+ADD 09f8
+ON=09f9 Spoon
+ADD 09f9
+ON=09ca Mug
+ADD 09ca
+ON=09dc Dirty Pot
+ADD 09dc
+ON=09de Dirty Frypan
+ADD 09de
+ON=09e0 Pot
+ADD 09e0
+ON=09e2 Frypan
+ADD 09e2
+ON=09f3 Pan
+ADD 09f3
+ON=09ed Kettle
+ADD 09ed
+
+[ITEMMENU 93]
+Raw Materials
+ON=19b7 Small Ore
+ADD 19b7
+ON=19b8 Medium Pile
+ADD 19b8
+ON=19b9 Large Pile
+ADD 19b9
+ON=1bd1 Feathers
+ADD 1bd1
+ON=1870 Gems
+ITEMMENU 17
+ON=0def Pile of Cotton
+ADD 0def
+ON=1078 Pile of Hides
+ADD 1078
+ON=10f2 Pile of Garbage
+ADD 10f2
+ON=1bd9 Pile of Boards
+ADD 1bd9
+ON=1bde Log Pile
+ADD 1bde
+ON=1bdf Huge Log Pile
+ADD 1bdf
+ON=1be1 Log Pile
+ADD 1be1
+ON=1be2 Huge Log Pile
+ADD 1be2
+ON=1be4 Copper Ingots
+ADD 1be4
+ON=1be5 Copper Ingots
+ADD 1be5
+ON=1be7 Copper Ingots
+ADD 1be7
+ON=1be8 Copper Ingots
+ADD 1be8
+ON=1bea Gold Ingots
+ADD 1bea
+ON=1beb Gold Ingots
+ADD 1beb
+ON=1bed Gold Ingots
+ADD 1bed
+ON=1bee Gold Ingots
+ADD 1bed
+ON=1bf0 Iron Ingots
+ADD 1bf0
+ON=1bf1 Iron Ingots
+ADD 1bf1
+ON=1bf3 Iron Ingots
+ADD 1bf33
+ON=1bf4 Iron Ingots
+ADD 1bf4
+ON=1bf6 Silver Ingots
+ADD 1bf6
+ON=1bf7 Silver Ingots
+ADD 1bf7
+ON=1bf9 Silver Ingots
+ADD 1bf9
+ON=1bfa Silver Ingots
+ADD 1bfa
+
+[ITEMMENU 94]
+Scattered Materials
+ON=0f34 Scattered Hay
+ADD 0f34
+ON=1036 Hay Bits
+ADD 1036
+ON=10ee Scattered Garbage
+ADD 10ee
+
+[ITEMMENU 95]
+Tools & Trades (Fisherman)
+ON=0dbf Fishing Pole
+ADD 0dbf
+ON=0dc0 Fishing Pole
+ADD 0dc0
+ON=0dc8 Fishing Net
+ADD 0dc8
+ON=0dc9 Fishing Net
+ADD 0dc9
+ON=0dca Fishing Net
+ADD 0dca
+ON=0dcb Fishing Net
+ADD 0dcb
+ON=0dd0 Fishing Net
+ADD 0dd0
+ON=0dd1 Fishing Net
+ADD 0dd1
+ON=0dd2 Fishing Net
+ADD 0dd2
+ON=0dd3 Fishing Net
+ADD 0dd3
+ON=0dd4 Fishing Net
+ADD 0dd4
+ON=0dd5 Fishing Net
+ADD 0dd5
+ON=0dcc Fishing Weight
+ADD 0dcc
+ON=0dcd Fishing Weight
+ADD 0dcd
+ON=0dce Fishing Weight
+ADD 0dce
+ON=0dcf Fishing Weight
+ADD 0dcf
+
+[ITEMMENU 100]
+Weapons & Armor
+ON=0 Swords
+ITEMMENU 101
+ON=0 Maces
+ITEMMENU 102
+ON=0 Axes
+ITEMMENU 103
+ON=0 Pole Arms
+ITEMMENU 104
+ON=0 Bows
+ITEMMENU 105
+ON=0 Shileds
+ITEMMENU 106
+ON=0 Plate Armor
+ITEMMENU 107
+ON=0 Bone Armor
+ITEMMENU 108
+ON=0 Chain Mail Armor
+ITEMMENU 109
+ON=0 Ring Mail Armor
+ITEMMENU 110
+ON=0 Studded Leather Armor
+ITEMMENU 111
+ON=0 Leather Armor
+ITEMMENU 112
+ON=0 Female Armor
+ITEMMENU 277
+ON=0 Helmets
+ITEMMENU 113
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 101]
+Weapons (Swords)
+ON=0f5e Broad Sword
+ADD 0f5e
+ON=0f5f Broad Sword
+ADD 0f5f
+ON=0f61 Long Sword
+ADD 0f61
+ON=0f60 Long Sword
+ADD 0f60
+ON=13b7 Long Sword
+ADD 13b7
+ON=13b8 Long Sword
+ADD 13b8
+ON=13b5 Scimitar Sword
+ADD 13b5
+ON=13b6 Scimitar Sword
+ADD 13b6
+ON=13fe Katana Sword
+ADD 13fe
+ON=13ff Katana Sword
+ADD 13ff
+ON=1440 Cutlass Sword
+ADD 1440
+ON=1441 Cutlass Sword
+ADD 1441
+ON=1400 Kryss
+ADD 1400
+ON=1401 Kryss
+ADD 1401
+ON=13b9 Viking Sword
+ADD 13b9
+ON=13ba Viking Sword
+ADD 13ba
+
+[ITEMMENU 102]
+Weapons (Maces)
+ON=13b3 Club
+ADD 13b3
+ON=13b4 Club
+ADD 13b4
+ON=0f5c Mace
+ADD 0f5c
+ON=0f5d Mace
+ADD 0f5d
+ON=1406 War Mace
+ADD 1406
+ON=1407 War Mace
+ADD 1407
+ON=1438 War Hammer
+ADD 1438
+ON=1439 War Hammer
+ADD 1439
+ON=143a Maul
+ADD 143a
+ON=143b Maul
+ADD 143b
+ON=143c Hammer Pick
+ADD 143c
+ON=143d Hammer Pick
+ADD 143d
+
+[ITEMMENU 103]
+Weapons (Axes)
+ON=0f43 Hatchet
+ADD 0f43
+ON=0f44 Hatchet
+ADD 0f44
+ON=0f49 Axe
+ADD 0f49
+ON=0f4a Axe
+ADD 0f4a
+ON=0e85 PickAxe
+ADD 0e85
+ON=0e86 PickAxe
+ADD 0e86
+ON=0f45 Executioner Axe
+ADD 0f45
+ON=0f46 Executioner Axe
+ADD 0f46
+ON=0f47 Battle Axe
+ADD 0f47
+ON=0f48 Battle Axe
+ADD 0f48
+ON=0f4b Double Axe
+ADD 0f4b
+ON=0f4c Double Axe
+ADD 0f4c
+ON=13af War Axe
+ADD 13af
+ON=13B0 War Axe
+ADD 13B0
+ON=13fa Large Battle Axe
+ADD 13fa
+ON=13fb Large Battle Axe
+ADD 13fb
+ON=1442 Two Handed Axe
+ADD 1442
+ON=1443 Two Handed Axe
+ADD 1443
+
+[ITEMMENU 104]
+Weapons (Pole-Arms)
+ON=0f4d Bardiche
+ADD 0f4d
+ON=0f4e Bardiche
+ADD 0f4e
+ON=143f Halberd
+ADD 143f
+ON=143e Halberd
+ADD 143e
+ON=0df0 Black Staff
+ADD 0df0
+ON=0df1 Black Staff
+ADD 0df1
+ON=0e89 Quater Staff
+ADD 0e89
+ON=0e8a Quater Staff
+ADD 0e8a
+ON=13f8 Gnarled Staff
+ADD 13f8
+ON=13f9 Gnarled Staff
+ADD 13f9
+ON=13f5 Shepherds Crook
+ADD 13f5
+ON=13f4 Shepherds Crook
+ADD 13f4
+ON=0e87 Pitchfork
+ADD 0e87
+ON=0e88 Pitchfork
+ADD 0e88
+ON=1404 Warfork
+ADD 1404
+ON=1405 Warfork
+ADD 1405
+ON=1402 Short Spear
+ADD 1402
+ON=1403 Short Spear
+ADD 1403
+
+[ITEMMENU 105]
+Weapons (Bows)
+ON=13b1 Bow
+ADD 13b1
+ON=13b2 Bow
+ADD 13b2
+ON=0f4f Crossbow
+ADD 0f4f
+ON=0f50 Crossbow
+ADD 0f50
+ON=13fc Heavy Crossbow
+ADD 13fc
+ON=13fd Heavy Crossbow
+ADD 13fd
+ON=1bfb Bolts
+ADD 1bfb
+ON=0f3f Arrows
+ADD 0f3f
+
+[ITEMMENU 106]
+Weapons (Shields)
+ON=1b72 Bronze Shiled
+ADD 1b72
+ON=1b73 Buckler
+ADD 1b73
+ON=1b74 Metal Kite Shield
+ADD 1b74
+ON=1b75 Metal Kite Shield
+ADD 1b75
+ON=1b76 Heater Shield
+ADD 1b76
+ON=1b77 Heater Shield
+ADD 1b77
+ON=1b78 Wooden Kite Shield
+ADD 1b78
+ON=1b79 Wooden Kite Shield
+ADD 1b79
+ON=1b7a Wooden Shield
+ADD 1b7a
+ON=1b7b Metal Shield
+ADD 1b7b
+ON=1bc3 Choas Shield
+ADD 1bc3
+ON=1bc4 Order Shield
+ADD 1bc4
+
+[ITEMMENU 107]
+Armor (Platemail)
+ON=1419 Helm
+ADD 1419
+ON=1412 Helm
+ADD 1412
+ON=1413 Gorget
+ADD 1413
+ON=1414 Gauntlets
+ADD 1414
+ON=1418 Gauntlets
+ADD 1418
+ON=1410 Arms
+ADD 1410
+ON=1417 Arms
+ADD 1417
+ON=1411 Legs
+ADD 1411
+ON=141a Legs
+ADD 141a
+ON=1415 Breast
+ADD 1415
+ON=1416 Breast
+ADD 1416
+
+[ITEMMENU 108]
+Armor (Bonemail)
+ON=1451 Helmet
+ADD 1451
+ON=1456 Helmet
+ADD 1456
+ON=1450 Gloves
+ADD 1450
+ON=1455 Gloves
+ADD 1455
+ON=144e Arms
+ADD 144e
+ON=1453 Arms
+ADD 1453
+ON=1452 Legs
+ADD 1452
+ON=1457 Legs
+ADD 1457
+ON=144f Breast
+ADD 144f
+ON=1454 Breast
+ADD 1454
+
+[ITEMMENU 109]
+Armor (Chainmail Armor)
+ON=13bb Coif
+ADD 13bb
+ON=13c0 Coif
+ADD 13c0
+ON=13bc Leggings
+ADD 13bc
+ON=13be Leggings
+ADD 13be
+ON=13c1 Leggings
+ADD 13c1
+ON=13c3 Leggings
+ADD 13c3
+ON=13bd Tunic
+ADD 13bd
+ON=13bf Tunic
+ADD 13bf
+ON=13c2 Tunic
+ADD 13c2
+ON=13c4 Tunic
+ADD 13c4
+
+[ITEMMENU 110]
+Armor (Ringmail)
+ON=13eb Gloves
+ADD 13eb
+ON=13f2 Gloves
+ADD 13f2
+ON=13e9 Sleeves
+ADD 13e9
+ON=13ea Sleeves
+ADD 13ea
+ON=13ee Sleeves
+ADD 13ee
+ON=13ef Sleeves
+ADD 13ef
+ON=13e5 Leggings
+ADD 13e5
+ON=13e6 Leggings
+ADD 13e6
+ON=13f0 Leggings
+ADD 13f0
+ON=13f1 Leggings
+ADD 13f1
+ON=13e7 Tunic
+ADD 13e7
+ON=13e8 Tunic
+ADD 13e8
+ON=13ec Tunic
+ADD 13ec
+ON=13ed Tunic
+ADD 13ed
+
+[ITEMMENU 111]
+Armor (Studded Leather)
+ON=13d6 Gorget
+ADD 13d6
+ON=13d5 Gloves
+ADD 13d5
+ON=13dd Gloves
+ADD 13dd
+ON=13d4 Sleeves
+ADD 13d4
+ON=13d7 Sleeves
+ADD 13d7
+ON=13dc Sleeves
+ADD 13dc
+ON=13de Sleeves
+ADD 13de
+ON=13d8 Leggings
+ADD 13d8
+ON=13da Leggings
+ADD 13da
+ON=13df Leggings
+ADD 13df
+ON=13e1 Leggings
+ADD 13e1
+ON=13d9 Tunic
+ADD 13d9
+ON=13db Tunic
+ADD 13db
+ON=13e0 Tunic
+ADD 13e0
+ON=13e2 Tunic
+ADD 13e2
+
+[ITEMMENU 112]
+Armor (Leather)
+ON=13c7 Gorget
+ADD 13c7
+ON=13c6 Gloves
+ADD 13c6
+ON=13ce Gloves
+ADD 13ce
+ON=13c5 Sleeves
+ADD 13c5
+ON=13c8 Sleeves
+ADD 13c8
+ON=13cd Sleeves
+ADD 13cd
+ON=13cf Sleeves
+ADD 13cf
+ON=13c9 Leggings
+ADD 13c9
+ON=13cb Leggings
+ADD 13cb
+ON=13d0 Leggings
+ADD 13d0
+ON=13d2 Leggings
+ADD 13d2
+ON=13ca Tunic
+ADD 13ca
+ON=13cc Tunic
+ADD 13cc
+ON=13d1 Tunic
+ADD 13d1
+ON=13d3 Tunic
+ADD 13d3
+
+[ITEMMENU 113]
+Armor (Helmets)
+ON=1408 Close Helm
+ADD 1408
+ON=1409 Close Helm
+ADD 1409
+ON=140a Helmet
+ADD 140a
+ON=140b Helmet
+ADD 140b
+ON=140c Bascinet
+ADD 140c
+ON=140d Bascinet
+ADD 140d
+ON=140e Nose Helm
+ADD 140e
+ON=140f Nose Helm
+ADD 140f
+ON=1f0b Orc Helm
+ADD 1f0b
+ON=1f0c Orc Helm
+ADD 1f0c
+
+[ITEMMENU 120]
+Magic Weapons & Armor
+ON=0 Ruin
+ITEMMENU 121
+ON=0 Might
+ITEMMENU 122
+ON=0 Force
+ITEMMENU 123
+ON=0 Power
+ITEMMENU 124
+ON=0 Vanquishing
+ITEMMENU 125
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 121]
+Magic W & A (Ruin)
+ON=143f Halberd of Ruin
+ADD 4111
+ON=0f4e Bardiche of Ruin
+ADD 4114
+ON=13b9 Viking Sword of Ruin
+ADD 4119
+ON=13fc Heavy Crossbow of Ruin
+ADD 4124
+ON=13b2 Bow of Ruin
+ADD 4129
+ON=0e88 Pitchfork of Ruin
+ADD 4134
+ON=1400 Kryss of Ruin
+ADD 4139
+ON=1402 Spear of Ruin
+ADD 4144
+
+[ITEMMENU 122]
+Magic W & A (Might)
+ON=143f Halberd of Might
+ADD 4112
+ON=0f4e Bardiche of Might
+ADD 4115
+ON=13b9 Viking Sword of Ruin
+ADD 4120
+ON=13fc Heavy Crossbow of Might
+ADD 4125
+ON=13b2 Bow of Might
+ADD 4130
+ON=0e88 Pitchfork of Might
+ADD 4135
+ON=1400 Kryss of Might
+ADD 4140
+ON=1402 Spear of Might
+ADD 4145
+
+[ITEMMENU 123]
+Magic W & A (Force)
+ON=143f Halberd of Force
+ADD 4107
+ON=0f4e Bardiche of Force
+ADD 4116
+ON=13b9 Viking Sword of Force
+ADD 4121
+ON=13b5 Scimitar of Force
+ADD 4105
+ON=0f50 Crossbow of Force
+ADD 4109
+ON=13fc Heavy Crossbow of Force
+ADD 4126
+ON=13b2 Bow of Force
+ADD 4131
+ON=0e88 Pitchfork of Force
+ADD 4136
+ON=1400 Kryss of Force
+ADD 4141
+ON=1402 Spear of Force
+ADD 4146
+
+[ITEMMENU 124]
+Magic W & A (Power)
+ON=143f Halberd of Power
+ADD 4113
+ON=0f4e Bardiche of Power
+ADD 4117
+ON=13b9 Viking Sword of Power
+ADD 4122
+ON=13fc Heavy Crossbow of Power
+ADD 4127
+ON=13b2 Bow of Power
+ADD 4132
+ON=0e88 Pitchfork of Power
+ADD 4137
+ON=1400 Kryss of Power
+ADD 4142
+ON=1402 Spear of Power
+ADD 4147
+
+[ITEMMENU 125]
+Magic W & A (Vanquishing)
+ON=143f Halberd of Vanquishing
+ADD 4108
+ON=0f4e Bardiche of Vanquishing
+ADD 4118
+ON=13b5 Scimitar of Vanquishing
+ADD 4106
+ON=13b9 Viking Sword of Vanquishing
+ADD 4123
+ON=0f50 Crossbow of Vanquishing
+ADD 4110
+ON=13fc Heavy Crossbow of Vanquishing
+ADD 4128
+ON=13b2 Bow of Vanquishing
+ADD 4133
+ON=0e88 Pitchfork of Vanquishing
+ADD 4138
+ON=1400 Kryss of Vanquishing
+ADD 4143
+ON=1402 Spear of Vanquishing
+ADD 4148
+ON=13b9 Vanquishing Daemon Breath
+ADD 4149
+ON=13b9 Vanquishing and Brimstone
+ADD 4150
+ON=13b9 Vanquishing and Electricity
+ADD 4151
+ON=13fc Vanquishing Daemon Breath
+ADD 4152
+ON=13b2 Vanquishing & Electricity
+ADD 4153
+ON=13fc Smite and Electricity
+ADD 4154
+
+[ITEMMENU 130]
+Equipment & Items
+ON=0 Containers
+ITEMMENU 131
+ON=0 Furniture
+ITEMMENU 132
+ON=0 Ruined Furniture
+ITEMMENU 150
+ON=0 Decorations
+ITEMMENU 276
+ON=0 Wall Hangings
+ITEMMENU 151
+ON=0 Books
+ITEMMENU 152
+ON=0 Keys
+ITEMMENU 153
+ON=0 Light Sources
+ITEMMENU 154
+ON=0 Lamp Posts & Gates
+ITEMMENU 155
+ON=0 Training Equipment
+ITEMMENU 156
+ON=0 Outdoor & Camp Items
+ITEMMENU 157
+ON=0 Symbols
+ITEMMENU 158
+ON=0 Bulletin Boards & Trophies
+ITEMMENU 159
+ON=0 Gravestones
+ITEMMENU 160
+ON=0 Gravestones 2
+ITEMMENU 161
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 131]
+Equip & Items (Containers)
+ON=0e75 Backpack
+ADD 0e75
+ON=0e76 Leather Bag
+ADD 0e76
+ON=0e79 Pouch
+ADD 0e79
+ON=0e7a Picnic Basket
+ADD 0e7a
+ON=0e77 Barrel
+ADD 0e77
+ON=0e7b Water Tub
+ADD 0e7b
+ON=0e83 Empty Tub
+ADD 0e83
+ON=0e7f Wooden Keg
+ADD 0e7f
+ON=0e7e Wooden Crate
+ADD 0e7e
+ON=09a9 Wooden Crate
+ADD 09a9
+ON=0e3e Medium Wooden Crate
+ADD 0e3e
+ON=0e3f Medium Wooden Crate
+ADD 0e3f
+ON=0e3c Large Wooden Crate
+ADD 0e3c
+ON=0e3d Large Wooden Crate
+ADD 0e3d
+ON=0e7d Wooden Box
+ADD 0e7d
+ON=09aa Wooden Box
+ADD 09aa
+ON=0e42 Wooden Chest
+ADD 0e42
+ON=0e43 Wooden Chest
+ADD 0e43
+ON=0e7c Silver Chest
+ADD 0e7c
+ON=09ab Silver Chest
+ADD 09ab
+ON=0e40 Fancy Chest
+ADD 0e40
+ON=0e41 Fancy Chest
+ADD 0e41
+ON=0e80 Strong Box
+ADD 0e80
+ON=09a8 Metal Box
+ADD 09a8
+
+[ITEMMENU 132]
+Equip & Items (Furniture)
+ON=0 Dressers
+ITEMMENU 133
+ON=0 Twin Beds
+ITEMMENU 134
+ON=0 Fancy Beds
+ITEMMENU 135
+ON=0 Tables
+ITEMMENU 136
+ON=0 Tables 2
+ITEMMENU 137
+ON=0 Chairs
+ITEMMENU 138
+ON=0 Benches & Stools
+ITEMMENU 139
+ON=0 Benches & Alters
+ITEMMENU 140
+ON=0 Bookcases
+ITEMMENU 141
+ON=0 Display Cases
+ITEMMENU 142
+ON=0 Display Cases 2
+ITEMMENU 143
+ON=0 Misc
+ITEMMENU 144
+
+[ITEMMENU 133]
+Equip (Dressers)
+ON=0a3c Dresser
+ADD 0a3c
+ON=0a3d Dresser
+ADD 0a3d
+ON=0a44 Dresser
+ADD 0a44
+ON=0a45 Dresser
+ADD 0a45
+ON=0a2c Chest of Drawers
+ADD 0a2c
+ON=0a34 Chest of Drawers
+ADD 0a34
+ON=0a4f Wood Armoire
+ADD 0a4f
+ON=0a53 Wood Armoire
+ADD 0a53
+ON=0a30 Dark Chest of Drawers
+ADD 0a30
+ON=0a38 Dark Chest of Drawers
+ADD 0a38
+ON=0a4d Dark Wood Armoire
+ADD 0a4d
+ON=0a51 Dark Wood Armoire
+ADD 0a51
+
+[ITEMMENU 134]
+Equip (Twin Beds)
+ON=0a5a Brown Twin Bed
+ADD 0a5a
+ON=0a5b Brown Twin Bed
+ADD 0a5b
+ON=0a64 Brown Twin Bed
+ADD 0a64
+ON=0a65 Brown Twin Bed
+ADD 0a65
+ON=0a5c Gray Twin Bed
+ADD 0a5c
+ON=0a5d Gray Twin Bed
+ADD 0a5d
+ON=0a62 Gray Twin Bed
+ADD 0a62
+ON=0a63 Gray Twin Bed
+ADD 0a63
+ON=0a5e White Twin Bed
+ADD 0a5e
+ON=0a5f White Twin Bed
+ADD 0a5f
+ON=0a60 White Twin Bed
+ADD 0a60
+ON=0a61 White Twin Bed
+ADD 0a61
+ON=0a66 White Twin Bed
+ADD 0a66
+ON=0a67 White Twin Bed
+ADD 0a67
+ON=0a68 White Twin Bed
+ADD 0a68
+ON=0a69 White Twin Bed
+ADD 0a69
+ON=0a6a White Twin Bed
+ADD 0a6a
+ON=0a6b White Twin Bed
+ADD 0a6b
+
+[ITEMMENU 135]
+Equip (Fancy Beds)
+ON=0a70 Fancy Double
+ADD 0a70
+ON=0a71 Fancy Double
+ADD 0a71
+ON=0a72 Fancy Double
+ADD 0a72
+ON=0a73 Fancy Double
+ADD 0a73
+ON=0a74 Fancy Double
+ADD 0a74
+ON=0a75 Fancy Double
+ADD 0a75
+ON=0a76 Fnacy Double
+ADD 0a76
+ON=0a77 Fancy Double
+ADD 0a77
+ON=0a78 Fancy Bed
+ADD 0a78
+ON=0a79 Fancy Bed
+ADD 0a79
+ON=0a7a Fancy Bed
+ADD 0a7a
+ON=0a7b Fancy Bed
+ADD 0a7b
+ON=0a7c Fancy Bed
+ADD 0a7c
+ON=0a7d Fancy Bed
+ADD 0a7d
+ON=0a7e Fancy Bed
+ADD 0a7e
+ON=0a7f Fancy Bed
+ADD 0a7f
+ON=0a80 Fancy Bed
+ADD 0a80
+ON=0a81 Fancy Bed
+ADD 0a81
+ON=0a82 Bed
+ADD 0a82
+ON=0a83 Bed
+ADD 0a83
+ON=a84 Bed
+ADD 0a84
+ON=0a85 Bed
+ADD 0a85
+ON=0a86 Bed
+ADD 0a86
+ON=0a87 Bed
+ADD 0a87
+ON=0a88 Bed
+ADD 0a88
+ON=0a89 Bed
+ADD 0a89
+ON=0a8a Bed
+ADD 0a8a
+ON=0a8b Bed
+ADD 0a8b
+ON=0a8c Bed
+ADD 0a8c
+ON=0a8d Bed
+ADD 0a8d
+ON=0a8e Bed
+ADD 0a8e
+ON=0a8f Bed
+ADD 0a8f
+ON=0a90 Bed
+ADD 0a90
+ON=0a91 Bed
+ADD 0a91
+
+[ITEMMENU 136]
+Equip (Tables)
+ON=0b34 Nightstand
+ADD 0b34
+ON=0b35 Nightstand
+ADD 0b35
+ON=0b3a Table
+ADD 0b3a
+ON=0b3c Table
+ADD 0b3c
+ON=0b49 Writing Table
+ADD 0b49
+ON=0b4a Writing Table
+ADD 0b4a
+ON=0b4b Writing Table
+ADD 0b4b
+ON=0b4c Writing Table
+ADD 0b4c
+ON=0b6b Table
+ADD 0b6b
+ON=0b6c Table
+ADD 0b6c
+ON=0b6d Table
+ADD 0b6d
+ON=0b6e Table
+ADD 0b6e
+ON=0b6f Table
+ADD 0b6f
+ON=0b70 Table
+ADD 0b70
+ON=0b71 Table
+ADD 0b71
+ON=0b72 Table
+ADD 0b72
+ON=0b73 Table
+ADD 0b73
+ON=0b74 Table
+ADD 0b74
+ON=0b75 Table
+ADD 0b75
+
+[ITEMMENU 137]
+Equip (Tables 2)
+ON=0b76 Table
+ADD 0b76
+ON=0b77 Table
+ADD 0b77
+ON=0b78 Table
+ADD 0b78
+ON=0b79 Table
+ADD 0b79
+ON=0b7a Table
+ADD 0b7a
+ON=0b7b Table
+ADD 0b7b
+ON=0b7c Table
+ADD 0b7c
+ON=0b7d Table
+ADD 0b7d
+ON=0b7e Table
+ADD 0b7e
+ON=0b7f Table
+ADD 0b7f
+ON=0b80 Table
+ADD 0b80
+ON=0b81 Table
+ADD 0b81
+ON=0b82 Table
+ADD 0b82
+ON=0b83 Table
+ADD 0b83
+ON=0b84 Table
+ADD 0b84
+ON=0b85 Table
+ADD 0b85
+ON=0b86 Table
+ADD 0b86
+ON=0b87 Table
+ADD 0b87
+ON=0b88 Table
+ADD 0b88
+ON=0b89 Table
+ADD 0b89
+ON=0b8a Table
+ADD 0b8a
+ON=0b8b Table
+ADD 0b8b
+ON=0b8c Table
+ADD 0b8c
+ON=0b8d Table
+ADD 0b8d
+ON=0b8e Table
+ADD 0b8e
+ON=0b8f Table
+ADD 0b8f
+ON=0b90 Table
+ADD 0b90
+
+[ITEMMENU 138]
+Equip (Chairs)
+ON=0b2e Chair
+ADD 0b2e
+ON=0b2f Chair
+ADD 0b2f
+ON=0b30 Chair
+ADD 0b30
+ON=0b31 Chair
+ADD 0b31
+ON=0b4e Chair
+ADD 0b4e
+ON=0b4f Chair
+ADD 0b4f
+ON=0b50 Chair
+ADD 0b50
+ON=0b51 Chair
+ADD 0b51
+ON=0b52 Chair
+ADD 0b52
+ON=0b53 Chair
+ADD 0b53
+ON=0b54 Chair
+ADD 0b54
+ON=0b55 Chair
+ADD 0b55
+ON=0b56 Chair
+ADD 0b56
+ON=0b57 Chair
+ADD 0b57
+ON=0b58 Chair
+ADD 0b58
+ON=0b59 Chair
+ADD 0b59
+ON=0b5a Chair
+ADD 0b5a
+ON=0b5b Chair
+ADD 0b5b
+ON=0b5c Chair
+ADD 0b5c
+ON=0b5d Chair
+ADD 0b5d
+ON=1218 Stone Throne
+ADD 1218
+ON=1219 Stone Throne
+ADD 1219
+ON=121a Stone Throne
+ADD 121a
+ON=121b Stone Throne
+ADD 121b
+ON=0b32 Throne
+ADD 0b32
+ON=0b33 Throne
+ADD 0b33
+ON=1526 Lord British's Throne
+ADD 1526
+ON=1527 Lord British's Throne
+ADD 1527
+
+[ITEMMENU 139]
+Equip (Benches & Stools)
+ON=0b5e Foot Stool
+ADD 0b5e
+ON=0a2a Bar Stool
+ADD 0a2a
+ON=0a2b Bar Stool
+ADD 0a2b
+ON=11fc Bamboo Stool
+ADD 11fc
+ON=1e7f Stool
+ADD 1e7f
+ON=0b5f Bench
+ADD 0b5f
+ON=0b60 Bench
+ADD 0b60
+ON=0b61 Bench
+ADD 0b61
+ON=0b62 Bench
+ADD 0b62
+ON=0b63 Bench
+ADD 0b63
+ON=0b64 Bench
+ADD 0b64
+ON=0b65 Bench
+ADD 0b65
+ON=0b66 Bench
+ADD 0b66
+ON=0b67 Bench
+ADD 0b67
+ON=0b68 Bench
+ADD 0b68
+ON=0b69 Bench
+ADD 0b69
+ON=0b6a Bench
+ADD 0b6a
+ON=0459 Bench
+ADD 0459
+ON=045a Bench
+ADD 045a
+ON=045b Bench
+ADD 045b
+ON=045c Bench
+ADD 045c
+ON=0b2c Bench
+ADD 0b2c
+ON=0b2d Bench
+ADD 0b2d
+ON=0b2e Bench
+ADD 0b2e
+ON=0b91 Bench
+ADD 0b91
+ON=0b92 Bench
+ADD 0b92
+ON=0b93 Bench
+ADD 0b93
+ON=0b94 Bench
+ADD 0b94
+ON=1207 Bench
+ADD 1207
+ON=1208 Bench
+ADD 1208
+ON=1209 Bench
+ADD 1209
+ON=120a Bench
+ADD 120a
+ON=120b Bench
+ADD 120b
+ON=120c Bench
+ADD 120c
+
+[ITEMMENU 140]
+Equip (Benches & Alters)
+ON=120e Alter
+ADD 120e
+ON=120f Alter
+ADD 120f
+ON=1210 Alter
+ADD 1210
+ON=1211 Alter
+ADD 1211
+ON=1212 Alter
+ADD 1212
+ON=1213 Alter
+ADD 1213
+ON=1214 Alter
+ADD 1214
+ON=1215 Alter
+ADD 1215
+ON=1216 Alter
+ADD 1216
+ON=0b93 Bench
+ADD 0b93
+ON=0b94 Bench
+ADD 0b94
+ON=0b92 Bench
+ADD 0b92
+ON=0b91 Bench
+ADD 0b91
+ON=19f1 Workers Bench
+ADD 19f1
+ON=19f2 Workers Bench
+ADD 19f2
+ON=19f3 Workers Bench
+ADD 19f3
+ON=19f5 Workers Bench
+ADD 19f5
+ON=19f6 Workers Bench
+ADD 19f6
+ON=19f7 Workers Bench
+ADD 19f7
+ON=19f9 Coopers Bench
+ADD 19f9
+ON=19fa Coopers Bench
+ADD 19fa
+ON=19fb Coopers Bench
+ADD 19fb
+ON=19fc Coopers Bench
+ADD 19fc
+ON=1dc7 Bench
+ADD 1dc7
+ON=1dc8 Bench
+ADD 1dc8
+ON=1dc9 Bench
+ADD 1dc9
+ON=1dca Bench
+ADD 1dca
+ON=1dcb Bench
+ADD 1dcb
+ON=1dcc Bench
+ADD 1dcc
+
+[ITEMMENU 141]
+Equip (Bookcases)
+ON=0a97 Bookcase
+ADD 0a97
+ON=0a98 Bookcase
+ADD 0a98
+ON=0a99 Bookcase
+ADD 0a99
+ON=0a9a Bookcase
+ADD 0a9a
+ON=0a9b Bookcase
+ADD 0a9b
+ON=0a9c Bookcase
+ADD 0a9c
+ON=0a9d Bookcase
+ADD 0a9d
+ON=0a9e Bookcase
+ADD 0a9e
+
+[ITEMMENU 142]
+Equip (Display Cases)
+ON=0a9f Display Case
+ADD 0a9f
+ON=0aa0 Display Case
+ADD 0aa0
+ON=0aa1 Display Case
+ADD 0aa1
+ON=0aa2 Display Case
+ADD 0aa2
+ON=0aa3 Display Case
+ADD 0aa3
+ON=0aa4 Display Case
+ADD 0aa4
+ON=0aa5 Display Case
+ADD 0aa5
+ON=0afd Display Case
+ADD 0afd
+ON=0afe Display Case
+ADD 0afe
+ON=0aff Display Case
+ADD 0aff
+ON=0b00 Display Case
+ADD 0b00
+ON=0b01 Display Case
+ADD 0b01
+ON=0b02 Display Case
+ADD 0b02
+ON=0b03 Display Case
+ADD 0b03
+ON=0b04 Display Case
+ADD 0b04
+ON=0b05 Display Case
+ADD 0b05
+ON=0b06 Display Case
+ADD 0b06
+ON=0b07 Display Case
+ADD 0b07
+ON=0b08 Display Case
+ADD 0b08
+ON=0b09 Display Case
+ADD 0b09
+ON=0b0a Display Case
+ADD 0b0a
+ON=0b0b Display Case
+ADD 0b0b
+ON=0b0c Display Case
+ADD 0b0c
+
+[ITEMMENU 143]
+Equip (Display Cases 2)
+ON=0b0d Display Case
+ADD 0b0d
+ON=0b0e Display Case
+ADD 0b0e
+ON=0b0f Display Case
+ADD 0b0f
+ON=0b10 Display Case
+ADD 0b10
+ON=0b11 Display Case
+ADD 0b11
+ON=0b12 Display Case
+ADD 0b12
+ON=0b13 Display Case
+ADD 0b13
+ON=0b14 Display Case
+ADD 0b14
+ON=0b15 Display Case
+ADD 0b15
+ON=0b16 Display Case
+ADD 0b16
+ON=0b17 Display Case
+ADD 0b17
+ON=0b18 Display Case
+ADD 0b18
+
+[ITEMMENU 144]
+Equip (Misc)
+ON=0b3d Counter
+ADD 0b3d
+ON=0b3e Counter
+ADD 0b3e
+ON=0b3f Counter
+ADD 0b3f
+ON=0b40 Counter
+ADD 0b40
+ON=0b41 Water Trough
+ADD 0b41
+ON=0b42 Water Trough
+ADD 0b42
+ON=0b43 Water Trough
+ADD 0b43
+ON=0b44 Water Trough
+ADD 0b44
+
+[ITEMMENU 150]
+Equip (Ruined Furniture)
+ON=0c10 Chair
+ADD 0c10
+ON=0c11 Chair
+ADD 0c11
+ON=0c12 Armoire
+ADD 0c12
+ON=0c13 Armoire
+ADD 0c13
+ON=0c14 Bookcase
+ADD 0c14
+ON=0c15 Bookcase
+ADD 0c15
+ON=0c17 Chair
+ADD 0c17
+ON=0c18 Chair
+ADD 0c18
+ON=0c19 Chair
+ADD 0c19
+ON=0c1a Chair
+ADD 0c1a
+ON=0c1b Chair
+ADD 0c1b
+ON=0c1c Chair
+ADD 0c1c
+ON=0c1d Chair
+ADD 0c1d
+ON=0c1e Chair
+ADD 0c1e
+ON=0c20 Dresser
+ADD 0c20
+ON=0c21 Dresser
+ADD 0c21
+ON=0c22 Dresser
+ADD 0c22
+ON=0c23 Dresser
+ADD 0c23
+ON=0c24 Furniture
+ADD 0c24
+ON=0c25 Furniture
+ADD 0c25
+ON=0c26 Bed
+ADD 0c26
+ON=0c27 Bed
+ADD 0c27
+ON=0c28 Bed
+ADD 0c28
+ON=0c29 Bed
+ADD 0c29
+ON=0c2a Bed
+ADD 0c2a
+ON=0c2b Bed
+ADD 0c2b
+
+[ITEMMENU 151]
+Items (Wall Hangings)
+ON=0c2c Ruined Painting
+ADD 0c2c
+ON=0e9f Painting
+ADD 0e9f
+ON=0ea0 Painting
+ADD 0ea0
+ON=0ea1 Painting
+ADD 0ea1
+ON=0ea2 Painting
+ADD 0ea2
+ON=0ea3 Painting
+ADD 0ea3
+ON=0ea4 Painting
+ADD 0ea4
+ON=0ea5 Painting
+ADD 0ea5
+ON=0ea6 Painting
+ADD 0ea6
+ON=0ea7 Painting
+ADD 0ea7
+ON=0ea8 Painting
+ADD 0ea8
+ON=0ec8 Painting
+ADD 0ec8
+ON=0ec9 Painting
+ADD 0ec9
+ON=0eaa Tapestry
+ADD 0eaa
+ON=0eab Tapestry
+ADD 0eab
+ON=0eac Tapestry
+ADD 0eac
+ON=0ead Tapestry
+ADD 0ead
+ON=0eae Tapestry
+ADD 0eae
+ON=0eaf Tapestry
+ADD 0eaf
+ON=1e2e Dartboard
+ADD 1e2e
+ON=1e2f Dartboard
+ADD 1e2f
+ON=1e30 Dartboard
+ADD 1e30
+ON=1e31 Dartboard
+ADD 1e31
+ON=1e32 Dartboard
+ADD 1e32
+ON=1e33 Dartboard
+ADD 1e33
+
+[ITEMMENU 152]
+Items (Books)
+ON=0c16 Damaged Books
+ADD 0c16
+ON=0efa Empty Spellbook
+ADD 0efa
+ON=0fbe Book
+ADD 0fbe
+ON=0fef Book
+ADD 0fef
+ON=0ff0 Book
+ADD 0ff0
+ON=0ff1 Book
+ADD 0ff1
+ON=0ff2 Book
+ADD 0ff2
+ON=1e24 Stack of Books
+ADD 1e24
+ON=1e25 Stack of Books
+ADD 1e25
+ON=0fbd Open Book
+ADD 0fbd
+ON=0ff3 Open Book
+ADD 0ff3
+ON=0ff4 Open Book
+ADD 0ff4
+ON=1e20 Open Book
+ADD 1e20
+ON=1e21 Open Books
+ADD 1e21
+ON=1e22 Open Books
+ADD 1e22
+ON=1e23 Open Books
+ADD 1e23
+ON=1c13 Book of Truth
+ADD 1c13
+
+[ITEMMENU 153]
+Items (Keys)
+ON=100e Copper Key
+ADD 100e
+ON=100f Gold Key
+ADD 100f
+ON=1010 Iron Key
+ADD 1010
+ON=1012 Magic Key
+ADD 1012
+ON=1013 Rusty Iron Key
+ADD 1013
+ON=1011 Key Ring
+ADD 1011
+ON=1769 Key Ring
+ADD 1769
+ON=176a Key Ring
+ADD 176a
+ON=176b Key Ring
+ADD 176b
+
+[ITEMMENU 154]
+Items (Light Sources)
+ON=1870 Light Source (invisible)
+ADD 1647
+ON=09fb Sconce Candle
+ADD 09fb
+ON=09fd Sconce Candle
+ADD 09fd
+ON=0a00 Sconce Candle
+ADD 0a00
+ON=0a02 Sconce Candle
+ADD 0a02
+ON=0a0f Candle
+ADD 0a0f
+ON=0a26 Candle
+ADD 0a26
+ON=0a28 Candle
+ADD 0a28
+ON=0b1c Candle
+ADD 0b1c
+ON=142c Candle
+ADD 142c
+ON=142f Candle
+ADD 142f
+ON=1430 Candle
+ADD 1430
+ON=0b26 Candelabra
+ADD 0b26
+ON=0a27 Candelabra
+ADD 0a27
+ON=0a29 Candelabra Stand
+ADD 0a29
+ON=0b1e Candelabra
+ADD 0b1e
+ON=0b1f Candelabra
+ADD 0b1f
+ON=1853 Skull Candle
+ADD 1853
+ON=1856 Skull Candle
+ADD 1856
+ON=185a Skull Candle
+ADD 185a
+ON=0a07 Wall Torch
+ADD 0a07
+ON=0a0c Wall Torch
+ADD 0a0c
+ON=0a15 Lantern
+ADD 0a15
+ON=0a1a Hanging Lantern
+ADD 0a1a
+ON=0a22 Lantern
+ADD 0a22
+
+[ITEMMENU 155]
+Items (Lamp Posts & Gates)
+ON=0b20 Lamp Post
+ADD 0b20
+ON=0b21 Lamp Post
+ADD 0b21
+ON=0b22 Lamp Post
+ADD 0b22
+ON=0b23 Lamp Post
+ADD 0b23
+ON=0b24 Lamp Post
+ADD 0b24
+ON=0b25 Lamp Post
+ADD 0b25
+ON=0dda Red Moongate
+ADD 0dda
+ON=0f6c Blue Moongate
+ADD 0f6c
+ON=1fd4 Black Moongate
+ADD 1fd4
+
+[ITEMMENU 156]
+Equip (Training Equip)
+ON=1070 Training Dummy
+ADD 1070
+ON=1074 Training Dummy
+ADD 1074
+ON=1e2c Pickpocket Dip
+ADD 1e2c
+ON=1e2d Pickpocket Dip
+ADD 1e2d
+ON=100a Archery Butte
+ADD 100a
+ON=100b Archery Butte
+ADD 100b
+
+[ITEMMENU 157]
+Items (Outdoor & Camp)
+ON=041f Gruesome Standard
+ADD 041f
+ON=0420 Gruesome Standard
+ADD 0420
+ON=0428 Gruesome Standard
+ADD 0428
+ON=0429 Gruesome Standard
+ADD 0429
+ON=0de3 Campfire
+ADD 0de3
+ON=0de9 Embers
+ADD 0de9
+ON=0de2 Kindling
+ADD 0de2
+ON=0dea Burned Wood
+ADD 0dea
+ON=0a55 Bedroll
+ADD 0a55
+ON=0a56 Bedroll
+ADD 0a56
+ON=0a57 Bedroll
+ADD 0a57
+ON=0a58 Bedroll
+ADD 0a58
+ON=0a59 Bedroll
+ADD 0a59
+ON=11f0 Hammock
+ADD 11f0
+ON=11f1 Hammock
+ADD 11f1
+ON=11f2 Hammock
+ADD 11f2
+ON=11f3 Hammock
+ADD 11f3
+ON=0974 Cauldron
+ADD 0974
+ON=0975 Cauldron
+ADD 0975
+ON=09ed Kettle
+ADD 09ed
+ON=1871 Beef Carcass
+ADD 1871
+ON=1872 Beef Carcass
+ADD 1872
+ON=1873 Sheep Carcass
+ADD 1873
+ON=1874 Sheep Carcass
+ADD 1874
+ON=1e94 Spit
+ADD 1e94
+ON=1e95 Spit
+ADD 1e95
+ON=1e96 Spit
+ADD 1e96
+ON=1e97 Spit
+ADD 1e97
+ON=1e98 Spit
+ADD 1e98
+ON=1e99 Spit
+ADD 1e99
+
+[ITEMMENU 158]
+Items (Symbols)
+ON=0002 Ankh
+ADD 0002
+ON=0003 Ankh
+ADD 0003
+ON=0004 Ankh
+ADD 0004
+ON=0005 Ankh
+ADD 0005
+ON=1d97 Ankh of Sacrifice
+ADD 1d97
+ON=1d98 Ankh of Sacrifice
+ADD 1d98
+ON=1e5c Ankh of Sacrifice
+ADD 1e5c
+ON=1e5d Ankh of Sacrifice
+ADD 1e5d
+
+[ITEMMENU 159]
+Items (Bulletins & Trophy)
+ON=1e5e Bulletin Board
+ADD 1e5e
+ON=1e5f Bulletin Board
+ADD 1e5f
+ON=1e60 Trophy
+ADD 1e60
+ON=1e61 Trophy
+ADD 1e61
+ON=1e62 Trophy
+ADD 1e62
+ON=1e63 Trophy
+ADD 1e63
+ON=1e64 Trophy
+ADD 1e64
+ON=1e65 Trophy
+ADD 1e65
+ON=1e66 Trophy
+ADD 1e66
+ON=1e67 Trophy
+ADD 1e67
+ON=1e68 Trophy
+ADD 1e68
+ON=1e69 Trophy
+ADD 1e69
+ON=1e6a Trophy
+ADD 1e6a
+ON=1e6b Trophy
+ADD 1e6b
+ON=1e6c Trophy
+ADD 1e6c
+ON=1e6d Trophy
+ADD 1e6d
+
+[ITEMMENU 160]
+Items (Gravestones)
+ON=0ed4 Gravestone
+ADD 0ed4
+ON=0ed5 Gravestone
+ADD 0ed5
+ON=0ed6 Gravestone
+ADD 0ed6
+ON=0ed7 Gravestone
+ADD 0ed7
+ON=0ed8 Gravestone
+ADD 0ed8
+ON=0ed9 Gravestone
+ADD 0ed9
+ON=0ed8 Gravestone
+ADD 0ed8
+ON=0ed9 Gravestone
+ADD 0ed9
+ON=0eda Gravestone
+ADD 0eda
+ON=0edb Gravestone
+ADD 0edb
+ON=0edc Gravestone
+ADD 0edc
+ON=0ede Gravestone
+ADD 0ede
+ON=1165 Gravestone
+ADD 1165
+
+[ITEMMENU 161]
+Items (Gravestones)
+ON=1166 Gravestone
+ADD 1166
+ON=1167 Gravestone
+ADD 1167
+ON=1168 Gravestone
+ADD 1168
+ON=1169 Gravestone
+ADD 1169
+ON=116a Gravestone
+ADD 116a
+ON=116b Gravestone
+ADD 116b
+ON=116c Gravestone
+ADD 116c
+ON=116d Gravestone
+ADD 116d
+ON=116e Gravestone
+ADD 116e
+ON=116f Gravestone
+ADD 116f
+ON=1170 Gravestone
+ADD 1170
+ON=1171 Gravestone
+ADD 1171
+ON=1172 Gravestone
+ADD 1172
+ON=1173 Gravestone
+ADD 1173
+ON=1174 Gravestone
+ADD 1174
+ON=1175 Gravestone
+ADD 1175
+ON=1176 Gravestone
+ADD 1176
+ON=1177 Gravestone
+ADD 1177
+ON=1178 Gravestone
+ADD 1178
+ON=1179 Gravestone
+ADD 1179
+ON=117a Gravestone
+ADD 117a
+ON=117b Gravestone
+ADD 117b
+ON=117c Gravestone
+ADD 117c
+ON=117d Gravestone
+ADD 117d
+ON=117e Gravestone
+ADD 117e
+ON=117f Gravestone
+ADD 117f
+ON=1180 Gravestone
+ADD 1180
+ON=1181 Gravestone
+ADD 1181
+ON=1182 Gravestone
+ADD 1182
+ON=1183 Gravestone
+ADD 1183
+ON=1184 Gravestone
+ADD 1184
+
+[ITEMMENU 170]
+Clothing
+ON=0 Masks
+ITEMMENU 272
+ON=0 Hats
+ITEMMENU 273
+ON=0 Footware
+ITEMMENU 171
+ON=0 Shirts & Pants
+ITEMMENU 172
+ON=0 Dresses
+ITEMMENU 173
+ON=0 Other Outfits
+ITEMMENU 174
+ON=0 Clothing Accessories
+ITEMMENU 175
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 171]
+Clothing (Footware)
+ON=170b Calfboots
+ADD 170b
+ON=170d Sandals
+ADD 170d
+ON=170f Shoes
+ADD 170f
+ON=1711 Thigh Boots
+ADD 1711
+
+[ITEMMENU 172]
+Clothing (Shirts & Pants)
+ON=1517 Plain Shirt
+ADD 1517
+ON=1518 Plain Shirt
+ADD 1518
+ON=1efd Fancy Shirt
+ADD 1efd
+ON=1efe Fancy Shirt
+ADD 1efe
+ON=1f7b Doublet
+ADD 1f7b
+ON=1f7c Doublet
+ADD 1f7c
+ON=152e Short Pants
+ADD 152e
+ON=152f Short Pants
+ADD 152f
+ON=1539 Long Pants
+ADD 1539
+ON=153a Long Pants
+ADD 153a
+
+[ITEMMENU 173]
+Clothing (Dresses)
+ON=1eff Fancy Dress
+ADD 1eff
+ON=1f00 Fancy Dress
+ADD 1f00
+ON=1f01 Plain Dress
+ADD 1f01
+ON=1f02 Plain Dress
+ADD 1f02
+ON=1516 Long Skirt
+ADD 1516
+
+[ITEMMENU 174]
+Clothing (Other Outfits)
+ON=1f03 Full Robe
+ADD 1f03
+ON=1f04 Full Robe
+ADD 1f04
+ON=1f9f Jesters Suit
+ADD 1f9f
+ON=1fa0 Jesters Suit
+ADD 1fa0
+ON=1fa1 Tunic
+ADD 1fa1
+ON=1fa2 Tunic
+ADD 1fa2
+ON=1ffd Surcoat
+ADD 1ffd
+ON=1ffe Surcoat
+ADD 1ffe
+ON=1537 Kilt
+ADD 1537
+ON=1538 Kilt
+ADD 1538
+
+[ITEMMENU 175]
+Clothing (Accessories)
+ON=1515 Cloak
+ADD 1515
+ON=1541 Sash
+ADD 1541
+ON=1542 Sash
+ADD 1542
+ON=153b Half Apron
+ADD 153b
+ON=153c Half Apron
+ADD 153c
+ON=153d Full Apron
+ADD 153d
+ON=153e Full Apron
+ADD 153e
+
+[ITEMMENU 180]
+Banners & Signs
+ON=0 Banners
+ITEMMENU 181
+ON=0 Shop Signs A-I
+ITEMMENU 182
+ON=0 Shop Signs J-Z
+ITEMMENU 183
+ON=0 Guild Signs A-I
+ITEMMENU 184
+ON=0 Guild Signs J-Z
+ITEMMENU 185
+ON=0 Sign Posts
+ITEMMENU 186
+ON=0 Road Signs
+ITEMMENU 187
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 181]
+Banners
+ON=158f Banner Hanger
+ADD 158f
+ON=0426 Tattered Banner
+ADD 0426
+ON=0427 Tattered Banner
+ADD 0427
+ON=042a Tattered Banner
+ADD 042a
+ON=042b Tattered Banner
+ADD 042b
+ON=042c Tattered Banner
+ADD 042c
+ON=042d Tattered Banner
+ADD 042d
+ON=042e Tattered Banner
+ADD 042e
+ON=042f Tattered Banner
+ADD 042f
+ON=1586 Banner
+ADD 1586
+ON=1587 Banner
+ADD 1587
+ON=1588 Banner
+ADD 1588
+ON=1589 Banner
+ADD 1589
+ON=158a Banner
+ADD 158a
+ON=158b Banner
+ADD 158b
+ON=15ab Banner
+ADD 15ab
+ON=15c3 Banner
+ADD 15c3
+ON=15e4 Banner
+ADD 15e4
+ON=15f5 Banner
+ADD 15f5
+
+[ITEMMENU 182]
+Signs (Shops A-I)
+ON=0bbf Armourer
+ADD 0bbf
+ON=0bc0 Armourer
+ADD 0bc0
+ON=0bd1 Brass Sign
+ADD 0bd1
+ON=0bd2 Brass Sign
+ADD 0bd2
+ON=0ba3 Bakery
+ADD 0ba3
+ON=0ba4 Bakery
+ADD 0ba4
+ON=0c0b Bank
+ADD 0c0b
+ON=0c0c Bank
+ADD 0c0c
+ON=0bb9 Barber Shop
+ADD 0bb9
+ON=0bba Barber Shop
+ADD 0bba
+ON=0bbb Bard
+ADD 0bbb
+ON=0bbc Bard
+ADD 0bbc
+ON=0c43 BeeKeeper
+ADD 0c43
+ON=0c44 BeeKeeper
+ADD 0c44
+ON=0ba9 Butcher
+ADD 0ba9
+ON=0baa Butcher
+ADD 0baa
+ON=0bc7 Blacksmith
+ADD 0bc7
+ON=0bc8 Blacksmith
+ADD 0bc8
+ON=0bcd Bowyer
+ADD 0bcd
+ON=0bce Bowyer
+ADD 0bce
+ON=0bb1 Customs
+ADD 0bb1
+ON=0bb2 Customs
+ADD 0bb2
+ON=0bbd Fletcher
+ADD 0bbd
+ON=0bbe Fletcher
+ADD 0bbe
+ON=0bab Healer
+ADD 0bab
+ON=0bac Healer
+ADD 0bac
+ON=0bb3 Inn
+ADD 0bb3
+ON=0bb4 Inn
+ADD 0bb4
+
+[ITEMMENU 183]
+Signs (Shops J-Z)
+ON=0bc1 Jeweler
+ADD 0bc1
+ON=0bc2 Jeweler
+ADD 0bc2
+ON=0bad Mage
+ADD 0bad
+ON=0bae Mage
+ADD 0bae
+ON=0bc9 Painter
+ADD 0bc9
+ON=0bca Painter
+ADD 0bca
+ON=0bcb Provisioner
+ADD 0bcb
+ON=0bcc Provisioner
+ADD 0bcc
+ON=0bc5 Reagent Shop
+ADD 0bc5
+ON=0bc6 Reagent Shop
+ADD 0bc6
+ON=0bb5 Shipwright
+ADD 0bb5
+ON=0bb6 Shipwright
+ADD 0bb6
+ON=0bb7 Stables
+ADD 0bb7
+ON=0bb8 Stables
+ADD 0bb8
+ON=0bc3 Tavern
+ADD 0bc3
+ON=0bc4 Tavern
+ADD 0bc4
+ON=0c0d Theatre
+ADD 0c0d
+ON=0c0e Theatre
+ADD 0c0e
+ON=0ba5 Tailor
+ADD 0ba5
+ON=0ba6 Tailor
+ADD 0ba6
+ON=0ba7 Tinker
+ADD 0ba7
+ON=0ba8 Tinker
+ADD 0ba8
+ON=0baf Woodworker
+ADD 0baf
+ON=0bb0 Woodworker
+ADD 0bb0
+ON=0bcf Wooden Sign
+ADD 0bcf
+ON=0bd0 Wooden Sign
+ADD 0bd0
+
+[ITEMMENU 184]
+Guild Signs A-I
+ON=0bd4 Armaments Guild
+ADD 0bd4
+ON=0bd5 Armaments Guild
+ADD 0bd5
+ON=0bef Archers Guild
+ADD 0bef
+ON=0bf0 Archers Guild
+ADD 0bf0
+ON=0bff Assassins Guild
+ADD 0bff
+ON=0c00 Assassins Guild
+ADD 0c00
+ON=0bd7 Blacksmiths Guild
+ADD 0bd7
+ON=0bd8 Blacksmiths Guild
+ADD 0bd8
+ON=0bdb Bardic Guild
+ADD 0bdb
+ON=0bdc Bardic Guild
+ADD 0bdc
+ON=0bdd Barters Guild
+ADD 0bdd
+ON=0bde Basters Guild
+ADD 0bde
+ON=0c05 Cavalry Guild
+ADD 0c05
+ON=0c06 Cavalry Guild
+ADD 0c06
+ON=0be3 Cooks Guild
+ADD 0be3
+ON=0be4 Cooks Guild
+ADD 0be4
+ON=0c07 Fighters Guild
+ADD 0c07
+ON=0c08 Fighters Guild
+ADD 0c08
+ON=0bf3 Fishermens Guild
+ADD 0bf3
+ON=0bf4 Fishermens Guild
+ADD 0bf4
+ON=0be5 Healers Guild
+ADD 0be5
+ON=0be6 Healers Guild
+ADD 0be6
+ON=0beb Illusionist Guild
+ADD 0beb
+ON=0bec Illusionist Guild
+ADD 0bec
+
+[ITEMMENU 185]
+Guild Signs J-Z
+ON=0bed Miners Guild
+ADD 0bed
+ON=0bee Miners Guild
+ADD 0bee
+ON=0be7 Mages Guild
+ADD 0be7
+ON=0be8 Mages Guild
+ADD 0be8
+ON=0c09 Merchants Guild
+ADD 0c09
+ON=0c0a Merchants Guild
+ADD 0c0a
+ON=0bdf Provisioners Guild
+ADD 0bdf
+ON=0be0 Provisioners Guild
+ADD 0be0
+ON=0bfd Rogues Guild
+ADD 0bfd
+ON=0bfe Rogues Guild
+ADD 0bfe
+ON=0be9 Sorcerers Guild
+ADD 0be9
+ON=0bea Sorcerers Guild
+ADD 0bea
+ON=0bf1 Seamens Guild
+ADD 0bf1
+ON=0bf2 Seamens Guild
+ADD 0bf2
+ON=0bf5 Sailors Guild
+ADD 0bf5
+ON=0bf6 Sailors Guild
+ADD 0bf6
+ON=0bf7 Shipwrights Guild
+ADD 0bf7
+ON=0bf8 Shipwrights Guild
+ADD 0bf8
+ON=0be1 Traders Guild
+ADD 0be1
+ON=0be2 Traders Guild
+ADD 0be2
+ON=0bf9 Tailors Guild
+ADD 0bf9
+ON=0bfa Tailors Guild
+ADD 0bfa
+ON=0bfb Thieves Guild
+ADD 0bfb
+ON=0bfc Thieves Guild
+ADD 0bfc
+ON=0c01 Tinkers Guild
+ADD 0c01
+ON=0c02 Tinkers Guild
+ADD 0c02
+ON=0c03 Warriors Guild
+ADD 0c03
+ON=0c04 Warriors Guild
+ADD 0c04
+ON=0bd9 Weapons Guild
+ADD 0bd9
+ON=0bda Weapons Guild
+ADD 0bda
+
+[ITEMMENU 186]
+Signs (Posts)
+ON=0b97 Wooden Signpost
+ADD 0b97
+ON=0b98 Wooden Signpost
+ADD 0b98
+ON=0b99 Wooden Signpost
+ADD 0b99
+ON=0b9a Wooden Signpost
+ADD 0b9a
+ON=0b9b Metal Signpost
+ADD 0b9b
+ON=0b9c Metal Signpost
+ADD 0b9c
+ON=0b9d Metal Signpost
+ADD 0b9d
+ON=0b9e Metal Signpost
+ADD 0b9e
+ON=0b9f Metal Signpost
+ADD 0b9f
+ON=0ba0 Metal Signpost
+ADD 0ba0
+ON=0ba1 Metal Signpost
+ADD 0ba1
+ON=0ba2 Metal Signpost
+ADD 0ba2
+
+[ITEMMENU 187]
+Road Signs
+ON=1296 Wooden Sign Post
+ADD 1296
+ON=1297 Road Sign
+ADD 1297
+ON=1298 Road Sign
+ADD 1298
+ON=1299 Road Sign
+ADD 1299
+ON=129a Road Sign
+ADD 129a
+ON=129b Road Sign
+ADD 129b
+ON=129c Road Sign
+ADD 129c
+ON=129d Road Sign
+ADD 129d
+ON=129e Road Sign
+ADD 129e
+
+[ITEMMENU 200]
+Food
+ON=0f36 Sheaf of Hay
+ADD 0f36
+ON=1ebd Sheaf of Wheat
+ADD 1ebd
+ON=0c5c Watermellon
+ADD 0c5c
+ON=0c61 Turnip
+ADD 0c61
+ON=0c64 Gourd
+ADD 0c64
+ON=0c68 Sprouts
+ADD 0c68
+ON=0c6a Pumpkin
+ADD 0c6a
+ON=0c6d Onion
+ADD 0c6d
+ON=0c70 Lettuce
+ADD 0c70
+ON=0c72 Squash
+ADD 0c72
+ON=0c74 Honey Melon
+ADD 0c74
+ON=0c76 Carrots
+ADD 0c76
+ON=0c79 Cantaloupe
+ADD 0c79
+ON=0c7b Cabbage
+ADD 0c7b
+ON=0c7d Corn Stalk
+ADD 0c7d
+ON=0c7f Ear of Corn
+ADD 0c7f
+
+[ITEMMENU 220]
+Plants
+ON=11c8 Potted Tree
+ADD 11c8
+ON=11c9 Potted Tree
+ADD 11c9
+ON=11c6 Flower Pot
+ADD 11c6
+ON=11c7 Flower Pot
+ADD 11c7
+ON=11ca Flower Pot
+ADD 11ca
+ON=11cb Flower Pot
+ADD 11cb
+ON=11cc Flower Pot
+ADD 11cc
+ON=0c4f Cotton Plant
+ADD 0c4f
+ON=0c50 Cotton Plant
+ADD 0c50
+ON=0c94 Bulrushes
+ADD 0c94
+ON=0c95 Coconut Palm
+ADD 0c95
+ON=0c96 Date Palm
+ADD 0c96
+ON=0c97 Elephant Ear Plant
+ADD 0c97
+ON=0c98 Fan Plant
+ADD 0c98
+ON=0c9f Fern
+ADD 0c9f
+ON=0ca0 Fren
+ADD 0ca0
+ON=0ca1 Large Fern
+ADD 0ca1
+ON=0cb7 Cattails
+ADD 0cb7
+ON=0cb8 Cattails
+ADD 0cb8
+ON=0cc0 Orfluer Flowers
+ADD 0cc0
+ON=0cc1 Orfluer Flowers
+ADD 0cc1
+ON=0d04 Water Plants
+ADD 0d04
+ON=0d06 Lilypad
+ADD 0d06
+ON=0d2a Cactus
+ADD 0d2a
+ON=0d2c Cactus
+ADD 0d2c
+ON=0d30 Century Plant
+ADD 0d30
+ON=0d31 Century Plant
+ADD 0d31
+ON=18df Mandrake Plant
+ADD 18df
+ON=18e0 Mandrake Plant
+ADD 18e0
+
+[ITEMMENU 250]
+Structures
+ON=0 Doors
+ITEMMENU 251
+ON=0 Gates (Natural Wood)
+ITEMMENU 260
+ON=0 Gates (Dark Wood)
+ITEMMENU 261
+ON=0 Fences
+ITEMMENU 280
+ON=0 Rugs
+ITEMMENU 262
+ON=0 Carpets
+ITEMMENU 263
+ON=0 Carpets 2
+ITEMMENU 264
+ON=0 Carpets 3
+ITEMMENU 265
+ON=0 Pillars
+ITEMMENU 266
+ON=0 Piers
+ITEMMENU 267
+ON=0 Ladders
+ITEMMENU 268
+ON=0 Statues
+ITEMMENU 271
+ON=0 Fireplaces
+ITEMMENU 278
+ON=0 Ovens
+ITEMMENU 279
+ON=0 PREVIOUS MENU
+ITEMMENU 1
+
+[ITEMMENU 251]
+Structures (Doors)
+ON=0 Metal Doors Type 1
+ITEMMENU 252
+ON=0 Metal Doors Type 2
+ITEMMENU 253
+ON=0 Metal Cell Doors
+ITEMMENU 254
+ON=0 Rattan Doors
+ITEMMENU 255
+ON=0 Basic Wood Doors
+ITEMMENU 256
+ON=0 Natural Wood Doors
+ITEMMENU 257
+ON=0 Steel Wood Doors
+ITEMMENU 258
+ON=0 Bar Doors
+ITEMMENU 259
+ON=0 PREVIOUS MENU
+ITEMMENU 250
+
+[ITEMMENU 252]
+Doors (Metal Door 1)
+ON=0675 Metal Door
+ADD 0675
+ON=0677 Metal Door
+ADD 0677
+ON=0679 Metal Door
+ADD 0679
+ON=067b Metal Door
+ADD 067b
+ON=067d Metal Door
+ADD 067d
+ON=067f Metal Door
+ADD 067f
+ON=0681 Metal Door
+ADD 0681
+ON=0683 Metal Door
+ADD 0683
+
+[ITEMMENU 253]
+Doors (Metal Door 2)
+ON=06c5 Metal Door
+ADD 06c5
+ON=06c7 Metal Door
+ADD 06c7
+ON=06c9 Metal Door
+ADD 06c9
+ON=06cb Metal Door
+ADD 06cb
+ON=06cd Metal Door
+ADD 06cd
+ON=06cf Metal Door
+ADD 06cf
+ON=06d1 Metal Door
+ADD 06d1
+ON=06d3 Metal Door
+ADD 06d3
+
+[ITEMMENU 254]
+Doors (Metal Cell Door)
+ON=0685 Barred Metal Door
+ADD 0685
+ON=0687 Barred Metal Door
+ADD 0687
+ON=0689 Barred Metal Door
+ADD 0689
+ON=068b Barred Metal Door
+ADD 068b
+ON=068d Barred Metal Door
+ADD 068d
+ON=068f Barred Metal Door
+ADD 068f
+ON=0691 Barred Metal Door
+ADD 0691
+ON=0693 Barred Metal Door
+ADD 0693
+
+[ITEMMENU 255]
+Doors (Rattan Door)
+ON=0695 Rattan Door
+ADD 0695
+ON=0697 Rattan Door
+ADD 0697
+ON=0699 Rattan Door
+ADD 0699
+ON=069b Rattan Door
+ADD 069b
+ON=069d Rattan Door
+ADD 069d
+ON=069f Rattan Door
+ADD 069f
+ON=06a1 Rattan Door
+ADD 06a1
+ON=06a3 Rattan Door
+ADD 06a3
+
+[ITEMMENU 256]
+Doors (Basic Wood Door)
+ON=06a5 Wood Door
+ADD 06a5
+ON=06a7 Wood Door
+ADD 06a7
+ON=06a9 Wood Door
+ADD 06a9
+ON=06ab Wood Door
+ADD 06ab
+ON=06ad Wood Door
+ADD 06ad
+ON=06af Wood Door
+ADD 06af
+ON=06b1 Wood Door
+ADD 06b1
+ON=06b3 Wood Door
+ADD 06b3
+ON=06b5 Wood Door
+ADD 06b5
+ON=06b7 Wood Door
+ADD 06b7
+ON=06b9 Wood Door
+ADD 06b9
+ON=06bb Wood Door
+ADD 06bb
+ON=06bd Wood Door
+ADD 06bd
+ON=06bf Wood Door
+ADD 06bf
+ON=06c1 Wood Door
+ADD 06c1
+ON=06c3 Wood Door
+ADD 06c3
+
+[ITEMMENU 257]
+Doors (Natural Wood Door)
+ON=06d5 Wood Door
+ADD 06d5
+ON=06d7 Wood Door
+ADD 06d7
+ON=06d9 Wood Door
+ADD 06d9
+ON=06db Wood Door
+ADD 06db
+ON=06dd Wood Door
+ADD 06dd
+ON=06df Wood Door
+ADD 06df
+ON=06e1 Wood Door
+ADD 06e1
+ON=06e4 Wood Door
+ADD 06e4
+
+[ITEMMENU 258]
+Doors (Steel Wood Door)
+ON=06e5 Wood Door
+ADD 06e5
+ON=06e7 Wood Door
+ADD 06e7
+ON=06e9 Woeod Door
+ADD 06e9
+ON=06eb Wood Door
+ADD 06eb
+ON=06ed Wood Door
+ADD 06ed
+ON=06ef Wood Door
+ADD 06ef
+ON=06f1 Wood Door
+ADD 06f1
+ON=06f3 Wood Door
+ADD 06f3
+
+[ITEMMENU 259]
+Doors (Bar Door)
+ON=190e Bar Door
+ADD 190e
+ON=190f Bar Door
+ADD 190f
+
+[ITEMMENU 260]
+Structures (Gates)
+ON=0839 Gate
+ADD 0839
+ON=083a Gate
+ADD 083a
+ON=083b Gate
+ADD 083b
+ON=083c Gate
+ADD 083c
+ON=083d Gate
+ADD 083d
+ON=083e Gate
+ADD 083e
+ON=083f Gate
+ADD 083f
+ON=0840 Gate
+ADD 0840
+ON=0841 Gate
+ADD 0841
+ON=0842 Gate
+ADD 0842
+ON=0843 Gate
+ADD 0843
+ON=0844 Gate
+ADD 0844
+ON=0845 Gate
+ADD 0845
+ON=0846 Gate
+ADD 0846
+ON=0847 Gate
+ADD 0847
+ON=0848 Gate
+ADD 0848
+
+[ITEMMENU 261]
+Structures (Dark Gates)
+ON=0866 Gates
+ADD 0866
+ON=0867 Gates
+ADD 0867
+ON=0868 Gates
+ADD 0868
+ON=0869 Gates
+ADD 0869
+ON=086a Gates
+ADD 086a
+ON=086b Gates
+ADD 086b
+ON=086c Gates
+ADD 086c
+ON=086d Gates
+ADD 086d
+ON=086e Gates
+ADD 086e
+ON=086f Gates
+ADD 086f
+ON=0870 Gates
+ADD 0870
+ON=0871 Gates
+ADD 0871
+ON=0872 Gates
+ADD 0872
+ON=0873 Gates
+ADD 0873
+ON=0874 Gates
+ADD 0874
+ON=0875 Gates
+ADD 0875
+
+[ITEMMENU 262]
+Structures (Rugs)
+ON=0aa9 Rug
+ADD 0aa9
+ON=0aaa Rug
+ADD 0aaa
+ON=0aab Rug
+ADD 0aab
+ON=0aac Rug
+ADD 0aac
+ON=0aad Rug
+ADD 0aad
+ON=0aae Rug
+ADD 0aae
+ON=0aaf Rug
+ADD 0aaf
+ON=0ab0 Rug
+ADD 0ab0
+ON=0ab1 Rug
+ADD 0ab1
+ON=0ab2 Rug
+ADD 0ab2
+ON=0ab3 Rug
+ADD 0ab3
+ON=0ab4 Rug
+ADD 0ab4
+ON=0ab5 Rug
+ADD 0ab5
+ON=0ab6 Rug
+ADD 0ab6
+ON=0ab7 Rug
+ADD 0ab7
+ON=0ab8 Rug
+ADD 0ab8
+ON=0ab9 Rug
+ADD 0ab9
+ON=0aba Rug
+ADD 0aba
+ON=0abb Rug
+ADD 0abb
+ON=0abc Rug
+ADD 0abc
+
+[ITEMMENU 263]
+Structures (Carpets)
+ON=0abd Carpet
+ADD 0abd
+ON=0abe Carpet
+ADD 0abe
+ON=0abf Carpet
+ADD 0abf
+ON=0ac0 Carpet
+ADD 0ac0
+ON=0ac1 Carpet
+ADD 0ac1
+ON=0ac2 Carpet
+ADD 0ac2
+ON=0ac3 Carpet
+ADD 0ac3
+ON=0ac4 Carpet
+ADD 0ac4
+ON=0ac5 Carpet
+ADD 0ac5
+ON=0ac6 Carpet
+ADD 0ac6
+ON=0ac7 Carpet
+ADD 0ac7
+ON=0ac8 Carpet
+ADD 0ac8
+ON=0ac9 Carpet
+ADD 0ac9
+ON=0aca Carpet
+ADD 0aca
+ON=0acb Carpet
+ADD 0acb
+ON=0acc Carpet
+ADD 0acc
+ON=0acd Carpet
+ADD 0acd
+ON=0ace Carpet
+ADD 0ace
+ON=0acf Carpet
+ADD 0acf
+ON=0ad0 Carpet
+ADD 0ad0
+
+[ITEMMENU 264]
+Structures (Carpets 2)
+ON=0ad1 Carpet
+ADD 0ad1
+ON=0ad2 Carpet
+ADD 0ad2
+ON=0ad3 Carpet
+ADD 0ad3
+ON=0ad4 Carpet
+ADD 0ad4
+ON=0ad5 Carpet
+ADD 0ad5
+ON=0ad6 Carpet
+ADD 0ad6
+ON=0ad7 Carpet
+ADD 0ad7
+ON=0ad8 Carpet
+ADD 0ad8
+ON=0ad9 Carpet
+ADD 0ad9
+ON=0ada Carpet
+ADD 0ada
+ON=0adb Carpet
+ADD 0adb
+ON=0adc Carpet
+ADD 0adc
+ON=0add Carpet
+ADD 0add
+ON=0ade Carpet
+ADD 0ade
+ON=0adf Carpet
+ADD 0adf
+ON=0ae0 Carpet
+ADD 0ae0
+ON=0ae1 Carpet
+ADd 0ae1
+ON=0ae2 Carpet
+ADD 0ae2
+
+[ITEMMENU 265]
+Structures (Carpets 3)
+ON=0ae3 Carpet
+ADD 0ae3
+ON=0ae4 Carpet
+ADD 0ae4
+ON=0ae5 Carpet
+ADD 0ae5
+ON=0ae6 Carpet
+ADD 0ae6
+ON=0ae7 Carpet
+ADD 0ae7
+ON=0ae8 Carpet
+ADD 0ae8
+ON=0ae9 Carpet
+ADD 0ae9
+ON=0aea Carpet
+ADD 0aea
+ON=0aeb Carpet
+ADD 0aeb
+ON=0aec Carpet
+ADD 0aec
+ON=0aed Carpet
+ADD 0aed
+ON=0aee Carpet
+ADD 0aee
+ON=0aef Carpet
+ADD 0aef
+ON=0af0 Carpet
+ADD 0af0
+ON=0af1 Carpet
+ADD 0af1
+ON=0af2 Carpet
+ADD 0af2
+ON=0af3 Carpet
+ADD 0af3
+ON=0af4 Carpet
+ADD 0af4
+ON=0af5 Carpet
+ADD 0af5
+
+[ITEMMENU 266]
+Structures (pillars)
+ON=00db Pillar
+ADD 00db
+ON=01da Pillar
+ADD 01da
+ON=011b Column
+ADD 011b
+ON=011c Column
+ADD 011c
+ON=011d Column
+ADD 011d
+ON=011e Column
+ADD 011e
+ON=011f Column
+ADD 011f
+ON=0120 Column
+ADD 0120
+ON=0194 Column
+ADD 0194
+ON=0195 Column
+ADD 0195
+
+[ITEMMENU 267]
+Structures (piers)
+ON=03a5 Pier
+ADD 03a5
+ON=03aa Pier
+ADD 03aa
+ON=03ab Pier
+ADD 03ab
+ON=03ac Pier
+ADD 03ac
+ON=03ad Pier
+ADD 03ad
+ON=03ae Pier
+ADD 03ae
+ON=03af Pier
+ADD 03af
+ON=03b0 Pier
+ADD 03b0
+ON=03a6 Rope
+ADD 03a6
+ON=03a7 Rope
+ADD 03a7
+ON=03a8 Rope
+ADD 03a8
+ON=03a9 Rope
+ADD 03a9
+
+[ITEMMENU 268]
+Structures (Ladders)
+ON=0899 Ladder
+ADD 0899
+ON=089a Ladder
+ADD 089a
+ON=089b Ladder
+ADD 089b
+ON=089c Ladder
+ADD 089c
+ON=089d Ladder
+ADD 089d
+ON=089e Ladder
+ADD 089e
+ON=089f Ladder
+ADD 089f
+ON=08a0 Ladder
+ADD 08a0
+ON=08a1 Ladder
+ADD 08a1
+ON=08a2 Ladder
+ADD 08a2
+ON=08a3 Ladder
+ADD 08a3
+ON=08a4 Ladder
+ADD 08a4
+ON=08a5 Ladder
+ADD 08a5
+ON=08a6 Ladder
+ADD 08a6
+
+[ITEMMENU 269]
+Structures (House Deeds)
+ON=14ef Guildstone
+ADD 4230
+ON=14ef Small Stone & Plaster House
+ADD 4200
+ON=14ef Small Stone House
+ADD 4202
+ON=14ef Small Brick House
+ADD 4204
+ON=14ef Small Wood House
+ADD 4206
+ON=14ef Small Wood & Plaster House
+ADD 4208
+ON=14ef Small Wood, Thatched Roof
+ADD 4210
+ON=14ef Blue Tent
+ADD 4212
+ON=14ef Green Tent
+ADD 4214
+ON=14ef Three Room House
+ADD 4216
+ON=14ef Two Story Wood & Plaster
+ADD 4218
+ON=14ef Two Story Stone & Plaster
+ADD 4220
+ON=14ef Tower
+ADD 4222
+ON=14ef Keep
+ADD 4224
+ON=14ef Castle
+ADD 4226
+ON=14ef Large Blacksmithy Shop
+ADD 4228
+
+[ITEMMENU 270]
+Rocks, Stones, Boulders
+ON=1363 Rock
+ADD 1363
+ON=1364 Rock
+ADD 1364
+ON=1365 Rock
+ADD 1365
+ON=1366 Rock
+ADD 1366
+ON=1367 Rock
+ADD 1367
+ON=1368 Rock
+ADD 1368
+ON=1369 Rock
+ADD 1369
+ON=136a Rock
+ADD 136a
+ON=136b Rock
+ADD 136b
+ON=136c Rock
+ADD 136c
+ON=136d Rock
+ADD 136d
+ON=3421 Rock
+ADD 3421
+ON=342c Rock
+ADD 342c
+ON=1771 Rock
+ADD 1771
+ON=1772 Rock
+ADD 1772
+ON=1773 Rock
+ADD 1773
+ON=1774 Rock
+ADD 1774
+ON=1775 Rock
+ADD 1775
+ON=1776 Rock
+ADD 1776
+ON=1777 Rock
+ADD 1777
+ON=1778 Rock
+ADD 1778
+ON=1779 Rock
+ADD 1779
+ON=177a Rock
+ADD 177a
+ON=177b Rock
+ADD 177b
+ON=177c Rock
+ADD 177c
+
+[ITEMMENU 271]
+Statues
+ON=1224 Statue
+ADD 1224
+ON=1225 Statue
+ADD 1225
+ON=1226 Statue
+ADD 1226
+ON=1227 Statue
+ADD 1227
+ON=1228 Statue
+ADD 1228
+ON=129f Statue
+ADD 129f
+ON=12a0 Statue
+ADD 12a0
+ON=12a1 Statue
+ADD 12a1
+ON=12a2 Statue
+ADD 12a2
+ON=12a3 Statue
+ADD 12a3
+ON=12a4 Statue
+ADD 12a4
+ON=12ae Statue
+ADD 12ae
+ON=12af Statue
+ADD 12af
+ON=12b0 Statue
+ADD 12b0
+ON=12d5 Statue
+ADD 12d5
+ON=12d6 Statue
+ADD 12d6
+ON=12d7 Statue
+ADD 12d7
+ON=12d8 Statue
+ADD 12d8
+ON=12d9 Statue
+ADD 12d9
+ON=139a Statue
+ADD 139a
+ON=139b Statue
+ADD 139b
+ON=139c Statue
+ADD 139c
+ON=139d Statue
+ADD 139d
+ON=139e Statue
+ADD 139e
+ON=139f Statue
+ADD 139f
+ON=13a0 Statue
+ADD 13a0
+ON=13a1 Statue
+ADD 13a1
+ON=13a2 Statue
+ADD 13a2
+ON=13a3 Statue
+ADD 13a3
+ON=1f18 Statue
+ADD 1f18
+
+[ITEMMENU 272]
+Clothing (Masks)
+ON=1549 Tribal Mask
+ADD 1549
+ON=154a Tribal Mask
+ADD 154a
+ON=154b Tribal Mask
+ADD 154b
+ON=154c Tribal Mask
+ADD 154c
+ON=141b Orc Mask
+ADD 141b
+ON=141c Orc Mask
+ADD 141c
+ON=1545 Bear Mask
+ADD 1545
+ON=1546 Bear Mask
+ADD 1546
+ON=1547 Deer Mask
+ADD 1547
+ON=1548 Deer Mask
+ADD 1548
+
+[ITEMMENU 273]
+Clothing (Hats)
+ON=1713 Floppy Hat
+ADD 1713
+ON=1714 Wide Brim Hat
+ADD 1714
+ON=1715 Cap
+ADD 1715
+ON=1716 Tall Straw Hat
+ADD 1716
+ON=1717 Straw Hat
+ADD 1717
+ON=1718 Wizard's Hat
+ADD 1718
+ON=1719 Bonnet
+ADD 1719
+ON=171a Feathered Hat
+ADD 171a
+ON=171b Tricorne Hat
+ADD 171b
+ON=171c Jester's Cap
+ADD 171c
+
+[ITEMMENU 274]
+Hair & Beards
+ON=2044 Mohawk
+ADD 2044
+ON=2045 Pageboy
+ADD 2045
+ON=2046 Buns Hair
+ADD 2046
+ON=2047 Afro
+ADD 2047
+ON=2048 Receeding Hair
+ADD 2048
+ON=2049 Pig Tails
+ADD 2049
+ON=204a Krisna Hair
+ADD 204a
+ON=204b Short Beard
+ADD 204b
+ON=204c Medium Hair
+ADD 204c
+ON=204d Vandyke
+ADD 204d
+
+[ITEMMENU 275]
+Potions & Flasks
+ON=0f06 Black Potion
+ADD 0f06
+ON=0f07 Orange Potion
+ADD 0f07
+ON=0f08 Blue Potion
+ADD 0f08
+ON=0f09 White Potion
+ADD 0f09
+ON=0f0a Green Potion
+ADD 0f0a
+ON=0f0b Red Potion
+ADD 0f0b
+ON=0f0c Yellow Potion
+ADD 0f0c
+ON=0f0d Purple Potion
+ADD 0f0d
+ON=0f0e Empty Potion Bottle
+ADD 0f0e
+ON=1829 Flask Stand
+ADD 1829
+ON=182a Flask
+ADD 182a
+ON=182b Flask
+ADD 182b
+ON=182c Flask
+ADD 182c
+ON=182d Empty Flask
+ADD 182d
+ON=182e Beaker
+ADD 182e
+ON=182f Beaker
+ADD 182f
+ON=1830 Beaker
+ADD 1830
+ON=1831 Beaker
+ADD 1831
+ON=1832 Empty Flask
+ADD 1832
+ON=1833 Flask
+ADD 1833
+ON=1834 Flask
+ADD 1834
+ON=1835 Flask
+ADD 1835
+ON=1836 Flask
+ADD 1836
+ON=1837 Flask
+ADD 1837
+ON=1838 Flask
+ADD 1838
+ON=1839 Flask
+ADD 1839
+ON=183a Empty Flask
+ADD 183a
+ON=183b Large Flask
+ADD 183b
+ON=183c Large Flask
+ADD 183c
+ON=183d Empty Large Flask
+ADD 183d
+
+[ITEMMENU 276]
+Equip (Decorations)
+ON=1508 Decorative Armor
+ADD 1508
+ON=1509 Decorative Armor
+ADD 1509
+ON=1512 Decorative Armor
+ADD 1512
+ON=1513 Decorative Armor
+ADD 1513
+ON=1514 Serpent Crest
+ADD 1514
+ON=156c Decorative Shield
+ADD 156c
+ON=156d Decorative Shield
+ADD 156d
+ON=1570 Decorative Shield
+ADD 1570
+ON=1571 Decorative Shield
+ADD 1571
+ON=1574 Decorative Shield
+ADD 1574
+ON=1575 Decorative Shield
+ADD 1575
+ON=1576 Decorative Shield
+ADD 1576
+ON=1577 Decorative Shield
+ADD 1577
+ON=1564 Decorative Weapons
+ADD 1564
+ON=1565 Decorative Weapons
+ADD 1565
+ON=1566 Decorative Weapons
+ADD 1566
+ON=1567 Decorative Weapons
+ADD 1567
+ON=1568 Decorative Weapons
+ADD 1568
+ON=1569 Decorative Weapons
+ADD 1569
+ON=156A Decorative Weapons
+ADD 156A
+ON=156B Decorative Weapons
+ADD 156B
+
+[ITEMMENU 277]
+Armor (Female Armor)
+ON=1c00 Leather Shorts
+ADD 1c00
+ON=1c01 Leather Shorts
+ADD 1c01
+ON=1c08 Leather Skirt
+ADD 1c08
+ON=1c09 Leather Skirt
+ADD 1c09
+ON=1c0a Leather Bustier
+ADD 1c0a
+ON=1c0b Leather Bustier
+ADD 1c0b
+ON=1c06 Leather Armor
+ADD 1c06
+ON=1c07 Leather Armor
+ADD 1c07
+ON=1c02 Studded Armor
+ADD 1c02
+ON=1c03 Studded Armor
+ADD 1c03
+ON=1c0c Studded Bustier
+ADD 1c0c
+ON=1c0d Studded Bustier
+ADD 1c0d
+ON=1c04 Plate Armor
+ADD 1c04
+ON=1c05 Plate Armor
+ADD 1c05
+
+[ITEMMENU 278]
+Structures (Fireplaces)
+ON=045d Fireplace
+ADD 045d
+ON=045e Fireplace
+ADD 045e
+ON=0460 Fireplace
+ADD 0460
+ON=045f Fireplace
+ADD 045f
+ON=0475 Fireplace
+ADD 0475
+ON=0489 Fireplace
+ADD 0489
+ON=0482 Fireplace
+ADD 0482
+ON=047b Fireplace
+ADD 047b
+ON=08cf Fireplace
+ADD 08cf
+ON=08d0 Fireplace
+ADD 08d0
+ON=08d3 Fireplace
+ADD 08d3
+ON=08d4 Fireplace
+ADD 08d4
+ON=08da Fireplace
+ADD 08da
+ON=08db Fireplace
+ADD 08db
+ON=08df Fireplace
+ADD 08df
+ON=08de Fireplace
+ADD 08de
+ON=0937 Fireplace
+ADD 0937
+ON=093d Fireplace
+ADD 093d
+ON=094b Fireplace
+ADD 094b
+ON=0945 Fireplace
+ADD 0945
+ON=0953 Fireplace
+ADD 0953
+ON=0959 Fireplace
+ADD 0959
+ON=0967 Fireplace
+ADD 0967
+ON=0961 Fireplace
+ADD 0961
+
+[ITEMMENU 279]
+Structures (Ovens)
+ON=0461 Oven
+ADD 0461
+ON=0462 Oven
+ADD 0462
+ON=046e Oven
+ADD 046e
+ON=046f Oven
+ADD 046f
+ON=092b Oven
+ADD 092b
+ON=092c Oven
+ADD 092c
+ON=0931 Oven
+ADD 0931
+ON=0930 Oven
+ADD 0930
+
+[ITEMMENU 280]
+Structures (Fences)
+ON=03b3 Fence
+ADD 03b3
+ON=03b4 Fence
+ADD 03b4
+ON=03b5 Fence
+ADD 03b5
+ON=03b6 Fence
+ADD 03b6
+ON=0821 Fence
+ADD 0821
+ON=0822 Fence
+ADD 0822
+ON=0823 Fence
+ADD 0823
+ON=0835 Fence
+ADD 0835
+ON=0836 Fence
+ADD 0836
+ON=0837 Fence
+ADD 0837
+ON=0838 Fence
+ADD 0838
+ON=0849 Fence
+ADD 0849
+ON=084a Fence
+ADD 084a
+ON=084b Fence
+ADD 084b
+ON=085c Fence
+ADD 085c
+ON=085d Fence
+ADD 085d
+ON=085e Fence
+ADD 085e
+ON=085f Fence
+ADD 085f
+ON=0860 Fence
+ADD 0860
+ON=0861 Fence
+ADD 0861
+ON=0862 Fence
+ADD 0862
+ON=0863 Fence
+ADD 0863
+ON=0864 Fence
+ADD 0864
+ON=0865 Fence
+ADD 0865

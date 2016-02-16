@@ -1,0 +1,697 @@
+// The following PlotItem is blank since it is a GLOBAL BIT for checking for SKILL GATE use.
+// Nothing should be under the following section.
+[PLOTITEM 11] // Plot1=800
+
+[TRIG 3040]
+ONTRIGGER=DCLICK 
+SRC.NEWITEM=0100e 
+SRC.ACT.BOUNCE
+VAR.KEY=<SRC.ACT.SERIAL> 
+SRC.ACT.MORE1=<VAR.KEY> 
+SRC.ACT.DUPE 
+SRC.ACT.BOUNCE 
+SRC.NEWITEM=00e40
+SRC.ACT.BOUNCE 
+SRC.ACT.MORE1=<VAR.KEY> 
+SRC.ACT.TYPE=2
+SRC.ACT.BOUNCE
+REMOVE
+RETURN 0
+
+[TRIG 3041]
+//Bedroom Deed East
+ONTRIGGER=DCLICK
+MOREP=<SRC.P>
+MOREX=<MOREX> - 4
+MOREY=<MOREY> + 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0a34
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 4
+MOREY=<MOREY> - 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0a44
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 4
+MOREY=<MOREY> - 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0a45
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=1098
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+MOREY=<MOREY> + 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=1098
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 3
+SRC.HOME=<MOREP>
+SRC.NEWITEM=1098
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 3
+MOREY=<MOREY> + 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=1098
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 1
+MOREY=<MOREY> + 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0ac2
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 4
+MOREY=<MOREY> - 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0ac3
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 4
+MOREY=<MOREY> + 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0ac4
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 1
+MOREY=<MOREY> - 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0ac5
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 3
+MOREY=<MOREY> + 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0a7c
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 3
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0a7d
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+MOREY=<MOREY> + 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0a78
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0a79
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0af8
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 1
+MOREY=<MOREY> + 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0af8
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+MOREY=<MOREY> + 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0af9
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 3
+MOREY=<MOREY> + 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0af9
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+MOREY=<MOREY> - 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0af7
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 3
+MOREY=<MOREY> - 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0af7
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 4
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0af6
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 4
+MOREY=<MOREY> + 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0af6
+SRC.ACT.P=<SRC.HOME>
+SRC.ACT.ATTR=8010 
+REMOVE
+RETURN 1
+
+[TRIG 3042]
+//Stone Fireplace Facing East
+ONTRIGGER=DCLICK
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+MOREY=<MOREY>
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0953
+SRC.ACT.P=<SRC.HOME>
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+MOREY=<MOREY> - 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0959
+SRC.ACT.P=<SRC.HOME>
+REMOVE
+RETURN 1
+
+[TRIG 3043]
+//Stone Fireplace South
+ONTRIGGER=DCLICK
+MOREP=<SRC.P>
+MOREX=<MOREX>
+MOREY=<MOREY> - 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0961
+SRC.ACT.P=<SRC.HOME>
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 1
+MOREY=<MOREY> - 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0960
+SRC.ACT.P=<SRC.HOME>
+REMOVE
+RETURN 1
+
+[TRIG 3044]
+//Stone Oven North
+ONTRIGGER=DCLICK
+MOREP=<SRC.P>
+MOREX=<MOREX>
+MOREY=<MOREY> - 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0930
+SRC.ACT.P=<SRC.HOME>
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 1
+MOREY=<MOREY> - 2
+SRC.HOME=<MOREP>
+SRC.NEWITEM=0931
+SRC.ACT.P=<SRC.HOME>
+REMOVE
+RETURN 1
+
+[TRIG 3045]
+//Stone Oven West
+ONTRIGGER=DCLICK
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+MOREY=<MOREY>
+SRC.HOME=<MOREP>
+SRC.NEWITEM=092b
+SRC.ACT.P=<SRC.HOME>
+
+MOREP=<SRC.P>
+MOREX=<MOREX> - 2
+MOREY=<MOREY> - 1
+SRC.HOME=<MOREP>
+SRC.NEWITEM=092c
+SRC.ACT.P=<SRC.HOME>
+REMOVE
+RETURN 1
+
+[TRIG 5001]
+// Casio's Monster Spawn Trap 
+// Difficulty: 1
+
+ONTRIGGER=STEP
+ IF <MORE>==0
+  SAY Click
+  SOUND=0124
+  SRC.NEWITEM=04ffa //Treasure map very easy monster spawn
+  MORE=1
+  TIMER=3600	// Reset trap in # seconds. 
+ ELSE
+  SAY 
+ ENDIF
+ RETURN 0	// Allow player to move to location.
+
+ONTRIGGER=TIMER
+ MORE=0
+ RETURN 1	// Prevent item from decaying. 
+
+ONTRIGGER=DCLICK
+ IF <SRC.SKILLCHECK TINKERING 30> // Chance to disarm based w/ tinkering.
+  MORE=1
+  TIMER=60
+  MESSAGE You succesfully disarm the mechanism. 
+ ELSE
+  MESSAGE You fail to disarm the mechanism. 
+  SAY Ooops!
+  IF RAND(2)
+   TRIGGER STEP
+  ELSE
+   MESSAGE You carefully remove your hands without activating the mechanism. 
+   SAY Phew!
+  ENDIF		
+ ENDIF
+ RETURN 1			 
+// ******************************************************************
+
+[TRIG 5002]
+// Casio's Custom Teleporters Trigger 
+// Uses MOREP for destination location co-ordinates
+// Difficulty: N/A
+
+ONTRIGGER=STEP
+SRC.MESSAGE Whooosh!
+SRC.EFFECT=FX_TELEPORT_EFFECT
+SRC.SOUND=SPELL_TELEPORT
+SRC.GO <MOREP>
+RETURN 1
+// ******************************************************************
+
+[TRIG 5010]
+//Gravedigging Trigger
+//Author: Kain
+//Revision: Prometheus of LOD
+//Further Enhancements: CasioDeFlux-GameMonger.com
+ONTRIGGER=DCLICK
+
+ IF <TIMER> > 0  //recently used.
+   SRC.MESSAGE This grave has been recently disturbed.
+   SRC.MESSAGE There is nothing here to unearth...for now. 
+   RETURN 1
+ ENDIF
+
+ IF <DISTANCE> > 1
+  SRC.MESSAGE I seem to be too far away from the grave.
+  RETURN 1
+ ENDIF 
+
+ IF !< SRC.SKILLCHECK MINING <MORE2> > 
+  MESSAGE You try but are not skilled enough yet to excavate this grave...
+  RETURN 1
+ ENDIF 
+
+ IF ! <SRC.RESTEST 1 00f39>
+  SRC.MESSAGE Where is your shovel for this foul deed?
+  RETURN 1
+ ELSE
+  SRC.ANIM=0B
+  TIMER=3600
+  MORE2=1	
+  SOUND=0126
+   IF RAND(3)
+    SRC.NEWITEM 07600
+    SRC.KARMA=<SRC.KARMA> - 50
+    SRC.SYSMESSAGE Thou hath lost a little Karma.
+    SRC.MESSAGE Thou hath disturbed the dead!
+   ELSEIF RAND(2)
+    ADDITEM 07601
+    SRC.KARMA=<SRC.KARMA> - 50
+    SRC.SYSMESSAGE Thou hath lost a little Karma.
+    SRC.MESSAGE Thou hath found some treasure!
+   ELSEIF RAND(5)
+    SRC.NEWITEM 07600
+    SRC.NEWITEM 07600
+    SRC.KARMA=<SRC.KARMA> - 50
+    SRC.SYSMESSAGE Thou hath lost a little Karma.
+    SRC.MESSAGE Thou hath disturbed the dead greatly!
+   ELSEIF RAND(4)
+    SRC.DAMAGE=5-10
+    SRC.KARMA=<SRC.KARMA> - 50
+    SRC.SYSMESSAGE Thou hath lost a little Karma.
+    SRC.MESSAGE Thou hath been almost drug into the grave //by the dead!
+   ENDIF
+  ENDIF
+ ENDIF
+RETURN 1
+
+// ******************************************************************
+
+[TRIG 5020]
+// Werewolf Form Trigger (for Potion)
+// Place on Item only.
+// Still need to make item with specific charges.
+// 
+ONTRIGGER=DCLICK
+IF <TIMER> > 0
+// stop people from using last object to remorph
+  SRC.ACT.MESSAGE You must have that item in your pack to use it.
+  RETURN 1
+ELSE
+  SRC.SOUND=0030
+// Take the item drop it to the ground and make it invisible and decaying.
+  SRC.SOUND=SPELL_CURSE
+  ATTR=092
+  P=<SRC.P>
+  TIMER=<MORE2>
+  WAIT 3
+  MORE=<SRC.BODY>  
+  LINK=<SRC.SERIAL>
+// Setup temporary holder variables for stats
+  MOREX=<SRC.STR>
+  MOREY=<SRC.INT>
+  MOREZ=<SRC.DEX>
+// set body to wolf, then change stats
+// must go first, to ensure that the wolf's stats aren't used
+  SRC.BODY=01015
+  SRC.STR=<MOREY>+100
+  SRC.DEX=<MOREZ>+50
+  SRC.INT=10
+  SRC.MANA=0
+  SRC.HITPOINTS=<SRC.STR>
+  SRC.STAMINA=<SRC.DEX>
+  SRC.FIX
+  SRC.MESSAGE Your body flows into the form of a werewolf!
+  SAY LINK:<LINK>
+  SAY MOREP:<MOREP>
+  SRC.SOUND=00E6 
+  RETURN 0
+ENDIF
+
+ONTRIGGER=TIMER
+//Change back to human form
+LINK.BODY=<MORE>
+LINK.SOUND=001e8
+//Change stats back to original
+LINK.STR=<MOREX>
+LINK.INT=<MOREY>
+LINK.DEX=<MOREZ>
+LINK.MANA=<MOREY>
+LINK.HITPOINTS=<MOREX>+25
+LINK.STAMINA=<MOREZ>+25
+LINK.FIX
+LINK.MESSAGE Your body returns to its original form. 
+TIMER=-1
+RETURN 0 
+//************************************************************************
+
+//[TRIG 5500]
+// Casio's LockPicking Script
+// 
+//ONTRIGGER=DCLICK
+//VAR.TEMP=(RAND(3))
+//
+//IF <SRC.RESTEST 1 LOCKPICK>
+//   SOUND=001c4
+//   IF <SRC.SKILLCHECK LOCKPICKING <MOREX>>
+//     IF <VAR.TEMP> < 1
+//        SRC.MESSAGE You successfully picked the lock!
+//        TIMER=<MOREY>
+//        TYPE=1
+//        NAME=Unlocked by <SRC.NAME>.
+//        RETURN 0
+//     ELSE
+//        SRC.MESSAGE You failed to pick the lock.
+//        VAR.TEMP=(RAND(3))
+//          IF <VAR.TEMP>==1 
+//            SRC.MESSAGE Your lockpick breaks while working the lock.
+//            SRC.CONSUME 1 LOCKPICK
+//            RETURN 1
+//          ENDIF
+//        RETURN 1
+//     ENDIF   
+//   ELSE
+//     SRC.MESSAGE You failed to pick the lock.
+//     VAR.TEMP=(RAND(3))
+//     IF VAR.TEMP==1 
+//       SRC.MESSAGE Your lockpick breaks while working the lock.
+//       SRC.CONSUME 1 LOCKPICK 
+//     ENDIF
+//     RETURN 1
+//   ENDIF
+//ELSE 
+//SRC.MESSAGE That is locked, and you don't have any lockpicks on you.
+//RETURN 1
+//********************************************************************************
+
+[TRIG 5510] 
+// *******************************************************************************
+// TRAPPED CHEST TRIGGER
+// Chest trigger, works with item #6540 
+// 1. Check tools
+// 2. Check tinkering 
+// 3. Blow up if failed 
+
+ONTRIGGER=DCLICK 
+IF <DISTANCE> > 1
+  SRC.MESSAGE I seem to be too far away from that.
+  RETURN 1
+ELSEIF <SRC.RESTEST 1 TINKER_TOOLS>
+   IF <SRC.TINKERING> > <MOREX> 
+     SRC.MESSAGE You attempt to disarm the trap. 
+     SOUND=001c4
+     
+     IF (RAND(2))==1
+        SRC.MESSAGE You disarm the trap successfully.
+        SOUND=001ff
+        TIMER=-1
+        MOREZ=1
+        TYPE=1
+        RETURN 0
+     ELSE
+        SRC.MESSAGE You fail to disarm the trap. 
+        VAR.TEMP=RAND(<MORE2>)
+        SAY Failed Tinkering - damage should be: <VAR.TEMP> 
+        IF <VAR.TEMP> < <MORE> VAR.TEMP=<MORE>
+        SRC.DAMAGE=<VAR.TEMP> 
+        SRC.SOUND=SPELL_EXPLOSION 
+        SRC.NEWITEM=03709 
+        SRC.ACT.ATTR 04010 
+        SRC.ACT.TIMER 2 
+        SRC.UPDATE 
+        RETURN 1 
+     ENDIF 
+   ELSE
+     IF (RAND(10))==5 
+        SRC.MESSAGE You disarm the trap successfully. 
+        TIMER=-1
+        MOREZ=1 
+        TYPE=1 
+        RETURN 0 
+     ELSE
+        SRC.MESSAGE You fail to disarm the trap. 
+        VAR.TEMP=RAND(<MORE2>)
+        SAY Failed Tinkering - damage should be: <VAR.TEMP> 
+        IF <VAR.TEMP> < <MORE> VAR.TEMP=<MORE>
+        SRC.DAMAGE=<VAR.TEMP> 
+        SRC.SOUND=SPELL_EXPLOSION 
+        SRC.NEWITEM=03709 
+        SRC.ACT.ATTR 04010 
+        SRC.ACT.TIMER 2 
+        SRC.UPDATE 
+        RETURN 1 
+     ENDIF 
+   SRC.MESSAE You don't have the proper tools to dissarm this chest.
+   ENDIF 
+
+ELSE
+  SRC.MESSAGE You don't have the proper tools to dissarm this chest.
+ENDIF 
+
+ONTRIGGER=TIMER 
+MOREZ=0 
+RETURN 0 
+
+// Here is some sample code to get it to work. 
+// How to make a trapped chest #1 
+// /add 6540 
+// /set type 5510 
+// 
+// A player needs tinkering and gears to open this chest.
+// You can set the following commands: 
+// /set more min // the min damage the trap will do. 
+// /set more2 max // the max damage the trap will do. 
+// /set morex amount // refers to the min amount a players tinkering
+//  has to be to disarm the chest
+// *****************************************************************************
+
+
+[TRIG 5511] // BEGIN PLAYER SECURABLE ITEM TYPES
+// MOREX=0 - UNINITIALIZED
+// MOREX=1 - INITIALIZED BUT UNSECURE 
+// MOREX=2 - INITIALIZED AND SECURE
+
+ONTRIGGER=DCLICK
+IF <SRC.GM>=1
+  SRC.EMOTE set the item to unowned
+  ATTR=0008
+  TIMER=-1
+  MOREX=0 // SET OUR SECURE FLAG
+  NAME=Unowned Item
+  UPDATE
+  SOUND=00EE
+  RETURN 1
+ELSE
+  IF (<DISTANCE> > 3) // TOO FAR AWAY
+    SAY You are too away to use this item.
+    RETURN 1
+  ENDIF
+
+  IF (<MOREX> == 0) // UNOWNED (FIRST USE) 
+    LINK=<SRC.SERIAL> // SET ITS LINK TO THE PLAYERS SERIAL
+    SAY Secured
+    MOREX=2 // OUR OWN SECURE FLAG
+    NAME=Owned by <SRC.NAME>
+    ATTR=0010
+    TIMER=-1
+    UPDATE
+    SRC.SYSMESSAGE Read rules of use posted: www.GameMonger.com/UO/
+    SRC.SYSMESSAGE Inapropriate use can result in JAIL or BAN!
+    SOUND=00EE
+    RETURN 1
+  ELSEIF (<MOREX> == 1) & (<LINK> = <SRC.SERIAL>) // OWNED & UNSECURE (STANDARD USE 1)
+    SAY Secured
+    ATTR=0010
+    TIMER=-1
+    MOREX=2 // SET OUR SECURE FLAG
+    UPDATE
+    SOUND=00EE
+    RETURN 1
+  ELSEIF (<MOREX> == 2) & (<LINK> = <SRC.SERIAL>) // OWNED & SECURE (STANDARD USE 2)
+    SAY Unsecured
+    MOREX=1    // SET OUR CUSTOM UNSECURE FLAG
+    ATTR=0008
+    TIMER=-1
+    UPDATE
+    SOUND=00EC
+    RETURN 1
+  ELSEIF (<LINK> != <SRC.SERIAL>)
+    SRC.SYSMESSAGE You do not own this item.
+    RETURN 1
+  ENDIF
+ENDIF
+
+[TRIG 5512] // ITEM OF IMMORTALITY
+// MOREX = # of Charges remaining
+// MOREY = 
+// MOREZ = 
+
+ONTRIGGER=EQUIP 
+IF (<MOREX>==0) 
+	SRC.SYSMESSAGE The item is drained of magical energy & useless.
+	COLOR=01
+	RETURN 0
+ENDIF
+
+[TRIG 5513]
+ONTRIGGER=DCLICK
+SRC.GUMPDLG 70
+
+[TRIG 5514]
+ONTRIGGER=DCLICK
+SRC.GUMPDLG 73
+
+[TRIG 5515] // Throwable anything type scripted by Rabid Lemming Saturday, May 26, 2001
+// More2 of the item determines the interval between throws.
+ONTRIGGER=DCLICK
+  IF (<TIMER> >= 1)
+    SRC.SYSMESSAGE Your arm is still tired from the last throw.
+    RETURN 1
+  ELSE
+    TARGET You aim your raise your arm to throw a <NAME>.
+  ENDIF
+
+ONTRIGGER=TARGON_CHAR
+  SRC.ANIM 11
+  SRC.TARG.EFFECT=0,6255,7
+  SRC.SYSMESSAGE=You hit <SRC.TARG.NAME> with a <NAME>!
+  SRC.TARG.SYSMESSAGE=<SRC.NAME> threw a <NAME> at you!
+  TIMER=<MORE2>
+  RETURN=1
+
+ONTRIGGER=TIMER
+  TIMER=0
+  RETURN=1
+
+[5518] // Ankh/Shrine with delay type
+
+ONTRIGGER=DCLICK
+  SRC.NEWITEM=20ba
+  SRC.ACT.TYPE=5517
+  SRC.ACT.LINK=<SRC.SERIAL>
+  SRC.ACT.LAYER=0
+  SRC.ACT.BOUNCE
+  SRC.ACT.TIMER=<MOREX>
+
+[5517] // Resurection delay memory object
+
+ONTRIGGER=TIMER
+  LINK.RESURRECT
+  RETURN=0
+
+[5518] // Teleport tile with delay
+
+ONTRIGGER=STEP
+  SRC.NEWITEM=2095
+  SRC.ACT.TYPE=5519
+  SRC.ACT.MOREP=<MOREP>
+  SRC.ACT.LINK=<SRC.SERIAL>
+  SRC.ACT.LAYER=0
+  SRC.ACT.BOUNCE
+  SRC.ACT.TIMER=<MOREX>
+
+[5519] // Teleport memory object with delay
+
+ONTRIGGER=TIMER
+  LINK.GO <MOREP>
+  RETURN=0

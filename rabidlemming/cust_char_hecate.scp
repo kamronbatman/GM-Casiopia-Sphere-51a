@@ -1,0 +1,527 @@
+[CHARDEF c_m_raven]
+ID=c_harpy
+NAME=Raven
+SOUND=snd_MONSTER_HARPY1
+ICON=i_pet_harpy
+CAN=MT_FLY|MT_WALK|
+DAM=3,21
+ARMOUR=25
+RESOURCES=3i_ribs_raw,50i_feather
+FOODTYPE=5t_meat_raw
+DESIRES=i_gold,c_harpy
+SHELTER=r_forests,r_mountains
+AVERSIONS=r_water,r_civilization
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Raven
+
+ON=@Create
+NPC=brain_monster
+FAME={300 1000}
+KARMA={-4000 -4999}
+COLOR=00455
+STR={320 340}
+DEX={90 110}
+INT={60 80}
+
+PARRYING={75.0 90.0}
+MAGERY={50.0 65.0}
+MAGICRESISTANCE={50.0 65.0}
+TACTICS={70.0 100.0}
+WRESTLING={60.0 90.0}
+//ALLIGNMENT
+
+ON=@NPCRestock
+ITEM=loot_STONE_HARPY
+ITEM=RANDOM_LOWER_SCROLL
+
+[CHARDEF c_m_skeleton_wizard]
+ID=c_skeleton
+NAME=Skeleton Wizard
+DAM=2,8
+ARMOR=23
+RESOURCES=8 i_reag_bone
+SHELTER=r_spooky
+TEVENTS=e_Undead
+
+ON=@Create
+NPC=brain_undead
+Color=07c3
+STR={100 120}
+DEX={56 75}
+INT={190 215}
+//ALLIGNMENT=EVIL
+//SPELLCIRCLES=3,6
+
+PARRYING={50.0 60.0}
+MAGERY={70.0 80.0}
+MAGICRESISTANCE={50.0 65.0}
+TACTICS={50.0 65.0}
+WRESTLING={50.0 60.0}
+
+FAME={100 2000}
+KARMA={-3000 -3999}
+
+ON=@NPCRestock
+ITEM=loot_SKELETAL_MAGE
+ITEM=i_gold,{150 250}
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Skeletal Wizard
+
+
+[CHARDEF c_m_angel_fallen]
+NAME=Fallen Angel
+ID=c_gargoyle
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK|MT_FLY
+
+DAM=4,24
+ARMOR=28
+RESOURCES=8 i_ribs_raw,5 tm_rocks
+FOODTYPE=2 t_arock,2 t_meat_raw
+DESIRES=c_m_gargoyle_stone,c_gargoyle,c_m_angel_fallen,t_bone,i_gold,t_wand
+
+SHELTER=r_caves,r_dungeon
+AVERSIONS=r_civilization
+
+ON=@create
+COLOR=07b6
+STR={100 130}
+DEX={86 105}
+INT={150 170}
+
+//ALLIGNMENT=EVIL
+//SPELLCIRCLES=3,7
+
+PARRYING={60.0 70.0}
+MAGERY={70.0 80.0}
+MAGICRESISTANCE={60.0 70.0}
+TACTICS={55.0 70.0}
+
+NPC=brain_monster
+
+FAME={100 2000}
+KARMA={-3000 -3999}
+
+ON=@NPCRestock
+ITEM=loot_stone_gargoyle
+ITEM=random_jewel
+AMOUNT={1 4}
+ITEM=random_jewel
+AMOUNT={1 4}
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Fallen Angel
+
+[CHARDEF c_m_daemon_spirit]
+NAME=Daemon Spirit
+ID=c_daemon_w_sword
+SOUND=snd_monster_daemon1
+ICON=i_pet_daemon
+ANIM=03fbc7f
+CAN=MT_WALK|MT_FLY|MT_USEHANDS
+DAM=35
+ARMOR={3 18}
+RESOURCES=9i_ribs_raw,8i_reag_daemon_bone
+FOODTYPE=
+DESIRES=i_gold
+SHELTER=r_dungeons,r_caves
+AVERSIONS=r_civilization
+
+ON=@create
+NPC=brain_monster
+FAME={4000 8000}
+KARMA={-5000 -5999}
+COLOR=07b9
+STR={500 525}
+DEX={80 100}
+INT={300 325}
+
+SWORDSMANSHIP={70.0 80.0}
+PARRYING={70.0 80.0}
+MAGERY={75.0 90.0}
+MAGICRESISTANCE={75.0 85.0}
+TACTICS={75.0 85.0}
+WRESTLING={70.0 90.0}
+
+//ALLIGNMENT=EVIL
+//SPELLCIRCLES=6 8
+
+ON=@NPCRestock
+ITEM=loot_balron
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Daemon Spirit
+
+[CHARDEF c_m_barbarian_spirit]
+ID=c_grim_reaper
+NAME=Barbarian Spirit
+ICON=i_pet_GHOUL
+BLOODCOLOR=colors_gray
+
+DAM=15,23
+ARMOR=25,30
+
+FOODTYPE=
+CAN=MT_GHOST|MT_WALK
+//ALLIGNMENT=EVIL
+TEVENTS=e_undead
+//SHELTER=WOODED AREAS
+DESIRES=i_gold
+//AVERSIONS=CIVILIZATION,WATER
+
+ON=@Create
+NPC=BRAIN_UNDEAD
+COLOR=07cb
+STR=120 135
+DEX=90 120
+INT=70 100
+
+MAGICRESISTANCE={60.0 85.0}
+PARRY={60.0 85.0}
+TACTICS={70.0 80.0}
+WRESTLING={70.0 90.0}
+
+KARMA={-4000 -3000}
+FAME={1500 3000}
+
+ON=@NPCRestock
+ITEM={average_undead_backpack 1 rich_undead_backpack 1}
+ITEM=i_gold,{200 300}
+ITEM={i_potion_barbarian},R3
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Barbarian Spirit
+
+[ITEMDEF i_potion_barbarian]
+//bottle
+ID=i_bottle_9
+NAME=Barbarian Soul Potion
+WEIGHT=3
+
+ON=@Create
+COLOR=07f3
+
+CATEGORY=Provisions - Alchemy & Magic
+SUBSECTION=Potions
+DESCRIPTION=Barbarian Soul Potion
+
+[CHARDEF c_ratman_archer]
+ID=c_ratman
+NAME=#NAMES_RATMAN the Ratman Archer
+SOUND=snd_MONSTER_RATMAN1
+ICON=i_pet_RATMAN
+ANIM=078c7f
+DAM=2,11
+ARMOR=16
+RESOURCES=6 i_ribs_raw, 2 i_fur_light
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+FOODTYPE=15t_meat_raw, i_cheese_wheel
+SHELTER=r_caves, r_dungeons, r_swamps, r_desert
+DESIRES=c_ratman, c_ratman_archer, c_ratman_w_sword, c_ratman_mage
+
+ON=@Create
+NPC=brain_monster
+COLOR=08000|RAND(COLOR_DYE_HIGH) // shirt color
+
+STR={100 125}
+DEX={85 100}
+INT={36 60}
+
+ARCHERY=100.0
+PARRYING={50.0 70.0}
+MAGICRESISTANCE={40.0 60.0}
+TACTICS={55.0 75.0}
+WRESTLING={50.0 75.0}
+
+FAME={100 300}
+KARMA={-2000 -2999}
+//ALLIGNMENT=EVIL
+
+ON=@NPCRestock
+ITEM=loot_RATMAN
+ITEM=i_bow
+ITEM=i_arrow{10 40}
+
+CATEGORY=Monsters
+SUBSECTION=Ratmen
+DESCRIPTION=Ratmen Archer
+
+[CHARDEF c_ratman_mage]
+ID=c_ratman
+NAME=#NAMES_RATMAN the Ratman Mage
+SOUND=snd_MONSTER_RATMAN1
+ICON=i_pet_RATMAN
+ANIM=078c7f
+DAM=2,11
+ARMOR=16
+RESOURCES=6 i_ribs_raw, 2 i_fur_light
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+FOODTYPE=15t_meat_raw, i_cheese_wheel
+SHELTER=r_caves, r_dungeons, r_swamp, r_desert
+DESIRES=c_ratman, c_ratman_w_sword, c_ratman_mage, c_ratman_archer
+
+ON=@Create
+NPC=brain_monster
+COLOR=08000|RAND(COLOR_DYE_HIGH) // shirt color
+
+STR={100 125}
+DEX={70 80}
+INT={150 175}
+
+MAGERY={75.0 85.0}
+PARRYING={50.0 70.0}
+MAGICRESISTANCE={35.0 60.0}
+TACTICS={50.0 75.0}
+WRESTLING={50.0 75.0}
+
+FAME={100 300}
+KARMA={-2000 -2999}
+//ALLIGNMENT=EVIL
+
+ON=@NPCRestock
+ITEM=loot_RATMAN
+ITEM=i_spellbook
+MORE=060020891
+MORE2=0210
+
+CATEGORY=Monsters
+SUBSECTION=Ratmen
+DESCRIPTION=Ratman Mage
+
+[CHARDEF c_yttri_sorceress]
+ID=C_FEMALE
+NAME=#NAMES_HUMANFEMALE the Yttri Sorceress
+DAM=10,20
+ARMOR=30
+RESOURCES=9 i_ribs_raw
+//DESIRES=i_gold,e_noteriety
+AVERSIONS=t_TRAP,t_water
+//ALLIGNMENT=EVIL
+//SPELLCIRCLES=6,7
+CAN=MT|WALK
+
+T_SPEECH=spk_human_prime
+T_SPEECH=spk_jobMageEvil
+T_SPEECH=spk_needs
+T_SPEECH=spk_rehello
+T_SPEECH=spk_human_default
+
+ON=@Create
+COLOR=0793
+STR={700 750}
+DEX={50 60}
+INT={350 375}
+
+MAGERY={75.0 80.0}
+MAGICRESISTANCE={70.0 80.0}
+PARRYING={30.0 40.0}
+WRESTLING={30.0 40.0}
+EVALUATINGINTEL={50.0 60.0}
+
+NPC=BRAIN_HUMAN
+
+ITEMNEWBIE=random_female_hair
+COLOR=0793
+ITEMNEWBIE=i_spellbook
+COLOR=0793
+MORE=064000884
+MORE2=08610
+
+ON=@NPCRestock
+ITEM=i_dress_plain
+ATTR=04
+COLOR=0793
+ITEM=i_boots_calf
+COLOR=01
+ITEM=i_apron_half
+COLOR=01
+ITEM=i_hat_wizards
+COLOR=01
+ITEM={random_jewel 1 0 1}
+ITEM=i_gold{1000 1500}
+ITEM=random_upper_scroll
+ITEM=random_filthy_rich_goodie
+ITEM=random_platemail_hardning
+
+CATGEORY=Civilized
+SUBSECTION=Yttri Race
+DESCRIPTION=Yttri Sorceress
+
+[CHARDEF=c_yttri_warlock]
+ID=C_MALE
+NAMES=#NAMES_HUMANMALE the Yttri Warlock
+DAM=15,25
+ARMOR=35
+RESOURCES=9 i_ribs_raw
+//DESIRES=i_gold,e_noteriety
+AVERSIONS=t_TRAP,t_WATER
+//ALLIGNMENT=EVIL
+//SPELLCIRCLES=7,8
+CAN=MT|WALK
+
+T_SPEECH=spk_human_prime
+T_SPEECH=spk_jobMageEvil
+T_SPEECH=spk_needs
+T_SPEECH=spk_rehello
+T_SPEECH=spk_human_default
+
+ON=@Create
+COLOR=0793
+STR={750 800}
+DEX={60 70}
+INT={375 425}
+
+MAGERY={85 90}
+MAGICRESISTANCE={60.0 70.0}
+WRESTLING={30.0 40.0}
+PARRYING={30.0 40.0}
+EVALUATINGINTEL={50.0 60.0}
+
+NPC=BRAIN_HUMAN
+
+ITEMNEWBIE=random_male_hair
+COLOR=0793
+ITEMNEWBIE=random_facial_hair
+COLOR=0793
+
+ON=@NPCRestock
+ITEMNEWBIE=i_spellbook
+COLOR=0793
+MORE=064080281
+MORE2=0a758710
+ITEMNEWBIE=i_doublet
+COLOR=0793
+
+ITEM=i_pants_long
+COLOR=01
+ITEM=i_boots_calf
+COLOR=01
+ITEM=i_hat_wizards
+COLOR=01
+ITEM={random_jewel 1 0 1}
+ITEM={random_jewel 1 0 1}
+ITEM=i_gold{1500 2000}
+ITEM=random_upper_scroll
+ITEM=random_upper_scroll
+ITEM=random_filthy_rich_goodie
+ITEM=random_platemail_hardning
+ITEM=i_dwarven_hammer,R50
+
+CATEGORY=Civilized
+SUBSECTION=Yttri Race
+DESCRIPTION=Yttri Warlock
+
+[ITEMDEF i_book_yttrium_hammer]
+ID=0fef
+NAME=Yttrium Enchanting Hammer
+VALUE=25
+
+ON=@Create
+MORE=b_yttrium_hammer
+
+CATEGORY=Quest Items
+SUBSECTION=On Going Quests
+DESCRIPTION=Yttrium Enchanting Hammer
+
+[BOOK b_yttrium_hammer]
+PAGES=9
+TITLE=Yttrium Enchanting Hammer
+AUTHOR=Admin Star
+
+[BOOK b_yttrium_hammer 1]
+The legend of the 
+Yttrium Enchanting
+Hammer dates back 
+before time itself.
+Before most inhabited
+the planet a race of
+wizards,also known as
+the Yttri Wizards
+
+[BOOK b_yttrium_hammer 2]
+dominated the planet.
+This race of wizards
+was very powerful
+and had very evil 
+souls. They used
+thier magical powers
+for any type of
+personal gain.
+
+[BOOK b_yttrium_hammer 3]
+Out of the resources
+of the planet they
+made the Enchanting 
+Hammer. It is said
+that this item was the 
+key to thier power.
+When used it made 
+them invulnerable to
+
+[BOOK b_yttrium_hammer 4]
+everything. When the
+other races began to
+come about, they
+realized what kind of
+power they had but 
+didn't know how. All
+of the races realized
+that if this race ruled
+
+[BOOK b_yttrium_hammer 5]
+the planet that it 
+would be filled with
+pure hatred, so they 
+joined together to
+defeat these wizards.
+It took them one
+hundred years of
+death and bloodshed to
+
+[BOOK b_yttrium_hammer 6]
+realize that thier 
+power lays within the
+hammer. They then 
+devised a plan to
+retrieve the hammers 
+from them. Once
+accomplished they
+banished the race to a
+
+[BOOK b_yttrium_hammer 7]
+magically enclosed
+tower where they
+remain to this day.
+Apparently they have
+tried to recreate thier
+beloved hammer out of
+materials from the 
+planet but to thier
+
+[BOOK b_yttrium_hammer 8]
+dismay it is not as
+powerful as the 
+original. To the other 
+races of the world it
+is still a treasured
+item used to increase
+thier armor to the 
+sacred level.
+
+[BOOK b_yttrium_hammer 9]
+It is said that they are 
+still trapped in that 
+legendary tower in the
+North Lands and that
+the Yttri Warlocks
+hold the Enchanted
+Hammer.
+
+[EOF]

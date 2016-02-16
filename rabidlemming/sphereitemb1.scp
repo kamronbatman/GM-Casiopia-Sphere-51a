@@ -1,0 +1,8314 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+// www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, July 14, 2000
+//
+
+VERSION=0.54
+
+// In the future break up into these groups ?
+// plants = crops, fruits
+// walls
+// roofs = not also a floor.
+// doors
+// structure = other parts of human built structures
+// weapons
+// armor = and cloths.
+// equip = other equippable items.
+// trade = non equippable tools and trade related items.
+// furniture = decorative items.
+// natural = natural formations (cave walls etc)
+// miscitems = misc decorative items.
+
+[ITEMDEF 0]
+DEFNAME=i_unused
+CATEGORY=Miscellaneous
+SUBSECTION=Bad Tiles
+DESCRIPTION=Unused Tile
+
+[ITEMDEF 01]
+DEFNAME=i_NODRAW
+CATEGORY=Miscellaneous
+SUBSECTION=Bad Tiles
+DESCRIPTION=No Draw Tile
+
+[ITEMDEF 02]
+DEFNAME=i_ankh
+RESOURCES=100 i_rock_plain
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Statues
+DESCRIPTION=Ankh (w) 1/2
+DUPELIST=03,04,05
+
+[ITEMDEF 03]
+DUPEITEM=02
+DESCRIPTION=Ankh (w) 2/2
+
+[ITEMDEF 04]
+DUPEITEM=02
+DESCRIPTION=Ankh (n) 1/2
+
+[ITEMDEF 05]
+DUPEITEM=02
+DESCRIPTION=Ankh (n) 2/2
+
+[ITEMDEF 06]
+DEFNAME=i_WALL_WOOD
+TYPE=T_WALL
+RESOURCES=100 I_LOG
+CATEGORY=Buildings - Walls
+SUBSECTION=Wooden Wall 1
+DESCRIPTION=@
+DUPELIST=07,08,09,0a,0b,0c,0d,0e,0f,010,011,012,013,014,015,016,017,018,019
+
+[ITEMDEF 07]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 08]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 09]
+//wooden post
+DUPEITEM=06
+
+[ITEMDEF 0a]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 0b]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 0c]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 0d]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 0e]
+//window
+DUPEITEM=06
+
+[ITEMDEF 0f]
+//window
+DUPEITEM=06
+
+[ITEMDEF 010]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 011]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 012]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 013]
+//wooden post
+DUPEITEM=06
+
+[ITEMDEF 014]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 015]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 016]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 017]
+//wooden post
+DUPEITEM=06
+
+[ITEMDEF 018]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 019]
+//wooden wall
+DUPEITEM=06
+
+[ITEMDEF 01a]
+DEFNAME=i_wall_stone
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 1
+DESCRIPTION=@
+
+[ITEMDEF 01b]
+//stone wall
+
+[ITEMDEF 01c]
+//stone wall
+DUPEITEM=01b
+
+[ITEMDEF 01d]
+//stone wall
+
+[ITEMDEF 01e]
+//stone wall
+
+[ITEMDEF 01f]
+//stone wall
+DUPEITEM=01e
+
+[ITEMDEF 020]
+//stone wall
+DUPEITEM=01e
+
+[ITEMDEF 021]
+//stone wall
+DUPEITEM=01e
+
+[ITEMDEF 022]
+DEFNAME=i_wall_stone_2
+TYPE=t_window
+FLIP=1
+RESOURCES=50 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 1
+DESCRIPTION=@
+DUPELIST=023
+
+[ITEMDEF 023]
+DUPEITEM=022
+
+[ITEMDEF 024]
+//stone wall
+
+[ITEMDEF 025]
+//stone wall
+
+[ITEMDEF 026]
+//stone wall
+
+
+[ITEMDEF 027]
+//stone wall
+
+
+[ITEMDEF 028]
+//stone arch
+
+
+[ITEMDEF 029]
+//stone arch
+
+
+[ITEMDEF 02a]
+//stone arch
+
+
+[ITEMDEF 02b]
+//stone arch
+
+
+[ITEMDEF 02c]
+//stone arch
+
+
+[ITEMDEF 02d]
+//stone wall
+
+
+[ITEMDEF 02e]
+//stone wall
+
+
+[ITEMDEF 02f]
+//stone wall
+
+
+[ITEMDEF 030]
+//stone wall
+
+
+[ITEMDEF 031]
+//stone wall
+
+
+[ITEMDEF 032]
+//stone wall
+
+
+[ITEMDEF 033]
+DEFNAME=i_wall_brick
+TYPE=T_WALL
+RESOURCES=50 I_CLAY, 50 I_STRAW
+CATEGORY=Buildings - Walls
+SUBSECTION=Brick Wall 1
+DESCRIPTION=@
+DUPELIST=034,035,036,037,038,039,03a,03d,03e,03f,040,041,042,043,044,045,046,047,048,049,04a,04b,04c,04d,04e,04f,050,051,052,053,054,055,056
+
+[ITEMDEF 034]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 035]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 036]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 037]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 038]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 039]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 03a]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 03b]
+DEFNAME=i_wall_brick_2
+TYPE=t_window
+FLIP=1
+RESOURCES=50 I_CLAY, 50 I_STRAW
+CATEGORY=Buildings - Walls
+SUBSECTION=Brick Wall 1
+DESCRIPTION=@
+DUPELIST=03c
+
+[ITEMDEF 03c]
+DUPEITEM=03b
+
+[ITEMDEF 03d]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 03e]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 03f]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 040]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 041]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 042]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 043]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 044]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 045]
+//brick arch
+DUPEITEM=033
+
+[ITEMDEF 046]
+//brick arch
+DUPEITEM=033
+
+[ITEMDEF 047]
+//brick arch
+DUPEITEM=033
+
+[ITEMDEF 048]
+//brick arch
+DUPEITEM=033
+
+[ITEMDEF 049]
+//brick arch
+DUPEITEM=033
+
+[ITEMDEF 04a]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 04b]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 04c]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 04d]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 04e]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 04f]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 050]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 051]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 052]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 053]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 054]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 055]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 056]
+//brick wall
+DUPEITEM=033
+
+[ITEMDEF 057]
+DEFNAME=i_wall_stone_4
+TYPE=T_WALL
+RESOURCES=50 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 2
+DESCRIPTION=@
+DUPELIST=058,059,05a,05b,05c,05f,060,061,062,063,064,065,066,067,068,069,06a,06b,06c,06d,06e,06f,070,071,072,073,074,075,076,077,078,079,07d9
+
+[ITEMDEF 058]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 059]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 05a]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 05b]
+//arrow loop
+DUPEITEM=057
+
+[ITEMDEF 05c]
+//arrow loop
+DUPEITEM=057
+
+[ITEMDEF 05d]
+DEFNAME=i_wall_stone_5
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 2
+DESCRIPTION=@
+DUPELIST=05e
+
+[ITEMDEF 05e]
+DUPEITEM=05d
+
+[ITEMDEF 05f]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 060]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 061]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 062]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 063]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 064]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 065]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 066]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 067]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 068]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 069]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 06a]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 06b]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 06c]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 06d]
+//stone arch
+DUPEITEM=057
+
+[ITEMDEF 06e]
+//stone arch
+DUPEITEM=057
+
+[ITEMDEF 06f]
+//stone arch
+DUPEITEM=057
+
+[ITEMDEF 070]
+//stone arch
+DUPEITEM=057
+
+[ITEMDEF 071]
+//stone arch
+DUPEITEM=057
+
+[ITEMDEF 072]
+//battlement
+DUPEITEM=057
+
+[ITEMDEF 073]
+//battlement
+DUPEITEM=057
+
+[ITEMDEF 074]
+//battlement
+DUPEITEM=057
+
+[ITEMDEF 075]
+//battlement
+DUPEITEM=057
+
+[ITEMDEF 076]
+//battlement
+DUPEITEM=057
+
+[ITEMDEF 077]
+//stone column
+DUPEITEM=057
+
+[ITEMDEF 078]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 079]
+//stone wall
+DUPEITEM=057
+
+[ITEMDEF 07a]
+DEFNAME=i_wall_stone_7
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 3
+DESCRIPTION=@
+DUPELIST=07b,07c,07d,07e,07f,080,081,082,083,084,085,086,087,088,089,08a,08b,08c,08d,08e,08f,0364,0365
+
+[ITEMDEF 07b]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 07c]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 07d]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 07e]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 07f]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 080]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 081]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 082]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 083]
+//window
+DUPEITEM=07a
+
+[ITEMDEF 084]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 085]
+//window
+DUPEITEM=07a
+
+[ITEMDEF 086]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 087]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 088]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 089]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 08a]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 08b]
+//stone arch
+DUPEITEM=07a
+
+[ITEMDEF 08c]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 08d]
+//window
+DUPEITEM=07a
+
+[ITEMDEF 08e]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 08f]
+//window
+DUPEITEM=07a
+
+[ITEMDEF 090]
+DEFNAME=i_wall_log
+TYPE=T_WALL
+RESOURCES=100 I_LOG
+CATEGORY=Buildings - Walls
+SUBSECTION=Log Wall
+DESCRIPTION=@
+DUPELIST=091,092,093,094,095,096,097,09a,09b,09c,09d,09e,09f,0a0,0a1,0a2,0a3,0a4,0a5,0145,0146,0147,0148
+
+[ITEMDEF 091]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 092]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 093]
+//log post
+DUPEITEM=090
+
+[ITEMDEF 094]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 095]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 096]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 097]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 098]
+DEFNAME=i_wall_log_2
+TYPE=t_window
+FLIP=1
+RESOURCES=100 I_LOG, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Log Wall
+DESCRIPTION=@
+DUPELIST=099
+
+[ITEMDEF 099]
+DUPEITEM=098
+
+[ITEMDEF 09a]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 09b]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 09c]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 09d]
+//log post
+DUPEITEM=090
+
+[ITEMDEF 09e]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 09f]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 0a0]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 0a1]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 0a2]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 0a3]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 0a4]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 0a5]
+//log wall
+DUPEITEM=090
+
+[ITEMDEF 0a6]
+DEFNAME=i_wall_wood_2
+TYPE=T_WALL
+RESOURCES=100 I_BOARD
+CATEGORY=Buildings - Walls
+SUBSECTION=Wooden Wall 2
+DESCRIPTION=@
+DUPELIST=0a7,0a8,0a9,0aa,0ab,0ac,0ad,0ae,0af,0b0,0b1,0b2,0b3,0b4,0b5,0b6,0b7,0b8,0bd,0be,0bf,0c0,0c1,0c2
+
+[ITEMDEF 0a7]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0a8]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0a9]
+//wooden post
+DUPEITEM=0a6
+
+[ITEMDEF 0aa]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0ab]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0ac]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0ad]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0ae]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0af]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b0]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b1]
+//wooden post
+DUPEITEM=0a6
+
+[ITEMDEF 0b2]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b3]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b4]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b5]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b6]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b7]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b8]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0b9]
+DEFNAME=i_wall_wood_3
+TYPE=t_window
+FLIP=1
+RESOURCES=100 I_BOARD
+CATEGORY=Buildings - Walls
+SUBSECTION=Wooden Wall 2
+DESCRIPTION=@
+DUPELIST=0ba,0bb,0bc
+
+[ITEMDEF 0ba]
+DUPEITEM=0b9
+
+[ITEMDEF 0bb]
+DUPEITEM=0b9
+
+[ITEMDEF 0bc]
+DUPEITEM=0b9
+
+[ITEMDEF 0bd]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0be]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0bf]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0c0]
+//wooden post
+DUPEITEM=0a6
+
+[ITEMDEF 0c1]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0c2]
+//wooden wall
+DUPEITEM=0a6
+
+[ITEMDEF 0c5]
+DEFNAME=i_wall_stone_8
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 4
+DESCRIPTION=@
+DUPELIST=0c6,0c7,0c8,0c9,0ca,0cb,0cc,0cd,0ce,0cf,0d0,0d1,0d2,0d3,0d4,0d5,0d6,0d7,0d8,0d9,0da,0db,0dc,0dd,0de,0df,0e0,0e1,0e2,0e3,0e4,0e5,0e6,0e7
+
+[ITEMDEF 0c6]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0c7]
+//stone wall
+DUPEITEM=0c5
+
+[ITEMDEF 0c8]
+//stone wall
+DUPEITEM=0c5
+
+[ITEMDEF 0c9]
+//stone wall
+DUPEITEM=0c5
+
+[ITEMDEF 0ca]
+//arrow loop
+DUPEITEM=0c5
+
+[ITEMDEF 0cb]
+//arrow loop
+DUPEITEM=0c5
+
+[ITEMDEF 0cc]
+//stone post
+DUPEITEM=0c5
+
+[ITEMDEF 0cd]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0ce]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0cf]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0d0]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0d1]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0d2]
+//stone buttress
+DUPEITEM=0c5
+
+[ITEMDEF 0d3]
+//stone buttress
+DUPEITEM=0c5
+
+[ITEMDEF 0d4]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0d5]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0d6]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0d7]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0d8]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0d9]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0da]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0db]
+//stone pillar
+DUPEITEM=0c5
+
+[ITEMDEF 0dc]
+//stone wall
+DUPEITEM=0c5
+
+[ITEMDEF 0dd]
+//stone wall
+DUPEITEM=0c5
+
+[ITEMDEF 0de]
+//stone wall
+DUPEITEM=0c5
+
+[ITEMDEF 0df]
+//stone post
+DUPEITEM=0c5
+
+[ITEMDEF 0e0]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0e1]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0e2]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0e3]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0e4]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0e5]
+//stone arch
+DUPEITEM=0c5
+
+[ITEMDEF 0e6]
+//stone wall
+DUPEITEM=0c5
+
+[ITEMDEF 0e7]
+//stone wall
+DUPEITEM=0c5
+
+[ITEMDEF 0e8]
+DEFNAME=i_door_secret_stone_1
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (dungeon)
+DESCRIPTION=@ (secret door)
+TYPE=T_DOOR
+DUPELIST=0ea,0ec,0ee,0f0,0f2,0f4,0f6
+
+[ITEMDEF 0e9]
+DEFNAME=i_door_secret_stone_1_O
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (dungeon)
+DESCRIPTION=@ (secret door)
+TYPE=T_DOOR_OPEN
+DUPELIST=0eb,0ed,0ef,0f1,0f3,0f5,0f7
+
+[ITEMDEF 0ea]
+//stone wall
+DUPEITEM=0e8
+
+[ITEMDEF 0eb]
+//secret door
+DUPEITEM=0e9
+
+[ITEMDEF 0ec]
+//stone wall
+DUPEITEM=0e8
+
+[ITEMDEF 0ed]
+//secret door
+DUPEITEM=0e9
+
+[ITEMDEF 0ee]
+//stone wall
+DUPEITEM=0e8
+
+[ITEMDEF 0ef]
+//secret door
+DUPEITEM=0e9
+
+[ITEMDEF 0f0]
+//stone wall
+DUPEITEM=0e8
+
+[ITEMDEF 0f1]
+//secret door
+DUPEITEM=0e9
+
+[ITEMDEF 0f2]
+//stone wall
+DUPEITEM=0e8
+
+[ITEMDEF 0f3]
+//secret door
+DUPEITEM=0e9
+
+[ITEMDEF 0f4]
+//stone wall
+DUPEITEM=0e8
+
+[ITEMDEF 0f5]
+//secret door
+DUPEITEM=0e9
+
+[ITEMDEF 0f6]
+//stone wall
+DUPEITEM=0e8
+
+[ITEMDEF 0f7]
+//secret door
+DUPEITEM=0e9
+
+[ITEMDEF 0f8]
+DEFNAME=i_wall_marble
+TYPE=T_WALL
+RESOURCES=100 i_stone_marble
+CATEGORY=Buildings - Walls
+SUBSECTION=Marble Wall 1
+DESCRIPTION=@
+DUPELIST=0f9,0fa,0fb,0fe,0ff,0100,0101,0104,0105,0106,0107,010a,010b,010c,010d,010e,010f,0110,0111,0112,0113,0114,0115,0116,0117,0118,0119,011a,011b,011c,011d,011e,011f,0120,0121,0122,0123,0124,0125,0126,0438,0439,043a,043b,043c,043d,043e,043f,0440,0441,0442,0443,0444,0445,0446,0447,0448,0449,044a,044b,044c,044d,044e,044f,0450,0451,0452,0453
+
+[ITEMDEF 0f9]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0fa]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0fb]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0fc]
+DEFNAME=i_wall_marble_2
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_stone_marble
+CATEGORY=Buildings - Walls
+SUBSECTION=Marble Wall 1
+DESCRIPTION=@
+DUPELIST=0fd
+
+[ITEMDEF 0fd]
+DUPEITEM=0fc
+
+[ITEMDEF 0fe]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0ff]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0100]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0101]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0102]
+DEFNAME=i_wall_marble_4
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_stone_marble
+CATEGORY=Buildings - Walls
+SUBSECTION=Marble Wall 1
+DESCRIPTION=@
+DUPELIST=0103
+
+[ITEMDEF 0103]
+DUPEITEM=0102
+
+[ITEMDEF 0104]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0105]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0106]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0107]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0108]
+DEFNAME=i_wall_marble_6
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_stone_marble, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Marble Wall 1
+DESCRIPTION=@
+DUPELIST=0109
+
+[ITEMDEF 0109]
+DUPEITEM=0108
+
+[ITEMDEF 010a]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 010b]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 010c]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 010d]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 010e]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 010f]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0110]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0111]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0112]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0113]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0114]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0115]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0116]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0117]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0118]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0119]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 011a]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 011b]
+//marble column
+DUPEITEM=0f8
+
+[ITEMDEF 011c]
+//marble column
+DUPEITEM=0f8
+
+[ITEMDEF 011d]
+//marble column
+DUPEITEM=0f8
+
+[ITEMDEF 011e]
+//marble column
+DUPEITEM=0f8
+
+[ITEMDEF 011f]
+//marble column
+DUPEITEM=0f8
+
+[ITEMDEF 0120]
+//marble column
+DUPEITEM=0f8
+
+[ITEMDEF 0121]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0122]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0123]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0124]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0125]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0126]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0127]
+DEFNAME=i_wall_plaster
+TYPE=T_WALL
+RESOURCES=50 I_SAND, 50 I_STRAW
+CATEGORY=Buildings - Walls
+SUBSECTION=Plaster Wall 1
+DESCRIPTION=@
+DUPELIST=0128,0129,012a,012b,012c,012d,012e,012f,0130,0131,0132,0133,0134,0135,0136,0137,0138,0139,013c,013d,013e,013f,0140,0141,0142,0143,0144
+
+[ITEMDEF 0128]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0129]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 012a]
+//wooden post
+DUPEITEM=0127
+
+[ITEMDEF 012b]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 012c]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 012d]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 012e]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 012f]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0130]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0131]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0132]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0133]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0134]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0135]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0136]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0137]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0138]
+//plaster wall
+DUPEITEM=0127
+
+[ITEMDEF 0139]
+DUPEITEM=0127
+//plaster wall
+
+[ITEMDEF 013a]
+DEFNAME=i_wall_plaster_2
+TYPE=t_window
+FLIP=1
+RESOURCES=50 I_SAND, 50 I_STRAW, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Plaster Wall 1
+DESCRIPTION=@
+DUPELIST=013b
+
+[ITEMDEF 013b]
+DUPEITEM=013a
+
+[ITEMDEF 013c]
+//archway
+DUPEITEM=0127
+
+[ITEMDEF 013d]
+//archway
+DUPEITEM=0127
+
+[ITEMDEF 013e]
+//archway
+DUPEITEM=0127
+
+[ITEMDEF 013f]
+//archway
+DUPEITEM=0127
+
+[ITEMDEF 0140]
+//archway
+DUPEITEM=0127
+
+[ITEMDEF 0141]
+//wooden beam
+DUPEITEM=0127
+
+[ITEMDEF 0142]
+//wooden beam
+DUPEITEM=0127
+
+[ITEMDEF 0143]
+//wooden beam
+DUPEITEM=0127
+
+[ITEMDEF 0144]
+//wooden beam
+DUPEITEM=0127
+
+[ITEMDEF 0145]
+//log post
+DUPEITEM=090
+
+[ITEMDEF 0146]
+//log post
+DUPEITEM=090
+
+[ITEMDEF 0147]
+//log post
+DUPEITEM=090
+
+[ITEMDEF 0148]
+//log post
+DUPEITEM=090
+
+[ITEMDEF 0149]
+DEFNAME=i_wall_plaster_4
+TYPE=T_WALL
+RESOURCES=50 I_SAND, 50 I_STRAW
+CATEGORY=Buildings - Walls
+SUBSECTION=Plaster Wall 2
+DESCRIPTION=@
+DUPELIST=014a,014b,014c,014d,014e,014f,0150,0151,0152,0153
+
+[ITEMDEF 014a]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 014b]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 014c]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 014d]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 014e]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 014f]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 0150]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 0151]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 0152]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 0153]
+//plaster wall
+DUPEITEM=0149
+
+[ITEMDEF 0154]
+DEFNAME=i_wall_plaster_5
+TYPE=t_window
+FLIP=1
+RESOURCES=50 I_SAND, 50 I_STRAW, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Plaster Wall 2
+DESCRIPTION=@
+DUPELIST=0155,0156,0157
+
+[ITEMDEF 0155]
+DUPEITEM=0154
+
+[ITEMDEF 0156]
+DUPEITEM=0154
+
+[ITEMDEF 0157]
+DUPEITEM=0154
+
+[ITEMDEF 0158]
+DEFNAME=i_wall_sandstone
+TYPE=T_WALL
+RESOURCES=100 i_stone_sand
+CATEGORY=Buildings - Walls
+SUBSECTION=Sandstone Wall
+DESCRIPTION=@
+DUPELIST=0159,015a,015b,015e,015f,0160,0161,0164,0165,0166,0167,0168,0169,016a,016b,016c,016d,016e,016f,0170,0171,0172,0173,0174,0175,0176,0177,0178,0179,017a,017b,017c,017d,017e,017f,0180,0181,0182,0183,0184,0185,0186,0187,0188,0189,018a,018b,018c,018d,018e,018f,0190,0191,0192,0193,0194,0195,0196,0197,0198,0199,019a,01a4,01b1,01b2,01b3,01b4,01ca,01ec,01ed,01ee,01ef
+
+[ITEMDEF 0159]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 015a]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 015b]
+//sandstone post
+DUPEITEM=0158
+
+[ITEMDEF 015c]
+DEFNAME=i_wall_sandstone_2
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_stone_sand, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Sandstone Wall
+DESCRIPTION=@
+DUPELIST=015d
+
+[ITEMDEF 015d]
+DUPEITEM=015c
+
+[ITEMDEF 015e]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 015f]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0160]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0161]
+//sandstone post
+DUPEITEM=0158
+
+[ITEMDEF 0162]
+DEFNAME=i_wall_sandstone_4
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_stone_sand, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Sandstone Wall
+DESCRIPTION=@
+DUPELIST=0163
+
+[ITEMDEF 0163]
+DUPEITEM=0162
+
+[ITEMDEF 0164]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0165]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0166]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0167]
+//sandstone post
+DUPEITEM=0158
+
+[ITEMDEF 0168]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0169]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 016a]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 016b]
+//sandstone post
+DUPEITEM=0158
+
+[ITEMDEF 016c]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 016d]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 016e]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 016f]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 0170]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 0171]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0172]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0173]
+//battlement
+DUPEITEM=0158
+
+[ITEMDEF 0174]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0175]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0176]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0177]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0178]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0179]
+//battlement
+DUPEITEM=0158
+
+[ITEMDEF 017a]
+//battlement
+DUPEITEM=0158
+
+[ITEMDEF 017b]
+//battlement
+DUPEITEM=0158
+
+[ITEMDEF 017c]
+//battlement
+DUPEITEM=0158
+
+[ITEMDEF 017d]
+//battlement
+DUPEITEM=0158
+
+[ITEMDEF 017e]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 017f]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0180]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0181]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0182]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0183]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0184]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0185]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0186]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0187]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0188]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0189]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 018a]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 018b]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 018c]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 018d]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 018e]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 018f]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 0190]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 0191]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 0192]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 0193]
+//sandstone arch
+DUPEITEM=0158
+
+[ITEMDEF 0194]
+//sandstone column
+DUPEITEM=0158
+
+[ITEMDEF 0195]
+//sandstone column
+DUPEITEM=0158
+
+[ITEMDEF 0196]
+//sandstone column
+DUPEITEM=0158
+
+[ITEMDEF 0197]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0198]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 0199]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 019a]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 019b]
+DEFNAME=i_wall_primitivewood
+TYPE=T_WALL
+RESOURCES=100 I_BOARD
+CATEGORY=Buildings - Walls
+SUBSECTION=Primitive Wood
+DESCRIPTION=@
+DUPELIST=019c,019d,019e,019f,01a0,01a1,01a2,01a3,01b5,01b9,01cb,01cc,01cd,01ce
+
+[ITEMDEF 019c]
+//wood supports
+DUPEITEM=019b
+
+[ITEMDEF 019d]
+//wood supports
+DUPEITEM=019b
+
+[ITEMDEF 019e]
+//wood supports
+DUPEITEM=019b
+
+[ITEMDEF 019f]
+//wood supports
+DUPEITEM=019b
+
+[ITEMDEF 01a0]
+//wood supports
+DUPEITEM=019b
+
+[ITEMDEF 01a1]
+//wood supports
+DUPEITEM=019b
+
+[ITEMDEF 01a2]
+//wood supports
+DUPEITEM=019b
+
+[ITEMDEF 01a3]
+//wood post
+DUPEITEM=019b
+
+[ITEMDEF 01a4]
+//battlement
+DUPEITEM=0158
+
+[ITEMDEF 01a5]
+DEFNAME=i_wall_rattan
+TYPE=T_WALL
+RESOURCES=50 i_plant_grasses, 50 I_STRAW
+CATEGORY=Buildings - Walls
+SUBSECTION=Rattan Wall
+DESCRIPTION=@
+DUPELIST=01a6,01a7,01a8,01a9,01aa,01ab,01ac,01ad,01ae,01af,01b0
+
+[ITEMDEF 01a6]
+//rattan wall
+DUPEITEM=01a5
+
+[ITEMDEF 01a7]
+//rattan wall
+DUPEITEM=01a5
+
+[ITEMDEF 01a8]
+//wood post
+DUPEITEM=01a5
+
+[ITEMDEF 01a9]
+//rattan wall
+DUPEITEM=01a5
+
+[ITEMDEF 01aa]
+//rattan wall
+DUPEITEM=01a5
+
+[ITEMDEF 01ab]
+//rattan wall
+DUPEITEM=01a5
+
+[ITEMDEF 01ac]
+//rattan wall
+DUPEITEM=01a5
+
+[ITEMDEF 01ad]
+//window
+DUPEITEM=01a5
+
+[ITEMDEF 01ae]
+//window
+DUPEITEM=01a5
+
+[ITEMDEF 01af]
+//window
+DUPEITEM=01a5
+
+[ITEMDEF 01b0]
+//window
+DUPEITEM=01a5
+
+[ITEMDEF 01b1]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 01b2]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 01b3]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 01b4]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 01b5]
+//wood post
+DUPEITEM=019b
+
+[ITEMDEF 01b6]
+DEFNAME=i_wall_hide
+TYPE=T_WALL
+RESOURCES=100 I_HIDE
+CATEGORY=Buildings - Walls
+SUBSECTION=Hide Wall
+DESCRIPTION=@
+DUPELIST=01b7,01b8,01ba,01bb,01bc,01bd,01be,01bf,01c0,01c1,01c2,01c3,01c8,01c9
+
+[ITEMDEF 01b7]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01b8]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01b9]
+//wood post
+DUPEITEM=019b
+
+[ITEMDEF 01ba]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01bb]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01bc]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01bd]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01be]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01bf]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01c0]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01c1]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01c2]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01c3]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01c4]
+DEFNAME=i_wall_hide_2
+TYPE=t_window
+FLIP=1
+RESOURCES=100 I_HIDE, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Hide Wall
+DESCRIPTION=@
+DUPELIST=01c5
+
+[ITEMDEF 01c5]
+DUPEITEM=01c4
+
+[ITEMDEF 01c6]
+// same as 01c4 but not lit.
+DEFNAME=i_wall_hide_4
+TYPE=t_window
+FLIP=1
+RESOURCES=100 I_HIDE, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Hide Wall
+DESCRIPTION=@
+DUPELIST=01c7
+
+[ITEMDEF 01c7]
+DUPEITEM=01c6
+
+[ITEMDEF 01c8]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01c9]
+//hide wall
+DUPEITEM=01b6
+
+[ITEMDEF 01ca]
+//sandstone wall
+DUPEITEM=0158
+
+[ITEMDEF 01cb]
+//dock pole
+DUPEITEM=019b
+
+[ITEMDEF 01cc]
+//dock pole
+DUPEITEM=019b
+
+[ITEMDEF 01cd]
+//dock pole
+DUPEITEM=019b
+
+[ITEMDEF 01ce]
+//dock pole
+DUPEITEM=019b
+
+[ITEMDEF 01cf]
+DEFNAME=i_wall_stone_9
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 5
+DESCRIPTION=@
+DUPELIST=01d0,01d1,01d2,01d5,01d6,01d7,01d8,01d9,01da,01db,01dc,01dd,01de,01df,01e0,01e1,01e2,01e3,01e4,01e5,01e6,01e7,01e8,01e9,01ea,01eb
+
+[ITEMDEF 01d0]
+//stone wall
+DUPEITEM=01cf
+
+[ITEMDEF 01d1]
+//stone wall
+DUPEITEM=01cf
+
+[ITEMDEF 01d2]
+//stone post
+DUPEITEM=01cf
+
+[ITEMDEF 01d3]
+// window
+DEFNAME=i_wall_stone_WINDOW
+TYPE=t_window
+FLIP=1
+RESOURCES=50 i_rock_plain, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 5
+DESCRIPTION=@
+DUPELIST=01d4
+
+[ITEMDEF 01d4]
+DUPEITEM=01d3
+
+[ITEMDEF 01d5]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01d6]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01d7]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01d8]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01d9]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01da]
+//stone pillar
+DUPEITEM=01cf
+
+[ITEMDEF 01db]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01dc]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01dd]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01de]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01df]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e0]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e1]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e2]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e3]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e4]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e5]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e6]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e7]
+//stone arch
+DUPEITEM=01cf
+
+[ITEMDEF 01e8]
+//stone wall
+DUPEITEM=01cf
+
+[ITEMDEF 01e9]
+//stone wall
+DUPEITEM=01cf
+
+[ITEMDEF 01ea]
+//stone wall
+DUPEITEM=01cf
+
+[ITEMDEF 01eb]
+//stone wall
+DUPEITEM=01cf
+
+[ITEMDEF 01ec]
+//wall
+DUPEITEM=0158
+
+[ITEMDEF 01ed]
+//wall
+DUPEITEM=0158
+
+[ITEMDEF 01ee]
+//wall
+DUPEITEM=0158
+
+[ITEMDEF 01ef]
+//wall
+DUPEITEM=0158
+
+[ITEMDEF 01f0]
+DEFNAME=i_wall_tent_10
+TYPE=T_WALL
+RESOURCES=50 I_CANVAS
+CATEGORY=Buildings - Walls
+SUBSECTION=Tent Wall (dark blue)
+DESCRIPTION=@
+DUPELIST=01f1,01f2,01f3,01f4,01f5,01f6,01f7,01f8,01f9
+
+[ITEMDEF 01f1]
+//tent wall
+DUPEITEM=01f0
+
+[ITEMDEF 01f2]
+//tent wall
+DUPEITEM=01f0
+
+[ITEMDEF 01f3]
+//wooden pole
+DUPEITEM=01f0
+
+[ITEMDEF 01f4]
+//tent wall
+DUPEITEM=01f0
+
+[ITEMDEF 01f5]
+//tent wall
+DUPEITEM=01f0
+
+[ITEMDEF 01f6]
+//tent wall
+DUPEITEM=01f0
+
+[ITEMDEF 01f7]
+//tent wall
+DUPEITEM=01f0
+
+[ITEMDEF 01f8]
+//tent wall
+DUPEITEM=01f0
+
+[ITEMDEF 01f9]
+//tent wall
+DUPEITEM=01f0
+
+[ITEMDEF 01ff]
+DEFNAME=i_wall_plaster_9
+TYPE=T_WALL
+RESOURCES=50 I_STRAW, 50 I_SAND
+CATEGORY=Buildings - Walls
+SUBSECTION=Plaster Wall 3
+DESCRIPTION=@
+DUPELIST=0200,0201,0202,0203,0204,0205,0206,020b,020c
+
+[ITEMDEF 0200]
+//plaster wall
+DUPEITEM=01ff
+
+[ITEMDEF 0201]
+//plaster wall
+DUPEITEM=01ff
+
+[ITEMDEF 0202]
+//sandstone post
+DUPEITEM=01ff
+
+[ITEMDEF 0203]
+//plaster wall
+DUPEITEM=01ff
+
+[ITEMDEF 0204]
+//plaster wall
+DUPEITEM=01ff
+
+[ITEMDEF 0205]
+//plaster wall
+DUPEITEM=01ff
+
+[ITEMDEF 0206]
+//plaster wall
+DUPEITEM=01ff
+
+[ITEMDEF 0207]
+DEFNAME=i_wall_plaster_10
+TYPE=t_window
+FLIP=1
+RESOURCES=50 I_STRAW, 50 I_SAND, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Plaster Wall 3
+DESCRIPTION=@
+DUPELIST=0208,0209,020a
+
+[ITEMDEF 0208]
+DUPEITEM=0207
+
+[ITEMDEF 0209]
+DUPEITEM=0207
+
+[ITEMDEF 020a]
+DUPEITEM=0207
+
+[ITEMDEF 020b]
+//plaster wall
+DUPEITEM=01ff
+
+[ITEMDEF 020c]
+//plaster wall
+DUPEITEM=01ff
+
+[ITEMDEF 020f]
+DEFNAME=i_wall_bamboo
+TYPE=T_WALL
+RESOURCES=50 I_BAMBOO
+CATEGORY=Buildings - Walls
+SUBSECTION=Bamboo Wall
+DESCRIPTION=@
+DUPELIST=0210,0211,0212,0213,0214,0215,0216,0217,0218,0219,021a
+
+[ITEMDEF 0210]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0211]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0212]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0213]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0214]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0215]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0216]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0217]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0218]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 0219]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 021a]
+//bamboo wall
+DUPEITEM=020f
+
+[ITEMDEF 021d]
+DEFNAME=i_wall_wood_7
+TYPE=T_WALL
+RESOURCES=50 I_BOARD
+CATEGORY=Buildings - Walls
+SUBSECTION=Wooden Wall 3
+DESCRIPTION=@
+DUPELIST=021e,021f,0220,0221,0222,0223,0226,0227,0228,0229,022a,022b
+
+[ITEMDEF 021e]
+//palisade
+DUPEITEM=021d
+
+[ITEMDEF 021f]
+//palisade
+DUPEITEM=021d
+
+[ITEMDEF 0220]
+//palisade
+DUPEITEM=021d
+
+[ITEMDEF 0221]
+//palisade
+DUPEITEM=021d
+
+[ITEMDEF 0222]
+//palisade
+DUPEITEM=021d
+
+[ITEMDEF 0223]
+//palisade
+DUPEITEM=021d
+
+[ITEMDEF 0226]
+//wooden wall
+DUPEITEM=021d
+
+[ITEMDEF 0227]
+//wooden wall
+DUPEITEM=021d
+
+[ITEMDEF 0228]
+//wooden wall
+DUPEITEM=021d
+
+[ITEMDEF 0229]
+//wooden post
+DUPEITEM=021d
+
+[ITEMDEF 022a]
+//wooden wall
+DUPEITEM=021d
+
+[ITEMDEF 022b]
+//wooden wall
+DUPEITEM=021d
+
+[ITEMDEF 022c]
+//door
+DEFNAME=i_door_tent
+RESOURCES=10 i_canvas
+DUPELIST=022f
+
+ON=@DCLICK
+	IF ( <DISPID>==i_door_tent )
+		DISPID=i_door_tent_o
+	ELSE
+		DISPID=022e
+	ENDIF
+
+[ITEMDEF 022d]
+//door (open)
+DEFNAME=i_door_tent_o
+RESOURCES=10 i_canvas
+DUPELIST=022e
+
+[ITEMDEF 022e]
+//door (open)
+DUPEITEM=022d
+
+[ITEMDEF 022f]
+//door
+DUPEITEM=022c
+
+[ITEMDEF 0230]
+DEFNAME=i_wall_tent
+TYPE=T_WALL
+RESOURCES=100 I_CANVAS
+CATEGORY=Buildings - Walls
+SUBSECTION=Tent Wall (dark green)
+DESCRIPTION=@
+DUPELIST=0231,0232,0233,0234,0235,0236,0237,0238,0239
+
+[ITEMDEF 0231]
+//tent wall
+DUPEITEM=0230
+
+[ITEMDEF 0232]
+//tent wall
+DUPEITEM=0230
+
+[ITEMDEF 0233]
+//wooden pole
+DUPEITEM=0230
+
+[ITEMDEF 0234]
+//tent wall
+DUPEITEM=0230
+
+[ITEMDEF 0235]
+//tent wall
+DUPEITEM=0230
+
+[ITEMDEF 0236]
+//tent wall
+DUPEITEM=0230
+
+[ITEMDEF 0237]
+//tent wall
+DUPEITEM=0230
+
+[ITEMDEF 0238]
+//tent wall
+DUPEITEM=0230
+
+[ITEMDEF 0239]
+//tent wall
+DUPEITEM=0230
+
+[ITEMDEF 0241]
+DEFNAME=i_wall_dungeon
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Dungeon Wall
+DESCRIPTION=@
+DUPELIST=0242,0243,0244,0245,0246,0247,0248,0249,024a,02f9,02fa,02fb,02fc,02fd,02fe,02ff,0300
+
+[ITEMDEF 0242]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 0243]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 0244]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 0245]
+//dungeon arch
+DUPEITEM=0241
+
+[ITEMDEF 0246]
+//dungeon arch
+DUPEITEM=0241
+
+[ITEMDEF 0247]
+//dungeon arch
+DUPEITEM=0241
+
+[ITEMDEF 0248]
+//dungeon arch
+DUPEITEM=0241
+
+[ITEMDEF 0249]
+//dungeon arch
+DUPEITEM=0241
+
+[ITEMDEF 024a]
+//dungeon arch
+DUPEITEM=0241
+
+[ITEMDEF 024c]
+DEFNAME=i_wall_sandstone_1
+TYPE=T_WALL
+RESOURCES=100 i_stone_sand
+CATEGORY=Buildings - Walls
+SUBSECTION=Sandstone Wall (fancy)
+DESCRIPTION=@
+DUPELIST=024d,024e,024f,0250,0251,0252,0253,0254,0255,0256,0257,0258,0259,025a,025b
+
+[ITEMDEF 024d]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 024e]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 024f]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 0250]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 0251]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 0252]
+//window
+DUPEITEM=024c
+
+[ITEMDEF 0253]
+//window
+DUPEITEM=024c
+
+[ITEMDEF 0254]
+//window
+DUPEITEM=024c
+
+[ITEMDEF 0255]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 0256]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 0257]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 0258]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 0259]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 025a]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 025b]
+//sandstone wall
+DUPEITEM=024c
+
+[ITEMDEF 025c]
+DEFNAME=i_wall_sandstone_6
+TYPE=T_WALL
+RESOURCES=10 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Cave Wall
+DESCRIPTION=@
+DUPELIST=025d,025e,025f,0260,0261,0262,0263,0264,0265,0266,0267,0268,0269,026a,026b,026c,026d,026e,026f,0270,0271,0272,0273,0274,0275,0276,027d,027e,027f,0280
+
+[ITEMDEF 025d]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 025e]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 025f]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0260]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0261]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0262]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0263]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0264]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0265]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0266]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0267]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0268]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0269]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 026a]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 026b]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 026c]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 026d]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 026e]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 026f]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0270]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0271]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0272]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0273]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0274]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0275]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0276]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0277]
+DEFNAME=i_wall_sandstone_7
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Ruins
+SUBSECTION=Ruins
+DESCRIPTION=Ruined Wall
+DUPELIST=0278,0279,027a,027b,027c,0281,0282
+
+[ITEMDEF 0278]
+//ruined wall
+DUPEITEM=0277
+
+[ITEMDEF 0279]
+//ruined wall
+DUPEITEM=0277
+
+[ITEMDEF 027a]
+//ruined wall
+DUPEITEM=0277
+
+[ITEMDEF 027b]
+//ruined wall
+DUPEITEM=0277
+
+[ITEMDEF 027c]
+//ruined wall
+DUPEITEM=0277
+
+[ITEMDEF 027d]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 027e]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 027f]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0280]
+//cave wall
+DUPEITEM=025c
+
+[ITEMDEF 0281]
+//ruined wall
+DUPEITEM=0277
+
+[ITEMDEF 0282]
+//ruined wall
+DUPEITEM=0277
+
+[ITEMDEF 0291]
+DEFNAME=i_wall_marble_1
+TYPE=T_WALL
+RESOURCES=100 i_stone_marble
+CATEGORY=Buildings - Walls
+SUBSECTION=Marble Wall 2
+DESCRIPTION=@
+DUPELIST=0292,0293,0294,0297,0298,0299,029a,029d,029e,029f,02a0,02a1,02a2,02a3,02a4,02a5,02a6,02a7,02a8,02a9,02aa,02ab,02ac,02b0,02b1,02b2,02b3,02b4,02b5,02b6,02b7,02b8,02b9,02ba,02bb,02bc,02bd,02be,02bf,02c0
+
+[ITEMDEF 0292]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 0293]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 0294]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 0295]
+DEFNAME=i_wall_marble_8
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_stone_marble, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Marble Wall 2
+DESCRIPTION=@
+DUPELIST=0296
+
+[ITEMDEF 0296]
+DUPEITEM=0295
+
+[ITEMDEF 0297]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 0298]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 0299]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 029a]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 029b]
+DEFNAME=i_wall_marble_10
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_stone_marble, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Marble Wall 2
+DESCRIPTION=@
+DUPELIST=029c
+
+[ITEMDEF 029c]
+DUPEITEM=029b
+
+[ITEMDEF 029d]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 029e]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 029f]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02a0]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02a1]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02a2]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02a3]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02a4]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02a5]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02a6]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02a7]
+//marble column
+DUPEITEM=0291
+
+[ITEMDEF 02a8]
+//marble column
+DUPEITEM=0291
+
+[ITEMDEF 02a9]
+//marble column
+DUPEITEM=0291
+
+[ITEMDEF 02aa]
+//marble column
+DUPEITEM=0291
+
+[ITEMDEF 02ab]
+//marble column
+DUPEITEM=0291
+
+[ITEMDEF 02ac]
+//marble column
+DUPEITEM=0291
+
+[ITEMDEF 02ad]
+DEFNAME=i_wall_marble_12
+TYPE=t_window
+FLIP=1
+RESOURCES=100 i_stone_marble, 1 I_WINDOW
+CATEGORY=Buildings - Walls
+SUBSECTION=Marble Wall 2
+DESCRIPTION=@
+DUPELIST=02ae
+
+[ITEMDEF 02ae]
+DUPEITEM=02ad
+
+[ITEMDEF 02b0]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02b1]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02b2]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02b3]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02b4]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02b5]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02b6]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02b7]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02b8]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02b9]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02ba]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02bb]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02bc]
+//marble wall
+DUPEITEM=0291
+
+[ITEMDEF 02bd]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02be]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02bf]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02c0]
+//marble arch
+DUPEITEM=0291
+
+[ITEMDEF 02c7]
+DEFNAME=i_wall_stone_11
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 6
+DESCRIPTION=@
+DUPELIST=02c8,02c9,02ca,02cb,02cc,02cd,02ce,02cf,02d0,02d1,02d2,02d3,02d4,02d5,02d6,02d7,02d8,02d9
+
+[ITEMDEF 02c8]
+//battlement
+DUPEITEM=02c7
+
+[ITEMDEF 02c9]
+//battlement
+DUPEITEM=02c7
+
+[ITEMDEF 02ca]
+//battlement
+DUPEITEM=02c7
+
+[ITEMDEF 02cb]
+//battlement
+DUPEITEM=02c7
+
+[ITEMDEF 02cc]
+//battlement
+DUPEITEM=02c7
+
+[ITEMDEF 02cd]
+//battlement
+DUPEITEM=02c7
+
+[ITEMDEF 02ce]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02cf]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d0]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d1]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d2]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d3]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d4]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d5]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d6]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d7]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d8]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02d9]
+//stone wall
+DUPEITEM=02c7
+
+[ITEMDEF 02de]
+DEFNAME=i_wall_tent_2
+TYPE=T_WALL
+RESOURCES=100 I_CANVAS
+CATEGORY=Buildings - Walls
+SUBSECTION=Tent Wall (dark gray)
+DESCRIPTION=@
+DUPELIST=02df,02e0,02e1,02e2,02e3,02e4,02e5,02e6,02e7
+
+[ITEMDEF 02df]
+//tent wall
+DUPEITEM=02de
+
+[ITEMDEF 02e0]
+//tent wall
+DUPEITEM=02de
+
+[ITEMDEF 02e1]
+//wood pole
+DUPEITEM=02de
+
+[ITEMDEF 02e2]
+//tent wall
+DUPEITEM=02de
+
+[ITEMDEF 02e3]
+//tent wall
+DUPEITEM=02de
+
+[ITEMDEF 02e4]
+//tent wall
+DUPEITEM=02de
+
+[ITEMDEF 02e5]
+//tent wall
+DUPEITEM=02de
+
+[ITEMDEF 02e6]
+//tent wall
+DUPEITEM=02de
+
+[ITEMDEF 02e7]
+//tent wall
+DUPEITEM=02de
+
+[ITEMDEF 02e8]
+DEFNAME=i_wall_tent_3
+TYPE=T_WALL
+RESOURCES=100 I_CANVAS
+CATEGORY=Buildings - Walls
+SUBSECTION=Tent Wall (ragged)
+DESCRIPTION=@
+DUPELIST=02e9,02ea,02eb,02ec
+
+[ITEMDEF 02e9]
+//tent wall
+DUPEITEM=02e8
+
+[ITEMDEF 02ea]
+//tent wall
+DUPEITEM=02e8
+
+[ITEMDEF 02eb]
+//tent wall
+DUPEITEM=02e8
+
+[ITEMDEF 02ec]
+//tent wall
+DUPEITEM=02e8
+
+[ITEMDEF 02ef]
+DEFNAME=i_wall_tent_4
+TYPE=T_WALL
+RESOURCES=5 I_CANVAS
+CATEGORY=Buildings - Walls
+SUBSECTION=Tent Patch
+DESCRIPTION=@
+DUPELIST=02f0,02f1,02f2,02f3,02f4,0372,0373,0374,0375,0376,0377
+
+[ITEMDEF 02f0]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 02f1]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 02f2]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 02f3]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 02f4]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 02f9]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 02fa]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 02fb]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 02fc]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 02fd]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 02fe]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 02ff]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 0300]
+//dungeon wall
+DUPEITEM=0241
+
+[ITEMDEF 0314]
+DEFNAME=i_door_secret_stone_2
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (dungeon 2)
+DESCRIPTION=@ (n / sw)
+TYPE=T_DOOR
+DUPELIST=0316,0318,031a,031c,031e,0320,0322
+
+[ITEMDEF 0315]
+DEFNAME=i_door_secret_stone_2_O
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (dungeon 2)
+DESCRIPTION=@ (n / sw) open
+TYPE=T_DOOR_OPEN
+DUPELIST=0317,0319,031b,031d,031f,0321,0323
+
+[ITEMDEF 0316]
+//dungeon wall
+DUPEITEM=0314
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0317]
+//secret door
+DUPEITEM=0315
+DESCRIPTION=@
+
+[ITEMDEF 0318]
+//dungeon wall
+DUPEITEM=0314
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 0319]
+//secret door
+DUPEITEM=0315
+DESCRIPTION=@
+
+[ITEMDEF 031a]
+//dungeon wall
+DUPEITEM=0314
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 031b]
+//secret door
+DUPEITEM=0315
+DESCRIPTION=@
+
+[ITEMDEF 031c]
+//dungeon wall
+DUPEITEM=0314
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 031d]
+//secret door
+DUPEITEM=0315
+DESCRIPTION=@
+
+[ITEMDEF 031e]
+//dungeon wall
+DUPEITEM=0314
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 031f]
+//secret door
+DUPEITEM=0315
+DESCRIPTION=@
+
+[ITEMDEF 0320]
+//dungeon wall
+DUPEITEM=0314
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0321]
+//secret door
+DUPEITEM=0315
+DESCRIPTION=@
+
+[ITEMDEF 0322]
+//dungeon wall
+DUPEITEM=0314
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0323]
+//secret door
+DUPEITEM=0315
+DESCRIPTION=@
+
+[ITEMDEF 0324]
+DEFNAME=i_door_secret_stone_3
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (stone 3)
+DESCRIPTION=@ (n / sw)
+TYPE=T_DOOR
+DUPELIST=0326,0328,032a,032c,032e,0330,0332
+
+[ITEMDEF 0325]
+DEFNAME=i_door_secret_stone_3_O
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (stone 3)
+DESCRIPTION=@ (n / sw) open
+TYPE=T_DOOR_OPEN
+DUPELIST=0327,0329,032b,032d,032f,0331,0333
+
+[ITEMDEF 0326]
+//stone wall
+DUPEITEM=0324
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0327]
+//secret door
+DUPEITEM=0325
+DESCRIPTION=@
+
+[ITEMDEF 0328]
+//stone wall
+DUPEITEM=0324
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 0329]
+//secret door
+DUPEITEM=0325
+DESCRIPTION=@
+
+[ITEMDEF 032a]
+//stone wall
+DUPEITEM=0324
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 032b]
+//secret door
+DUPEITEM=0325
+DESCRIPTION=@
+
+[ITEMDEF 032c]
+//stone wall
+DUPEITEM=0324
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 032d]
+//secret door
+DUPEITEM=0325
+DESCRIPTION=@
+
+[ITEMDEF 032e]
+//stone wall
+DUPEITEM=0324
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 032f]
+//secret door
+DUPEITEM=0325
+DESCRIPTION=@
+
+[ITEMDEF 0330]
+//stone wall
+DUPEITEM=0324
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0331]
+//secret door
+DUPEITEM=0325
+DESCRIPTION=@
+
+[ITEMDEF 0332]
+//stone wall
+DUPEITEM=0324
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0333]
+//secret door
+DUPEITEM=0325
+DESCRIPTION=@
+
+[ITEMDEF 0334]
+DEFNAME=i_door_secret_wood_1
+RESOURCES=100 I_BOARD
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (wooden 1)
+DESCRIPTION=@ (n / sw)
+TYPE=T_DOOR
+DUPELIST=0336,0338,033a,033c,033e,0340,0342
+
+[ITEMDEF 0335]
+DEFNAME=i_door_secret_wood_1_o
+RESOURCES=100 I_BOARD
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (wooden 1)
+DESCRIPTION=@ (n / sw) open
+TYPE=T_DOOR_OPEN
+DUPELIST=0337,0339,033b,033d,033f,0341,0343
+
+[ITEMDEF 0336]
+//wooden wall
+DUPEITEM=0334
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0337]
+//secret door
+DUPEITEM=0335
+DESCRIPTION=@
+
+[ITEMDEF 0338]
+//wooden wall
+DUPEITEM=0334
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 0339]
+//secret door
+DUPEITEM=0335
+DESCRIPTION=@
+
+[ITEMDEF 033a]
+//wooden wall
+DUPEITEM=0334
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 033b]
+//secret door
+DUPEITEM=0335
+DESCRIPTION=@
+
+[ITEMDEF 033c]
+//wooden wall
+DUPEITEM=0334
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 033d]
+//secret door
+DUPEITEM=0335
+DESCRIPTION=@
+
+[ITEMDEF 033e]
+//wooden wall
+DUPEITEM=0334
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 033f]
+//secret door
+DUPEITEM=0335
+DESCRIPTION=@
+
+[ITEMDEF 0340]
+//wooden wall
+DUPEITEM=0334
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0341]
+//secret door
+DUPEITEM=0335
+DESCRIPTION=@
+
+[ITEMDEF 0342]
+//wooden wall
+DUPEITEM=0334
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0343]
+//secret door
+DUPEITEM=0335
+DESCRIPTION=@
+
+[ITEMDEF 0344]
+DEFNAME=i_door_secret_wood_2
+RESOURCES=100 I_BOARD
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (wooden 2)
+DESCRIPTION=@ (n / sw)
+TYPE=T_DOOR
+DUPELIST=0346,0348,034a,034c,034e,0350,0352
+
+[ITEMDEF 0345]
+DEFNAME=i_door_secret_wood_2_o
+RESOURCES=100 I_BOARD
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (wooden 2)
+DESCRIPTION=@ (n / sw) open
+TYPE=T_DOOR_OPEN
+DUPELIST=0347,0349,034b,034d,034f,0351,0353
+
+[ITEMDEF 0346]
+//wooden wall
+DUPEITEM=0344
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0347]
+//secret door
+DUPEITEM=0345
+DESCRIPTION=@
+
+[ITEMDEF 0348]
+//wooden wall
+DUPEITEM=0344
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 0349]
+//secret door
+DUPEITEM=0345
+DESCRIPTION=@
+
+[ITEMDEF 034a]
+//wooden wall
+DUPEITEM=0344
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 034b]
+//secret door
+DUPEITEM=0345
+DESCRIPTION=@
+
+[ITEMDEF 034c]
+//wooden wall
+DUPEITEM=0344
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 034d]
+//secret door
+DUPEITEM=0345
+DESCRIPTION=@
+
+[ITEMDEF 034e]
+//wooden wall
+DUPEITEM=0344
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 034f]
+//secret door
+DUPEITEM=0345
+DESCRIPTION=@
+
+[ITEMDEF 0350]
+//wooden wall
+DUPEITEM=0344
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0351]
+//secret door
+DUPEITEM=0345
+DESCRIPTION=@
+
+[ITEMDEF 0352]
+//wooden wall
+DUPEITEM=0344
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0353]
+//secret door
+DUPEITEM=0345
+DESCRIPTION=@
+
+[ITEMDEF 0354]
+DEFNAME=i_door_secret_stone_4
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (Stone 2)
+DESCRIPTION=@ (n / sw)
+TYPE=T_DOOR
+DUPELIST=0356,0358,035a,035c,035e,0360,0362
+
+[ITEMDEF 0355]
+DEFNAME=i_door_secret_stone_4_O
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (Stone 4)
+DESCRIPTION=@ (n / sw) open
+TYPE=T_DOOR_OPEN
+DUPELIST=0357,0359,035b,035d,035f,0361,0363
+
+[ITEMDEF 0356]
+//stone wall
+DUPEITEM=0354
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0357]
+//secret door
+DUPEITEM=0355
+DESCRIPTION=@
+
+[ITEMDEF 0358]
+//stone wall
+DUPEITEM=0354
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 0359]
+//secret door
+DUPEITEM=0355
+DESCRIPTION=@
+
+[ITEMDEF 035a]
+//stone wall
+DUPEITEM=0354
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 035b]
+//secret door
+DUPEITEM=0355
+DESCRIPTION=@
+
+[ITEMDEF 035c]
+//stone wall
+DUPEITEM=0354
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 035d]
+//secret door
+DUPEITEM=0355
+DESCRIPTION=@
+
+[ITEMDEF 035e]
+//stone wall
+DUPEITEM=0354
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 035f]
+//secret door
+DUPEITEM=0355
+DESCRIPTION=@
+
+[ITEMDEF 0360]
+//stone wall
+DUPEITEM=0354
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0361]
+//secret door
+DUPEITEM=0355
+DESCRIPTION=@
+
+[ITEMDEF 0362]
+//stone wall
+DUPEITEM=0354
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0363]
+//secret door
+DUPEITEM=0355
+DESCRIPTION=@
+
+[ITEMDEF 0364]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 0365]
+//stone wall
+DUPEITEM=07a
+
+[ITEMDEF 0368]
+DEFNAME=i_wall_tent_5
+TYPE=T_WALL
+RESOURCES=100 I_CANVAS
+CATEGORY=Buildings - Walls
+SUBSECTION=Tent Wall (light gray)
+DESCRIPTION=@
+DUPELIST=0369,036a,036b,036c,036d,036e,036f,0370,0371
+
+[ITEMDEF 0369]
+//tent wall
+DUPEITEM=0368
+
+[ITEMDEF 036a]
+//tent wall
+DUPEITEM=0368
+
+[ITEMDEF 036b]
+//tent pole
+DUPEITEM=0368
+
+[ITEMDEF 036c]
+//tent wall
+DUPEITEM=0368
+
+[ITEMDEF 036d]
+//tent wall
+DUPEITEM=0368
+
+[ITEMDEF 036e]
+//tent wall
+DUPEITEM=0368
+
+[ITEMDEF 036f]
+//tent wall
+DUPEITEM=0368
+
+[ITEMDEF 0370]
+//tent wall
+DUPEITEM=0368
+
+[ITEMDEF 0371]
+//tent wall
+DUPEITEM=0368
+
+[ITEMDEF 0372]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 0373]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 0374]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 0375]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 0376]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 0377]
+//patch
+DUPEITEM=02ef
+
+[ITEMDEF 0378]
+DEFNAME=i_TENT_DAGGES
+RESOURCES=5 I_CANVAS
+CATEGORY=Buildings - Walls
+SUBSECTION=Tent Dagges
+DESCRIPTION=@
+DUPELIST=0379,037a,037b,037c,037d
+
+[ITEMDEF 0379]
+//dagges
+DUPEITEM=0378
+
+[ITEMDEF 037a]
+//dagges
+DUPEITEM=0378
+
+[ITEMDEF 037b]
+//dagges
+DUPEITEM=0378
+
+[ITEMDEF 037c]
+//dagges
+DUPEITEM=0378
+
+[ITEMDEF 037d]
+//dagges
+DUPEITEM=0378
+
+[ITEMDEF 037f]
+DEFNAME=i_wall_plaster_14
+TYPE=T_WALL
+RESOURCES=50 I_STRAW, 50 I_SAND
+CATEGORY=Buildings - Walls
+SUBSECTION=Plaster Wall 4
+DESCRIPTION=@
+DUPELIST=0380,0381,0382,0383,0384,0385,0386,0387,0388,0389,038a,038b,038c,038d,038e,038f,0390,0391,0392,0393,0394,0395,0396,0397,0398,0399,039a,039b,039c,039d,039e,039f,03a0
+
+[ITEMDEF 0380]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0381]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0382]
+//wooden post
+DUPEITEM=037f
+
+[ITEMDEF 0383]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0384]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0385]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0386]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0387]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0388]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0389]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 038a]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 038b]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 038c]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 038d]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 038e]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 038f]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0390]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0391]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0392]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0393]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0394]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0395]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0396]
+//plaster wall
+DUPEITEM=037f
+
+[ITEMDEF 0397]
+//archway
+DUPEITEM=037f
+
+[ITEMDEF 0398]
+//archway
+DUPEITEM=037f
+
+[ITEMDEF 0399]
+//archway
+DUPEITEM=037f
+
+[ITEMDEF 039a]
+//archway
+DUPEITEM=037f
+
+[ITEMDEF 039b]
+//archway
+DUPEITEM=037f
+
+[ITEMDEF 039c]
+//wooden beam
+DUPEITEM=037f
+
+[ITEMDEF 039d]
+//wooden beam
+DUPEITEM=037f
+
+[ITEMDEF 039e]
+//wooden beam
+DUPEITEM=037f
+
+[ITEMDEF 039f]
+//wooden beam
+DUPEITEM=037f
+
+[ITEMDEF 03a0]
+//archway
+DUPEITEM=037f
+
+[ITEMDEF 03a5]
+DEFNAME=i_PIER_1
+RESOURCES=50 i_log
+CATEGORY=Buildings - Docks
+SUBSECTION=Pier
+DESCRIPTION=@
+DUPELIST=03aa,03ab,03ac,03ad,03ae,03af,03b0
+
+[ITEMDEF 03a6]
+DEFNAME=i_PIER_2
+RESOURCES=50 I_CLOTH
+CATEGORY=Buildings - Docks
+SUBSECTION=Rope
+DESCRIPTION=@
+DUPELIST=03a7,03a8,03a9
+
+[ITEMDEF 03a7]
+//rope
+DUPEITEM=03a6
+
+[ITEMDEF 03a8]
+//rope
+DUPEITEM=03a6
+
+[ITEMDEF 03a9]
+//rope
+DUPEITEM=03a6
+
+[ITEMDEF 03aa]
+//pier
+DUPEITEM=03a5
+
+[ITEMDEF 03ab]
+//pier
+DUPEITEM=03a5
+
+[ITEMDEF 03ac]
+//pier
+DUPEITEM=03a5
+
+[ITEMDEF 03ad]
+//pier
+DUPEITEM=03a5
+
+[ITEMDEF 03ae]
+//pier
+DUPEITEM=03a5
+
+[ITEMDEF 03af]
+//pier
+DUPEITEM=03a5
+
+[ITEMDEF 03b0]
+//pier
+DUPEITEM=03a5
+
+[ITEMDEF 03b3]
+DEFNAME=i_fence_wood
+RESOURCES=100 i_log
+CATEGORY=Buildings - Fences
+SUBSECTION=Wooden Fence 1
+DESCRIPTION=@
+DUPELIST=03b4,03b5,03b6,0835,0836,0837,0838
+
+[ITEMDEF 03b4]
+//wooden fence
+DUPEITEM=03b3
+
+[ITEMDEF 03b5]
+//wooden fence
+DUPEITEM=03b3
+
+[ITEMDEF 03b6]
+//wooden post
+DUPEITEM=03b3
+
+[ITEMDEF 03b7]
+DEFNAME=i_STONE_RUIN
+RESOURCES=100 i_rock_plain
+CATEGORY=Ruins
+SUBSECTION=Stone Ruins
+DESCRIPTION=@
+DUPELIST=03b8,03b9,03ba,03bb,03bc,03bd,03bf,03c3,03c4,03c5,03c6
+
+[ITEMDEF 03b8]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03b9]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03ba]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03bb]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03bc]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03bd]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03be]
+DEFNAME=i_wall_stone_12
+TYPE=T_WALL
+RESOURCES=100 I_CANVAS
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 7
+DESCRIPTION=@
+DUPELIST=03c0,03c1,03c2,03c7,03c8,03c9,03ca
+
+[ITEMDEF 03bf]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03c0]
+//stone wall
+DUPEITEM=03be
+
+[ITEMDEF 03c1]
+//stone wall
+DUPEITEM=03be
+
+[ITEMDEF 03c2]
+//stone wall
+DUPEITEM=03be
+
+[ITEMDEF 03c3]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03c4]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03c5]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03c6]
+//stone ruins
+DUPEITEM=03b7
+
+[ITEMDEF 03c7]
+//stone wall
+DUPEITEM=03be
+
+[ITEMDEF 03c8]
+//stone wall
+DUPEITEM=03be
+
+[ITEMDEF 03c9]
+//stone wall
+DUPEITEM=03be
+
+[ITEMDEF 03ca]
+//stone wall
+DUPEITEM=03be
+
+[ITEMDEF 03cb]
+DEFNAME=i_wall_stone_13
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 8
+DESCRIPTION=@
+DUPELIST=03cc,03cd,03ce,03d3,03d4,03d5,03d6,03d7,03d8,03d9,03da,03db,03dc
+
+[ITEMDEF 03cc]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03cd]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03ce]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03cf]
+DEFNAME=i_wall_stone_14
+TYPE=T_WALL
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Walls
+SUBSECTION=Stone Wall 9
+DESCRIPTION=@
+DUPELIST=03d0,03d1,03d2,03dd,03de,03df,03e0,03e1,03e2
+
+[ITEMDEF 03d0]
+//stone wall
+DUPEITEM=03cf
+
+[ITEMDEF 03d1]
+//stone wall
+DUPEITEM=03cf
+
+[ITEMDEF 03d2]
+//stone wall
+DUPEITEM=03cf
+
+[ITEMDEF 03d3]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03d4]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03d5]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03d6]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03d7]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03d8]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03d9]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03da]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03db]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03dc]
+//stone wall
+DUPEITEM=03cb
+
+[ITEMDEF 03dd]
+//window
+DUPEITEM=03cf
+
+[ITEMDEF 03de]
+//window
+DUPEITEM=03cf
+
+[ITEMDEF 03df]
+//window
+DUPEITEM=03cf
+
+[ITEMDEF 03e0]
+//stone wall
+DUPEITEM=03cf
+
+[ITEMDEF 03e1]
+//stone wall
+DUPEITEM=03cf
+
+[ITEMDEF 03e2]
+//stone wall
+DUPEITEM=03cf
+
+[ITEMDEF 03ee]
+DEFNAME=i_stairs_stone
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Stairs
+SUBSECTION=Stone Stairs 1
+DESCRIPTION=@
+DUPELIST=03ef,03f0,03f1,03f2,03f3,03f4,03f5,03f6,03f7,03f8,03f9,03fa,03fb,03fc,03fd,03fe,03ff,0400,0401,0402
+
+[ITEMDEF 03ef]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f0]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f1]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f2]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f3]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f4]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f5]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f6]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f7]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f8]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03f9]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03fa]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03fb]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03fc]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03fd]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03fe]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 03ff]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 0400]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 0401]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 0402]
+//stone stairs
+DUPEITEM=03ee
+
+[ITEMDEF 040b]
+//unused
+CATEGORY=Ground Tiles
+SUBSECTION=Unlabelled tile
+DESCRIPTION=@
+DUPELIST=040c,040d,040e,040f,0410,0411,0412,0413,0414,0415,0416,0417,0418,0419,041a,041b,041c,041d,041e
+
+[ITEMDEF 040c]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 040d]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 040e]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 040f]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0410]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0411]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0412]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0413]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0414]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0415]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0416]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0417]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0418]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 0419]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 041a]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 041b]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 041c]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 041d]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 041e]
+//unused
+DUPEITEM=040b
+
+[ITEMDEF 041f]
+DEFNAME=i_GRUESOMESTANDARD
+RESOURCES=10 i_log, 10 I_BONE
+CATEGORY=Miscellaneous
+SUBSECTION=Orc Camp Decor
+DESCRIPTION=Gruesome Standard
+DUPELIST=0428
+
+[ITEMDEF 0420]
+//gruesome standard
+DEFNAME=i_GRUESOMESTANDARD_2
+RESOURCES=10 i_log, 10 I_BONE
+CATEGORY=Miscellaneous
+SUBSECTION=Orc Camp Decor
+DESCRIPTION=Gruesome Standard 2
+
+[ITEMDEF 0421]
+DEFNAME=i_PALISADE
+//DEFNAME-i_wall_palisade ??
+TYPE=T_WALL
+RESOURCES=50 I_LOG
+CATEGORY=Miscellaneous
+SUBSECTION=Orc Camp Decor
+DESCRIPTION=Palisade
+DUPELIST=0422,0423,0424,0425,0430,0431
+
+[ITEMDEF 0422]
+//palisade
+DUPEITEM=0421
+
+[ITEMDEF 0423]
+//palisade
+DUPEITEM=0421
+
+[ITEMDEF 0424]
+//palisade
+DUPEITEM=0421
+
+[ITEMDEF 0425]
+//palisade
+DUPEITEM=0421
+
+[ITEMDEF 0426]
+DEFNAME=i_BANNER_TATTERED
+RESOURCES=1 I_LOG, 5 I_CLOTH
+CATEGORY=Miscellaneous
+SUBSECTION=Orc Camp Decor
+DESCRIPTION=Tattered Banner
+DUPELIST=0427,0429,042a,042b,042c,042d,042e,042f
+
+[ITEMDEF 0427]
+//tattered banner
+DUPEITEM=0426
+
+[ITEMDEF 0428]
+//gruesome standard
+DUPEITEM=041f
+
+[ITEMDEF 0429]
+//gruesome standard
+DUPEITEM=0426
+
+[ITEMDEF 042a]
+//tattered banner
+DUPEITEM=0426
+
+[ITEMDEF 042b]
+//tattered banner
+DUPEITEM=0426
+
+[ITEMDEF 042c]
+//tattered banner
+DUPEITEM=0426
+
+[ITEMDEF 042d]
+//tattered banner
+DUPEITEM=0426
+
+[ITEMDEF 042e]
+//tattered banner
+DUPEITEM=0426
+
+[ITEMDEF 042f]
+//tattered banner
+DUPEITEM=0426
+
+[ITEMDEF 0430]
+//palisade
+DUPEITEM=0421
+
+[ITEMDEF 0431]
+//palisade
+DUPEITEM=0421
+
+[ITEMDEF 0432]
+DEFNAME=i_CURTAIN
+RESOURCES=10 I_CLOTH
+CATEGORY=Miscellaneous
+SUBSECTION=Orc Camp Decor
+DESCRIPTION=Curtain
+DUPELIST=0435
+
+[ITEMDEF 0433]
+DEFNAME=i_CURTAINROD
+RESOURCES=1 I_LOG
+CATEGORY=Miscellaneous
+SUBSECTION=Orc Camp Decor
+DESCRIPTION=Curtain Rod
+DUPELIST=0434
+
+[ITEMDEF 0434]
+//curtain rod
+DUPEITEM=0433
+
+[ITEMDEF 0435]
+//curtain
+DUPEITEM=0432
+
+[ITEMDEF 0438]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0439]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 043a]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 043b]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 043c]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 043d]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 043e]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 043f]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0440]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0441]
+//marble arch
+DUPEITEM=0f8
+
+[ITEMDEF 0442]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0443]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0444]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0445]
+//marble wall
+DUPEITEM=0f8
+
+[ITEMDEF 0446]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 0447]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 0448]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 0449]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 044a]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 044b]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 044c]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 044d]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 044e]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 044f]
+//arch
+DUPEITEM=0f8
+
+[ITEMDEF 0450]
+//wall
+DUPEITEM=0f8
+
+[ITEMDEF 0451]
+//wall
+DUPEITEM=0f8
+
+[ITEMDEF 0452]
+//wall
+DUPEITEM=0f8
+
+[ITEMDEF 0453]
+//wall
+DUPEITEM=0f8
+
+[ITEMDEF 0459]
+// bench - short marble bench e-w
+DEFNAME=i_BENCH_MARBLE
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=50 i_stone_marble
+WEIGHT=4
+DUPELIST=045a
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Marble Bench 1 (n)
+
+[ITEMDEF 045a]
+// bench - short marble bench n-s
+DUPEITEM=0459
+DESCRIPTION=Marble Bench 1 (w)
+
+[ITEMDEF 045b]
+// bench - short sandstone bench e-w
+DEFNAME=i_bench_sandstone
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=50 I_STONE_SAND
+WEIGHT=4
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Marble Bench 2 (n)
+DUPELIST=045c
+
+[ITEMDEF 045c]
+DESCRIPTION=Marble Bench 2 (w)
+DUPEITEM=045b
+
+[ITEMDEF 045d]
+DEFNAME=i_fireplace_sandstone
+RESOURCES=20 i_ingot_iron, 300 i_stone_sand, 25 i_stone_marble
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Sandstone Fireplace
+DESCRIPTION=@ (empty)
+DUPELIST=045e,045f,0460
+
+[ITEMDEF 045e]
+//fireplace
+DUPEITEM=045d
+
+[ITEMDEF 045f]
+//fireplace
+DUPEITEM=045d
+
+[ITEMDEF 0460]
+//stone fireplace
+DUPEITEM=045d
+
+[ITEMDEF 0461]
+DEFNAME=i_oven_sandstone
+RESOURCES=20 i_ingot_iron, 300 i_stone_sand, 25 i_stone_marble
+TYPE=T_FIRE
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Sandstone Oven
+DESCRIPTION=@
+DUPELIST=0462,0463,0464,0465,0466,046a,046b,046c,046d,046e,046f
+
+[ITEMDEF 0462]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 0463]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 0464]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 0465]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 0466]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 046a]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 046b]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 046c]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 046d]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 046e]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 046f]
+//oven
+DUPEITEM=0461
+
+[ITEMDEF 0475]
+DEFNAME=i_fireplace_sandstone_2
+RESOURCES=20 i_ingot_iron, 300 i_stone_sand, 25 i_stone_marble
+TYPE=T_FIRE
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Sandstone Fireplace
+DESCRIPTION=@ (lit)
+DUPELIST=0476,0477,0478,0479,047a,047b,047c,047d,047e,047f,0480,0482,0483,0484,0485,0486,0487,0489,048a,048b,048c,048d,048e
+
+[ITEMDEF 0476]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0477]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0478]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0479]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 047a]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 047b]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 047c]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 047d]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 047e]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 047f]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0480]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0482]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0483]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0484]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0485]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0486]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0487]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0489]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 048a]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 048b]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 048c]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 048d]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 048e]
+//fireplace
+DUPEITEM=0475
+
+[ITEMDEF 0491]
+DEFNAME=i_floor_blue
+RESOURCES=25 i_rock_plain
+CATEGORY=Buildings - Floors
+SUBSECTION=Blue Floor
+DESCRIPTION=@
+DUPELIST=0492,0493,0494,049b,04ea,04eb,04ec,04ed,04ee,04ef,04f0,04f1,04f2
+
+[ITEMDEF 0492]
+//floor tile
+DUPEITEM=0491
+
+[ITEMDEF 0493]
+//floor tile
+DUPEITEM=0491
+
+[ITEMDEF 0494]
+//floor tile
+DUPEITEM=0491
+
+[ITEMDEF 0495]
+DEFNAME=i_floor_marble
+RESOURCES=25 i_stone_marble
+CATEGORY=Buildings - Floors
+SUBSECTION=Marble Floor 1
+DESCRIPTION=@
+DUPELIST=0496,0497,0498
+
+[ITEMDEF 0496]
+//marble floor
+DUPEITEM=0495
+
+[ITEMDEF 0497]
+//marble floor
+DUPEITEM=0495
+
+[ITEMDEF 0498]
+//marble floor
+DUPEITEM=0495
+
+[ITEMDEF 049b]
+//floor tile
+DUPEITEM=0491
+
+[ITEMDEF 049c]
+DEFNAME=i_FLOOR_SLATE_GREY
+RESOURCES=25 i_stone_slate
+CATEGORY=Buildings - Floors
+SUBSECTION=Gray Slate Floor
+DESCRIPTION=@
+
+[ITEMDEF 049d]
+DEFNAME=i_paver_sandstone
+RESOURCES=25 i_stone_sand
+CATEGORY=Buildings - Floors
+SUBSECTION=Sandstone Pavers
+DESCRIPTION=@
+DUPELIST=049e,049f,04a0
+
+[ITEMDEF 049e]
+//sandstone paver
+DUPEITEM=049d
+
+[ITEMDEF 049f]
+//sandstone paver
+DUPEITEM=049d
+
+[ITEMDEF 04a0]
+//sandstone paver
+DUPEITEM=049d
+
+[ITEMDEF 04a1]
+DEFNAME=i_WOOD_PLANK
+RESOURCES=25 I_BOARD
+CATEGORY=Buildings - Floors
+SUBSECTION=Wooden Planks (light)
+DESCRIPTION=@
+DUPELIST=04a2,04a3,04a4,04c6,04c7,04c8,04c9,04ca,04cb,04cc,04cd,04ce,04cf,04d0,04d1,04d2,04d3,04d4,04d5,04d6,04d7,04d8,04d9,04da,04db,04dc,04dd,04de,04df,04e0,04e1
+
+[ITEMDEF 04a2]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04a3]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04a4]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04a5]
+DEFNAME=i_floor_wood
+RESOURCES=25 I_BOARD
+CATEGORY=Buildings - Floors
+SUBSECTION=Wooden Boards
+DESCRIPTION=@
+DUPELIST=04a6,04a7,04a8,04a9,04aa,04ab,04ac,04ad,04ae,04af,04b0,04b1,04b2,04b3,04b4,04b5,04b6,04b7,04b8,04b9,04ba,04bb,04bc,04bd,04be,04bf,04c0
+
+[ITEMDEF 04a6]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04a7]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04a8]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04a9]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04aa]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04ab]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04ac]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04ad]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04ae]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04af]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b0]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b1]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b2]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b3]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b4]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b5]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b6]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b7]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b8]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04b9]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04ba]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04bb]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04bc]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04bd]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04be]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04bf]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04c0]
+//wooden boards
+DUPEITEM=04a5
+
+[ITEMDEF 04c1]
+DEFNAME=i_floor_wood_primitive
+RESOURCES=25 I_LOG
+CATEGORY=Buildings - Floors
+SUBSECTION=Primitive Wooden Logs (green)
+DESCRIPTION=@
+DUPELIST=04c2,04c3,04c4,04c5,0504,0505,0506,0507,0508,0509,050a
+
+[ITEMDEF 04c2]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 04c3]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 04c4]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 04c5]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 04c6]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04c7]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04c8]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04c9]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04ca]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04cb]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04cc]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04cd]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04ce]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04cf]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d0]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d1]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d2]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d3]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d4]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d5]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d6]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d7]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d8]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04d9]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04da]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04db]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04dc]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04dd]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04de]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04df]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04e0]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04e1]
+//wooden planks
+DUPEITEM=04a1
+
+[ITEMDEF 04e2]
+DEFNAME=i_floor_flagstone_red
+//DEFNAME2=i_RED_FLAGSTONE_FLOOR
+RESOURCES=25 I_flagstone_RED
+CATEGORY=Buildings - Floors
+SUBSECTION=Flagstones (Dark Red)
+DESCRIPTION=@
+DUPELIST=04e3,04e4,04e5,04e6,04e7,04e8,04e9,0537,0538,0539,053a
+
+[ITEMDEF 04e3]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 04e4]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 04e5]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 04e6]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 04e7]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 04e8]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 04e9]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 04ea]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04eb]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04ec]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04ed]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04ee]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04ef]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04f0]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04f1]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04f2]
+//blue tiles
+DUPEITEM=0491
+
+[ITEMDEF 04f3]
+DEFNAME=i_FLOOR_STONE_RED
+RESOURCES=25 I_STONE_RED
+CATEGORY=Buildings - Floors
+SUBSECTION=Red Floor
+DESCRIPTION=@
+DUPELIST=04f4,04f5,04f6,04f7,04f8,04f9,04fa,04fb
+
+[ITEMDEF 04f4]
+//red tiles
+DUPEITEM=04f3
+
+[ITEMDEF 04f5]
+//red tiles
+DUPEITEM=04f3
+
+[ITEMDEF 04f6]
+//red tiles
+DUPEITEM=04f3
+
+[ITEMDEF 04f7]
+//red tiles
+DUPEITEM=04f3
+
+[ITEMDEF 04f8]
+//red tiles
+DUPEITEM=04f3
+
+[ITEMDEF 04f9]
+//red tiles
+DUPEITEM=04f3
+
+[ITEMDEF 04fa]
+//red tiles
+DUPEITEM=04f3
+
+[ITEMDEF 04fb]
+//red tiles
+DUPEITEM=04f3
+
+[ITEMDEF 04fc]
+DEFNAME=i_FLOOR_FLAGSTONE_GRAY
+//DEFNAME2=i_GRAY_FLAGSTONE_FLOOR
+RESOURCES=25 I_flagstone_GRAY
+CATEGORY=Buildings - Floors
+SUBSECTION=Flagstones (gray)
+DESCRIPTION=@
+DUPELIST=04fd,04fe,04ff
+
+[ITEMDEF 04fd]
+//flagstones
+DUPEITEM=04fc
+
+[ITEMDEF 04fe]
+//flagstones
+DUPEITEM=04fc
+
+[ITEMDEF 04ff]
+//flagstones
+DUPEITEM=04fc
+
+[ITEMDEF 0500]
+DEFNAME=i_FLOOR_SANDSTONE
+RESOURCES=25 i_stone_sand
+CATEGORY=Buildings - Floors
+SUBSECTION=Flagstones (sandstone)
+DESCRIPTION=@
+DUPELIST=0501,0502,0503
+
+[ITEMDEF 0501]
+//flagstones
+DUPEITEM=0500
+
+[ITEMDEF 0502]
+//flagstones
+DUPEITEM=0500
+
+[ITEMDEF 0503]
+//flagstones
+DUPEITEM=0500
+
+[ITEMDEF 0504]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 0505]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 0506]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 0507]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 0508]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 0509]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 050a]
+//wooden logs
+DUPEITEM=04c1
+
+[ITEMDEF 050b]
+DEFNAME=i_FLOOR_WOOD_LOG
+RESOURCES=25 I_LOG
+CATEGORY=Buildings - Floors
+SUBSECTION=Primitive Logs (gray)
+DESCRIPTION=@
+DUPELIST=050c
+
+[ITEMDEF 050c]
+//wooden logs
+DUPEITEM=050b
+
+[ITEMDEF 050d]
+DEFNAME=i_floor_marble_2
+RESOURCES=25 i_stone_marble
+CATEGORY=Buildings - Floors
+SUBSECTION=Marble Floor 2
+DESCRIPTION=@
+DUPELIST=050e
+
+[ITEMDEF 050e]
+//white marble
+DUPEITEM=050d
+
+[ITEMDEF 050f]
+DEFNAME=i_floor_marble_3
+RESOURCES=25 i_stone_marble
+CATEGORY=Buildings - Floors
+SUBSECTION=Marble Floor 3
+DESCRIPTION=@
+DUPELIST=0510
+
+[ITEMDEF 0510]
+//marble floor
+DUPEITEM=050f
+
+[ITEMDEF 0511]
+DEFNAME=i_floor_marble_4
+RESOURCES=25 i_stone_marble
+CATEGORY=Buildings - Floors
+SUBSECTION=Marble Floor 4
+DESCRIPTION=@
+DUPELIST=0512
+
+[ITEMDEF 0512]
+//marble floor
+DUPEITEM=0511
+
+[ITEMDEF 0513]
+DEFNAME=i_floor_marble_5
+RESOURCES=25 i_stone_marble
+CATEGORY=Buildings - Floors
+SUBSECTION=Marble Floor 5
+DESCRIPTION=@
+DUPELIST=0514
+
+[ITEMDEF 0514]
+//marble floor
+DUPEITEM=0513
+
+[ITEMDEF 0515]
+DEFNAME=i_FLOOR_COBBLESTONE
+RESOURCES=25 I_STONE_COBBLE
+CATEGORY=Buildings - Floors
+SUBSECTION=Cobblestones
+DESCRIPTION=@
+DUPELIST=0516,0517,0518
+
+[ITEMDEF 0516]
+//cobblestones
+DUPEITEM=0515
+
+[ITEMDEF 0517]
+//cobblestones
+DUPEITEM=0515
+
+[ITEMDEF 0518]
+//cobblestones
+DUPEITEM=0515
+
+[ITEMDEF 0519]
+DEFNAME=i_PAVER_STONE
+RESOURCES=25 i_rock_plain
+CATEGORY=Buildings - Floors
+SUBSECTION=Stone Pavers
+DESCRIPTION=@
+DUPELIST=051a,051b,051c,051d,051e,051f,0520,0521,0522,0523,0524
+
+[ITEMDEF 051a]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 051b]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 051c]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 051d]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 051e]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 051f]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 0520]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 0521]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 0522]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 0523]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 0524]
+//stone pavers
+DUPEITEM=0519
+
+[ITEMDEF 0525]
+DEFNAME=i_FLOOR_SANDSTONE_2
+RESOURCES=25 i_stone_sand
+CATEGORY=Buildings - Floors
+SUBSECTION=Sandstone Floor (light)
+DESCRIPTION=@
+DUPELIST=0526,0527,0528,0529,052a,052b,052c
+
+[ITEMDEF 0526]
+//sandstone floor
+DUPEITEM=0525
+
+[ITEMDEF 0527]
+//sandstone floor
+DUPEITEM=0525
+
+[ITEMDEF 0528]
+//sandstone floor
+DUPEITEM=0525
+
+[ITEMDEF 0529]
+//sandstone floor
+DUPEITEM=0525
+
+[ITEMDEF 052a]
+//sandstone floor
+DUPEITEM=0525
+
+[ITEMDEF 052b]
+//sandstone floor
+DUPEITEM=0525
+
+[ITEMDEF 052c]
+//sandstone floor
+DUPEITEM=0525
+
+[ITEMDEF 052f]
+DEFNAME=i_FLOOR_SANDSTONE_3
+RESOURCES=25 i_stone_sand
+CATEGORY=Buildings - Floors
+SUBSECTION=Sandstone Floor (dark)
+DESCRIPTION=@
+DUPELIST=0530,0531,0532,0533,0534,0535,0536
+
+[ITEMDEF 0530]
+//sandstone floor
+DUPEITEM=052f
+
+[ITEMDEF 0531]
+//sandstone floor
+DUPEITEM=052f
+
+[ITEMDEF 0532]
+//sandstone floor
+DUPEITEM=052f
+
+[ITEMDEF 0533]
+//sandstone floor
+DUPEITEM=052f
+
+[ITEMDEF 0534]
+//sandstone floor
+DUPEITEM=052f
+
+[ITEMDEF 0535]
+//sandstone floor
+DUPEITEM=052f
+
+[ITEMDEF 0536]
+//sandstone floor
+DUPEITEM=052f
+
+[ITEMDEF 0537]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 0538]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 0539]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 053a]
+//bricks
+DUPEITEM=04e2
+
+[ITEMDEF 053b]
+//cave floor
+CATEGORY=Buildings - Floors
+SUBSECTION=Cave Floor
+DESCRIPTION=Center
+DUPELIST=053c,053d,053e,053f
+
+[ITEMDEF 053c]
+//cave floor
+DUPEITEM=053b
+
+[ITEMDEF 053d]
+//cave floor
+DUPEITEM=053b
+
+[ITEMDEF 053e]
+//cave floor
+DUPEITEM=053b
+
+[ITEMDEF 053f]
+//cave floor
+DUPEITEM=053b
+
+[ITEMDEF 0540]
+//cave floor (edge)
+TYPE=T_ROCK
+CATEGORY=Buildings - Floors
+SUBSECTION=Cave Floor
+DESCRIPTION=Edge
+DUPELIST=0541,0542,0543,0544,0545,0546,0547,0548,0549,054a,054b,054c,054d,054e,054f,0551,0552,0553,056a
+
+[ITEMDEF 0541]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0542]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0543]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0544]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0545]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0546]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0547]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0548]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0549]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 054a]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 054b]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 054c]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 054d]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 054e]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 054f]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0550]
+DEFNAME=i_ROOF_STONE
+TYPE=t_roof
+RESOURCES=25 i_rock_plain
+CATEGORY=Buildings - Roofs
+SUBSECTION=Stone Roof 1
+DESCRIPTION=@
+DUPELIST=0558,0559,055a,055b,056b,056c,056d,056e,056f,0570,0571,0572,0573,0574,0575,0576,0577,0578,05ef,062b,062c,062d,062e,0637,0638,0639,063a,0652,0653,065a,065b,065c,065d
+
+[ITEMDEF 0551]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0552]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0553]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 0554]
+DEFNAME=i_ROOF_STONE_2
+TYPE=t_roof
+RESOURCES=25 i_rock_plain
+CATEGORY=Buildings - Roofs
+SUBSECTION=Stone Roof 2
+DESCRIPTION=@
+DUPELIST=0555,0556,0557,055c,055d,055e,055f,0560,0561,0562,0563,0564,0565,0566,0567,0568,0569,062f,0630,0631,0632,0656,0657
+
+[ITEMDEF 0555]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0556]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0557]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0558]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0559]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 055a]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 055b]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 055c]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 055d]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 055e]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 055f]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0560]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0561]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0562]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0563]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0564]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0565]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0566]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0567]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0568]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0569]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 056a]
+//cave floor
+DUPEITEM=0540
+
+[ITEMDEF 056b]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 056c]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 056d]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 056e]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 056f]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0570]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0571]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0572]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0573]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0574]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0575]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0576]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0577]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0578]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0579]
+DEFNAME=i_ROOF_STONE_3
+TYPE=t_roof
+RESOURCES=25 i_rock_plain
+CATEGORY=Buildings - Roofs
+SUBSECTION=Stone Roof 3
+DESCRIPTION=@
+DUPELIST=057a,057b,057c,057d,057e,063b,063c,063d,063e,0654,0655
+
+[ITEMDEF 057a]
+//stone roof
+DUPEITEM=0579
+
+[ITEMDEF 057b]
+//stone roof
+DUPEITEM=0579
+
+[ITEMDEF 057c]
+//stone roof
+DUPEITEM=0579
+
+[ITEMDEF 057d]
+//stone roof
+DUPEITEM=0579
+
+[ITEMDEF 057e]
+//stone roof
+DUPEITEM=0579
+
+[ITEMDEF 057f]
+DEFNAME=i_ROOF_SLATE
+TYPE=t_roof
+RESOURCES=25 i_stone_slate
+CATEGORY=Buildings - Roofs
+SUBSECTION=Slate Roof 1
+DESCRIPTION=@
+DUPELIST=0580,0581,0582,0583,0584,0585,0658,0659
+
+[ITEMDEF 0580]
+//slate roof
+DUPEITEM=057f
+
+[ITEMDEF 0581]
+//slate roof
+DUPEITEM=057f
+
+[ITEMDEF 0582]
+//slate roof
+DUPEITEM=057f
+
+[ITEMDEF 0583]
+//slate roof
+DUPEITEM=057f
+
+[ITEMDEF 0584]
+//slate roof
+DUPEITEM=057f
+
+[ITEMDEF 0585]
+//slate roof
+DUPEITEM=057f
+
+[ITEMDEF 0586]
+DEFNAME=i_ROOF_PALMFROND
+TYPE=t_roof
+RESOURCES3=25 I_PALMFROND
+CATEGORY=Buildings - Roofs
+SUBSECTION=Palm Frond Roof
+DESCRIPTION=@
+DUPELIST=0587,0588,0589,058a,058b,058c,058d,058e,058f,0590,0591,0592,0593,0594,05d1,05d2,05d3,05d4,05d6,05d7,05d8,05d9,05da,05db,05dc,05dd,05de,05df,05e0,05e1,05e2,05e3,05e4,05e5,05e6,05e7,05e8,05e9,05ea,05eb,05ec
+
+[ITEMDEF 0587]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 0588]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 0589]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 058a]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 058b]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 058c]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 058d]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 058e]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 058f]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 0590]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 0591]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 0592]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 0593]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 0594]
+//palm fronds
+DUPEITEM=0586
+
+[ITEMDEF 0595]
+DEFNAME=i_ROOF_SLATE_2
+TYPE=t_roof
+RESOURCES=25 i_stone_slate
+CATEGORY=Buildings - Roofs
+SUBSECTION=Slate Roof 2
+DESCRIPTION=@
+DUPELIST=0596,0597,0598,0599,059a,059b,059c,059d,059e,059f,05a0,05a1,05a2,05a3
+
+[ITEMDEF 0596]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 0597]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 0598]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 0599]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 059a]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 059b]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 059c]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 059d]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 059e]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 059f]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 05a0]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 05a1]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 05a2]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 05a3]
+//slate roof
+DUPEITEM=0595
+
+[ITEMDEF 05a4]
+DEFNAME=i_ROOF_THATCH
+TYPE=t_roof
+RESOURCES=25 I_HAY
+CATEGORY=Buildings - Roofs
+SUBSECTION=Thatch Roof
+DESCRIPTION=@
+DUPELIST=05a5,05a6,05a7,05a8,05a9,05aa,05ab,05ac,05ad,05ae,05af,05b0,05b1,05b2
+
+[ITEMDEF 05a5]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05a6]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05a7]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05a8]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05a9]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05aa]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05ab]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05ac]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05ad]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05ae]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05af]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05b0]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05b1]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05b2]
+//thatch roof
+DUPEITEM=05a4
+
+[ITEMDEF 05b3]
+DEFNAME=i_ROOF_TILE
+TYPE=t_roof
+RESOURCES=25 i_rock_plain
+CATEGORY=Buildings - Roofs
+SUBSECTION=Tile Roof
+DESCRIPTION=@
+DUPELIST=05b4,05b5,05b6,05b7,05b8,05b9,05ba,05bb,05bc,05bd,05be,05bf,05c0,05c1,06fd,06fe,06ff,0700
+
+[ITEMDEF 05b4]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05b5]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05b6]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05b7]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05b8]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05b9]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05ba]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05bb]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05bc]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05bd]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05be]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05bf]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05c0]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05c1]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 05c2]
+DEFNAME=i_SHINGLE_WOODEN
+RESOURCES=25 I_BOARD
+CATEGORY=Buildings - Roofs
+SUBSECTION=Wooden Shingles
+DESCRIPTION=@
+DUPELIST=05c3,05c4,05c5,05c6,05c7,05c8,05c9,05ca,05cb,05cc,05cd,05ce,05cf,05d0
+
+[ITEMDEF 05c3]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05c4]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05c5]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05c6]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05c7]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05c8]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05c9]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05ca]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05cb]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05cc]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05cd]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05ce]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05cf]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05d0]
+//wooden shingles
+DUPEITEM=05c2
+
+[ITEMDEF 05d1]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05d2]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05d3]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05d4]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05d6]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05d7]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05d8]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05d9]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05da]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05db]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05dc]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05dd]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05de]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05df]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e0]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e1]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e2]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e3]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e4]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e5]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e6]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e7]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e8]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05e9]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05ea]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05eb]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05ec]
+//palm frond roof
+DUPEITEM=0586
+
+[ITEMDEF 05ef]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 05f0]
+DEFNAME=i_ROOF_LOG
+TYPE=t_roof
+RESOURCES=25 I_LOG
+CATEGORY=Buildings - Roofs
+SUBSECTION=Log Roof
+DESCRIPTION=@
+DUPELIST=05f1,05f2,05f3,05f4,05f5,05f6,05f7,05f8,05f9,05fa,05fb,05fc,05fd,05fe
+
+[ITEMDEF 05f1]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05f2]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05f3]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05f4]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05f5]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05f6]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05f7]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05f8]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05f9]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05fa]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05fb]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05fc]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05fd]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05fe]
+//log roof
+DUPEITEM=05f0
+
+[ITEMDEF 05ff]
+DEFNAME=i_ROOF_TENT
+TYPE=t_roof
+RESOURCES=25 I_CANVAS
+CATEGORY=Buildings - Roofs
+SUBSECTION=Tent Roof
+DESCRIPTION=@
+DUPELIST=0600,0601,0602,0603,0604,0605,0606,0607,0608,0609,060a,060b,060c,060d,060e,060f,0610,0611,0612,0613,0614,0615,0616,0617,0618,0619,061a,061b,061c,061d,061e,061f,0620,0621,0622,0623,0624,0625,0626,0627,0628,0629,062a,0633,0634,0635,0636,0648,0649,064a,064b,064c,064d,064e,064f,0650,0651,065e,065f,0660,0661,0662,0663,0664,0665,0666,0667,0668,0669,066a,066b,066c,066d,066e,066f,0670,0671,0672,0673,0674
+
+[ITEMDEF 0600]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0601]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0602]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0603]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0604]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0605]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0606]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0607]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0608]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0609]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 060a]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 060b]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 060c]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 060d]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 060e]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 060f]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0610]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0611]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0612]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0613]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0614]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0615]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0616]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0617]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0618]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0619]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 061a]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 061b]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 061c]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 061d]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 061e]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 061f]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0620]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0621]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0622]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0623]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0624]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0625]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0626]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0627]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0628]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0629]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 062a]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 062b]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 062c]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 062d]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 062e]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 062f]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0630]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0631]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0632]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0633]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0634]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0635]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0636]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0637]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0638]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0639]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 063a]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 063b]
+//marble roof
+DUPEITEM=0579
+
+[ITEMDEF 063c]
+//marble roof
+DUPEITEM=0579
+
+[ITEMDEF 063d]
+//marble roof
+DUPEITEM=0579
+
+[ITEMDEF 063e]
+//marble roof
+DUPEITEM=0579
+
+[ITEMDEF 0648]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0649]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 064a]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 064b]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 064c]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 064d]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 064e]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 064f]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0650]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0651]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0652]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0653]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 0654]
+//stone roof
+DUPEITEM=0579
+
+[ITEMDEF 0655]
+//stone roof
+DUPEITEM=0579
+
+[ITEMDEF 0656]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0657]
+//stone roof
+DUPEITEM=0554
+
+[ITEMDEF 0658]
+//slate roof
+DUPEITEM=057f
+
+[ITEMDEF 0659]
+//slate roof
+DUPEITEM=057f
+
+[ITEMDEF 065a]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 065b]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 065c]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 065d]
+//stone roof
+DUPEITEM=0550
+
+[ITEMDEF 065e]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 065f]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0660]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0661]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0662]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0663]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0664]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0665]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0666]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0667]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0668]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0669]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 066a]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 066b]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 066c]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 066d]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 066e]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 066f]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0670]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0671]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0672]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0673]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0674]
+//tent roof
+DUPEITEM=05ff
+
+[ITEMDEF 0675]
+DEFNAME=i_door_metal
+RESOURCES=40 i_ingot_iron
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Metal Door 1
+DESCRIPTION=@ (n / sw)
+DUPELIST=0677,0679,067b,067d,067f,0681,0683
+
+[ITEMDEF 0676]
+TYPE=T_DOOR_OPEN
+DESCRIPTION=@
+DUPELIST=0678,067a,067c,067e,0680,0682,0684
+
+[ITEMDEF 0677]
+DUPEITEM=0675
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0678]
+DUPEITEM=0676
+DESCRIPTION=@
+
+[ITEMDEF 0679]
+DUPEITEM=0675
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 067a]
+DUPEITEM=0676
+DESCRIPTION=@
+
+[ITEMDEF 067b]
+DUPEITEM=0675
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 067c]
+DUPEITEM=0676
+DESCRIPTION=@
+
+[ITEMDEF 067d]
+DUPEITEM=0675
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 067e]
+DUPEITEM=0676
+DESCRIPTION=@
+
+[ITEMDEF 067f]
+DUPEITEM=0675
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 0680]
+DUPEITEM=0676
+DESCRIPTION=@
+
+[ITEMDEF 0681]
+DUPEITEM=0675
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0682]
+DUPEITEM=0676
+DESCRIPTION=@
+
+[ITEMDEF 0683]
+DUPEITEM=0675
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0684]
+DUPEITEM=0676
+DESCRIPTION=@
+
+[ITEMDEF 0685]
+DEFNAME=i_door_metal_bar
+RESOURCES=30 i_ingot_iron
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Barred Metal Door
+DESCRIPTION=@ (n / sw)
+DUPELIST=0687,0689,068b,068d,068f,0691,0693
+
+[ITEMDEF 0686]
+//barred metal door
+TYPE=T_DOOR_OPEN
+DESCRIPTION=@
+DUPELIST=0688,068a,068c,068e,0690,0692,0694
+
+[ITEMDEF 0687]
+//barred metal door
+DUPEITEM=0685
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0688]
+//barred metal door
+DUPEITEM=0686
+DESCRIPTION=@
+
+[ITEMDEF 0689]
+//barred metal door
+DUPEITEM=0685
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 068a]
+//barred metal door
+DUPEITEM=0686
+DESCRIPTION=@
+
+[ITEMDEF 068b]
+//barred metal door
+DUPEITEM=0685
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 068c]
+//barred metal door
+DUPEITEM=0686
+DESCRIPTION=@
+
+[ITEMDEF 068d]
+//barred metal door
+DUPEITEM=0685
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 068e]
+//barred metal door
+DUPEITEM=0686
+DESCRIPTION=@
+
+[ITEMDEF 068f]
+//barred metal door
+DUPEITEM=0685
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 0690]
+//barred metal door
+DUPEITEM=0686
+DESCRIPTION=@
+
+[ITEMDEF 0691]
+//barred metal door
+DUPEITEM=0685
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 0692]
+//barred metal door
+DUPEITEM=0686
+DESCRIPTION=@
+
+[ITEMDEF 0693]
+//barred metal door
+DUPEITEM=0685
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 0694]
+//barred metal door
+DUPEITEM=0686
+DESCRIPTION=@
+
+[ITEMDEF 0695]
+DEFNAME=i_door_rattan
+RESOURCES=15 i_plant_grasses, 15 I_STRAW
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Rattan Door
+DESCRIPTION=@ (n / sw)
+DUPELIST=0697,0699,069b,069d,069f,06a1,06a3
+
+[ITEMDEF 0696]
+TYPE=T_DOOR_OPEN
+DESCRIPTION=@
+DUPELIST=0698,069a,069c,069e,06a0,06a2,06a4
+
+[ITEMDEF 0697]
+DUPEITEM=0695
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 0698]
+DUPEITEM=0696
+DESCRIPTION=@
+
+[ITEMDEF 0699]
+DUPEITEM=0695
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 069a]
+DUPEITEM=0696
+DESCRIPTION=@
+
+[ITEMDEF 069b]
+DUPEITEM=0695
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 069c]
+DUPEITEM=0696
+DESCRIPTION=@
+
+[ITEMDEF 069d]
+DUPEITEM=0695
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 069e]
+DUPEITEM=0696
+DESCRIPTION=@
+
+[ITEMDEF 069f]
+DUPEITEM=0695
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 06a0]
+DUPEITEM=0696
+DESCRIPTION=@
+
+[ITEMDEF 06a1]
+DUPEITEM=0695
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 06a2]
+DUPEITEM=0696
+DESCRIPTION=@
+
+[ITEMDEF 06a3]
+DUPEITEM=0695
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 06a4]
+DUPEITEM=0696
+DESCRIPTION=@
+
+[ITEMDEF 06a5]
+DEFNAME=i_door_wood
+RESOURCES=25 I_BOARD
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Wooden Door 1
+DESCRIPTION=@ (n / sw)
+DUPELIST=06a7,06a9,06ab,06ad,06af,06b1,06b3
+
+ON=@DCLICK
+IF <LINK.TYPE>=2001
+LINK.AMOUNT=<SRC.TARG.LINK.AMOUNT>+1
+RETURN 0
+ENDIF
+IF (<LINK.TYPE>==2000)
+LINK.AMOUNT=<SRC.TARG.LINK.AMOUNT>+1
+TYPE=3
+RETURN 0
+ENDIF
+RETURN 0
+
+[ITEMDEF 06a6]
+//wooden door
+TYPE=T_DOOR_OPEN
+DUPELIST=06a8,06aa,06ac,06ae,06b0,06b2,06b4
+
+[ITEMDEF 06a7]
+//wooden door
+DUPEITEM=06a5
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 06a8]
+//wooden door
+DUPEITEM=06a6
+DESCRIPTION=@
+
+[ITEMDEF 06a9]
+//wooden door
+DUPEITEM=06a5
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 06aa]
+//wooden door
+DUPEITEM=06a6
+DESCRIPTION=@
+
+[ITEMDEF 06ab]
+//wooden door
+DUPEITEM=06a5
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 06ac]
+//wooden door
+DUPEITEM=06a6
+DESCRIPTION=@
+
+[ITEMDEF 06ad]
+//wooden door
+DUPEITEM=06a5
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 06ae]
+//wooden door
+DUPEITEM=06a6
+DESCRIPTION=@
+
+[ITEMDEF 06af]
+//wooden door
+DUPEITEM=06a5
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 06b0]
+//wooden door
+DUPEITEM=06a6
+DESCRIPTION=@
+
+[ITEMDEF 06b1]
+//wooden door
+DUPEITEM=06a5
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 06b2]
+//wooden door
+DUPEITEM=06a6
+DESCRIPTION=@
+
+[ITEMDEF 06b3]
+//wooden door
+DUPEITEM=06a5
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 06b4]
+//wooden door
+DUPEITEM=06a6
+DESCRIPTION=@
+
+[ITEMDEF 06b5]
+DEFNAME=i_door_wood_4
+RESOURCES=25 I_BOARD
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Wooden Door 2
+DESCRIPTION=@ (n / sw)
+DUPELIST=06b7,06b9,06bb,06bd,06bf,06c1,06c3
+
+[ITEMDEF 06b6]
+//wooden door
+TYPE=T_DOOR_OPEN
+DESCRIPTION=@
+DUPELIST=06b8,06ba,06bc,06be,06c0,06c2,06c4
+
+[ITEMDEF 06b7]
+//wooden door
+DUPEITEM=06b5
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 06b8]
+//wooden door
+DUPEITEM=06b6
+DESCRIPTION=@
+
+[ITEMDEF 06b9]
+//wooden door
+DUPEITEM=06b5
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 06ba]
+//wooden door
+DUPEITEM=06b6
+DESCRIPTION=@
+
+[ITEMDEF 06bb]
+//wooden door
+DUPEITEM=06b5
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 06bc]
+//wooden door
+DUPEITEM=06b6
+DESCRIPTION=@
+
+[ITEMDEF 06bd]
+//wooden door
+DUPEITEM=06b5
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 06be]
+//wooden door
+DUPEITEM=06b6
+DESCRIPTION=@
+
+[ITEMDEF 06bf]
+//wooden door
+DUPEITEM=06b5
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 06c0]
+//wooden door
+DUPEITEM=06b6
+DESCRIPTION=@
+
+[ITEMDEF 06c1]
+//wooden door
+DUPEITEM=06b5
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 06c2]
+//wooden door
+DUPEITEM=06b6
+DESCRIPTION=@
+
+[ITEMDEF 06c3]
+//wooden door
+DUPEITEM=06b5
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 06c4]
+//wooden door
+DUPEITEM=06b6
+DESCRIPTION=@
+
+[ITEMDEF 06c5]
+DEFNAME=i_door_metal_2
+RESOURCES=45 i_ingot_iron
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Metal Door 2
+DESCRIPTION=@ (n / sw)
+DUPELIST=06c7,06c9,06cb,06cd,06cf,06d1,06d3
+
+ON=@DCLICK
+IF <LINK.TYPE>=2001
+LINK.AMOUNT=<SRC.TARG.LINK.AMOUNT>+1
+RETURN 0
+ENDIF
+IF (<LINK.TYPE>==2000)
+LINK.AMOUNT=<SRC.TARG.LINK.AMOUNT>+1
+TYPE=3
+RETURN 0
+ENDIF
+RETURN 0
+
+[ITEMDEF 06c6]
+//metal door
+TYPE=T_DOOR_OPEN
+DESCRIPTION=@
+DUPELIST=06c8,06ca,06cc,06ce,06d0,06d2,06d4
+
+[ITEMDEF 06c7]
+//metal door
+DUPEITEM=06c5
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 06c8]
+//metal door
+DUPEITEM=06c6
+DESCRIPTION=@
+
+[ITEMDEF 06c9]
+//metal door
+DUPEITEM=06c5
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 06ca]
+//metal door
+DUPEITEM=06c6
+DESCRIPTION=@
+
+[ITEMDEF 06cb]
+//metal door
+DUPEITEM=06c5
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 06cc]
+//metal door
+DUPEITEM=06c6
+DESCRIPTION=@
+
+[ITEMDEF 06cd]
+//metal door
+DUPEITEM=06c5
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 06ce]
+//metal door
+DUPEITEM=06c6
+DESCRIPTION=@
+
+[ITEMDEF 06cf]
+//metal door
+DUPEITEM=06c5
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 06d0]
+//metal door
+DUPEITEM=06c6
+DESCRIPTION=@
+
+[ITEMDEF 06d1]
+//metal door
+DUPEITEM=06c5
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 06d2]
+//metal door
+DUPEITEM=06c6
+DESCRIPTION=@
+
+[ITEMDEF 06d3]
+//metal door
+DUPEITEM=06c5
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 06d4]
+//metal door
+DUPEITEM=06c6
+DESCRIPTION=@
+
+[ITEMDEF 06d5]
+DEFNAME=i_door_wood_2
+RESOURCES=25 I_BOARD
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Wooden Door 3
+DESCRIPTION=@ (n / sw)
+DUPELIST=06d7,06d9,06db,06dd,06df,06e1,06e3
+
+[ITEMDEF 06d6]
+//wooden door
+TYPE=T_DOOR_OPEN
+DESCRIPTION=@
+DUPELIST=06d8,06da,06dc,06de,06e0,06e2,06e4
+
+[ITEMDEF 06d7]
+//wooden door
+DUPEITEM=06d5
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 06d8]
+//wooden door
+DUPEITEM=06d6
+DESCRIPTION=@
+
+[ITEMDEF 06d9]
+//wooden door
+DUPEITEM=06d5
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 06da]
+//wooden door
+DUPEITEM=06d6
+DESCRIPTION=@
+
+[ITEMDEF 06db]
+//wooden door
+DUPEITEM=06d5
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 06dc]
+//wooden door
+DUPEITEM=06d6
+DESCRIPTION=@
+
+[ITEMDEF 06dd]
+//wooden door
+DUPEITEM=06d5
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 06de]
+//wooden door
+DUPEITEM=06d6
+DESCRIPTION=@
+
+[ITEMDEF 06df]
+//wooden door
+DUPEITEM=06d5
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 06e0]
+//wooden door
+DUPEITEM=06d6
+DESCRIPTION=@
+
+[ITEMDEF 06e1]
+//wooden door
+DUPEITEM=06d5
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 06e2]
+//wooden door
+DUPEITEM=06d6
+DESCRIPTION=@
+
+[ITEMDEF 06e3]
+//wooden door
+DUPEITEM=06d5
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 06e4]
+//wooden door
+DUPEITEM=06d6
+DESCRIPTION=@
+
+[ITEMDEF 06e5]
+DEFNAME=i_door_wood_3
+RESOURCES=25 I_BOARD
+TYPE=T_DOOR
+CATEGORY=Buildings - Doors
+SUBSECTION=Wooden Door 4
+DESCRIPTION=@ (n / sw)
+DUPELIST=06e7,06e9,06eb,06ed,06ef,06f1,06f3
+
+[ITEMDEF 06e6]
+//wooden door
+TYPE=T_DOOR_OPEN
+DESCRIPTION=@
+DUPELIST=06e8,06ea,06ec,06ee,06f0,06f2,06f4
+
+[ITEMDEF 06e7]
+//wooden door
+DUPEITEM=06e5
+DESCRIPTION=@ (n / se)
+
+[ITEMDEF 06e8]
+//wooden door
+DUPEITEM=06e6
+DESCRIPTION=@
+
+[ITEMDEF 06e9]
+//wooden door
+DUPEITEM=06e5
+DESCRIPTION=@ (n / nw)
+
+[ITEMDEF 06ea]
+//wooden door
+DUPEITEM=06e6
+DESCRIPTION=@
+
+[ITEMDEF 06eb]
+//wooden door
+DUPEITEM=06e5
+DESCRIPTION=@ (n / ne)
+
+[ITEMDEF 06ec]
+//wooden door
+DUPEITEM=06e6
+DESCRIPTION=@
+
+[ITEMDEF 06ed]
+//wooden door
+DUPEITEM=06e5
+DESCRIPTION=@ (w / se)
+
+[ITEMDEF 06ee]
+//wooden door
+DUPEITEM=06e6
+DESCRIPTION=@
+
+[ITEMDEF 06ef]
+//wooden door
+DUPEITEM=06e5
+DESCRIPTION=@ (w / ne)
+
+[ITEMDEF 06f0]
+//wooden door
+DUPEITEM=06e6
+DESCRIPTION=@
+
+[ITEMDEF 06f1]
+//wooden door
+DUPEITEM=06e5
+DESCRIPTION=@ (w / sw)
+
+[ITEMDEF 06f2]
+//wooden door
+DUPEITEM=06e6
+DESCRIPTION=@
+
+[ITEMDEF 06f3]
+//wooden door
+DUPEITEM=06e5
+DESCRIPTION=@ (w / nw)
+
+[ITEMDEF 06f4]
+//wooden door
+DUPEITEM=06e6
+DESCRIPTION=@
+
+[ITEMDEF 06f5]
+DEFNAME=i_DOOR_PORTCULIS
+RESOURCES=50 i_ingot_iron
+TYPE=T_PORTCULIS
+CATEGORY=Buildings - Doors
+SUBSECTION=Portcullis
+DESCRIPTION=@
+DUPELIST=06f6
+
+[ITEMDEF 06f6]
+//portcullis
+DUPEITEM=06f5
+
+[ITEMDEF 06fd]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 06fe]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 06ff]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 0700]
+//tile roof
+DUPEITEM=05b3
+
+[ITEMDEF 0709]
+DEFNAME=i_STAIRS_MARBLE
+RESOURCES=50 i_stone_marble
+CATEGORY=Buildings - Stairs
+SUBSECTION=Marble Stairs
+DESCRIPTION=@
+
+[ITEMDEF 070a]
+DEFNAME=i_STAIRS_MARBLE_2
+RESOURCES=50 i_stone_marble
+CATEGORY=Buildings - Stairs
+SUBSECTION=Marble Stairs
+DESCRIPTION=@
+DUPELIST=070b,070c,070d
+
+[ITEMDEF 070b]
+//marble stairs
+DUPEITEM=070a
+
+[ITEMDEF 070c]
+//marble stairs
+DUPEITEM=070a
+
+[ITEMDEF 070d]
+//marble stairs
+DUPEITEM=070a
+
+[ITEMDEF 070e]
+//marble stairs
+
+[ITEMDEF 070f]
+//marble stairs
+DUPEITEM=070e
+
+[ITEMDEF 0710]
+//marble stairs
+DUPEITEM=070e
+
+[ITEMDEF 0711]
+//marble stairs
+DUPEITEM=070e
+
+[ITEMDEF 0712]
+//marble stairs
+
+[ITEMDEF 0713]
+//marble stairs
+DUPEITEM=0712
+
+[ITEMDEF 0714]
+//marble stairs
+DUPEITEM=0712
+
+[ITEMDEF 0715]
+//marble stairs
+DUPEITEM=0712
+
+[ITEMDEF 0716]
+//marble stairs
+
+[ITEMDEF 0717]
+//marble stairs
+DUPEITEM=0716
+
+[ITEMDEF 0718]
+//marble stairs
+DUPEITEM=0716
+
+[ITEMDEF 0719]
+//marble stairs
+DUPEITEM=0716
+
+[ITEMDEF 071a]
+//marble stairs
+
+[ITEMDEF 071b]
+//marble stairs
+DUPEITEM=071a
+
+[ITEMDEF 071c]
+//marble stairs
+DUPEITEM=071a
+
+[ITEMDEF 071d]
+//marble stairs
+DUPEITEM=071a
+
+[ITEMDEF 071e]
+DEFNAME=i_stairs_stone_2
+RESOURCES=50 i_rock_plain
+CATEGORY=Buildings - Stairs
+SUBSECTION=Stone Stairs 2
+DESCRIPTION=@
+
+[ITEMDEF 071f]
+//stone stairs
+
+[ITEMDEF 0720]
+DEFNAME=i_STAIRS_WOOD
+RESOURCES=50 I_BOARD
+CATEGORY=Buildings - Stairs
+SUBSECTION=Wooden Stairs (light)
+DESCRIPTION=@
+DUPELIST=0721
+
+[ITEMDEF 0721]
+//wood
+DUPEITEM=0720
+
+[ITEMDEF 0722]
+//wooden stairs
+
+[ITEMDEF 0723]
+//wooden stairs
+
+[ITEMDEF 0724]
+//wooden stairs
+
+[ITEMDEF 0725]
+//wooden stairs
+
+
+[ITEMDEF 0726]
+//wooden stairs
+
+
+[ITEMDEF 0727]
+//wooden stairs
+
+
+[ITEMDEF 0728]
+//wooden stairs
+
+
+[ITEMDEF 0729]
+//wooden stairs
+
+
+[ITEMDEF 072a]
+//wooden stairs
+
+
+[ITEMDEF 072b]
+//wooden stairs
+
+
+[ITEMDEF 072c]
+//wooden stairs
+
+
+[ITEMDEF 072d]
+//wooden stairs
+
+
+[ITEMDEF 072e]
+//wooden stairs
+
+
+[ITEMDEF 072f]
+//wooden stairs
+
+
+[ITEMDEF 0730]
+//wooden stairs
+
+
+[ITEMDEF 0731]
+//wooden stairs
+
+
+[ITEMDEF 0732]
+//wooden stairs
+
+
+[ITEMDEF 0733]
+//wooden stairs
+
+
+[ITEMDEF 0734]
+//wooden stairs
+
+
+[ITEMDEF 0735]
+//wooden stairs
+
+
+[ITEMDEF 0736]
+//stone stairs
+
+
+[ITEMDEF 0737]
+//stone stairs
+
+
+[ITEMDEF 0738]
+DEFNAME=i_STAIRS_WOOD_2
+RESOURCES=50 I_BOARD
+CATEGORY=Buildings - Stairs
+SUBSECTION=Wooden Stairs (dark)
+DESCRIPTION=@
+DUPELIST=0739,073a,073b,073c,073d,073e,073f,0740,0741,0742,0743,0744,0745,0746,0747,0748,07b3,07b4,07b5,07b6
+
+[ITEMDEF 0739]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 073a]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 073b]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 073c]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 073d]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 073e]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 073f]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0740]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0741]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0742]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0743]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0744]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0745]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0746]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0747]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0748]
+//wooden stairs
+DUPEITEM=0738
+
+[ITEMDEF 0749]
+//stone stairs
+
+
+[ITEMDEF 074a]
+//stone stairs
+
+
+[ITEMDEF 074b]
+//stone stairs
+
+
+[ITEMDEF 074c]
+//stone stairs
+
+
+[ITEMDEF 074d]
+//stone stairs
+
+
+[ITEMDEF 074e]
+//stone stairs
+
+
+[ITEMDEF 074f]
+//stone stairs
+
+
+[ITEMDEF 0750]
+DEFNAME=i_stairs_stone_5
+DEFNAME2=i_STAIRS_WOOD_3
+RESOURCES=50 i_rock_plain
+CATEGORY=Buildings - Stairs
+SUBSECTION=Stone Stairs 3
+DESCRIPTION=@
+
+[ITEMDEF 0751]
+//stone stairs
+DUPELIST=0752,0753,0754
+
+[ITEMDEF 0752]
+//stone stairs
+DUPEITEM=0751
+
+[ITEMDEF 0753]
+//stone stairs
+DUPEITEM=0751
+
+[ITEMDEF 0754]
+//stone stairs
+DUPEITEM=0751
+
+[ITEMDEF 0755]
+//stone stairs
+DUPELIST=0755,0756,0757
+
+[ITEMDEF 0756]
+//stone stairs
+DUPEITEM=0755
+
+[ITEMDEF 0757]
+//stone stairs
+DUPEITEM=0755
+
+[ITEMDEF 0758]
+//stone stairs
+DUPEITEM=0755
+
+[ITEMDEF 0759]
+//stone stairs
+DUPELIST=075a,075b,075c
+
+[ITEMDEF 075a]
+//stone stairs
+DUPEITEM=0759
+
+[ITEMDEF 075b]
+//stone stairs
+DUPEITEM=0759
+
+[ITEMDEF 075c]
+//stone stairs
+DUPEITEM=0759
+
+[ITEMDEF 075d]
+//stone stairs
+DUPELIST=075e,075f,0760
+
+[ITEMDEF 075e]
+//stone stairs
+DUPEITEM=075d
+
+[ITEMDEF 075f]
+//stone stairs
+DUPEITEM=075d
+
+[ITEMDEF 0760]
+//stone stairs
+DUPEITEM=075d
+
+[ITEMDEF 0761]
+//stone stairs
+DUPELIST=0762,0763,0764
+
+[ITEMDEF 0762]
+//stone stairs
+DUPEITEM=0761
+
+[ITEMDEF 0763]
+//stone stairs
+DUPEITEM=0761
+
+[ITEMDEF 0764]
+//stone stairs
+DUPEITEM=0761
+
+[ITEMDEF 0765]
+//stone
+DUPELIST=0766,0767,0768
+
+[ITEMDEF 0766]
+//stone
+DUPEITEM=0765
+
+[ITEMDEF 0767]
+//stone
+DUPEITEM=0765
+
+[ITEMDEF 0768]
+//stone
+DUPEITEM=0765
+
+[ITEMDEF 0769]
+DEFNAME=i_STAIRS_SANDSTONE
+RESOURCES=50 i_stone_sand
+CATEGORY=Buildings - Stairs
+SUBSECTION=Sandstone Stairs
+DESCRIPTION=@
+DUPELIST=076a,076b,076c,076d,076e,076f,0770,0771,0772,0773,0774,0775,0776,0777,0778,0779,077a,077b,077c,077d,077e,077f,0780,0781
+
+[ITEMDEF 076a]
+//sandstone
+DUPEITEM=0769
+
+[ITEMDEF 076b]
+//sandstone
+DUPEITEM=0769
+
+[ITEMDEF 076c]
+//sandstone
+DUPEITEM=0769
+
+[ITEMDEF 076d]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 076e]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 076f]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0770]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0771]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0772]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0773]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0774]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0775]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0776]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0777]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0778]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0779]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 077a]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 077b]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 077c]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 077d]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 077e]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 077f]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0780]
+//sandstone stairs
+DUPEITEM=0769
+
+[ITEMDEF 0781]
+//sandstone
+DUPEITEM=0769
+
+[ITEMDEF 0782]
+DEFNAME=i_stairs_stone_3
+RESOURCES=50 i_rock_plain
+CATEGORY=Buildings - Stairs
+SUBSECTION=Stone Stairs 4
+DESCRIPTION=@
+DUPELIST=0783,0784,0785,0786,0787,0788,0789,078a,078b,078c,078d,078e,078f,0790,0791,0792,0793,0794,0795,0796,0797,0798,0799,079a,079b,079c
+
+[ITEMDEF 0783]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0784]
+//stone
+DUPEITEM=0782
+
+[ITEMDEF 0785]
+//stone
+DUPEITEM=0782
+
+[ITEMDEF 0786]
+//stone
+DUPEITEM=0782
+
+[ITEMDEF 0787]
+//stone
+DUPEITEM=0782
+
+[ITEMDEF 0788]
+//stone
+DUPEITEM=0782
+
+[ITEMDEF 0789]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 078a]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 078b]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 078c]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 078d]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 078e]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 078f]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0790]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0791]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0792]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0793]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0794]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0795]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0796]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0797]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0798]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 0799]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 079a]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 079b]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 079c]
+//stone stairs
+DUPEITEM=0782
+
+[ITEMDEF 079d]
+DEFNAME=i_CAVE_STEP
+RESOURCES=50 i_rock_plain
+CATEGORY=Buildings - Stairs
+SUBSECTION=Cave Steps
+DESCRIPTION=@
+DUPELIST=079e,079f,07b0,07b1,07b2,07b7,07b8,07b9
+
+[ITEMDEF 079e]
+//cave steps
+DUPEITEM=079d
+
+[ITEMDEF 079f]
+//cave steps
+DUPEITEM=079d
+
+[ITEMDEF 07a0]
+//stone stairs
+
+
+[ITEMDEF 07a1]
+//stone stairs
+
+
+[ITEMDEF 07a2]
+//stone stairs
+
+
+[ITEMDEF 07a3]
+DEFNAME=i_stairs_stone_4
+RESOURCES=50 i_rock_plain
+CATEGORY=Buildings - Stairs
+SUBSECTION=Stone Stairs 5
+DESCRIPTION=@
+DUPELIST=07a4,07a5,07a6,07a7,07a8,07a9,07aa,07ab,07ac,07ad,07ae,07af
+
+[ITEMDEF 07a4]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07a5]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07a6]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07a7]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07a8]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07a9]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07aa]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07ab]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07ac]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07ad]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07ae]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07af]
+//stone stairs
+DUPEITEM=07a3
+
+[ITEMDEF 07b0]
+//cave steps
+DUPEITEM=079d
+
+[ITEMDEF 07b1]
+//cave steps
+DUPEITEM=079d
+
+[ITEMDEF 07b2]
+//cave steps
+DUPEITEM=079d
+
+[ITEMDEF 07b3]
+//wood
+DUPEITEM=0738
+
+[ITEMDEF 07b4]
+//wood
+DUPEITEM=0738
+
+[ITEMDEF 07b5]
+//wood
+DUPEITEM=0738
+
+[ITEMDEF 07b6]
+//wood
+DUPEITEM=0738
+
+[ITEMDEF 07b7]
+//cave steps
+DUPEITEM=079d
+
+[ITEMDEF 07b8]
+//cave steps
+DUPEITEM=079d
+
+[ITEMDEF 07b9]
+//cave steps
+DUPEITEM=079d
+
+[ITEMDEF 07ba]
+DEFNAME=i_CARPET_ROSTRUM
+RESOURCES=50 I_BOARD, 10 I_WOOL
+CATEGORY=Buildings - Stairs
+SUBSECTION=Carpeted Rostrum
+DESCRIPTION=@
+DUPELIST=07bb,07bc,07c7,07c8
+
+[ITEMDEF 07bb]
+//carpeted stair
+DUPEITEM=07ba
+
+[ITEMDEF 07bc]
+//carpeted stair
+DUPEITEM=07ba
+
+[ITEMDEF 07bd]
+DEFNAME=i_PLATFORM
+RESOURCES=20 I_BOARD
+CATEGORY=Buildings - Stairs
+SUBSECTION=Platform
+DESCRIPTION=@
+DUPELIST=07be,07bf,07c0,07c1,07c2,07c3,07c4,07c5,07c6
+
+[ITEMDEF 07be]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07bf]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07c0]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07c1]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07c2]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07c3]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07c4]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07c5]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07c6]
+//platform
+DUPEITEM=07bd
+
+[ITEMDEF 07c7]
+//carpeted stair
+DUPEITEM=07ba
+
+[ITEMDEF 07c8]
+//carpeted stair
+DUPEITEM=07ba
+
+[ITEMDEF 07c9]
+DEFNAME=i_WOOD_PLANK_2
+RESOURCES=25 I_BOARD
+CATEGORY=Buildings - Floors
+SUBSECTION=Wooden Planks (dark)
+DESCRIPTION=@
+DUPELIST=07ca,07cb,07cc,07cd,07ce,07cf,07d0
+
+[ITEMDEF 07ca]
+//wooden bridge
+DUPEITEM=07c9
+
+[ITEMDEF 07cb]
+//wooden bridge
+DUPEITEM=07c9
+
+[ITEMDEF 07cc]
+//wooden plank
+DUPEITEM=07c9
+
+[ITEMDEF 07cd]
+//wooden plank
+DUPEITEM=07c9
+
+[ITEMDEF 07ce]
+//wooden plank
+DUPEITEM=07c9
+
+[ITEMDEF 07cf]
+//wooden plank
+DUPEITEM=07c9
+
+[ITEMDEF 07d0]
+//wooden plank
+DUPEITEM=07c9
+
+[ITEMDEF 07d6]
+DEFNAME=i_POST_STONE
+RESOURCES=15 i_rock_plain
+CATEGORY=Buildings - Other
+SUBSECTION=Stone Rail 3
+DESCRIPTION=@
+DUPELIST=07d7,07d8
+
+[ITEMDEF 07d7]
+//railing
+DUPEITEM=07d6
+
+[ITEMDEF 07d8]
+//railing
+DUPEITEM=07d6
+
+[ITEMDEF 07d9]
+//stone column
+DUPEITEM=057
+
+[ITEMDEF 07da]
+//stone stairs
+
+
+[ITEMDEF 07df]
+//stone stairs
+
+[ITEMDEF 07e0]
+//stone stairs
+
+[EOF]

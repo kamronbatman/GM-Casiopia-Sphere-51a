@@ -1,0 +1,8383 @@
+//****************************************************************************
+//SPHERE by : Menasoft (c)1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, July 14, 2000
+//
+VERSION=0.54
+
+[ITEMDEF 01000]
+DEFNAME=i_mug_pewter
+RESOURCES=3 i_ingot_iron
+WEIGHT=1
+DUPELIST=0fff,01001,01002
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Pewter Mug
+SKILLMAKE=TINKERING 42.0,t_tinker_tools
+RESOURCES2=1 i_ingot_iron
+
+[ITEMDEF 01001]
+//pewter mug
+DUPEITEM=01000
+
+[ITEMDEF 01002]
+DUPEITEM=01000
+
+[ITEMDEF 01003]
+DEFNAME=i_spittoon
+RESOURCES=3 i_ingot_iron
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Spitton
+SKILLMAKE=TINKERING 42.0,t_tinker_tools
+RESOURCES2=3 i_ingot_iron,1 i_cloth
+
+[ITEMDEF 01004]
+DEFNAME=i_barrel_tap
+RESOURCES=1 i_ingot_iron
+SKILLMAKE=TINKERING 52.0,t_tinker_tools
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Barrel Tap
+
+[ITEMDEF 01005]
+DEFNAME=i_jar_empty
+RESOURCES=2 i_SAND
+WEIGHT=1
+//TYPE=T_POTION
+CATEGORY=Items by Professions
+SUBSECTION=Alchemist
+DESCRIPTION=Empty Jar
+
+[ITEMDEF 01006]
+DEFNAME=i_jar_full
+RESOURCES=2 i_SAND
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Alchemist
+DESCRIPTION=Full Jar
+
+[ITEMDEF 01007]
+DEFNAME=i_jar_half_full
+RESOURCES=2 i_SAND
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Alchemist
+DESCRIPTION=Half Empty Jar
+
+[ITEMDEF 01008]
+//wash basin
+DEFNAME=i_wash_basin
+RESOURCES=1 i_ingot_iron, 1 i_SAND
+WEIGHT=1
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Wash Basin
+
+[ITEMDEF 01009]
+DEFNAME=i_basin
+RESOURCES=1 i_ingot_iron, 1 i_SAND
+WEIGHT=1
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Basin
+
+[ITEMDEF 0100a]
+DEFNAME=i_archery_butte
+TYPE=T_ARCHERY_BUTTE
+SKILLMAKE=CARPENTRY 40.0, TAILORING 40.0, t_sewing_kit, t_carpentry
+RESOURCES=20 i_STRAW, 10 i_BOARD, 8 i_CLOTH
+WEIGHT=4
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Archery Butte (W)
+DUPELIST=0100b
+
+[ITEMDEF 0100b]
+DEFNAME=i_archery_butte2
+DUPEITEM=0100a
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Archery Butte (N)
+
+[ITEMDEF 0100c]
+DUPEITEM=0f36
+
+[ITEMDEF 0100d]
+//hay sheaf
+DUPEITEM=0f36
+
+[ITEMDEF 0100e]
+DEFNAME=i_key_copper
+RESOURCES=3 i_ingot_iron
+WEIGHT=1
+TYPE=T_KEY
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Keys
+DESCRIPTION=Copper Key
+SKILLMAKE=TINKERING 43.0,t_tinker_tools
+RESOURCES2=1 i_ingot_copper
+
+[ITEMDEF 0100f]
+DEFNAME=i_key_gold
+RESOURCES=2 i_ingot_iron, 1 i_ingot_gold
+WEIGHT=1
+TYPE=T_KEY
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Keys
+DESCRIPTION=Gold Key
+SKILLMAKE=TINKERING 60.0,t_tinker_tools
+RESOURCES2=1 i_ingot_gold
+
+[ITEMDEF 01010]
+// DEFNAME2=IRON_KEY
+DEFNAME=i_key_iron
+RESOURCES=3 i_ingot_iron
+WEIGHT=1
+TYPE=T_KEY
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Keys
+DESCRIPTION=Iron Key
+SKILLMAKE=TINKERING 30.0,t_tinker_tools
+RESOURCES2=1 i_ingot_iron
+
+[ITEMDEF 01011]
+DEFNAME=i_key_ring
+TYPE=T_KEYRING
+TDATA2=1
+WEIGHT=1
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Keys
+DESCRIPTION=Key Ring
+RESOURCES=1 i_ingot_iron
+SKILLMAKE=TINKERING 30.0,t_tinker_tools
+
+ON=@DCLICK
+	SRC.MESSAGE Drop keys on an empty key ring
+
+[ITEMDEF 01012]
+// DEFNAME2=MAGIC_Key
+DEFNAME=i_key_magic
+WEIGHT=1
+TYPE=T_KEY
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Keys
+DESCRIPTION=Magic Key
+SKILLMAKE=TINKERING 80.0, MAGERY 50.0,t_tinker_tools
+RESOURCES=5 i_ingot_gold, 5 i_ingot_silver, 5 i_ingot_copper
+
+ON=@Create
+ATTR=attr_magic|attr_newbie
+
+[ITEMDEF 01013]
+// DEFNAME2=RUSTY_KEY
+DEFNAME=i_key_rusty
+RESOURCES=1 i_INGOT_RUSTY
+WEIGHT=1
+TYPE=T_KEY
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Keys
+DESCRIPTION=Rusty Iron Key
+
+[ITEMDEF 01015]
+DEFNAME=i_spinning_wheel
+TYPE=T_SPINWHEEL
+RESOURCES=20 i_BOARD, 1 i_ingot_iron
+SKILLMAKE=CARPENTRY 73.6, TAILORING 65.0, T_CARPENTRY
+WEIGHT=15
+DUPELIST=01016,01017,01019,0101a,0101b,0101c,0101d,0101e,010a4,010a5,010a6
+
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Spinning Wheel
+
+[ITEMDEF 01016]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 01017]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 01019]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 0101a]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 0101b]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 0101c]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 0101d]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 0101e]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 0101f]
+DUPEITEM=0df8
+
+[ITEMDEF 01020]
+DEFNAME=i_FEATHERS_RED_WHITE
+RESOURCES=2 i_FEATHER
+TYPE=t_FEATHER
+WEIGHT=.1
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Feathers (2 Red & White)
+DUPELIST=01021
+
+[ITEMDEF 01021]
+//feathers
+DUPEITEM=01020
+
+[ITEMDEF 01022]
+DEFNAME=i_arrow_fletching
+RESOURCES=1 i_FEATHER
+WEIGHT=.1
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Arrow Fletching Equip
+DUPELIST=01023
+
+[ITEMDEF 01023]
+DUPEITEM=01022
+
+[ITEMDEF 01024]
+DEFNAME=i_arrow_shafts_2
+TYPE=T_SHAFT
+WEIGHT=.1
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Arrow Junk Shafts
+DUPELIST=01025
+
+ON=@dclick
+SKILLMENU=sm_bolts
+return 1
+
+[ITEMDEF 01025]
+//arrow shafts
+DUPEITEM=01024
+
+[ITEMDEF 01026]
+//chisels
+DEFNAME=i_chisels
+RESOURCES=1 i_ingot_iron
+WEIGHT=1
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Chisels
+DUPELIST=01027
+
+[ITEMDEF 01027]
+//chisels
+DUPEITEM=01026
+
+[ITEMDEF 01028]
+//DEFNAME2=dovetail
+//DEFNAME2=dovetail_saw
+DEFNAME=i_saw_dovetail
+RESOURCES=3 i_ingot_iron,1 i_log
+TYPE=t_carpentry
+WEIGHT=1
+DUPELIST=01029
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Dovetail Saw
+SKILLMAKE=TINKERING 33.2,t_tinker_tools
+RESOURCES2=2 i_ingot_iron
+
+[ITEMDEF 01029]
+//dovetail saw
+DUPEITEM=01028
+
+[ITEMDEF 0102a]
+//Hammer
+DEFNAME=i_hammer
+RESOURCES=4 i_ingot_iron
+WEIGHT=2
+TYPE=T_WEAPON_MACE_SMITH
+FLIP=1
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Hammer
+DUPELIST=0102b
+
+[ITEMDEF 0102b]
+//hammer
+DUPEITEM=0102a
+
+[ITEMDEF 0102c]
+DEFNAME=i_plane_moulding
+WEIGHT=2
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Moulding Planes
+DUPELIST=0102d
+SKILLMAKE=TINKERING 30.7,t_tinker_tools
+RESOURCES=3 i_board,1 i_ingot_iron
+
+[ITEMDEF 0102d]
+//moulding planes
+DUPEITEM=0102c
+
+[ITEMDEF 0102e]
+DEFNAME=i_nails
+WEIGHT=2
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Nails
+DUPELIST=0102f
+
+RESOURCES=1 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 5.0
+
+[ITEMDEF 0102f]
+//nails
+DUPEITEM=0102e
+
+[ITEMDEF 01030]
+DEFNAME=i_plane_jointing
+RESOURCES=4 i_log
+WEIGHT=1
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Jointing Plane
+DUPELIST=01031
+SKILLMAKE=TINKERING 30.8,t_tinker_tools
+RESOURCES2=3 i_board,1 i_ingot_iron
+
+[ITEMDEF 01031]
+//jointing plane
+DUPEITEM=01030
+
+[ITEMDEF 01032]
+DEFNAME=i_plane_smoothing
+RESOURCES=4 i_log
+WEIGHT=1
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Smoothing Plane
+DUPELIST=01033
+SKILLMAKE=TINKERING 30.7,t_tinker_tools
+RESOURCES2=3 i_board,1 i_ingot_iron
+
+[ITEMDEF 01033]
+//smoothing plane
+DUPEITEM=01032
+
+[ITEMDEF 01034]
+DEFNAME=i_saw
+WEIGHT=2
+TYPE=t_carpentry
+
+RESOURCES=5 i_ingot_iron, 1 i_log
+RESOURCES2=1 i_board,4 i_ingot_iron
+SKILLMAKE=TINKERING 31.3,t_tinker_tools
+
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Saw
+DUPELIST=01035
+
+[ITEMDEF 01035]
+//saw
+DUPEITEM=01034
+
+[ITEMDEF 01036]
+DEFNAME=i_hay_bits_scattered_small
+RESOURCES=1 i_STRAW
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Hay Bits
+
+[ITEMDEF 01037]
+DEFNAME=i_hay
+RESOURCES=1 i_STRAW
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Hay
+
+[ITEMDEF 01038]
+DEFNAME=i_wood_curls
+RESOURCES=1 i_BOARD
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Wood Curls
+
+[ITEMDEF 01039]
+DEFNAME=i_flour_sack
+RESOURCES=4 i_wheat_sheaf, 1 i_CLOTH
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Sack of Flour
+DUPELIST=0103a,01045,01046
+
+[ITEMDEF 0103a]
+DEFNAME=i_flour_sack_open
+DUPEITEM=01039
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Open Sack of Flour
+
+[ITEMDEF 0103b]
+// Has a bite ?
+DEFNAME=i_bread_loaf
+TYPE=T_FOOD
+SKILLMAKE=1 COOKING
+RESOURCES=1 i_FLOUR_SACK
+RESOURCES2=1 i_dough, 1 i_WATER, 1 i_EGG, 1 i_POT
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Bread Loaf
+
+[ITEMDEF 0103c]
+DEFNAME=i_bread_wonder
+NAME=Wonder Bread
+SKILLMAKE=COOKING 1
+RESOURCES=1 i_FLOUR_SACK
+RESOURCES2=1 i_dough,1 i_water,1 I_EGG,1 i_POT
+TYPE=T_FOOD
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Bread Loaf
+
+[ITEMDEF 0103d]
+DEFNAME=i_dough
+//DEFNAME2=i_DOUGH_2
+RESOURCES=1 i_WATER, 1 i_EGG, 2 i_FLOUR_BOWL
+TYPE=T_FOOD_RAW
+TDATA1=i_bread_loaf
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Dough
+
+[ITEMDEF 0103e]
+DEFNAME=i_flour_sifter
+RESOURCES=1 i_ingot_iron
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Flour Sifter
+
+[ITEMDEF 0103f]
+DEFNAME=i_cookie_mix
+TYPE=T_FOOD_RAW
+TDATA1=i_pan_cookies
+RESOURCES=1 i_bowl_dough, 1 i_POT
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Cookie Mix
+
+[ITEMDEF 01040]
+DEFNAME=i_pizza
+RESOURCES=3 i_FLOUR_SACK
+WEIGHT=1
+TYPE=T_FOOD
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Pizza
+SKILLMAKE=COOKING 20.0
+RESOURCES2=1 i_pizza_uncooked,1 i_POT
+
+[ITEMDEF 01041]
+DEFNAME=i_pie_baked
+RESOURCES=3 i_FLOUR_SACK
+WEIGHT=1
+TYPE=T_FOOD
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Baked Pie
+SKILLMAKE=COOKING 20.0
+RESOURCES2=1 i_pie_unbaked
+
+[ITEMDEF 01042]
+DEFNAME=i_pie_unbaked
+TYPE=T_FOOD_RAW
+TDATA1=i_pie_baked
+RESOURCES=1 i_bowl_dough, 1 T_FRUIT, 1 i_POT, i_lard
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Unbaked Pie
+
+[ITEMDEF 01043]
+DEFNAME=i_rolling_pin
+RESOURCES=1 i_BOARD, 1 i_ingot_iron
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Rolling Pin
+
+[ITEMDEF 01044]
+DEFNAME=i_spam
+RESOURCES=1 i_HAM, 1 i_POT
+WEIGHT=1
+TYPE=T_FOOD
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Spam
+
+[ITEMDEF 01045]
+//sack of flour
+DUPEITEM=01039
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Sack of Flour
+
+[ITEMDEF 01046]
+//open sack of flour
+DUPEITEM=01039
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Open Sack of Flour
+
+[ITEMDEF 01047]
+DEFNAME=i_globe
+RESOURCES=10 i_board, 2 i_cloth
+WEIGHT=6
+CATEGORY=Items by Professions
+SUBSECTION=Cartographer
+DESCRIPTION=Globe
+DUPELIST=01048
+SKILLMAKE=CARPENTRY 80.0, CARTOGRAPHY 40.0, t_carpentry
+RESOURCES2=3 i_board,1 I_SAND,1 I_STRAW,5 i_PARCHMENT,1 i_ingot_iron
+
+[ITEMDEF 01048]
+//globe
+DUPEITEM=01047
+
+[ITEMDEF 01049]
+// bench - loom bench - n-s
+DEFNAME=i_BENCH_LOOM
+DUPELIST=0104a
+TYPE=T_CHAIR
+FLIP=1
+SKILLMAKE=CARPENTRY 10.0, t_carpentry
+RESOURCES=8 i_board
+
+[ITEMDEF 0104a]
+// bench - loom bench - e-w
+DUPEITEM=01049
+
+[ITEMDEF 0104b]
+DEFNAME=i_clock
+RESOURCES=i_CLOCK_FRAME,i_CLOCK_PARTS
+WEIGHT=2
+TYPE=T_CLOCK
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Clock
+DUPELIST=0104c
+SKILLMAKE=TINKERING 30.7,t_tinker_tools
+RESOURCES2=1 i_clock_frame,1 i_PARCHMENT,2 i_board,1 i_clock_parts
+
+[ITEMDEF 0104c]
+//clock
+DUPEITEM=0104b
+
+[ITEMDEF 0104d]
+DEFNAME=i_clock_frame
+RESOURCES=6 i_log
+WEIGHT=2
+//TYPE=T_CLOCK
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Clock Frame
+DUPELIST=0104e
+SKILLMAKE=TINKERING 30.4,t_tinker_tools
+RESOURCES2=4 i_board,1 i_nails
+
+[ITEMDEF 0104e]
+//clock frame
+DUPEITEM=0104d
+
+[ITEMDEF 0104f]
+DEFNAME=i_clock_parts
+RESOURCES=1 i_ingot_iron
+WEIGHT=1
+//TYPE=T_CLOCK
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Clock Parts
+DUPELIST=01050
+SKILLMAKE=TINKERING 30.5,t_tinker_tools
+RESOURCES2=1 i_ingot_iron,1 i_board
+
+[ITEMDEF 01050]
+//clock parts
+DUPEITEM=0104f
+
+[ITEMDEF 01051]
+DEFNAME=i_axel_and_gears
+RESOURCES=2 i_log
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Axle with Gears
+DUPELIST=01052
+RESOURCES2=1 i_axel,1 i_gears
+SKILLMAKE=TINKERING 30.4,t_tinker_tools
+
+[ITEMDEF 01052]
+//axle with gears
+DUPEITEM=01051
+
+[ITEMDEF 01053]
+//gears
+DEFNAME=i_gears
+RESOURCES=1 i_ingot_iron
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Gears
+DUPELIST=01054
+SKILLMAKE=TINKERING 14.7,t_tinker_tools
+RESOURCES2=2 i_ingot_iron
+
+[ITEMDEF 01054]
+//gears
+DUPEITEM=01053
+
+[ITEMDEF 01055]
+DEFNAME=i_hinge
+RESOURCES=1 i_ingot_iron
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Hinge
+DUPELIST=01056
+SKILLMAKE=TINKERING 14.8,t_tinker_tools
+
+[ITEMDEF 01056]
+//hinge
+DUPEITEM=01055
+
+[ITEMDEF 01057]
+DEFNAME=i_sextant
+TYPE=T_SEXTANT
+RESOURCES=i_sextant_parts
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Sextant
+DUPELIST=01058
+SKILLMAKE=TINKERING 30.7,t_tinker_tools
+RESOURCES2=2 i_ingot_iron,2 i_board,1 i_sextant_parts
+
+[ITEMDEF 01058]
+//sextant
+DUPEITEM=01057
+
+[ITEMDEF 01059]
+DEFNAME=i_sextant_parts
+RESOURCES=3 i_ingot_iron
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Sextant Parts
+DUPELIST=0105a
+SKILLMAKE=TINKERING 31.0,t_tinker_tools
+RESOURCES2=1 i_ingot_iron
+
+[ITEMDEF 0105a]
+//sextant parts
+DUPEITEM=01059
+
+[ITEMDEF 0105b]
+DEFNAME=i_axel
+RESOURCES=1 i_ingot_iron
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Axle
+DUPELIST=0105c
+SKILLMAKE=TINKERING 30.4,t_tinker_tools
+
+[ITEMDEF 0105c]
+//axle
+DUPEITEM=0105b
+
+[ITEMDEF 0105d]
+DEFNAME=i_springs
+RESOURCES=1 i_ingot_iron
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Springs
+DUPELIST=0105e
+SKILLMAKE=TINKERING 13.7,t_tinker_tools
+
+[ITEMDEF 0105e]
+//springs
+DUPEITEM=0105d
+
+[ITEMDEF 0105f]
+// loom - S piece - W
+DEFNAME=i_loom_upright
+RESOURCES=15 i_BOARD, 1 i_ingot_iron, 1 i_NAILS
+TYPE=T_LOOM
+WEIGHT=20
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Upright Loom
+DUPELIST=01060,01061,01062,01063,01064,01065,01066
+
+[ITEMDEF 01060]
+// loom - N piece - W
+DUPEITEM=0105f
+
+[ITEMDEF 01061]
+// loom - W piece - N
+DUPEITEM=0105f
+
+[ITEMDEF 01062]
+// loom - E piece - N
+DUPEITEM=0105f
+
+[ITEMDEF 01063]
+// loom - S piece - E
+DUPEITEM=0105f
+
+[ITEMDEF 01064]
+// loom - N piece - E
+DUPEITEM=0105f
+
+[ITEMDEF 01065]
+// loom - W piece - S
+DUPEITEM=0105f
+
+[ITEMDEF 01066]
+// loom - E piece - S
+DUPEITEM=0105f
+
+[ITEMDEF 01067]
+DEFNAME=i_hides_cut
+RESOURCES=1 i_HIDE
+TYPE=T_LEATHER
+DYE=1
+WEIGHT=1
+DUPELIST=01068,01081,01082
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Cut-up Leather
+
+[ITEMDEF 01068]
+//cut up leather
+DUPEITEM=01067
+
+[ITEMDEF 01069]
+DEFNAME=i_HIDE_STRETCHED
+TYPE=T_LEATHER
+RESOURCES=1 i_HIDE, 2 i_BOARD
+WEIGHT=6
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Stretched Hide
+DUPELIST=0106a,0106b,0106c,0106d,0106e,0106f
+
+[ITEMDEF 0106a]
+//stretched hide
+DUPEITEM=01069
+
+[ITEMDEF 0106b]
+//stretched hide
+DUPEITEM=01069
+
+[ITEMDEF 0106c]
+//stretched hide
+DUPEITEM=01069
+
+[ITEMDEF 0106d]
+//stretched hide
+DUPEITEM=01069
+
+[ITEMDEF 0106e]
+//stretched hide
+DUPEITEM=01069
+
+[ITEMDEF 0106f]
+//stretched hide
+DUPEITEM=01069
+
+[ITEMDEF 01070]
+DEFNAME=i_training_dummy
+TYPE=t_train_dummy
+SKILLMAKE=CARPENTRY 85.0, TAILORING 70.0, t_sewing_kit, t_carpentry
+RESOURCES=15 i_CLOTH, 35 i_STRAW, 8 i_BOARD, 1 i_ingot_iron
+WEIGHT=35
+CATEGORY=Items by Professions
+SUBSECTION=Fighters
+DESCRIPTION=Training Dummy
+DUPELIST=01071,01072,01073,01074,01075,01076,01077
+
+[ITEMDEF 01071]
+//training dummy
+DUPEITEM=01070
+
+[ITEMDEF 01072]
+//training dummy
+DUPEITEM=01070
+
+[ITEMDEF 01073]
+//training dummy
+DUPEITEM=01070
+
+[ITEMDEF 01074]
+//training dummy
+DEFNAME=i_training_dummy_n
+DUPEITEM=01070
+
+[ITEMDEF 01075]
+//training dummy
+DUPEITEM=01070
+
+[ITEMDEF 01076]
+//training dummy
+DUPEITEM=01070
+
+[ITEMDEF 01077]
+//training dummy
+DUPEITEM=01070
+
+[ITEMDEF 01078]
+// DEFNAME2=PILE_HIDES
+DEFNAME=i_hide
+TYPE=t_hide // T_HIDE made into t_leather later ?
+WEIGHT=5
+VALUE=5
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Hides (Pile)
+DUPELIST=01079
+
+[ITEMDEF 01079]
+//pile of hides
+DUPEITEM=01078
+
+[ITEMDEF 0107a]
+// dark brown small stretched hide in frame facing SW
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Hide (Stretched)
+DUPELIST=0107b,0107c,0107d,0107e,0107f,01080
+
+[ITEMDEF 0107b]
+// light brown small stretched hide in frame facing SW
+DUPEITEM=0107a
+
+[ITEMDEF 0107c]
+// dark brown large stretched hide in frame facing SW
+DUPEITEM=0107a
+
+[ITEMDEF 0107d]
+// PARTIAL dark brown large stretched hide in frame facing SW
+DUPEITEM=0107a
+
+[ITEMDEF 0107e]
+// PARTIAL dark brown large stretched hide in frame facing SW
+DUPEITEM=0107a
+
+[ITEMDEF 0107f]
+// PARTIAL light brown small stretched hide in frame facing SW
+DUPEITEM=0107a
+
+[ITEMDEF 01080]
+// PARTIAL light brown small stretched hide in frame facing SW
+DUPEITEM=0107a
+
+[ITEMDEF 01081]
+//cut up leather strips facing SW
+DEFNAME=i_hides_cut_2
+DUPEITEM=01067
+
+[ITEMDEF 01082]
+//cut up leather strips facing SE
+DUPEITEM=01067
+
+[ITEMDEF 01083]
+DEFNAME=i_pizza_uncooked
+RESOURCES=1 i_bowl_dough, 1 i_cheese_wheel, 1 i_POT, i_lard, i_tomato_sauce
+TYPE=T_FOOD_RAW
+TDATA1=i_pizza
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Uncooked Pizza
+
+[ITEMDEF 01085]
+//DEFNAME2=NECKLACE3
+DEFNAME=i_necklace_metal_beads
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_iron
+DUPELIST=01f05
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace
+
+[ITEMDEF 01086]
+//DEFNAME2=NECKLACE_GOLD
+DEFNAME=i_bracelet_gold
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold
+WEIGHT=.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)
+
+[ITEMDEF 01087]
+//DEFNAME2=i_earings
+DEFNAME=i_earrings_gold
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold
+WEIGHT=.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)
+
+[ITEMDEF 01088]
+//necklace
+//DEFNAME2=i_NECKLACE_2
+DEFNAME=i_necklace_gold
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold
+WEIGHT=.1
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace
+
+[ITEMDEF 01089]
+//DEFNAME2=i_NECKLACE_3
+//Gold Bead Necklace
+DEFNAME=i_necklace_gold_beads
+TYPE=t_jewelry
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold
+WEIGHT=.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)
+
+[ITEMDEF 0108a]
+//Gold Ring
+//ORIGINAL DEFNAME=i_RING
+DEFNAME=i_ring_gold
+TYPE=t_jewelry
+RESOURCES=i_ingot_gold
+WEIGHT=.1
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+
+[ITEMDEF 0108b]
+DEFNAME=i_beads
+TYPE=t_jewelry
+RESOURCES=i_ingot_iron,3 i_gem_amber
+SKILLMAKE=TINKERING 60.0,t_tinker_tools
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Beads
+//ORIGINAL DEFNAME=i_BEADS
+
+[ITEMDEF 0108c]
+DEFNAME=i_lever
+RESOURCES=2 i_ingot_iron
+WEIGHT=3
+TYPE=T_SWITCH
+CATEGORY=Levers and Switches
+SUBSECTION=Levers
+DESCRIPTION=Lever
+DUPELIST=0108d,0108e,01093,01094,01095
+
+[ITEMDEF 0108d]
+//lever
+DUPEITEM=0108c
+
+[ITEMDEF 0108e]
+//lever
+DUPEITEM=0108c
+
+[ITEMDEF 0108f]
+//switch
+DEFNAME=i_switch
+TYPE=T_SWITCH
+CATEGORY=Levers and Switches
+SUBSECTION=Switchs
+DESCRIPTION=Switch
+DUPELIST=01090,01091,01092
+
+[ITEMDEF 01090]
+//switch
+DUPEITEM=0108f
+
+[ITEMDEF 01091]
+//switch
+DUPEITEM=0108f
+
+[ITEMDEF 01092]
+//switch
+DUPEITEM=0108f
+
+[ITEMDEF 01093]
+//lever
+DUPEITEM=0108c
+
+[ITEMDEF 01094]
+//lever
+DUPEITEM=0108c
+
+[ITEMDEF 01095]
+//lever
+DUPEITEM=0108c
+
+[ITEMDEF 01098]
+DEFNAME=i_carpet_7
+RESOURCES=5 i_WOOL, 1 i_THREAD
+CATEGORY=Decoration - Carpets & Rugs
+SUBSECTION=Carpet 7
+DESCRIPTION=Carpet
+DUPELIST=01099,0109a,0109b,0109c,0109d,0109e,0109f,010a0,010a1,010a2,010a3
+
+[ITEMDEF 01099]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 0109a]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 0109b]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 0109c]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 0109d]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 0109e]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 0109f]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 010a0]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 010a1]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 010a2]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 010a3]
+//carpet
+
+DUPEITEM=01098
+
+[ITEMDEF 010a4]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 010a5]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 010a6]
+//spinning wheel
+DUPEITEM=01015
+
+[ITEMDEF 010ac]
+DEFNAME=i_POLE_HANGING_w_1
+RESOURCES=1 i_ingot_iron, 1 i_log
+WEIGHT=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Hanging Pole
+DESCRIPTION=Hanging Pole (W) (01/03)
+
+[ITEMDEF 010ad]
+DEFNAME=i_POLE_HANGING_w_2
+RESOURCES=1 i_ingot_iron, 1 i_log
+WEIGHT=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Hanging Pole
+DESCRIPTION=Hanging Pole (W) (02/03)
+
+[ITEMDEF 010ae]
+DEFNAME=i_POLE_HANGING_w_3
+RESOURCES=1 i_ingot_iron, 1 i_log
+WEIGHT=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Hanging Pole
+DESCRIPTION=Hanging Pole (W) (03/03)
+
+[ITEMDEF 010af]
+DEFNAME=i_POLE_HANGING_n_1
+RESOURCES=1 i_ingot_iron, 1 i_log
+WEIGHT=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Hanging Pole
+DESCRIPTION=Hanging Pole (N) (01/03)
+
+[ITEMDEF 010b0]
+DEFNAME=i_POLE_HANGING_n_2
+RESOURCES=1 i_ingot_iron, 1 i_log
+WEIGHT=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Hanging Pole
+DESCRIPTION=Hanging Pole (N) (02/03)
+
+[ITEMDEF 010b1]
+DEFNAME=i_POLE_HANGING_n_3
+RESOURCES=1 i_ingot_iron, 1 i_log
+WEIGHT=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Hanging Pole
+DESCRIPTION=Hanging Pole (N) (03/03)
+
+[ITEMDEF 010b9]
+//SPIDERWEB_1_LARGE_2
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 01 (02/05)
+
+[ITEMDEF 010ba]
+//SPIDERWEB_1_LARGE_3
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 01 (03/05)
+
+[ITEMDEF 010bb]
+//SPIDERWEB_1_LARGE_4
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 01 (04/05)
+
+[ITEMDEF 010bc]
+//SPIDERWEB_1_LARGE_5
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 01 (05/05)
+
+[ITEMDEF 010bd]
+//SPIDERWEB_2_LARGE_1
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 02 (01/05)
+
+[ITEMDEF 010be]
+//SPIDERWEB_2_LARGE_2
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 02 (02/05)
+
+[ITEMDEF 010bf]
+//SPIDERWEB_2_LARGE_3
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 02 (03/05)
+
+[ITEMDEF 010c0]
+//SPIDERWEB_2_LARGE_4
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 02 (04/05)
+
+[ITEMDEF 010c1]
+//SPIDERWEB_2_LARGE_5
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 02 (05/05)
+
+[ITEMDEF 010c2]
+//SPIDERWEB_3_LARGE_1
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 03 (01/04)
+
+[ITEMDEF 010c3]
+//SPIDERWEB_3_LARGE_2
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 03 (02/04)
+
+[ITEMDEF 010c4]
+//SPIDERWEB_3_LARGE_3
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 03 (03/04)
+
+[ITEMDEF 010c5]
+//SPIDERWEB_3_LARGE_4
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 03 (04/04)
+
+[ITEMDEF 010c6]
+//SPIDERWEB_4_LARGE_1
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 04 (01/04)
+
+[ITEMDEF 010c7]
+//SPIDERWEB_4_LARGE_2
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 04 (02/04)
+
+[ITEMDEF 010c8]
+//SPIDERWEB_4_LARGE_3
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 04 (03/04)
+
+[ITEMDEF 010c9]
+//SPIDERWEB_4_LARGE_4
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 04 (04/04)
+
+[ITEMDEF 010ca]
+//SPIDERWEB_5_LARGE_1
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 05 (01/04)
+
+[ITEMDEF 010cb]
+//SPIDERWEB_5_LARGE_2
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 05 (02/04)
+
+[ITEMDEF 010cc]
+//SPIDERWEB_5_LARGE_3
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 05 (03/04)
+
+[ITEMDEF 010cd]
+//SPIDERWEB_5_LARGE_4
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 05 (04/04)
+
+[ITEMDEF 010ce]
+//SPIDERWEB_6_LARGE_1
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 06 (01/04)
+
+[ITEMDEF 010cf]
+//SPIDERWEB_6_LARGE_2
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 06 (02/04)
+
+[ITEMDEF 010d0]
+//SPIDERWEB_6_LARGE_3
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 06 (03/04)
+
+[ITEMDEF 010d1]
+//i_SPIDERWEB_6_LARGE_4
+DUPEITEM=010B8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Large SpiderWebs
+DESCRIPTION=SpiderWeb 06 (04/04)
+
+[ITEMDEF 010d2]
+//i_SPIDERWEB_SMALL
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Spider Web
+DESCRIPTION=Small Web
+DUPELIST=010d3,010d4,010d5,010d6,010d7
+
+[ITEMDEF 010d3]
+//small web
+DUPEITEM=010d2
+
+[ITEMDEF 010d4]
+//small web
+DUPEITEM=010d2
+
+[ITEMDEF 010d5]
+//small web
+DUPEITEM=010d2
+
+[ITEMDEF 010d6]
+//small web
+DUPEITEM=010d2
+
+[ITEMDEF 010d7]
+//small web
+DUPEITEM=010d2
+
+[ITEMDEF 010d8]
+DEFNAME=i_web_cocooon
+RESOURCES=10 I_SPIDERWEB
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Spider Web
+DESCRIPTION=Egg Case Web
+DUPELIST=010d9,010da,010db,010dc,010dd
+
+[ITEMDEF 010d9]
+//WEB_COCOOON_2
+DUPEITEM=010D8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Spider Web
+DESCRIPTION=Egg Case Web
+
+[ITEMDEF 010da]
+//WEB_COCOOON_3
+DUPEITEM=010D8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Spider Web
+DESCRIPTION=Cocoon
+
+[ITEMDEF 010db]
+//WEB_COCOOON_4
+DUPEITEM=010D8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Spider Web
+DESCRIPTION=Cocoon
+
+[ITEMDEF 010dc]
+//WEB_COCOOON_5
+DUPEITEM=010D8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Spider Web
+DESCRIPTION=Cocoon
+
+[ITEMDEF 010dd]
+//WEB_COCOOON_6
+DUPEITEM=010D8
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Spider Web
+DESCRIPTION=Web
+
+[ITEMDEF 010e1]
+DEFNAME=i_barrel_hoops
+RESOURCES=4 i_ingot_iron
+SKILLMAKE=TINKERING 42.0,t_tinker_tools
+WEIGHT=4
+CATEGORY=Items by Professions
+SUBSECTION=BarKeep
+DESCRIPTION=Barrel Hoops
+DUPELIST=010e2
+
+[ITEMDEF 010e2]
+//barrel hoops
+DUPEITEM=010e1
+
+[ITEMDEF 010e3]
+DEFNAME=i_bowl_dough
+RESOURCES=1 i_CLAY
+WEIGHT=.4
+CATEGORY=Items by Professions
+SUBSECTION=Baker
+DESCRIPTION=Dough Bowl
+
+[ITEMDEF 010e4]
+DEFNAME=i_knife_draw
+RESOURCES=2 i_ingot_iron
+WEIGHT=1
+TYPE=T_WEAPON_FENCE
+FLIP=1
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Draw Knife
+
+[ITEMDEF 010e5]
+DEFNAME=i_froe
+RESOURCES=2 i_ingot_iron
+WEIGHT=1
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Froe
+
+[ITEMDEF 010e6]
+DEFNAME=i_inshave
+RESOURCES=2 i_ingot_iron
+WEIGHT=1
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Inshave
+
+[ITEMDEF 010e7]
+DEFNAME=i_scorp
+RESOURCES=2 i_ingot_iron
+WEIGHT=1
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Scorp
+
+[ITEMDEF 010e8]
+DEFNAME=i_SPOON_WOOD_SMALL
+RESOURCES=1 i_BOARD
+WEIGHT=.1
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Spoon (Wooden) (Small)
+
+[ITEMDEF 010e9]
+DEFNAME=i_SPOON_WOOD_LARGE
+RESOURCES=1 i_BOARD
+WEIGHT=.2
+CATEGORY=Items by Professions
+SUBSECTION=Cook
+DESCRIPTION=Spoon (Wooden) (Large)
+
+[ITEMDEF 010ef]
+//GARBAGE_2
+DUPEITEM=010ee
+
+[ITEMDEF 010f0]
+//garbage
+DUPEITEM=010ee
+
+[ITEMDEF 010f1]
+//garbage
+DUPEITEM=010ee
+
+[ITEMDEF 010f2]
+//pile of garbage
+DUPEITEM=010ee
+
+[ITEMDEF 010f3]
+//pile of garbage
+DUPEITEM=010ee
+
+[ITEMDEF 010f5]
+DEFNAME=i_TRAP_FIRE_STONE
+TYPE=T_TRAP
+RESOURCES=1 i_stone_marble, 1 i_SPRINGS
+WEIGHT=16
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Stone Face 01 (Fire)
+
+[ITEMDEF 010f6]
+//stone face
+TYPE=T_TRAP_ACTIVE
+DUPELIST=010f7,010f8,010f9,010fa,010fb
+
+[ITEMDEF 010f7]
+//fire trap
+DUPEITEM=010f6
+
+[ITEMDEF 010f8]
+//fire trap
+DUPEITEM=010f6
+
+[ITEMDEF 010f9]
+//fire trap
+DUPEITEM=010f6
+
+[ITEMDEF 010fa]
+//fire trap
+DUPEITEM=010f6
+
+[ITEMDEF 010fb]
+//fire trap
+DUPEITEM=010f6
+
+[ITEMDEF 010fc]
+DEFNAME=i_TRAP_FIRE_STONE_2
+TYPE=T_TRAP
+RESOURCES=1 i_stone_marble, 1 i_SPRINGS
+WEIGHT=16
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Stone Face 02 (Fire)
+DUPELIST=010fd,010fe,010ff,01100,01101,01102
+
+[ITEMDEF 010fd]
+//stone face
+DUPEITEM=010fc
+
+[ITEMDEF 010fe]
+//fire trap
+DUPEITEM=010fc
+
+[ITEMDEF 010ff]
+//fire trap
+DUPEITEM=010fc
+
+[ITEMDEF 01100]
+//fire trap
+DUPEITEM=010fc
+
+[ITEMDEF 01101]
+//fire trap
+DUPEITEM=010fc
+
+[ITEMDEF 01102]
+//fire trap
+DUPEITEM=010fc
+
+[ITEMDEF 01103]
+DEFNAME=i_TRAP_SAW
+TYPE=T_TRAP
+RESOURCES=1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Saw Trap 01
+DUPELIST=01104,01105,01106,01107
+
+[ITEMDEF 01104]
+//saw trap
+DUPEITEM=01103
+
+[ITEMDEF 01105]
+//saw trap
+DUPEITEM=01103
+
+[ITEMDEF 01106]
+//saw trap
+DUPEITEM=01103
+
+[ITEMDEF 01107]
+//saw trap
+DUPEITEM=01103
+
+[ITEMDEF 01108]
+DEFNAME=i_TRAP_SPIKE
+TYPE=T_TRAP
+RESOURCES=1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Spike Trap 01
+DUPELIST=01109,0110a,0110b,0110c,0110d,0110e,0110f
+
+[ITEMDEF 01109]
+//spike trap
+DUPEITEM=01108
+
+[ITEMDEF 0110a]
+//spike trap
+DUPEITEM=01108
+
+[ITEMDEF 0110b]
+//spike trap
+DUPEITEM=01108
+
+[ITEMDEF 0110c]
+//spike trap
+DUPEITEM=01108
+
+[ITEMDEF 0110d]
+//spike trap
+DUPEITEM=01108
+
+[ITEMDEF 0110e]
+//spike trap
+DUPEITEM=01108
+
+[ITEMDEF 0110f]
+//stone face
+DUPEITEM=01108
+
+[ITEMDEF 01110]
+DEFNAME=i_TRAP_FIRE_STONE_3
+TYPE=T_TRAP
+RESOURCES=1 i_stone_marble, 1 i_SPRINGS
+WEIGHT=16
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Stone Face 03 (Fire)
+DUPELIST=01111,01112,01113,01114,01115
+
+[ITEMDEF 01111]
+//fire trap
+DUPEITEM=01110
+
+[ITEMDEF 01112]
+//fire trap
+DUPEITEM=01110
+
+[ITEMDEF 01113]
+//fire trap
+DUPEITEM=01110
+
+[ITEMDEF 01114]
+//fire trap
+DUPEITEM=01110
+
+[ITEMDEF 01115]
+//fire trap
+DUPEITEM=01110
+
+[ITEMDEF 01116]
+DEFNAME=i_TRAP_SAW_2
+TYPE=T_TRAP
+RESOURCES=1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Saw Trap 02
+DUPELIST=01117,01118,01119,0111a
+
+[ITEMDEF 01117]
+//saw trap
+DUPEITEM=01116
+
+[ITEMDEF 01118]
+//saw trap
+DUPEITEM=01116
+
+[ITEMDEF 01119]
+//saw trap
+DUPEITEM=01116
+
+[ITEMDEF 0111a]
+//saw trap
+DUPEITEM=01116
+
+[ITEMDEF 0111b]
+DEFNAME=i_TRAP_SPIKE_2
+TYPE=T_TRAP
+RESOURCES=1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Spike Trap 02
+DUPELIST=0111c,0111d,0111e,0111f,01120,01121
+
+[ITEMDEF 0111c]
+//spike trap
+DUPEITEM=0111b
+
+[ITEMDEF 0111d]
+//spike trap
+DUPEITEM=0111b
+
+[ITEMDEF 0111e]
+//spike trap
+DUPEITEM=0111b
+
+[ITEMDEF 0111f]
+//spike trap
+DUPEITEM=0111b
+
+[ITEMDEF 01120]
+//spike trap
+DUPEITEM=0111b
+
+[ITEMDEF 01121]
+//spike trap
+DUPEITEM=0111b
+
+[ITEMDEF 01122]
+//trigger
+
+[ITEMDEF 01123]
+//trigger
+
+[ITEMDEF 01124]
+//trigger
+
+[ITEMDEF 01125]
+DEFNAME=i_mushroom
+VALUE=1
+WEIGHT=.5
+TYPE=t_food
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Exploding Mushroom
+DUPELIST=01126,01127,01128,01129,0112a
+
+ON=@DCLICK
+	SRC.SPELLEFFECT s_Hallucination,1000
+	SRC.EMOTE Looking Funny
+	REMOVE
+	RETURN 1
+
+ON=@STEP
+	DISPID=i_fx_MUSHROOM_explode
+	RETURN 1
+
+[ITEMDEF 01126]
+//mushroom
+DEFNAME=i_fx_mushroom_explode
+// TYPE=T_TRAP_ACTIVE
+DUPEITEM=01125
+
+[ITEMDEF 01127]
+//mushroom
+DUPEITEM=01125
+
+[ITEMDEF 01128]
+//mushroom
+DUPEITEM=01125
+
+[ITEMDEF 01129]
+//mushroom
+DUPEITEM=01125
+
+[ITEMDEF 0112a]
+//mushroom
+DUPEITEM=01125
+
+[ITEMDEF 0112b]
+DEFNAME=i_TRAP_DART
+TYPE=T_TRAP
+RESOURCES=2 i_FEATHER, 1 i_ARROW_SHAFT, 1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Dart Trap 01
+
+[ITEMDEF 0112c]
+//dart trap
+CATEGORY=Decoration - Dungeons and The Dead
+TYPE=T_TRAP
+SUBSECTION=Traps
+DESCRIPTION=Dart Trap 01
+DUPELIST=0112d,0112e
+
+[ITEMDEF 0112d]
+//dart trap
+DUPEITEM=0112c
+
+[ITEMDEF 0112e]
+//dart trap
+DUPEITEM=0112c
+
+[ITEMDEF 0112f]
+DEFNAME=i_TRAP_DART_2
+TYPE=T_TRAP
+RESOURCES=2 i_FEATHER, 1 i_ARROW_SHAFT, 1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Dart Trap 02
+DUPELIST=01130,01131,01132
+
+[ITEMDEF 01130]
+//dart trap
+DUPEITEM=0112f
+
+[ITEMDEF 01131]
+//dart trap
+DUPEITEM=0112f
+
+[ITEMDEF 01132]
+//dart trap
+DUPEITEM=0112f
+
+[ITEMDEF 01133]
+DEFNAME=i_TRAP_AXE
+TYPE=T_TRAP
+RESOURCES=2 i_AXE, 1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Axe Trap 01
+DUPELIST=01134,01135,01136,01137,01138,01139
+
+[ITEMDEF 01134]
+//axe trap
+DUPEITEM=01133
+
+[ITEMDEF 01135]
+//axe trap
+DUPEITEM=01133
+
+[ITEMDEF 01136]
+//axe trap
+DUPEITEM=01133
+
+[ITEMDEF 01137]
+//axe trap
+DUPEITEM=01133
+
+[ITEMDEF 01138]
+//axe trap
+DUPEITEM=01133
+
+[ITEMDEF 01139]
+//axe trap
+DUPEITEM=01133
+
+[ITEMDEF 0113a]
+DEFNAME=i_TRAP_GAS
+TYPE=T_TRAP
+RESOURCES=2 i_AXE, 1 i_ingot_iron, 1 i_SPRINGS, 1 T_REAGENT
+WEIGHT=4
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Gas Trap 01
+DUPELIST=0113b,0113c,0113d,0113e
+
+[ITEMDEF 0113b]
+//gas trap
+DUPEITEM=0113a
+
+[ITEMDEF 0113c]
+//gas trap
+DUPEITEM=0113a
+
+[ITEMDEF 0113d]
+//gas trap
+DUPEITEM=0113a
+
+[ITEMDEF 0113e]
+//gas trap
+DUPEITEM=0113a
+
+[ITEMDEF 01140]
+DEFNAME=i_TRAP_AXE_2
+TYPE=T_TRAP
+RESOURCES=2 i_AXE, 1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Axe Trap 02
+DUPELIST=01141,01142,01143,01144
+
+[ITEMDEF 01141]
+//axe trap
+DUPEITEM=01140
+
+[ITEMDEF 01142]
+//axe trap
+DUPEITEM=01140
+
+[ITEMDEF 01143]
+//axe trap
+DUPEITEM=01140
+
+[ITEMDEF 01144]
+//axe trap
+DUPEITEM=01140
+
+[ITEMDEF 01145]
+DEFNAME=i_TRAP_GAS_2
+TYPE=T_TRAP
+RESOURCES=2 i_AXE, 1 i_ingot_iron, 1 i_SPRINGS, 1 T_REAGENT
+WEIGHT=4
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Gas Trap 02
+DUPELIST=01146,01147,01148,01149
+
+[ITEMDEF 01146]
+//gas trap
+DUPEITEM=01145
+
+[ITEMDEF 01147]
+//gas trap
+DUPEITEM=01145
+
+[ITEMDEF 01148]
+//gas trap
+DUPEITEM=01145
+
+[ITEMDEF 01149]
+//gas trap
+DUPEITEM=01145
+
+[ITEMDEF 0114b]
+DEFNAME=i_TRAP_AXE_3
+TYPE=T_TRAP
+RESOURCES=2 i_AXE, 1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Axe Trap 03
+DUPELIST=0114c,0114d,0114e,0114f
+
+[ITEMDEF 0114c]
+//axe trap
+DUPEITEM=0114b
+
+[ITEMDEF 0114d]
+//axe trap
+DUPEITEM=0114b
+
+[ITEMDEF 0114e]
+//axe trap
+DUPEITEM=0114b
+
+[ITEMDEF 0114f]
+//axe trap
+DUPEITEM=0114b
+
+[ITEMDEF 01153]
+DEFNAME=i_magical_sparkles
+TYPE=T_SPELL
+RESOURCES=2 T_REAGENT
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Magical Sparkles
+DESCRIPTION=@
+DUPELIST=01154,01155,01156,01157,01159,0115a,0115b,0115c,0115d,0115e
+
+[ITEMDEF 01154]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 01155]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 01156]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 01157]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 01158]
+//
+
+[ITEMDEF 01159]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 0115a]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 0115b]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 0115c]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 0115d]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 0115e]
+//magical sparkles
+DUPEITEM=01153
+
+[ITEMDEF 01165]
+DEFNAME=i_gravestone
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=065
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=01166
+
+[ITEMDEF 01166]
+//gravestone
+DUPEITEM=01165
+
+[ITEMDEF 01167]
+DEFNAME=i_gravestone_2
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=065
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=01168
+
+[ITEMDEF 01168]
+//gravestone
+DUPEITEM=01167
+
+[ITEMDEF 01169]
+DEFNAME=i_gravestone_3
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=065
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=0116a
+
+[ITEMDEF 0116a]
+//gravestone
+DUPEITEM=01169
+
+[ITEMDEF 0116b]
+DEFNAME=i_gravestone_4
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=065
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=0116c
+
+[ITEMDEF 0116c]
+//gravestone
+DUPEITEM=0116b
+
+[ITEMDEF 0116d]
+DEFNAME=i_gravestone_5
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=0116e
+
+[ITEMDEF 0116e]
+//gravestone
+DUPEITEM=0116d
+
+[ITEMDEF 0116f]
+DEFNAME=i_gravestone_6
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=01170
+
+[ITEMDEF 01170]
+//gravestone
+DUPEITEM=0116f
+
+[ITEMDEF 01171]
+DEFNAME=i_gravestone_7
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=01172
+
+[ITEMDEF 01172]
+//gravestone
+DUPEITEM=01171
+
+[ITEMDEF 01173]
+DEFNAME=i_gravestone_8
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=01174
+
+[ITEMDEF 01174]
+//gravestone
+DUPEITEM=01173
+
+[ITEMDEF 01175]
+DEFNAME=i_gravestone_9
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=065
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=01176
+
+[ITEMDEF 01176]
+//gravestone
+DUPEITEM=01175
+
+[ITEMDEF 01177]
+DEFNAME=i_gravestone_10
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=065
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=01178
+
+[ITEMDEF 01178]
+//gravestone
+DUPEITEM=01177
+
+[ITEMDEF 01179]
+DEFNAME=i_gravestone_11
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=065
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=0117a
+
+[ITEMDEF 0117a]
+//gravestone
+DUPEITEM=01179
+
+[ITEMDEF 0117b]
+DEFNAME=i_gravestone_12
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=065
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=0117c
+
+[ITEMDEF 0117c]
+//gravestone
+DUPEITEM=0117b
+
+[ITEMDEF 0117d]
+DEFNAME=i_gravestone_13
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=0117e
+
+[ITEMDEF 0117e]
+//gravestone
+DUPEITEM=0117d
+
+[ITEMDEF 0117f]
+DEFNAME=i_gravestone_14
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+DUPELIST=01180
+
+[ITEMDEF 01180]
+//gravestone
+DUPEITEM=0117f
+
+[ITEMDEF 01181]
+DEFNAME=i_gravestone_15
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+
+[ITEMDEF 01182]
+DEFNAME=i_gravestone_16
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+
+[ITEMDEF 01183]
+DEFNAME=i_gravestone_17
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+
+[ITEMDEF 01184]
+DEFNAME=i_gravestone_18
+TYPE=T_SIGN_GUMP
+FLIP=1
+TDATA2=066
+RESOURCES=4 i_stone_marble
+WEIGHT=20
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Gravestone
+
+[ITEMDEF 0118b]
+// table - purple runner n-s
+DEFNAME=i_table_runner_purple
+TYPE=t_table
+
+RESOURCES=27 i_board,30 i_cloth
+SKILLMAKE=CARPENTRY 89.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+RESOURCES2=6 i_board,1 i_nails,2 i_cloth
+
+WEIGHT=7
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table (Purple Runner)
+DUPELIST=0118c
+
+[ITEMDEF 0118c]
+// table - purple plaid runner e-w
+DUPEITEM=0118b
+
+[ITEMDEF 0118d]
+// table - dark red runner n-s
+DEFNAME=i_table_runner_red
+TYPE=t_table
+RESOURCES=27 i_log,30 i_cloth
+WEIGHT=7
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table (Red Runner)
+SKILLMAKE=CARPENTRY 89.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+RESOURCES2=6 i_board,1 i_nails,2 i_cloth
+
+[ITEMDEF 0118e]
+DEFNAME=i_table_runner_snowflake
+TYPE=t_table
+RESOURCES=27 i_log,30 i_cloth
+WEIGHT=7
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table (Snowflake Runner)
+SKILLMAKE=CARPENTRY 89.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+RESOURCES2=6 i_board,1 i_nails,2 i_cloth
+
+[ITEMDEF 0118f]
+// table - narrow light blue plaid runner table end e-w
+DEFNAME=i_table_runner_plaid_blue
+TYPE=t_table
+WEIGHT=7
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table (Blue Plaid Runner)
+SKILLMAKE=CARPENTRY 83.0, TAILORING 60.0, t_carpentry, t_sewing_kit
+RESOURCES=6 i_BOARD, 1 i_NAILS, 2 i_CLOTH
+DUPELIST=01191
+
+[ITEMDEF 01190]
+// table - narrow light blue plaid runner table extention e-w
+DEFNAME=i_table_runner_plaid_BLUE_ext
+TYPE=t_table
+RESOURCES=6 i_BOARD, 1 i_NAILS, 2 i_CLOTH
+WEIGHT=7
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table (Plaid Extender Runner)
+DUPELIST=01192
+
+[ITEMDEF 01191]
+// table - narrow light blue plaid runner table end n-s
+DUPEITEM=0118f
+
+[ITEMDEF 01192]
+// table - narrow light blue plaid runner table extention n-s
+DUPEITEM=01190
+
+[ITEMDEF 01193]
+DEFNAME=i_TRAP_AXE_4
+TYPE=T_TRAP
+RESOURCES=2 i_AXE, 1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Axe Trap 04
+DUPELIST=01194,01195,01196,01197,01198,01199
+
+[ITEMDEF 01194]
+//axe trap
+DUPEITEM=01193
+
+[ITEMDEF 01195]
+//axe trap
+DUPEITEM=01193
+
+[ITEMDEF 01196]
+//axe trap
+DUPEITEM=01193
+
+[ITEMDEF 01197]
+//axe trap
+DUPEITEM=01193
+
+[ITEMDEF 01198]
+//axe trap
+DUPEITEM=01193
+
+[ITEMDEF 01199]
+//axe trap
+DUPEITEM=01193
+
+[ITEMDEF 0119a]
+DEFNAME=i_TRAP_SPIKE_3
+TYPE=T_TRAP
+RESOURCES=2 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Floor Spikes 01
+DUPELIST=0119b,0119c,0119d,0119e,0119f
+
+[ITEMDEF 0119b]
+//floor spikes
+DUPEITEM=0119a
+
+[ITEMDEF 0119c]
+//floor spikes
+DUPEITEM=0119a
+
+[ITEMDEF 0119d]
+//floor spikes
+DUPEITEM=0119a
+
+[ITEMDEF 0119e]
+//floor spikes
+DUPEITEM=0119a
+
+[ITEMDEF 0119f]
+//floor spikes
+DUPEITEM=0119a
+
+[ITEMDEF 011a0]
+DEFNAME=i_TRAP_SPIKE_4
+TYPE=T_TRAP
+RESOURCES=2 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Floor Spikes 02
+DUPELIST=011a1,011a2,011a3,011a4,011a5
+
+[ITEMDEF 011a1]
+//floor spikes
+DUPEITEM=011a0
+
+[ITEMDEF 011a2]
+//floor spikes
+DUPEITEM=011a0
+
+[ITEMDEF 011a3]
+//floor spikes
+DUPEITEM=011a0
+
+[ITEMDEF 011a4]
+//floor spikes
+DUPEITEM=011a0
+
+[ITEMDEF 011a5]
+//floor spikes
+DUPEITEM=011a0
+
+[ITEMDEF 011a6]
+DEFNAME=i_TRAP_GAS_3
+TYPE=T_TRAP
+RESOURCES=2 i_AXE, 1 i_ingot_iron, 1 i_SPRINGS, 1 T_REAGENT
+WEIGHT=4
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Gas Trap 03
+DUPELIST=011a7,011a8,011a9,011aa,011ab
+
+[ITEMDEF 011a7]
+//gas trap
+DUPEITEM=011a6
+
+[ITEMDEF 011a8]
+//gas trap
+DUPEITEM=011a6
+
+[ITEMDEF 011a9]
+//gas trap
+DUPEITEM=011a6
+
+[ITEMDEF 011aa]
+//gas trap
+DUPEITEM=011a6
+
+[ITEMDEF 011ab]
+//gas trap
+DUPEITEM=011a6
+
+[ITEMDEF 011ac]
+DEFNAME=i_TRAP_SAW_FLOOR
+TYPE=T_TRAP
+RESOURCES=1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Floor Saw 01
+DUPELIST=011ad,011ae,011af,011b0
+
+[ITEMDEF 011ad]
+//floor saw
+DUPEITEM=011ac
+
+[ITEMDEF 011ae]
+//floor saw
+DUPEITEM=011ac
+
+[ITEMDEF 011af]
+//floor saw
+DUPEITEM=011ac
+
+[ITEMDEF 011b0]
+//floor saw
+DUPEITEM=011ac
+
+[ITEMDEF 011b1]
+DEFNAME=i_TRAP_SAW_FLOOR_2
+TYPE=T_TRAP
+RESOURCES=1 i_ingot_iron, 1 i_SPRINGS
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Floor Saw 02
+DUPELIST=011b2,011b3,011b4,011b5
+
+[ITEMDEF 011b2]
+//floor saw
+DUPEITEM=011b1
+
+[ITEMDEF 011b3]
+//floor saw
+DUPEITEM=011b1
+
+[ITEMDEF 011b4]
+//floor saw
+DUPEITEM=011b1
+
+[ITEMDEF 011b5]
+//floor saw
+DUPEITEM=011b1
+
+[ITEMDEF 011b6]
+DEFNAME=i_TRAP_BOULDER
+TYPE=T_TRAP
+RESOURCES=1 i_ingot_iron, 1 i_SPRINGS, 1 i_rock_plain
+WEIGHT=15
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Traps
+DESCRIPTION=Boulder Trap
+DUPELIST=011b7,011b8,011b9,011ba,011bb
+
+[ITEMDEF 011b7]
+//boulder trap
+DUPEITEM=011b6
+
+[ITEMDEF 011b8]
+//boulder trap
+DUPEITEM=011b6
+
+[ITEMDEF 011b9]
+//boulder trap
+DUPEITEM=011b6
+
+[ITEMDEF 011ba]
+//boulder trap
+DUPEITEM=011b6
+
+[ITEMDEF 011bb]
+//boulder trap
+DUPEITEM=011b6
+
+[ITEMDEF 011bc]
+DEFNAME=i_dungeon_ramp
+RESOURCES=10 i_rock_plain
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Dungeon Ramp
+DESCRIPTION=Dungeon Ramp
+DUPELIST=011bd,011be,011bf
+
+[ITEMDEF 011bd]
+//dungeon ramp
+DUPEITEM=011bc
+
+[ITEMDEF 011be]
+//dungeon ramp
+DUPEITEM=011bc
+
+[ITEMDEF 011bf]
+//dungeon ramp
+DUPEITEM=011bc
+
+[ITEMDEF 011c0]
+DEFNAME=i_FLOOR_CRUMBLING
+TYPE=T_TRAP
+RESOURCES=2 i_rock_plain
+WEIGHT=10
+CATEGORY=Ground Tiles
+SUBSECTION=Crumbling Floor
+DESCRIPTION=@
+DUPELIST=011c1,011c2,011c3,011c4,011c5
+
+[ITEMDEF 011c1]
+//crumbling floor
+DUPEITEM=011c0
+
+[ITEMDEF 011c2]
+//crumbling floor
+DUPEITEM=011c0
+
+[ITEMDEF 011c3]
+//crumbling floor
+DUPEITEM=011c0
+
+[ITEMDEF 011c4]
+//crumbling floor
+DUPEITEM=011c0
+
+[ITEMDEF 011c5]
+//crumbling floor
+DUPEITEM=011c0
+
+[ITEMDEF 011c6]
+DEFNAME=i_POT_SMALL_FLOWER
+RESOURCES=1 i_CLAY
+WEIGHT=2
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Vases & Pots
+DESCRIPTION=Small Empty Pot
+
+[ITEMDEF 011c7]
+DEFNAME=i_POT_FLOWER_LARGE
+RESOURCES=3 i_CLAY
+WEIGHT=6
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Vases & Pots
+DESCRIPTION=Large Empty Pot
+
+[ITEMDEF 011c8]
+DEFNAME=i_TREE_SMALL_POTTED
+RESOURCES=1 i_POT_SMALL_FLOWER, 1 i_TREE_SAPLING_PLANTED, 1 i_DIRT
+WEIGHT=4
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Trees
+DESCRIPTION=Small Planted Tree
+
+[ITEMDEF 011c9]
+DEFNAME=i_TREE_LARGE_POTTED
+RESOURCES=1 i_POT_FLOWER_LARGE, 1 i_PLANT_SPIDER, 2 i_DIRT
+WEIGHT=8
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Trees
+DESCRIPTION=Large Planted Tree
+
+[ITEMDEF 011ca]
+DEFNAME=i_PLANT_POTTED_SMALL
+RESOURCES=1 i_POT_SMALL_FLOWER, 1 i_FLOWER_FOXGLOVE, 1 i_DIRT
+WEIGHT=4
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Plants
+DESCRIPTION=Plant 1
+
+[ITEMDEF 011cb]
+DEFNAME=i_FLOWER_POTTED_SMALL
+RESOURCES=1 i_POT_SMALL_FLOWER, 1 i_FLOWER_ORFLUER, 1 i_DIRT
+WEIGHT=3
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Plants
+DESCRIPTION=Plant 2
+
+[ITEMDEF 011cc]
+DEFNAME=i_TREE_SMALL_POTTED_2
+RESOURCES=1 i_POT_SMALL_FLOWER, 1 i_TREE_SAPLING_PLANTED, 1 i_DIRT
+WEIGHT=4
+CATEGORY=Decoration - Potted Plants & Vases
+SUBSECTION=Potted Plants
+DESCRIPTION=Plant 3
+
+[ITEMDEF 011ce]
+DEFNAME=i_BED_DOUBLE_1
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 i_BOARD, 2 I_BEDROLL, 20 i_NAILS, 2 i_SHEET, 2 i_PILLOW
+WEIGHT=40
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed 01 (01/04)
+DUPELIST=011cf,011d0,011d1
+
+[ITEMDEF 011cf]
+//DOUBLE_BED_1 PART 2
+DUPEITEM=011CE
+
+[ITEMDEF 011d0]
+//DOUBLE_BED_1 PART 3
+DUPEITEM=011CE
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed 01 (03/04)
+
+[ITEMDEF 011d1]
+//DOUBLE_BED_1 PART 4
+DUPEITEM=011CE
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed 01 (04/04)
+
+[ITEMDEF 011d2]
+DEFNAME=i_BED_DOUBLE_2
+TYPE=T_BED
+TDATA1=0
+RESOURCES=50 i_BOARD, 2 I_BEDROLL, 20 i_NAILS, 2 i_SHEET, 2 i_PILLOW
+WEIGHT=40
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed 02 (01/04)
+DUPELIST=011d3,011d4,011d5
+
+[ITEMDEF 011d3]
+//DOUBLE_BED_2 PART 2
+DUPEITEM=011D2
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed 02 (02/04)
+
+[ITEMDEF 011d4]
+//DOUBLE_BED_2 PART 3
+DUPEITEM=011D2
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed 02 (03/04)
+
+[ITEMDEF 011d5]
+//DOUBLE_BED_2 PART 4
+DUPEITEM=011D2
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedroom Furniture
+DESCRIPTION=Bed 02 (04/04)
+
+[ITEMDEF 011d6]
+// table - narrow bamboo table end - S
+DEFNAME=i_table_bamboo_end
+TYPE=t_table
+RESOURCES=30 i_BAMBOO, 4 i_NAILS
+WEIGHT=15
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table (Bamboo)
+DUPELIST=011d7,011d9,011da
+
+[ITEMDEF 011d7]
+// table - narrow bamboo table end - N
+DUPEITEM=011d6
+
+[ITEMDEF 011d8]
+DEFNAME=i_table_bamboo_ext
+// table - narrow bamboo extention n-s
+DUPELIST=011db
+
+[ITEMDEF 011d9]
+// table - narrow bamboo table end - E
+DUPEITEM=011d6
+
+[ITEMDEF 011da]
+// table - narrow bamboo table end - W
+DUPEITEM=011d6
+
+[ITEMDEF 011db]
+// table - narrow bamboo extention e-w
+DUPEITEM=011d8
+
+[ITEMDEF 011dc]
+// table - narrow log table end - E
+DEFNAME=i_table_log_end
+TYPE=t_table
+RESOURCES=15 i_LOG, 4 i_NAILS
+WEIGHT=30
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table (Log)
+DUPELIST=011dd,011df,011e0
+
+[ITEMDEF 011dd]
+// table - narrow log table end - W
+DUPEITEM=011dc
+
+[ITEMDEF 011de]
+// table - narrow log table extention e-w
+DEFNAME=i_table_log_ext
+DUPELIST=011e1
+
+[ITEMDEF 011df]
+// table - narrow log table end - S
+DUPEITEM=011dc
+
+[ITEMDEF 011e0]
+// table - narrow log table end - N
+DUPEITEM=011dc
+
+[ITEMDEF 011e1]
+// table - narrow log table extention e-w
+DUPEITEM=011de
+
+[ITEMDEF 011e2]
+DEFNAME=i_MAT_GRASS
+RESOURCES=2 i_plant_grasses
+WEIGHT=2
+CATEGORY=Decoration - Furniture
+SUBSECTION=Mats
+DESCRIPTION=Mat (Grass)
+DUPELIST=011e3,011e4,011e5
+
+[ITEMDEF 011e3]
+DUPEITEM=011e2
+
+[ITEMDEF 011e4]
+//grass mat
+DUPEITEM=011e2
+
+[ITEMDEF 011e5]
+//grass mat
+DUPEITEM=011e2
+
+[ITEMDEF 011e6]
+DEFNAME=i_MAT_WOVEN
+RESOURCES=2 i_STRAW
+WEIGHT=2
+CATEGORY=Decoration - Furniture
+SUBSECTION=Mats
+DESCRIPTION=Mat (Woven)
+DUPELIST=011e7,011e8,011e9
+
+[ITEMDEF 011e7]
+//woven mat
+DUPEITEM=011e6
+
+[ITEMDEF 011e8]
+//woven mat
+DUPEITEM=011e6
+
+[ITEMDEF 011e9]
+//woven mat
+DUPEITEM=011e6
+
+[ITEMDEF 011ea]
+DEFNAME=i_PILLOW_STRAW
+RESOURCES=1 i_STRAW
+WEIGHT=1
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Straw Pillow
+DUPELIST=011eb
+
+[ITEMDEF 011eb]
+//straw pillow
+DUPEITEM=011ea
+
+[ITEMDEF 011ec]
+DEFNAME=i_FIREPLACE_STONE_7
+RESOURCES=20 i_ingot_iron, 300 i_rock_plain, 10 i_BOARD
+CATEGORY=Fireplaces, Chimneys & Ovens
+SUBSECTION=Stone Fireplace 3
+DESCRIPTION=@
+DUPELIST=011ed,011ee,011ef
+
+[ITEMDEF 011ed]
+//fireplace
+DUPEITEM=011ec
+
+[ITEMDEF 011ee]
+//fireplace
+DUPEITEM=011ec
+
+[ITEMDEF 011ef]
+//fireplace
+DUPEITEM=011ec
+
+[ITEMDEF 011f0]
+DEFNAME=i_hammock
+RESOURCES=1 i_ROPE, 2 i_BAMBOO, 2 i_CANVAS
+WEIGHT=8
+CATEGORY=Decoration - Furniture
+SUBSECTION=Hammocks & Cots
+DESCRIPTION=Hammock
+DUPELIST=011f1,011f2,011f3
+
+[ITEMDEF 011f1]
+//hammock
+DUPEITEM=011f0
+
+[ITEMDEF 011f2]
+//hammock
+DUPEITEM=011f0
+
+[ITEMDEF 011f3]
+//hammock
+DUPEITEM=011f0
+
+[ITEMDEF 011f4]
+//DEFNAME2=LLAMA_HIDES_4
+//DEFNAME2=i_FUR_DARK_LARGE_SE
+DEFNAME=i_fur_dark
+TYPE=T_FUR
+VALUE=5
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Hide (Regular)
+DUPELIST=011f5,011f7,011f8,011f9,011fa,011fb
+
+[ITEMDEF 011f5]
+//fur
+DUPEITEM=011f4
+
+[ITEMDEF 011f6]
+//DEFNAME2=i_FUR_LIGHT_LARGE_SE
+DEFNAME=i_fur_light
+TYPE=T_FUR
+VALUE=5
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=Tanner
+DESCRIPTION=Hide (Llama)
+
+[ITEMDEF 011f7]
+//fur light brown facing SE
+DUPEITEM=011f4
+
+[ITEMDEF 011f8]
+//fur dark brown facing SW
+DUPEITEM=011f4
+
+[ITEMDEF 011f9]
+//fur dark brown facing SW
+DUPEITEM=011f4
+
+[ITEMDEF 011fa]
+//fur light brown facing SW
+DUPEITEM=011f4
+
+[ITEMDEF 011fb]
+//fur light brown facing SW
+DUPEITEM=011f4
+
+[ITEMDEF 011fc]
+// chair - backless bamboo stool
+// chair - backless bamboo artist's stool
+DEFNAME=i_chair_stool_bamboo
+TYPE=T_CHAIR
+FLIP=1
+SKILLMAKE=CARPENTRY 40.0
+RESOURCES=4 i_BAMBOO, 3 i_CANVAS
+WEIGHT=3
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Foot Stool
+
+[ITEMDEF 011fd]
+DEFNAME=i_cot_sw
+TYPE=T_BED
+TDATA1=2
+RESOURCES=4 i_BAMBOO, 3 i_CANVAS
+WEIGHT=10
+CATEGORY=Decoration - Furniture
+SUBSECTION=Hammocks & Cots
+DESCRIPTION=Cot
+DUPELIST=011fe,011ff,01200
+
+[ITEMDEF 011fe]
+//cot
+DUPEITEM=011fd
+
+[ITEMDEF 011ff]
+//cot
+DUPEITEM=011fd
+
+[ITEMDEF 01200]
+//cot
+DUPEITEM=011fd
+
+[ITEMDEF 01201]
+// table - narrow stone table end - S
+DEFNAME=i_TABLE_STONE_end
+RESOURCES=10 i_rock_plain
+WEIGHT=10
+CATEGORY=Decoration - Furniture
+SUBSECTION=Tables
+DESCRIPTION=Table (Stone)
+DUPELIST=01202,01204,01205
+
+[ITEMDEF 01202]
+// table - narrow stone table end - N
+DUPEITEM=01201
+
+[ITEMDEF 01203]
+// table - narrow stone table extention n-s
+DUPELIST=01206
+
+[ITEMDEF 01204]
+// table - narrow stone table end - E
+DUPEITEM=01201
+
+[ITEMDEF 01205]
+// table - narrow stone table end - W
+DUPEITEM=01201
+
+[ITEMDEF 01206]
+// table - narrow stone table extention e-w
+DUPEITEM=01203
+
+[ITEMDEF 01207]
+DEFNAME=i_bench_stone_1
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=10 i_rock_plain
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench (Stone)
+DUPELIST=01208,01209
+
+[ITEMDEF 01208]
+//STONE_BENCH_1 PART 3
+DUPEITEM=01207
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench (Stone)
+
+[ITEMDEF 01209]
+//STONE_BENCH_1 PART 2
+DUPEITEM=01207
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench (Stone)
+
+[ITEMDEF 0120a]
+DEFNAME=i_bench_stone_2
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=10 i_rock_plain
+WEIGHT=20
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench (Stone)
+DUPELIST=0120b,0120c
+
+[ITEMDEF 0120b]
+//STONE_BENCH_2 PART 3
+DUPEITEM=0120A
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench (Stone)
+
+[ITEMDEF 0120c]
+//STONE_BENCH_2 PART 2
+DUPEITEM=0120A
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Bench (Stone)
+
+[ITEMDEF 0120e]
+DEFNAME=i_ALTAR_STONE
+RESOURCES=10 i_rock_plain
+//WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Altar
+DESCRIPTION=@
+DUPELIST=0120f,01210,01211,01212,01213,01214,01215,01216
+
+[ITEMDEF 0120f]
+//altar
+DUPEITEM=0120e
+
+[ITEMDEF 01210]
+//altar
+DUPEITEM=0120e
+
+[ITEMDEF 01211]
+//altar
+DUPEITEM=0120e
+
+[ITEMDEF 01212]
+//altar
+DUPEITEM=0120e
+
+[ITEMDEF 01213]
+//altar
+DUPEITEM=0120e
+
+[ITEMDEF 01214]
+//altar
+DUPEITEM=0120e
+
+[ITEMDEF 01215]
+//altar
+DUPEITEM=0120e
+
+[ITEMDEF 01216]
+//altar
+DUPEITEM=0120e
+
+[ITEMDEF 01218]
+// chair - gray stone chair w/high back - N
+DEFNAME=i_chair_stone
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=10 i_rock_plain
+WEIGHT=10
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Chair (Stone)
+DUPELIST=01219,0121a,0121b
+
+[ITEMDEF 01219]
+// chair - gray stone chair w/high back - W
+DUPEITEM=01218
+
+[ITEMDEF 0121a]
+// chair - gray stone chair w/high back - S
+DUPEITEM=01218
+
+[ITEMDEF 0121b]
+// chair - gray stone chair w/high back - E
+DUPEITEM=01218
+
+[ITEMDEF 0121d]
+DEFNAME=i_wall_carving_stone
+TYPE=T_WALL
+RESOURCES=10 i_rock_plain
+WEIGHT=10
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Wall Carving
+DESCRIPTION=@
+DUPELIST=0121e,0121f,01220,01221,01222
+
+[ITEMDEF 0121e]
+//wall carving
+DUPEITEM=0121d
+
+[ITEMDEF 0121f]
+//wall carving
+DUPEITEM=0121d
+
+[ITEMDEF 01220]
+//wall carving
+DUPEITEM=0121d
+
+[ITEMDEF 01221]
+//wall carving
+DUPEITEM=0121d
+
+[ITEMDEF 01222]
+//wall carving
+DUPEITEM=0121d
+
+[ITEMDEF 01223]
+DEFNAME=i_PEDESTAL_MARBLE
+RESOURCES=12 i_MARBLE
+WEIGHT=12
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Pedestal
+
+[ITEMDEF 01224]
+DEFNAME=i_statue_stone_sm
+RESOURCES=2 i_rock_plain
+WEIGHT=5
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+DUPELIST=01225,01226,01227,01228
+
+[ITEMDEF 01225]
+//statue
+DUPEITEM=01224
+
+[ITEMDEF 01226]
+//statue
+DUPEITEM=01224
+
+[ITEMDEF 01227]
+//statue
+DUPEITEM=01224
+
+[ITEMDEF 01228]
+//statue
+DUPEITEM=01224
+
+[ITEMDEF 0122a]
+DEFNAME=i_blood_pool_large
+RESOURCES=2 i_BLOOD
+TYPE=T_BLOOD
+//WEIGHT=1
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Blood
+DESCRIPTION=Blood Pool
+DUPELIST=0122b,0122c,0122d,0122e
+
+[ITEMDEF 0122b]
+//blood
+DUPEITEM=0122a
+
+[ITEMDEF 0122c]
+//blood
+DUPEITEM=0122a
+
+[ITEMDEF 0122d]
+//blood
+DUPEITEM=0122a
+
+[ITEMDEF 0122e]
+//blood
+DUPEITEM=0122a
+
+[ITEMDEF 0122f]
+DEFNAME=i_blood_smear
+RESOURCES=1 i_BLOOD
+TYPE=T_BLOOD
+//WEIGHT=1
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Blood
+DESCRIPTION=Blood Smear
+
+[ITEMDEF 01230]
+DEFNAME=i_guillotine
+RESOURCES=30 i_BOARD, 1 i_LOG, 1 i_BASKET, 2 i_ingot_iron
+WEIGHT=30
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Torture
+DESCRIPTION=Guillotine
+
+[ITEMDEF 01231]
+DEFNAME=i_wall_carving_stone_2
+TYPE=T_WALL
+RESOURCES=10 i_rock_plain
+WEIGHT=10
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Wall Carving
+DESCRIPTION=Wall Carving 02
+DUPELIST=01232,01233,01234,01235,01236,01237,01238,01239,0123a,0123b,0123c,0123d,0123e,01240,01241,01242,01243,01244
+
+[ITEMDEF 01232]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01233]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01234]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01235]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01236]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01237]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01238]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01239]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 0123a]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 0123b]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 0123c]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 0123d]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 0123e]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01240]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01241]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01242]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01243]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01244]
+//wall carving
+DUPEITEM=01231
+
+[ITEMDEF 01245]
+DEFNAME=i_guillotine_bloody
+RESOURCES=30 i_BOARD, 1 i_LOG, 1 i_BASKET, 2 i_ingot_iron, 1 i_BLOOD_SMEAR
+WEIGHT=30
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Torture
+DESCRIPTION=Guillotine
+DUPELIST=01246,01247,0125e,0125f,01260,01261
+
+[ITEMDEF 01246]
+//guillotine
+DUPEITEM=01245
+
+[ITEMDEF 01247]
+//guillotine
+DUPEITEM=01245
+
+[ITEMDEF 01249]
+DEFNAME=i_iron_maiden
+RESOURCES=20 i_ingot_iron
+WEIGHT=30
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Torture
+DESCRIPTION=Iron Maiden
+DUPELIST=0124a,0124b,0124c,0124d
+
+[ITEMDEF 0124a]
+//iron maiden
+DUPEITEM=01249
+
+[ITEMDEF 0124b]
+//iron maiden
+DUPEITEM=01249
+
+[ITEMDEF 0124c]
+//iron maiden
+DUPEITEM=01249
+
+[ITEMDEF 0124d]
+//iron maiden
+DUPEITEM=01249
+
+[ITEMDEF 0124e]
+DEFNAME=i_torture_rack
+RESOURCES=20 i_BOARD, 2 i_ingot_iron, 5 i_ROPE
+WEIGHT=30
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Torture
+DESCRIPTION=Rack
+DUPELIST=0124f,01250,01251,01252,01253,01254,01255,01256,01257,01258,01259,0125a,0125b,0125c,0125d
+
+[ITEMDEF 0124f]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01250]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01251]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01252]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01253]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01254]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01255]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01256]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01257]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01258]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 01259]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 0125a]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 0125b]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 0125c]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 0125d]
+//rack
+DUPEITEM=0124e
+
+[ITEMDEF 0125e]
+//guillotine
+DUPEITEM=01245
+
+[ITEMDEF 0125f]
+//guillotine
+DUPEITEM=01245
+
+[ITEMDEF 01260]
+//guillotine
+DUPEITEM=01245
+
+[ITEMDEF 01261]
+//guillotine
+DUPEITEM=01245
+
+[ITEMDEF 01262]
+DEFNAME=i_SHACKLES_HANGING
+RESOURCES=2 i_ingot_iron
+WEIGHT=3
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Torture
+DESCRIPTION=Shackles
+DUPELIST=01a07,01a08,01263
+
+[ITEMDEF 01263]
+DEFNAME=i_SHACKLES_HANGING_ne
+DUPEITEM=01262
+
+[ITEMDEF 01265]
+DEFNAME=i_wall_carving_stone_3
+TYPE=T_WALL
+RESOURCES=10 i_rock_plain
+WEIGHT=10
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Wall Carving
+DESCRIPTION=@
+DUPELIST=01266,01267
+
+[ITEMDEF 01266]
+//wall carving
+DUPEITEM=01265
+
+[ITEMDEF 01267]
+//wall carving
+DUPEITEM=01265
+
+[ITEMDEF 0126b]
+DEFNAME=i_PLATFORM_TORTURE_WOOD
+RESOURCES=10 i_LOG
+WEIGHT=10
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Torture
+DESCRIPTION=Block
+DUPELIST=0126c,0126d,0126e,0126f,01270,01271,01272,01273,01274,01275,01276,01277,01278,01279,0127a,0127b,0127c
+
+[ITEMDEF 0126c]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 0126d]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 0126e]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 0126f]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01270]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01271]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01272]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01273]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01274]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01275]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01276]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01277]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01278]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 01279]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 0127a]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 0127b]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 0127c]
+//block
+DUPEITEM=0126b
+
+[ITEMDEF 0127e]
+DEFNAME=i_pillory
+RESOURCES=5 i_BOARD, 2 i_ingot_iron
+WEIGHT=5
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Torture
+DESCRIPTION=Pillory
+DUPELIST=0127f,01280,01281,01282,01283,01284,01285,01286,01287,01288,01289,0128a,0128b,0128c,0128d,0128e,0128f,01290,01291,01292,01293,01294,01295
+
+[ITEMDEF 0127f]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01280]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01281]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01282]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01283]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01284]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01285]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01286]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01287]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01288]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01289]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 0128a]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 0128b]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 0128c]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 0128d]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 0128e]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 0128f]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01290]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01291]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01292]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01293]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01294]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01295]
+//pillory
+DUPEITEM=0127e
+
+[ITEMDEF 01296]
+DEFNAME=i_sign_post
+RESOURCES=2 i_LOG
+WEIGHT=3
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Post
+
+[ITEMDEF 01297]
+DEFNAME=i_sign_45
+TYPE=T_SIGN_GUMP
+TDATA2=067
+RESOURCES=1 i_BOARD
+WEIGHT=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Road Sign (045)
+
+[ITEMDEF 01298]
+DEFNAME=i_sign_315
+TYPE=T_SIGN_GUMP
+TDATA2=067
+RESOURCES=1 i_BOARD
+WEIGHT=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Road Sign (315)
+
+[ITEMDEF 01299]
+DEFNAME=i_sign_000
+TYPE=T_SIGN_GUMP
+TDATA2=067
+RESOURCES=1 i_BOARD
+WEIGHT=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Road Sign (000)
+
+[ITEMDEF 0129a]
+DEFNAME=i_sign_270
+TYPE=T_SIGN_GUMP
+TDATA2=067
+RESOURCES=1 i_BOARD
+WEIGHT=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Road Sign (270)
+
+[ITEMDEF 0129b]
+DEFNAME=i_sign_135
+TYPE=T_SIGN_GUMP
+TDATA2=067
+RESOURCES=1 i_BOARD
+WEIGHT=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Road Sign (135)
+
+[ITEMDEF 0129c]
+DEFNAME=i_sign_090
+TYPE=T_SIGN_GUMP
+TDATA2=067
+RESOURCES=1 i_BOARD
+WEIGHT=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Road Sign (090)
+
+[ITEMDEF 0129d]
+DEFNAME=i_sign_180
+TYPE=T_SIGN_GUMP
+TDATA2=067
+RESOURCES=1 i_BOARD
+WEIGHT=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Road Sign (180)
+
+[ITEMDEF 0129e]
+DEFNAME=i_sign_225
+TYPE=T_SIGN_GUMP
+TDATA2=067
+RESOURCES=1 i_BOARD
+WEIGHT=1
+CATEGORY=Decoration - Signs
+SUBSECTION=Road Signs
+DESCRIPTION=Road Sign (225)
+
+[ITEMDEF 0129f]
+DEFNAME=i_statue_stone_lg
+RESOURCES=300 i_rock_plain
+WEIGHT=500
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+DUPELIST=012a0,012a1,012a2,012a3,012a4
+
+[ITEMDEF 012a0]
+//statue
+DUPEITEM=0129f
+
+[ITEMDEF 012a1]
+//statue
+DUPEITEM=0129f
+
+[ITEMDEF 012a2]
+//statue
+DUPEITEM=0129f
+
+[ITEMDEF 012a3]
+//statue
+DUPEITEM=0129f
+
+[ITEMDEF 012a4]
+//statue
+DUPEITEM=0129f
+
+[ITEMDEF 012a5]
+DEFNAME=i_CARDS_TAROT
+RESOURCES=13 i_PAPER
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Gypsy
+DESCRIPTION=Tarot Cards
+DUPELIST=012a6,012a7,012a8,012a9,012aa,012ab,012ac
+
+[ITEMDEF 012a6]
+//tarot
+DUPEITEM=012a5
+
+[ITEMDEF 012a7]
+//tarot
+DUPEITEM=012a5
+
+[ITEMDEF 012a8]
+//tarot
+DUPEITEM=012a5
+
+[ITEMDEF 012a9]
+//tarot
+DUPEITEM=012a5
+
+[ITEMDEF 012aa]
+//tarot
+DUPEITEM=012a5
+
+[ITEMDEF 012ab]
+//tarot
+DUPEITEM=012a5
+
+[ITEMDEF 012ac]
+//tarot
+DUPEITEM=012a5
+
+[ITEMDEF 012ae]
+DEFNAME=i_statue_stone_lg_2
+RESOURCES=300 i_rock_plain
+WEIGHT=500
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+DUPELIST=012af,012b0
+
+[ITEMDEF 012af]
+//LARGE_STONE_STATUE_2 PART 2
+DUPEITEM=012AE
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+
+[ITEMDEF 012b0]
+//LARGE_STONE_STATUE_2 PART 3
+DUPEITEM=012AE
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+
+[ITEMDEF 012b1]
+DEFNAME=i_scaffold
+RESOURCES=30 i_LOG, 4 i_ROPE
+WEIGHT=30
+CATEGORY=Miscellaneous
+SUBSECTION=Scaffold
+DESCRIPTION=@
+DUPELIST=012b2
+
+[ITEMDEF 012b2]
+//scaffold
+DUPEITEM=012b1
+
+[ITEMDEF 012b3]
+DEFNAME=i_mallet_and_chisel
+RESOURCES=2 i_ingot_iron, 1 i_BOARD
+WEIGHT=4
+CATEGORY=Items by Professions
+SUBSECTION=Artists
+DESCRIPTION=Mallet and Chisel
+
+[ITEMDEF 012b6]
+DEFNAME=i_TREE_YEW_1
+WEIGHT=10
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Yew Tree (01/08)
+DUPELIST=012b7,012b8,012b9,012ba,012bb,012bc,012bd,012be,012bf,012c0,012c1,012c2,012c3,012c4,012c5,012c6,012c7
+
+[ITEMDEF 012b7]
+//YEW_TREE_1_2
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Yew Tree (02/08)
+
+[ITEMDEF 012b8]
+//YEW_TREE_1_3
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Yew Tree (03/08)
+
+[ITEMDEF 012b9]
+//YEW_TREE_1_4
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Yew Tree (04/08)
+
+[ITEMDEF 012ba]
+//YEW_TREE_1_5
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Yew Tree (05/08)
+
+[ITEMDEF 012bb]
+//YEW_TREE_1_6
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Yew Tree (06/08)
+
+[ITEMDEF 012bc]
+//YEW_TREE_1_7
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Yew Tree (07/08)
+
+[ITEMDEF 012bd]
+//YEW_TREE_1_8
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Yew Tree (08/08)
+
+[ITEMDEF 012be]
+//YEW_TREE_1_9
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (01/10)
+
+[ITEMDEF 012bf]
+//YEW_TREE_1_10
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (02/10)
+
+[ITEMDEF 012c0]
+//YEW_TREE_1_11
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (03/10)
+
+[ITEMDEF 012c1]
+//YEW_TREE_1_12
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (04/10)
+
+[ITEMDEF 012c2]
+//YEW_TREE_1_13
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (05/10)
+
+[ITEMDEF 012c3]
+//YEW_TREE_1_14
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (06/10)
+
+[ITEMDEF 012c4]
+//YEW_TREE_1_15
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (07/10)
+
+[ITEMDEF 012c5]
+//YEW_TREE_1_16
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (08/10)
+
+[ITEMDEF 012c6]
+//YEW_TREE_1_17
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (09/10)
+
+[ITEMDEF 012c7]
+//YEW_TREE_1_18
+DUPEITEM=012B6
+CATEGORY=Vegetation
+SUBSECTION=Yew Tree
+DESCRIPTION=Leaves (Yew Tree) (10/10)
+
+[ITEMDEF 012c8]
+DEFNAME=i_scaffold_2
+RESOURCES=30 i_LOG, 4 i_ROPE
+WEIGHT=30
+CATEGORY=Miscellaneous
+SUBSECTION=Scaffold
+DESCRIPTION=@
+
+[ITEMDEF 012c9]
+DEFNAME=i_scaffold_3
+RESOURCES=30 i_LOG, 4 i_ROPE
+WEIGHT=30
+CATEGORY=Miscellaneous
+SUBSECTION=Scaffold
+DESCRIPTION=@
+
+[ITEMDEF 012ca]
+DEFNAME=i_BUST_STONE_SMALL
+RESOURCES=2 i_rock_plain
+WEIGHT=5
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue (Bust)
+DUPELIST=012cb
+
+[ITEMDEF 012cb]
+//bust
+DUPEITEM=012ca
+
+[ITEMDEF 012cc]
+DEFNAME=i_wall_carving_stone_4
+TYPE=T_WALL
+RESOURCES=10 i_rock_plain
+WEIGHT=10
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Wall Coverings
+DESCRIPTION=Wall Carving
+DUPELIST=012cd,012ce,012cf,012d0,012d3,012d4
+
+[ITEMDEF 012cd]
+//wall carving
+DUPEITEM=012cc
+
+[ITEMDEF 012ce]
+//wall carving
+DUPEITEM=012cc
+
+[ITEMDEF 012cf]
+//wall carving
+DUPEITEM=012cc
+
+[ITEMDEF 012d0]
+//wall carving
+DUPEITEM=012cc
+
+[ITEMDEF 012d3]
+//wall carving
+DUPEITEM=012cc
+
+[ITEMDEF 012d4]
+//wall carving
+DUPEITEM=012cc
+
+[ITEMDEF 012d5]
+DEFNAME=i_statue_stone_sm_2
+RESOURCES=2 i_rock_plain
+WEIGHT=5
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+
+[ITEMDEF 012d6]
+DEFNAME=i_statue_stone_lg_3
+RESOURCES=300 i_rock_plain
+WEIGHT=500
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+DUPELIST=012d7
+
+[ITEMDEF 012d7]
+//LARGE_STONE_STATUE_3 PART 2
+DUPEITEM=012D6
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+
+[ITEMDEF 012d8]
+DEFNAME=i_statue_stone_lg_4
+RESOURCES=300 i_rock_plain
+WEIGHT=500
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statues
+DESCRIPTION=Statue
+DUPELIST=012d9
+
+[ITEMDEF 012d9]
+//statue
+DUPEITEM=012d8
+
+[ITEMDEF 012da]
+DEFNAME=i_curtain_white_02
+RESOURCES=10 i_CLOTH
+WEIGHT=10
+DYE=1
+CATEGORY=Decoration - Curtains
+SUBSECTION=Curtain 02
+DESCRIPTION=@
+DUPELIST=012db,012dc,012dd,012de,012df,012e0,012e1
+
+[ITEMDEF 012db]
+//curtain white fluffy floorlength being drawn
+DUPEITEM=012da
+
+[ITEMDEF 012dc]
+//curtain side to w. white floorlength
+DUPEITEM=012da
+
+[ITEMDEF 012dd]
+//curtain white skinny
+DUPEITEM=012da
+
+[ITEMDEF 012de]
+//curtain white animated drawing back right to left against NW wall
+DUPEITEM=012da
+
+[ITEMDEF 012df]
+//curtain fluffy white being drawn back nw wall
+DUPEITEM=012da
+
+[ITEMDEF 012e0]
+//curtain
+DUPEITEM=012da
+
+[ITEMDEF 012e1]
+//curtain
+DUPEITEM=012da
+
+[ITEMDEF 012e2]
+DEFNAME=i_curtain_white_02_1_sash
+RESOURCES=10 i_CLOTH
+WEIGHT=10
+DYE=1
+CATEGORY=Decoration - Curtains
+SUBSECTION=Curtain 02
+DESCRIPTION=Curtain Sash
+
+[ITEMDEF 012e3]
+DEFNAME=i_curtain_white_02_1_sash_2
+RESOURCES=10 i_CLOTH
+WEIGHT=10
+DYE=1
+CATEGORY=Decoration - Curtains
+SUBSECTION=Curtain 02
+DESCRIPTION=Curtain Sash
+
+[ITEMDEF 012e4]
+DEFNAME=i_curtain_white_02_1_sash_3
+RESOURCES=10 i_CLOTH
+WEIGHT=10
+DYE=1
+CATEGORY=Decoration - Curtains
+SUBSECTION=Curtain 02
+DESCRIPTION=Curtain Sash
+
+[ITEMDEF 012e5]
+DEFNAME=i_curtain_white_02_2_sash_3
+RESOURCES=10 i_CLOTH
+WEIGHT=10
+CATEGORY=Decoration - Curtains
+SUBSECTION=Curtain 03
+DESCRIPTION=@
+DUPELIST=012e6,012e7,012e8,012e9,012ea,012eb,012ec
+
+[ITEMDEF 012e6]
+//curtain
+DUPEITEM=012e5
+
+[ITEMDEF 012e7]
+//curtain
+DUPEITEM=012e5
+
+[ITEMDEF 012e8]
+//curtain
+DUPEITEM=012e5
+
+[ITEMDEF 012e9]
+//curtain
+DUPEITEM=012e5
+
+[ITEMDEF 012ea]
+//curtain
+DUPEITEM=012e5
+
+[ITEMDEF 012eb]
+//curtain
+DUPEITEM=012e5
+
+[ITEMDEF 012ec]
+//curtain
+DUPEITEM=012e5
+
+[ITEMDEF 012ed]
+DEFNAME=i_curtain_white_02_2_sash_4
+RESOURCES=10 i_CLOTH
+WEIGHT=10
+CATEGORY=Decoration - Curtains
+SUBSECTION=Curtain 03
+DESCRIPTION=Curtain Sash
+
+[ITEMDEF 012ee]
+//lava
+DEFNAME=i_lava
+TYPE=t_lava
+DUPELIST=012ef,012f1,012f2,012f4,012f5,012f6,012f7,012f8,012fa,012fb,012fc,012fd,012fe,01300,01301,01302,01303,01304,01306,01307,01308,01309,0130a,0130c,0130d,0130e,0130f,01310,01312,01313,01314,01315,01316,01318,01319,0131a,0131b,0131c
+
+[ITEMDEF 012ef]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012f0]
+//lava
+DUPEITEM=01A19
+
+[ITEMDEF 012f1]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012f2]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012f4]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012f5]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012f6]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012f7]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012f8]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012fa]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012fb]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012fc]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012fd]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 012fe]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01300]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01301]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01302]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01303]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01304]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01306]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01307]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01308]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01309]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0130a]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0130c]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0130d]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0130e]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0130f]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01310]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01312]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01313]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01314]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01315]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01316]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01318]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 01319]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0131a]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0131b]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0131c]
+//lava
+DUPEITEM=012ee
+
+[ITEMDEF 0131e]
+//lava
+DEFNAME=i_lava_edge
+TYPE=t_lava
+DUPELIST=0131f,01320,01321,01322,01323,01324,01325,01326,01327,01328,01329,0132a,0132b,0132c,0132d,0132e,0132f,01330,01331,01332,01333,01334,01335,01336,01337,01338,01339,0133a,0133b,0133c,0133d,0133e,0133f,01340,01341,01342,01343,01344,01345,01346,01347,01348,01349,0134a,0134b,0134c,0134d
+
+[ITEMDEF 0131f]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01320]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01321]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01322]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01323]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01324]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01325]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01326]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01327]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01328]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01329]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0132a]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0132b]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0132c]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0132d]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0132e]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0132f]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01330]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01331]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01332]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01333]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01334]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01335]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01336]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01337]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01338]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01339]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0133a]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0133b]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0133c]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0133d]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0133e]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0133f]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01340]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01341]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01342]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01343]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01344]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01345]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01346]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01347]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01348]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 01349]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0134a]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0134b]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0134c]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0134d]
+//lava
+DUPEITEM=0131e
+
+[ITEMDEF 0134f]
+DEFNAME=i_boulder
+TYPE=T_AROCK
+WEIGHT=100
+CATEGORY=Boulders and Rocks
+SUBSECTION=Boulders
+DESCRIPTION=Boulder
+DUPELIST=01350,01351,01352,01353,01354,01355,01356,01357,01358,01359,0135a,0135b,0135c,0135d,0135e,0135f,01360,01361,01362
+
+[ITEMDEF 01350]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01351]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01352]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01353]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01354]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01355]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01356]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01357]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01358]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01359]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 0135a]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 0135b]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 0135c]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 0135d]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 0135e]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 0135f]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01360]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01361]
+//boulder
+DUPEITEM=0134f
+
+[ITEMDEF 01362]
+//boulder
+DEFNAME=i_boulder_x
+DUPEITEM=0134f
+
+[ITEMDEF 01363]
+DEFNAME=i_rock_plain
+VALUE=1
+WEIGHT=50
+TYPE=t_arock
+CATEGORY=Boulders and Rocks
+SUBSECTION=Rocks
+DESCRIPTION=Rock
+DUPELIST=01364,01365,01366,01367,01368,01369,0136a,0136b,0136c,0136d
+
+[ITEMDEF 01364]
+//rock
+DUPEITEM=01363
+
+[ITEMDEF 01365]
+//rock
+DUPEITEM=01363
+
+[ITEMDEF 01366]
+//rock
+DUPEITEM=01363
+
+[ITEMDEF 01367]
+//rocks
+DEFNAME=i_rock_2
+DUPEITEM=01363
+
+[ITEMDEF 01368]
+//rock
+DEFNAME=i_rock_3
+DUPEITEM=01363
+
+[ITEMDEF 01369]
+//rock
+DUPEITEM=01363
+
+[ITEMDEF 0136a]
+//rocks
+DUPEITEM=01363
+
+[ITEMDEF 0136b]
+//rock
+DUPEITEM=01363
+
+[ITEMDEF 0136c]
+//rock
+DEFNAME=i_rock_7
+DUPEITEM=01363
+
+[ITEMDEF 0136d]
+//rocks
+DEFNAME=i_rock_plain_x
+DUPEITEM=01363
+
+[ITEMDEF 01370]
+DEFNAME=i_BRUSH_HORSE
+RESOURCES=1 i_BOARD, 50 i_STRAW
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Brush
+
+[ITEMDEF 01371]
+DEFNAME=i_BRUSH_HORSE_2
+RESOURCES=1 i_BOARD, 50 i_STRAW
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Brush
+
+[ITEMDEF 01372]
+DEFNAME=i_BRUSH_HORSE_3
+RESOURCES=1 i_BOARD, 50 i_STRAW
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Brush
+
+[ITEMDEF 01373]
+DEFNAME=i_BRUSH_HORSE_4
+RESOURCES=1 i_BOARD, 50 i_STRAW
+WEIGHT=2
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Brush
+
+[ITEMDEF 01374]
+DEFNAME=i_BRIDLE_HORSE
+RESOURCES=2 i_HIDE, 1 i_ingot_iron
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Bridle
+
+[ITEMDEF 01375]
+DEFNAME=i_BRIDLE_HORSE_2
+RESOURCES=2 i_HIDE, 1 i_ingot_iron
+WEIGHT=5
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Bridle
+
+[ITEMDEF 01376]
+DEFNAME=i_BARDING_HORSE_1
+RESOURCES=2 i_HIDE, 20 i_ingot_iron, 6 i_BOARD
+WEIGHT=50
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Horse Barding (01/02) (W)
+DUPELIST=01377
+
+[ITEMDEF 01377]
+//HORSE_BARDING_1 PART 2
+DUPEITEM=01376
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Horse Barding (02/02) (W)
+
+[ITEMDEF 01378]
+DEFNAME=i_BARDING_HORSE_2
+RESOURCES=2 i_HIDE, 20 i_ingot_iron, 6 i_BOARD
+WEIGHT=50
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Horse Barding (01/02) (N)
+DUPELIST=01379
+
+[ITEMDEF 01379]
+//HORSE_BARDING_2 PART 2
+DUPEITEM=01378
+CATEGORY=Items by Professions
+SUBSECTION=Blacksmiths
+DESCRIPTION=Horse Barding (02/02) (N)
+
+[ITEMDEF 01383]
+DEFNAME=i_TILE_STONE_SAND
+RESOURCES=2 i_stone_sand
+WEIGHT=4
+CATEGORY=Ground Tiles
+SUBSECTION=Sandstone
+DESCRIPTION=@
+
+[ITEMDEF 01384]
+DEFNAME=i_TILE_STONE_SAND_2
+RESOURCES=2 i_stone_sand
+WEIGHT=4
+CATEGORY=Ground Tiles
+SUBSECTION=Sandstone
+DESCRIPTION=@
+
+[ITEMDEF 01385]
+DEFNAME=i_TILE_STONE_SAND_3
+RESOURCES=2 i_stone_sand
+WEIGHT=4
+CATEGORY=Ground Tiles
+SUBSECTION=Sandstone
+DESCRIPTION=@
+
+[ITEMDEF 01386]
+DEFNAME=i_TILE_STONE_SAND_4
+RESOURCES=2 i_stone_sand
+WEIGHT=4
+CATEGORY=Ground Tiles
+SUBSECTION=Sandstone
+DESCRIPTION=@
+
+[ITEMDEF 01397]
+DEFNAME=i_pillow
+RESOURCES=4 i_CLOTH, 2 i_WOOL
+WEIGHT=2
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Pillow
+DUPELIST=013a6
+
+[ITEMDEF 0139a]
+DEFNAME=i_statue_stone_sm_3
+RESOURCES=2 i_rock_plain
+WEIGHT=5
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statue
+DESCRIPTION=@
+DUPELIST=0139b,0139c,0139d
+
+[ITEMDEF 0139b]
+//statue
+DUPEITEM=0139a
+
+[ITEMDEF 0139c]
+//statue
+DUPEITEM=0139a
+
+[ITEMDEF 0139d]
+//statue
+DUPEITEM=0139a
+
+[ITEMDEF 0139e]
+DEFNAME=i_statue_stone_lg_5
+RESOURCES=300 i_rock_plain
+WEIGHT=500
+CATEGORY=Decoration - Wall Carvings & Statues
+SUBSECTION=Statue
+DESCRIPTION=@
+DUPELIST=0139f,013a0,013a1,013a2,013a3
+
+[ITEMDEF 0139f]
+//statue
+DUPEITEM=0139e
+
+[ITEMDEF 013a0]
+//statue
+DUPEITEM=0139e
+
+[ITEMDEF 013a1]
+//statue
+DUPEITEM=0139e
+
+[ITEMDEF 013a2]
+//statue
+DUPEITEM=0139e
+
+[ITEMDEF 013a3]
+//statue
+DUPEITEM=0139e
+
+[ITEMDEF 013a4]
+DEFNAME=i_pillow_2
+CATEGORY=Decoration - Furniture
+SUBSECTION=Bedding
+DESCRIPTION=Pillow
+DUPELIST=013a5
+
+[ITEMDEF 013a5]
+//pillow
+DUPEITEM=013a4
+
+[ITEMDEF 013a6]
+//pillow
+DUPEITEM=01397
+
+[ITEMDEF 013a7]
+DEFNAME=i_pillow_3
+RESOURCES=4 i_CLOTH, 2 i_WOOL
+WEIGHT=2
+
+[ITEMDEF 013a8]
+DEFNAME=i_pillow_4
+RESOURCES=4 i_CLOTH, 2 i_WOOL
+WEIGHT=2
+DUPELIST=013a9,013aa
+
+[ITEMDEF 013a9]
+DEFNAME=i_pillow_5
+DUPEITEM=013a8
+
+[ITEMDEF 013aa]
+//pillow
+DUPEITEM=013a8
+
+[ITEMDEF 013ab]
+DEFNAME=i_pillow_6
+RESOURCES=4 i_CLOTH, 2 i_WOOL, 4 i_THREAD
+WEIGHT=2
+
+[ITEMDEF 013ac]
+DEFNAME=i_pillow_7
+RESOURCES=4 i_CLOTH, 2 i_WOOL, 4 i_THREAD
+WEIGHT=2
+DUPELIST=013ad,013ae
+
+[ITEMDEF 013ad]
+DEFNAME=i_pillow_8
+DUPEITEM=013ac
+
+[ITEMDEF 013ae]
+//pillow
+DUPEITEM=013ac
+
+[ITEMDEF 013af]
+DEFNAME=i_axe_war
+RESOURCES=16 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 64.4
+WEIGHT=8
+TYPE=T_WEAPON_MACE_SHARP
+FLIP=1
+DAM=8,33
+//SPEED=35
+REQSTR=35
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Axes
+DESCRIPTION=War Axe
+DUPELIST=013b0
+
+ON=@Create
+HITPOINTS={31 80}
+
+[ITEMDEF 013B0]
+//War Axe
+DUPEITEM=013af
+
+[ITEMDEF 013b1]
+DEFNAME=i_bow
+TYPE=T_WEAPON_BOW
+FLIP=1
+SKILLMAKE=17.8 BOWCRAFT
+RESOURCES=2 I_LOG
+RESOURCES2=2 I_LOG, i_cat_gut
+WEIGHT=5
+DAM=9,21
+//SPEED=20
+SKILL=Archery
+REQSTR=20
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows
+DESCRIPTION=Bow
+DUPELIST=013b2
+
+TDATA3=i_arrow
+TDATA4=i_arrow_x
+
+ON=@Create
+HITPOINTS={31 60}
+
+[ITEMDEF 013b2]
+//bow
+DUPEITEM=013b1
+
+[ITEMDEF 013b3]
+DEFNAME=i_club
+RESOURCES=4 i_log
+WEIGHT=8
+TYPE=T_WEAPON_MACE_SMITH
+FLIP=1
+DAM=3,12
+//SPEED=60
+SKILL=Mace Fighting
+REQSTR=10
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Maces & Hammers
+DESCRIPTION=Club
+DUPELIST=013b4
+SKILLMAKE=CARPENTRY 30.0, t_carpentry
+RESOURCES2=1 i_log
+
+ON=@Create
+HITPOINTS={31 40}
+
+[ITEMDEF 013b4]
+//Club
+DUPEITEM=013b3
+
+[ITEMDEF 013b5]
+DEFNAME=i_scimitar
+RESOURCES=10 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_SWORD
+FLIP=1
+DAM=6,22
+//SPEED=45
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Swords
+DESCRIPTION=Scimitar
+DUPELIST=013b6
+SKILLMAKE=BLACKSMITHING 57.3
+
+ON=@Create
+HITPOINTS={31 90}
+
+[ITEMDEF 013b6]
+//scimitar
+DUPEITEM=013b5
+
+[ITEMDEF 013b7]
+//long sword NOT THE SAME AS 0f60
+DEFNAME=i_sword_long_b
+RESOURCES=10 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_SWORD
+FLIP=1
+DAM=4,32
+//SPEED=35
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Swords
+DESCRIPTION=Long Sword B
+SKILLMAKE=BLACKSMITHING 50.2
+DUPELIST=013b8
+
+[ITEMDEF 013b8]
+//long sword
+DUPEITEM=013b7
+
+[ITEMDEF 013b9]
+DEFNAME=i_sword_viking
+RESOURCES=14 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_SWORD
+FLIP=1
+DAM=4,32
+//SPEED=35
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Swords
+DESCRIPTION=Viking Sword
+DUPELIST=013ba
+SKILLMAKE=BLACKSMITHING 50.2
+RESOURCES2=10 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 100}
+
+[ITEMDEF 013ba]
+//viking sword
+DUPEITEM=013b9
+
+[ITEMDEF 013bb]
+DEFNAME=i_chainmail_coif
+TYPE=T_ARMOR
+RESOURCES=10 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 40.8
+WEIGHT=7
+FLIP=1
+ARMOR=23
+REQSTR=20
+CATEGORY=Provisions - Armor
+SUBSECTION=Chainmail Armor
+DESCRIPTION=Chainmail Coif
+DUPELIST=013c0
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={36 44}
+
+[ITEMDEF 013bc]
+DEFNAME=i_chainmail_leggings_decoration
+TYPE=t_armor
+RESOURCES=1 i_CHAINMAIL_LEGGINGS, 1 i_PEG
+WEIGHT=11
+CATEGORY=Provisions - Armor
+SUBSECTION=Chainmail Armor
+DESCRIPTION=Chainmail Leggings Hanging
+DUPELIST=013c1,013c3
+
+[ITEMDEF 013bd]
+DEFNAME=i_chainmail_tunic_decoration
+TYPE=t_armor
+RESOURCES=1 i_CHAINMAIL_TUNIC, 1 i_PEG
+WEIGHT=15
+CATEGORY=Provisions - Armor
+SUBSECTION=Chainmail Armor
+DESCRIPTION=Chainmail Tunic Hanging
+DUPELIST=013c2
+
+[ITEMDEF 013be]
+DEFNAME=i_chainmail_leggings
+TYPE=T_ARMOR
+RESOURCES=18 i_ingot_iron
+WEIGHT=10
+FLIP=1
+ARMOR=28
+REQSTR=20
+CATEGORY=Provisions - Armor
+SUBSECTION=Chainmail Armor
+DESCRIPTION=Chainmail Leggings
+SKILLMAKE=BLACKSMITHING 50.2
+RESOURCES2=12 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={46 58}
+
+[ITEMDEF 013bf]
+DEFNAME=i_chainmail_tunic
+TYPE=T_ARMOR
+RESOURCES=20 i_ingot_iron
+WEIGHT=15
+FLIP=1
+ARMOR=28
+REQSTR=20
+CATEGORY=Provisions - Armor
+SUBSECTION=Chainmail Armor
+DESCRIPTION=Chainmail Tunic Hanging
+DUPELIST=013c4
+SKILLMAKE=BLACKSMITHING 52.6
+RESOURCES2=16 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={46 58}
+
+[ITEMDEF 013c0]
+//Chainmail Coif
+DUPEITEM=013bb
+
+[ITEMDEF 013c1]
+//Chainmail Leggings
+DUPEITEM=013bc
+
+[ITEMDEF 013c2]
+//Chainmail Tunic
+DUPEITEM=013bd
+
+[ITEMDEF 013c3]
+//chainmail leggings
+DUPEITEM=013bc
+
+[ITEMDEF 013c4]
+//chainmail tunic
+DUPEITEM=013bf
+
+[ITEMDEF 013c5]
+DEFNAME=i_leather_sleeves
+TYPE=t_armor_leather
+RESOURCES=4 i_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=13
+REQSTR=10
+CATEGORY=Provisions - Armor
+SUBSECTION=Leather Armor
+DESCRIPTION=Leather Sleeves
+DUPELIST=013c8,013cd,013cf
+SKILLMAKE=TAILORING 59.0, t_sewing_kit
+RESOURCES2=8 i_hide,1 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 37}
+
+[ITEMDEF 013c6]
+DEFNAME=i_leather_gloves
+TYPE=t_armor_leather
+RESOURCES=3 i_hides_cut
+WEIGHT=1
+FLIP=1
+ARMOR=13
+REQSTR=10
+CATEGORY=Provisions - Armor
+SUBSECTION=Leather Armor
+DESCRIPTION=Leather Gloves
+DUPELIST=013ce
+SKILLMAKE=TAILORING 56.8, t_sewing_kit
+RESOURCES2=3 i_hide
+
+ON=@Create
+HITPOINTS={31 37}
+
+[ITEMDEF 013c7]
+DEFNAME=i_leather_gorget
+TYPE=t_armor_leather
+RESOURCES=4 i_hides_cut
+WEIGHT=2
+FLIP=1
+ARMOR=13
+REQSTR=10
+CATEGORY=Provisions - Armor
+SUBSECTION=Leather Armor
+DESCRIPTION=Leather Gorget
+SKILLMAKE=TAILORING 59.0, t_sewing_kit
+RESOURCES2=4 i_hide
+
+ON=@Create
+HITPOINTS={31 37}
+
+[ITEMDEF 013c8]
+//hanging leather sleeves
+DUPEITEM=013c5
+
+[ITEMDEF 013c9]
+DEFNAME=i_leather_leggings_decoration
+TYPE=t_armor_leather
+RESOURCES=1 i_LEATHER_LEGGINGS, 1 i_PEG
+WEIGHT=7
+CATEGORY=Provisions - Armor
+SUBSECTION=Leather Armor
+DESCRIPTION=Leather Leggings Hanging
+DUPELIST=013d0
+
+[ITEMDEF 013ca]
+DEFNAME=i_leather_tunic_decoration
+TYPE=t_armor_leather
+RESOURCES=1 i_LEATHER_TUNIC, 1 i_PEG
+WEIGHT=8
+CATEGORY=Provisions - Armor
+SUBSECTION=Leather Armor
+DESCRIPTION=Leather Tunic Hanging
+DUPELIST=013d1
+
+[ITEMDEF 013cb]
+DEFNAME=i_leather_leggings
+TYPE=t_armor_leather
+RESOURCES=10 i_hides_cut
+WEIGHT=6
+FLIP=1
+ARMOR=13
+REQSTR=10
+CATEGORY=Provisions - Armor
+SUBSECTION=Leather Armor
+DESCRIPTION=Leather Leggings
+DUPELIST=013d2
+SKILLMAKE=TAILORING 59.0, t_sewing_kit
+RESOURCES2=10 i_hide,1 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 37}
+
+[ITEMDEF 013cc]
+DEFNAME=i_leather_tunic
+TYPE=t_armor_leather
+RESOURCES=12 i_hides_cut
+WEIGHT=7
+FLIP=1
+ARMOR=13
+REQSTR=15
+CATEGORY=Provisions - Armor
+SUBSECTION=Leather Armor
+DESCRIPTION=Leather Tunic
+DUPELIST=013d3
+SKILLMAKE=TAILORING 77.2, t_sewing_kit
+RESOURCES2=12 i_hide,1 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 37}
+
+[ITEMDEF 013cd]
+//leather sleeves
+DUPEITEM=013c5
+
+[ITEMDEF 013ce]
+//leather gloves
+DUPEITEM=013c6
+
+[ITEMDEF 013cf]
+//leather sleeves
+DUPEITEM=013c5
+
+[ITEMDEF 013d0]
+//leather leggings
+DUPEITEM=013c9
+
+[ITEMDEF 013d1]
+//leather tunic
+DUPEITEM=013ca
+
+[ITEMDEF 013d2]
+//leather leggings
+DUPEITEM=013cb
+
+[ITEMDEF 013d3]
+//leather tunic
+DUPEITEM=013cc
+
+[ITEMDEF 013d4]
+DEFNAME=i_studded_sleeves
+TYPE=T_ARMOR
+RESOURCES=10 i_hides_cut
+WEIGHT=8
+FLIP=1
+ARMOR=16
+REQSTR=25
+CATEGORY=Provisions - Armor
+SUBSECTION=Studded Armor
+DESCRIPTION=Studded Sleeves
+DUPELIST=013dc
+SKILLMAKE=TAILORING 86.3, t_sewing_kit
+RESOURCES2=8 i_hide,3 i_ingot_iron
+
+ON=@Create
+HITPOINTS={36 44}
+
+[ITEMDEF 013d5]
+DEFNAME=i_studded_gloves
+TYPE=t_armor
+SKILLMAKE=TAILORING 81.8, t_sewing_kit
+RESOURCES=8 i_hides_cut
+RESOURCES2=3 i_hide,1 i_ingot_iron
+WEIGHT=2
+FLIP=1
+ARMOR=16
+REQSTR=25
+CATEGORY=Provisions - Armor
+SUBSECTION=Studded Armor
+DESCRIPTION=Studded Gloves
+DUPELIST=013dd
+
+ON=@Create
+HITPOINTS={36 44}
+
+[ITEMDEF 013d6]
+DEFNAME=i_studded_gorget
+TYPE=T_ARMOR
+//DEFNAME2=GORGET
+//DEFNAME2=STUDDED_GORGET
+RESOURCES=6 i_hides_cut
+WEIGHT=3
+FLIP=1
+ARMOR=16
+REQSTR=25
+CATEGORY=Provisions - Armor
+SUBSECTION=Studded Armor
+DESCRIPTION=Studded Gorget
+SKILLMAKE=TAILORING 77.2, t_sewing_kit
+RESOURCES2=4 i_hide,1 i_ingot_iron
+
+ON=@Create
+HITPOINTS={36 44}
+
+[ITEMDEF 013d7]
+DEFNAME=i_studded_sleeves_decoration
+TYPE=t_armor
+RESOURCES=1 i_studded_SLEEVES, 1 i_PEG
+WEIGHT=9
+CATEGORY=Provisions - Armor
+SUBSECTION=Studded Armor
+DESCRIPTION=Studded Sleeves Hanging
+DUPELIST=013de
+
+[ITEMDEF 013d8]
+DEFNAME=i_studded_leggings_decoration
+TYPE=t_armor
+RESOURCES=1 i_studded_LEGGINGS, 1 i_PEG
+WEIGHT=8
+CATEGORY=Provisions - Armor
+SUBSECTION=Studded Armor
+DESCRIPTION=Studded Leggings Hanging
+DUPELIST=013df
+
+[ITEMDEF 013d9]
+DEFNAME=i_studded_tunic_decoration
+TYPE=t_armor
+RESOURCES=1 i_studded_TUNIC, 1 i_PEG
+WEIGHT=11
+CATEGORY=Provisions - Armor
+SUBSECTION=Studded Armor
+DESCRIPTION=Studded Tunic Hanging
+DUPELIST=013e0
+
+[ITEMDEF 013da]
+DEFNAME=i_studded_leggings
+TYPE=T_ARMOR
+RESOURCES=12 i_hides_cut
+WEIGHT=7
+FLIP=1
+ARMOR=16
+REQSTR=35
+CATEGORY=Provisions - Armor
+SUBSECTION=Studded Armor
+DESCRIPTION=Studded Leggings
+DUPELIST=013e1
+SKILLMAKE=TAILORING 90.9, t_sewing_kit
+RESOURCES2=12 i_hide,4 i_ingot_iron
+
+ON=@Create
+HITPOINTS={36 44}
+
+[ITEMDEF 013db]
+DEFNAME=i_studded_tunic
+TYPE=T_ARMOR
+RESOURCES=14 i_hides_cut
+WEIGHT=9
+FLIP=1
+ARMOR=16
+REQSTR=35
+CATEGORY=Provisions - Armor
+SUBSECTION=Studded Armor
+DESCRIPTION=Studded Tunic
+DUPELIST=013e2
+SKILLMAKE=TAILORING 95.4, t_sewing_kit
+RESOURCES2=12 i_hide,3 i_ingot_iron
+
+ON=@Create
+HITPOINTS={36 44}
+
+[ITEMDEF 013dc]
+//studded sleeves
+DUPEITEM=013d4
+
+[ITEMDEF 013dd]
+//studded gloves
+DUPEITEM=013d5
+
+[ITEMDEF 013de]
+//studded sleeves
+DUPEITEM=013d7
+
+[ITEMDEF 013df]
+//studded leggings
+DUPEITEM=013d8
+
+[ITEMDEF 013e0]
+//studded tunic
+DUPEITEM=013d9
+
+[ITEMDEF 013e1]
+//studded leggings
+DUPEITEM=013da
+
+[ITEMDEF 013e2]
+//studded tunic
+DUPEITEM=013db
+
+[ITEMDEF 013e3]
+DEFNAME=i_hammer_smith
+WEIGHT=4
+TYPE=T_WEAPON_MACE_SMITH
+FLIP=1
+RESOURCES=6 i_ingot_iron
+RESOURCES2=3 i_ingot_iron,1 i_log
+SKILLMAKE=BLACKSMITHING 10.0
+DAM=4,16
+//SPEED=60
+SKILL=Mace Fighting
+REQSTR=30
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Maces & Hammers
+DESCRIPTION=Smith's Hammer
+DUPELIST=013e4
+
+ON=@Create
+HITPOINTS={31 60}
+
+[ITEMDEF 013e4]
+//smith's hammer
+DUPEITEM=013e3
+
+[ITEMDEF 013e5]
+DEFNAME=i_ringmail_leggings_decoration
+TYPE=T_ARMOR
+RESOURCES=1 i_RINGMAIL_LEGGINGS, 1 i_PEG
+WEIGHT=13
+FLIP=1
+ARMOR=22
+REQSTR=20
+CATEGORY=Provisions - Armor
+SUBSECTION=Ringmail Armor
+DESCRIPTION=Ringmail Leggings Decoration
+DUPELIST=013e6
+
+ON=@Create
+HITPOINTS={41 51}
+
+[ITEMDEF 013e6]
+//ringmail leggings
+DUPEITEM=013e5
+
+[ITEMDEF 013e7]
+DEFNAME=i_ringmail_tunic_decoration
+TYPE=t_armor
+RESOURCES=1 i_RINGMAIL_TUNIC, 1 i_PEG
+WEIGHT=16
+CATEGORY=Provisions - Armor
+SUBSECTION=Ringmail Armor
+DESCRIPTION=Ringmail Chest Decoration
+DUPELIST=013e8
+
+[ITEMDEF 013e8]
+//ringmail armor
+DUPEITEM=013e7
+
+[ITEMDEF 013e9]
+DEFNAME=i_ringmail_sleeves_decoration
+TYPE=t_armor
+RESOURCES=I_RINGMAIL_SLEEVES, 1 i_PEG
+WEIGHT=16
+CATEGORY=Provisions - Armor
+SUBSECTION=Ringmail Armor
+DESCRIPTION=Ringmail Sleeves Decoration
+DUPELIST=013ea
+
+[ITEMDEF 013ea]
+//ringmail sleeves
+DUPEITEM=013e9
+
+[ITEMDEF 013eb]
+DEFNAME=i_ringmail_gloves
+TYPE=T_ARMOR
+RESOURCES=10 i_ingot_iron
+RESOURCES2=3 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 33.8
+WEIGHT=2
+FLIP=1
+ARMOR=22
+REQSTR=20
+CATEGORY=Provisions - Armor
+SUBSECTION=Ringmail Armor
+DESCRIPTION=Ringmail Gloves
+DUPELIST=013f2
+
+ON=@Create
+HITPOINTS={41 51}
+
+[ITEMDEF 013ec]
+DEFNAME=i_ringmail_tunic
+TYPE=T_ARMOR
+FLIP=1
+WEIGHT=15
+RESOURCES=18 i_ingot_iron
+RESOURCES2=16 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 43.2
+ARMOR=22
+REQSTR=20
+CATEGORY=Provisions - Armor
+SUBSECTION=Ringmail Armor
+DESCRIPTION=Ringmail Tunic
+DUPELIST=013ed
+
+ON=@Create
+HITPOINTS={41 51}
+
+[ITEMDEF 013ed]
+//ringmail tunic
+DUPEITEM=013ec
+
+[ITEMDEF 013ee]
+DEFNAME=i_ringmail_sleeves
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=14 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 38.5
+WEIGHT=13
+ARMOR=22
+REQSTR=20
+CATEGORY=Provisions - Armor
+SUBSECTION=Ringmail Armor
+DESCRIPTION=Ringmail Sleeves
+DUPELIST=013ef
+
+ON=@Create
+HITPOINTS={41 51}
+
+[ITEMDEF 013ef]
+//ringmail sleeves
+DUPEITEM=013ee
+
+[ITEMDEF 013f0]
+DEFNAME=i_ringmail_leggings
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=16 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 40.8
+WEIGHT=15
+ARMOR=22
+REQSTR=20
+CATEGORY=Provisions - Armor
+SUBSECTION=Ringmail Armor
+DESCRIPTION=Ringmail Leggings
+DUPELIST=013f1
+
+ON=@Create
+HITPOINTS={41 51}
+
+[ITEMDEF 013f1]
+//ringmail leggings
+DUPEITEM=013f0
+
+[ITEMDEF 013f2]
+//ringmail gloves
+DUPEITEM=013eb
+
+[ITEMDEF 013f4]
+DEFNAME=i_shepherds_crook
+RESOURCES=2 i_log
+WEIGHT=5
+TYPE=T_WEAPON_MACE_CROOK
+FLIP=1
+DAM=3,12
+//SPEED=70
+REQSTR=10
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Staves
+DESCRIPTION=Sheperd's Crook
+DUPELIST=013f5
+
+ON=@Create
+HITPOINTS={31 50}
+
+[ITEMDEF 013f5]
+//Shepherd's Crook
+DUPEITEM=013f4
+
+[ITEMDEF 013f6]
+DEFNAME=i_knife_butcher
+RESOURCES=1 i_BOARD, 1 i_ingot_iron
+WEIGHT=2
+TYPE=T_WEAPON_SWORD
+FLIP=1
+DAM=2,8
+//SPEED=80
+SKILL=Swordsmanship
+REQSTR=5
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Knives & Daggers
+DESCRIPTION=Butchers Knife
+DUPELIST=013f7
+
+ON=@Create
+HITPOINTS={31 40}
+
+[ITEMDEF 013f7]
+//butcher knife
+DUPEITEM=013f6
+
+[ITEMDEF 013f8]
+DEFNAME=i_staff_gnarled
+WEIGHT=5
+TYPE=T_WEAPON_MACE_STAFF
+FLIP=1
+DAM=9,21
+//SPEED=40
+SKILL=Mace Fighting
+REQSTR=20
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Staves
+DESCRIPTION=Gnarled Staff
+DUPELIST=013f9
+SKILLMAKE=CARPENTRY 48.9, t_carpentry
+RESOURCES=4 i_log
+
+ON=@Create
+HITPOINTS={31 50}
+
+[ITEMDEF 013f9]
+//gnarled staff
+DUPEITEM=013f8
+
+[ITEMDEF 013fa]
+//DEFNAME2=double_battle_axe
+DEFNAME=i_axe_battle_large
+RESOURCES=14 i_ingot_iron
+RESOURCES2=20 i_ingot_iron
+SKILLMAKE=BLACKSMITHING 53.8
+WEIGHT=12
+TYPE=T_WEAPON_AXE
+FLIP=1
+DAM=4,34
+//SPEED=20
+SKILL=Swordsmanship
+REQSTR=45
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Axes
+DESCRIPTION=Large Battle Axe
+DUPELIST=013fb
+
+ON=@Create
+HITPOINTS={31 110}
+
+[ITEMDEF 013fb]
+//Large Battle Axe
+DUPEITEM=013fa
+
+[ITEMDEF 013fc]
+DEFNAME=i_crossbow_heavy
+TYPE=T_WEAPON_XBOW
+FLIP=1
+SKILLMAKE=57.8 BOWCRAFT
+RESOURCES=10 i_log
+RESOURCES2=2 i_LOG, 2 i_CAT_GUT
+WEIGHT=8
+DAM=6,34
+//SPEED=10
+SKILL=archery
+REQSTR=40
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows
+DESCRIPTION=Heavy Crossbow
+DUPELIST=013fd
+
+TDATA3=i_xbolt
+TDATA4=i_xbolt_x
+
+ON=@Create
+HITPOINTS={31 100}
+
+[ITEMDEF 013fd]
+//heavy crossbow
+DUPEITEM=013fc
+
+[ITEMDEF 013fe]
+DEFNAME=i_katana
+RESOURCES=8 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_SWORD
+FLIP=1
+DAM=4,20
+//SPEED=40
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Swords
+DESCRIPTION=Katana
+DUPELIST=013ff
+SKILLMAKE=BLACKSMITHING 69.1
+RESOURCES2=10 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 90}
+
+[ITEMDEF 013ff]
+//katana
+DUPEITEM=013fe
+
+[ITEMDEF 01400]
+DEFNAME=i_kryss
+RESOURCES=8 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_FENCE
+FLIP=1
+DAM=6,18
+//SPEED=50
+SKILL=Fencing
+REQSTR=10
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Knives & Daggers
+DESCRIPTION=Kryss
+DUPELIST=01401
+SKILLMAKE=BLACKSMITHING 62.0
+RESOURCES2=10 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 90}
+
+[ITEMDEF 01401]
+//kryss
+DUPEITEM=01400
+
+[ITEMDEF 01402]
+DEFNAME=i_spear_short
+RESOURCES=6 i_ingot_iron
+WEIGHT=7
+TYPE=T_WEAPON_FENCE
+FLIP=1
+DAM=7,19
+//SPEED=55
+SKILL=Fencing
+REQSTR=15
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Spears and Forks
+DESCRIPTION=Short Spear
+DUPELIST=01403
+SKILLMAKE=BLACKSMITHING 70.2
+RESOURCES2=6 i_ingot_iron,1 i_board
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 01403]
+//short spear
+DUPEITEM=01402
+
+[ITEMDEF 01404]
+DEFNAME=i_war_fork
+RESOURCES=12 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_FENCE
+FLIP=1
+DAM=4,28
+//SPEED=35
+SKILL=Fencing
+REQSTR=35
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Spears and Forks
+DESCRIPTION=
+DUPELIST=01405
+SKILLMAKE=BLACKSMITHING 63.2
+RESOURCES2=9 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 110}
+
+[ITEMDEF 01405]
+//war fork
+DUPEITEM=01404
+
+[ITEMDEF 01406]
+DEFNAME=i_mace_war
+RESOURCES=14 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_MACE_SMITH
+FLIP=1
+DAM=6,34
+//SPEED=30
+SKILL=Mace Fighting
+REQSTR=30
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Maces & Hammers
+DESCRIPTION=War Mace
+DUPELIST=01407
+SKILLMAKE=BLACKSMITHING 53.8
+RESOURCES2=9 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 110}
+
+[ITEMDEF 01407]
+//war mace
+DUPEITEM=01406
+
+[ITEMDEF 01408]
+//DEFNAME2=closed_helm
+DEFNAME=i_helm_closed
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=15 i_ingot_iron
+WEIGHT=7
+ARMOR=30
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Helmets
+DESCRIPTION=Closed Helm
+DUPELIST=01409
+SKILLMAKE=BLACKSMITHING 63.2
+RESOURCES2=10 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={46 50}
+
+[ITEMDEF 01409]
+//close helmet
+DUPEITEM=01408
+
+[ITEMDEF 0140a]
+// DEFNAME2=OPEN_HELM
+DEFNAME=i_helm_open
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=15 i_ingot_iron
+WEIGHT=7
+ARMOR=30
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Helmets
+DESCRIPTION=Helmet
+DUPELIST=0140b
+SKILLMAKE=BLACKSMITHING 63.2
+RESOURCES2=10 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={46 58}
+
+[ITEMDEF 0140b]
+//helmet
+DUPEITEM=0140a
+
+[ITEMDEF 0140c]
+DEFNAME=i_bascinet
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=15 i_ingot_iron
+WEIGHT=7
+ARMOR=20
+REQSTR=10
+CATEGORY=Provisions - Armor
+SUBSECTION=Helmets
+DESCRIPTION=Bascinet
+DUPELIST=0140d
+SKILLMAKE=BLACKSMITHING 35.0
+RESOURCES2=10 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={101 115}
+
+[ITEMDEF 0140d]
+//bascinet
+DUPEITEM=0140c
+
+[ITEMDEF 0140e]
+DEFNAME=i_helm_nose
+TYPE=t_ARMOR
+FLIP=1
+RESOURCES=15 i_ingot_iron
+WEIGHT=7
+ARMOR=30
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Helmets
+DESCRIPTION=Nose Helm
+DUPELIST=0140f
+SKILLMAKE=BLACKSMITHING 63.2
+RESOURCES2=10 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={46 58}
+
+[ITEMDEF 0140f]
+//nose helm
+DUPEITEM=0140e
+
+[ITEMDEF 01410]
+DEFNAME=i_platemail_arms
+TYPE=T_ARMOR
+FLIP=1
+SKILLMAKE=BLACKSMITHING 66.7
+RESOURCES=18 i_ingot_iron
+RESOURCES2=24 i_ingot_iron
+WEIGHT=18
+ARMOR=40
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Platemail Armor
+DESCRIPTION=Platemail Arms
+DUPELIST=01417
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={51 65}
+
+[ITEMDEF 01411]
+DEFNAME=i_platemail_leggings
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=20 i_ingot_iron
+WEIGHT=20
+ARMOR=40
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Platemail Armor
+DESCRIPTION=Platemail Legs
+DUPELIST=0141a
+SKILLMAKE=BLACKSMITHING 69.1
+RESOURCES2=26 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={51 65}
+
+[ITEMDEF 01412]
+DEFNAME=i_platemail_helm
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=15 i_ingot_iron
+WEIGHT=10
+ARMOR=40
+REQSTR=60
+CATEGORY=Provisions - Armor
+SUBSECTION=Platemail Armor
+DESCRIPTION=Platemail Helm
+DUPELIST=01419
+SKILLMAKE=BLACKSMITHING 63.2
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={51 65}
+
+[ITEMDEF 01413]
+DEFNAME=i_platemail_gorget
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=10 i_ingot_iron
+WEIGHT=6
+ARMOR=40
+REQSTR=30
+CATEGORY=Provisions - Armor
+SUBSECTION=Platemail Armor
+DESCRIPTION=Platemail Gorget
+SKILLMAKE=BLACKSMITHING 57.3
+RESOURCES2=8 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={51 65}
+
+[ITEMDEF 01414]
+DEFNAME=i_platemail_gloves
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=12 i_ingot_iron
+WEIGHT=5
+ARMOR=40
+REQSTR=30
+CATEGORY=Provisions - Armor
+SUBSECTION=Platemail Armor
+DESCRIPTION=Platemail Gauntlets
+DUPELIST=01418
+SKILLMAKE=BLACKSMITHING 59.7
+RESOURCES2=14 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={51 65}
+
+[ITEMDEF 01415]
+DEFNAME=i_platemail_chest
+TYPE=T_ARMOR
+FLIP=1
+RESOURCES=25 i_ingot_iron
+WEIGHT=23
+ARMOR=40
+REQSTR=60
+CATEGORY=Provisions - Armor
+SUBSECTION=Platemail Armor
+DESCRIPTION=Platemail Breastplate
+DUPELIST=01416
+SKILLMAKE=BLACKSMITHING 75.0
+RESOURCES2=28 i_ingot_iron
+
+ON=@Create
+COLOR=color_o_iron
+HITPOINTS={51 65}
+
+[ITEMDEF 01416]
+//platemail
+DUPEITEM=01415
+
+[ITEMDEF 01417]
+//platemail arms
+DUPEITEM=01410
+
+[ITEMDEF 01418]
+//platemail gloves
+DUPEITEM=01414
+
+[ITEMDEF 01419]
+//plate helm
+DUPEITEM=01412
+
+[ITEMDEF 0141a]
+//platemail legs
+DUPEITEM=01411
+
+[ITEMDEF 0141b]
+DEFNAME=i_mask_orc
+TYPE=t_armor_leather
+FLIP=1
+RESOURCES=i_ORC_SKULL
+VALUE=5
+WEIGHT=4
+ARMOR=5
+CATEGORY=Provisions - Armor
+SUBSECTION=Masks
+DESCRIPTION=Orc Mask
+DUPELIST=0141c
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 0141c]
+//orc mask
+DUPEITEM=0141b
+
+[ITEMDEF 01420]
+DEFNAME=i_string
+RESOURCES=1 i_COTTON
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=String
+DUPELIST=01421
+
+[ITEMDEF 01421]
+//string
+DUPEITEM=01420
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=String
+
+[ITEMDEF 01422]
+DEFNAME=i_beeswax
+RESOURCES=I_BEEHIVE
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Beeswax
+DUPELIST=01423,01424,01425,01426,01427
+
+[ITEMDEF 01423]
+//Beeswax
+DUPEITEM=01422
+
+[ITEMDEF 01424]
+//Beeswax
+DUPEITEM=01422
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Beeswax
+
+[ITEMDEF 01425]
+//Beeswax
+DUPEITEM=01422
+
+[ITEMDEF 01426]
+//Beeswax
+DUPEITEM=01422
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Beeswax
+
+[ITEMDEF 01427]
+//Beeswax
+DUPEITEM=01422
+
+[ITEMDEF 01428]
+DEFNAME=i_dipping_stick
+RESOURCES=1 i_STICKS, 1 i_POT_OF_WAX, 1 i_STRING
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Dipping Stick
+DUPELIST=01429
+
+[ITEMDEF 01429]
+//Dipping Stick
+DUPEITEM=01428
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Dipping Stick
+
+[ITEMDEF 0142a]
+DEFNAME=i_pot_of_wax
+RESOURCES=3 i_BEESWAX, 1 i_POT
+WEIGHT=4
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Pot of Wax
+
+[ITEMDEF 0142b]
+//Pot of Wax
+CATEGORY=Items by Professions
+SUBSECTION=Beekeepers/Candlers
+DESCRIPTION=Pot of Wax
+
+[ITEMDEF 0142c]
+DEFNAME=i_candle_short_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_candle_short
+TDATA4=0
+RESOURCES=i_candle_short
+WEIGHT=1
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle (Lit)
+DUPELIST=0142d,0142e
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 0142d]
+//Candle
+DUPEITEM=0142c
+
+[ITEMDEF 0142e]
+//Candle
+DUPEITEM=0142c
+
+[ITEMDEF 0142f]
+DEFNAME=i_candle_short
+WEIGHT=1
+TYPE=T_LIGHT_OUT
+TDATA3=i_candle_short_lit
+RESOURCES=1 i_DIPPING_STICK
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle (Unlit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 01430]
+DEFNAME=i_candle_lg_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_candle_lg
+TDATA4=0
+RESOURCES=i_CANDLE_LG
+WEIGHT=1
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle (Lit)
+DUPELIST=01431,01432
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 01431]
+//candle
+DUPEITEM=01430
+
+[ITEMDEF 01432]
+//candle
+DUPEITEM=01430
+
+[ITEMDEF 01433]
+DEFNAME=i_candle_lg
+WEIGHT=1
+TYPE=T_LIGHT_OUT
+TDATA3=i_candle_lg_lit
+RESOURCES=1 i_DIPPING_STICK
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle (Unlit)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 01434]
+DEFNAME=i_candle_thin_lit
+TYPE=T_LIGHT_LIT
+TDATA3=i_candle_thin
+TDATA4=0
+RESOURCES=i_CANDLE_THIN
+WEIGHT=1
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle (Lit)
+DUPELIST=01435,01436
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 01435]
+//Candle
+DUPEITEM=01434
+
+[ITEMDEF 01436]
+//Candle
+DUPEITEM=01434
+
+[ITEMDEF 01437]
+DEFNAME=i_candle_thin
+TYPE=T_LIGHT_OUT
+TDATA3=i_candle_thin_lit
+RESOURCES=1 i_DIPPING_STICK
+WEIGHT=1
+CATEGORY=Decoration - Lightsources
+SUBSECTION=Candles
+DESCRIPTION=Candle (Burnt Out)
+
+ON=@Create
+MOREZ=1
+
+[ITEMDEF 01438]
+DEFNAME=i_hammer_war
+RESOURCES=16 i_ingot_iron
+WEIGHT=7
+TYPE=T_WEAPON_MACE_SMITH
+FLIP=1
+DAM=4,36
+//SPEED=20
+SKILL=Mace Fighting
+REQSTR=40
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Maces & Hammers
+DESCRIPTION=War Hammer
+DUPELIST=01439
+SKILLMAKE=BLACKSMITHING 59.7
+RESOURCES2=4 i_ingot_iron,1 i_board
+
+ON=@Create
+HITPOINTS={31 110}
+
+[ITEMDEF 01439]
+//war hammer
+DUPEITEM=01438
+
+[ITEMDEF 0143a]
+DEFNAME=i_maul
+RESOURCES=10 i_ingot_iron
+WEIGHT=9
+TYPE=T_WEAPON_MACE_SMITH
+FLIP=1
+DAM=9,21
+//SPEED=40
+SKILL=Mace Fighting
+REQSTR=20
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Maces & Hammers
+DESCRIPTION=Maul
+DUPELIST=0143b
+SKILLMAKE=BLACKSMITHING 45.5
+RESOURCES2=17 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 0143b]
+//Maul
+DUPEITEM=0143a
+
+[ITEMDEF 0143c]
+DEFNAME=i_hammer_pick
+WEIGHT=7
+TYPE=T_WEAPON_MACE_SMITH
+FLIP=1
+DAM=9,33
+//SPEED=30
+SKILL=Mace Fighting
+REQSTR=35
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Maces & Hammers
+DESCRIPTION=Hammer Pick
+DUPELIST=0143d
+
+SKILLMAKE=BLACKSMITHING 51.4
+RESOURCES=8 i_ingot_iron,1 i_log
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 0143d]
+//hammer pick
+DUPEITEM=0143c
+
+[ITEMDEF 0143e]
+DEFNAME=i_halberd
+RESOURCES=20 i_ingot_iron
+WEIGHT=10
+TYPE=T_WEAPON_SWORD
+FLIP=1
+DAM=4,48
+//SPEED=20
+SKILL=Swordsmanship
+REQSTR=45
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Polearms
+DESCRIPTION=Halberd
+DUPELIST=0143f
+SKILLMAKE=BLACKSMITHING 64.4
+RESOURCES2=6 i_ingot_iron,2 i_board
+
+ON=@Create
+HITPOINTS={31 80}
+
+[ITEMDEF 0143f]
+//halberd
+DUPEITEM=0143e
+
+[ITEMDEF 01440]
+DEFNAME=i_cutlass
+RESOURCES=8 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_SWORD
+FLIP=1
+DAM=6,18
+//SPEED=45
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+CATEGORY=Provisions - Weapons
+SUBSECTION=Swords
+DESCRIPTION=Cutlass
+DUPELIST=01441
+SKILLMAKE=BLACKSMITHING 50.2
+RESOURCES2=10 i_ingot_iron
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 01441]
+//cutlass
+DUPEITEM=01440
+
+[ITEMDEF 01442]
+DEFNAME=i_axe_two_hand
+RESOURCES=16 i_ingot_iron
+WEIGHT=8
+TYPE=T_WEAPON_AXE
+FLIP=1
+DAM=4,32
+//SPEED=30
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=Y
+CATEGORY=Provisions - Weapons
+SUBSECTION=Axes
+DESCRIPTION=Two Handed Axe
+DUPELIST=01443
+SKILLMAKE=BLACKSMITHING 58.5
+RESOURCES2=5 i_ingot_iron,1 i_board
+
+ON=@Create
+HITPOINTS={31 70}
+
+[ITEMDEF 01443]
+//two handed axe
+DUPEITEM=01442
+
+[ITEMDEF 01449]
+DEFNAME=i_GRAIN_LOOSE
+RESOURCES=1 i_wheat_sheaf
+VALUE=1
+WEIGHT=1
+TYPE=t_grain
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Loose Grain
+
+[ITEMDEF 0144e]
+DEFNAME=i_bone_arms
+TYPE=t_armor_leather
+FLIP=1
+RESOURCES=2 i_BONE
+WEIGHT=2
+ARMOR=30
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Bone Armor
+DESCRIPTION=Bone Arms
+DUPELIST=01453
+
+ON=@Create
+HITPOINTS={26 30}
+
+[ITEMDEF 0144f]
+DEFNAME=i_bone_chest
+TYPE=t_armor_leather
+FLIP=1
+RESOURCES=10 i_BONE, 1 i_HIDE
+WEIGHT=11
+ARMOR=30
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Bone Armor
+DESCRIPTION=Bone Chest
+DUPELIST=01454
+
+ON=@Create
+HITPOINTS={26 30}
+
+[ITEMDEF 01450]
+DEFNAME=i_bone_gloves
+TYPE=t_armor_leather
+FLIP=1
+RESOURCES=3 i_BONE
+WEIGHT=3
+ARMOR=30
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Bone Armor
+DESCRIPTION=Bone Gloves
+DUPELIST=01455
+
+ON=@Create
+HITPOINTS={26 30 }
+
+[ITEMDEF 01451]
+DEFNAME=i_bone_helmet
+TYPE=t_armor_leather
+FLIP=1
+RESOURCES=4 i_BONE
+WEIGHT=4
+ARMOR=30
+REQSTR=40
+CATEGORY=Provisions - Armor
+SUBSECTION=Bone Armor
+DESCRIPTION=Bone Helmet
+DUPELIST=01456
+
+ON=@Create
+HITPOINTS={26 30}
+
+[ITEMDEF 01452]
+DEFNAME=i_bone_leggings
+TYPE=t_armor_leather
+FLIP=1
+RESOURCES=6 i_BONE
+WEIGHT=6
+ARMOR=30
+CATEGORY=Provisions - Armor
+SUBSECTION=Bone Armor
+DESCRIPTION=Bone Legs
+DUPELIST=01457
+
+ON=@Create
+HITPOINTS={26 30}
+
+[ITEMDEF 01453]
+//bone arms
+DUPEITEM=0144e
+
+[ITEMDEF 01454]
+//bone armor
+DUPEITEM=0144f
+
+[ITEMDEF 01455]
+//bone gloves
+DUPEITEM=01450
+
+[ITEMDEF 01456]
+//bone helmet
+DUPEITEM=01451
+
+[ITEMDEF 01457]
+//bone legs
+DUPEITEM=01452
+
+[ITEMDEF 01459]
+DEFNAME=i_telescope
+RESOURCES=100 i_rock_plain, 20 i_ingot_gold, 50 i_ingot_iron, 4 i_GLASS, 2 i_MARBLE
+WEIGHT=1400
+TYPE=T_TELESCOPE
+CATEGORY=Miscellaneous
+SUBSECTION=Telescope
+DESCRIPTION=@
+DUPELIST=0145a,0145b,0145c,0145d,0145e,0145f,01460,01461,01462,01463,01464,01465,01466,01467,01468,01469,0146a,0146b,0146c,0146d,0146e,0146f,01470,01471,01472,01473,01474,01475,01476,01477,01478,01479,0147a,0147b,0147c,0147d,0147e,0147f,01480,01481,01482,01483,01484,01485,01486,01487,01488,01489,0148a,0148b,0148c,0148d,0148e,0148f,01490,01491,01492,01493,01494,01495,01496,01497,01498,01499,0149a
+
+[ITEMDEF 0145a]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0145b]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0145c]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0145d]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0145e]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0145f]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01460]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01461]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01462]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01463]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01464]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01465]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01466]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01467]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01468]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01469]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0146a]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0146b]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0146c]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0146d]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0146e]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0146f]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01470]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01471]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01472]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01473]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01474]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01475]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01476]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01477]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01478]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01479]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0147a]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0147b]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0147c]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0147d]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0147e]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0147f]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01480]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01481]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01482]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01483]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01484]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01485]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01486]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01487]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01488]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01489]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0148a]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0148b]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0148c]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0148d]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0148e]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0148f]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01490]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01491]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01492]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01493]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01494]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01495]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01496]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01497]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01498]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 01499]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0149a]
+//telescope
+DUPEITEM=01459
+
+[ITEMDEF 0149f]
+DEFNAME=i_shrine_honesty_1
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honesty
+DESCRIPTION=Honesty (01/04) (W)
+DUPELIST=014a0,014a1,014a2
+
+[ITEMDEF 014a0]
+//SHRINE_HONESTY_1 PART 2
+DUPEITEM=0149F
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honesty
+DESCRIPTION=Honesty (02/04) (W)
+
+[ITEMDEF 014a1]
+//SHRINE_HONESTY_1 PART 3
+DUPEITEM=0149F
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honesty
+DESCRIPTION=Honesty (03/04) (W)
+
+[ITEMDEF 014a2]
+//SHRINE_HONESTY_1 PART 4
+DUPEITEM=0149F
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honesty
+DESCRIPTION=Honesty (04/04) (W)
+
+[ITEMDEF 014a3]
+DEFNAME=i_shrine_honesty_2
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honesty
+DESCRIPTION=Honesty (01/04) (N)
+DUPELIST=014a4,014a5,014a6
+
+[ITEMDEF 014a4]
+//SHRINE_HONESTY_2 PART 2
+DUPEITEM=014A3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honesty
+DESCRIPTION=Honesty (02/04) (N)
+
+[ITEMDEF 014a5]
+//SHRINE_HONESTY_2 PART 3
+DUPEITEM=014A3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honesty
+DESCRIPTION=Honesty (03/04) (N)
+
+[ITEMDEF 014a6]
+//SHRINE_HONESTY_2 PART 4
+DUPEITEM=014A3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honesty
+DESCRIPTION=Honesty (04/04) (N)
+
+[ITEMDEF 014a7]
+DEFNAME=i_shrine_compassion_1
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Compassion
+DESCRIPTION=Compassion (01/04) (W)
+DUPELIST=014a8,014a9,014aa
+
+[ITEMDEF 014a8]
+//SHRINE_COMPASSION_1 PART 2
+DUPEITEM=014A7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Compassion
+DESCRIPTION=Compassion (02/04) (W)
+
+[ITEMDEF 014a9]
+//SHRINE_COMPASSION_1 PART 3
+DUPEITEM=014A7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Compassion
+DESCRIPTION=Compassion (03/04) (W)
+
+[ITEMDEF 014aa]
+//SHRINE_COMPASSION_1 PART 4
+DUPEITEM=014A7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Compassion
+DESCRIPTION=Compassion (04/04) (W)
+
+[ITEMDEF 014ab]
+DEFNAME=i_shrine_compassion_2
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Compassion
+DESCRIPTION=Compassion (01/04) (N)
+DUPELIST=014ac,014ad,014ae
+
+[ITEMDEF 014ac]
+//SHRINE_COMPASSION_2 PART 2
+DUPEITEM=014AB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Compassion
+DESCRIPTION=Compassion (02/04) (N)
+
+[ITEMDEF 014ad]
+//SHRINE_COMPASSION_2 PART 3
+DUPEITEM=014AB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Compassion
+DESCRIPTION=Compassion (03/04) (N)
+
+[ITEMDEF 014ae]
+//SHRINE_COMPASSION_2 PART 4
+DUPEITEM=014AB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Compassion
+DESCRIPTION=Compassion (04/04) (N)
+
+[ITEMDEF 014af]
+DEFNAME=i_shrine_justice_1
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Justice
+DESCRIPTION=Justice (01/04) (W)
+DUPELIST=014b0,014b1,014b2
+
+[ITEMDEF 014b0]
+//SHRINE_JUSTICE_1 PART 2
+DUPEITEM=014AF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Justice
+DESCRIPTION=Justice (02/04) (W)
+
+[ITEMDEF 014b1]
+//SHRINE_JUSTICE_1 PART 3
+DUPEITEM=014AF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Justice
+DESCRIPTION=Justice (03/04) (W)
+
+[ITEMDEF 014b2]
+//SHRINE_JUSTICE_1 PART 4
+DUPEITEM=014AF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Justice
+DESCRIPTION=Justice (04/04) (W)
+
+[ITEMDEF 014b3]
+DEFNAME=i_shrine_justice_2
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Justice
+DESCRIPTION=Justice (01/04) (N)
+DUPELIST=014b4,014b5,014b6
+
+[ITEMDEF 014b4]
+//SHRINE_JUSTICE_2 PART 2
+DUPEITEM=014B3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Justice
+DESCRIPTION=Justice (02/04) (N)
+
+[ITEMDEF 014b5]
+//SHRINE_JUSTICE_2 PART 3
+DUPEITEM=014B3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Justice
+DESCRIPTION=Justice (03/04) (N)
+
+[ITEMDEF 014b6]
+//SHRINE_JUSTICE_2 PART 4
+DUPEITEM=014B3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Justice
+DESCRIPTION=Justice (04/04) (N)
+
+[ITEMDEF 014b7]
+DEFNAME=i_shrine_valor_1
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Valor
+DESCRIPTION=Valor (01/04) (W)
+DUPELIST=014b8,014b9,014ba
+
+[ITEMDEF 014b8]
+//SHRINE_VALOR_1 PART 2
+DUPEITEM=014B7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Valor
+DESCRIPTION=Valor (02/04) (W)
+
+[ITEMDEF 014b9]
+//SHRINE_VALOR_1 PART 3
+DUPEITEM=014B7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Valor
+DESCRIPTION=Valor (03/04) (W)
+
+[ITEMDEF 014ba]
+//SHRINE_VALOR_1 PART 4
+DUPEITEM=014B7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Valor
+DESCRIPTION=Valor (04/04) (W)
+
+[ITEMDEF 014bb]
+DEFNAME=i_shrine_valor_2
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Valor
+DESCRIPTION=Valor (01/04) (N)
+DUPELIST=014bc,014bd,014be
+
+[ITEMDEF 014bc]
+//SHRINE_VALOR_2 PART 2
+DUPEITEM=014BB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Valor
+DESCRIPTION=Valor (02/04) (N)
+
+[ITEMDEF 014bd]
+//SHRINE_VALOR_2 PART 3
+DUPEITEM=014BB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Valor
+DESCRIPTION=Valor (03/04) (N)
+
+[ITEMDEF 014be]
+//SHRINE_VALOR_2 PART 4
+DUPEITEM=014BB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Valor
+DESCRIPTION=Valor (04/04) (N)
+
+[ITEMDEF 014bf]
+DEFNAME=i_shrine_spirituality_1
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Spirituality
+DESCRIPTION=Spirituality (01/04) (W)
+DUPELIST=014c0,014c1,014c2
+
+[ITEMDEF 014c0]
+//SHRINE_SPIRITUALITY_1 PART 2
+DUPEITEM=014BF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Spirituality
+DESCRIPTION=Spirituality (02/04) (W)
+
+[ITEMDEF 014c1]
+//SHRINE_SPIRITUALITY_1 PART 3
+DUPEITEM=014BF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Spirituality
+DESCRIPTION=Spirituality (03/04) (W)
+
+[ITEMDEF 014c2]
+//SHRINE_SPIRITUALITY_1 PART 4
+DUPEITEM=014BF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Spirituality
+DESCRIPTION=Spirituality (04/04) (W)
+
+[ITEMDEF 014c3]
+DEFNAME=i_shrine_spirituality_2
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Spirituality
+DESCRIPTION=Spirituality (01/04) (N)
+DUPELIST=014c4,014c5,014c6
+
+[ITEMDEF 014c4]
+//SHRINE_SPIRITUALITY_2 PART 2
+DUPEITEM=014C3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Spirituality
+DESCRIPTION=Spirituality (02/04) (N)
+
+[ITEMDEF 014c5]
+//SHRINE_SPIRITUALITY_2 PART 3
+DUPEITEM=014C3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Spirituality
+DESCRIPTION=Spirituality (03/04) (N)
+
+[ITEMDEF 014c6]
+//SHRINE_SPIRITUALITY_2 PART 4
+DUPEITEM=014C3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Spirituality
+DESCRIPTION=Spirituality (04/04) (N)
+
+[ITEMDEF 014c7]
+DEFNAME=i_shrine_honor_1
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honor
+DESCRIPTION=Honor (01/04) (W)
+DUPELIST=014c8,014c9,014ca
+
+[ITEMDEF 014c8]
+//SHRINE_HONOR_1 PART 2
+DUPEITEM=014C7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honor
+DESCRIPTION=Honor (02/04) (W)
+
+[ITEMDEF 014c9]
+//SHRINE_HONOR_1 PART 3
+DUPEITEM=014C7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honor
+DESCRIPTION=Honor (03/04) (W)
+
+[ITEMDEF 014ca]
+//SHRINE_HONOR_1 PART 4
+DUPEITEM=014C7
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honor
+DESCRIPTION=Honor (04/04) (W)
+
+[ITEMDEF 014cb]
+DEFNAME=i_shrine_honor_2
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honor
+DESCRIPTION=Honor (01/04) (N)
+DUPELIST=014cc,014cd,014ce
+
+[ITEMDEF 014cc]
+//SHRINE_HONOR_2 PART 2
+DUPEITEM=014CB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honor
+DESCRIPTION=Honor (02/04) (N)
+
+[ITEMDEF 014cd]
+//SHRINE_HONOR_2 PART 3
+DUPEITEM=014CB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honor
+DESCRIPTION=Honor (03/04) (N)
+
+[ITEMDEF 014ce]
+//SHRINE_HONOR_2 PART 4
+DUPEITEM=014CB
+CATEGORY=Decoration - Shrines
+SUBSECTION=Honor
+DESCRIPTION=Honor (04/04) (N)
+
+[ITEMDEF 014cf]
+DEFNAME=i_shrine_humility_1
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Humility
+DESCRIPTION=Humility (01/04) (W)
+DUPELIST=014d0,014d1,014d2
+
+[ITEMDEF 014d0]
+//SHRINE_HONOR_1 PART 2
+DUPEITEM=014CF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Humility
+DESCRIPTION=Humility (02/04) (W)
+
+[ITEMDEF 014d1]
+//SHRINE_HONOR_1 PART 3
+DUPEITEM=014CF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Humility
+DESCRIPTION=Humility (03/04) (W)
+
+[ITEMDEF 014d2]
+//SHRINE_HONOR_1 PART 4
+DUPEITEM=014CF
+CATEGORY=Decoration - Shrines
+SUBSECTION=Humility
+DESCRIPTION=Humility (04/04) (W)
+
+[ITEMDEF 014d3]
+DEFNAME=i_shrine_humility_2
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Humility
+DESCRIPTION=Humility (01/04) (N)
+DUPELIST=014d4,014d5,014d6
+
+[ITEMDEF 014d4]
+//SHRINE_HONOR_2 PART 2
+DUPEITEM=014D3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Humility
+DESCRIPTION=Humility (02/04) (N)
+
+[ITEMDEF 014d5]
+//SHRINE_HONOR_2 PART 3
+DUPEITEM=014D3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Humility
+DESCRIPTION=Humility (03/04) (N)
+
+[ITEMDEF 014d6]
+//SHRINE_HONOR_2 PART 4
+DUPEITEM=014D3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Humility
+DESCRIPTION=Humility (04/04) (N)
+
+[ITEMDEF 014d7]
+DEFNAME=i_vat
+RESOURCES=34 i_BOARD, 8 i_ingot_iron, 1 i_BARREL_TAP, 1 i_NAILS
+WEIGHT=40
+CATEGORY=Miscellaneous
+SUBSECTION=Vat
+DESCRIPTION=@
+DUPELIST=014d8,014d9,014da,014db,014dc,014dd,014de,014df
+
+[ITEMDEF 014d8]
+//vat
+DUPEITEM=014d7
+
+[ITEMDEF 014d9]
+//vat
+DUPEITEM=014d7
+
+[ITEMDEF 014da]
+//vat
+DUPEITEM=014d7
+
+[ITEMDEF 014db]
+//vat
+DUPEITEM=014d7
+
+[ITEMDEF 014dc]
+//vat
+DUPEITEM=014d7
+
+[ITEMDEF 014dd]
+//vat
+DUPEITEM=014d7
+
+[ITEMDEF 014de]
+//vat
+DUPEITEM=014d7
+
+[ITEMDEF 014df]
+//vat
+DUPEITEM=014d7
+
+[ITEMDEF 014e0]
+DEFNAME=i_bucket
+TYPE=T_CONTAINER
+TDATA2=03e
+RESOURCES=2 i_BOARD, 1 i_ingot_iron, 1 i_NAILS
+WEIGHT=2
+CATEGORY=Miscellaneous
+SUBSECTION=Vat
+DESCRIPTION=Bucket
+
+[ITEMDEF 014e1]
+DEFNAME=i_vat_ladder
+RESOURCES=10 i_BOARD, 1 i_NAILS
+WEIGHT=10
+CATEGORY=Miscellaneous
+SUBSECTION=Vat
+DESCRIPTION=Vat (Ladder)
+DUPELIST=014e2
+
+[ITEMDEF 014e2]
+//vat ladder
+DUPEITEM=014E1
+CATEGORY=Miscellaneous
+SUBSECTION=Vat
+DESCRIPTION=Vat (Ladder)
+
+[ITEMDEF 014e3]
+DEFNAME=i_shrine_chaos_1
+RESOURCES=20 i_MARBLE, 2 i_ingot_bloodrock, 2 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Chaos
+DESCRIPTION=Chaos (01/04) (W)
+DUPELIST=014e4,014e5,014e6
+
+[ITEMDEF 014e4]
+//SHRINE_CHAOS_1 PART 2
+DUPEITEM=014E3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Chaos
+DESCRIPTION=Chaos (02/04) (W)
+
+[ITEMDEF 014e5]
+//SHRINE_CHAOS_1 PART 3
+DUPEITEM=014E3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Chaos
+DESCRIPTION=Chaos (03/04) (W)
+
+[ITEMDEF 014e6]
+//SHRINE_CHAOS_1 PART 4
+DUPEITEM=014E3
+CATEGORY=Decoration - Shrines
+SUBSECTION=Chaos
+DESCRIPTION=Chaos (04/04) (W)
+
+[ITEMDEF 014e7]
+DEFNAME=i_POST_HITCHING
+FLIP=1
+RESOURCES=5 i_ingot_iron, 1 i_ingot_gold
+WEIGHT=7
+CATEGORY=Items by Professions
+SUBSECTION=StableMaster
+DESCRIPTION=Hitching Post
+DUPELIST=014e8
+
+[ITEMDEF 014e8]
+//hitching post
+DUPEITEM=014e7
+
+[ITEMDEF 014e9]
+DEFNAME=i_moulding_board
+FLIP=1
+RESOURCES=1 i_LOG, 1 i_BOARD
+WEIGHT=3
+TYPE=t_carpentry
+CATEGORY=Items by Professions
+SUBSECTION=Carpenter
+DESCRIPTION=Moulding Board
+DUPELIST=014ea
+
+[ITEMDEF 014ea]
+//moulding board
+DUPEITEM=014e9
+
+[ITEMDEF 014eb]
+DEFNAME=i_map
+TYPE=T_MAP
+FLIP=1
+RESOURCES=i_PAPER
+SKILLMAKE=CARPENTRY 40.0, TINKERING 40.0
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Cartographer
+DESCRIPTION=Map (Empty)
+DUPELIST=014ec
+
+[ITEMDEF 014ec]
+//map
+DUPEITEM=014eb
+
+[ITEMDEF 014ed]
+DEFNAME=i_MAP_ROLLED
+FLIP=1
+RESOURCES=i_map
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Cartographer
+DESCRIPTION=Map (Rolled)(Empty)
+DUPELIST=014ee
+
+[ITEMDEF 014ee]
+//rolled map
+DUPEITEM=014ed
+
+[ITEMDEF 014ef]
+DEFNAME=i_deed
+TYPE=t_deed
+FLIP=1
+RESOURCES=1 I_PAPER, 1 i_WAX_SEAL
+WEIGHT=1
+CATEGORY=Provisions - Deeds
+SUBSECTION=House Deeds
+DESCRIPTION=Deed (Blank)
+DUPELIST=014f0
+//DEFNAME2=VENDOR_DEED
+
+[ITEMDEF 014f0]
+//deed
+DUPEITEM=014ef
+
+[ITEMDEF 014f1]
+DEFNAME=i_deed_ship
+TYPE=t_deed
+FLIP=1
+RESOURCES=1 I_PAPER
+WEIGHT=1
+CATEGORY=Provisions - Deeds
+SUBSECTION=Ship Plans
+DESCRIPTION=Ship Plans (EMPTY)
+DUPELIST=014f2
+
+[ITEMDEF 014f2]
+//ship plans
+DUPEITEM=014f1
+
+[ITEMDEF 014f3]
+DEFNAME=i_MODEL_SHIP
+FLIP=1
+WEIGHT=1
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Nautical
+DESCRIPTION=Ship Model (N)
+DUPELIST=014f4
+
+RESOURCES=10 i_board
+RESOURCES2=1 i_board,1 i_thread,1 i_nails,1 i_PAPER
+SKILLMAKE=CARPENTRY 95.0, t_carpentry
+
+[ITEMDEF 014f4]
+//ship model
+DUPEITEM=014f3
+
+[ITEMDEF 014f5]
+DEFNAME=i_spyglass
+TYPE=T_SPY_GLASS
+FLIP=1
+RESOURCES=2 i_ingot_iron, 1 i_GLASS
+WEIGHT=3
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Nautical
+DESCRIPTION=SpyGlass (N)
+DUPELIST=014f6
+
+[ITEMDEF 014f6]
+//spyglass
+DUPEITEM=014f5
+
+[ITEMDEF 014f7]
+DEFNAME=i_anchor
+FLIP=1
+RESOURCES=40 i_ingot_iron, 1 i_ROPE
+WEIGHT=40
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Nautical
+DESCRIPTION=Anchor (W)
+DUPELIST=014f9
+
+[ITEMDEF 014f8]
+DEFNAME=i_rope
+FLIP=1
+WEIGHT=2
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Nautical
+DESCRIPTION=Rope (W)
+DUPELIST=014fa
+
+[ITEMDEF 014f9]
+//anchor
+DUPEITEM=014F7
+
+[ITEMDEF 014fa]
+//rope
+DUPEITEM=014F8
+
+[ITEMDEF 014fb]
+//DEFNAME2=LOCKPICK
+DEFNAME=i_lockpick
+TYPE=T_LOCKPICK
+FLIP=1
+RESOURCES=1 i_ingot_iron
+WEIGHT=.5
+CATEGORY=Items by Professions
+SUBSECTION=Thief
+DESCRIPTION=Lockpick
+DUPELIST=014fc
+SKILLMAKE=TINKERING 48.5,t_tinker_tools
+RESOURCES2=1 i_board,1 i_ingot_iron
+
+[ITEMDEF 014fc]
+//lockpick
+DUPEITEM=014fb
+
+[ITEMDEF 014fd]
+DEFNAME=i_lockpick_set
+//DEFNAME2=LOCKPICKS
+TYPE=T_LOCKPICK
+FLIP=1
+RESOURCES=3 i_LOCKPICK
+WEIGHT=1
+CATEGORY=Items by Professions
+SUBSECTION=Thief
+DESCRIPTION=Lockpicks (Set)
+DUPELIST=014fe
+
+[ITEMDEF 014fe]
+//lockpicks
+DUPEITEM=014fd
+
+[ITEMDEF 01500]
+DEFNAME=i_plough
+CATEGORY=Items by Professions
+SUBSECTION=Farmer
+DESCRIPTION=Plough
+DUPELIST=01501,01502,01503
+
+[ITEMDEF 01501]
+//i_PLOUGH_PART_2
+DUPEITEM=01500
+
+[ITEMDEF 01502]
+//plough
+DUPEITEM=01500
+
+[ITEMDEF 01503]
+//plough
+DUPEITEM=01500
+
+[ITEMDEF 01504]
+DEFNAME=i_harrow_part_1
+CATEGORY=Items by Professions
+SUBSECTION=Farmer
+DESCRIPTION=Harrow
+DUPELIST=01505,01506,01507
+
+[ITEMDEF 01505]
+DEFNAME=i_harrow_part_2
+DUPEITEM=01504
+
+[ITEMDEF 01506]
+//harrow
+DUPEITEM=01504
+
+[ITEMDEF 01507]
+//harrow
+DUPEITEM=01504
+
+[ITEMDEF 01508]
+DEFNAME=i_decorative_armor
+FLIP=1
+RESOURCES=20 i_ingot_iron, 5 i_ingot_gold, 2 i_LOG, 1 i_BOARD, 70 i_FEATHER
+WEIGHT=34
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Decorative Armor
+DESCRIPTION=@
+DUPELIST=0151c
+
+ON=@DCLICK
+	if ( <dispid> == i_decorative_armor )
+		ID=i_decorative_armor_d
+	else
+		ID=i_decorative_armor_d2
+	endif
+	sfx snd_WEAPONS_GILOTIN1
+	update
+	return 1
+
+[ITEMDEF 01509]
+DEFNAME=i_decorative_armor_d
+RESOURCES=i_decorative_armor
+WEIGHT=30
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Decorative Armor
+DESCRIPTION=@
+DUPELIST=0151d
+
+ON=@DCLICK
+	if ( <dispid> == i_decorative_armor_d )
+		ID=i_decorative_armor
+	else
+		ID=i_decorative_armor_2
+	endif
+	update
+	return 1
+
+[ITEMDEF 0150a]
+DEFNAME=i_shrine_sacrifice_1
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Sacrifice
+DESCRIPTION=Sacrifice (01/04) (W)
+DUPELIST=0150b,0150c,0150d
+
+[ITEMDEF 0150b]
+//SHRINE_SACRIFICE_1 PART 2
+DUPEITEM=0150A
+CATEGORY=Decoration - Shrines
+SUBSECTION=Sacrifice
+DESCRIPTION=Sacrifice (02/04) (W)
+
+[ITEMDEF 0150c]
+//SHRINE_SACRIFICE_1 PART 3
+DUPEITEM=0150A
+CATEGORY=Decoration - Shrines
+SUBSECTION=Sacrifice
+DESCRIPTION=Sacrifice (03/04) (W)
+
+[ITEMDEF 0150d]
+//SHRINE_SACRIFICE_1 PART 4
+DUPEITEM=0150A
+CATEGORY=Decoration - Shrines
+SUBSECTION=Sacrifice
+DESCRIPTION=Sacrifice (04/04) (W)
+
+[ITEMDEF 0150e]
+DEFNAME=i_shrine_sacrifice_2
+RESOURCES=20 i_MARBLE, 4 i_ingot_gold, 6 i_rock_plain
+WEIGHT=32
+CATEGORY=Decoration - Shrines
+SUBSECTION=Sacrifice
+DESCRIPTION=Sacrifice (01/04) (N)
+DUPELIST=0150f,01510,01511
+
+[ITEMDEF 0150f]
+//SHRINE_SACRIFICE_2 PART 2
+DUPEITEM=0150E
+CATEGORY=Decoration - Shrines
+SUBSECTION=Sacrifice
+DESCRIPTION=Sacrifice (02/04) (N)
+
+[ITEMDEF 01510]
+//SHRINE_SACRIFICE_2 PART 3
+DUPEITEM=0150E
+CATEGORY=Decoration - Shrines
+SUBSECTION=Sacrifice
+DESCRIPTION=Sacrifice (03/04) (N)
+
+[ITEMDEF 01511]
+//SHRINE_SACRIFICE_2 PART 4
+DUPEITEM=0150E
+CATEGORY=Decoration - Shrines
+SUBSECTION=Sacrifice
+DESCRIPTION=Sacrifice (04/04) (N)
+
+[ITEMDEF 01512]
+DEFNAME=i_decorative_armor2
+FLIP=1
+RESOURCES=10 i_ingot_bronze, 13 i_ingot_rose, 2 i_ingot_iron, 2 i_LOG, 1 i_BOARD
+WEIGHT=34
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Decorative Armor
+DESCRIPTION=@
+DUPELIST=0151a
+
+ON=@DCLICK
+	if ( <dispid> == i_decorative_armor2 )
+		ID=i_decorative_armor2_d
+	else
+		ID=i_decorative_armor2_d2
+	endif
+	sfx snd_WEAPONS_GILOTIN1
+	update
+	return 1
+
+[ITEMDEF 01513]
+DEFNAME=i_decorative_armor2_d
+RESOURCES=i_decorative_armor2
+WEIGHT=30
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Decorative Armor
+DESCRIPTION=@
+DUPELIST=0151b
+
+ON=@DCLICK
+	if ( <dispid> == i_decorative_armor2_d )
+		ID=i_decorative_armor2
+	else
+		ID=i_decorative_armor2_2
+	endif
+	update
+	return 1
+
+[ITEMDEF 01514]
+DEFNAME=i_serpent_crest
+RESOURCES=20 i_ingot_silver, 4 i_ingot_bloodrock
+WEIGHT=35
+CATEGORY=Decoration - Miscellaneous
+SUBSECTION=Serpent Crest
+DESCRIPTION=@
+
+[ITEMDEF 01515]
+DEFNAME=i_cape
+RESOURCES=14 i_cloth
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Cloak, Cape
+DUPELIST=01530
+SKILLMAKE=TAILORING 45.4, t_sewing_kit
+RESOURCES2=14 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40 }
+
+[ITEMDEF 01516]
+DEFNAME=i_skirt_long
+RESOURCES=10 i_cloth
+WEIGHT=4
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=4
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Long Skirt
+SKILLMAKE=TAILORING 31.8, t_sewing_kit
+RESOURCES2=10 i_cloth,1 i_thread
+
+[ITEMDEF 01517]
+DEFNAME=i_shirt_plain
+RESOURCES=8 i_cloth
+SKILLMAKE=TAILORING 22.7, t_sewing_kit
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Shirts & Robes
+DESCRIPTION=Plain Shirt
+DUPELIST=01518
+RESOURCES2=8 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01518]
+//plain shirt
+DUPEITEM=01517
+
+[ITEMDEF 0151a]
+DEFNAME=i_decorative_armor2_2
+DUPEITEM=01512
+
+[ITEMDEF 0151b]
+DEFNAME=i_decorative_armor2_d2
+DUPEITEM=01513
+
+[ITEMDEF 0151c]
+DEFNAME=i_decorative_armor_2
+DUPEITEM=01508
+
+[ITEMDEF 0151d]
+DEFNAME=i_decorative_armor_d2
+DUPEITEM=01509
+
+[ITEMDEF 0151e]
+DEFNAME=i_vat_2
+RESOURCES=34 i_BOARD, 8 i_ingot_iron, 1 i_BARREL_TAP, 1 i_NAILS, 100 i_fruit_grapes
+WEIGHT=50
+CATEGORY=Miscellaneous
+SUBSECTION=Vat
+DESCRIPTION=Vat (Grapes)
+DUPELIST=0151f,01520,01521,01522,01523,01524,01525
+
+[ITEMDEF 0151f]
+//vat
+DUPEITEM=0151e
+
+[ITEMDEF 01520]
+DEFNAME=i_vat_ladder_2
+DUPEITEM=0151e
+
+[ITEMDEF 01521]
+//grapes tile for wine press vat
+DUPEITEM=0151e
+
+[ITEMDEF 01522]
+//grapes tile for wine press vat
+DUPEITEM=0151e
+
+[ITEMDEF 01523]
+//grapes
+//grapes tile for wine press vat
+DUPEITEM=0151e
+
+[ITEMDEF 01524]
+//vat side
+DUPEITEM=0151e
+
+[ITEMDEF 01525]
+//vat ladder
+DUPEITEM=0151e
+
+[ITEMDEF 01526]
+// chair - LB's U shaped throne S piece - e-w
+// DEFNAME2=i_chair_tacky_throne
+DEFNAME=i_chair_throne_lb
+DUPELIST=01527
+TYPE=T_CHAIR
+FLIP=1
+RESOURCES=10 i_MARBLE, 5 i_ingot_gold, 5 i_VELVET, 100 i_FEATHER
+WEIGHT=50
+CATEGORY=Decoration - Furniture
+SUBSECTION=Chairs
+DESCRIPTION=Throne
+
+[ITEMDEF 01527]
+// chair - LB's U shaped throne N piece - e-w
+DUPEITEM=01526
+
+[ITEMDEF 0152e]
+DEFNAME=i_pants_short
+RESOURCES=6 i_cloth
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Short Pants
+DUPELIST=0152f
+SKILLMAKE=TAILORING 6.8, t_sewing_kit
+RESOURCES2=6 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 0152f]
+//Short Pants
+DUPEITEM=0152e
+
+[ITEMDEF 01530]
+//cloak, cape
+DUPEITEM=01515
+
+[ITEMDEF 01531]
+DEFNAME=i_skirt_short
+RESOURCES=10 i_CLOTH, 1 i_THREAD
+WEIGHT=4
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=4
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Skirt (Tea Length)
+
+ON=@Create
+HITPOINTS={21 24}
+
+[ITEMDEF 01535]
+//This item is unwearable but may be used for decoration.
+DEFNAME=i_BELT_GOLD
+RESOURCES=1 i_ingot_gold, 1 i_CLOTH
+WEIGHT=2
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Gold Belt (Unwearable)
+DUPELIST=01536
+
+[ITEMDEF 01536]
+//gold belt
+DUPEITEM=01535
+
+[ITEMDEF 01537]
+DEFNAME=i_kilt
+RESOURCES=8 i_cloth
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Kilt
+DUPELIST=01538
+SKILLMAKE=TAILORING 22.7, t_sewing_kit
+RESOURCES2=8 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 24}
+
+[ITEMDEF 01538]
+//Kilt
+DUPEITEM=01537
+
+[ITEMDEF 01539]
+DEFNAME=i_pants_long
+RESOURCES=8 i_cloth
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Pants & Skirts
+DESCRIPTION=Long Pants
+DUPELIST=0153a
+SKILLMAKE=TAILORING 27.2, t_sewing_kit
+RESOURCES2=8 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 24}
+
+[ITEMDEF 0153a]
+//Long Pants
+DUPEITEM=01539
+
+[ITEMDEF 0153b]
+DEFNAME=i_apron_half
+RESOURCES=6 i_cloth
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=2
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Half Apron
+DUPELIST=0153c
+SKILLMAKE=TAILORING 22.7, t_sewing_kit
+RESOURCES2=6 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 25}
+
+[ITEMDEF 0153c]
+//Half Apron
+DUPEITEM=0153b
+
+[ITEMDEF 0153d]
+DEFNAME=i_apron_full
+RESOURCES=10 i_cloth
+WEIGHT=4
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=4
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Full Apron
+DUPELIST=0153e
+SKILLMAKE=TAILORING 31.8, t_sewing_kit
+RESOURCES2=10 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 30}
+
+[ITEMDEF 0153e]
+//Full Apron
+DUPEITEM=0153d
+
+[ITEMDEF 0153f]
+DEFNAME=i_bandana
+RESOURCES=2 i_cloth
+WEIGHT=1
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Bandana
+DUPELIST=01540
+SKILLMAKE=TAILORING 0.1, t_sewing_kit
+RESOURCES2=2 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01540]
+//bandana
+DUPEITEM=0153f
+
+[ITEMDEF 01541]
+DEFNAME=i_sash
+RESOURCES=4 i_cloth
+WEIGHT=1
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=Body Sash
+DUPELIST=01542
+SKILLMAKE=TAILORING 4.5, t_sewing_kit
+RESOURCES2=4 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={11 40}
+
+[ITEMDEF 01542]
+//body sash
+DUPEITEM=01541
+
+[ITEMDEF 01543]
+DEFNAME=i_skull_cap
+RESOURCES=2 i_cloth
+WEIGHT=1
+TYPE=T_CLOTHING
+DYE=1
+ARMOR=1
+CATEGORY=Provisions - Clothes
+SUBSECTION=Miscellaneous
+DESCRIPTION=SkullCap
+DUPELIST=01544
+SKILLMAKE=TAILORING 0.1, t_sewing_kit
+RESOURCES2=2 i_cloth,1 i_thread
+
+ON=@Create
+HITPOINTS={10 14}
+
+[ITEMDEF 01544]
+//skullcap
+DUPEITEM=01543
+
+[ITEMDEF 01545]
+DEFNAME=i_mask_bear
+RESOURCES3=1 i_BEAR_SKULL
+SKILLMAKE=TAILORING 16.1, t_sewing_kit
+WEIGHT=6
+TYPE=T_CLOTHING
+ARMOR=6
+CATEGORY=Provisions - Clothes
+SUBSECTION=Masks
+DESCRIPTION=Bear Mask
+DUPELIST=01546
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01546]
+//bear mask
+DUPEITEM=01545
+
+[ITEMDEF 01547]
+DEFNAME=i_mask_deer
+RESOURCES3=1 i_DEER_SKULL
+SKILLMAKE=TAILORING 16.1, t_sewing_kit
+WEIGHT=6
+TYPE=T_CLOTHING
+ARMOR=6
+CATEGORY=Provisions - Clothes
+SUBSECTION=Masks
+DESCRIPTION=Deer Mask
+DUPELIST=01548
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 01548]
+//deer mask
+DUPEITEM=01547
+
+[ITEMDEF 01549]
+// WHITE_MASK
+DEFNAME=i_mask_blue
+RESOURCES=1 i_STRAW, 1 i_CANVAS, 1 i_FEATHER, 1 i_bone
+SKILLMAKE=TAILORING 16.1, t_sewing_kit
+WEIGHT=4
+TYPE=T_CLOTHING
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Masks
+DESCRIPTION=Tribal Mask
+DUPELIST=0154a
+
+ON=@Create
+HITPOINTS={21 23}
+
+[ITEMDEF 0154a]
+//tribal mask
+DUPEITEM=01549
+
+[ITEMDEF 0154b]
+// RED_MASK
+DEFNAME=i_mask_tribal_red
+RESOURCES=1 i_STRAW, 1 i_CANVAS, 1 i_FEATHER, 1 I_BONE
+SKILLMAKE=TAILORING 16.1, t_sewing_kit
+WEIGHT=4
+TYPE=T_CLOTHING
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Masks
+DESCRIPTION=Tribal Mask 2
+DUPELIST=0154c
+//tribal mask
+
+[ITEMDEF 0154c]
+//tribal mask
+DUPEITEM=0154b
+
+[ITEMDEF 0154d]
+DEFNAME=i_barrel_water
+WEIGHT=25
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Containers
+DESCRIPTION=Water Barrel
+SKILLMAKE=CARPENTRY 85.0, t_carpentry
+RESOURCES=i_barrel_open
+RESOURCES2=i_barrel_open, 10 i_water
+
+[ITEMDEF 0154e]
+DEFNAME=i_CURTAIN_FREESTANDING
+RESOURCES=3 i_ingot_iron, 8 i_CLOTH
+WEIGHT=6
+CATEGORY=Decoration - Curtains
+SUBSECTION=Single Red
+DESCRIPTION=@
+DUPELIST=0154f,01557
+
+[ITEMDEF 0154f]
+//curtains
+DUPEITEM=0154e
+
+[ITEMDEF 01550]
+DEFNAME=i_vat_3
+RESOURCES=34 i_BOARD, 8 i_ingot_iron, 1 i_BARREL_TAP, 1 i_NAILS, 20 i_WATER
+WEIGHT=50
+CATEGORY=Miscellaneous
+SUBSECTION=Vat
+DESCRIPTION=Vat (Water)
+DUPELIST=01551,01552,01553,01554,01555,01556,01558,01559
+
+[ITEMDEF 01551]
+DEFNAME=i_vat_ladder_3
+DUPEITEM=01550
+
+[ITEMDEF 01552]
+//vat
+DUPEITEM=01550
+
+[ITEMDEF 01553]
+//vat
+DUPEITEM=01550
+
+[ITEMDEF 01554]
+//vat
+DUPEITEM=01550
+
+[ITEMDEF 01555]
+//vat
+DUPEITEM=01550
+
+[ITEMDEF 01556]
+//vat
+DUPEITEM=01550
+
+[ITEMDEF 01557]
+//curtain
+DUPEITEM=0154e
+
+[ITEMDEF 01558]
+//vat
+DUPEITEM=01550
+
+[ITEMDEF 01559]
+//water
+DUPEITEM=01550
+
+[ITEMDEF 0155c]
+DEFNAME=i_decorative_weapons_1
+RESOURCES=2 i_LOG, 1 i_BOARD, 1 i_CAT_GUT, 4 i_FEATHER, 1 i_NAILS
+WEIGHT=6
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Bow
+DESCRIPTION=@
+DUPELIST=0155d,0155e,0155f
+
+[ITEMDEF 0155d]
+//decorative weapons
+DUPEITEM=0155c
+
+[ITEMDEF 0155e]
+//decorative weapons
+DUPEITEM=0155c
+
+[ITEMDEF 0155f]
+//decorative weapons
+DUPEITEM=0155c
+
+[ITEMDEF 01560]
+DEFNAME=i_decorative_weapons_2
+RESOURCES=1 i_LOG, 1 i_BOARD, 2 i_ingot_iron, 1 i_NAILS
+WEIGHT=5
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Axe
+DESCRIPTION=@
+
+[ITEMDEF 01561]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Axe
+DESCRIPTION=@
+
+[ITEMDEF 01562]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Axe
+DESCRIPTION=@
+
+[ITEMDEF 01563]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Axe
+DESCRIPTION=@
+
+[ITEMDEF 01564]
+DEFNAME=i_decorative_weapons_3
+RESOURCES=2 i_LOG, 1 i_ingot_bronze, 4 i_ingot_iron, 1 i_NAILS
+WEIGHT=8
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Swords
+DESCRIPTION=@
+
+[ITEMDEF 01565]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Swords
+DESCRIPTION=@
+
+[ITEMDEF 01566]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Swords
+DESCRIPTION=@
+
+[ITEMDEF 01567]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Swords
+DESCRIPTION=@
+
+[ITEMDEF 01568]
+DEFNAME=i_decorative_weapons_4
+RESOURCES=2 i_LOG, 1 i_BOARD, 4 i_ingot_iron, 1 i_NAILS
+WEIGHT=8
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Axe & Spear
+DESCRIPTION=@
+
+[ITEMDEF 01569]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Axe & Spear
+DESCRIPTION=@
+
+[ITEMDEF 0156a]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Axe & Spear
+DESCRIPTION=@
+
+[ITEMDEF 0156b]
+//decorative weapons
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Axe & Spear
+DESCRIPTION=@
+
+[ITEMDEF 0156c]
+DEFNAME=i_decorative_shield
+RESOURCES=7 i_ingot_bronze, 6 i_ingot_iron
+WEIGHT=20
+CATEGORY=Decoration - Weapons & Shields
+SUBSECTION=Shields
+DESCRIPTION=Shield
+DUPELIST=0156d
+
+[ITEMDEF 0156d]
+//decorative shield
+DUPEITEM=0156c
+
+[ITEMDEF 0156e]
+DEFNAME=i_decorative_shield_2
+DUPELIST=0156f
+
+[ITEMDEF 0156f]
+//decorative shield
+DUPEITEM=0156e
+
+[ITEMDEF 01570]
+DEFNAME=i_decorative_shield_3
+DUPELIST=01571
+
+[ITEMDEF 01571]
+//decorative shield
+DUPEITEM=01570
+
+[ITEMDEF 01572]
+DEFNAME=i_decorative_shield_4
+DUPELIST=01573
+
+[ITEMDEF 01573]
+//decorative shield
+DUPEITEM=01572
+
+[ITEMDEF 01574]
+DEFNAME=i_decorative_shield_5
+DUPELIST=01575
+
+[ITEMDEF 01575]
+//decorative shield
+DUPEITEM=01574
+
+[ITEMDEF 01576]
+DEFNAME=i_decorative_shield_6
+DUPELIST=01577
+
+[ITEMDEF 01577]
+//decorative shield
+DUPEITEM=01576
+
+[ITEMDEF 01578]
+DEFNAME=i_decorative_shield_7
+DUPELIST=01579
+
+[ITEMDEF 01579]
+//decorative shield
+DUPEITEM=01578
+
+[ITEMDEF 0157a]
+DEFNAME=i_decorative_shield_8
+
+[ITEMDEF 0157b]
+//decorative shield
+DUPEITEM=0157c
+
+[ITEMDEF 0157c]
+DEFNAME=i_decorative_shield_9
+DUPELIST=0157b,0157d
+
+[ITEMDEF 0157d]
+//decorative shield
+DUPEITEM=0157c
+
+[ITEMDEF 0157e]
+DEFNAME=i_decorative_shield_10
+DUPELIST=0157f
+
+[ITEMDEF 0157f]
+//decorative shield
+DUPEITEM=0157e
+
+[ITEMDEF 01580]
+DEFNAME=i_decorative_shield_11
+DUPELIST=01581
+
+[ITEMDEF 01581]
+//decorative shield
+DUPEITEM=01580
+
+[ITEMDEF 01582]
+DEFNAME=i_decorative_shield_12_sword_under_ne
+RESOURCES=8 i_ingot_iron, 2 i_ingot_silver, 1 i_BOARD
+WEIGHT=17
+
+[ITEMDEF 01583]
+DEFNAME=i_decorative_shield_12_sword_over_ne
+RESOURCES=8 i_ingot_iron, 2 i_ingot_silver, 1 i_BOARD
+WEIGHT=17
+
+[ITEMDEF 01584]
+DEFNAME=i_decorative_shield_13_sword_under_ne
+RESOURCES=6 i_ingot_gold, 4 i_ingot_iron, 1 i_BOARD
+WEIGHT=16
+
+[ITEMDEF 01585]
+DEFNAME=i_decorative_shield_13_sword_over_ne
+RESOURCES=6 i_ingot_gold, 4 i_ingot_iron, 1 i_BOARD
+WEIGHT=16
+
+[EOF]

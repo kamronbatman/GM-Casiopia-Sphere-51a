@@ -1,0 +1,106 @@
+[CHARDEF c_h_counselor]
+ID=c_man
+NAME=Counselor
+DAM=200,400
+ARMOR=100
+
+DESIRES=t_chair
+SHELTER=r_civilization
+
+TSPEECH=spk_human_default
+TSPEECH=jobCounselor
+TEVENTS=e_Human_Child // No damage taken
+
+ON=@Create
+TITLE=Just say 'Help' for assistance
+INVUL=1
+COLOR=colors_skin
+STR={2000 2500}
+DEX={1000 1500}
+INT={710 850}
+
+DETECTINGHIDDEN=200.0
+PARRYING=200.0
+SWORDSMANSHIP=200.0
+WRESTLING=200.0
+MAGICRESISTANCE=200.0
+TACTICS=200.0
+
+ITEMNEWBIE=04503 // Counselor robe
+ITEMNEWBIE=i_light_source
+ATTR=attr_magic|attr_newbie
+
+CATEGORY=Civilized
+SUBSECTION=Miscellaneous
+DESCRIPTION=Counselor (male)
+
+[CHARDEF c_h_counselor_f]
+ID=c_woman
+NAME=Counselor [NPC]
+DAM=200,400
+ARMOR=100
+
+DESIRES=t_chair
+SHELTER=r_civilization
+
+TSPEECH=spk_human_default
+TSPEECH=jobCounselor
+TEVENTS=e_Human_Child // No damage taken
+
+ON=@Create
+TITLE=Just say 'Help' for assistance
+INVUL=1
+COLOR=colors_skin
+STR={2000 2500}
+DEX={1000 1500}
+INT={710 850}
+
+DETECTINGHIDDEN=200.0
+PARRYING=200.0
+SWORDSMANSHIP=200.0
+WRESTLING=200.0
+MAGICRESISTANCE=200.0
+TACTICS=200.0
+
+ITEMNEWBIE=04503 // Counselor robe
+ITEMNEWBIE=i_light_source
+ATTR=attr_magic|attr_newbie
+
+CATEGORY=Civilized
+SUBSECTION=Miscellaneous
+DESCRIPTION=Counselor (female)
+
+[SPAWN SPAWN_Counselors]
+CATEGORY=Spawn Groups
+SUBSECTION=Humans
+DESCRIPTION=Counselors
+ID=c_h_counselor
+ID=c_h_counselor_f
+
+[SPEECH jobCounselor]
+ON=*job*
+ON=*work*
+ON=*what*do*do*
+ON=*profession*
+ON=*occupation*
+	DORNAD 2
+		SAY=I am a Counselor, here to help all who require assistance.
+		SAY=Im a Counselor of course, here to serve all citizens.
+	ENDRAND
+ON=help*game*play*
+	SRC.SYSMESSAGE=Please wait while the webpage loads in your browser...
+	SRC.WEBLINK=www.uo.com/newplayer/newplay_0.html
+ON=help*information*
+	SRC.SYSMESSAGE=Please wait while the webpage loads in your browser...
+	SRC.WEBLINK=uo.stratics.com/
+ON=help*maps*
+	SRC.SYSMESSAGE=Please wait while the webpage loads in your browser...
+	SRC.WEBLINK=uo.stratics.com/uoam/uoam.shtml
+ON=help*gm*assistance*
+	SRC.HELP // PAGE
+ON=help*where*
+	SAY=You are in <SRC.REGION.NAME>.
+
+ON=help*
+	SAY=What exactly can I help you with? (gameplay, information, maps, gm assistance)
+[EOF]

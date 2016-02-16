@@ -1,0 +1,96 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// spheremap2.scp written by Axis v0.12c
+// Last modified January 01, 2001 at 05:09:23
+
+[AREA Mt Kendall Guarded]
+GROUP=Minoc
+P=2567,497,16
+RECT=2550,419,2622,549
+RECT=2621,433,2636,493
+LOCAL=Britannia_Minoc
+FLAGS=04000
+
+[AREA Minoc Mining Camp]
+GROUP=Minoc
+P=2583,529,15
+RECT=2559,515,2602,543
+FLAGS=00080
+
+[AREA Despise Guarded]
+TITLE=Despise Entrance Guarded
+GROUP=Despise Guarded
+P=1299,1080,1
+RECT=1297,1065,1307,1087
+ANNOUNCEMENT=This Area Is Now Unguarded!! Travel With Caution!!
+FLAGS=002a0
+
+[AREA Newbie Dungeon]
+TITLE=Newbie Dungeon
+GROUP=Dungeons
+P=5671,1494,5
+RECT=5534,1467,5698,1530
+ANNOUNCEMENT=Harming another player here is against the rules of the shard. 
+FLAGS=00e8a
+
+[AREA Green Acres]
+GROUP=Green Acres
+P=5445,1153,0
+RECT=5374,1079,5631,1280
+RECT=5609,1297,5609,1297
+RECT=5629,1023,6143,1279
+GUARDOWNER=GM
+FLAGS=06c8e
+
+[AREA GM-Arena]
+TITLE=GM-Arena Of Death
+RECT=5241,1746,5277,1780
+GUARDOWNER=Admin
+ANNOUNCEMENT=Prepare To Fight!!!
+FLAGS=01380
+
+[AREA GM-Prise Arena]
+TITLE=GM-Prise Arena
+GROUP=GM-AREAS
+RECT=6003,1124,6034,1151
+GUARDOWNER=GM
+ANNOUNCEMENT=NO Pking, No Looting, No Stealing, No Spamming, And Dont Bother The Gms!
+FLAGS=013bf
+
+[AREA Bridge In Brit SW]
+TITLE=SW Bridge Of Britain
+RECT=1377,1743,1396,1757
+GUARDOWNER=Admin
+ANNOUNCEMENT=Do Not Block This Passage!!!
+FLAGS=0038c
+
+[AREA Jailcell5]
+TITLE=Jail5
+GROUP=GM-AREAS
+RECT=5272,1170,5281,1179
+ANNOUNCEMENT=Welcome To Jail Cell Number 5 To Get Out Use The Bail Stone!!
+FLAGS=077bf
+
+[ROOM Hythloth Level 4]
+GROUP=Hythloth
+P=6059,92,22
+RECT=6047,28,6122,107
+
+[ROOM Hythloth Level 3]
+GROUP=Hythloth
+P=6083,148,-22
+RECT=6021,141,6130,235
+
+[AREA GM-KEEP]
+TITLE=RESTRICTED AREA
+GROUP=GM-AREAS
+RECT=878,1832,968,1904
+ANNOUNCEMENT=You Have Entered A Restricted Area And Are Subject To Immediate Jailing!! Leave This Area At Once!!
+FLAGS=05780

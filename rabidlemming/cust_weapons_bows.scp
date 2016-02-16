@@ -1,0 +1,502 @@
+[ITEMDEF i_elven_crossbow]
+ID=i_crossbow
+NAME=elven crossbow
+TYPE=t_weapon_xbow
+DAM=8,43
+SKILL=Archery
+REQSTR=30
+TWOHANDS=Y
+VALUE=1000-1200
+WEIGHT=15
+RESOURCES=8 i_BOARD
+SKILLMAKE=BOWCRAFT 99.8,i_dagger
+
+ON=@EQUIP
+  SRC.TACTICS=(<SRC.TACTICS>+15.0)
+  SRC.ARCHERY=(<SRC.ARCHERY>+10.0)
+  RETURN 0
+
+ON=@UNEQUIP
+  SRC.TACTICS=(<SRC.TACTICS>+(-15.0))
+  SRC.ARCHERY=(<SRC.ARCHERY>+(-10.0))
+  RETURN 0
+
+ON=@Create
+  COLOR=0237
+  HITPOINTS={31 80}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=Elven Crossbow
+DUPELIST=00f50
+
+[ITEMDEF i_elven_crossbow_heavy]
+ID=i_crossbow_heavy
+NAME=elven heavy crossbow
+TYPE=t_weapon_xbow
+DAM=6,34
+SKILL=Archery
+REQSTR=30
+TWOHANDS=Y
+VALUE=1500-1700
+WEIGHT=8
+RESOURCES=12 i_BOARD
+SKILLMAKE=BOWCRAFT 100.0,i_dagger
+
+ON=@EQUIP
+  SRC.TACTICS=(<SRC.TACTICS>+15.0)
+  SRC.ARCHERY=(<SRC.ARCHERY>+10.0)
+  RETURN 0
+
+ON=@UNEQUIP
+  SRC.TACTICS=(<SRC.TACTICS>+(-15.0))
+  SRC.ARCHERY=(<SRC.ARCHERY>+(-10.0))
+  RETURN 0
+
+ON=@Create
+  COLOR=0237
+  HITPOINTS={31 100}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=Elven Heavy Crossbow
+DUPELIST=013fd
+
+[ITEMDEF i_bow_inferno]
+ID=i_bow
+NAME=inferno bow
+TYPE=t_weapon_bow
+FLIP=1
+RESOURCES=7 i_log_magic, i_scroll_explosion
+SKILLMAKE=87.8 BOWCRAFT,i_dagger
+DAM=21,43
+SPEED=18
+SKILL=Archery
+REQSTR=30
+TWOHANDS=Y
+WEIGHT=15
+TDATA3=0 //i_arrow_inferno
+TDATA4=i_fx_fireball_small //i_fx_firesnake
+
+ON=@DAMAGE
+  IF (<EVAL RAND(19)> = 0)
+    SRC.SPELLEFFECT=s_explosion,1
+  ENDIF
+
+ON=@Create
+  COLOR=07ad
+  HITPOINTS={30 50}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=Inferno Bow
+DUPELIST=00f50
+
+[ITEMDEF i_bow_lightning]
+ID=i_bow
+NAME=lightning bow
+TYPE=t_weapon_bow
+FLIP=1
+RESOURCES=7 i_log_magic, 1 i_scroll_lightning
+SKILLMAKE=87.8 BOWCRAFT
+DAM=21,43
+SPEED=18
+SKILL=Archery
+REQSTR=30
+TWOHANDS=Y
+WEIGHT=15
+TDATA3=0 //i_arrow_lightning
+TDATA4=i_fx_energy_ray
+
+ON=@EQUIP
+  IF (<SRC.ARCHERY> > 799)
+    RETURN=0
+  ELSE
+    RETURN=1
+    SRC.SYSMESSAGE=You lack the skill to use this weapon.
+  ENDIF
+
+ON=@DAMAGE
+  IF (<EVAL RAND(19)> = 0)
+    SRC.SPELLEFFECT=s_lightning,1
+  ENDIF
+
+ON=@Create
+  COLOR=07a2
+  HITPOINTS={30 50}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=Lightning Bow
+DUPELIST=00f50
+
+[ITEMDEF i_crossbow_ranger]
+ID=i_crossbow
+NAME=ranger's crossbow
+TYPE=t_weapon_xbow
+DAM=17-30
+SPEED=20
+SKILL=Archery
+REQSTR=50
+TWOHANDS=Y
+VALUE=3000-3500
+WEIGHT=4
+RESOURCES=12 i_log_ancient
+SKILLMAKE=BOWCRAFT 89.8,i_dagger
+FLIP=1
+
+ON=@EQUIP
+  IF (<SRC.ARCHERY> > 799)
+    RETURN=0
+  ELSE
+    RETURN=1
+    SRC.SYSMESSAGE=You lack the skill to use this weapon.
+  ENDIF
+
+ON=@DAMAGE
+  IF (<EVAL RAND(19)> = 19)
+    IF !(<SRC.RESTEST=1 i_open_wound>)
+      SRC.NEWITEM=i_open_wound
+      SRC.ACT.EQUIP
+      SRC.ACT.TIMER=5
+      SRC.ACT.LINK=<SRC.UID>
+      SRC.SYSMESSAGE=You have been deeply wounded, you require healing.
+    ENDIF
+  ENDIF
+
+ON=@Create
+  COLOR=0794
+  HITPOINTS={30 50}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=Ranger's Crossbow
+DUPELIST=00f50
+
+[ITEMDEF i_crossbow_heavy_ranger]
+ID=i_crossbow_heavy
+NAME=ranger's heavy crossbow
+TYPE=t_weapon_xbow
+DAM=18-38
+SPEED=20
+SKILL=Archery
+REQSTR=60
+TWOHANDS=Y
+VALUE=3500-4000
+WEIGHT=5
+RESOURCES=14 i_log_ancient
+SKILLMAKE=BOWCRAFT 91.5,i_dagger
+FLIP=1
+
+ON=@EQUIP
+  IF <SRC.ARCHERY>>799
+    RETURN=0
+  ELSE
+    RETURN=1 You lack the skill to use this weapon.
+  ENDIF
+
+ON=@DAMAGE
+  IF (<EVAL RAND(19)> = 19)
+    IF !(<SRC.RESTEST=1 i_open_wound>)
+      SRC.NEWITEM=i_open_wound
+      SRC.ACT.EQUIP
+      SRC.ACT.TIMER=5
+      SRC.ACT.LINK=<SRC.UID>
+      SRC.SYSMESSAGE=You have been deeply wounded, you require healing.
+    ENDIF
+  ENDIF
+
+ON=@Create
+  COLOR=0794
+  HITPOINTS={30 50}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=Ranger's Heavy Crossbow
+DUPELIST=013fd
+
+[ITEMDEF i_log_ancient]
+DEFNAME=i_log_ancient
+ID=i_log
+NAME=ancient log%s
+PILE=1
+FLIP=0
+
+ON=@Create
+  COLOR=0794
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=Hardened Log
+
+[ITEMDEF i_log_magic]
+DEFNAME=i_log_magic
+ID=i_log
+NAME=magic log%s
+PILE=1
+FLIP=0
+
+ON=@Create
+  COLOR=07bb
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=Hardened Log
+
+[ITEMDEF i_open_wound]
+ID=0122d
+NAME=open wound memory
+TYPE=t_eq_memory_obj
+LAYER=layer_special
+
+ON=@EQUIP
+  TIMER=5
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  IF (<MORE2> > 0)
+    LINK.SYSMESSAGE You have an open wound that needs treated.
+    LINK.DAMAGE=(<EVAL RAND(3)>+2)
+    SRC.EMOTE bleeding profusely
+    MORE2=<MORE2>+-1
+    LINK.NEWITEM=i_open_wound
+    LINK.ACT.TIME=3
+    LINK.ACT.MORE2=<MORE2>
+    LINK.ACT.LINK=<LINK>
+    LINK.ACT.EQUIP
+  ELSE
+    LINK.SYSMESSAGE=The bleeding has stopped.
+  ENDIF
+
+ON=@Create
+  MORE2={2 8}
+  ATTR=attr_decay
+
+[ITEMDEF i_quiver_arrows]
+ID=i_backpack
+NAME=quiver
+TYPE=t_container
+
+RESOURCES=5 i_hides_cut, 2 i_board
+SKILLMAKE=55.0 Bowcraft
+
+ON=@CLICK
+  MESSAGE=a quiver
+  RETURN=1
+
+ON=@DCLICK
+  IF (<CONT> != <SRC.FINDLAYER(layer_pack).UID>)
+    SRC.SYSMESSAGE=This must be in your backpack to use.
+    RETURN=1
+  ENDIF
+  IF ( <SRC.FINDLAYER(layer_hand2).TYPE> = t_weapon_bow) & (<SRC.FINDLAYER(layer_hand2).COLOR> = 0)
+    TARGET=Select the arrows to put in the quiver.
+  ELSE
+    SRC.SYSMESSAGE=You do not have a bow equiped.
+    RETURN=1
+  ENDIF
+  RETURN=1
+
+ON=@TARGON_ITEM
+  IF (<SRC.TARG.TYPE> = t_weapon_arrow)
+    IF (<SRC.TARG.CONT> != <SRC.FINDLAYER(layer_pack).UID>)
+      SRC.SYSMESSAGE=This must be in your backpack to use.
+      RETURN=1
+    ENDIF
+    IF ( <SRC.FINDLAYER(layer_hand2).TYPE> = t_weapon_bow) & (<SRC.FINDLAYER(layer_hand2).COLOR> = 0)
+      IF (<LINK.COLOR> = <SRC.TARG.COLOR>) // Same ammo thats aready in quiver
+        SRC.TARG.CONT=<UID>
+        LINK=<SRC.TARG.UID>
+      ELSE
+        LINK.BOUNCE
+        SRC.TARG.CONT=<UID>
+        LINK=<SRC.TARG.UID>
+        f_change_bow_id
+      ENDIF
+    ELSE
+      SRC.SYSMESSAGE=You do not have a bow equiped.
+      RETURN=1
+    ENDIF
+
+ON=@Create
+  COLOR=07b9    
+
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Arrow Quiver
+
+[FUNCTION f_change_bow_id]
+IF (<SRC.TARG.COLOR> = 00)
+  SRC.FINDLAYER(layer_hand2).ID=i_bow_normal
+ELSEIF (<SRC.TARG.COLOR> = 0845)
+  SRC.FINDLAYER(layer_hand2).ID=i_bow_fire
+ELSEIF (<SRC.TARG.COLOR> = 07d4)
+  SRC.FINDLAYER(layer_hand2).ID=i_bow_poison
+ELSEIF (<SRC.TARG.COLOR> = 07bb)
+  SRC.FINDLAYER(layer_hand2).ID=i_bow_frost
+ELSEIF (<SRC.TARG.COLOR> = 08ab)
+  SRC.FINDLAYER(layer_hand2).ID=i_bow_energy
+ENDIF
+
+[ITEMDEF i_arrow_fire]
+ID=i_arrow
+NAME=fire arrow%s
+TYPE=T_WEAPON_ARROW
+FLIP=1
+WEIGHT=0.1
+
+RESOURCES=1 i_arrow_shaft, 1 i_feather, 1 i_reag_sulfur_ash
+SKILLMAKE=50.0 BOWCRAFT, 20.0 ALCHEMY
+REPLICATE=1
+
+ON=@Create
+COLOR=0845
+
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Fire Arrow
+DUPELIST=0f40,0f41,0f42
+
+[ITEMDEF i_arrow_poison]
+ID=i_arrow
+NAME=poison arrow%s
+TYPE=T_WEAPON_ARROW
+FLIP=1
+WEIGHT=0.1
+
+RESOURCES=1 i_arrow_shaft, 1 i_feather, 1 i_reag_nightshade
+SKILLMAKE=50.0 BOWCRAFT, 20.0 ALCHEMY
+REPLICATE=1
+
+ON=@Create
+COLOR=07d4
+
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Poison Arrow
+DUPELIST=0f40,0f41,0f42
+
+[ITEMDEF i_arrow_frost]
+ID=i_arrow
+NAME=frost arrow%s
+TYPE=T_WEAPON_ARROW
+FLIP=1
+WEIGHT=0.1
+
+RESOURCES=1 i_arrow_shaft, 1 i_feather, 1 i_reag_spider_silk
+SKILLMAKE=50.0 BOWCRAFT, 20.0 ALCHEMY
+REPLICATE=1
+
+ON=@Create
+COLOR=07bb
+
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Frost Arrow
+DUPELIST=0f40,0f41,0f42
+
+[ITEMDEF i_arrow_energy]
+ID=i_arrow
+NAME=energy arrow%s
+TYPE=T_WEAPON_ARROW
+FLIP=1
+WEIGHT=0.1
+
+RESOURCES=1 i_arrow_shaft, 1 i_feather, 1 i_reag_black_pearl
+SKILLMAKE=50.0 BOWCRAFT, 20.0 ALCHEMY
+REPLICATE=1
+
+ON=@Create
+COLOR=08ab
+
+CATEGORY=Items by Professions
+SUBSECTION=Archers/Bowyers
+DESCRIPTION=Energy Arrow
+DUPELIST=0f40,0f41,0f42
+
+[ITEMDEF i_bow_normal]
+ID=i_bow
+NAME=bow
+TYPE=T_WEAPON_BOW
+DAM=9,21
+//SPEED=20
+
+TDATA3=i_arrow
+TDATA4=i_arrow_x
+
+ON=@Create
+HITPOINTS={31 60}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows
+DESCRIPTION=Normal Bow
+
+[ITEMDEF i_bow_fire]
+ID=i_bow
+NAME=bow (fire arrows)
+TYPE=T_WEAPON_BOW
+DAM=9,21
+//SPEED=20
+
+TDATA3=i_arrow_fire
+TDATA4=036e4 // i_arrow_x
+
+ON=@Create
+HITPOINTS={31 60}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows
+DESCRIPTION=Fire Bow
+
+[ITEMDEF i_bow_poison]
+ID=i_bow
+NAME=bow (poison arrows)
+TYPE=T_WEAPON_BOW
+DAM=9,21
+//SPEED=20
+
+TDATA3=i_arrow_poison
+TDATA4=i_arrow_x
+
+ON=@Create
+HITPOINTS={31 60}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows
+DESCRIPTION=Poison Bow
+
+[ITEMDEF i_bow_frost]
+ID=i_bow
+NAME=bow (frost arrows)
+TYPE=T_WEAPON_BOW
+DAM=9,21
+//SPEED=20
+
+TDATA3=i_arrow_frost
+TDATA4=0378e
+
+ON=@Create
+HITPOINTS={31 60}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows
+DESCRIPTION=Frost Bow
+
+[ITEMDEF i_bow_energy]
+ID=i_bow
+NAME=bow (energy arrows)
+TYPE=T_WEAPON_BOW
+DAM=9,21
+//SPEED=20
+
+TDATA3=i_arrow_energy
+TDATA4=i_fx_glow2
+
+ON=@Create
+HITPOINTS={31 60}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows
+DESCRIPTION=Energy Bow
+
+[EOF]

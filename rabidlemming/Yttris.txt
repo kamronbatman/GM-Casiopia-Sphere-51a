@@ -1,0 +1,231 @@
+[ITEMDEF i_book_yttrium_hammer]
+ID=0fef
+NAME=Yttrium Enchanting Hammer
+VALUE=25
+
+ON=@Create
+MORE=b_yttrium_hammer
+
+CATEGORY=Quest Items
+SUBSECTION=On Going Quests
+DESCRIPTION=Yttrium Enchanting Hammer
+
+[BOOK b_yttrium_hammer]
+PAGES=9
+TITLE=Yttrium Enchanting Hammer
+AUTHOR=Admin Star
+
+[BOOK b_yttrium_hammer 1]
+The legend of the 
+Yttrium Enchanting
+Hammer dates back 
+before time itself.
+Before most inhabited
+the planet a race of
+wizards,also known as
+the Yttri Wizards
+
+[BOOK b_yttrium_hammer 2]
+dominated the planet.
+This race of wizards
+was very powerful
+and had very evil 
+souls. They used
+thier magical powers
+for any type of
+personal gain.
+
+[BOOK b_yttrium_hammer 3]
+Out of the resources
+of the planet they
+made the Enchanting 
+Hammer. It is said
+that this item was the 
+key to thier power.
+When used it made 
+them invulnerable to
+
+[BOOK b_yttrium_hammer 4]
+everything. When the
+other races began to
+come about, they
+realized what kind of
+power they had but 
+didn't know how. All
+of the races realized
+that if this race ruled
+
+[BOOK b_yttrium_hammer 5]
+the planet that it 
+would be filled with
+pure hatred, so they 
+joined together to
+defeat these wizards.
+It took them one
+hundred years of
+death and bloodshed to
+
+[BOOK b_yttrium_hammer 6]
+realize that thier 
+power lays within the
+hammer. They then 
+devised a plan to
+retrieve the hammers 
+from them. Once
+accomplished they
+banished the race to a
+
+[BOOK b_yttrium_hammer 7]
+magically enclosed
+tower where they
+remain to this day.
+Apparently they have
+tried to recreate thier
+beloved hammer out of
+materials from the 
+planet but to thier
+
+[BOOK b_yttrium_hammer 8]
+dismay it is not as
+powerful as the 
+original. To the other 
+races of the world it
+is still a treasured
+item used to increase
+thier armor to the 
+sacred level.
+
+[BOOK b_yttrium_hammer 9]
+It is said that they are 
+still trapped in that 
+legendary tower in the
+North Lands and that
+the Yttri Warlocks
+hold the Enchanted
+Hammer.
+
+
+[CHARDEF c_yttri_sorceress]
+ID=C_FEMALE
+NAME=#NAMES_HUMANFEMALE
+TITLE=Yttri Sorceress
+DAM=10,20
+ARMOR=30
+RESOURCES=9 i_ribs_raw
+//DESIRES=i_gold,e_noteriety
+AVERSIONS=t_TRAP,t_water
+//ALLIGNMENT=EVIL
+//SPELLCIRCLES=6,7
+CAN=MT|WALK
+
+T_SPEECH=spk_human_prime
+T_SPEECH=spk_jobMageEvil
+T_SPEECH=spk_needs
+T_SPEECH=spk_rehello
+T_SPEECH=spk_human_default
+
+ON=@Create
+COLOR=0793
+STR={700 750}
+DEX={50 60}
+INT={350 375}
+
+MAGERY={75.0 80.0}
+MAGICRESISTANCE={70.0 80.0}
+PARRYING={30.0 40.0}
+WRESTLING={30.0 40.0}
+EVALUATINGINTEL={50.0 60.0}
+
+NPC=BRAIN_HUMAN
+
+ITEMNEWBIE=random_female_hair
+COLOR=0793
+ITEMNEWBIE=i_spellbook
+COLOR=0793
+MORE=064000884
+MORE2=08610
+
+ON=@NPCRestock
+ITEM=i_dress_plain
+ATTR=04
+COLOR=0793
+ITEM=i_boots_calf
+COLOR=01
+ITEM=i_apron_half
+COLOR=01
+ITEM=i_hat_wizards
+COLOR=01
+ITEM={random_jewel 1 0 1}
+ITEM=i_gold{1000 1500}
+ITEM=random_upper_scroll
+ITEM=random_filthy_rich_goodie
+ITEM=random_platemail_hardning
+
+CATGEORY=Civilized
+SUBSECTION=Yttri Race
+DESCRIPTION=Yttri Sorceress
+
+[CHARDEF=c_yttri_warlock]
+ID=C_MALE
+NAMES=#NAMES_HUMANMALE
+TITLE=Yttri Warlock
+DAM=15,25
+ARMOR=35
+RESOURCES=9 i_ribs_raw
+//DESIRES=i_gold,e_noteriety
+AVERSIONS=t_TRAP,t_WATER
+//ALLIGNMENT=EVIL
+//SPELLCIRCLES=7,8
+CAN=MT|WALK
+
+T_SPEECH=spk_human_prime
+T_SPEECH=spk_jobMageEvil
+T_SPEECH=spk_needs
+T_SPEECH=spk_rehello
+T_SPEECH=spk_human_default
+
+ON=@Create
+COLOR=0793
+STR={750 800}
+DEX={60 70}
+INT={375 425}
+
+MAGERY={85 90}
+MAGICRESISTANCE={60.0 70.0}
+WRESTLING={30.0 40.0}
+PARRYING={30.0 40.0}
+EVALUATINGINTEL={50.0 60.0}
+
+NPC=BRAIN_HUMAN
+
+ITEMNEWBIE=random_male_hair
+COLOR=0793
+ITEMNEWBIE=random_facial_hair
+COLOR=0793
+
+ON=@NPCRestock
+ITEMNEWBIE=i_spellbook
+COLOR=0793
+MORE=064080281
+MORE2=0a758710
+ITEMNEWBIE=i_doublet
+COLOR=0793
+
+ITEM=i_pants_long
+COLOR=01
+ITEM=i_boots_calf
+COLOR=01
+ITEM=i_hat_wizards
+COLOR=01
+ITEM={random_jewel 1 0 1}
+ITEM={random_jewel 1 0 1}
+ITEM=i_gold{1500 2000}
+ITEM=random_upper_scroll
+ITEM=random_upper_scroll
+ITEM=random_filthy_rich_goodie
+ITEM=random_platemail_hardning
+ITEM=i_dwarven_hammer,R50
+
+CATEGORY=Civilized
+SUBSECTION=Yttri Race
+DESCRIPTION=Yttri Warlock

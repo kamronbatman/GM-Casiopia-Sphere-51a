@@ -1,0 +1,120 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+// convinit.scp is for the I am talking to you automatic responses
+// when conversation is initiated by means other than normal greetings (hi, hail, etc)
+// such as walking up to an npc and calling their name.
+
+ON=@InternalConvinit
+
+	// When a new person comes into range attack them
+	if ( <DISTANCE> > 5 )	// too far away ?
+		return 1	// do nothing for now
+	ENDIF
+
+	FACE
+	IF ( <COMPLEXITY.HIGH> )
+		IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+			DORAND 3
+				SAY Prithee, be quiet.
+				SAY Thou mayst wish to talk to me, but I do not wish to talk to thee.
+				SAY What, thou dost wish to waste my time?
+			ENDDO
+		ELSE
+			TARG=SRC.UID
+			IF ( <SRC.FAME.ANONYMOUS> )
+				DORAND 4
+					SAY Thou wishest to speak with me?
+					SAY Thou hast mine attention.
+					SAY What is it thou wishest?
+					SAY I am listening to thee.
+				ENDDO
+				SALUTE
+			ELSE
+				DORAND 4
+					SAY Thou wishest to speak with me, <SRC.NAME>?
+					SAY Thou hast mine attention, <SRC.NAME>.
+					SAY What is it thou wishest, <SRC.NAME>?
+					SAY I am listening to thee, <SRC.NAME>.
+				ENDDO
+				BOW
+			ENDIF
+			ACT=107
+		ENDIF
+	ELIF ( <COMPLEXITY.MEDIUM> )
+		IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+			DORAND 3
+				SAY Be quiet, mine head hurts.
+				SAY What if I do not wish to speak with thee?
+				SAY Waste not my time.
+			ENDDO
+		ELSE
+			TARG=SRC.UID
+			IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+				DORAND 4
+					SAY Prithee, do not hurt me.
+					SAY Hurt me not, and I will talk with thee.
+					SAY Thou'rt a dangerous <SRC.SEX man/woman> to talk to.
+					SAY Thou wishest to speak to me? Please, harm me not...
+				ENDDO
+			ELIF ( <SRC.FAME.ANONYMOUS> )
+				DORAND 4
+					SAY Thou wishest to speak with me?
+					SAY Thou hast mine attention.
+					SAY What is it thou wishest?
+					SAY I am listening to thee.
+				ENDDO
+				SALUTE
+			ELSE
+				DORAND 4
+					SAY Thou wishest to speak with me, <SRC.NAME>?
+					SAY Thou hast mine attention, <SRC.NAME>.
+					SAY What is it thou wishest, <SRC.NAME>?
+					SAY I am listening to thee, <SRC.NAME>.
+				ENDDO
+				BOW
+			ENDIF
+			ACT=107
+		ENDIF
+	ELSE ( <COMPLEXITY.LOW> )
+		IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+			DORAND 3
+				SAY Go 'way.
+				SAY I ain't wantin' to talk to thee.
+				SAY Thou'rt rude.
+			ENDDO
+		ELIF ( <SRC.KARMA.NEUTRAL> || <SRC.KARMA.KINDLY> || <SRC.KARMA.GOODHEARTED> )
+			IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+				DORAND 4
+					SAY Don't hurt me.
+					SAY What do thou want? I can't help.
+					SAY Thou wants to talk to me? Umm...
+					SAY Thou'rt talkin' to me?
+				ENDDO
+			ELIF ( <SRC.FAME.ANONYMOUS> )
+				DORAND 4
+					SAY Hmm?
+					SAY Aye?
+					SAY What's thee wantin'?
+					SAY I'm listenin'.
+				ENDDO
+			ELSE
+				DORAND 4
+					SAY Yes, <SRC.NAME>?
+					SAY Hmm? Oh! Tis thee, <SRC.NAME>!
+					SAY Can I help thee?
+					SAY <SRC.NAME>! Nice to see thee.
+				ENDDO
+			ENDIF
+		ENDIF
+	ENDIF
+
+RETURN 0	// don't come here again.

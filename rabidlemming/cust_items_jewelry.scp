@@ -1,0 +1,916 @@
+[ITEMDEF i_ring_amazon_feeble]
+NAME=Feeble Ring of the Amazons
+ID=i_ring_gold
+WEIGHT=1
+VALUE=3770-3900
+
+RESOURCES=5 i_ingot_verite
+SKILLMAKE=TINKERING 80.0,i_jewelry_kit
+
+ON=@EQUIP
+  SRC.STR=<SRC.STR> + 1
+  SOUND=snd_SPELL_STRENGTH
+  RETURN 0
+
+ON=@UNEQUIP
+  SRC.STR=<SRC.STR> +(-1)
+  SOUND=001e8
+  RETURN 0
+
+ON=@Create
+  COLOR=003d
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring of the Amazons (Feeble)
+
+[ITEMDEF i_ring_amazon]
+NAME=Ring of the Amazons
+ID=i_ring_gold
+WEIGHT=1
+VALUE=8700-8900
+
+RESOURCES=5 i_ingot_verite
+SKILLMAKE=TINKERING 90.0,i_jewelry_kit
+
+ON=@EQUIP
+  SRC.STR=<SRC.STR> + 2
+  SOUND=snd_SPELL_STRENGTH
+  RETURN 0
+
+ON=@UNEQUIP
+  SRC.STR=<SRC.STR> +(-2)
+  SOUND=001e8
+  RETURN 0
+
+ON=@Create
+  COLOR=003d
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring of the Amazons (Reg)
+
+[ITEMDEF i_ring_amazon_lesser]
+NAME=Lesser Ring of the Amazons
+ID=i_ring_gold
+WEIGHT=1
+VALUE=16700-17900
+
+RESOURCES=5 i_ingot_verite
+SKILLMAKE=TINKERING 95.0,i_jewelry_kit
+
+ON=@EQUIP
+  SRC.STR=<SRC.STR> + 5
+  SOUND=snd_SPELL_STRENGTH
+  RETURN 0
+
+ON=@UNEQUIP
+  SRC.STR=<SRC.STR> +(-5)
+  SOUND=001e8
+  RETURN 0
+
+ON=@Create
+  COLOR=003d
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring of the Amazons (Lesser)
+
+[ITEMDEF i_ring_amazon_greater]
+NAME=Greater Ring of the Amazons
+ID=i_ring_gold
+WEIGHT=1
+VALUE=26500-28700
+
+RESOURCES=5 i_ingot_verite
+SKILLMAKE=TINKERING 100.0,i_jewelry_kit
+
+ON=@EQUIP
+  SRC.STR=<SRC.STR> + 10
+  SOUND=snd_SPELL_STRENGTH
+  RETURN 0
+
+ON=@UNEQUIP
+  SRC.STR=<SRC.STR> +(-10)
+  SOUND=001e8
+  RETURN 0
+
+ON=@Create
+  COLOR=003d
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring of the Amazons (Greater)
+
+[ITEMDEF i_bracelet_of_mana]
+ID=i_bracelet_gold
+NAME=Bracelet of Mana Regeneration
+VALUE=18000-20000
+WEIGHT=0.5
+
+RESOURCES=5 i_ingot_gold
+SKILLMAKE=TINKERING 100.0,i_jewelry_kit
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+  TIMER=2
+  RETURN=0
+
+ON=@UNEQUIP
+  LINK=04FFFFFFF
+  TIMER=-1
+  RETURN=0
+
+ON=@TIMER
+  IF (<LINK.MANA><<LINK.INT> )
+    LINK.HITS=<LINK.MANA>+1
+  ENDIF
+    TIMER=2
+    RETURN=1
+
+ON=@Create
+  COLOR=052d
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet of Mana Regeneration
+
+[ITEMDEF i_bracelet_of_health]
+ID=i_bracelet_gold
+NAME=Bracelet of Health Regeneration
+VALUE=18000-20000
+WEIGHT=0.5
+
+RESOURCES=5 i_ingot_gold
+SKILLMAKE=TINKERING 100.0,i_jewelry_kit
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+  TIMER=2
+  RETURN=0
+
+ON=@UNEQUIP
+  LINK=04FFFFFFF
+  TIMER=-1
+  RETURN=0
+
+ON=@TIMER
+  IF (<LINK.HITPOINTS><<LINK.STR> )
+    LINK.HITS=<LINK.HITPOINTS>+1
+  ENDIF
+    TIMER=2
+    RETURN 1
+
+ON=@Create
+  COLOR=0025
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet of Health Regeneration
+
+[ITEMDEF i_jewelry_kit]
+ID=01eb8
+TYPE=t_tinker_tools
+FLIP=1
+VALUE=10000-15000
+
+ON=@Create
+  COLOR=083b
+
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Jewelry Kit
+DUPELIST=01eb9
+
+[DEFNAME COLOR_GEMS]
+color_o_starsapphire	01ec
+color_o_emerald		016a
+color_o_sapphire	0006
+color_o_ruby		0020
+color_o_citrine		002b
+color_o_amethyst	0012
+color_o_tourmaline	0297
+color_o_amber		0096
+color_o_diamond		0481
+
+[ITEMDEF i_bracelet_gold_starsapphire]
+ID=i_bracelet_gold
+NAME=star sapphire bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_star_sapphire
+
+ON=@Create
+  COLOR=color_o_starsapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Star Sapphire)
+
+[ITEMDEF i_earrings_gold_starsapphire]
+ID=i_earrings_gold
+NAME=star sapphire earrings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_star_sapphire
+
+ON=@Create
+  COLOR=color_o_starsapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Star Sapphire)
+
+[ITEMDEF i_necklace_gold_starsaspphire]
+ID=i_necklace_gold
+NAME=star sapphire necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_star_sapphire
+
+ON=@Create
+  COLOR=color_o_starsapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Star Sapphire)
+
+[ITEMDEF i_necklace_gold_beads_starsapphire]
+ID=i_necklace_gold_beads
+NAME=star sapphire necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_star_sapphire
+
+ON=@Create
+  COLOR=color_o_starsapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Star Sapphire)
+
+[ITEMDEF i_ring_gold_starsapphire]
+ID=i_ring_gold
+NAME=star sapphire ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_star_sapphire
+
+ON=@Create
+  COLOR=color_o_starsapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Star Sapphire)
+
+[ITEMDEF i_bracelet_gold_emerald]
+ID=i_bracelet_gold
+NAME=emerald bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_emerald
+
+ON=@Create
+  COLOR=color_o_emerald
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Emerald)
+
+[ITEMDEF i_earrings_gold_emerald]
+ID=i_earrings_gold
+NAME=emerald earings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_emerald
+
+ON=@Create
+  COLOR=color_o_emerald
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Emerald)
+
+[ITEMDEF i_necklace_gold_emerald]
+ID=i_necklace_gold
+NAME=emerald necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_emerald
+
+ON=@Create
+  COLOR=color_o_emerald
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Emerald)
+
+[ITEMDEF i_necklace_gold_beads_emerald]
+ID=i_necklace_gold_beads
+NAME=emerald necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_emerald
+
+ON=@Create
+  COLOR=color_o_emerald
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Emerald)
+
+[ITEMDEF i_ring_gold_emerald]
+ID=i_ring_gold
+NAME=emerald ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_emerald
+
+ON=@Create
+  COLOR=color_o_emerald
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Emerald)
+
+[ITEMDEF i_bracelet_gold_sapphire]
+ID=i_bracelet_gold
+NAME=sapphire bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_sapphire
+
+ON=@Create
+  COLOR=color_o_sapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Sapphire)
+
+[ITEMDEF i_earrings_gold_sapphire]
+ID=i_earrings_gold
+NAME=sapphire earings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_sapphire
+
+ON=@Create
+  COLOR=color_o_sapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Sapphire)
+
+[ITEMDEF i_necklace_gold_sapphire]
+ID=i_necklace_gold
+NAME=sapphire necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_sapphire
+
+ON=@Create
+  COLOR=color_o_sapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Sapphire)
+
+[ITEMDEF i_necklace_gold_beads_sapphire]
+ID=i_necklace_gold_beads
+NAME=sapphire necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_sapphire
+
+ON=@Create
+  COLOR=color_o_sapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Sapphire)
+
+[ITEMDEF i_ring_gold_sapphire]
+ID=i_ring_gold
+NAME=sapphire ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_sapphire
+
+ON=@Create
+  COLOR=color_o_sapphire
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Sapphire)
+
+[ITEMDEF i_bracelet_gold_ruby]
+ID=i_bracelet_gold
+NAME=ruby bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_ruby
+
+ON=@Create
+  COLOR=color_o_ruby
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Ruby)
+
+[ITEMDEF i_earrings_gold_ruby]
+ID=i_earrings_gold
+NAME=ruby earings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_ruby
+
+ON=@Create
+  COLOR=color_o_ruby
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Ruby)
+
+[ITEMDEF i_necklace_gold_ruby]
+ID=i_necklace_gold
+NAME=ruby necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_ruby
+
+ON=@Create
+  COLOR=color_o_ruby
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Ruby)
+
+[ITEMDEF i_necklace_gold_beads_ruby]
+ID=i_necklace_gold_beads
+NAME=ruby necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_ruby
+
+ON=@Create
+  COLOR=color_o_ruby
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Ruby)
+
+[ITEMDEF i_ring_gold_ruby]
+ID=i_ring_gold
+NAME=ruby ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_ruby
+
+ON=@Create
+  COLOR=color_o_ruby
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Ruby)
+
+[ITEMDEF i_bracelet_gold_citrine]
+ID=i_bracelet_gold
+NAME=citrine bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_citrine
+
+ON=@Create
+  COLOR=color_o_citrine
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Citrine)
+
+[ITEMDEF i_earrings_gold_citrine]
+ID=i_earrings_gold
+NAME=citrine earings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_citrine
+
+ON=@Create
+  COLOR=color_o_citrine
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Citrine)
+
+[ITEMDEF i_necklace_gold_citrine]
+ID=i_necklace_gold
+NAME=citrine necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_citrine
+
+ON=@Create
+  COLOR=color_o_citrine
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Citrine)
+
+[ITEMDEF i_necklace_gold_beads_citrine]
+ID=i_necklace_gold_beads
+NAME=citrine necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_citrine
+
+ON=@Create
+  COLOR=color_o_citrine
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Citrine)
+
+[ITEMDEF i_ring_gold_citrine]
+ID=i_ring_gold
+NAME=citrine ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_citrine
+
+ON=@Create
+  COLOR=color_o_citrine
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Citrine)
+
+[ITEMDEF i_bracelet_gold_amethyst]
+ID=i_bracelet_gold
+NAME=amethyst bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amethyst
+
+ON=@Create
+  COLOR=color_o_amethyst
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Amethyst)
+
+[ITEMDEF i_earrings_gold_amethyst]
+ID=i_earrings_gold
+NAME=amethyst earings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amethyst
+
+ON=@Create
+  COLOR=color_o_amethyst
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Amethyst)
+
+[ITEMDEF i_necklace_gold_amethyst]
+ID=i_necklace_gold
+NAME=amethyst necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amethyst
+
+ON=@Create
+  COLOR=color_o_amethyst
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Amethyst)
+
+[ITEMDEF i_necklace_gold_beads_amethyst]
+ID=i_necklace_gold_beads
+NAME=amethyst necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amethyst
+
+ON=@Create
+  COLOR=color_o_amethyst
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Amethyst)
+
+[ITEMDEF i_ring_gold_amethyst]
+ID=i_ring_gold
+NAME=amethyst ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amethyst
+
+ON=@Create
+  COLOR=color_o_amethyst
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Amethyst)
+
+[ITEMDEF i_bracelet_gold_tourmaline]
+ID=i_bracelet_gold
+NAME=tourmaline bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_tourmaline
+
+ON=@Create
+  COLOR=color_o_tourmaline
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Tourmaline)
+
+[ITEMDEF i_earrings_gold_tourmaline]
+ID=i_earrings_gold
+NAME=tourmaline earings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_tourmaline
+
+ON=@Create
+  COLOR=color_o_tourmaline
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Tourmaline)
+
+[ITEMDEF i_necklace_gold_tourmaline]
+ID=i_necklace_gold
+NAME=tourmaline necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_tourmaline
+
+ON=@Create
+  COLOR=color_o_tourmaline
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Tourmaline)
+
+[ITEMDEF i_necklace_gold_beads_tourmaline]
+ID=i_necklace_gold_beads
+NAME=tourmaline necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_tourmaline
+
+ON=@Create
+  COLOR=color_o_tourmaline
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Tourmaline)
+
+[ITEMDEF i_ring_gold_tourmaline]
+ID=i_ring_gold
+NAME=tourmaline ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_tourmaline
+
+ON=@Create
+  COLOR=color_o_tourmaline
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Tourmaline)
+
+[ITEMDEF i_bracelet_gold_amber]
+ID=i_bracelet_gold
+NAME=amber bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amber
+
+ON=@Create
+  COLOR=color_o_amber
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Amber)
+
+[ITEMDEF i_earrings_gold_amber]
+ID=i_earrings_gold
+NAME=amber earings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amber
+
+ON=@Create
+  COLOR=color_o_amber
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Amber)
+
+[ITEMDEF i_necklace_gold_amber]
+ID=i_necklace_gold
+NAME=amber necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amber
+
+ON=@Create
+  COLOR=color_o_amber
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Amber)
+
+[ITEMDEF i_necklace_gold_beads_amber]
+ID=i_necklace_gold_beads
+NAME=amber necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amber
+
+ON=@Create
+  COLOR=color_o_amber
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Amber)
+
+[ITEMDEF i_ring_gold_amber]
+ID=i_ring_gold
+NAME=amber ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_amber
+
+ON=@Create
+  COLOR=color_o_amber
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Amber)
+
+[ITEMDEF i_bracelet_gold_diamond]
+ID=i_bracelet_gold
+NAME=diamond bracelet
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_diamond
+
+ON=@Create
+  COLOR=color_o_diamond
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Bracelet (Gold)(Diamond)
+
+[ITEMDEF i_earrings_gold_diamond]
+ID=i_earrings_gold
+NAME=diamond earings
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.5,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_diamond
+
+ON=@Create
+  COLOR=color_o_diamond
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Earrings (Gold)(Diamond)
+
+[ITEMDEF i_necklace_gold_diamond]
+ID=i_necklace_gold
+NAME=diamond necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 61.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_diamond
+
+ON=@Create
+  COLOR=color_o_diamond
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold)(Diamond)
+
+[ITEMDEF i_necklace_gold_beads_diamond]
+ID=i_necklace_gold_beads
+NAME=diamond necklace
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 62.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_diamond
+
+ON=@Create
+  COLOR=color_o_diamond
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Necklace (Gold Bead)(Diamond)
+
+[ITEMDEF i_ring_gold_diamond]
+ID=i_ring_gold
+NAME=diamond ring
+TYPE=t_jewelry
+WEIGHT=.1
+
+SKILLMAKE=TINKERING 63.0,t_tinker_tools
+RESOURCES=i_ingot_gold,i_gem_diamond
+
+ON=@Create
+  COLOR=color_o_diamond
+
+CATEGORY=Provisions - Jewels and Jewelry
+SUBSECTION=Jewelry
+DESCRIPTION=Ring (Gold)(Diamond)
+
+[EOF]

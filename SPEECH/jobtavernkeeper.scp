@@ -1,0 +1,241 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+
+
+// Purpose: Britannia Tavern Keepr's Script
+// Notes:  This is used for general information pertaining to all Britannian Tavern Keeper's
+// Current Keyword List:job,profession,occupation,what*do*do,ale,beer,barmaid,
+//wench,waitress,food,lunch,breakfast,dinner
+// 
+//
+
+ON=*job*
+ON=*work*
+ON=*what*do*do*
+ON=*profession*
+ON=*occupation*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY I keep this tavern clean and running.
+				SAY I am a tavernkeeper, yes.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY I keep this tavern clean and running.
+				SAY I am a tavernkeeper, yes.
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY I run this tavern.
+				SAY I run this place. 
+				SAY I'm the tavernkeeper here. 
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY I run this tavern.
+				SAY I run this place. 
+				SAY I'm the tavernkeeper here.  
+			ENDDO
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY I run this tavern.
+				SAY I run this place. 
+				SAY I'm the tavernkeeper here. 
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY I run this tavern.
+				SAY I run this place. 
+				SAY I'm the tavernkeeper here. 
+			ENDDO
+		ENDIF
+ON=tavern
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY I keep this tavern clean and in business.
+				SAY I am a tavernkeeper, yes. 
+				SAY I work hard to keep my customers happy. 
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY I keep this tavern clean and in business.
+				SAY I am a tavernkeeper, yes. 
+				SAY I work hard to keep my customers happy. 
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY I keep this tavern clean and in business.
+				SAY I am a tavernkeeper, yes. 
+				SAY I work hard to keep my customers happy. 
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY I keep this tavern clean and in business.
+				SAY I am a tavernkeeper, yes. 
+				SAY I work hard to keep my customers happy. 
+			ENDDO
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY I keep this tavern clean and in business.
+				SAY I am a tavernkeeper, yes. 
+				SAY I work hard to keep my customers happy. 			
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY I keep this tavern clean and in business.
+				SAY I am a tavernkeeper, yes. 
+				SAY I work hard to keep my customers happy. 
+			ENDDO
+		ENDIF
+ON=ale
+ON=beer
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY Don't steal me <ACT.%0>! Ye kin buy it like everyone else.
+                    	SAY Heh, 'tis good swill for folk like thee.
+				SAY Thee's ugly. Ye want any <ACT.%0>?
+			ENDDO
+		ELSE
+			DORAND  6
+				SAY What dost thou care? Aye, I sell <ACT.%0>. 
+                    	SAY If thou didst go away, perhaps I might offer some %0 as a parting gift.
+                    	SAY I'll take thy coin for some <ACT.%0>, but don't expect me to wait on thee hand and foot.
+                    	SAY Thou'rt a bigshot criminal, but if thou wreckest the place I'll set the hounds on thee.
+                    	SAY Life is hard enough without getting one such as thee drunk.
+                    	SAY Thou'rt a scruffy <SRC.SEX fellow/lass>. Aye, I sell drink fit for such as thee.
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY <ACT.%0>. Aye, I sell it. Lookee here, life is a pig's arse and me, I sell %0. Ain't no justice, I tell ye.
+                    	SAY Sell <ACT.%0>? My life is so rough I DRINK it. All day. Night too.
+				SAY If'n ye want <ACT.%0> I got some left in the cracked cask there.
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY I sell fine <ACT.%0> which I have brought in. In these hard times, 'tis often difficult.
+                    	SAY My life is very hard, but I know enough to purchase the best brews to be had.
+                    	SAY 'Tis expensive to bring in the <ACT.%0>, and with the sorry state of my life I can ill-afford it. But I have it.
+			ENDDO
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY Twould be an honor to serve thee from my casks, if thou dost deign to drink the brew of one as ill-fortuned as I.
+                    	SAY I fear my rough brew may not be sufficient for <SRC.SEX Mi'lord's/Mi'lady's subtle palate. After all, naught I do these days serves well enough.
+		            SAY Aye, the finest %0 only for $milord/milady$. If it please thee, carry d of my brewing with thee. I could use the customers, these difficult days.
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY Twould be an honor to sell thee some <ACT.%0>.
+				SAY Only the best %0 for <SRC.SEX Mi'lord/Mi'lady>.
+				SAY Oh, my brewing would surely not be good enough for one such as thee... but wouldst thou like to try it?
+			ENDDO
+		ENDIF
+ON=barmaid
+ON=wench
+ON=waitress
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY No shortage of the wenches about, though I doubt any would spend time with thee. So 'tis not likely that I would offer thee a job.
+                    	SAY Aye, barmaids, wenches, waitresses. Who can afford to pay them these days? Plannest thou to steal one away or somesuch? Seek thee a sister in thy villainy?
+                    	SAY Don't touch her, she may bite.
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY No shortage of the wenches about, though I doubt any would spend time with thee. So 'tis not likely that I would offer thee a job.
+                    	SAY Aye, barmaids, wenches, waitresses. Who can afford to pay them these days? Plannest thou to steal one away or somesuch? Seek thee a sister in thy villainy?
+                    	SAY Don't touch her, she may bite.
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY If thou harmest or even lookest sideways at my barmaids, I'll call the guards.
+				SAY She is her own woman, though I suspect she would sneer at the likes of thee.  Not one to succumb to the life thou dost live.
+				SAY Do not pester the help.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY If thou harmest or even lookest sideways at my barmaids, I'll call the guards.
+				SAY She is her own woman, $though I suspect she would sneer at the likes of thee.  Not one to succumb to the life thou dost live.
+				SAY Do not pester the help.
+			ENDDO
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY She would be pleased to meet thee, no doubt.
+				SAY What of her? She works hard.
+				SAY The barmaids get quite a lot of unwanted attention, this being an establishment where men drink.
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY She would be pleased to meet thee, no doubt.
+				SAY What of her? She works hard.
+				SAY The barmaids get quite a lot of unwanted attention, this being an establishment where men drink.
+			ENDDO
+		ENDIF
+ON=food
+ON=lunch
+ON=breakfast
+ON=dinner
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY Aye, %0 is for sale. With the state of the world these days, I begin to suspect all is for sale, even the well-being of poor folk like me.
+                		SAY Indeed, I will sell thee %0. If 'twould improve my lot in life, I'd sell thee the business!
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY Aye, %0 is for sale. With the state of the world these days, I begin to suspect all is for sale, even the well-being of poor folk like me.
+                		SAY Indeed, I will sell thee %0. If 'twould improve my lot in life, I'd sell thee the business!
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY I can sell thee %0.
+				SAY %0? I can sell thee that.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY I can sell thee %0.
+				SAY %0? I can sell thee that.
+			ENDDO
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+			DORAND 2
+				SAY A stout meal can cure many ills. I can supply %0 if thou needest it.
+				SAY Certainly we can serve thee %0 if thou dost desire it.
+			ENDDO
+		ELSE
+			DORAND 2
+				SAY A stout meal can cure many ills. I can supply %0 if thou needest it.
+				SAY Certainly we can serve thee %0 if thou dost desire it.
+			ENDDO
+		ENDIF
+	ENDIF
+

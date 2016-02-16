@@ -1,0 +1,709 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+//*** ARTIFACT ITEM EFFECT TEMPLATES ***
+
+//*************************armor_defense_Bonuses ******************************
+
+[ITEM_EFFECT armor_defense_1]
+NAME=defense
+AR_BONUS=5
+EFFECT_TABLE={ armor_defense_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT armor_defense_2]
+NAME=guarding
+AR_BONUS=10
+EFFECT_TABLE={ armor_defense_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT armor_defense_3]
+NAME=hardening
+AR_BONUS=15
+EFFECT_TABLE={ armor_defense_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT armor_defense_4]
+NAME=fortification
+AR_BONUS=20
+EFFECT_TABLE={ armor_defense_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT armor_defense_5]
+NAME=invulnerability
+AR_BONUS=25
+EFFECT_TABLE={ armor_defense_increasers 1 scrolls 1 }
+
+//***********************weapon_skill_Bonuses **************************
+[ITEM_EFFECT weapon_skill_1]
+NAME=accurate
+SKILL_BONUS=5
+EFFECT_TABLE={ weapon_skill_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT weapon_skill_2]
+NAME=surpassingly accurate
+SKILL_BONUS=10
+EFFECT_TABLE={ weapon_skill_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT weapon_skill_3]
+NAME=eminently accurate
+SKILL_BONUS=15
+EFFECT_TABLE={ weapon_skill_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT weapon_skill_4]
+NAME=exceedingly accurate
+SKILL_BONUS=20
+EFFECT_TABLE={ weapon_skill_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT weapon_skill_5]
+NAME=supremely accurate
+SKILL_BONUS=25
+EFFECT_TABLE={ weapon_skill_increasers 1 scrolls 1 }
+
+//********************** weapon_damage_Bonuses *****************************
+[ITEM_EFFECT weapon_damage_1]
+NAME=ruin
+DAM_BONUS=1
+EFFECT_TABLE={ weapon_damage_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT weapon_damage_2]
+NAME=might
+DAM_BONUS=2
+EFFECT_TABLE={ weapon_damage_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT weapon_damage_3]
+NAME=force
+DAM_BONUS=3
+EFFECT_TABLE={ weapon_damage_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT weapon_damage_4]
+NAME=power
+DAM_BONUS=4
+EFFECT_TABLE={ weapon_damage_increasers 1 scrolls 1 }
+
+[ITEM_EFFECT weapon_damage_5]
+NAME=vanquishing
+DAM_BONUS=5
+EFFECT_TABLE={ weapon_damage_increasers 1 scrolls 1 }
+
+//************ Artifact durabilty section *********************
+[ITEM_EFFECT durability_1]
+NAME=durable
+HITPOINT_BONUS=10
+EFFECT_TABLE={ durability_effects 1 scrolls 1 useons 1 useables 1 wearables }
+
+[ITEM_EFFECT durability_2]
+NAME=substantial
+HITPOINT_BONUS=20
+EFFECT_TABLE={ durability_effects 1 scrolls 1 useons 1 useables 1 wearables }
+
+[ITEM_EFFECT durability_3]
+NAME=massive
+HITPOINT_BONUS=30
+EFFECT_TABLE={ durability_effects 1 scrolls 1 useons 1 useables 1 wearables }
+
+[ITEM_EFFECT durability_4]
+NAME=fortified
+HITPOINT_BONUS=40
+EFFECT_TABLE={ durability_effects 1 scrolls 1 useons 1 useables 1 wearables }
+
+[ITEM_EFFECT durability_5]
+NAME=indestructable
+HITPOINT_BONUS=50
+EFFECT_TABLE={ durability_effects 1 scrolls 1 useons 1 useables 1 wearables }
+
+//***************** Spell Effects - USE (effects user) ********************
+[ITEM_EFFECT use_reactive_armor]
+NAME=seeing
+CHARGES=3-300
+CAST=reactive_armor
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_protection]
+NAME=protection
+CHARGES=6-600
+CAST=protection
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_clumsy]
+NAME=clumsiness
+CHARGES=3-30
+CAST=clumsy
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_feeblemind]
+NAME=feeblemindedness
+CHARGES=3-30
+CAST=feeblemind
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_weaken]
+NAME=weakness
+CHARGES=3-30
+CAST=weaken
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_heal]
+NAME=healing
+CHARGES=3-30
+CAST=heal
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_greater_heal]
+NAME=great healing
+CHARGES=15-1500
+CAST=greater_heal
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_agility]
+NAME=agility
+CHARGES=6-60
+CAST=agility
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_cunning]
+NAME=cunning
+CHARGES=6-60
+CAST=cunning
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_strength]
+NAME=strength
+CHARGES=6-60
+CAST=strength
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_harm]
+NAME=harming
+CHARGES=6-60
+CAST=harm
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_curse]
+NAME=curses
+CHARGES=15-150
+CAST=curse
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_bless]
+NAME=blessedness
+CHARGES=15-150
+CAST=bless
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_teleport]
+NAME=teleporting
+CHARGES=15-150
+CAST=teleport
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_cure]
+NAME=curing
+CHARGES=15-150
+CAST=cure
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_mana_drain]
+NAME=mana draining
+CHARGES=15-150
+CAST=mana_drain
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_paralyze]
+NAME=paralyzation
+CHARGES=24-240
+CAST=paralyze
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_summon_creature]
+NAME=creature summoning
+CHARGES=15-75
+CAST=summon_creature
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_summon_aire]
+NAME=air elemental summoning
+CHARGES=102-306
+CAST=summon_air_elemental
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_summon_daem]
+NAME=daemon summoning
+CHARGES=102-306
+CAST=summon_daemon
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_summon_earth]
+NAME=earth elemental summoning
+CHARGES=102-306
+CAST=summon_earth_elemental
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_summon_fire]
+NAME=fire elemental summoning
+CHARGES=102-306
+CAST=summon_fire_elemental
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_summon_water]
+NAME=water elemental summoning
+CHARGES=102-306
+CAST=summon_water_elemental
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_invisibility]
+NAME=invisibility
+CHARGES=39-390
+CAST=invisibility
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+[ITEM_EFFECT use_resurrection]
+NAME=restfulness
+CHARGES=10-50
+CAST=resurrection
+TARGET=SELF
+EFFECT_TABLE={ useables 1 useons 1 wearables 1 durability_effects 1 scrolls 1 weapon_effects }
+
+//***************** Spell Effects - "useons" (targetable) ********************
+[ITEM_EFFECT useon_clumsy]
+NAME=clumsiness
+CHARGES=3-300
+CAST=clumsy
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_identify]
+NAME=identification
+CHARGES=3-300
+CAST=identify
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_heal]
+NAME=healing
+CHARGES=3-300
+CAST=heal
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_feeblemind]
+NAME=feeblemindedness
+CHARGES=3-300
+CAST=feeblemind
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_weaken]
+NAME=weakness
+CHARGES=3-300
+CAST=weaken
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_magarrow]
+NAME=magic arrows
+CHARGES=3-300
+CAST=magic_arrow
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_harm]
+NAME=harming
+CHARGES=6-600
+CAST=harm
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_fireball]
+NAME=fireballs
+CHARGES=9-900
+CAST=fireball
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_greater_heal]
+NAME=great healing
+CHARGES=15-1500
+CAST=greater_heal
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_lightning]
+NAME=lightning
+CHARGES=15-1500
+CAST=lightning
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+[ITEM_EFFECT useon_mana_drain]
+NAME=mana draining
+CHARGES=15-1500
+CAST=mana_drain
+TARGET=TARG
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 armor_defense_increasers 1 weapon_damage_increasers 1 weapon_skill_increasers 1 durability_effects 1 scrolls }
+
+//***************** Spell Effects - "wear" ********************
+[ITEM_EFFECT wear_clumsy]
+NAME=clumsiness
+CHARGES=3-15
+CAST=clumsy
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_feeblemind]
+NAME=feeblemindedness
+CHARGES=3-15
+CAST=feeblemind
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_weaken]
+NAME=weakness
+CHARGES=3-15
+CAST=weaken
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_agility]
+NAME=agility
+CHARGES=6-60
+CAST=agility
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_cunning]
+NAME=cunning
+CHARGES=6-60
+CAST=cunning
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_strength]
+NAME=strength
+CHARGES=6-60
+CAST=strength
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_protection]
+NAME=protection
+CHARGES=6-120
+CAST=protection
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_curse]
+NAME=curses
+CHARGES=15-75
+CAST=curse
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_light]
+NAME=night eyes
+CHARGES=3-300
+CAST=light
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_reactive_armor]
+NAME=seeing
+CHARGES=3-300
+CAST=reactive_armor
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_bless]
+NAME=blessings
+CHARGES=9-90
+CAST=bless
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_magic_reflect]
+NAME=spell reflection
+CHARGES=24-360
+CAST=magic_reflect
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+[ITEM_EFFECT wear_invisibility]
+NAME=invisibility
+CHARGES=39-390
+CAST=invisibility
+TARGET=SELF
+EFFECT_TABLE={ useons 1 wearables 1 useables 1 scrolls 1 durability_effects 1 weapon_effects 1 }
+
+//***************** Spell Effects - "hit" ********************
+[ITEM_EFFECT hit_clumsy]
+NAME=clumsiness
+CHARGES=3-15
+CAST=clumsy
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_feeblemind]
+NAME=feeblemindedness
+CHARGES=3-15
+CAST=feeblemind
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_weaken]
+NAME=weakness
+CHARGES=3-15
+CAST=weaken
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_magarrow]
+NAME=burning
+CHARGES=3-30
+CAST=magarrow
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_harm]
+NAME=wounding
+CHARGES=6-60
+CAST=harm
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_fireball]
+NAME=daemons breath
+CHARGES=9-90
+CAST=fireball
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_lightning]
+NAME=thunder
+CHARGES=15-150
+CAST=lightning
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_mana_drain]
+NAME=mages bane
+CHARGES=15-150
+CAST=mana_drain
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_paralyze]
+NAME=ghoul's touch
+CHARGES=24-240
+CAST=paralyze
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+[ITEM_EFFECT hit_curse]
+NAME=evil
+CHARGES=24-240
+CAST=curse
+TARGET=TARG
+EFFECT_TABLE={ weapon_effects 1 scrolls 1 useons 1 useables 1 wearables 1 }
+
+//*** EFFECT TABLES ***
+
+[EFFECT_TABLE main]
+EFFECT_TABLE={ useables 1 wearables 1 useons 2 armor_effects 4 scrolls 4 weapon_effects 4 }
+
+//*************************weapon_effects******************************
+[EFFECT_TABLE weapon_effects]
+EFFECT_TABLE={ weapon_skill_increasers 7 weapon_damage_increasers 6 durability_effects 5 weapon_other_effects 2 }
+
+[EFFECT_TABLE weapon_damage_increasers]
+ITEM={ weapons }
+ITEM_EFFECT={ weapon_damage_5 1 weapon_damage_4 2 weapon_damage_3 3 weapon_damage_2 5 weapon_damage_1 10 }
+
+[EFFECT_TABLE weapon_skill_increasers]
+ITEM={ weapons 1 }
+ITEM_EFFECT={ weapon_skill_5 1 weapon_skill_4 2 weapon_skill_3 3 weapon_skill_2 5 weapon_skill_1 10 }
+
+[EFFECT_TABLE weapon_other_effects]
+ITEM={ weapons 1 }
+ITEM_EFFECT={ hit_clumsy 6 hit_feeblemind 6 hit_magic_arrow 5 hit_weaken 6 hit_harm 4 hit_fireball 2 hit_curse 2 hit_lightning 1 hit_mana_drain 2 hit_paralyze 6 }
+
+//*************************armor_effects******************************
+[EFFECT_TABLE armor_effects]
+EFFECT_TABLE={ armor_defense_increasers 3 durability effects 1 }
+
+[EFFECT_TABLE armor_defense_increasers]
+ITEM={ armor 1 }
+ITEM_EFFECT={ armor_defense_5 3 armor_defense_4 8 armor_defense_3 14 armor_defense_2 25 armor_defense_1 50 }
+
+//*************************durability_effects******************************
+[EFFECT_TABLE durability_effects]
+ITEM={ armor 1 weapons 1 }
+EFFECT={ durability_5 1 durability_4 2 durability_3 3 durability_2 5 durability_1 10 }
+
+//*************************useables******************************
+[EFFECT_TABLE useables]
+EFFECT_TABLE={ use_helpers 8 use_cursed_items 2 use_benificial_items 4 use_escapes 3 use_summoners 1 }
+
+[EFFECT_TABLE use_helpers]
+ITEM={ stationary }
+EFFECT={ use_resurrection 6 use_heal 6 use_greater_heal 1 use_protection 2 use_cure 5 }
+
+[EFFECT_TABLE use_cursed_items]
+ITEM={ stationary }
+EFFECT={ use_curse 1 use_paralyze 3 use_mana_drain 6 use_harm 10 use_clumsy 10 use_feeblemind 10 use_weaken 10 }
+
+[EFFECT_TABLE use_benificial_items]
+ITEM={ stationary }
+EFFECT={ use_bless 1 use_reactive_armor 2 use_agility 3 use_cunning 3 use_strength 3 }
+
+[EFFECT_TABLE use_escapes]
+ITEM={ rings }
+EFFECT={ use_teleport 1 use_invisibility 1 }
+
+[EFFECT_TABLE use_summoners]
+ITEM={ stationary }
+EFFECT={ use_summon_daem 1 use_summon_aire 2 use_summon_earth 2 use_summon_fire 2 use_summon_water 2 use_summon_creature 11 }
+
+//*************************useons******************************
+[EFFECT_TABLE useons]
+EFFECT_TABLE={ useon_helpers 1 useon_stat_alterers 1 useon_damagers 1 }
+
+[EFFECT_TABLE useon_helpers]
+ITEM={ targetables }
+EFFECT={ useon_identify 2 useon_heal 2 useon_greater_heal 1 }
+
+[EFFECT_TABLE useon_stat_alterers]
+ITEM={ targetables }
+EFFECT={ useon_clumsy 1 useon_feeblemind 1 useon_weaken 1 }
+
+[EFFECT_TABLE useon_damagers]
+ITEM={ targetables }
+EFFECT={ useon_magic_arrow 6 useon_harm 5 useon_fireball 4 useon_lightning 3 useon_mana_drain 2 }
+
+//*************************wearables******************************
+[EFFECT_TABLE wearables]
+EFFECT_TABLE={ wear_useful_things 5 wear_benificial_items 2 wear_protections 2 wear_cursed_items 1 }
+
+[EFFECT_TABLE wear_cursed_items]
+ITEM={ wearables 2 armor 1 }
+EFFECT={ wear_clumsy 3 wear_feeblemind 3 wear_weaken 3 wear_curse 1 }
+
+[EFFECT_TABLE wear_benificial_items]
+ITEM={ wearables 1 armor 1 }
+EFFECT={ wear_agility 3 wear_cunning 3 wear_strength 3 wear_bless 1 }
+
+[EFFECT_TABLE wear_protections]
+ITEM={ wearables 2 armor 1 }
+EFFECT={ wear_protection 5 wear_magic_reflect 2 wear_invisibility 1 }
+
+[EFFECT_TABLE wear_useful_things]
+ITEM={ wearables }
+EFFECT={ wear_light 1 wear_reactive_armor 1 }
+
+//*************************scrolls******************************
+[EFFECT_TABLE scrolls]
+EFFECT_TABLE={ circle_eight 1 circle_seven 4 circle_six 7 circle_five 12 circle_four 20 circle_three 32 circle_two 50 circle_one 80 }
+
+[EFFECT_TABLE circle_one]
+ITEM={ scroll }
+EFFECT={ reactive_armor 1 clumsy 1 create_food 1 feeblemind 1 heal 1 magic_arrow 1 night_sight 1 weaken 1 }
+
+[EFFECT_TABLE circle_two]
+ITEM={ scroll }
+EFFECT={ agility 1 cunning 1 cure 1 harm 1 magic_trap 1 magic_untrap 1 protection 1 strength 1 }
+
+[EFFECT_TABLE circle_three]
+ITEM={ scroll }
+EFFECT={ bless 1 fireball 1 magic_lock 1 poison 1 telekinesis 1 teleport 1 unlock 1 wall_of_stone 1 }
+
+[EFFECT_TABLE circle_four]
+ITEM={ scroll }
+EFFECT={ archcure 1 archprotection 1 curse 1 fire_field  greater_heal 1 lightning 1 mana_drain 1 recall 1 }
+
+[EFFECT_TABLE circle_five]
+ITEM={ scroll }
+EFFECT={ bladespirits 1 dispel_field 1 incognito 1 magic_reflection 1 mind_blast 1 paralyze 1 poison_field 1 summon_creature 1 }
+
+[EFFECT_TABLE circle_six]
+ITEM={ scroll }
+EFFECT={ dispel 1 energy_bolt 1 explosion 1 invisibility 1 mark 1 mass_curse 1 paralyzation_field 1 reveal 1 }
+
+[EFFECT_TABLE circle_seven]
+ITEM={ scroll }
+EFFECT={ chain_lightning 1 energy_field 1 flamestrike 1 gate_travel 1 mana_vampire 1 mass_dispel 1 meteor_swarm 1 polymorph 1 }
+
+[EFFECT_TABLE circle_eight]
+ITEM={ scroll }
+EFFECT={ earthquake 1 energy_vortex 1 resurrection 1 summon_air_elemental 1 summon_daemon 1 summon_earth_elemental 1 summon_fire_elemental 1 summon_water_elemental 1 }
+
+//*** ARTIFACT ITEM EFFECT LISTS ***
+
+//*************************scrolls******************************
+[EFFECT_LIST scrolls]
+EFFECTS=reactive_armor,clumsy,create_food,feeblemind,heal,magic_arrow,night_sight,weaken
+EFFECTS=agility,cunning,cure,harm,magic_trap,magic_untrap,protection,strength
+EFFECTS=bless,fireball,magic_lock,poison,telekinesis,teleport,unlock,wall_of_stone
+EFFECTS=archcure,archprotection,curse,fire_field  greater_heal,lightning,mana_drain,recall
+EFFECTS=bladespirits,dispel_field,incognito,magic_reflection,mind_blast,paralyze,poison_field,summon_creature
+EFFECTS=dispel,energy_bolt,explosion,invisibility,mark,mass_curse,paralyzation_field,reveal
+EFFECTS=chain_lightning,energy_field,flamestrike,gate_travel,mana_vampire,mass_dispel,meteor_swarm,polymorph
+EFFECTS=earthquake,energy_vortex,resurrection,summon_air_elemental,summon_daemon,summon_earth_elemental,summon_fire_elemental,summon_water_elemental
+
+[EFFECT_LIST armor_defense_increasers]
+EFFECTS=armor_defense_1,armor_defense_2,armor_defense_3,armor_defense_4,armor defense_5
+
+[EFFECT_LIST weapon_damage_increasers]
+EFFECTS=weapon_damage_1,weapon_damage_2,weapon_damage_3,weapon_damage_4,weapon_damage_5
+
+[EFFECT_LIST weapon_skill_increasers]
+EFFECTS=weapon_skill_1,weapon_skill_2,weapon_skill_3,weapon_skill_4,weapon_skill_5
+
+[EFFECT_LIST durability_effects]
+EFFECTS=durability_1,durability_2,durability_3,durability_4,durability_5
+
+[EFFECT_LIST useables]
+EFFECTS=use_reactive_armor,use_clumsy,use_feeblemind,use_weaken,use_heal
+EFFECTS=use_greater_heal,use_agility,use_cunning,use_strength,use_harm,use_protection
+EFFECTS=use_curse,use_bless,use_teleport,use_cure,use_mana_drain,use_paralyze
+EFFECTS=use_summon_creature,use_summon_aire,use_summon_daem,use_summon_earth,use_summon_fire
+EFFECTS=use_summon_water,use_invisibility,use_restoration
+
+[EFFECT_LIST useons]
+EFFECTS=useon_clumsy,useon_heal,useon_greater_heal,useon_feeblemind,useon_magic_arrow
+EFFECTS=useon_weaken,useon_harm,useon_fireball,useon_lightning,useon_mana_drain,useon_identify
+
+[EFFECT_LIST wearables]
+EFFECTS=wear_clumsy,wear_feeblemind,wear_weaken,wear_agility,wear_cunning
+EFFECTS=wear_protection,wear_strength,wear_curse,wear_light,wear_reactive_armor,wear_bless
+EFFECTS=wear_magic_reflect,wear invisibility
+
+[EFFECT_LIST weapon_effects]
+EFFECTS=hit_clumsy,hit_feeblemind,hit_magic_arrow,hit_weaken,hit_harm
+EFFECTS=hit_fireball,hit_curse,hit_lightning,hit_mana_drain,hit_paralyze

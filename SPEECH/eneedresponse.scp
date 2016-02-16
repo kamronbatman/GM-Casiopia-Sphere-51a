@@ -1,0 +1,163 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+// Purpose: Britannia Internal Needs Script
+// Notes:	This is used for general information pertaining to all Britannian NPC's
+//			who overhear a need of their being spoken by a player???
+// Current Keyword List:
+//	none - event triggered
+//
+
+ON=@InternalGreeting
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I heard thee say <NEED>! I need some!
+					SAY Thou did say <NEED>! I could really use some!
+					SAY I want some <NEED>!
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY <NEED>? I need some!
+					SAY Thou said <NEED>! Get me some!
+					SAY I want some <NEED>!
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY 'Twould be helpful if I could get <NEED> myself.
+					SAY If thou dost have <NEED>, I'd be happy to take some from thee.
+					SAY Could I have some? <NEED>, I mean.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY 'Twould be nice to get <NEED> for me.
+					SAY If thou dost have <NEED>, I'd like some.
+					SAY Could I have some? <NEED>, I mean.
+				ENDDO
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY If thou couldst bring thy great person to get ME some<NEED>, twould help!
+					SAY Not that I expect it, but I could really use help getting <NEED>.
+					SAY If thou couldst find some <NEED> for me, 'twould make my life that much better. Not that a great one like thee should care...
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY If thou couldst stoop to get ME some<NEED>, twould help!
+					SAY I could really use help getting <NEED>.
+					SAY If thou could find some <NEED>, 'twould be great. But only if thou dost have time.
+				ENDDO
+			ENDIF
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I could use some of thy stolen <NEED>.
+					SAY If thou did... happen upon some <NEED>, I could use some.
+					SAY I could use some <NEED>. However thou might obtain it.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY I could use some of thy ill-gotten <NEED>.
+					SAY If thou did... find some <NEED>, I could use it.
+					SAY I could use some <NEED>. However thou might get it.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY If thou art given any <NEED>, bring it here. I could use some.
+					SAY If thou dost have <NEED>, I'd be willing to take it from thee.
+					SAY Just a little <NEED> is all I need!
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY If thou art given any <NEED>, bring it here. I could use some.
+					SAY If thou have any <NEED>, I'd be willing to take some.
+					SAY I need just a little <NEED>!
+				ENDDO
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY If thou couldst find it in thy heart to get ME some<NEED>, twould be most wonderful!
+					SAY I would appreciate it greatly if thou couldst get me <NEED>. I could really use some.
+					SAY If thou couldst find some <NEED> for me, 'twould make my life that much better.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY If thou couldst get ME some<NEED>, twould be most wonderful!
+					SAY I would appreciate it greatly if thou couldst get me <NEED>. I could really use some.
+					SAY If thou couldst find some <NEED> for me, 'twould be easier on me.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY If thou couldst get ME some<NEED>, twould be great!
+					SAY I'd really appreciate it if thou got me <NEED>. I could use some.
+					SAY If thou couldst find <NEED> for me, 'twould be helpful!
+				ENDDO
+			ENDIF
+		ENDIF
+	ELSE
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Please, <SRC.SEX sir/madam>, if thou art able, I could really make use of <NEED>.
+					SAY I would be grateful if thou wouldst help me acquire some <NEED>.
+					SAY If thou couldst bring me some <NEED>, I would be in thy debt.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Please, <SRC.SEX sir/madam>, I could really make use of <NEED>, if thou art able.
+					SAY I would be grateful if thou wouldst help me get some more <NEED>.
+					SAY If thou couldst bring me some <NEED>, I would be in thy debt.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Please, <SRC.SEX sir/madam>, if thou'rt able, I could make use of <NEED>.
+					SAY I'd be grateful to get some more <NEED>.
+					SAY If thou couldst bring me some <NEED>, I'd be in thy debt.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I would love to have some <NEED>!
+					SAY 'Twould be nice to get more <NEED>
+					SAY <NEED>? I could use some more.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY I really need some <NEED>!
+					SAY 'Twould be nice to get more <NEED>
+					SAY <NEED>? I could always use more.
+				ENDDO
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> || <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Please, <SRC.SEX good sir/good lady>, I could use some more <NEED>.
+					SAY I could really do with some more <NEED>. I could reward thee... maybe.
+					SAY If thou dost find the time, more <NEED> would do wonders for me.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY I could really use some more <NEED>, <SRC.SEX milord/milady>.
+					SAY I could really do with some more <NEED>.
+					SAY If thou dost find the time, more <NEED> would do wonders for me.
+				ENDDO
+			ENDIF
+		ENDIF
+	ENDIF

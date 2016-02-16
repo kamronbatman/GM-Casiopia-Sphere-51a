@@ -1,0 +1,1558 @@
+[CHARDEF c_h_savage]
+NAME=#NAMES_ORC the Savage
+ID=C_MAN
+DAM=20,35
+ARMOR=15,20
+
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+NPC=BRAIN_MONSTER
+COLOR=00
+STR={80 120}
+DEX={61 85}
+INT={50 80}
+
+MAGICRESISTANCE={90.0 125.0}
+TACTICS={50.0 80.0}
+WRESTLING={40.0 55.0}
+MAGERY={40.0 70.0}
+
+KARMA=-5000
+FAME={500 1000}
+
+ITEMNEWBIE=i_tribal_spear
+
+ON=@NPCRestock
+ITEM=i_bone_arms
+ITEM=i_bone_leggings
+ITEM=i_tribal_spear,R20
+ITEM=i_tribal_berry,R6
+ITEM=i_mask_of_orcish_kin,R50
+ITEM=i_gold, {20 40}
+CONTAINER=i_backpack
+ITEM=RANDOM_ORC_TRIBALMASKS
+ITEM=i_bola_balls,R6
+ITEM=backpack_poor
+
+CATEGORY=Civilized
+SUBSECTION=Savages
+DESCRIPTION=Savage Warrior (male)
+
+[CHARDEF c_h_savage_f]
+NAME=#NAMES_ORC the Savage
+ID=C_WOMAN
+DAM=20,35
+ARMOR=15,20
+
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_FEMALE
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+NPC=BRAIN_MONSTER
+COLOR=00
+STR={80 120}
+DEX={61 85}
+INT={50 80}
+
+MAGICRESISTANCE={90.0 125.0}
+TACTICS={50.0 80.0}
+WRESTLING={40.0 55.0}
+MAGERY={40.0 70.0}
+
+KARMA=-5000
+FAME={500 1000}
+
+ITEMNEWBIE=i_tribal_spear
+
+ON=@NPCRestock
+ITEM=i_bone_arms
+ITEM=i_bone_leggings
+ITEM=i_tribal_spear,R20
+ITEM=i_tribal_berry,R6
+ITEM=i_mask_of_orcish_kin,R50
+ITEM=i_gold, {20 40}
+CONTAINER=i_backpack
+ITEM=RANDOM_ORC_TRIBALMASKS
+ITEM=i_bola_balls,R6
+ITEM=backpack_poor
+
+CATEGORY=Civilized
+SUBSECTION=Savages
+DESCRIPTION=Savage Warrior (female)
+
+[CHARDEF c_h_savage_rider]
+NAME=#NAMES_ORC the Savage
+ID=C_MAN
+DAM=15,20
+ARMOR=20
+DESIRES=i_gold
+//SHELTER=
+
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+NPC=brain_human
+COLOR=00
+STR={91 135}
+DEX={61 85}
+INT={51 85}
+
+KARMA=-5000
+FAME={500 1000}
+
+FENCING={60.0 85.0}
+WRESTLING={20.0 45.0}
+MAGICRESISTANCE={30.0 55.0}
+TACTICS={40.0 70.0}
+MAGERY={40.0 80.0}
+
+ITEMNEWBIE=i_tribal_spear
+ITEMNEWBIE=i_mt_ostard_desert
+NAME=savage ostard
+COLOR=01c0
+
+ON=@NPCRestock
+ITEM=i_bone_arms
+ITEM=i_bone_leggings
+ITEM=i_tribal_spear,R20
+ITEM=i_tribal_berry,R6
+ITEM=i_mask_of_orcish_kin,R45
+ITEM=random_coin_purse
+ITEM=random_coin_purse
+ITEM=i_bola_balls,R6
+
+CATEGORY=Civilized
+SUBSECTION=Savages
+DESCRIPTION=Savage Rider
+
+[TEMPLATE tm_tribalmasks]
+DEFNAME=RANDOM_ORC_TRIBALMASKS
+CATEGORY=Item Templates
+SUBSECTION=Random Masks
+DESCRIPTION=Tribal Masks
+ITEM={ i_orc_tribal_mask8 1 i_orc_tribal_mask7 1 i_orc_tribal_mask6 1 i_orc_tribal_mask5 1 i_orc_tribal_mask4 1 i_orc_tribal_mask3 1 i_orc_tribal_mask2 1 i_orc_tribal_mask1 1 }
+
+[ITEMDEF i_bola]
+NAME=bola
+ID=0e74
+VALUE=50
+WEIGHT=10
+TYPE=t_normal
+
+RESOURCES=4 i_bola_ball, 3 i_leather_cut
+SKILLMAKE=Tinkering 61.0
+
+ON=@DCLICK
+  TARGET=What do you want to target
+
+ON=@TARGON_CHAR
+IF <SRC.TARG.CANSEELOS> && (<SRC.TARG.DISTANCE> < 8)
+  REMOVE
+  SRC.ANIM=11
+  SRC.TARG.EFFECT=0,i_cannon_ball,8
+  SRC.SOUND=0239
+  SRC.SOUND=023c
+  SRC.TARG.DAMAGE={10 30}
+  IF (<EVAL RAND(4)> = 4)
+    SRC.TARG.NEWITEM=i_bola
+    SRC.TARG.ACT.P=<SRC.TARG.P>
+    SRC.TARG.ACT.TIMER=30
+  ENDIF
+//var.x=src.targ.findlayer.25.uid
+//src.targ.findlayer.25.unequip
+//uid.<var.x>.p=<src.targ.p>
+//try uid.<var.x>.remove
+  //SRC.TARG.FINDLAYER(layer_horse).REMOVE
+  //SRC.TARG.FLAGS=<SRC.FLAGS> &~0800000000
+
+  //SRC.TARG.ACT.LINK=<SRC.TARG.UID>
+ELSE
+  SRC.MESSAGE=Target is not in sight.
+  RETURN=1
+ENDIF
+
+ON=@Create
+  COLOR=083ea
+  ATTR=attr_decay
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Bola
+
+[ITEMDEF i_bola_ball]
+ID=i_cannon_ball
+NAME=bola ball
+TYPE=t_normal
+RESOURCES=5 i_ingot_iron
+WEIGHT=5
+
+ON=@Create
+  COLOR=083ea
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Bola Ball
+
+[ITEMDEF i_orc_tribal_mask1]
+DEFNAME=i_orc_tribal_mask1
+ID=i_mask_tribal_red
+NAME=tribal mask
+WEIGHT=2
+
+ON=@CREATE
+COLOR=0847
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask (1)
+
+[ITEMDEF i_orc_tribal_mask2]
+DEFNAME=i_orc_tribal_mask2
+ID=i_mask_tribal_red
+NAME=tribal mask
+WEIGHT=2
+
+ON=@CREATE
+COLOR=0534
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask (2)
+
+[ITEMDEF i_orc_tribal_mask3]
+DEFNAME=i_orc_tribal_mask3
+ID=i_mask_tribal_red
+NAME=tribal mask
+WEIGHT=2
+
+ON=@CREATE
+COLOR=057e
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask (3)
+
+[ITEMDEF i_orc_tribal_mask4]
+DEFNAME=i_orc_tribal_mask4
+ID=i_mask_tribal_red
+NAME=tribal mask
+WEIGHT=2
+
+ON=@CREATE
+COLOR=0774
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask (4)
+
+[ITEMDEF i_orc_tribal_mask5]
+DEFNAME=i_orc_tribal_mask5
+ID=i_mask_tribal_red
+NAME=tribal mask
+WEIGHT=2
+
+ON=@CREATE
+COLOR=0763
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask (5)
+
+[ITEMDEF i_orc_tribal_mask6]
+DEFNAME=i_orc_tribal_mask6
+ID=i_mask_tribal_red
+NAME=tribal mask
+WEIGHT=2
+
+ON=@CREATE
+COLOR=0592
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask (6)
+
+[ITEMDEF i_orc_tribal_mask7]
+DEFNAME=i_orc_tribal_mask7
+ID=i_mask_tribal_red
+NAME=tribal mask
+WEIGHT=2
+
+ON=@CREATE
+COLOR=05dd
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask (7)
+
+[ITEMDEF i_orc_tribal_mask8]
+DEFNAME=i_orc_tribal_mask8
+ID=i_mask_tribal_red
+NAME=tribal mask
+WEIGHT=2
+
+ON=@CREATE
+COLOR=0612
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Tribal Mask (8)
+
+[ITEMDEF i_tribal_berry]
+ID=i_fruit_apple
+NAME=tribal berry
+WEIGHT=0.1
+TYPE=t_normal
+
+ON=@CREATE
+  COLOR=0529
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Tribal Berry
+
+[ITEMDEF i_savage_paint_kit]
+ID=i_jar_honey
+NAME=savage paint kit
+WEIGHT=1
+TYPE=t_normal
+PILE=0
+
+RESOURCES=1 i_tribal_berry, 1 i_flour_sack
+SKILLMAKE=Cooking 80.0
+
+ON=@CREATE
+  COLOR=03bc
+
+ON=@DCLICK
+  IF <SRC.FINDID.i_savage_paint_kit>
+    TARGET=Who shall wear the savage paint?
+    RETURN=1
+  ELSE
+
+ON=@TARGON_CHAR
+  IF (<SRC.TARG.UID>==<SRC.UID>)
+    SRC.ANIM=33
+    SRC.SOUND=023e
+    SRC.COLOR=00
+    SRC.NEWITEM=i_savage_paint_memory
+    SRC.ACT.LINK=<SRC.UID>
+    SRC.ACT.CONT=<SRC.UID>
+    SRC.ACT.LAYER=layer_special
+    SRC.ACT.TIMER=(7*24*60*60)
+    SRC.TAG.Title=<SRC.TITLE>
+    SRC.ACT.EQUIP
+    SRC.TITLE=the Savage
+    SRC.SYSMESSAGE=You feel more safer around the savage's.
+    SRC.FINDID.i_savage_paint_kit.REMOVE
+    RETURN=1
+  ENDIF
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Paint Kit
+
+[ITEMDEF i_savage_paint_memory]
+NAME=savage painting memory
+ID=i_memory
+TYPE=t_eq_memory_obj
+LAYER=layer_special
+
+ON=@EQUIP
+  LINK=<SRC.UID>
+
+ON=@UNEQUIP
+  CONT.SYSMESSAGE=Your tribal skin paint wears off.
+  CONT.COLOR=<LINK.OSKIN>
+  CONT.TITLE=<LINK.TAG.Title>
+  CONT.UPDATE
+
+ON=@Create
+  ATTR=attr_decay|attr_move_never
+
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Savage Paint (memory)
+
+[ITEMDEF i_tribal_spear]
+ID=i_spear
+NAME=tribal spear
+DAM=14,34
+
+ON=@Create
+  HITPOINTS={100 190}
+  COLOR=color_o_agapite
+  
+CATEGORY=Custom Items
+SUBSECTION=Savages
+DESCRIPTION=Tribal Spear
+
+[ITEMDEF i_mask_of_orcish_kin]
+ID=i_mask_orc
+NAME=mask of orcish kin
+TYPE=t_armor_leather
+ARMOR=5
+WEIGHT=4
+FLIP=1
+VALUE=5
+
+RESOURCES=i_ORC_SKULL
+
+ON=@EQUIP
+  IF <SRC.KARMA> < -500
+    SRC.SYSMESSAGE You can't lose any more karma from wearing this item!
+  ELSE
+    SRC.KARMA=<SRC.KARMA>+-200
+    SRC.SYSMESSAGE=You have a lost some karma!
+  ENDIF
+  SRC.SFX=snd_MONSTER_ORC1
+
+ON=@Create
+  HITPOINTS={21 23}
+  COLOR=02a0
+
+CATEGORY=Provisions - Armor
+SUBSECTION=Masks
+DESCRIPTION=Mask of Orcish Kin
+DUPELIST=0141c
+
+[CHARDEF c_m_orc_bomber]
+NAME=Orc Bomber
+ID=c_ORC
+DAM=2,16
+ARMOR=15
+RESOURCES=8 i_ribs_raw
+FOODTYPE=15 t_meat_raw
+SHELTER=r_caves,r_dungeon,r_orc_camp
+DESIRES=i_gold,spk_orc
+TSPEECH=spk_orc
+CAN=MT_USEHANDS|MT_WALK
+
+ON=@Create
+COLOR=colors_red
+STR={175 210}
+DEX={91 115}
+INT={100 125}
+
+ARCHERY={70.0 85.0}
+PARRYING={60.0 85.0}
+MAGICRESISTANCE={30.0 55.0}
+TACTICS={75.0 90.0}
+
+NPC=BRAIN_MONSTER
+
+FAME={500 2000}
+KARMA={-3000 -3999}
+
+ITEMNEWBIE=i_oil_flask_tosser
+
+ON=@NPCRestock
+ITEM=loot_ORCISH_MAGE
+ITEM=i_gold,{200 500}
+ITEM=i_bola_ball,R6
+
+CATEGORY=Monsters
+SUBSECTION=Orcs
+DESCRIPTION=Orc Bomber
+
+[ITEMDEF i_oil_flask_tosser]
+ID=i_bow
+NAME=oil flask tosser
+TYPE=t_weapon_bow
+FLIP=0
+DAM={35 45}
+SPEED=18
+SKILL=Archery
+REQSTR=30
+TWOHANDS=Y
+WEIGHT=40
+TDATA3=0
+TDATA4=i_fx_oil_flask
+
+ON=@DAMAGE
+  SRC.EFFECT=2,036cb,1,10,1
+
+ON=@Create
+  COLOR=20
+  HITPOINTS=255
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Bows - Exceptional
+DESCRIPTION=oil flask tosser (orc bomber)
+
+[CHARDEF c_m_zealot]
+ID=c_man
+NAME=Zealot
+DAM=2,20
+ARMOR=18
+RESOURCES=8 i_reag_bone
+
+SHELTER=r_spooky
+TEVENTS=e_Undead
+TEVENTS=e_zealot
+
+ON=@Create
+TITLE=the Undead Knight
+NPC=brain_undead
+STR={195 250}
+DEX={76 95}
+INT={36 60}
+
+PARRYING={85.0 95.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={85.0 100.0}
+WRESTLING={85.0 95.0}
+SWORDSMANSHIP={85.0 95.0}
+
+FAME={100 2000}
+KARMA={-3000 -3999}
+
+ITEMNEWBIE=i_bone_chest
+COLOR=03c5
+ITEMNEWBIE=i_bone_gloves
+COLOR=03c5
+ITEMNEWBIE=i_bone_leggings
+COLOR=03c5
+ITEMNEWBIE=i_bone_arms
+COLOR=03c5
+ITEMNEWBIE=i_shield_round_metal
+COLOR=03c5
+ITEMNEWBIE=i_sword_viking
+COLOR=03c5
+ITEMNEWBIE=i_boots_calf
+COLOR=03c5
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Zealot Knight
+
+[CHARDEF c_m_zealot_summoner]
+ID=c_man
+NAME=Zealot
+DAM=2,20
+ARMOR=18
+RESOURCES=8 i_reag_bone
+
+SHELTER=r_spooky
+TEVENTS=e_Undead
+TEVENTS=e_zealot
+
+ON=@Create
+TITLE=the Undead Summoner
+NPC=brain_undead
+STR={195 250}
+DEX={36 60}
+INT={176 195}
+
+PARRYING={85.0 95.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={85.0 100.0}
+WRESTLING={85.0 95.0}
+MAGERY={85.0 95.0}
+
+FAME={100 2000}
+KARMA={-3000 -3999}
+
+ITEMNEWBIE=i_necklace_metal_beads
+COLOR=03c1
+ITEMNEWBIE=i_bone_helmet
+COLOR=03c1
+ITEMNEWBIE=i_kilt
+COLOR=01b5
+ITEMNEWBIE=i_cape
+COLOR=01b5
+ITEMNEWBIE=i_leather_gloves
+NAME=gloves of the summoner
+COLOR=01b5
+ITEMNEWBIE=i_sandals
+COLOR=01b5
+ITEMNEWBIE=i_spellbook
+MORE=06c080895
+MORE2=0106270
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Zealot Summoner
+
+[CHARDEF 02000]
+NAME=Skeleton Knight
+ID=c_skeleton_w_sword
+DEFNAME=c_m_zealot_skeleton_knight
+DAM=2,20
+ARMOR=18
+RESOURCES=8 i_reag_bone
+
+SHELTER=r_spooky
+TEVENTS=e_Undead
+
+ON=@Create
+NPC=brain_undead
+STR={195 250}
+DEX={76 95}
+INT={36 60}
+
+PARRYING={85.0 95.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={85.0 100.0}
+WRESTLING={85.0 95.0}
+
+FAME={100 2000}
+KARMA={-3000 -3999}
+
+ON=@NPCRestock
+ITEM=i_gold,{1000 1500}
+ITEM=random_jewel,{1 3}
+ITEM=random_jewel,{1 3}
+ITEM=random_reagent,{10 20}
+ITEM=random_reagent,{10 20}
+ITEM={ RANDOM_AVERAGE_MAGIC_LOOT 1 RANDOM_RICH_MAGIC_LOOT 1}
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Skeleton Knight
+
+[EVENTS e_zealot]
+ON=@NPCSeeNewPlayer
+  IF (<DISTANCE>>8) 
+    RETURN 1 
+  ENDIF
+  IF (<SRC.TAG.Cursed> = 1)
+    FACE
+    SPEAK The cursed shall die!
+    ATTACK
+  ENDIF
+
+ON=@Death
+  SRC.NEWITEM=i_fire_column // Dust column effect
+  SRC.ACT.NAME=dust
+  SRC.ACT.P=<P>
+  SRC.ACT.TIMER=1
+  SRC.ACT.ATTR=attr_decay|attr_move_never
+  SRC.ACT.COLOR=03c5
+  SRC.NEWNPC=02000 // Spawn Skeleton Knight
+  UPDATE
+  REMOVE=1
+  RETURN=1
+
+[CHARDEF c_m_ogre_lord_arctic]
+DEFNAME=c_m_ogre_lord_arctic
+NAME=Arctic Ogre Lord
+ID=c_OGRE
+SOUND=snd_MONSTER_OGRE1
+ICON=i_pet_OGRE_2
+
+DAM=20,52
+ARMOR=25
+RESOURCES=10 i_ribs_raw
+
+CAN=MT_WALK
+FOODTYPE=15 t_meat_raw
+SHELTER=r_forests,r_mountains
+DESIRES=C_OGRE
+AVERSIONS=r_civilization
+
+ON=@Create
+COLOR=031b
+STR={765 945}
+DEX={66 75}
+INT={46 70}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={65.0 80.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+
+NPC=BRAIN_MONSTER
+
+FAME={100 2000}
+KARMA={-4000 -4999}
+
+ON=@NPCRestock
+ITEM=i_gold,{500 700}
+ITEM=i_club
+ITEM=random_jewel
+ITEM={ RANDOM_AVERAGE_MAGIC_LOOT 3 RANDOM_RICH_MAGIC_LOOT 2  RANDOM_FILTHY_RICH_MAGIC_LOOT 1 }
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Trolls, Cyclops, and Titans
+DESCRIPTION=Arctic Ogre Lord
+
+[CHARDEF c_m_dragon_wyrm_white]
+NAME=White Wyrm
+ID=c_DRAGON_GREEN
+SOUND=snd_MONSTER_DRAGON1
+ICON=i_pet_dragon
+
+DAM=21,53
+ARMOR=35
+RESOURCES=99 i_ribs_raw,20 i_hide,8 i_reag_dragon_blood
+
+CAN=MT_WALK|MT_FLY
+FOODTYPE=80 t_meat_raw
+SHELTER=r_caves,r_dungeon
+DESIRES=i_gold
+AVERSIONS=r_civilization,r_water
+
+ON=@Create
+COLOR=07e7
+STR={1095 1185}
+DEX={86 175}
+INT={685 775}
+
+PARRYING={55.0 95.0}
+MAGERY={100.0 150.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={98.0 100.0}
+WRESTLING={90.0 93.0}
+TAMING={100.0 150.0}
+
+NPC=brain_monster
+
+FAME={3000 9000}
+KARMA={-6000 -6999}
+
+ITEMNEWBIE=i_spellbook
+MORE=06c080895
+MORE2=0106270
+
+ON=@NPCRestock
+ITEM=loot_ANCIENT_WYRM
+
+CATEGORY=Monsters
+SUBSECTION=Dragons and Drakes
+DESCRIPTION=White Wyrm
+
+[CHARDEF c_m_fiend_shadow]
+NAME=Shadow Fiend
+ID=c_elem_water
+SOUND=snd_ELEMENTL_AIRELEM5
+DAM=4,30
+ARMOR=30
+RESOURCES=
+CAN=MT_WALK
+SHELTER=r_dungeon
+DESIRES=r_dungeon
+
+ON=@Create
+NPC=BRAIN_MONSTER
+COLOR=color_black
+STR={100 120}
+DEX={56 65}
+INT={30 50}
+
+PARRYING={85.0 95.0}
+MAGERY={85.0 100.0}
+MAGICRESISTANCE={80.0 95.0}
+TACTICS={80.0 100.0}
+WRESTLING={80.0 100.0}
+DetectingHidden={60.0 80.0}
+
+FAME={1000 2000}
+KARMA={-5000 -5999}
+
+ON=@NPCRestock
+ITEM=loot_elem_blood
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Shadow Fiend
+
+[CHARDEF c_cused_grimmoch_drummel]
+ID=C_MAN
+NAME=Grimmoch Drummel
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+DESIRES=i_arrow
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+DAM={25 28}
+ARMOR=22
+
+ON=@Create
+TITLE=the Cursed Explorer
+COLOR={036a 036c}
+STR={200 250}
+DEX={88 98}
+INT={20 30}
+
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+ARCHERY=100.0
+PARRYING={85.0 100.0}
+
+NPC=BRAIN_HUMAN
+
+KARMA={-4500 -6500}
+FAME={4000 5500}
+
+ITEMNEWBIE=i_hair_krisna
+ITEMNEWBIE=I_LEATHER_TUNIC
+COLOR=096d
+ITEMNEWBIE=i_leather_gloves
+COLOR=096d
+
+ON=@NPCRestock
+ITEM=i_boots_calf
+ITEM=backpack_rich
+ITEM=i_sash
+COLOR=0852
+ITEM=i_bow
+ITEM=i_arrow,{40 75}
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Grimmoch Drummel (cursed)
+
+[CHARDEF c_cused_morg_burgen]
+NAME=Morg Burgen
+ID=C_MAN
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+DAM={25 28}
+ARMOR=22
+
+ON=@Create
+TITLE=the Cursed Explorer
+COLOR={036a 036c}
+STR={200 250}
+DEX={88 98}
+INT={20 30}
+
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+SWORDSMANSHIP=100.0
+PARRYING={85.0 100.0}
+
+NPC=BRAIN_HUMAN
+
+KARMA={-4500 -6500}
+FAME={4000 5500}
+
+ITEMNEWBIE=i_ringmail_sleeves
+COLOR=096d
+ITEMNEWBIE=i_ringmail_gloves
+COLOR=096d
+ITEMNEWBIE=i_bardiche
+COLOR=096d
+
+ON=@NPCRestock
+ITEM=i_pants_short
+COLOR=0852
+ITEM=backpack_rich
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Morg Burgen (cursed)
+
+[CHARDEF c_cused_tavara_sewel]
+ID=C_WOMAN
+NAME=Tavara Sewel
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_RUN|MT_FEMALE
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+DAM={25 28}
+ARMOR=22
+
+ON=@Create
+TITLE=the Cursed Explorer
+COLOR={03c4 03c6}
+STR={150 200}
+DEX={138 148}
+INT={20 30}
+
+MAGICRESISTANCE={20.0 35.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+FENCING=100.0
+PARRYING={85.0 100.0}
+
+NPC=BRAIN_HUMAN
+
+KARMA={-4500 -6500}
+FAME={4000 5500}
+
+ITEMNEWBIE=i_armor_female_plate
+COLOR=096d
+ITEMNEWBIE=i_ringmail_gloves
+COLOR=03e5
+ITEMNEWBIE=i_kryss
+COLOR=096d
+ITEMNEWBIE=i_shield_buckler
+COLOR=096d
+
+ON=@NPCRestock
+ITEM=i_kilt
+COLOR=0852
+ITEM=i_sandals
+COLOR=0852
+ITEM=backpack_rich
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Tavara Sewel (cursed)
+
+[CHARDEF c_cused_lysander_gathenwale]
+ID=C_MAN
+NAME=Lysander Gathenwale
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_MALE
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+DAM={25 28}
+ARMOR=22
+
+ON=@Create
+TITLE=the Cursed Explorer
+COLOR={03c4 03c6}
+STR={100 150}
+DEX={20 30}
+INT={188 198}
+
+MAGICRESISTANCE={85.0 100.0}
+TACTICS={90.0 100.0}
+WRESTLING={90.0 100.0}
+MAGERY=100.0
+PARRYING={20.0 35.0}
+
+NPC=BRAIN_HUMAN
+
+KARMA={-4500 -6500}
+FAME={4000 5500}
+
+ITEMNEWBIE=i_platemail_arms
+COLOR=0852
+ITEMNEWBIE=i_ringmail_gloves
+COLOR=0852
+ITEMNEWBIE=i_studded_tunic
+COLOR=096d
+ITEMNEWBIE=i_spellbook
+COLOR=0852
+MORE=06c080895
+MORE2=0106270
+
+ON=@NPCRestock
+ITEM=i_boots_calf
+ITEM=i_cape
+COLOR=096d
+ITEM=backpack_rich
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Lysander Gathenwale (cursed)
+
+[CHARDEF c_m_tentacles_of_the_harrower]
+NAME=tentacles of the harrower
+ID=c_CORPSER
+SOUND=snd_MONSTER_CORPSR1
+ICON=i_pet_CORPSER
+
+DAM=25,58
+ARMOR=25
+RESOURCES=10 t_eerie_stuff
+
+CAN=MT_NONMOVER
+FOODTYPE=24 t_meat_raw
+AVERSIONS=r_civilization
+
+ON=@Create
+TITLE=the Cursed Explorer
+COLOR=07bc
+STR={755 780}
+DEX={225 245}
+INT={225 245}
+
+PARRYING={15.0 25.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={85.0 120.0}
+WRESTLING={100.0 160.0}
+
+NPC=brain_monster
+
+FAME={200 1000}
+KARMA={-5000 -5999}
+
+ON=@NPCRestock
+ITEM=loot_KRAKEN
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Tentacles of the Harrower
+
+[CHARDEF c_m_spectral_armor]
+ID=c_man
+NAME=Spectral Armor
+CAN=MT_EQUIP|MT_USEHANDS|MT_WALK|MT_NONHUM
+
+ON=@DCLICK
+RETURN=1
+
+ON=@Create
+BRAIN=brain_monster
+COLOR=color_spectral
+STR={755 780}
+DEX={225 245}
+INT={225 245}
+
+KARMA={-3000 -4000} 
+FAME={2500 4000}
+
+PARRYING={15.0 25.0}
+MAGICRESISTANCE={15.0 20.0}
+TACTICS={85.0 120.0}
+WRESTLING={100.0 160.0}
+SWORDSMANSHIP={100.0 160.0}
+
+ITEMNEWBIE=i_scimitar
+COLOR=0845
+
+ON=@NPCRestock
+ITEM=i_chainmail_coif
+ITEM=i_ringmail_sleeves
+ITEM=i_platemail_gloves
+ITEM=i_shield_buckler
+
+ON=@Death
+SRC.NEWITEM=i_chainmail_coif
+SRC.ACT.P=<P>
+SRC.ACT.ATTR=attr_decay
+SRC.ACT.TIMER=60
+SRC.NEWITEM=i_ringmail_sleeves
+SRC.ACT.P=<P>
+SRC.ACT.ATTR=attr_decay
+SRC.ACT.TIMER=60
+SRC.NEWITEM=i_platemail_gloves
+SRC.ACT.P=<P>
+SRC.ACT.ATTR=attr_decay
+SRC.ACT.TIMER=60
+SRC.NEWITEM=i_shield_buckler
+SRC.ACT.P=<P>
+SRC.ACT.ATTR=attr_decay
+SRC.ACT.TIMER=60
+REMOVE=1
+RETURN=1
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Spectral Armor
+
+[CHARDEF c_m_elem_acid]
+NAME=Acid Elemental
+ID=c_elem_water
+SOUND=snd_ELEMENTL_WATREL1
+ICON=i_pet_elem_air
+CAN=MT_WALK
+DAM=5,15
+ARMOR=15
+RESOURCES=1 t_magic
+SHELTER=r_dungeon
+DESIRES=r_dungeon
+
+ON=@Create
+NPC=brain_monster
+COLOR=0a0
+STR={85 115}
+DEX={85 115}
+INT={360 435}
+
+PARRYING={75.0 85.0}
+MAGERY={80.0 95.0}
+MAGICRESISTANCE={80.0 95.0}
+TACTICS={80.0 100.0}
+WRESTLING={70.0 90.0}
+
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+ON=@NPCRestock
+ITEM=i_gold,{300 600}
+
+ON=@GetHit
+  IF (<SRC.TYPE> != t_weapon_bow) & (<SRC.TYPE> != t_weapon_xbow)
+    SRC.FINDLAYER(1).HITPOINTS=<SRC.FINDLAYER(1).HITPOINTS> - 1 // Damage Weapon
+  ENDIF
+  RETURN=0
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Acid Elemental
+
+[CHARDEF c_m_gargoyle_fire]
+ID=c_gargoyle
+NAME=#NAMES_FIRE_GARGOYLE
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_garg
+ANIM=079dff
+DAM=4,12
+ARMOR=20
+RESOURCES=8 t_MAGIC
+CAN=MT_WALK|MT_FIRE_IMMUNE|MT_RUN|MT_USEHANDS
+FOODTYPE=t_fire
+SHELTER=t_LAVA
+DESIRES=t_LAVA
+BLOODCOLOR=colors_red
+
+ON=@Create
+COLOR={0845 0846}
+NPC=brain_monster
+
+STR={125 155}
+DEX={165 185}
+INT={71 95}
+
+PARRYING={55.0 65.0}
+MAGERY={60.0 75.0}
+MAGICRESISTANCE={60.0 75.0}
+TACTICS={80.0 100.0}
+WRESTLING={70.0 100.0}
+
+FAME={1000 6000}
+KARMA={-4000 -4999}
+
+ITEMNEWBIE=i_light_source
+ITEMNEWBIE=i_spellbook	// knows fire type spells.
+ADDSPELL=s_magic_arrow
+ADDSPELL=s_fireball
+ADDSPELL=s_fire_field
+ADDSPELL=s_explosion
+ADDSPELL=s_flamestrike
+ADDSPELL=s_meteor_swarm
+ADDSPELL=s_summon_elem_fire
+ADDSPELL=s_fire_bolt
+
+ON=@NPCRestock
+ITEM=loot_elem_fire
+
+ON=@Death
+// Create death explosion to damage those nearby.
+NEWITEM=i_fx_explode
+act.TYPE=T_EXPLOSION
+act.ATTR=ATTR_MOVE_NEVER | ATTR_CAN_DECAY
+act.LINK=<uid>
+act.morex=10 // damage
+act.morey=090 // wFlags DAMAGE_GENERAL
+act.morez=2 // iDist
+act.p=<p>
+act.TIMERD=1 // immediate decay
+NAME=a charred gargoyle
+COLOR=07ca
+
+CATEGORY=Monsters
+SUBSECTION=Daemons & Gargoyles
+DESCRIPTION=Fire Gargoyle
+
+[CHARDEF c_m_bone_magi]
+NAME=Bone Magi
+ID=c_skeleton
+DAM=4,16
+ARMOR=24
+RESOURCES=8 i_reag_bone
+SHELTER=r_spooky
+TEVENTS=e_Undead
+
+ON=@Create
+NPC=brain_undead
+COLOR=colors_red
+STR={126 150}
+DEX={56 75}
+INT={185 210}
+
+PARRYING={65.0 75.0}
+MAGERY={70.0 80.0}
+MAGICRESISTANCE={55.0 70.0}
+TACTICS={65.0 80.0}
+WRESTLING={65.0 75.0}
+
+FAME={100 2000}
+KARMA={-3000 -3999}
+
+ON=@NPCRestock
+ITEM=loot_SKELETAL_MAGE
+ITEM=i_gold,{50 200}
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Bone Magi
+
+[CHARDEF c_m_giant_black_widow]
+NAME=Giant Black Widow
+ID=c_SPIDER_GIANT
+SOUND=snd_MONSTER_GISPIDR1
+ICON=i_pet_SPIDER_GIANT
+DAM=4,23
+ARMOR=15
+RESOURCES=4 i_reag_spider_silk, 5 t_eerie_stuff, 1 i_potion_poison
+CAN=MT_WALK
+FOODTYPE=15 t_meat_raw
+SHELTER=t_WEB,r_caves,r_dungeon
+
+ON=@Create
+COLOR=07ca
+STR={100 176}
+DEX={86 105}
+INT={36 60}
+
+PARRYING={35.0 45.0}
+MAGICRESISTANCE={25.0 40.0}
+TACTICS={35.0 50.0}
+WRESTLING={50.0 65.0}
+POISONING=100.0
+
+NPC=BRAIN_MONSTER
+
+FAME={100 2000}
+KARMA={-1000 -5000}
+
+CATEGORY=Monsters
+SUBSECTION=Giant Insects and Reptiles
+DESCRIPTION=Giant Black Widow
+
+[CHARDEF c_m_spider_dread]
+NAME=Dread Spider
+ID=c_SPIDER_GIANT
+SOUND=snd_MONSTER_GISPIDR1
+ICON=i_pet_SPIDER_GIANT
+DAM=8,29
+ARMOR=15
+RESOURCES=8 i_reag_spider_silk, 5 t_eerie_stuff, 1 i_potion_poison
+CAN=MT_WALK
+FOODTYPE=15 t_meat_raw
+SHELTER=t_WEB,r_caves,r_dungeon
+
+ON=@Create
+COLOR=02b2
+STR={176 200}
+DEX={96 115}
+INT={360 600}
+
+PARRYING={55.0 65.0}
+MAGICRESISTANCE={45.0 60.0}
+TACTICS={55.0 70.0}
+WRESTLING={70.0 85.0}
+MAGERY={70.0 85.0}
+POISONING=150.0
+
+NPC=BRAIN_MONSTER
+
+FAME={100 2000}
+KARMA={-1000 -5000}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_curse
+ADDSPELL=s_poison
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_paralyze
+ADDSPELL=s_energy_bolt
+
+//MORE1=06c0a0895
+//MORE2=00000000
+
+ON=@NPCRestock
+ITEM=i_gold,{200 250}
+ITEM=i_arrow,{4 12}
+ITEM=i_random_potion
+ITEM=i_random_potion
+
+CATEGORY=Monsters
+SUBSECTION=Giant Insects and Reptiles
+DESCRIPTION=Dread Spider
+
+[CHARDEF 02001]
+ID=c_grim_reaper
+DEFNAME=c_revenant
+NAME=Revenant
+CAN=MT_WALK|MT_SWIM|MT_GHOST|MT_USEHANDS
+BLOODCOLOR=colors_gray
+TEVENTS=e_undead
+
+ON=@Create
+COLOR=color_transparent
+NPC=brain_monster
+KARMA={5000 3000}
+FAME={1000 2000}
+STR={130 150}
+INT={170 190}
+DEX={300 450}
+
+ON=@NPCSEENEWPLAYER 
+  IF (<SRC.KILLS> > 4 ) 
+    ATTACK  
+    RETURN 1 
+  ENDIF 
+
+
+ITEMNEWBIE=i_halberd
+COLOR=color_transparent
+
+CATEGORY=Monsters
+SUBSECTION=Khaldun
+DESCRIPTION=Revenant
+
+[CHARDEF c_unicorn]
+NAME=Unicorn 
+ID=c_horse_gray
+SOUND=snd_ANIMALS_HORSE1
+ICON=i_pet_horse_gray
+
+DAM=4,18
+ARMOR=10
+RESOURCES=25 i_ribs_raw,31 i_hide
+
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_meat_raw,20 t_grain
+SHELTER=r_caves,r_dungeon
+DESIRES=T_FOLIAGE,T_GRAIN
+AVERSIONS=r_civilization,r_water
+
+ON=@Create
+COLOR=0481
+STR={250 280}
+DEX={86 105}
+INT={220 280}
+
+PARRYING={55.0 95.0}
+MAGICRESISTANCE={99.0 100.0}
+TACTICS={98.0 100.0}
+WRESTLING={90.0 93.0}
+TAMING={115.0 125.0}
+MAGERY={80.0 90.0}
+
+NPC=brain_animal
+
+FAME={100 2000}
+KARMA={5000 5999}
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Unicorn
+
+[CHARDEF c_h_brigand_evil]
+DEFNAME=c_h_brigand_evil
+NAME=#NAMES_HUMANMALE the Brigand
+ID=C_MAN
+DAM=20
+ARMOR=10
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_TRAP,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+COLOR=colors_skin
+STR={66 80}
+DEX={81 95}
+INT={61 75}
+FAME={2000 4000}
+KARMA={-4000 -6000}
+
+CAMPING={45.0 68.0}
+HIDING={45.0 68.0}
+POISONING={35.0 58.0}
+SNOOPING={35.0 58.0}
+LockPicking={35.0 58.0}
+STEALING={45.0 68.0}
+FENCING={45.0 68.0}
+PARRYING={55.0 78.0}
+SWORDSMANSHIP={35.0 58.0}
+WRESTLING={35.0 58.0}
+MACEFIGHTING={25.0 48.0}
+TACTICS={55.0 78.0}
+
+NPC=brain_thief
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=I_SHIRT_PLAIN
+COLOR=colors_all
+ITEM=random_pants
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_weapon
+ITEM=i_gold,{200 300}
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws & Rogues
+DESCRIPTION=Evil Brigand (male)
+
+[CHARDEF c_h_brigand_evil_f]
+DEFNAME=c_h_brigand_evil_f
+NAME=#NAMES_HUMANFEMALE the Brigand
+ID=C_WOMAN
+DAM=20
+ARMOR=10
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_TRAP,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+COLOR=colors_skin
+STR={66 80}
+DEX={81 95}
+INT={61 75}
+FAME={2000 4000}
+KARMA={-4000 -6000}
+
+CAMPING={45.0 68.0}
+HIDING={45.0 68.0}
+POISONING={35.0 58.0}
+SNOOPING={35.0 58.0}
+LockPicking={35.0 58.0}
+STEALING={45.0 68.0}
+FENCING={45.0 68.0}
+PARRYING={55.0 78.0}
+SWORDSMANSHIP={35.0 58.0}
+WRESTLING={35.0 58.0}
+MACEFIGHTING={25.0 48.0}
+TACTICS={55.0 78.0}
+
+NPC=brain_thief
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=i_skirt_short
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=random_weapon
+ITEM=i_gold,{200 300}
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws & Rogues
+DESCRIPTION=Evil Brigand (female)
+
+[CHARDEF c_h_executioner]
+DEFNAME=c_h_executioner
+NAME=#NAMES_HUMANMALE the Executioner
+ID=C_MAN
+DAM=20
+ARMOR=10
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_TRAP,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+FLAGS=<FLAGS>|040 // Reactive Armor
+COLOR=colors_skin
+STR={66 80}
+DEX={81 95}
+INT={61 75}
+FAME={2000 4000}
+KARMA={-4000 -6000}
+
+CAMPING={45.0 68.0}
+HIDING={45.0 68.0}
+SNOOPING={35.0 58.0}
+LockPicking={35.0 58.0}
+STEALING={45.0 68.0}
+FENCING={45.0 68.0}
+PARRYING={55.0 78.0}
+SWORDSMANSHIP={65.0 98.0}
+WRESTLING={35.0 58.0}
+MACEFIGHTING={25.0 48.0}
+TACTICS={55.0 78.0}
+
+NPC=brain_thief
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+
+ON=@NPCRestock
+ITEM=i_axe_exec
+ITEM=I_SHIRT_PLAIN
+COLOR=colors_all
+ITEM=random_pants
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=i_gold,{750 800}
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws & Rogues
+DESCRIPTION=Executioner (male)
+
+[CHARDEF c_h_executioner_f]
+DEFNAME=c_h_executioner_f
+NAME=#NAMES_HUMANFEMALE the Executioner
+ID=C_WOMAN
+DAM=20
+ARMOR=10
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_TRAP,t_eerie_stuff
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+
+ON=@Create
+FLAGS=<FLAGS>|040 // Reactive Armor
+COLOR=colors_skin
+STR={66 80}
+DEX={81 95}
+INT={61 75}
+FAME={2000 4000}
+KARMA={-4000 -6000}
+
+CAMPING={45.0 68.0}
+HIDING={45.0 68.0}
+SNOOPING={35.0 58.0}
+LockPicking={35.0 58.0}
+STEALING={45.0 68.0}
+FENCING={45.0 68.0}
+PARRYING={55.0 78.0}
+SWORDSMANSHIP={65.0 98.0}
+WRESTLING={35.0 58.0}
+MACEFIGHTING={25.0 48.0}
+TACTICS={55.0 78.0}
+
+NPC=brain_thief
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+ON=@NPCRestock
+ITEM=i_axe_exec
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=i_skirt_short
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+ITEM=i_gold,{750 800}
+
+CATEGORY=Civilized
+SUBSECTION=Outlaws & Rogues
+DESCRIPTION=Executioner (female)
+
+[EOF]

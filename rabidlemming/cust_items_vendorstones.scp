@@ -1,0 +1,972 @@
+
+// **************************************************
+// Items
+// **************************************************
+
+[ITEMDEF i_vending_stone_houses]
+NAME=House Vending Stone
+ID=i_grave_stone
+TYPE=t_script
+
+ON=@DCLICK
+  IF (<DISTANCE> < 4)
+    SRC.ITEMMENU menu_vendor_stone_houses
+  ELSE
+    SRC.SYSMESSAGE You are too far away to use this.
+  ENDIF
+
+ON=@Create
+  ATTR=attr_move_never
+  COLOR=color_o_valorite
+
+CATEGORY=Custom Items
+SUBSECTION=Resource Stones
+DESCRIPTION=Full Housing Vending Stone
+
+[ITEMDEF i_vending_stone_ships]
+NAME=Ships Vending Stone
+ID=i_grave_stone
+TYPE=t_script
+
+ON=@DCLICK
+  IF (<DISTANCE> < 4)
+    SRC.ITEMMENU menu_vendor_stone_ships
+  ELSE
+    SRC.SYSMESSAGE You are too far away to use this.
+  ENDIF
+
+ON=@Create
+  ATTR=attr_move_never
+  COLOR=color_o_gold
+
+CATEGORY=Custom Items
+SUBSECTION=Resource Stones
+DESCRIPTION=Ship Vending Stone
+
+[ITEMDEF i_vending_stone_provisions]
+NAME=Provisions Vending Stone
+ID=i_grave_stone
+TYPE=t_script
+
+ON=@DCLICK
+  IF (<DISTANCE> < 4)
+    SRC.MENU=menu_vendor_stone_provisions
+  ELSE
+    SRC.SYSMESSAGE You are too far away to use this.
+  ENDIF
+
+ON=@Create
+  ATTR=attr_move_never
+  COLOR=color_o_blackrock
+
+CATEGORY=Custom Items
+SUBSECTION=Resource Stones
+DESCRIPTION=Provisions Vending Stone
+
+[ITEMDEF i_vending_stone_full]
+NAME=All-in-One Vending Stone
+ID=i_grave_stone
+TYPE=t_script
+
+ON=@DCLICK
+  IF (<DISTANCE> < 4)
+    SRC.ITEMMENU menu_vendor_stone_full
+  ELSE
+    SRC.SYSMESSAGE You are too far away to use this.
+  ENDIF
+
+ON=@Create
+  ATTR=attr_move_never
+  COLOR=color_o_bloodrock
+
+CATEGORY=Custom Items
+SUBSECTION=Resource Stones
+DESCRIPTION=All-in-One Vending Stone
+
+// **************************************************
+// Menus
+// **************************************************
+
+[MENU menu_vendor_stone_mage_equip]
+Which would you like to buy?
+
+ON=i_bag Reagent Bag 1800gp
+  IF <SRC.RESTEST 1800 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=1800 i_gold
+      SRC.NEWITEM=tm_large_bag_of_magic
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_pouch Recall Pouch 900gp(85 each recall reg)
+  IF <SRC.RESTEST 900 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=900 i_gold
+      SRC.NEWITEM=tm_recall_bag_of_magic
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_bottle_empty 100 Bottles 650gp
+  IF <SRC.RESTEST 650 i_gold>
+    IF {(<SRC.STR>*4.0) >= (<SRC.WEIGHT>+120)}
+      SRC.CONSUME=650 i_gold
+      SRC.NEWITEM=i_bottle_empty
+      SRC.ACT.AMOUNT 100
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You will not be able to hold these items!
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_scroll_blank 100 Blank Scrolls 1000gp
+  IF <SRC.RESTEST 1000 i_gold>
+    IF {(<SRC.STR>*4.0) >= (<SRC.WEIGHT>+120)}
+      SRC.CONSUME=1000 i_gold
+      SRC.NEWITEM=i_scroll_blank
+      SRC.ACT.AMOUNT 100
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You will not be able to hold these items!
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_reag_black_pearl Black Pearl 180gp(50 Bp)
+  IF <SRC.RESTEST 180 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=180 i_gold
+      SRC.NEWITEM=i_reag_black_pearl
+      SRC.ACT.AMOUNT=50
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_reag_blood_moss Blood Moss 180gp(50 Bm)
+  IF <SRC.RESTEST 180 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=180 i_gold
+      SRC.NEWITEM=i_reag_blood_moss
+      SRC.ACT.AMOUNT=50
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_reag_garlic Garlic 180gp(50 Ga)
+  IF <SRC.RESTEST 180 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=180 i_gold
+      SRC.NEWITEM=i_reag_garlic
+      SRC.ACT.AMOUNT=50
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_reag_ginseng Ginseng 180gp(50 Gs)
+  IF <SRC.RESTEST 180 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=180 i_gold
+      SRC.NEWITEM=i_reag_ginseng
+      SRC.ACT.AMOUNT=50
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_reag_mandrake_root Mandrake Root 180gp(50 Mr)
+  IF <SRC.RESTEST 180 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=180 i_gold
+      SRC.NEWITEM=i_reag_mandrake_root
+      SRC.ACT.AMOUNT=50
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_reag_nightshade Nightshade 180gp(50 Ns)
+  IF <SRC.RESTEST 180 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=180 i_gold
+      SRC.NEWITEM=i_reag_nightshade
+      SRC.ACT.AMOUNT=50
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_reag_sulfurous_ash Sulfurous Ash 180gp(50 Sa)
+  IF <SRC.RESTEST 180 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=180 i_gold
+      SRC.NEWITEM=i_reag_sulfurous_ash
+      SRC.ACT.AMOUNT=50
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+ON=i_reag_spider_silk Spider Silk 180gp(50 Ss)
+  IF <SRC.RESTEST 180 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=180 i_gold
+      SRC.NEWITEM=i_reag_spider_silk
+      SRC.ACT.AMOUNT=50
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You dont have enough for this.
+  ENDIF
+
+[MENU menu_vendor_stone_houses]
+Houses - Page 1
+
+ON=0 Large Blacksmithy Shop 180,000
+  IF <SRC.RESTEST 180000 i_gold>
+    SRC.CONSUME=180000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=04228
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Large Marble Patio House 199,000
+  IF <SRC.RESTEST 199000 i_gold>
+    SRC.CONSUME=199000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=04229
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Wizard's Tower 88,500
+  IF <SRC.RESTEST 88500 i_gold>
+    SRC.CONSUME=88500 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0422a
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Two Story Log Cabin 97,800
+  IF <SRC.RESTEST 97800 i_gold>
+    SRC.CONSUME=97800 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0422b
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Sandstone Patio House 90,900
+  IF <SRC.RESTEST 90900 i_gold>
+    SRC.CONSUME=90900 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0422c
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Two Story Villa 136,500
+  IF <SRC.RESTEST 136500 i_gold>
+    SRC.CONSUME=136500 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0422d
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Stone Shop 60,600
+  IF <SRC.RESTEST 60600 i_gold>
+    SRC.CONSUME=60600 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0422e
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Marble Shop 60,600
+  IF <SRC.RESTEST 60600 i_gold>
+    SRC.CONSUME=60600 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0422f
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Stone and Plaster House 43,800
+  IF <SRC.RESTEST 43800 i_gold>
+    SRC.CONSUME=43800 i_gold
+    SOUND 0032
+    SRC.NEWITEM=04200
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Stone House 46,000
+  IF <SRC.RESTEST 46000 i_gold>
+    SRC.CONSUME=46000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=04204
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Brick House 46,000
+  IF <SRC.RESTEST 46000 i_gold>
+    SRC.CONSUME=46000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=04204
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Wood House 44,000
+  IF <SRC.RESTEST 44000 i_gold>
+    SRC.CONSUME=44000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=04206
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Wood and Plaster House 44,000
+  IF <SRC.RESTEST 44000 i_gold>
+    SRC.CONSUME=44000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=04208
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Wood House W/Thatched Roof 42,000
+  IF <SRC.RESTEST 42000 i_gold>
+    SRC.CONSUME=42000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=04210
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+
+ON=0 More...
+  ITEMMENU menu_vendor_stone_houses_2
+
+[MENU menu_vendor_stone_houses_2]
+Houses - Page 2
+
+ON=0 Blue Tent 22,000
+  IF <SRC.RESTEST 22000 i_gold>
+    SRC.CONSUME=22000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_tent_blue
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Green Tent 22,000
+  IF <SRC.RESTEST 22000 i_gold>
+    SRC.CONSUME=22000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_tent_green
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Three Room House 144,500
+  IF <SRC.RESTEST 144500 i_gold>
+    SRC.CONSUME=144500 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_house_3room
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Two Story Wood and Plaster House 193,000
+  IF <SRC.RESTEST 193000 i_gold>
+    SRC.CONSUME=193000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_house_wood_plaster_2story
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Two Story Stone and Plaster House 195,000
+  IF <SRC.RESTEST 195000 i_gold>
+    SRC.CONSUME=195000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_house_stone_plaster_2story
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Tower 433,200
+  IF <SRC.RESTEST 433200 i_gold>
+    SRC.CONSUME=433200 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_tower
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Keep 655,200
+  IF <SRC.RESTEST 655200 i_gold>
+    SRC.CONSUME=655200 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_keep
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Castle 1,020,800
+  IF <SRC.RESTEST 1020800 i_gold>
+    SRC.CONSUME=1020800 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_castle
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+
+// ON=0 More...
+//   ITEMMENU menu_vendor_stone_houses_3
+
+ON=0 Back...
+  ITEMMENU menu_vendor_stone_houses
+
+[MENU menu_vendor_stone_houses_3]
+Houses - Page 3, New!
+
+ON=0 Arena 796,500
+  IF <SRC.RESTEST 796500 i_gold>
+    SRC.CONSUME=796500 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07900
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Woodsman's Cabin 117,000
+  IF <SRC.RESTEST 117000 i_gold>
+    SRC.CONSUME=117000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07901
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Guild Castle 1,960,000
+  IF <SRC.RESTEST 1960000 i_gold>
+    SRC.CONSUME=1960000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07904
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Guild House 136,000
+  IF <SRC.RESTEST 136000 i_gold>
+    SRC.CONSUME=136000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07905
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Pyramid 200,000
+  IF <SRC.RESTEST 200000 i_gold>
+    SRC.CONSUME=200000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07907
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Garrison 142,750
+  IF <SRC.RESTEST 142750 i_gold>
+    SRC.CONSUME=142750 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07908
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Tavern 201,300
+  IF <SRC.RESTEST 201300 i_gold>
+    SRC.CONSUME=201300 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07909
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Mansion 1,300,000
+  IF <SRC.RESTEST 1300000 i_gold>
+    SRC.CONSUME=1300000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0790a
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Chapel 343000
+  IF <SRC.RESTEST 343000 i_gold>
+    SRC.CONSUME=343000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0790b
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Plaster House 76,000
+  IF <SRC.RESTEST 76000 i_gold>
+    SRC.CONSUME=76000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0790c
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Large Two Story Plaster House 179,500
+  IF <SRC.RESTEST 179500 i_gold>
+    SRC.CONSUME=179500 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0790d
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Square Two Story Plaster House 155,750
+  IF <SRC.RESTEST 155750 i_gold>
+    SRC.CONSUME=155750 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0790e
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Sandstone House 76,000
+  IF <SRC.RESTEST 76000 i_gold>
+    SRC.CONSUME=76000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=0790f
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Large Two Story Sandstone House 179,500
+  IF <SRC.RESTEST 179500 i_gold>
+    SRC.CONSUME=179500 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07910
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Square Two Story Sandstone House 155,750
+  IF <SRC.RESTEST 155750 i_gold>
+    SRC.CONSUME=155750 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07911
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Log Cabin 76,000
+  IF <SRC.RESTEST 76000 i_gold>
+    SRC.CONSUME=76000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07912
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Large Two Story Log Cabin 179,500
+  IF <SRC.RESTEST 179500 i_gold>
+    SRC.CONSUME=179500 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07913
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Square Two Story Log Cabin 155,750
+  IF <SRC.RESTEST 155750 i_gold>
+    SRC.CONSUME=155750 i_gold
+    SOUND 0032
+    SRC.NEWITEM=07914
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+
+ON=0 Back...
+  ITEMMENU menu_vendor_stone_houses_2
+
+[MENU menu_vendor_stone_ships]
+Ships
+
+ON=0 Small Ship 14,000
+  IF <SRC.RESTEST 14000 i_gold>
+    SRC.CONSUME=14000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_ship_small_n
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Small Dragon Ship 15,000
+  IF <SRC.RESTEST 15000 i_gold>
+    SRC.CONSUME=15000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_ship_dragon_small_n
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Medium Ship 17,000
+  IF <SRC.RESTEST 17000 i_gold>
+    SRC.CONSUME=17000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_ship_medium_n
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Medium Dragon Ship 18,000
+  IF <SRC.RESTEST 18000 i_gold>
+    SRC.CONSUME=18000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_ship_dragon_medium_n
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Long Ship 20,000
+  IF <SRC.RESTEST 20000 i_gold>
+    SRC.CONSUME=20000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_ship_long_n
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+ON=0 Long Dragon Ship 21,000
+  IF <SRC.RESTEST 21000 i_gold>
+    SRC.CONSUME=21000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_deed_ship_dragon_long_n
+    SRC.ACT.AMOUNT=1
+    SRC.ACT.BOUNCE // put it in your pack.
+    SOUND=0048
+    RETURN 1
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+
+[MENU menu_vendor_stone_provisions]
+Select the Purchase Category
+
+ON=0 Mage Equipment
+ITEMMENU=menu_vendor_stone_mage_equip
+
+ON=0 Fighter Equipment
+ITEMMENU=menu_vendor_stone_fighter_equip
+
+ON=0 Misc
+ITEMMENU=menu_vendor_stone_misc
+
+[MENU menu_vendor_stone_full]
+Select the Purchase Category
+
+ON=0 Mage Equipment
+ITEMMENU=menu_vendor_stone_mage_equip
+
+ON=0 Fighter Equipment
+ITEMMENU=menu_vendor_stone_fighter_equip
+
+ON=0 Misc
+ITEMMENU=menu_vendor_stone_misc
+
+ON=0 Houses
+ITEMMENU=menu_vendor_stone_houses
+
+ON=0 Ships
+ITEMMENU=menu_vendor_stone_ships
+
+[MENU menu_vendor_stone_fighter_equip]
+Fighter Equipment
+
+ON=01415 Full Platemail 2,000gp
+  IF <SRC.RESTEST 2000 i_gold>
+    SRC.CONSUME=2000 i_gold
+    SOUND 0032
+    SRC.NEWITEM=i_platemail_arms
+    SRC.ACT.BOUNCE
+    SRC.NEWITEM=i_platemail_helm
+    SRC.ACT.BOUNCE
+    SRC.NEWITEM=i_platemail_chest
+    SRC.ACT.BOUNCE
+    SRC.NEWITEM=i_platemail_gorgget
+    SRC.ACT.BOUNCE
+    SRC.NEWITEM=i_platemail_leggings
+    SRC.ACT.BOUNCE
+    SRC.NEWITEM=i_platemail_gloves
+    SRC.ACT.BOUNCE
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+
+ON=01bfd 100 Bolts 400gp
+  IF <SRC.RESTEST 400 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=400 i_gold
+      SRC.NEWITEM=bolts
+      SRC.ACT.AMOUNT=100
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You do not have enough gold.
+  ENDIF
+
+ON=00f41 100 Arrows 300gp
+  IF <SRC.RESTEST 300 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=300 i_gold
+      SRC.NEWITEM=i_arrow
+      SRC.ACT.AMOUNT=100
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You do not have enough gold.
+  ENDIF
+
+ON=00e21 100 Bandages 400gp
+  IF <SRC.RESTEST 400 i_gold>
+    IF <SRC.STR>*4.2 > <SRC.WEIGHT>
+      SRC.CONSUME=400 i_gold
+      SRC.NEWITEM=i_bandage
+      SRC.ACT.AMOUNT=100
+      SRC.ACT.BOUNCE
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that.
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF
+
+[MENU menu_vendor_stone_misc]
+Misc
+
+ON=i_map_blank 100 Blank Maps 1000gp
+  IF <SRC.RESTEST 1000 i_gold>
+    IF {(<SRC.STR>*4.25)+-<SRC.WEIGHT>}>120.0
+      SRC.CONSUME=1000 i_gold
+      SRC.NEWITEM=i_bag
+      SRC.ACT.COLOR=color_o_gold
+      SRC.ACT.BOUNCE
+      VAR.Container=<SRC.ACT.UID>
+      SRC.NEWITEM=i_map_blank
+      SRC.ACT.BOUNCE
+      SRC.ACT.CONT=<VAR.Container>
+      SRC.ACT.UPDATE
+      SRC.UPDATE
+      SRC.ACT.DUPE=99
+      SOUND 0032
+    ELSE
+      SRC.SYSMESSAGE=You would not be able to hold all of that
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE You do not have enough gold.
+  ENDIF

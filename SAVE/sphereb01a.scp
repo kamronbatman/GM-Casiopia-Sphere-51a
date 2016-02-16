@@ -1,0 +1,46 @@
+\\ Sphere !GM-Testserver1 accounts file
+\\ NOTE: This file cannot be edited while the server is running.
+\\ Any file changes must be made to sphereaccu.scp. This is read in at save time.
+
+[counselor]
+PLEVEL=2
+PASSWORD=counselor
+
+[dev]
+PLEVEL=5
+PASSWORD=dev
+
+[GM]
+PLEVEL=4
+PASSWORD=GM
+
+[GUEST]
+PLEVEL=0
+PASSWORD=guest
+
+[GUEST1]
+PLEVEL=0
+PASSWORD=guest
+
+[Player]
+PASSWORD=player
+
+[Prexusgm601]
+PLEVEL=6
+PRIV=0104a
+PASSWORD=####
+TOTALCONNECTTIME=9
+LASTCONNECTTIME=8
+LASTCHARUID=01ad8
+FIRSTCONNECTDATE=2001/5/9 19:18:31
+FIRSTIP=24.16.43.137
+LASTCONNECTDATE=2001/5/9 19:19:08
+LASTIP=127.0.0.1
+
+[RemoteAdmin]
+PLEVEL=6
+PASSWORD=Admin
+
+[Seer]
+PLEVEL=3
+PASSWORD=seer

@@ -1,0 +1,2540 @@
+[DEFNAME COLORS_NEW_ARMOR]
+COLOR_GRANDURE	  007c5
+COLOR_ONTURA      007c4
+COLOR_CELESTIAL   007e8
+COLOR_LOCRIN      007c6
+COLOR_BLOOD_CREST 007a3
+COLOR_WHITE_GOLD  007a4
+COLOR_MIDNITE     00784
+
+[ITEMDEF i_Grandure_shield_kite_metal]
+NAME=grandure kite shield
+ID=i_shield_kite_metal
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Kite Shield
+
+[ITEMDEF i_Grandure_plate_helm]
+NAME=grandure plate helm
+ID=i_platemail_helm
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=15 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Plate Helm
+
+[ITEMDEF i_Grandure_platemail_chest]
+NAME=grandure platemail
+ID=i_platemail_chest
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=23.0
+VALUE=100000-150000
+RESOURCES=25 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Chest
+
+[ITEMDEF i_grandure_platemail_arms]
+NAME=grandure arms
+ID=i_platemail_arms
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=18.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Arms
+
+[ITEMDEF i_grandure_platemail_leggings]
+NAME=grandure legs
+ID=i_platemail_leggings
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=20.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Legs
+
+[ITEMDEF i_grandure_platemail_gorget]
+NAME=grandure gorget
+ID=i_platemail_gorget
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Gorget
+
+[ITEMDEF i_grandure_platemail_guantlets]
+NAME=grandure gauntlets
+ID=i_platemail_gloves
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=5.0
+VALUE=100000-150000
+RESOURCES=12 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Gauntlets
+
+[ITEMDEF i_grandure_female_plate]
+NAME=grandure female plate
+ID=i_armor_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=22 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Female Plate
+
+[ITEMDEF i_grandure_coif]
+NAME=grandure chainmail coif
+ID=i_chainmail_coif
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Chainmail Coif
+
+[ITEMDEF i_grandure_chainmail_leggings]
+NAME=grandure chainmail leggings
+ID=i_chainmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Chainmail Leggings
+
+[ITEMDEF i_grandure_chainmail_tunic]
+NAME=grandure chainmail tunic
+ID=i_chainmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Chainmail Tunic
+
+[ITEMDEF i_grandure_ringmail_gloves]
+NAME=grandure ringmail gloves
+ID=i_ringmail_gloves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Ringmail Gloves
+
+[ITEMDEF i_grandure_ringmail_tunic]
+NAME=grandure ringmail tunic
+ID=i_ringmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Ringmail tunic
+
+[ITEMDEF i_grandure_ringmail_sleeves]
+NAME=grandure ringmail sleeves
+ID=i_ringmail_sleeves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Ringmail Sleeves
+
+[ITEMDEF i_grandure_ringmail_leggings]
+NAME=grandure ringmail leggings
+ID=i_ringmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Ringmail Leggings
+
+[ITEMDEF i_grandure_bronze_shield]
+NAME=grandure bronze shield
+ID=i_shield_round_bronze
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Bronze Shield
+
+[ITEMDEF i_grandure_buckler]
+NAME=grandure buckler
+ID=i_shield_buckler
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Buckler
+
+[ITEMDEF i_grandure_heater_shield]
+NAME=grandure heater shield
+ID=i_shield_heater
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Heater
+
+[ITEMDEF i_grandure_metal_shield]
+NAME=grandure metal shield
+ID=i_shield_round_metal
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_grandure
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_grandure
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Grandure Armor
+DESCRIPTION=Grandure Metal Shield
+
+[ITEMDEF i_ontura_shield_kite_metal]
+NAME=ontura kite shield
+ID=i_shield_kite_metal
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Kite Shield
+
+[ITEMDEF i_ontura_plate_helm]
+NAME=ontura plate helm
+ID=i_platemail_helm
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=15 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Plate Helm
+
+[ITEMDEF i_ontura_platemail_chest]
+NAME=ontura platemail
+ID=i_platemail_chest
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=23.0
+VALUE=100000-150000
+RESOURCES=25 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Chest
+
+[ITEMDEF i_ontura_platemail_arms]
+NAME=ontura arms
+ID=i_platemail_arms
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=18.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Arms
+
+[ITEMDEF i_ontura_platemail_leggings]
+NAME=ontura legs
+ID=i_platemail_leggings
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=20.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Legs
+
+[ITEMDEF i_ontura_platemail_gorget]
+NAME=ontura gorget
+ID=i_platemail_gorget
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Gorget
+
+[ITEMDEF i_ontura_platemail_guantlets]
+NAME=ontura gauntlets
+ID=i_platemail_gloves
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=5.0
+VALUE=100000-150000
+RESOURCES=12 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Gauntlets
+
+[ITEMDEF i_ontura_female_plate]
+NAME=ontura female plate
+ID=i_armor_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=22 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Female Plate
+
+[ITEMDEF i_ontura_coif]
+NAME=ontura chainmail coif
+ID=i_chainmail_coif
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Chainmail Coif
+
+[ITEMDEF i_ontura_chainmail_leggings]
+NAME=ontura chainmail leggings
+ID=i_chainmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Chainmail Leggings
+
+[ITEMDEF i_ontura_chainmail_tunic]
+NAME=ontura chainmail tunic
+ID=i_chainmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Chainmail Tunic
+
+[ITEMDEF i_ontura_ringmail_gloves]
+NAME=ontura ringmail gloves
+ID=i_ringmail_gloves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Ringmail Gloves
+
+[ITEMDEF i_ontura_ringmail_tunic]
+NAME=ontura ringmail tunic
+ID=i_ringmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Ringmail tunic
+
+[ITEMDEF i_ontura_ringmail_sleeves]
+NAME=ontura ringmail sleeves
+ID=i_ringmail_sleeves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Ringmail Sleeves
+
+[ITEMDEF i_ontura_ringmail_leggings]
+NAME=ontura ringmail leggings
+ID=i_ringmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Ringmail Leggings
+
+[ITEMDEF i_ontura_bronze_shield]
+NAME=ontura bronze shield
+ID=i_shield_round_bronze
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Bronze Shield
+
+[ITEMDEF i_ontura_buckler]
+NAME=ontura buckler
+ID=i_shield_buckler
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Buckler
+
+[ITEMDEF i_ontura_heater_shield]
+NAME=ontura heater shield
+ID=i_shield_heater
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Heater
+
+[ITEMDEF i_ontura_metal_shield]
+NAME=ontura metal shield
+ID=i_shield_round_metal
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_ontura
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_ontura
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Ontura Armor
+DESCRIPTION=Ontura Metal Shield
+
+[ITEMDEF i_celestial_shield_kite_metal]
+NAME=celestial kite shield
+ID=i_shield_kite_metal
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=14 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Kite Shield
+
+[ITEMDEF i_celestial_plate_helm]
+NAME=celestial plate helm
+ID=i_platemail_helm
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=15 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Plate Helm
+
+[ITEMDEF i_celestial_platemail_chest]
+NAME=celestial platemail
+ID=i_platemail_chest
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=23.0
+VALUE=100000-150000
+RESOURCES=25 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Chest
+
+[ITEMDEF i_celestial_platemail_arms]
+NAME=celestial arms
+ID=i_platemail_arms
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=18.0
+VALUE=100000-150000
+RESOURCES=18 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Arms
+
+[ITEMDEF i_celestial_platemail_leggings]
+NAME=celestial legs
+ID=i_platemail_leggings
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=20.0
+VALUE=100000-150000
+RESOURCES=20 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Legs
+
+[ITEMDEF i_celestial_platemail_gorget]
+NAME=celestial gorget
+ID=i_platemail_gorget
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Gorget
+
+[ITEMDEF i_celestial_platemail_guantlets]
+NAME=celestial gauntlets
+ID=i_platemail_gloves
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=5.0
+VALUE=100000-150000
+RESOURCES=12 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Gauntlets
+
+[ITEMDEF i_celestial_female_plate]
+NAME=celestial female plate
+ID=i_armor_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=22 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Female Plate
+
+[ITEMDEF i_celestial_coif]
+NAME=celestial chainmail coif
+ID=i_chainmail_coif
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Chainmail Coif
+
+[ITEMDEF i_celestial_chainmail_leggings]
+NAME=celestial chainmail leggings
+ID=i_chainmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Chainmail Leggings
+
+[ITEMDEF i_celestial_chainmail_tunic]
+NAME=celestial chainmail tunic
+ID=i_chainmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=20 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Chainmail Tunic
+
+[ITEMDEF i_celestial_ringmail_gloves]
+NAME=celestial ringmail gloves
+ID=i_ringmail_gloves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Ringmail Gloves
+
+[ITEMDEF i_celestial_ringmail_tunic]
+NAME=celestial ringmail tunic
+ID=i_ringmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Ringmail tunic
+
+[ITEMDEF i_celestial_ringmail_sleeves]
+NAME=celestial ringmail sleeves
+ID=i_ringmail_sleeves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Ringmail Sleeves
+
+[ITEMDEF i_celestial_ringmail_leggings]
+NAME=celestial ringmail leggings
+ID=i_ringmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Ringmail Leggings
+
+[ITEMDEF i_celestial_bronze_shield]
+NAME=celestial bronze shield
+ID=i_shield_round_bronze
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Bronze Shield
+
+[ITEMDEF i_celestial_buckler]
+NAME=celestial buckler
+ID=i_shield_buckler
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Buckler
+
+[ITEMDEF i_celestial_heater_shield]
+NAME=celestial heater shield
+ID=i_shield_heater
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Heater
+
+[ITEMDEF i_celestial_metal_shield]
+NAME=celestial metal shield
+ID=i_shield_round_metal
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_essence_celestial
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_celestial
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Metal Shield
+
+[ITEMDEF i_essence_celestial]
+NAME=Celestial Essence
+ID=i_jar_full
+TYPE=63
+WEIGHT=.1
+
+ON=@Create
+  COLOR=color_celestial
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Celestial Armor
+DESCRIPTION=Celestial Essence
+
+[ITEMDEF i_sword_druidic]
+NAME=druidic sword
+ID=i_sword_viking
+DAM={15-20}
+WEIGHT=4.0
+
+ON=@Create
+  COLOR=007cb
+  ATTR=02
+  HITPOINTS=2000
+
+ON=@Equip
+  LINK=<SRC.UID>
+
+ON=@Damage
+  SRC.NEWITEM i_mushboom
+  SRC.ACT.LINK=<SRC.UID>
+  SRC.ACT.p=<SRC.P>
+  SRC.ACT.MOVE=-1,1
+  SRC.NEWITEM i_mushboom
+  SRC.ACT.LINK=<SRC.UID>
+  SRC.ACT.p=<SRC.P>
+  SRC.ACT.MOVE=-1,-1
+  SRC.NEWITEM i_mushboom
+  SRC.ACT.LINK=<SRC.UID>
+  SRC.ACT.p=<SRC.P>
+  SRC.ACT.MOVE=1,-1
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Swords
+DESCRIPTION=Druidic Sword
+
+[ITEMDEF i_mushboom]
+NAME=mushroom
+ID=00d13
+
+ON=@Create
+  TIMER=1
+  ATTR=08017
+
+ON=@TIMER
+  LINK.SPELLEFFECT=s_explosion,500
+
+CATEGORY=Provisions - Weapons - Magic
+SUBSECTION=Swords
+DESCRIPTION=Mushboom
+
+[ITEMDEF i_locrin_shield_kite_metal]
+NAME=locrin kite shield
+ID=i_shield_kite_metal
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Kite Shield
+
+[ITEMDEF i_locrin_plate_helm]
+NAME=locrin plate helm
+ID=i_platemail_helm
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=15 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Plate Helm
+
+[ITEMDEF i_locrin_platemail_chest]
+NAME=locrin platemail
+ID=i_platemail_chest
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=23.0
+VALUE=100000-150000
+RESOURCES=25 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Chest
+
+[ITEMDEF i_locrin_platemail_arms]
+NAME=locrin arms
+ID=i_platemail_arms
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=18.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Arms
+
+[ITEMDEF i_locrin_platemail_leggings]
+NAME=locrin legs
+ID=i_platemail_leggings
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=20.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Legs
+
+[ITEMDEF i_locrin_platemail_gorget]
+NAME=locrin gorget
+ID=i_platemail_gorget
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Gorget
+
+[ITEMDEF i_locrin_platemail_guantlets]
+NAME=locrin gauntlets
+ID=i_platemail_gloves
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=5.0
+VALUE=100000-150000
+RESOURCES=12 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Gauntlets
+
+[ITEMDEF i_locrin_female_plate]
+NAME=locrin female plate
+ID=i_armor_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=22 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Female Plate
+
+[ITEMDEF i_locrin_coif]
+NAME=locrin chainmail coif
+ID=i_chainmail_coif
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Chainmail Coif
+
+[ITEMDEF i_locrin_chainmail_leggings]
+NAME=locrin chainmail leggings
+ID=i_chainmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Chainmail Leggings
+
+[ITEMDEF i_locrin_chainmail_tunic]
+NAME=locrin chainmail tunic
+ID=i_chainmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Chainmail Tunic
+
+[ITEMDEF i_locrin_ringmail_gloves]
+NAME=locrin ringmail gloves
+ID=i_ringmail_gloves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Ringmail Gloves
+
+[ITEMDEF i_locrin_ringmail_tunic]
+NAME=locrin ringmail tunic
+ID=i_ringmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Ringmail tunic
+
+[ITEMDEF i_locrin_ringmail_sleeves]
+NAME=locrin ringmail sleeves
+ID=i_ringmail_sleeves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Ringmail Sleeves
+
+[ITEMDEF i_locrin_ringmail_leggings]
+NAME=locrin ringmail leggings
+ID=i_ringmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Ringmail Leggings
+
+[ITEMDEF i_locrin_bronze_shield]
+NAME=locrin bronze shield
+ID=i_shield_round_bronze
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Bronze Shield
+
+[ITEMDEF i_locrin_buckler]
+NAME=locrin buckler
+ID=i_shield_buckler
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Buckler
+
+[ITEMDEF i_locrin_heater_shield]
+NAME=locrin heater shield
+ID=i_shield_heater
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Heater
+
+[ITEMDEF i_locrin_metal_shield]
+NAME=locrin metal shield
+ID=i_shield_round_metal
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_locrin
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_locrin
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Locrin Armor
+DESCRIPTION=Locrin Metal Shield
+
+[ITEMDEF i_blood_crest_plate_helm]
+NAME=blood crest plate helm
+ID=i_platemail_helm
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=15 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Plate Helm
+
+[ITEMDEF i_blood_crest_platemail_chest]
+NAME=blood crest platemail
+ID=i_platemail_chest
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=23.0
+VALUE=100000-150000
+RESOURCES=25 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Chest
+
+[ITEMDEF i_blood_crest_platemail_arms]
+NAME=blood crest arms
+ID=i_platemail_arms
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=18.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Arms
+
+[ITEMDEF i_blood_crest_platemail_leggings]
+NAME=blood crest legs
+ID=i_platemail_leggings
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=20.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Legs
+
+[ITEMDEF i_blood_crest_platemail_gorget]
+NAME=blood crest gorget
+ID=i_platemail_gorget
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Gorget
+
+[ITEMDEF i_blood_crest_platemail_guantlets]
+NAME=blood crest gauntlets
+ID=i_platemail_gloves
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=5.0
+VALUE=100000-150000
+RESOURCES=12 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Gauntlets
+
+[ITEMDEF i_blood_crest_female_plate]
+NAME=blood crest female plate
+ID=i_armor_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=22 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Female Plate
+
+[ITEMDEF i_blood_crest_coif]
+NAME=blood crest chainmail coif
+ID=i_chainmail_coif
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Chainmail Coif
+
+[ITEMDEF i_blood_crest_chainmail_leggings]
+NAME=blood crest chainmail leggings
+ID=i_chainmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Chainmail Leggings
+
+[ITEMDEF i_blood_crest_chainmail_tunic]
+NAME=blood crest chainmail tunic
+ID=i_chainmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Chainmail Tunic
+
+[ITEMDEF i_blood_crest_ringmail_gloves]
+NAME=blood crest ringmail gloves
+ID=i_ringmail_gloves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Ringmail Gloves
+
+[ITEMDEF i_blood_crest_ringmail_tunic]
+NAME=blood crest ringmail tunic
+ID=i_ringmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Ringmail tunic
+
+[ITEMDEF i_blood_crest_ringmail_sleeves]
+NAME=blood crest ringmail sleeves
+ID=i_ringmail_sleeves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Ringmail Sleeves
+
+[ITEMDEF i_blood_crest_ringmail_leggings]
+NAME=blood crest ringmail leggings
+ID=i_ringmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Ringmail Leggings
+
+[ITEMDEF i_blood_crest_bronze_shield]
+NAME=blood crest bronze shield
+ID=i_shield_round_bronze
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Bronze Shield
+
+[ITEMDEF i_blood_crest_buckler]
+NAME=blood crest buckler
+ID=i_shield_buckler
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Buckler
+
+[ITEMDEF i_blood_crest_heater_shield]
+NAME=blood crest heater shield
+ID=i_shield_heater
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Heater
+
+[ITEMDEF i_blood_crest_metal_shield]
+NAME=blood crest metal shield
+ID=i_shield_round_metal
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_blood_crest
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_blood_crest
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Blood Crest Armor
+DESCRIPTION=Blood Crest Metal Shield
+
+[ITEMDEF i_white_gold_plate_helm]
+NAME=white gold plate helm
+ID=i_platemail_helm
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=7 i_ingot_gold, 8 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Plate Helm
+
+[ITEMDEF i_white_gold_platemail_chest]
+NAME=white gold platemail
+ID=i_platemail_chest
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=23.0
+VALUE=100000-150000
+RESOURCES=13 i_ingot_gold, 12 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Chest
+
+[ITEMDEF i_white_gold_platemail_arms]
+NAME=white gold arms
+ID=i_platemail_arms
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=18.0
+VALUE=100000-150000
+RESOURCES=9 i_ingot_gold, 9 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Arms
+
+[ITEMDEF i_white_gold_platemail_leggings]
+NAME=white gold legs
+ID=i_platemail_leggings
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=20.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_gold, 10 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Legs
+
+[ITEMDEF i_white_gold_platemail_gorget]
+NAME=white gold gorget
+ID=i_platemail_gorget
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=5 i_ingot_gold, 5 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Gorget
+
+[ITEMDEF i_white_gold_platemail_guantlets]
+NAME=white gold gauntlets
+ID=i_platemail_gloves
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=5.0
+VALUE=100000-150000
+RESOURCES=6 i_ingot_gold, 6 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Gauntlets
+
+[ITEMDEF i_white_gold_female_plate]
+NAME=white gold female plate
+ID=i_armor_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=11 i_ingot_gold, 11 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Female Plate
+
+[ITEMDEF i_white_gold_coif]
+NAME=white gold chainmail coif
+ID=i_chainmail_coif
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=5 i_ingot_gold, 5 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Chainmail Coif
+
+[ITEMDEF i_white_gold_chainmail_leggings]
+NAME=white gold chainmail leggings
+ID=i_chainmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=9 i_ingot_gold, 9 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Chainmail Leggings
+
+[ITEMDEF i_white_gold_chainmail_tunic]
+NAME=white gold chainmail tunic
+ID=i_chainmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_gold, 10 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Chainmail Tunic
+
+[ITEMDEF i_white_gold_ringmail_gloves]
+NAME=white gold ringmail gloves
+ID=i_ringmail_gloves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=5 i_ingot_gold, 5 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Ringmail Gloves
+
+[ITEMDEF i_white_gold_ringmail_tunic]
+NAME=white gold ringmail tunic
+ID=i_ringmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=9 i_ingot_gold, 9 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Ringmail tunic
+
+[ITEMDEF i_white_gold_ringmail_sleeves]
+NAME=white gold ringmail sleeves
+ID=i_ringmail_sleeves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=7 i_ingot_gold, 7 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Ringmail Sleeves
+
+[ITEMDEF i_white_gold_ringmail_leggings]
+NAME=white gold ringmail leggings
+ID=i_ringmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=8 i_ingot_gold, 8 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Ringmail Leggings
+
+[ITEMDEF i_white_gold_bronze_shield]
+NAME=white gold bronze shield
+ID=i_shield_round_bronze
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=8 i_ingot_gold, 8 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Bronze Shield
+
+[ITEMDEF i_white_gold_buckler]
+NAME=white gold buckler
+ID=i_shield_buckler
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=5 i_ingot_gold, 5 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Buckler
+
+[ITEMDEF i_white_gold_heater_shield]
+NAME=white gold heater shield
+ID=i_shield_heater
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=9 i_ingot_gold, 9 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Heater
+
+[ITEMDEF i_white_gold_metal_shield]
+NAME=white gold metal shield
+ID=i_shield_round_metal
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=7 i_ingot_gold, 7 i_ingot_silver
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_white_gold
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=White Gold Armor
+DESCRIPTION=White Gold Metal Shield
+
+[ITEMDEF i_midnite_plate_helm]
+NAME=midnite plate helm
+ID=i_platemail_helm
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+RESOURCES=15 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Plate Helm
+
+[ITEMDEF i_midnite_platemail_chest]
+NAME=midnite platemail
+ID=i_platemail_chest
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=23.0
+VALUE=100000-150000
+RESOURCES=25 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Chest
+
+[ITEMDEF i_midnite_platemail_arms]
+NAME=midnite arms
+ID=i_platemail_arms
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=18.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Arms
+
+[ITEMDEF i_midnite_platemail_leggings]
+NAME=midnite legs
+ID=i_platemail_leggings
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=20.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Legs
+
+[ITEMDEF i_midnite_platemail_gorget]
+NAME=midnite gorget
+ID=i_platemail_gorget
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Gorget
+
+[ITEMDEF i_midnite_platemail_guantlets]
+NAME=midnite gauntlets
+ID=i_platemail_gloves
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=5.0
+VALUE=100000-150000
+RESOURCES=12 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Gauntlets
+
+[ITEMDEF i_midnite_female_plate]
+NAME=midnite female plate
+ID=i_armor_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=22 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Female Plate
+
+[ITEMDEF i_midnite_coif]
+NAME=midnite chainmail coif
+ID=i_chainmail_coif
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Chainmail Coif
+
+[ITEMDEF i_midnite_chainmail_leggings]
+NAME=midnite chainmail leggings
+ID=i_chainmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Chainmail Leggings
+
+[ITEMDEF i_midnite_chainmail_tunic]
+NAME=midnite chainmail tunic
+ID=i_chainmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=20 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Chainmail Tunic
+
+[ITEMDEF i_midnite_ringmail_gloves]
+NAME=midnite ringmail gloves
+ID=i_ringmail_gloves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Ringmail Gloves
+
+[ITEMDEF i_midnite_ringmail_tunic]
+NAME=midnite ringmail tunic
+ID=i_ringmail_tunic
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Ringmail tunic
+
+[ITEMDEF i_midnite_ringmail_sleeves]
+NAME=midnite ringmail sleeves
+ID=i_ringmail_sleeves
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Ringmail Sleeves
+
+[ITEMDEF i_midnite_ringmail_leggings]
+NAME=midnite ringmail leggings
+ID=i_ringmail_leggings
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Ringmail Leggings
+
+[ITEMDEF i_midnite_bronze_shield]
+NAME=midnite bronze shield
+ID=i_shield_round_bronze
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=16 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Bronze Shield
+
+[ITEMDEF i_midnite_buckler]
+NAME=midnite buckler
+ID=i_shield_buckler
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=10 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Buckler
+
+[ITEMDEF i_midnite_heater_shield]
+NAME=midnite heater shield
+ID=i_shield_heater
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=18 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Heater
+
+[ITEMDEF i_midnite_metal_shield]
+NAME=midnite metal shield
+ID=i_shield_round_metal
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+RESOURCES=14 i_ingot_midnite
+SKILLMAKE=BLACKSMITHING 99.9
+
+ON=@Create
+  COLOR=color_midnite
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Midnite Armor
+DESCRIPTION=Midnite Metal Shield
+
+[EOF]

@@ -1,0 +1,178 @@
+[SPAWN SPAWN_Mustangs]
+CATEGORY=Spawn Groups
+SUBSECTION=Animals
+DESCRIPTION=Mustangs
+ID=c_a_mustang_black
+ID=c_a_mustang_chocolate
+ID=c_a_mustang_crimson
+ID=c_a_mustang_grey
+ID=c_a_mustang_pamamino
+ID=c_a_mustang_redroan
+ID=c_a_mustang_roan
+ID=c_a_mustang_sky
+ID=c_a_mustang_skygray
+ID=c_a_mustang_wimmimate
+WEIGHT=1
+
+[SPAWN SPAWN_Arctic]
+CATEGORY=Spawn Groups
+SUBSECTION=Animals
+DESCRIPTION=Arctic
+ID=c_bear_polar
+WEIGHT=2
+ID=c_a_wolf_white
+ID=c_walrus
+ID=c_rabbit_snow
+WEIGHT=10
+ID=c_a_snow_leopard
+WEIGHT=5
+ID=c_m_elem_snow
+ID=c_m_elem_ice
+WEIGHT=1
+
+[SPAWN SPAWN_Hythloth_1]
+CATEGORY=Spawn Groups
+SUBSECTION=Dungeons
+DESCRIPTION=Hythloth 1
+ID=c_m_gargoyle_fire
+WEIGHT=1
+ID=c_gargoyle
+WEIGHT=1
+ID=c_m_hellhound
+WEIGHT=2
+ID=c_m_imp
+WEIGHT=2
+
+[SPAWN SPAWN_Hythloth_2]
+CATEGORY=Spawn Groups
+SUBSECTION=Dungeons
+DESCRIPTION=Hythloth 2
+ID=c_daemon_w_sword
+WEIGHT=2
+ID=c_daemon
+WEIGHT=3
+ID=c_gargoyle
+ID=c_gazer
+ID=c_m_hellhound
+ID=c_m_imp
+WEIGHT=10
+
+[SPAWN SPAWN_Hythloth_3]
+CATEGORY=Spawn Groups
+SUBSECTION=Dungeons
+DESCRIPTION=Hythloth 3
+ID=c_m_balron
+WEIGHT=1
+ID=c_daemon_w_sword
+WEIGHT=2
+ID=c_daemon
+WEIGHT=3
+ID=c_m_gargoyle_stone
+WEIGHT=8
+ID=c_gargoyle
+ID=c_gazer
+ID=c_m_hellhound
+ID=c_m_imp
+WEIGHT=10
+
+[SPAWN SPAWN_Wrong_2]
+CATEGORY=Spawn Groups
+SUBSECTION=Dungeons
+DESCRIPTION=Wrong 2
+ID=c_h_executioner
+ID=c_h_executioner_f
+WEIGHT=3
+ID=c_h_brigand_evil
+ID=c_h_brigand_evil_f
+WEIGHT=5
+ID=c_h_evilmage
+ID=c_h_evilmage_f
+WEIGHT=2
+
+[SPAWN SPAWN_Evil_Brigands]
+CATEGORY=Spawn Groups
+SUBSECTION=Evil Humans
+DESCRIPTION=Evil Brigands
+ID=c_h_brigand_evil
+ID=c_h_brigand_evil_f
+WEIGHT=1
+
+[SPAWN SPAWN_Executioners]
+CATEGORY=Spawn Groups
+SUBSECTION=Evil Humans
+DESCRIPTION=Executioners
+ID=c_h_executioner
+ID=c_h_executioner_f
+
+[SPAWN SPAWN_Evil_Mages]
+CATEGORY=Spawn Groups
+SUBSECTION=Evil Humans
+DESCRIPTION=Evil Mages
+ID=c_h_evilmage
+ID=c_h_evilmage_f
+
+[SPAWN SPAWN_Sewer_Creatures]
+CATEGORY=Spawn Groups
+SUBSECTION=Animals
+DESCRIPTION=Sewer Creatures
+ID=c_bullfrog
+ID=c_rat_giant
+ID=c_rat
+ID=c_a_rat_sewer
+
+[SPAWN SPAWN_Ice_Dungeon_Weak]
+CATEGORY=Spawn Groups
+SUBSECTION=Dungeons
+DESCRIPTION=Ice Creatures (weak)
+ID=c_m_frostooze
+ID=c_ice_snake
+WEIGHT=10
+ID=c_m_ice_serpent
+ID=c_m_frostspider
+WEIGHT=5
+ID=c_m_elem_ice
+ID=c_m_frost_troll
+WEIGHT=3
+ID=c_m_elem_snow
+WEIGHT=1
+
+[SPAWN SPAWN_Ice_Dungeon_Strong]
+CATEGORY=Spawn Groups
+SUBSECTION=Dungeons
+DESCRIPTION=Ice Creatures (strong)
+ID=c_m_elem_ice
+ID=c_m_frost_troll
+WEIGHT=3
+ID=c_m_elem_snow
+ID=c_m_dragon_ice
+WEIGHT=2
+ID=c_m_ogre_lord_arctic
+ID=c_m_dragon_wyrm_white
+WEIGHT=1
+
+[SPAWN SPAWN_Terathans]
+CATEGORY=Spawn Groups
+SUBSECTION=Monsters
+DESCRIPTION=Terathans
+ID=c_terathan_drone
+WEIGHT=3
+ID=c_m_terathan_avenger
+ID=c_terathan_Matriarch
+WEIGHT=2
+ID=c_terathan_warrior
+WEIGHT=1
+
+[SPAWN SPAWN_Ophidians]
+CATEGORY=Spawn Groups
+SUBSECTION=Monsters
+DESCRIPTION=Ophidians
+ID=c_ophidian_mage
+ID=c_ophidian_warrior
+WEIGHT=4
+ID=c_m_ophidian_archmage
+ID=c_m_ophidian_knight
+WEIGHT=3
+ID=c_ophidian_queen
+WEIGHT=1
+
+[EOF]

@@ -1,0 +1,1 @@
+spheresvr.exe -DEBUG

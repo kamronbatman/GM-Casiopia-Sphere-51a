@@ -1,0 +1,758 @@
+//************************************************************** 
+//*World Time and Weather Control version 1.2 * 
+//*by: Tanagar * 
+//*email: griffinrk@cox-internet.com * 
+//*sphere version 55i * 
+//************************************************************** 
+//*PURPOSE: Control time flow and light level to be realistic * 
+//*but easy to edit settings. To provide year month and date. * 
+//*To provide Moon phases light changes. Also to make Weather * 
+//*according to the time of the year and to make light changes * 
+//*based on Weather. Also reduce lag that sector tags produce. * 
+//************************************************************** 
+//*INSTRUCTIONS: * 
+//* 1. Drop this into a new script and place into your script * 
+//* Directory. * 
+//* 2. Resync. * 
+//* 3. In game, create I_WORLDTIME_OBJ and I_WORLDWEATHER_OBJ.* 
+//* 4. Get the UIDs of both objects. * 
+//* 5. Open this script and put UIDs into settings where * 
+//* approriate. * 
+//* 6. Edit settings to the settings you want. * 
+//************************************************************** 
+//*HISTORY 
+//*1.2 
+//* - fixed more bugs 
+//* - remade weather timer it now runs 1 to 10 minutes real time 
+//* - Added Sector.Season to give Season Changes. 
+//* - Moved all Weather,Season, and Light Changes to the player 
+//* object. 
+//* - Added OSIT2A option, If you use the standard UO map this 
+//* option will make dungeons dark and skip most of GA and T2A 
+//* areas and the GA and T2A will be lighted and seasoned like 
+//* the World map. 
+//* - Added GM commands: 
+//* TimeEventOff //These are so that they can use Nuke and 
+//* TimeEventon //Tile, and other commands, 
+//* - redid Instructions so that they were easier to read. 
+//* - Settings are set to 1 day in 4 hours of real time, and 
+//* OSIT2A is turned on at start. 
+//* 
+//*1.1 
+//* Fixed several bugs with the assistance of Iron Maiden 
+//* added player command Time. 
+//* Added Admin commands: 
+//* - Timeset 
+//* - Timeon 
+//* - Timeoff 
+//* - Weatheron 
+//* - Weatheroff 
+//* 
+//*1.0 
+//* Added 
+//* - player object to change sector when crossing sector lines 
+//* - Added wordwatch event to go with object above 
+//* - Due to above two items was able to add a sector effect 
+//* Deletion line to make changes to light and weather. since 
+//* Above objects caught all changes in environment, anyway. 
+//* - reduced script size severely 
+//* Fixed more bugs 
+//* 
+//*0.9 
+//*Worked out some bugs added in gump for changing time 
+//* 
+//*0.8 
+//* Added 
+//* - Seasons 
+//* - Weather based on Season 
+//* - Ability to change number of months in a year and days in a 
+//* month 
+//* 
+//*0.7 
+//*added in the ability to change speed of time by changing 
+//*settings of seconds per minute and minute per hour. 
+//* 
+//*0.6 
+//*on suggestion added in a full calender allowing months of 
+//*the year and recording of years passage 
+//* 
+//*0.5 
+//*Added recorder for number of days. 
+//* 
+//*0.4 
+//*added the settings for light levels at different times of day 
+//*to assist in tweaking light levels. 
+//* 
+//*0.3 
+//*added basic weather obj to give random weather effects. 
+//* 
+//*0.2 
+//*added in light functions to give certain light levels, at 
+//*certain times of day. 
+//* 
+//*0.1 
+//*working obj that ran a routine to say time of day. 
+
+
+[defname worldsettings] 
+// 
+//************************************************************** 
+//*****UID SETTINGS********************************************* 
+//************************************************************** 
+// 
+UIDofWorldTime 04000aa7c //Set to UID of I_WorldTime_obj 
+UIDofWorldWeather 04000aa7b //Set to UID of I_WorldWeat_obj 
+// 
+//************************************************************** 
+//*****LIGHT SETTINGS******************************************* 
+//************************************************************** 
+// 
+Light_Midnight 26 //Light at MidNight 
+Light_Night 20 //Light before Dawn and after dusk 
+Light_Dawn 7 //Light at Dawn 
+Light_Dusk 7 //Light at Dusk 
+Light_Noon 0 //Light at Noon 
+Light_Moon_Diff 6 //Light because of Moon setting 0 
+//turns it off, varies light at midnight 
+//through a month. 
+Light_Rain_Diff 4 //Light difference because of Rain, 
+//Positive Darker, negative Brighter. 
+Light_Snow_Diff (-3)//Light difference because of Snow, 
+//Positive Darker, Negative Brighter. 
+Light_Dungeon 26 //Light in Dungeon beyond Dungeon point. 
+// 
+//************************************************************** 
+//*****TIME SETTINGS******************************************** 
+//************************************************************** 
+// 
+Time_per_Minute 10 //Time in seconds for an ingame minute. 
+Minute_per_hour 60 //There is 24 hours automatic per day. 
+Day_Per_Month 30 //Time in days of a full month, determines 
+//moon phase, so to be close to real 28 
+//would be appropriate. 
+Month_Per_Year 12 //time in Months of a full year, determines, 
+//Seasons. Each season is 1/4th year long. 
+//Works Best when number is divisible by 4. 
+// 
+//Note: a full year=(Time_Per_Day*Day_Per_Month*Month_Per_Year) 
+// 
+//************************************************************** 
+//*****RAIN SETTINGS******************************************** 
+//************************************************************** 
+// 
+Rain_Ch_Summer 20 //Chance of rain in Summer 
+Rain_Ch_Fall 30 //Chance of rain in Fall 
+Rain_Ch_Winter 35 //Chance of rain in Winter 
+Rain_Ch_Spring 40 //Chance of rain in Spring 
+// 
+//************************************************************** 
+//*****SNOW SETTINGS******************************************** 
+//************************************************************** 
+// 
+Snow_Ch_Summer 0 //Chance of snow in Summer 
+Snow_Ch_Fall 5 //Chance of snow in Fall 
+Snow_Ch_Winter 45 //Chance of snow in Winter 
+Snow_Ch_Spring 5 //Chance of snow in Spring 
+// 
+//note: weather is set up on a 1 to 100 scale, Snow is the first 
+//portion, rain the second and shine the third. If Rain+Snow is 
+//more then 100 for that season then it will never be sunny. 
+// 
+//************************************************************** 
+//*****AREA SETTINGS******************************************** 
+//************************************************************** 
+// 
+Dungeon_area_X 4096 //Point X where world map ends and 
+//Dungeons begin. 0=off 
+OSIT2A 0 //Are you using OSIT2A map, 0=off 
+//1=on Turning this on Turns off 
+//Dungeon_area_X 
+// 
+// 
+
+[Itemdef I_WorldTime_Obj] 
+NAME=World Time 
+ID=01184 
+
+//more=year 
+//More2=month 
+//MoreX=day 
+//MoreY=hour 
+//MoreZ=minute 
+//MoreM=light 
+//minute=(time_per_day)/(1440) 
+//time of day is figured (<MoreY>*Minute_per_hour)+<MoreZ> for light level 
+//Times 
+// 
+//00:00 Midnight 
+//06:00 Dawn Begin 6 hours 
+//07:00 Dawn End 1 hour 
+//12:00 Noon 5 hours 
+//19:00 Dusk Begin 7 hours 
+//20:00 Dusk End 1 hour 
+//23:59 Mdnight again 4 hour 
+// 
+on=@create 
+color=color_o_gold 
+timer=1 
+MoreM=Light_Midnight 
+
+on=@Timer 
+//Change time Routine 
+MoreZ=<MoreZ>+1 
+if <MoreZ>==Minute_per_hour 
+MoreZ=0 
+MoreY=<MoreY>+1 
+if <moreY>==24 
+MoreY=0 
+MoreX=<MoreX>+1 
+if <MoreX>==Day_Per_Month + 1 
+MoreX=1 
+More2=<More2>+1 
+if <More2>=Month_Per_Year+1 
+More2=1 
+more=<more>+1 
+Endif 
+Endif 
+Endif 
+Endif 
+
+// capture current Light Level 
+var.Light=<MoreM> 
+var.Time=<EVAL ((<MoreY>*Minute_per_hour)+<MoreZ>)> 
+
+// change Light Level routine 
+if <EVAL (<var.time>)> == 0 //Midnight 
+MoreM=Light_Midnight 
+elif <EVAL (<var.time>)> < 6*minute_per_hour //Midnight to Dawn begin 
+var.hour=<eval (6*minute_per_hour)> 
+var.bhour=0 
+var.dif=<eval (Light_Midnight + (-Light_Night))> 
+F_timelight 
+elif <EVAL (<var.time>)> == 6*minute_per_hour //Dawn begin 
+MoreM=Light_Night 
+elif <EVAL (<var.time>)> < 7*minute_per_hour //Dawn begin to Dawn End 
+var.hour=<eval (minute_per_hour)> 
+var.bhour=<eval (6*minute_per_hour)> 
+var.dif=<eval (Light_Night + (-Light_Dawn))> 
+F_timelight 
+elif <EVAL (<var.time>)> == 7*minute_per_hour //Dawn End 
+MoreM=Light_Dawn 
+elif <EVAL (<var.time>)> < 12*minute_per_hour //Dawn end to Noon 
+var.hour=<eval (5*minute_per_hour)> 
+var.bhour=<eval (7*minute_per_hour)> 
+var.dif=<eval (Light_Dawn + (-Light_Noon))> 
+F_timelight 
+elif <EVAL (<var.time>)> == 12*minute_per_hour //Noon 
+MoreM=Light_Noon 
+elif <EVAL (<var.time>)> < 19*minute_per_hour //Noon to Dusk Begin 
+var.hour=<eval (7*minute_per_hour)> 
+var.bhour=<eval (12*minute_per_hour)> 
+var.dif=<eval (Light_Dusk + (-Light_Noon))> 
+F_timedark 
+elif <EVAL (<var.time>)> == 19*minute_per_hour //Dusk Begin 
+MoreM=Light_Dusk 
+elif <EVAL (<var.time>)> < 20*Minute_per_hour //Dusk Begin to Dusk End 
+var.hour=<eval (minute_per_hour)> 
+var.bhour=<eval (19*minute_per_hour)> 
+var.dif=<eval (Light_Night + (-Light_Dusk))> 
+F_timedark 
+elif <EVAL (<var.time>)> == 20*Minute_per_hour //Dusk End 
+MoreM=Light_Night 
+else 
+var.hour=<eval (4*minute_per_hour)> 
+var.bhour=<eval (20*minute_per_hour)> 
+var.dif=<eval (Light_Midnight + (-Light_Night))> 
+F_timedark 
+Endif 
+
+//check for valid light level 
+if <MoreM> == 31 
+MoreM=30 
+elif <MoreM> > 31 
+MoreM=0 
+endif 
+
+// check if light level has changed, if so reset all sectors 
+if <eval <var.light>> != <eval <MoreM>> 
+REGION.SECTORS LIGHT 
+endif 
+
+
+// set Timer to realworld seconds per minute 
+Timer=Time_per_minute 
+if <Timer> < 1 
+Timer=1 
+Endif 
+Return 1 
+
+on=@click 
+Say The Time is <eval <MoreY>>:<eval <MoreZ>>. 
+return 1 
+
+on=@dclick 
+Say The Time is <eval <MoreY>>:<eval <MoreZ>>. 
+IF <SRC.ACCOUNT.PLEVEL> > 5 
+DIALOG WORLDTIME 
+ENDIF 
+return 1 
+
+[ITEMDEF i_WorldWeather_OBJ] 
+NAME=Stone of Weather 
+ID=01184 
+
+// 
+//More=chance of weather 
+//More2=Light provided by moon 
+//MoreX=weather 
+//MoreY=Season 0 Spring 1 Summer 2 Fall 3 Winter 
+//MoreZ= 
+//MoreM=Months pre season 
+// 
+
+on=@create 
+color=color_o_gold 
+timer=1 
+MoreM=0 
+
+on=@Timer 
+Timer={ 60 600 } 
+More={ 1 100 } 
+MoreM=month_per_year/4 
+If <eval <src.uid.UIDofWorldTime.More2>> <= <eval <MoreM>> 
+MoreY=0 
+if <eval <more>> <= <eval (Rain_Ch_Spring)> 
+MoreX=1 
+elif <eval <more>> <= <eval (Rain_Ch_Spring + Snow_Ch_Spring)> 
+MoreX=2 
+else 
+MoreX=0 
+endif 
+elif <eval <src.uid.UIDofWorldTime.More2>> <= <eval (<MoreM>*2)> 
+MoreY=1 
+if <eval <more>> <= <eval (Rain_Ch_Summer)> 
+MoreX=1 
+elif <eval <more>> <= <eval (Rain_Ch_Summer + Snow_Ch_Summer)> 
+MoreX=2 
+else 
+MoreX=0 
+endif 
+elif <eval <src.uid.UIDofWorldTime.More2>> <= <eval (<MoreM>*3)> 
+MoreY=2 
+if <eval <more>> <= <eval (Rain_Ch_Fall)> 
+MoreX=1 
+elif <eval <more>> <= <eval (Rain_Ch_Fall + Snow_Ch_Fall)> 
+MoreX=2 
+else 
+MoreX=0 
+endif 
+elif <eval <src.uid.UIDofWorldTime.More2>> <= <eval (<MoreM>*4)> 
+MoreY=3 
+if <eval <more>> <= <eval (Rain_Ch_Winter)> 
+MoreX=1 
+elif <eval <more>> <= <eval (Rain_Ch_Winter + Snow_Ch_Winter)> 
+MoreX=2 
+else 
+MoreX=0 
+endif 
+endif 
+
+var.halfM=<eval ((day_per_month) / 2)> 
+elif <eval <src.uid.UIDofWorldTime.MoreX>> == 1 // New Moon 
+More2=0 
+elif <eval <src.uid.UIDofWorldTime.morex>> < <eval <var.halfM>> // Waxing Moon 
+more2=<eval (Light_moon_diff*(<var.halfM> + (-<src.uid.UIDofWorldTime.morex>)))> / <eval <var.halfM>> 
+elif <src.uid.UIDofWorldTime.MoreX> == <Var.HalfM> // Full Moon 
+More2=Light_moon_diff 
+elif <eval <src.uid.UIDofWorldTime.morex>> > <eval <var.halfM>> // Waning Moon 
+more2=<eval (Light_moon_diff*(<src.uid.UIDofWorldTime.morex> + (-<var.halfM>)))> / <eval <var.halfM>> 
+endif 
+more2=<eval (Light_moon_diff)> 
+
+//Tell everyone to recheck their light and weather 
+REGION.SECTORS LIGHT 
+
+return 1 
+
+[ITEMDEF I_PlayerTime_Mem] 
+ID=i_HANDR_1 
+NAME=Time and Weather Memory 
+type=t_eq_script 
+weight=0 
+layer=30 
+
+ON=@CREATE 
+TIMER=1 
+
+on=@equip 
+timer=1 
+src.events +e_worldwatch 
+return 0 
+
+on=@timer 
+timer=-1 
+return 1 
+
+on=@dclick 
+// turn of world watch(kills a loop bug) 
+src.events -e_worldwatch 
+// Check for use of OSI/T2A map 
+if (<eval <(OSIT2A)>==1 
+MoreP=<src.P> 
+if (<MoreX> > 5120) && (<moreY> < 2046) 
+if (<MoreY> > 256) && (<moreY> < 512) && (<moreX> < 5376) 
+elif (<MoreY> > 512) && (<moreY> < 1278) && (<moreX> > 5888) 
+elif (<MoreY> > 1080) && (<moreY> < 1278) && (<moreX> > 5376) && (<moreX> < 5630) 
+elif (<MoreY> > 1024) && (<moreY> < 1278) && (<moreX> > 5630) && (<moreX> < 5888) 
+elif (<MoreY> > 1536) && (<moreY> < 1774) && (<moreX> > 5376) 
+elif (<MoreY> > 1774) && (<moreX> > 5630) 
+else 
+src.sector.light <eval (light_dungeon)> 
+src.events +e_worldwatch 
+return 1 
+endif 
+endif 
+
+// first Dungeon area check 
+if (<eval <(OSIT2A)>==0) && (<eval (Dungeon_Area_X)>!=0) 
+moreP=<src.P> 
+if (<eval <moreX>> > <eval (Dungeon_Area_X)>) 
+src.sector.light <eval (light_dungeon)> 
+src.events +e_worldwatch 
+return 1 
+endif 
+// World Map 
+// Gather variables from World time and weather 
+var.moonlight=<src.uid.UIDofWorldWeather.More2> 
+var.weather=<src.uid.UIDofWorldWeather.MoreX> 
+var.light=<src.uid.UIDofWorldTime.MoreM> 
+var.time=<EVAL (<src.uid.UIDofWorldTime.MoreY>)> 
+var.season=<EVAL (<src.uid.UIDofWorldWeather.MoreY>)> 
+
+// Routine to make weather changes 
+if <eval <var.weather>>==1 
+src.sector.rain 
+Var.light=<eval <Var.Light>> + <eval (Light_Rain_diff)> 
+elif <eval <var.weather>>==2 
+src.sector.Snow 
+Var.light=<eval <Var.Light>> + <eval (Light_Snow_diff)> 
+else 
+src.sector.Dry 
+endif 
+
+//Routine to change season 
+src.sector.season <eval <Var.Season>> 
+
+// Routine to add in Moonlight 
+if (<eval <Var.time>> < 7) || (<eval <Var.time>> => 19 ) 
+Var.light=<eval <Var.Light>> + (-<eval <var.moonlight>>) 
+endif 
+
+// Routine to check light, see if its in proper range 
+If <eval <Var.Light>> > Light_midnight 
+Var.Light=Light_midnight 
+elif <eval <var.Light>> < 0 
+Var.light=0 
+endif 
+
+// Set Light level 
+src.sector.light <eval <Var.light>> 
+// Set Season 
+src.sector.season <eval <Var.Season>> 
+
+
+endif 
+// turn on World Watch 
+src.events +e_worldwatch 
+
+return 1 
+
+[events e_worldwatch] 
+
+on=@environchange 
+src.findid(I_playertime_Mem).useitem 
+return 0 
+
+[function F_timelight] 
+if <eval ((<Var.Bhour>)+((<var.hour>*1)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*2)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*3)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*4)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*5)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*6)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*7)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*8)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*9)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*10)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*11)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*12)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*13)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*14)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*15)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*16)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*17)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*18)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*19)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*20)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*21)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*22)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*23)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*24)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*25)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*26)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*27)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*28)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*29)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(-1) 
+endif 
+
+[function F_timedark] 
+if <eval ((<Var.Bhour>)+((<var.hour>*1)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*2)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*3)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*4)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*5)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*6)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*7)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*8)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*9)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*10)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*11)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*12)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*13)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*14)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*15)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*16)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*17)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*18)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*19)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*20)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*21)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*22)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*23)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*24)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*25)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*26)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*27)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*28)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+elif <eval ((<Var.Bhour>)+((<var.hour>*29)/<var.dif>))> == <eval (<var.time>)> 
+MoreM=<MoreM>+(1) 
+endif 
+
+[DIALOG WORLDTIME] 
+50,50 
+page 0 
+resizepic 25 0 2600 500 380 
+resizepic 45 60 5100 450 25 
+text 175 25 995 0 
+TEXT 65 60 0 1 
+TEXT 300 60 0 2 
+button 410 338 247 248 1 0 1 
+TEXT 225 100 0 3 
+TEXT 225 140 0 4 
+TEXT 225 180 0 5 
+TEXT 225 220 0 6 
+TEXT 225 260 0 7 
+button 175 100 5600 5604 1 0 2 
+button 200 100 5602 5606 1 0 3 
+button 175 140 5600 5604 1 0 4 
+button 200 140 5602 5606 1 0 5 
+button 175 180 5600 5604 1 0 6 
+button 200 180 5602 5606 1 0 7 
+button 175 220 5600 5604 1 0 8 
+button 200 220 5602 5606 1 0 9 
+button 175 260 5600 5604 1 0 10 
+button 200 260 5602 5606 1 0 11 
+
+[DIALOG WORLDTIME TEXT] 
+WORLD TIME MENU 
+DATE: <EVAL <SRC.UID.UIDOFWORLDTIME.MOREX>> - <EVAL <SRC.UID.UIDOFWORLDTIME.MORE2>> - <EVAL <SRC.UID.UIDOFWORLDTIME.MORE>> 
+TIME: <EVAL <SRC.UID.UIDOFWORLDTIME.MOREY>> : <EVAL <SRC.UID.UIDOFWORLDTIME.MOREZ>> 
+Year: <EVAL <SRC.UID.UIDOFWORLDTIME.MORE>> 
+Month: <EVAL <SRC.UID.UIDOFWORLDTIME.MORE2>> 
+Day: <EVAL <SRC.UID.UIDOFWORLDTIME.MOREX>> 
+Hour: <EVAL <SRC.UID.UIDOFWORLDTIME.MOREY>> 
+Minute: <EVAL <SRC.UID.UIDOFWORLDTIME.MOREZ>> 
+
+[DIALOG WORLDTIME BUTTON] 
+ONBUTTON=0 
+ONBUTTON=1 
+ONBUTTON=2 // YEAR UP ONE 
+SRC.UID.UIDOFWORLDTIME.MORE=<EVAL <SRC.UID.UIDOFWORLDTIME.MORE>> + (1) 
+DIALOG WORLDTIME 
+ONBUTTON=3 // YEAR DOWN ONE 
+SRC.UID.UIDOFWORLDTIME.MORE=<EVAL <SRC.UID.UIDOFWORLDTIME.MORE>> + (-1) 
+IF <SRC.UID.UIDOFWORLDTIME.MORE> < 1 
+SRC.UID.UIDOFWORLDTIME.MORE=1 
+ENDIF 
+DIALOG WORLDTIME 
+ONBUTTON=4 // MONTH UP ONE 
+SRC.UID.UIDOFWORLDTIME.MORE2=<EVAL <SRC.UID.UIDOFWORLDTIME.MORE2>> + (1) 
+IF <SRC.UID.UIDOFWORLDTIME.MOREX> > MONTH_PER_YEAR 
+SRC.UID.UIDOFWORLDTIME.MOREX = MONTH_PER_YEAR 
+ENDIF 
+DIALOG WORLDTIME 
+ONBUTTON=5 // MONTH DOWN ONE 
+SRC.UID.UIDOFWORLDTIME.MORE2=<EVAL <SRC.UID.UIDOFWORLDTIME.MORE2>> + (-1) 
+IF <SRC.UID.UIDOFWORLDTIME.MORE2> < 1 
+SRC.UID.UIDOFWORLDTIME.MORE2=1 
+ENDIF 
+DIALOG WORLDTIME 
+ONBUTTON=6 // DAY UP ONE 
+SRC.UID.UIDOFWORLDTIME.MOREX=<EVAL <SRC.UID.UIDOFWORLDTIME.MOREX>> + (1) 
+IF <SRC.UID.UIDOFWORLDTIME.MOREX> > DAY_PER_MONTH 
+SRC.UID.UIDOFWORLDTIME.MOREX = DAY_PER_MONTH 
+ENDIF 
+DIALOG WORLDTIME 
+ONBUTTON=7 // DAY DOWN ONE 
+SRC.UID.UIDOFWORLDTIME.MOREX=<EVAL <SRC.UID.UIDOFWORLDTIME.MOREX>> + (-1) 
+IF <SRC.UID.UIDOFWORLDTIME.MOREX> < 1 
+SRC.UID.UIDOFWORLDTIME.MOREX=1 
+ENDIF 
+DIALOG WORLDTIME 
+ONBUTTON=8 // HOUR UP ONE 
+SRC.UID.UIDOFWORLDTIME.MOREY=<EVAL <SRC.UID.UIDOFWORLDTIME.MOREY>> + (1) 
+IF (<EVAL <SRC.UID.UIDOFWORLDTIME.MOREY>> > 23) 
+SRC.UID.UIDOFWORLDTIME.MOREY=23 
+ENDIF 
+DIALOG WORLDTIME 
+ONBUTTON=9 // HOUR DOWN ONE 
+SRC.UID.UIDOFWORLDTIME.MOREY=<EVAL <SRC.UID.UIDOFWORLDTIME.MOREY>> + (-1) 
+IF (<SRC.UID.UIDOFWORLDTIME.MOREY> < 0) 
+SRC.UID.UIDOFWORLDTIME.MOREY=0 
+ENDIF 
+DIALOG WORLDTIME 
+ONBUTTON=10 // MINUTE UP ONE 
+SRC.UID.UIDOFWORLDTIME.MOREZ=<EVAL <SRC.UID.UIDOFWORLDTIME.MOREZ>> + (1) 
+IF <SRC.UID.UIDOFWORLDTIME.MOREZ> == (MINUTE_PER_HOUR) 
+SRC.UID.UIDOFWORLDTIME.MOREZ=<EVAL (MINUTE_PER_HOUR + (-1))> 
+ENDIF 
+DIALOG WORLDTIME 
+ONBUTTON=11 // MINUTE DOWN ONE 
+SRC.UID.UIDOFWORLDTIME.MOREZ=<EVAL <SRC.UID.UIDOFWORLDTIME.MOREZ>> + (-1) 
+IF (<SRC.UID.UIDOFWORLDTIME.MOREZ> < 0) 
+SRC.UID.UIDOFWORLDTIME.MOREZ=0 
+ENDIF 
+DIALOG WORLDTIME 
+
+[FUNCTION TIME] 
+if <eval <src.uid.uidofworldtime.moreZ>> > 9 
+Say The Time is - <EVAL <SRC.UID.UIDOFWORLDTIME.MOREY>>:<EVAL <SRC.UID.UIDOFWORLDTIME.MOREZ>> 
+else 
+Say The Time is - <EVAL <SRC.UID.UIDOFWORLDTIME.MOREY>>:0<EVAL <SRC.UID.UIDOFWORLDTIME.MOREZ>> 
+endif 
+
+[FUNCTION TIMESET] 
+DIALOG WORLDTIME 
+
+[FUNCTION TIMEOFF] 
+SRC.UID.UIDOFWORLDTIME.TIMER=-1 
+
+[FUNCTION TIMEON] 
+SRC.UID.UIDOFWORLDTIME.TIMER=1 
+
+[FUNCTION WEATHEROFF] 
+SRC.UID.UIDOFWORLDWEATHER.TIMER=-1 
+
+[FUNCTION WEATHERON] 
+SRC.UID.UIDOFWORLDWEATHER.TIMER=1 
+
+[FUNCTION TIMEEVENTOFF] 
+SRC.EVENTS -E_WORLDWATCH 
+
+[FUNCTION TIMEEVENTON] 
+SRC.EVENTS +E_WORLDWATCH 
+
+[PLEVEL 1] 
+TIME 
+
+[PLEVEL 4] 
+TIMEEVENTOFF 
+TIMEEVENTON 
+
+[PLEVEL 6] 
+TIMESET 
+TIMEOFF 
+TIMEON 
+WEATHEROFF 
+WEATHERON 
+
+[ITEMDEF 0e75] 
+DEFNAME=i_backpack 
+RESOURCES=4 i_hides_cut 
+TYPE=T_CONTAINER 
+TDATA2=03c 
+FLIP=1 
+DYE=1 
+WEIGHT=3 
+CATEGORY=Provisions - Miscellaneous 
+SUBSECTION=Containers 
+DESCRIPTION=Backpack 
+SKILLMAKE=TAILORING 15.0, t_sewing_kit 
+RESOURCES2=10 i_hide 
+
+on=@dclick 
+if !(<src.findid.I_playertime_mem>) 
+src.newitem=I_playertime_mem 
+src.act.equip 
+src.events +e_worldwatch 
+endif 
+return 0 
+
+[EOF] 

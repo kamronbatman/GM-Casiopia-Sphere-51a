@@ -1,0 +1,2753 @@
+//****************************************************************************
+//SPHERE by : Menasoft �1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+// These are the original speech files that were distributed with the server.  
+// They are being merged into the new reputation system found in speech.zip 
+// distributed with this server.  In the future this file will not be included
+// with releases.
+
+[0448]
+//MAGINCIA COUNCIL MEMBER
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Yes, yes, hello.  Now what was I saying?
+ON=Job
+ON=What do you do
+SAY=Oh, you again.  I'm a Council Member of this beautiful city.  Now where was I?
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Yes, goodbye already.  Hmm... where did I leave my notes?
+ON=PARLIAMENT
+SAY=Hmm?  The parliament is meeting...right now!  I must hurry!
+ON=FIND
+ON=BUSY
+SAY=Please excuse me, I'm very busy.
+ON=NOTES
+SAY=Ah, you mean my latest speech... I believe it may be in my chambers.  Oh where is that blasted servant?
+//RANDOM=*ahem* Citizens, isn't the maintaining the beauty of Magincia of utmost importance?
+
+
+
+[0460]
+//NOBLE
+DEFAULT=Thy accent is unknown to me.  Mightest thou speak more clearly?
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I am a noble.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=ARE YOU WELL
+ON=HOW ARE YOU
+ON=ART THOU WELL
+ON=HOW ART THEE
+ON=HOW ART THOU
+SAY=Ah, I am very well indeed.  How art thou?
+ON=MONEY
+ON=WEALTHY BLUE BLOOD
+ON=BLUE-BLOOD
+ON=WHAT IS YOUR
+ON=DIAMOND
+ON=GOLD
+SAY=Thou art impertinent!
+ON=IMPORTANT
+SAY=I daresay I am counted among this town's elite.
+//RANDOM=Ah, another lovely day... I wonder if father has died and left me the inheritance yet?
+
+[0462]
+//OCLLO CASHUAL
+DEFAULT=We are not amused.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=We allow thee to greet us.
+ON=Job
+ON=What do you do
+SAY=Dost thou fail to realize thee is in the presence of our greatness?
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Thou may leave.
+ON=BOOK
+SAY=Book?  We are astonished thou can read!
+ON=CASHUAL
+SAY=Art thou so unlearned?  Cashuals are most powerful mages of Ocllo, and lady mages even more revered!
+ON=MAGE
+ON=MAGERY
+ON=MAGIC
+ON=POTION
+ON=REAGENT
+ON=SCROLL
+ON=SPELL
+SAY=Our magic is the highest form of living, and is responsible for all the benefits in this utopian society.
+ON=SKILL
+SAY=We hold the skills of magery in highest esteem.
+ON=WOMEN
+ON=LADY
+ON=WOMAN
+SAY=Dost thou not realize our founding mothers are credited with all thou see?
+//RANDOM=Ah, to be a woman, the highest status in the land!
+
+[0464]
+//OCLLO PRIEST
+DEFAULT=My friend, you must listen!
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=In the name of my God, I greet thee!
+ON=Job
+ON=What do you do
+SAY=I am dedicated to spreading the words of my God.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=May you find your salvation in the arms of my Lord.
+ON=ARPANA
+SAY=Ah, they are the highest in our society, especially women.  Of course, my God allows this.
+ON=GOD
+SAY=Truly, worshipping my God is the key to salvation! Thou will join me in a prayer?
+ON=HUANSUYTIN
+SAY=Ah, thou speak of an Ocllo resident?
+ON=PRIEST
+SAY=Priests are dedicated to God.
+//RANDOM=Willt thou not join me in prayer?
+
+[0466]
+//OCLLO RUNNER
+DEFAULT=It does not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=It greets thee.
+ON=Job
+ON=What do you do
+SAY=It is but property of the Arpana.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=ARPANA
+ON=MISTRESS
+ON=LADY
+SAY=It's lady is its mistress, one the elite Arpana of Ocllo society.
+ON=CASHUAL
+SAY=Cashuals are Ocllo mages.
+ON=MESSAGE
+ON=RUNNER
+SAY=It takes messages to its mistress.
+//RANDOM=It must hurry to carry out its instructions.
+
+[0468]
+//PEASANT
+DEFAULT=Eh?
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Oh. Beg yer pardon.
+ON=Job
+ON=What do you do
+SAY=I does what I can.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Eh.
+//RANDOM=I'm minding my own business.
+
+
+[0476]
+//SCRIBE
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I record history and tales of adventure.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=INK
+SAY='Tis the finest ink in all the land!
+ON=KNOWLEDGE
+SAY=Knowledge is the spring from which civilization flows.
+ON=OPPRESSOR
+SAY=Oppressor?  'Tis those damn scholars...
+ON=SCHOLAR
+SAY=Arrogant fools. They believe they are the only ones that can think.
+ON=SCRIBE
+SAY=Without scribes all civilization would fail!  We are the cradle of all learning!
+ON=SCROLL
+SAY=Damn scholars want us to copy scroll after scroll after...
+ON=WISDOM
+SAY=Sometimes I wonder if there is any wisdom in the world left.
+//RANDOM=All I want is ten minutes with any damn scholar in the Jhelom arena...
+
+[0478]
+//SCULPTOR
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Hail! Wouldst thou care to be immortalized in stone?
+ON=Job
+ON=What do you do
+SAY=I create statues so lifelike, you'd swear you saw 'em breathe!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell.
+ON=CARVE
+SAY=Carve?  Faugh!  You make my art sound like a turkey dinner...
+ON=SCULPT
+SAY=You want me to sculpt you?  Let's hope it erodes quickly...
+ON=STATUE
+SAY=Some of my best work is statues!  Of course, I have been known to moonlight as a waiter - for the inspiration of course.
+//RANDOM=Anyone want a sculpture?  Please?  Please?!?
+
+[0480]
+//SHEPHERD
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I tend the lovely, happy sheep.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Good day to thee!
+ON=SHEEP
+SAY=The sheep appear nervous today.  Wonder why...
+ON=SHEPHERD
+SAY='Tis the noblest profession in Britannia, it is...
+//RANDOM=Ahhh, sheep!  My favorite animal...  *eyes glaze over*
+
+[0482]
+//TANNER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Yes? What can I do for you?
+ON=Job
+ON=What do you do
+SAY=I make sturdy, long lasting armor and packs from the finest hides.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=BACKPACK
+SAY=My backpacks are well made.  You'll never need another, trust me!
+ON=FUR
+SAY=Fur will keep you warmest in the northern snowy climes.
+ON=GLOVES
+SAY=Making gloves is an exacting science.  So many fingers to fit, each one different from the next!
+ON=HIDE
+SAY=Hide?  Hide!  Quick, under the furs! They'll never find us!  A little joke, friend.
+ON=POUCH
+SAY=Hey! I am in perfect shape!! Why you...
+//RANDOM=Have you seen that cute banker in Trinsic? Boy, I'd like to tan her hide!
+
+[0484]
+//VEGETABLE SELLER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings, good traveler!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Good day to you.
+ON=job
+ON=what do you do
+SAY=I sell vegetables.  You might say I'm a purveyor of health!
+ON=CROPS
+SAY=Farming is not an easy life, but I love it.  I have the best crops for sale.
+ON=FARM
+SAY=I grow all of my own vegetables.  I will sell them at a fair price.
+ON=PLOWSHARE
+ON=HOE
+ON=PLOW
+SAY=Tools of the trade, friend.
+ON=RODENTS
+SAY=They are a plague, please kill all that you see.
+ON=TOOLS
+SAY=Tools may be purchased from other merchants in the area.
+ON=VERMIN
+SAY=A word of caution traveler, there are worse vermin than rodents in this region.
+//RANDOM=Do you know that vegetables and a rabbit make a fine stew?
+
+[0486]
+//VETERINARIAN
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Hello, do you have a pet in need of help?
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell.
+ON=job
+ON=what do you do
+SAY=If your animal is hurt, bring him to me and you'll soon be traveling happily together again.
+ON=BEAR
+SAY=Bears can be ferocious.  I have even heard large white bears live in far northern regions.
+ON=BIRD
+SAY=Birds provide meat for citizens, and feathers for archers.
+ON=BUY
+SAY=Some animals may be purchased from local stables or freelance animal trainers.
+ON=CAT
+SAY=It is the larger cats one should be wary of.  They will attack at the slightest provocation.
+ON=INJURED
+ON=HURT
+ON=POISON
+ON=CURE
+SAY=I treat animals for a living.  Remember that it is unwise to harm pets.
+ON=DOG
+SAY=Dogs are good traveling companions, but not very useful for protection against larger creatures.
+ON=DRAGON
+SAY=Few have reported being attacked by a dragon.  That may be because few survive such an attack.
+ON=STEED
+ON=HORSE
+SAY=Horses may be trained in the wild by experienced animal trainers or purchased.  Never forget to feed your horse, or you may find yourself without a ride one day.
+ON=LLAMA
+SAY=Llamas are beasts of burden.  Their hides and meat have value also.
+ON=MOUNT
+SAY=Once tamed, a horse will allow a rider to mount and unmount at will.
+ON=MULE
+SAY=It is an ornery beast of burden.
+ON=PET
+SAY=Most animals may be trained as pets if you are skillful enough.  If you treat them well, they will help you in your travels.
+ON=POTION
+ON=POTIONS
+SAY=Potions may be purchased from healers and alchemists.
+ON=RESURRECTION
+ON=RESURRECT
+ON=RAISE<ANY>DEAD
+SAY=I am afraid that is in the realm of magic, not medicine.
+ON=VENOM
+ON=TOXIN
+SAY=Toxins and venom cause poisoning.  Poisoning may be cured using potions.
+ON=VET
+SAY=I am a veterinarian by trade.  Man I help you?
+//RANDOM=People must learn to care for their pets.  Too many pets are ill treated or injured!
+
+[0488]
+//WAITER/WAITRESS
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Hello, I am at your service.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell.  Tips are gladly accepted!
+ON=job
+ON=what do you do
+SAY=I serve up the best food and drink in the land.
+ON=ALE
+ON=CIDER
+SAY=We serve the finest you will ever taste!
+ON=DRINK
+SAY=Might I suggest our fine ale?
+ON=FOOD
+SAY=Our ale will go well with any type of food.
+ON=SERVER
+SAY=I am your server today, how may I help you?
+ON=SERVICE
+SAY=So you want service do you?  Well then, order up stranger.
+ON=WAITER
+SAY=Would you like to start the evening with some fine ale?
+ON=WAITPERSON
+SAY=OK, I will wait, but stop calling me person.
+ON=WINE
+SAY=Yes we do have wine.  Oh, and fine ale as well.
+//RANDOM=Join me in a song?  99 bottles of ale on the wall, 99 bottles of ale...
+
+
+[0498]
+//GUILDMASTER of Arcane Arts (Guildmaster Mage's responses are the same as
+DEFAULT=I do not understand thee.
+ON=Hi
+ON=Hail
+ON=Hello
+ON=Greet
+SAY=Yes?
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=You may leave.
+ON=job
+ON=What do you do
+SAY=I teach the arcane arts.
+ON=ABBEY
+SAY=Oh, I haven't been to my abbey in ages.
+ON=ABILITIES
+ON=ABILITY
+SAY=One must have a born propensity for magic, a natural ability if you will.
+ON=ARCANE
+ON=ART
+SAY=The arcane art is one of keeping mystical secrets.
+ON=CAST
+ON=CASTING
+SAY=Just close your eyes, say the words, and visualize.  You may need your Spellbook for assistance.
+ON=COMPONENT
+SAY=Reagents and a heavy spellbook are all the components one needs.
+ON=CRAFT
+SAY=The craft of a mage takes many years to learn.
+ON=DES MANI
+SAY=The words to weaken an opponent.
+ON=EMPATH
+SAY=I know not what someone feels nor do I wish to.
+ON=ETHER
+SAY=I have heard rumors of ether, but have never seen it myself.
+ON=IN LOR
+SAY=Night Sight is very handy when reagent hunting.
+ON=IN MANI
+SAY=You shall hear these words quite often on a battlefield.
+ON=IN MANI YLEM
+SAY=No, I am not very hungry.
+ON=IN POR YLEM
+SAY=Beginning mages use this spell quite often.
+ON=INGREDIENTS
+SAY=Which reagent are you referring to?
+ON=REAGENT
+SAY=Reagents are the basis for all magic.
+ON=REL WIS
+SAY=The Feeblemind spell truly isn't that useful.
+ON=RELVINIAN
+SAY=I think you have been in the sun too long.
+ON=SCROLL
+SAY=Oh yes, always carry a few extra scrolls.  One never knows.
+ON=SKILL
+SAY=One needs to dedicate himself to the arcane arts to acquire great skill.
+ON=SPELL
+SAY=One can never practice any spell enough.
+ON=SPELL BOOKS
+ON=SPELLBOOKS
+ON=SPELLS
+SAY=Never leave town without your spellbook.
+ON=TALENT
+SAY=I feel that one must have a natural talent when it comes to casting spells.
+ON=UUS JUX
+SAY=Clumsy is one of the first spells that one learns.  Quite easy to cast.
+ON=WHERE<ANY>MONKS
+SAY=Why ask me of monks?  I am a Mage.
+ON=WIS UUS
+SAY=I believe that you mean Uus Wis.  Get it straight.
+ON=WORDS OF POWER
+SAY=One must learn all the secret words of power.
+ON=MASTER
+SAY=One usually bows before asking me questions.
+ON=GUILD
+SAY=Does thou think that just anyone can join?
+ON=JOIN
+SAY=You may be worthy.  And if you have enough gold.
+//RANDOM=The arcane arts are the greatest knowledge.
+
+[0500]
+//COOK
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hello
+ON=Hail
+ON=Greet
+SAY=Hello there. You look hungry, friend.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell and eat hearty!
+ON=job
+ON=what do you do
+SAY=I delight in the culinary arts!
+ON=BACON
+SAY=Bacon and eggs?  The breakfast of champions!
+ON=BEEF
+SAY=Oh, I loves beef.  Can eat it for days, I can.
+ON=BREAD
+SAY=That's right.  Put meat between some bread.  I call it a sandwich.
+ON=CAKE
+SAY=Ah, a nice piece of cake after a good meal.  Now that's livin'.
+ON=CHICKEN
+SAY=Oh, use a little mushrooms and cheese to perk that dish right up.
+ON=CONSUMPTION
+SAY=Is that a sickness?  I hope I don't catch it.
+ON=COOK
+SAY=I am the best Cook in all the lands!
+ON=CRAFT
+SAY=A crafty cook is the best cook.  Gotta know just how much salt to add.
+ON=FISH
+SAY=They say fish is brain food.  Never helped me.
+ON=FLOUR
+SAY=Roll some fish in Flour and a little milk.  If you fry it, you'll have a crunchy meal!
+ON=FOOD
+SAY=What type a food ya have a hankerin' for?
+ON=HAM
+SAY=It's very important that you trim most of the fat off the ham after it's done.
+ON=INGREDIENT
+SAY=Cayenne pepper is the most sought after ingredient of all of Britannia.
+ON=MEAL
+SAY=Lots of meat, a nice side dish and a bit of cake is all ya need for a good meal.
+ON=MEALS
+SAY=Cheese makes a decent meal when you're traveling far.  It keeps well.
+ON=MEAT
+SAY=I prefer beef to fish, but that's just me.
+ON=OVEN
+SAY=Oh yes, I've burned me arms on this oven plenty of times.
+ON=PASTRY
+SAY=A nice tart is what dreams are made of.
+ON=PORK
+SAY=Ah, the other white meat.  A bit salty for my tastes.
+ON=ROAST
+SAY=The key to a good roast is the seasonings.
+ON=SKILL
+SAY=The best skill is learn not to burn your food.
+ON=SWEETS
+SAY=The ladies love the sweets.  That's why I cook 'em.
+ON=VEGETABLES
+SAY=You can do so much with a nice potato or tomato.
+ON=WHAT<ANY>YOU<ANY>COOK
+SAY=If it's dead, I can cook it.  Maybe even half dead.
+//RANDOM=Sure, swords and magic are nice, but everyone has to eat.
+
+[0502]
+//WEAVER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hello
+ON=Hail
+ON=Greet
+SAY=Hello there. You look hungry, friend.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell and eat hearty!
+ON=job
+ON=what do you do
+SAY=From simple strands of thread I create beautiful cloth.
+ON=CLOTH
+SAY=Oh, we just got in some fabulous cloth from Nujel'm the other day.
+ON=COTTON
+SAY=Cotton is very durable.  But careful, it shrinks.
+ON=DYE
+SAY=Oh, thou would look magnificent in red, or maybe a soft green!
+ON=LOOM
+SAY=The Loom is looming over there.  Oh la! I aren't the funny one?
+ON=WEAVE
+SAY=Weaving takes a delicate touch.
+ON=SILK
+SAY=Fine silk is rare in these parts, I'm afraid.
+ON=WOOL
+SAY=Oh, I hate wool.  Sheep are so filthy.  Give me silk any day.
+ON=YARN
+SAY=You can make much from a yarn.  Perhaps a pretty scarf to go with your plate armor?
+//RANDOM=Do these make me look fat?  This really isn't my color anyway.
+
+[0504]
+//GUILDMASTER Clothier
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings, lovely friend!
+ON=Job
+ON=What do you do
+SAY=I am the best clothier in the land!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Until we meet again...
+ON=CLOTH
+SAY=I offer only the finest cloth, in simply divine colors!
+ON=COTTON
+SAY=Thou may even use cotton to make a nice pair of pants. Very breathable, but it may shrink in the rain.
+ON=DYE
+SAY=Thou wouldst look regal in purple.
+ON=LOOM
+SAY=The loom takes so long.  Patience is definitely a virtue.
+ON=WEAVE
+SAY=No, this is my natural hair.  Why dost thou ask?
+ON=WOOL
+SAY=Sheep are such filthy animals, but wool makes wonderful tunics.
+ON=YARN
+SAY=Oh, I make things with yarn all the time.
+ON=GUILD
+ON=JOIN
+SAY=I recommend thou develop a sense of color first.
+ON=MASTER
+SAY=I'm am a master of cloth, color, and all things frilly.
+//RANDOM=Honey, let's talk wardrobe.  Thou needst something mayhap... more slimming?
+
+[0506]
+//TAILOR
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I am a tailor, friend. I make sturdy, practical clothing for adventurers.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=APRON
+SAY=Big, burly blacksmiths wear these types of aprons.
+ON=CAPE
+ON=COAT
+SAY=Everyone should have a cape.  It completes the whole look.
+ON=CLOTH
+ON=CLOTHES
+ON=CLOTHING
+SAY=Clothes express who thou are.  And thou... has a few issues...
+ON=CLOTHIER
+SAY=Oh, that's just a way fancy tailor.
+ON=DRESS
+SAY=Funny that thou mentions that.  I just made a lovely dress of silk.
+ON=GARMENT
+SAY=What type of garment does thou speak of?
+ON=KILT
+SAY=I have kilts in plaid and... well... plaid.
+ON=PANT
+SAY=I can tailor any pants that thou has.
+ON=ROBE
+SAY=Robes are very popular these days.
+ON=SEW
+SAY=Of course I can sew.  What a silly question!
+ON=SHAWL
+SAY=Shawls are for grandmothers.  Thou needs a cape.
+ON=SHIRT
+SAY=I do have a few fine silk shirts.
+ON=SKILL
+ON=THREAD
+SAY=I can sew up any item you wish.  Perhaps a nice beret or sash then?
+ON=SKIRT
+SAY=A well made skirt can really catch the eye.  If that's the look thou desires...
+ON=TAILOR
+SAY=Of course I'm a Tailor.  It was my calling in life.
+ON=VEST
+SAY=I don't care for vests, they make me look pudgy.
+//RANDOM=Thread, buttons and bows.  Tailoring isn't job, but a calling.
+
+[0508]
+//BARD
+DEFAULT=Perhaps things would be fine if thou spokest in a rhyme?
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Hail!
+ON=Job
+ON=What do you do
+ON=BARD
+SAY=I make lovely music and song, with tales short or long!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell, friend.
+ON=ABBEY
+ON=EMPATH
+SAY=Abbey?  A fine girl with a beautiful voice.  Oh, you mean Empath Abbey... a quiet place of reflection.
+ON=ARTIFACT
+SAY=What artifact dost thou speak of?
+ON=CONSERVATORY
+SAY=Oh, I've played the Conservatory many times.
+ON=COOL
+SAY=The cool breeze chills me so, as history wanes and children grow.
+ON=INTERESTING
+SAY=Candy is dandy, but liquor is quicker.
+ON=MAGIC
+SAY=Magic of words and spell.  A wicked tale that they do tell.
+ON=MINSTREL
+SAY=A bard of spirit and song.  Of tales both short and long.
+ON=MUSIC
+SAY=Music, so sweet to thine ear.  It's all I can do and all that I hear.
+ON=NEWS
+SAY=News be happy and true or lies and blue.
+ON=SONG
+ON=PLAY
+SAY=I can play all day, but I play for pay.
+ON=RUMOR
+ON=RUMOUR
+SAY=Like words on the winds of a storm.  Some have shape, others no form.
+ON=TALE
+SAY=I spin a tale of woe and greed, of loose talk and mugs of mead.
+ON=TROUBAD
+ON=TROUBADOUR
+SAY=A Troubadour be I, with songs that bring a smile or makes one cry.
+ON=WHERE<ANY>MONKS
+SAY=Monks be here and there, but who knows exactly where?
+//RANDOM=Every artist is a cannibal, every poet is a thief.  All kill their inspiration and sing about the grief.
+
+[0510]
+//GUILDMASTER Bard
+DEFAULT=Perhaps things would be fine if thou spokest in a rhyme?
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Hail!
+ON=Job
+ON=What do you do
+ON=BARD
+SAY=I make lovely music and song, with tales short or long!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell, friend.
+ON=ABBEY
+ON=EMPATH
+SAY=Abbey?  A fine girl with a beautiful voice.  Oh, you mean Empath Abbey... a quiet place of reflection.
+ON=ARTIFACT
+SAY=What artifact dost thou speak of?
+ON=CONSERVATORY
+SAY=Oh, I've played the Conservatory many times.
+ON=COOL
+SAY=The cool breeze chills me so, as history wanes and children grow.
+ON=INTERESTING
+SAY=Candy is dandy, but liquor is quicker.
+ON=MAGIC
+SAY=Magic of words and spell.  A wicked tale that they do tell.
+ON=MINSTREL
+SAY=A bard of spirit and song.  Of tales both short and long.
+ON=MUSIC
+SAY=Music, so sweet to thine ear.  It's all I can do and all that I hear.
+ON=NEWS
+SAY=News be happy and true or lies and blue.
+ON=SONG
+ON=PLAY
+SAY=I can play all day, but I play for pay.
+ON=RUMOR
+ON=RUMOUR
+SAY=Like words on the winds of a storm.  Some have shape, others no form.
+ON=TALE
+SAY=I spin a tale of woe and greed, of loose talk and mugs of mead.
+ON=TROUBAD
+ON=TROUBADOUR
+SAY=A Troubadour be I, with songs that bring a smile or makes one cry.
+ON=WHERE<ANY>MONKS
+SAY=Monks be here and there, but who knows exactly where?
+ON=JOIN
+ON=GUILD
+SAY=Spend some time writing songs, friend.  Then we'll see.
+ON=MASTER
+SAY=I have spent years travelling the countryside, spreading songs and great tales.
+//RANDOM=Every artist is a cannibal, every poet is a thief.  All kill their inspiration and sing about the grief.
+
+[0512]
+//TINKER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+ON=TRADE
+ON=TINKER
+SAY=Yes, I'm a tinker. I make things mechanical! Sextants, clocks, thou namest it!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=CLOCK
+SAY=Aye.  Clock making is very time consuming.  Get it?  Time consuming?
+ON=DEVICE
+SAY=Tis not a device, my friend.  'Tis something new that I call a Clock.
+ON=GEAR
+SAY=A gear is a metal thingamajig.  A spinning thingamajig.
+ON=LUMBER
+SAY=Just find a tree and start whackin' with an axe.
+ON=MACHINE
+SAY=I's hopes to build a flyin' machine one o' these days.
+ON=PART
+SAY=A part?  What part ye be hankerin' for?
+ON=SEXTANT
+SAY=Tells where ye be and wheres ye wants to be.
+ON=SKILL
+SAY=Oh, some says I have great skill.  I believes 'em too.
+ON=SPRING
+SAY=A spring is a metal curly thingamajig.  Much like the gear, just curlier.
+ON=STICKS
+SAY=Just pick up some sticks from the ground you good for nothin'...
+ON=WOOD
+SAY=Wood?  Find a tree, take a axe and well, maybe ye shouldn't play with axes.
+//RANDOM=My grandfather's clock was to large for the shelf, so it stood ninety years on the floooooorrrr! dum dum ta de tum, la la la ....
+
+[0514]
+//GUILDMASTER Engineer
+DEFAULT=Thou art not well versed in logical speech!
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+ON=TINKER
+ON=TRADE
+SAY=The Tinker is nothing without the guidance of an Engineer. He does the tinkering, I do the thinking.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=CLOCK
+SAY=A clock is a device which enables one to keep a precise and universal measure of time.
+ON=DEVICE
+SAY=Oh, there are many devices here, which do you speak of?
+ON=GEAR
+SAY=It's a little metal wheel that either receives or transmits force and motion.
+ON=LUMBER
+SAY=Lumber comes from a variety of trees.
+ON=MACHINE
+SAY=It is my hope of hopes to one day build a time machine.
+ON=PART
+SAY=Exactly what part do you speak of?
+ON=SEXTANT
+SAY=It's an instrument that measures angular distances using the sun, moon, and stars.
+ON=SKILL
+SAY=It takes an intelligent person to truly appreciate great skill in anything.
+ON=SPRING
+SAY=It's a wire of steel that's bent spirally and able to retain it's
+shape when compressed.
+ON=STICKS
+SAY=You ask me of sticks?  You insult me.
+ON=WOOD
+SAY=Some fine wood may be found just outside of town.
+ON=GUILD
+SAY=Dost thou thinkest thee is smart enough?
+ON=JOIN
+SAY=Perhaps thou wouldst have a future in tinkering with some practice.
+ON=MASTER
+SAY=I am logic's master, but a slave to interesting gadgets.
+//RANDOM=Of course I've built bridges and so forth, but I'm most proud of my latest invention... the rotary egg beater.
+
+[0516]
+//HEALER SHOPKEEPER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I am a Healer Shopkeeper.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+
+[0518]
+//HEALER NONSHOPKEEPER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I am a Healer.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+
+[0520]
+//GUILDMASTER Healer
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I am a Guildmaster Healer.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+
+[0522]
+//FISHERMAN/WOMAN
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I enjoy fishing for a living.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=FISH <ANY>
+ON=CATCH
+ON=RIVER
+ON=SEA
+SAY=The best way to catch 'em is to put thine lure in the nearest water, friend.
+ON=FISHER
+ON=FISHERMAN
+ON=FISHERMEN
+ON=FISHERWOMAN
+SAY=Ahh.. fishing is a simple life. But I've got sounds of the sea, and plenty to eat!
+ON=FOOD
+SAY=Fish makes a filling meal.  Thou may get more out of a fish if it is cut with a bladed edge.
+ON=NETS
+SAY=Some use nets, but I prefer a rod.
+ON=SKILL
+SAY=Watch me a bit, perhaps thou wilt learn?
+//RANDOM=Tales of the sea? Ask a sailor!  Taste of the sea?  Well that's my speciality!
+
+[0524]
+//MAPMAKER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hello
+ON=Hail
+ON=Greet
+SAY=Hello, friend.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell.
+ON=job
+ON=what do you do
+SAY=I make maps for those who travel the seas.
+ON=BLANK
+SAY=A blank map?  You may want to see a cartographer about that.
+ON=PLOT<ANY>COURSE
+ON=CHART<ANY>COURSE
+SAY=To chart your course, just calculate where you'd like to go using red map pins.
+ON=EMPTY
+SAY=Empty?  I daresay thou art attempting to insult me!
+ON=MAKE MAPS
+SAY=The maps I make are vital for exploring the seas. That is, if you want to find your way home again!
+ON=SEXTANT
+SAY=A sextant will give you a longitude and latitude reading. Very helpful in finding position.
+ON=SKILL
+SAY=It requires a fair amount of skill to navigate the seas.
+ON=VELLUM
+SAY=It's the finest paper for making maps.
+//RANDOM=What? A newly discovered isle? I must add that to my maps immediately.
+
+[0526]
+//SHIPWRIGHT
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hello
+ON=Hail
+ON=Greet
+SAY=Hello.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=job
+ON=what do you do
+SAY=I sell a range of seaworthy vessels.
+ON=VESSEL
+ON=SHIP
+ON=BOAT
+SAY=Sure, I can build thee a most seaworthy vessel.
+ON=SAIL
+SAY=May I recommend you keep an eye on the weather?
+ON=SEXTANT
+SAY=Ah, no good sailor is without that position finding miracle!
+//RANDOM=I am hoping to hear of the good ship Thistle... hast thou any news?
+
+[0528]
+//GUILDMASTER Maritime
+DEFAULT=I do not understand thee.
+ON=Hi
+ON=Hello
+ON=Hail
+ON=Greet
+SAY=Good day.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=job
+ON=what do you do
+SAY=I teach maritime skills.
+ON=VESSEL
+ON=SHIP
+ON=BOAT
+SAY=Sure, I can build thee a most seaworthy vessel.
+ON=SAIL
+SAY=May I recommend you keep an eye on the weather?
+ON=SEXTANT
+SAY=Ah, no good sailor is without that position finding miracle!
+ON=GUILD
+SAY=You would like to join my Maritime guild?
+ON=JOIN
+SAY=We would not accept one such as you.
+ON=MASTER
+SAY=I am a master of all sea going knowledge.
+//RANDOM=Always bring oranges on a long voyage - it wards off scurvy!
+
+[0530]
+//SAILOR
+Default=Wot?
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=Hail, matey!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Good sailing to you!
+ON=job
+ON=what do you do
+SAY=I sail the seas, of course!
+ON=PIRATE
+SAY=Aye, a rough bunch! They plunder the seas and all who dare to sail it.
+ON=SAILOR
+ON=SAIL
+SAY=There's no nobler way to make a living, friend, than sailing our seas.
+ON=DRUNKEN
+SAY=Take 'im and shake 'im and try to wake 'im!
+ON=SHIP
+SAY=My own ship is glorious, though my captain would not sell her for any amount of gold.
+ON=WENCH
+SAY=Try a tavern or an inn, friend.  One wench is as good as the next.
+//RANDOM=Ah! The exploring the seas! Better than wenching, I say!
+
+[0532]
+//INNKEEPER
+DEFAULT=Pardon, I am overtired. I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hail
+ON=Hello
+ON=Greet
+SAY=Hail, tired traveler!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Sleep well, friend.
+ON=job
+ON=what do you do
+SAY=I keep this inn running smoothly, friend.  Please enjoy your stay.
+ON=ANIMAL
+ON=PET
+SAY=You are welcome to tame any pets you see roaming wild in my Inn.  Many abandon their little friends here.
+ON=EMPATH
+ON=ABBEY
+SAY=There are rooms to be had at Empath Abbey.
+ON=ARTIFACT
+SAY=There are none buried here -- don't go diggin' up the floorboards.
+ON=WAITRESS
+ON=BARMAID
+SAY=The prettiest in town! Look for any crowd of men in the bar -- she'll be at the center.
+ON=TAVERN
+ON=BEER
+SAY=If you indulge too much, please stay the night.
+ON=LUNCH
+ON=BREAKFAST
+ON=DINNER
+ON=FOOD
+SAY=We have the heartiest food in the land!
+ON=BED
+ON=INN
+ON=RENT
+ON=ROOM
+ON=SLEEP
+ON=STAY THE NIGHT
+ON=FOR THE NIGHT
+SAY=Please, pick any room you like but do not tamper with the belongings of others.
+ON=HINT
+SAY=Yes, you look as if you need an Orc-sized hint.
+ON=NEWS
+ON=INFO
+SAY=This is not the tourist bureau.  We do have rooms, food, beer and wenches, though.
+ON=MAGIC
+SAY=Our chef's magic is the only form of arcane arts allowed in this building.
+ON=RUMOR
+ON=RUMOUR
+SAY=Some say this place is haunted, but any bumps you hear in the night are more like to be a hearty wench!
+ON=TO DO
+SAY=Oh running an Inn is no easy feat.  There are roaches to exterminate, rat droppings to sweep...
+ON=WENCH
+SAY=The wenches here are freelance, friend.  One may be hanging around somewhere.
+//RANDOM=What? Don't change the linens, just turn 'em over.  See?  Good as new!
+
+[0536]
+//JEWELER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=I greet thee.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Good day to you!
+ON=job
+ON=what do you do
+SAY=I create the most admired jewelry in the land.
+ON=AMBER
+ON=EMERALD
+ON=AMETHYST
+ON=CITRINE
+ON=DIAMOND
+ON=RUBIES
+ON=RUBY
+ON=SAPPHIRE
+ON=TOURMALINE
+SAY=Some may say a jewel is mere decoration, but I think it's an expression of love, admiration and friendship.
+ON=APPRAISE
+ON=ESTIMATE
+SAY=I apologize, I cannot do any more appraisals today.  Perhaps you could return another time?
+ON=BEAD
+SAY=Beads make a lovely gift!  Perhaps I can interest you in a strand of the silver?
+ON=BRACELET
+ON=NECKLACE
+ON=RING
+SAY=Bracelets, rings or necklaces of gold or silver compliment almost any outfit.
+ON=GEM
+ON=JEWEL
+SAY=Gems are both beautiful and practical.  Some monsters seek only gold coins, but rarely do creatures desire gems.
+ON=GOLD
+ON=SILVER
+SAY=Jewelry made of gold or silver expresses your status to others.
+ON=QUALITY
+SAY=Unlike some other jewelers I could name, I make only the finest quality jewelry.
+//RANDOM=A fine gift for your lady or lord?
+
+[0538]
+//TAVERNKEEPER
+DEFAULT=Eh?  I must be deaf. I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=Hearty greetings!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell, friend.
+ON=deaf
+ON=hearing
+SAY=I apologize. We occasionally feature loud bards for entertainment. I fear I am quite deaf!
+ON=EMPATH
+ON=ABBEY
+SAY='Tis a boring place -- no drinking, no wenches.  Only solitary rooms and books!
+ON=ARTIFACT
+SAY=Our regular bartender is so ancient, we do sometimes refer to him as "The Artifact."
+ON=BARMAID
+SAY=Keep your hands off my girlies, friend.
+ON=TAVERN
+ON=ALE
+ON=DRINK
+ON=BEER
+SAY=Our beer's the best!  If you'd like watered down horse spit, try some other tavern.
+ON=FOOD
+ON=BREAKFAST
+ON=DINNER
+ON=LUNCH
+SAY=Nothing like good food to help digest ale!
+ON=HINT
+ON=INFO
+SAY=We serve fine food and drink.  For more help than that, may I suggest you call a GM?
+ON=MAGIC
+SAY=If I catch anyone creating food with magic, I'll be quite upset. It undercuts our market.
+ON=NEWS
+SAY=I hear the pie is excellent today!
+ON=ITCH
+ON=SCRATCH
+ON=RUMOR
+ON=RUMOUR
+SAY=I wasn't going to mention it, but do be careful in your choice of wenches.  Some may leave you itchy.
+ON=TO DO
+SAY=I have to remember to see a doctor about this itch...
+ON=WAITRESS
+SAY=Keep your hands to yourself.  The wenches are for the wenching, waitresses for the uh.. waiting.
+ON=WENCH
+SAY=Oh the finest wenches this side of Empath Abbey, friend!  You may have to haggle for a good price.
+ON=WHERE<ANY>MONKS
+SAY=This is not a holy place.  Try the abbey.
+//RANDOM=All day long it's scratch scratch scratch!  I fear I will have no skin left!
+
+[0540]
+//GUILDMASTER Merchant
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I am a GuildMaster Merchant, meaning I instruct in the ways of the service trades.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=deaf
+ON=hearing
+SAY=I apologize. We occasionally feature loud bards for entertainment. I fear I am quite deaf!
+ON=EMPATH
+ON=ABBEY
+SAY='Tis a boring place -- no drinking, no wenches.  Only solitary rooms and books!
+ON=ARTIFACT
+SAY=Our regular bartender is so ancient, we do sometimes refer to him as "The Artifact."
+ON=BARMAID
+SAY=Keep your hands off my girlies, friend.
+ON=TAVERN
+ON=ALE
+ON=BEER
+SAY=Our beer's the best!  If you'd like watered down horse spit, try some other tavern.
+ON=FOOD
+ON=BREAKFAST
+ON=DINNER
+ON=LUNCH
+SAY=Nothing like good food to help digest ale!
+ON=HINT
+ON=INFO
+SAY=We serve fine food and drink.  For more help than that, may I suggest you call a GM?
+ON=MAGIC
+SAY=If I catch anyone creating food with magic, I'll be quite upset. It undercuts our market.
+ON=NEWS
+SAY=I hear the pie is excellent today!
+ON=ITCH
+ON=SCRATCH
+ON=RUMOR
+ON=RUMOUR
+SAY=I wasn't going to mention it, but do be careful in your choice of wenches.  Some may leave you itchy.
+ON=TO DO
+SAY=I have to remember to see a doctor about this itch...
+ON=WAITRESS
+SAY=Keep your hands to yourself.  The wenches are for the wenching, waitresses for the uh.. waiting.
+ON=WENCH
+SAY=Oh the finest wenches this side of Empath Abbey, friend!  You may have to haggle for a good price.
+ON=WHERE<ANY>MONKS
+SAY=This is not a holy place.  Try the abbey.
+ON=GUILD
+SAY=Our guild is rarely open to new members. Business is good.
+ON=MASTER
+SAY=I am indeed a master, meaning I know more of Merchant ways than you may ever hope to.
+ON=JOIN
+SAY=So you want to get in on the racket, eh?
+//RANDOM=Not everyone is cut out for the service trade.
+
+[0542]
+//RANGER
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=I greet thee.
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I am a Ranger, friend to creatures of the forest.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell.
+ON=ALLIGATOR
+SAY=Alligators are dangerous creatures, so have a care when camping or wandering near swampy areas.
+ON=ANIMAL
+SAY=Art thou a dullard?  Care to be a bit more specific?
+ON=BEAR
+SAY=A trained bear can be your staunchest ally, but a wild one may kill you with but a few swipes of clawed paw.
+ON=BIRD
+SAY=Birds are cheerful friends, but their feathers are more valued than their company.
+ON=FEATHER
+SAY=One may make fletch arrows with feathers.
+ON=CAT
+SAY=I hear the inhabitants of Ocllo actually eat cats!  How disgusting!
+ON=CHICKEN
+SAY=Easy to track, but tricky to catch. A good campfire will help provide a lovely roasted meal.
+ON=CORPSER
+SAY=Nothing like a toasted corpser fire to warm my bones...
+ON=COW
+SAY=So slow as to be laughable, but actually sturdy fighters.
+ON=DAEMON
+SAY= Are ye suicidal?  I have heard they 'play' with their prey before killing them. *shudder*
+ON=DEER
+SAY=Fleet of foot they are, and the great hart is a hardy fighter.
+ON=DOG
+SAY=A more loyal friend you may never find, but remember to feed your pets lest they turn on you!
+ON=DOLPHIN
+SAY=Are ye daft?  How do you suppose we track a dolphin in open waters?
+ON=DRAGON
+SAY=About as dangerous as thou may find in Britannia. Only the most learned master may tame one.
+ON=EAGLE
+SAY= Arrogant animals. 'Tis a pleasure to stick an arrow or two in them.
+ON=ELEMENTAL
+SAY=Many types abound, all dangerous.
+ON=ETTIN
+SAY=Truly a freak of nature.  Imagine, two heads! It doesn't make the creature smarter, tho...
+ON=FISH
+SAY=Fish?!?  Go ask one of those reeking, wretched fisherman about them!
+ON=FOWL
+SAY=That term best describes harpies, certainly. Truly 'foul fowl.' A little ranger joke, friend. *nyuk nyuk*
+ON=GARGOYLE
+SAY=Those beasts still manage to produce quite a stench despite being made of stone.
+ON=GOAT
+SAY=Speak not of my mother in such a manner!
+ON=GORILLA
+SAY=Gorillas are ferocious to be sure, but more easily killed than thou might suspect!
+ON=HIDE
+SAY=Several animals yield a valuable hide... Cows and Llamas yield a rewarding hide.
+ON=HORSE
+SAY=If you don't feed your horse, he may leave you stranded! Always pack fruit or grain for a snack.
+ON=HUNT
+SAY=Tracking is valuable when starting a hunt, but do not bother trying to catch up with a running wolf.
+ON=LLAMA
+SAY= Overrated pack animal, in my estimation. Better to skin them and sell the hide and meat.
+ON=MEAT
+SAY=Most meats may be sold to a butcher, but do not bother hunting small prey for this purpose. Your efforts will yield little.
+ON=MONSTER
+SAY=Some call giant spiders and scorpions monsters, but they are actually quite friendly when tamed.
+ON=MOUNTAIN CAT
+SAY=Ah! My favorite travelling companion, a fierce friend.  Oh, well a tamed one, of course.
+ON=PELT
+SAY=Furriers buy fur pelts, but not all pelts are valuable.
+ON=PIG
+SAY=Pigs? Oh, yes, my inlaws live but a short way over yonder.
+ON=RABBIT
+SAY=Cute, floppy-eared and fuzzy, but useful for practicing hunting, tracking and skinning!
+ON=RANGER
+SAY=We dedicate our lives as rangers to learning about the habits of animals.
+ON=SEAL
+SAY=Slimy beasts, but surprisingly tasty.
+ON=SHEEP
+SAY=You may shear a sheep with shearing scissors but once every day. Spin the wool at a tailor's shop for a tidy profit!
+ON=SKILL
+SAY='Tis said I have many other skill besides tracking... taming for one!
+ON=SPIRITUALITY
+SAY=Few things are as special as establishing a spiritual bond with animals.
+ON=TRACK
+SAY='Tis my passion.  There is nothing I can't track.
+ON=WOLF
+SAY= Bad luck, they are.  Track one and soon you may be faced with the whole pack!
+//RANDOM= All of life is a great hunt!  Except, of course, for brothels. That is like shooting fish in a barrel...
+
+[0544]
+//GUILDMASTER Ranger
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=I greet thee.
+SAY=Greetings, friend.
+ON=Job
+ON=What do you do
+SAY=I am a Guildmaster Ranger, leader of Rangers everywhere.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell.
+ON=ALLIGATOR
+SAY=Alligators are dangerous creatures, so have a care when camping or wandering near swampy areas.
+ON=ANIMAL
+SAY=Art thou a dullard?  Care to be a bit more specific?
+ON=BEAR
+SAY=A trained bear can be your staunchest ally, but a wild one may kill you with but a few swipes of clawed paw.
+ON=BIRD
+SAY=Birds are cheerful friends, but their feathers are more valued than their company.
+ON=FEATHER
+SAY=One may make fletch arrows with feathers.
+ON=CAT
+SAY=I hear the inhabitants of Ocllo actually eat cats!  How disgusting!
+ON=CHICKEN
+SAY=Easy to track, but tricky to catch. A good campfire will help provide a lovely roasted meal.
+ON=CORPSER
+SAY=Nothing like a toasted corpser fire to warm my bones...
+ON=COW
+SAY=So slow as to be laughable, but actually sturdy fighters.
+ON=DAEMON
+SAY= Are ye suicidal?  I have heard they 'play' with their prey before killing them. *shudder*
+ON=DEER
+SAY=Fleet of foot they are, and the great hart is a hardy fighter.
+ON=DOG
+SAY=A more loyal friend you may never find, but remember to feed your pets lest they turn on you!
+ON=DOLPHIN
+SAY=Are ye daft?  How do you suppose we track a dolphin in open waters?
+ON=DRAGON
+SAY=About as dangerous as thou may find in Britannia. Only the most learned master may tame one.
+ON=EAGLE
+SAY= Arrogant animals. 'Tis a pleasure to stick an arrow or two in them.
+ON=ELEMENTAL
+SAY=Many types abound, all dangerous.
+ON=ETTIN
+SAY=Truly a freak of nature.  Imagine, two heads! It doesn't make the creature smarter, tho...
+ON=FISH
+SAY=Fish?!?  Go ask one of those reeking, wretched fisherman about them!
+ON=FOWL
+SAY=That term best describes harpies, certainly. Truly 'foul fowl.' A little ranger joke, friend. *nyuk nyuk*
+ON=GARGOYLE
+SAY=Those beasts still manage to produce quite a stench despite being made of stone.
+ON=GOAT
+SAY=Speak not of my mother in such a manner!
+ON=GORILLA
+SAY=Gorillas are ferocious to be sure, but more easily killed than thou might suspect!
+ON=HIDE
+SAY=Several animals yield a valuable hide... Cows and Llamas yield a rewarding hide.
+ON=HORSE
+SAY=If you don't feed your horse, he may leave you stranded! Always pack fruit or grain for a snack.
+ON=HUNT
+SAY=Tracking is valuable when starting a hunt, but do not bother trying to catch up with a running wolf.
+ON=LLAMA
+SAY= Overrated pack animal, in my estimation. Better to skin them and sell the hide and meat.
+ON=MEAT
+SAY=Most meats may be sold to a butcher, but do not bother hunting small prey for this purpose. Your efforts will yield little.
+ON=MONSTER
+SAY=Some call giant spiders and scorpions monsters, but they are actually quite friendly when tamed.
+ON=MOUNTAIN CAT
+SAY=Ah! My favorite travelling companion, a fierce friend.  Oh, well a tamed one, of course.
+ON=PELT
+SAY=Furriers buy fur pelts, but not all pelts are valuable.
+ON=PIG
+SAY=Pigs? Oh, yes, my inlaws live but a short way over yonder.
+ON=RABBIT
+SAY=Cute, floppy-eared and fuzzy, but useful for practicing hunting, tracking and skinning!
+ON=RANGER
+SAY=We dedicate our lives as rangers to learing about the habits of animals.
+ON=SEAL
+SAY=Slimy beasts, but surprisingly tasty.
+ON=SHEEP
+SAY=You may shear a sheap with shearing scissors but once every day. Spin the wool at a tailor's shop for a tidy profit!
+ON=SKILL
+SAY='Tis said I have many other skill besides tracking... taming for one!
+ON=SPIRITUALITY
+SAY=Few things are as special as establishing a spiritual bond with animals.
+ON=TRACK
+SAY='Tis my passion.  There is nothing I can't track.
+ON=WOLF
+SAY= Bad luck, they are.  Track one and soon you may be faced with the whole pack!
+ON=GUILD
+SAY=Our guild is made up of Rangers of varying skills and habits.
+ON=JOIN
+SAY=Ah... we are not accepting members at this time.  My apologies.
+ON=MASTER
+SAY=A Master Ranger may tame or track even a dragon!
+//RANDOM= All of life is a great hunt!  Except, of course, for brothels. That is like shooting fish in a barrel...
+
+[0546]
+//BOWYER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Hello
+ON=Greet
+SAY=Hail, friend! How art thou?
+ON=job
+SAY=I am a bowyer of exceptional skill. Just give me any variety of bow, and you'll see my arrows fly!
+ON=bye
+ON=farewell
+ON=goodbye
+SAY=Farewell.
+ON=Archery
+SAY=If skilled in archery, you may pick off enemies or dangerous creatures from a safe distance.
+ON=arrow
+SAY=You may make arrows with feathers and sticks.  Of, if that's too advanced for you, just buy some from a merchant.
+ON=bolt
+SAY=Bolts are used in crossbows not long bows, any bowyer knows that.
+ON=crossbow
+SAY=A crossbow may be unwieldy, but will definitely ruin your target's day.
+ON=bow
+SAY=Bows travel well and are perfect for ranged combat.
+ON=feather
+SAY=Feathers are used in the making of arrows and may be acquired from some of our fine feathered friends.
+ON=fletching
+SAY=Fletching is a fine skill for a bowyer. The more advanced the skill the better the arrow made.
+ON=shaft
+ON=stick
+SAY=Remember to use straight shafts when making arrows.
+//RANDOM=I shot an arrow in the air, and where it went I do not care...
+
+[0548]
+//ANIMAL TRAINER
+DEFAULT=Thou art making no sense!
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hail
+ON=Hello
+ON=Greet
+SAY=Hello, hast thou seen any of my animals?
+ON=job
+SAY=I make friend with creatures of field and forest.
+ON=goodbye
+ON=farewell
+ON=bye
+SAY=Farewell, and be kind to the animals.
+ON=animal
+SAY=A well trained, well treated animal makes a loyal protector during battle.
+ON=cat
+SAY=If your boat is infested, just send a trained cat down into the hold!
+ON=dog
+SAY=A dog makes an excellent travelling companion.
+ON=horse
+SAY=Horses may be ridden or sold to a stable.
+ON=mount
+SAY=To mount your horse, you may need to select him twice.
+ON=saddle
+SAY=Some riders prefer saddles, but bareback riding will help you and your steed form a closer bond.
+ON=steed
+SAY=Surely owning a fine steed is a sign of wealth.
+ON=train
+SAY=As a animal trainer's skill progresses, he may even be able to tame a few evil natured creatures.
+ON=trainer
+SAY=Animal trainers also help supply stables with horses. A fine skill to have indeed.
+ON=whip
+SAY=Never use a whip on  your pet, unless you'd like to be attacked.
+//RANDOM=Oh where! Oh where! Has my little dog gone? Oh where! Oh where! Can he be?
+
+[0550]
+//MINER
+DEFAULT=Art thou rock stupid?  There is no sense to what you say.
+ON=Hail
+ON=Hi
+ON=Hello
+ON=Greet
+SAY=Greetings, friend.
+ON=job
+SAY=I use my strength and a pick to dig ore from the mountains.
+ON=bye
+ON=goodbye
+ON=farewell
+SAY=Farewell and keep thy pick sharp and back straight.
+ON=dig
+SAY=To dig ore, ye needs a good pick or a shovel.
+ON=hole
+SAY=Aye! Holes can be a dangerous thing. I lost a friend to a bottomless hole once. Tis a shame, aye, a shame it was.
+ON=mine
+SAY=Be wary in mines. There may be other things in them besides ore... deadly things.
+ON=ore
+SAY=I mine ore and sell it to the blacksmith. Tis a wonderous thing this ore is.
+ON=shaft
+SAY=Mine shafts can be deep and deadly. Aye! Deep and deadly they may be.
+//RANDOM=Oh! Sixteen tons and what did I get? Another day older and deeper in debt.
+
+[0552]
+//GUILDMASTER Miner
+DEFAULT=Art thou rock stupid?  There is no sense to what you say.
+ON=Hail
+ON=Hi
+ON=Hello
+ON=Greet
+SAY=Greetings, friend.
+ON=job
+SAY=I use my strength and a pick to dig ore from the mountains.
+ON=bye
+ON=goodbye
+ON=farewell
+SAY=Farewell and keep thy pick sharp and back straight.
+ON=dig
+SAY=To dig ore, ye needs a good pick or a shovel.
+ON=hole
+SAY=Aye! Holes can be a dangerous thing. I lost a friend to a bottomless hole once. Tis a shame, aye, a shame it was.
+ON=mine
+SAY=Be wary in mines. There may be other things in them besides ore... deadly things.
+ON=ore
+SAY=I mine ore and sell it to the blacksmith. Tis a wonderous thing this ore is.
+ON=shaft
+SAY=Mine shafts can be deep and deadly. Aye! Deep and deadly they may be.
+ON=GUILD
+SAY=Our guild accepts only the most skilled miners.
+ON=JOIN
+SAY=Oh... Spend some time around the mountain bulking up first, friend.
+ON=MASTER
+SAY=Having been a miner for over 40 years, I am a master of the science.
+//RANDOM=Oh! Sixteen tons and what did I get? Another day older and deeper in debt.
+
+[0554]
+//ARMOURER
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=I make various sturdy protectional armor.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Goodbye.
+ON=ARMOR
+SAY=Going into battle without armor is not wise.  At least have leather on, if you can't find chainmail.
+ON=SKILL
+ON=SMITH
+SAY=One must be proficient in smithing and mining to make armour.
+//RANDOM=Beware those who would sell you tin under guise of plate!
+
+[0556]
+//BLACKSMITH
+DEFAULT=Make sense! I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=Greetings.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell.
+ON=What do you do
+ON=job
+ON=BLACKSMITH
+SAY=I make weapons and armor for adventurers.
+ON=PLATE
+ON=ARMOR
+SAY=Plate Armor's the best, but requires great strength.  Leather is for weaklings.
+ON=AXE
+SAY=Although the Executioner's Axe is most feared, the Double Axe lasts longer and inflicts more damage.
+ON=HALBERD
+ON=BARDICHE
+SAY=The Bardiche lasts longer in battle than the Halberd, but does less damage.
+ON=CROSSBOW
+ON=BOW
+SAY=A regular bow can be a better albeit less powerful friend than the more unwieldy Crossbow.
+ON=NORSE HELM
+ON=OPEN FACED HELM
+ON=HELM
+SAY=Of the plain helms available, a closed helm will provide the best protection in battle.
+ON=BUCKLER
+SAY=Don't be fooled. A buckler offers little more protection that the shorter-lived wooden shield.
+ON=CHAIN
+SAY=While chain is more easily damaged than ringmail, it offers better protection.
+ON=CLUB
+SAY=Clubs are often the weapon of choice for stupid creatures.
+ON=SCIMITAR
+ON=CUTLASS
+SAY=Only the scimitar equals the slashing speed of a cutlass.
+ON=FIGHT
+SAY=I always try to be prepared for battle, so I keep my armor clean and a weapon at the ready.
+ON=FORK
+SAY=A pitchfork may be faster, but for my money, only a war fork is sure to leave 'em screaming.
+ON=GAUNTLET
+SAY=Gauntlets provide better protection for the wrists.
+ON=GORGET
+SAY=The gorget may seem small protection for the neck, it is thick and protective.
+ON=HEATER
+SAY=The heater shield offers stylish but average protection.
+ON=THOU<ANY>IDIOT
+ON=STUPID
+ON=MORON
+ON=IDIOT
+ON=YOU<ANY>IDIOT
+ON=THOU<ANY>
+ON=YOU<ANY>MORON
+SAY=Be careful, friend, or I shall have to prove my sword is sharper than your tongue.
+ON=KILL
+SAY=Oh I just love killing.
+ON=KATANA
+ON=KITANA
+SAY=This sword does little damage compared with the broad sword.
+ON=KRYSS
+SAY=The kryss does more damage and lasts longer than the quick slashing butcher knife.
+ON=MAUL
+ON=MACE
+SAY=In the mace family, a war mace or war hammer will hurt your opponent most.
+ON=MAIM
+SAY=Maiming is almost as good as killing. Almost.
+ON=PROVISIONS
+SAY=See a provisioner for supplies if you're going on a long battle journey.
+ON=RING
+SAY=Most rings are ordinary, but I have heard of special rings which increase one's strength in battle.
+ON=SHIELD
+SAY=The Chaos Shield yields more protection than the Order Shield.
+ON=SKILL
+SAY=Some weapons require great skill in a given area, like Swordsmanship, Fencing or Mace Fighting.
+ON=SPEAR
+SAY=Bah. Spears better for catching fish.
+ON=STAFF
+SAY=A black staff does more damage than a gnarled staff, but isn't as fast.
+ON=SWORD
+SAY=A long sword is my favorite weapon for damage and it requires less frequent repairs than the faster cutlass.
+ON=TROUBLE
+SAY=It seems you are expert at getting yourself into trouble.
+ON=WEAPON
+SAY=My favorite weapons are those which do the most damage!
+//RANDOM=My weapons are the strongest in the land!
+
+
+[0558]
+//BEGGAR
+DEFAULT=I do not understand thee, perhaps 'tis that I am faint with hunger!
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Good day, prosperous noble!
+ON=Job
+ON=What do you do
+SAY=Sadly I am between jobs at the moment, and just this morning my house burnt to cinders!
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Farewell, good noble.  Most like I will have died of hunger in the morning.
+ON=BEGGAR
+SAY=Oh good fellow! You mistake me, I am an honest sort but down on my luck temporarily.
+ON=COIN
+ON=MONEY
+SAY=Oh I would do almost anything for a coin, good friend!
+ON=DONATE
+SAY=Donations are thankfully accepted, kind adventurer!
+ON=GOLD
+SAY=I have seen nary a piece of it since I lost my job...
+ON=JOB
+SAY=I was a ... um...  oh my, it appears hunger is causing me to forget!
+ON=ANYTHING
+SAY=Methinks you should seek out a wench or gigolo, adventurer.
+ON=WENCH
+ON=GIGOLO
+SAY=If I don't get some gold soon, I may have to resort to that lifestyle! Ugh! I am itching already!
+ON=HELP
+SAY=A bit of gold would be most appreciated, good stranger.
+ON=FOOD
+SAY=Ah, take no offense, but I am afeared of poison! Mightest thou have any gold?
+//RANDOM=Wilt thou not help me in my hour of need?
+
+[0560]
+//THIEF
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Greetings.
+ON=Job
+ON=What do you do
+SAY=What dost thou expect me to say?  I am simply a tourist.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Bye.
+ON=LORD BRITISH
+ON=AUTHORITIES
+ON=COPPER
+ON=SOLDIERS
+ON=GUARD
+SAY=Call the authorities?  Ha! Good luck.  If any answer your call, t'will be a first.
+ON=FORK<ANY>GOLD
+ON=SILVER
+ON=GOLD
+ON=<ANY>FORK
+SAY=Pardon, I believe *I* am the thief here.
+ON=JEWEL
+ON=JEWELS
+ON=JEWELRY
+SAY=An easier item to steal does not exist!
+ON=MONEY
+SAY=One must make a living somehow.
+ON=HIDE
+ON=SKILL
+SAY=Ah, hiding is the most useful of all thieving skills.  Besides stealing, of course.
+ON=TRAP
+ON=LOCK
+SAY=A lock is but an invitation to one such as myself.
+//RANDOM=I didn't do it!
+
+[0562]
+//GUILDMASTER Thief
+DEFAULT=I do not understand thee.
+ON=Hail
+ON=Hi
+ON=Greet
+ON=Hello
+SAY=Yes?
+ON=Job
+ON=What do you do
+SAY=I am a master thief, art thou a master victim?
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Begone.
+ON=LORD BRITISH
+ON=AUTHORITIES
+ON=COPPER
+ON=SOLDIERS
+ON=GUARD
+SAY=Call the authorities?  Ha! They would not dare trifle with me, unless they'd like their britches stolen in public and run up a sign pole.
+ON=FORK<ANY>GOLD
+ON=SILVER
+ON=GOLD
+ON=<ANY>FORK
+SAY=Pardon, I believe *I* am the thief here.
+ON=JEWEL
+ON=JEWELS
+ON=JEWELRY
+SAY=An easier item to steal does not exist!
+ON=MONEY
+SAY=One must make a living somehow.
+ON=HIDE
+ON=SKILL
+SAY=Ah, hiding is the most useful of all thieving skills.  Besides stealing, of course.
+ON=TRAP
+ON=LOCK
+SAY=A lock is but an invitation to one such as myself.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=Ha!
+ON=GUILD
+SAY=One must be quite stealthy and learned to join.
+ON=JOIN
+SAY=We would not accept one such as you.  Come back later.
+ON=MASTER
+SAY=A master thief may steal any item, no matter how well guarded.
+//RANDOM=Thieves are misunderstood.  We are actually quite bright.
+
+[0564]
+//FIGHTER
+DEFAULT=I do not understand thee.
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=I greet thee.
+ON=Bye
+ON=Goodbye
+ON=Hail
+SAY=Farewell.
+ON=PLATE
+ON=ARMOR
+SAY=Plate Armor's the best, but requires great strength.  Leather is for weaklings.
+ON=AXE
+SAY=Although the Executioner's Axe is most feared, the Double Axe lasts longer and inflicts more damage.
+ON=HALBERD
+ON=BARDICHE
+SAY=The Bardiche lasts longer in battle than the Halberd, but does less damage.
+ON=CROSSBOW
+ON=BOW
+SAY=A regular bow can be a better albeit less powerful friend than the more unweildy Crossbow.
+ON=NORSE HELM
+ON=OPEN FACED HELM
+ON=HELM
+SAY=Of the plain helms available, a closed helm will provide the best protection in battle.
+ON=BUCKLER
+SAY=Don't be fooled. A buckler offers little more protection that the shorter-lived wooden shield.
+ON=CHAIN
+SAY=While chain is more easily damaged than ringmail, it offers better protection.
+ON=CLUB
+SAY=Clubs are often the weapon of choice for stupid creatures.
+ON=SCIMITAR
+ON=CUTLASS
+SAY=Only the scimitar equals the slashing speed of a cutlass.
+ON=FIGHT
+SAY=I always try to be prepared for battle, so I keep my armor clean and a weapon at the ready.
+ON=FORK
+SAY=A pitchfork may be faster, but for my money, only a war fork is sure to leave 'em screaming.
+ON=GAUNTLET
+SAY=Gauntlets are better protection for the wrists.
+ON=GORGET
+SAY=The gauntlet may seem small protection for the neck, it is thick and protective.
+ON=HEATER
+SAY=The heater shield offers stylish but average protection.
+ON=THOU<ANY>IDIOT
+ON=STUPID
+ON=MORON
+ON=IDIOT
+ON=YOU<ANY>IDIOT
+ON=THOU<ANY>
+ON=YOU<ANY>MORON
+SAY=Be careful, friend, or I shall have to prove my sword is sharper than your tongue.
+ON=KILL
+SAY=Oh I just love killing.
+ON=KATANA
+ON=KITANA
+SAY=This sword does little damage compared with the broad sword.
+ON=KRYSS
+SAY=The kryss does more damage and lasts longer than the quick slashing butcher knife.
+ON=MAUL
+ON=MACE
+SAY=In the mace family, a war mace or war hammer will hurt your opponent most.
+ON=MAIM
+SAY=Maiming is almost as good as killing. Almost.
+ON=PROVISIONS
+SAY=See a provisioner for supplies if you're going on a long battle journey.
+ON=RING
+SAY=Most rings are ordinary, but I have heard of special rings which increase one's strength in battle.
+ON=SHIELD
+SAY=The Chaos Shield yields more protection than the Order Shield.
+ON=SKILL
+SAY=Some weapons require great skill in a given area, like Swordsmanship, Fencing or Mace Fighting.
+ON=SPEAR
+SAY=Bah. Spears better for catching fish.
+ON=STAFF
+SAY=A black staff does more damage than a gnarled staff, but isn't as fast.
+ON=SWORD
+SAY=A long sword is my favorite weapon for damage and it requires less frequent repairs than the faster cutlass.
+ON=TROUBLE
+SAY=It seems you are expert at getting yourself into trouble.
+ON=WEAPON
+SAY=My favorite weapons are those which do the most damage!
+//RANDOM=Who wants to be a sissy fisherman?  It's the fighting life for me!
+
+[0566]
+//MERCENARY
+//PALADIN
+//WARRIOR
+DEFAULT=I do not understand thee.
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=I greet thee.
+ON=Bye
+ON=Goodbye
+ON=Hail
+SAY=Farewell to thee.
+ON=job
+ON=what do you do
+SAY=I help strong warriors like yourself fight battles.
+ON=PLATE
+ON=ARMOR
+SAY=Plate Armor's the best, but requires great strength.  Leather is for weaklings.
+ON=AXE
+SAY=Although the Executioner's Axe is most feared, the Double Axe lasts longer and inflicts more damage.
+ON=HALBERD
+ON=BARDICHE
+SAY=The Bardiche lasts longer in battle than the Halberd, but does less damage.
+ON=CROSSBOW
+ON=BOW
+SAY=A regular bow can be a better albeit less powerful friend than the more unweildy Crossbow.
+ON=NORSE HELM
+ON=OPEN FACED HELM
+ON=HELM
+SAY=Of the plain helms available, a closed helm will provide the best protection in battle.
+ON=BUCKLER
+SAY=Don't be fooled. A buckler offers little more protection that the shorter-lived wooden shield.
+ON=CHAIN
+SAY=While chain is more easily damaged than ringmail, it offers better protection.
+ON=CLUB
+SAY=Clubs are often the weapon of choice for stupid creatures.
+ON=SCIMITAR
+ON=CUTLASS
+SAY=Only the scimitar equals the slashing speed of a cutlass.
+ON=FIGHT
+SAY=I always try to be prepared for battle, so I keep my armor clean and a weapon at the ready.
+ON=FORK
+SAY=A pitchfork may be faster, but for my money, only a war fork is sure to leave 'em screaming.
+ON=GAUNTLET
+SAY=Gauntlets are better protection for the wrists.
+ON=GORGET
+SAY=The gauntlet may seem small protection for the neck, it is thick and protective.
+ON=HEATER
+SAY=The heater shield offers stylish but average protection.
+ON=THOU<ANY>IDIOT
+ON=STUPID
+ON=MORON
+ON=IDIOT
+ON=YOU<ANY>IDIOT
+ON=THOU<ANY>
+ON=YOU<ANY>MORON
+SAY=Be careful, friend, or I shall have to prove my sword is sharper than your tongue.
+ON=KILL
+SAY=Oh I just love killling.
+ON=KATANA
+ON=KITANA
+SAY=This sword does little damage compared with the broad sword.
+ON=KRYSS
+SAY=The kryss does more damage and lasts longer than the quick slashing butcher knife.
+ON=MAUL
+ON=MACE
+SAY=In the mace family, a war mace or war hammer will hurt your opponent most.
+ON=MAIM
+SAY=Maiming is almost as good as killing. Almost.
+ON=PROVISIONS
+SAY=See a provisioner for supplies if you're going on a long battle journey.
+ON=RING
+SAY=Most rings are ordinary, but I have heard of special rings which increase one's strength in battle.
+ON=SHIELD
+SAY=The Chaos Shield yields more protection than the Order Shield.
+ON=SKILL
+SAY=Some weapons require great skill in a given area, like Swordsmanship, Fencing or Mace Fighting.
+ON=SPEAR
+SAY=Bah. Spears better for catching fish.
+ON=STAFF
+SAY=A black staff does more damage than a gnarled staff, but isn't as fast.
+ON=SWORD
+SAY=A long sword is my favorite weapon for damage and it requires less frequent repairs than the faster cutlass.
+ON=TROUBLE
+SAY=It seems you are expert at getting yourself into trouble.
+ON=WEAPON
+SAY=My favorite weapons are those which do the most damage!
+//RANDOM=Hire me to help you in your battles!
+
+[0572]
+//WEAPONS TRAINER
+DEFAULT=I do not understand thee.
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=I greet thee.
+ON=Bye
+ON=Goodbye
+ON=Hail
+SAY=Farewell to thee.
+ON=job
+ON=what do you do
+SAY=I train warriors to use various weapons of skill.
+ON=ABILITY
+ON=ABILITIES
+SAY=Warriors must learn a variety of skills to face every eventuality in battle.
+ON=AXE
+SAY=Start with almost any axe to learn Swordsmanship, although war axes and pickaxes will help with different skills.
+ON=BOW
+SAY=To use a bow properly, one must be skilled in Archery.
+ON=DAGGER
+SAY=Knives generally help with swordsmanship, but the dagger and the kryss require experience in fencing.
+ON=DEFEND
+SAY=Sturdy armor is your best defense.
+ON=FIGHT
+SAY=Never run from a fight, but work hard to prepare.
+ON=HAMMER
+ON=MACE
+SAY=Maces and hammers require skills in mace fighting.
+ON=SWORD
+SAY=Swordsmanship is of great importance.  Practice every chance you get.
+ON=WEAPON
+SAY=It is best to be skilled in a wide range of weapons.
+//RANDOM=Training is important, but experience is the best way to learn skills.
+
+[0574]
+//Guildmaster Warrior
+DEFAULT=I do not understand thee.
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=I greet thee.
+ON=Bye
+ON=Goodbye
+ON=Hail
+SAY=Farewell to thee.
+ON=GUILD
+SAY=This guild is for the strongest of warriors!
+ON=JOIN
+SAY=We would not accept one such as you.  Come back when you have more experience.
+ON=MASTER
+SAY=I have seen many a battle.
+ON=PLATE
+ON=ARMOR
+SAY=Plate Armor's the best, but requires great strength.  Leather is for weaklings.
+ON=AXE
+SAY=Although the Executioner's Axe is most feared, the Double Axe lasts longer and inflicts more damage.
+ON=HALBERD
+ON=BARDICHE
+SAY=The Bardiche lasts longer in battle than the Halberd, but does less damage.
+ON=CROSSBOW
+ON=BOW
+SAY=A regular bow can be a better albeit less powerful friend than the more unweildy Crossbow.
+ON=NORSE HELM
+ON=OPEN FACED HELM
+ON=HELM
+SAY=Of the plain helms available, a closed helm will provide the best protection in battle.
+ON=BUCKLER
+SAY=Don't be fooled. A buckler offers little more protection that the shorter-lived wooden shield.
+ON=CHAIN
+SAY=While chain is more easily damaged than ringmail, it offers better protection.
+ON=CLUB
+SAY=Clubs are often the weapon of choice for stupid creatures.
+ON=SCIMITAR
+ON=CUTLASS
+SAY=Only the scimitar equals the slashing speed of a cutlass.
+ON=FIGHT
+SAY=I always try to be prepared for battle, so I keep my armor clean and a weapon at the ready.
+ON=FORK
+SAY=A pitchfork may be faster, but for my money, only a war fork is sure to leave 'em screaming.
+ON=GAUNTLET
+SAY=Gauntlets are better protection for the wrists.
+ON=GORGET
+SAY=The gauntlet may seem small protection for the neck, it is thick and protective.
+ON=HEATER
+SAY=The heater shield offers stylish but average protection.
+ON=THOU<ANY>IDIOT
+ON=STUPID
+ON=MORON
+ON=IDIOT
+ON=YOU<ANY>IDIOT
+ON=THOU<ANY>
+ON=YOU<ANY>MORON
+SAY=Be careful, friend, or I shall have to prove my sword is sharper than your tongue.
+ON=KILL
+SAY=Oh I just love killling.
+ON=KATANA
+ON=KITANA
+SAY=This sword does little damage compared with the broad sword.
+ON=KRYSS
+SAY=The kryss does more damage and lasts longer than the quick slashing butcher knife.
+ON=MAUL
+ON=MACE
+SAY=In the mace family, a war mace or war hammer will hurt your opponent most.
+ON=MAIM
+SAY=Maiming is almost as good as killing. Almost.
+ON=PROVISIONS
+SAY=See a provisioner for supplies if you're going on a long battle journey.
+ON=RING
+SAY=Most rings are ordinary, but I have heard of special rings which increase one's strength in battle.
+ON=SHIELD
+SAY=The Chaos Shield yields more protection than the Order Shield.
+ON=SKILL
+SAY=Some weapons require great skill in a given area, like Swordsmanship, Fencing or Mace Fighting.
+ON=SPEAR
+SAY=Bah. Spears better for catching fish.
+ON=STAFF
+SAY=A black staff does more damage than a gnarled staff, but isn't as fast.
+ON=SWORD
+SAY=A long sword is my favorite weapon for damage and it requires less frequent repairs than the faster cutlass.
+ON=TROUBLE
+SAY=It seems you are expert at getting yourself into trouble.
+ON=WEAPON
+SAY=My favorite weapons are those which do the most damage!
+//RANDOM=Who wants to be a sissy fisherman?  It's the fighting life for me!
+
+[0576]
+//WEAPONSMITH
+DEFAULT=I do not understand thee.
+ON=BUY
+BUY
+ON=SELL
+SELL
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=I greet thee.
+ON=Bye
+ON=Goodbye
+ON=Hail
+SAY=Farewell.
+ON=PLATE
+ON=ARMOR
+SAY=Plate Armor's the best, but requires great strength.  Leather is for weaklings.
+ON=AXE
+SAY=Although the Executioner's Axe is most feared, the Double Axe lasts longer and inflicts more damage.
+ON=HALBERD
+ON=BARDICHE
+SAY=The Bardiche lasts longer in battle than the Halberd, but does less damage.
+ON=CROSSBOW
+ON=BOW
+SAY=A regular bow can be a better albeit less powerful friend than the more unweildy Crossbow.
+ON=NORSE HELM
+ON=OPEN FACED HELM
+ON=HELM
+SAY=Of the plain helms available, a closed helm will provide the best protection in battle.
+ON=BUCKLER
+SAY=Don't be fooled. A buckler offers little more protection that the shorter-lived wooden shield.
+ON=CHAIN
+SAY=While chain is more easily damaged than ringmail, it offers better protection.
+ON=CLUB
+SAY=Clubs are often the weapon of choice for stupid creatures.
+ON=SCIMITAR
+ON=CUTLASS
+SAY=Only the scimitar equals the slashing speed of a cutlass.
+ON=FIGHT
+SAY=I always try to be prepared for battle, so I keep my armor clean and a weapon at the ready.
+ON=FORK
+SAY=A pitchfork may be faster, but for my money, only a war fork is sure to leave 'em screaming.
+ON=GAUNTLET
+SAY=Gauntlets are better protection for the wrists.
+ON=GORGET
+SAY=The gauntlet may seem small protection for the neck, it is thick and protective.
+ON=HEATER
+SAY=The heater shield offers stylish but average protection.
+ON=THOU<ANY>IDIOT
+ON=STUPID
+ON=MORON
+ON=IDIOT
+ON=YOU<ANY>IDIOT
+ON=THOU<ANY>
+ON=YOU<ANY>MORON
+SAY=Be careful, friend, or I shall have to prove my sword is sharper than your tongue.
+ON=KILL
+SAY=Oh I just love killing.
+ON=KATANA
+ON=KITANA
+SAY=This sword does little damage compared with the broad sword.
+ON=KRYSS
+SAY=The kryss does more damage and lasts longer than the quick slashing butcher knife.
+ON=MAUL
+ON=MACE
+SAY=In the mace family, a war mace or war hammer will hurt your opponent most.
+ON=MAIM
+SAY=Maiming is almost as good as killing. Almost.
+ON=PROVISIONS
+SAY=See a provisioner for supplies if you're going on a long battle journey.
+ON=RING
+SAY=Most rings are ordinary, but I have heard of special rings which increase one's strength in battle.
+ON=SHIELD
+SAY=The Chaos Shield yields more protection than the Order Shield.
+ON=SKILL
+SAY=Some weapons require great skill in a given area, like Swordsmanship, Fencing or Mace Fighting.
+ON=SPEAR
+SAY=Bah. Spears better for catching fish.
+ON=STAFF
+SAY=A black staff does more damage than a gnarled staff, but isn't as fast.
+ON=SWORD
+SAY=A long sword is my favorite weapon for damage and it requires less frequent repairs than the faster cutlass.
+ON=TROUBLE
+SAY=It seems you are expert at getting yourself into trouble.
+ON=WEAPON
+SAY=My favorite weapons are those which do the most damage!
+//RANDOM=Who wants to be a sissy fisherman?  It's the fighting life for me!
+
+[0580]
+//SANTA
+DEFAULT=Ho! Ho! Ho! Merry Christmas!
+ON=Hi
+ON=Hello
+ON=Greet
+ON=Hail
+SAY=Ho! Ho! Ho! Come sit on my lap. Have you been good this year?!
+ON=Yes
+ON=Yes Santa Claus
+ON=Aye
+SAY=LIES ALL LIES!! Get off my lap you greedy little heathen!
+ON=Fuck you Santa
+ON=Fuck Off
+ON=Bite Me
+ON=Scrooge
+SAY=A lump of coal for thee this year!! and a bar of soap to wash out thy mouth!!
+ON=Hail
+SAY=Christmas is cancelled!!!  The reindeer are on strike!!
+ON=BUY
+SAY=Why you don't have to buy anything! I'll give you what you deserve hehe!
+// SAY=Why you don't have to buy anything! I'll give you what anything you like!
+ON=SELL
+SAY=I'm sorry, you can't afford the gifts I have! Get a job!! Ho! Ho! Ho! Merry Christmas!!
+// SAY=I have all that I need friend! Ho! Ho! Ho! Merry Christmas! Take what you want!
+ON=Bye
+ON=Goodbye
+ON=Hail
+SAY=Have a Merry Christmas!!!
+
+[0584]
+// Town Crier
+DEFAULT=Extra! Extra! Get your news here!
+ON=*hi*
+ON=Hello
+ON=Greet
+ON=Hail
+SPEAKU 各位玩家很抱歉
+// SAY=Hail! Have you any news for me?
+ON=News
+ON=Report
+ON=Reports
+ON=Rumor
+ON=Rumors
+SAY=I have no news!
+
+[0700] 
+//Portal Mage 
+DEFAULT=Thou dost speak in a foreign language... 
+ON=*hail* 
+SAY=Greetings friend, where wouldst thou wish to travel today? 
+ON=*where*
+ON=*travel*
+ON=*go*
+ON=*gate*
+SAY=I can gate to various towns or dungeons. Towns start at 100gp, dungeons start at 200gp. Ask about my PRICES for detailed information.
+ON=*help*
+SAY=Simply say the name of the place you would like to go such as Britain, Despise, Wind, Deceit, Moonglow. 
+ON=*price*
+SAY=Current prices are:
+SAY=Britain 100, Trinsic 150, Vesper 175, Minoc 150, Moonglow 300, Wind 300, Yew 125, Skara Brae 200.
+SAY=Occlo 300, Serpents Hold 300, Bucaneers Den 300, Cove 200, Jhelom 300, Nujelm 300.
+SAY=No Dungeon Areas yet.
+
+// TOWNS
+VAR.LOCATIONX=0
+VAR.LOCATIONY=0
+VAR.LOCATIONZ=0
+VAR.PRICE=0
+
+ON=*BRITAIN* 
+VAR.X=1443
+VAR.Y=1701
+VAR.Z=1
+VAR.PRICE=100
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*TRINSIC*
+VAR.X=1866
+VAR.Y=2779
+VAR.Z=1
+VAR.PRICE=150
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*VESPER*
+VAR.X=2899
+VAR.Y=676
+VAR.Z=1
+VAR.PRICE=175
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*MINOC*
+VAR.X=2465
+VAR.Y=534
+VAR.Z=16
+VAR.PRICE=150
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*MOONGLOW*
+VAR.X=4442
+VAR.Y=1172
+VAR.Z=1
+VAR.PRICE=200
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*WIND*
+VAR.X=5167 
+VAR.Y=243
+VAR.Z=16
+VAR.PRICE=400
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*YEW*
+VAR.X=546
+VAR.Y=991
+VAR.Z=1
+VAR.PRICE=125
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*SKARA*
+VAR.X=591 
+VAR.Y=2147
+VAR.Z=1
+VAR.PRICE=200
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*OCCLO*
+VAR.X=3682 
+VAR.Y=2518
+VAR.Z=1
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*NUJELM*
+VAR.X=3754 
+VAR.Y=1258
+VAR.Z=1
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*JHELOM*
+VAR.X=1384 
+VAR.Y=3809
+VAR.Z=1
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*COVE*
+VAR.X=2247 
+VAR.Y=1213
+VAR.Z=1
+VAR.PRICE=200
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*BUC*
+ON=*BUCS*
+VAR.X=2720 
+VAR.Y=2186
+VAR.Z=1
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+ON=*SERP*
+VAR.X=3015
+VAR.Y=3398
+VAR.Z=16
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+

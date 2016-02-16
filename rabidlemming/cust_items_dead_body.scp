@@ -1,0 +1,36 @@
+[ITEMDEF 02006]
+//corpse (all corpses normally are here)
+DEFNAME=i_corpse
+TYPE=T_CORPSE
+TDATA2=09
+ 
+ON=@Create
+  TIMER=1
+  VAR.DONE=0
+ 
+ON=@TIMER
+  IF <VAR.DONE>=0
+    IF <LINK.ACCOUNT.PLEVEL>>0 & <UID.<MORE2>.ACCOUNT.PLEVEL>>0
+      IF <LINK.REGION.NAME>=a_khaldun
+        TRY UID.<MORE2>.NEWNPC=02001
+        VAR.DONE=1
+        TIMER=300
+        ATTR=03
+        RETURN=1
+      ELSE
+        TIMER=300
+        ATTR=03
+        VAR.DONE=1
+        RETURN=1  
+      ENDIF
+    ELSE
+      TIMER=300
+      ATTR=03
+      VAR.DONE=1
+      RETURN=1
+    ENDIF
+  ELSE
+    RETURN 0
+  ENDIF
+  
+[EOF]

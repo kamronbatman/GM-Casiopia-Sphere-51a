@@ -1,0 +1,9 @@
+[FUNCTION mark]
+TAG.OldP=<P>
+SYSMESSAGE=Your current location has been marked.
+
+[FUNCTION recall]
+GO=<TAG.OldP>
+SYSMESSAGE=You have recalled your marked location.
+
+[EOF]

@@ -1,0 +1,194 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//// convbye.frg for when players end a conversation with an NPC.
+
+ON=*bye*
+ON=*farewell*
+ON=*see ya*
+ON=*hasta l*
+ON=*see you *
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Good riddance to thee.
+					SAY I thank thee for leaving me my miserable life.
+					SAY Thou didst not kill me! I thank thee!
+				ENDDO
+				LEAVE
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Good riddance.
+					SAY Look, everyone, <SRC.NAME> did not kill me!
+					SAY Thou didst not kill me?!
+				ENDDO
+				LEAVE
+			ELSE
+				DORAND 3
+					SAY Bye.
+					SAY 
+					SAY Thou didst not kill me?!
+				ENDDO
+				LEAVE
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Finally! Be on thy way.
+					SAY About time, for I have other tasks to attend to.
+					SAY Ah, decided that thou hast wasted my time long enough?
+				ENDDO
+				LEAVE
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Finally! Go away.
+					SAY Thank thee for ending thy interruption.
+					SAY Goodbye.
+				ENDDO
+				LEAVE
+			ELSE
+				DORAND 3
+					SAY Finally! Go away.
+					SAY Thank thee for ending thy interruption.
+					SAY Goodbye.
+				ENDDO
+				LEAVE
+			ENDIF
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> || <SRC.KARMA.KINDLY> || <SRC.KARMA.GOODHEARTED> )
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Good riddance to thee, scum.
+					SAY I have survived an encounter with <SRC.NAME>!
+					SAY I thank thee for not slaying me, <SRC.NAME>.
+				ENDDO
+				LEAVE
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Good riddance!
+					SAY I spoke with <SRC.NAME> and I lived...!
+					SAY Goodbye.
+				ENDDO
+				LEAVE
+			ELSE
+				DORAND 3
+					SAY Good riddance!
+					SAY I spoke with <SRC.NAME> and I lived...!
+					SAY Goodbye.
+				ENDDO
+				LEAVE
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Fare thee well.
+					SAY Goodbye, stranger.
+					SAY May the rest of thy day be pleasant.
+				ENDDO
+				LEAVE
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Farewell.
+					SAY Goodbye.
+					SAY Good day, then.
+				ENDDO
+				LEAVE
+			ELSE
+				DORAND 3
+					SAY Farewell.
+					SAY Goodbye.
+					SAY Good day, then.
+				ENDDO
+				LEAVE
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY 'Twas a pleasure to speak with thee, <SRC.NAME>.
+					SAY Fare thee well, <SRC.NAME>.
+					SAY Goodbye, <SRC.NAME>.
+				ENDDO
+				LEAVE
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY An honor to speak with thee, <SRC.NAME>.
+					SAY Farewell, <SRC.NAME>.
+					SAY Goodbye, <SRC.NAME>.
+				ENDDO
+				LEAVE
+			ELSE
+				DORAND 3
+					SAY An honor to speak with ye, <SRC.NAME>.
+					SAY Farewell, <SRC.NAME>.
+					SAY Bye, <SRC.NAME>.
+				ENDDO
+				LEAVE
+			ENDIF
+		ENDIF
+	ENDIF
+	BYE
+
+ON=*go away*
+ON=*leave me alone*
+ON=*fuck off*
+ON=*take a hike*
+ON=*go fly a kite*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <COMPLEXITY.HIGH> )
+			DORAND 3
+				SAY Fine. Have a nice day, scum.
+				SAY Same to thee.
+				SAY Oh, don't be so immature about it.
+			ENDDO
+			LEAVE
+		ELIF ( <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY Fine. Have a nice day.
+				SAY Same to thee.
+				SAY Thou'rt very rude.
+			ENDDO
+			LEAVE
+		ELSE
+			DORAND 3
+				SAY Fine.
+				SAY Same to ye.
+				SAY Ye's rude.
+			ENDDO
+			LEAVE
+		ENDIF
+	ELSE
+		IF ( <COMPLEXITY.HIGH> )
+			DORAND 3
+				SAY Fine. Have a nice day.
+				SAY Same to thee.
+				SAY There is no need to be so rude about it.
+				SAY Very well, if thou dost not wish to speak to me, kindly do not interrupt me again.
+			ENDDO
+			LEAVE
+		ELIF ( <COMPLEXITY.MEDIUM> )
+			DORAND 3
+				SAY Fine. Have a nice day.
+				SAY Same to thee.
+				SAY There is no need to be so rude about it.
+			ENDDO
+			LEAVE
+		ELSE
+			DORAND 3
+				SAY Fine.
+				SAY Same to ye.
+				SAY Aye, whatever.
+			ENDDO
+			LEAVE
+		ENDIF
+	ENDIF
+	BYE
+

@@ -1,0 +1,270 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Saturday, June 3, 2000
+//
+VERSION=0.54
+
+[ITEMDEF 04530]
+NAME=Stone of Humility
+ID=i_virtuestone_black
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Stone of Humility
+
+[ITEMDEF 04531]
+NAME=Stone of Honesty
+ID=i_virtstone_2
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Stone of Honesty
+
+[ITEMDEF 04532]
+NAME=Stone of Justice
+ID=i_virtstone_3
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Stone of Justice
+
+[ITEMDEF 04533]
+NAME=Stone of Sacrifice
+ID=i_virtstone_4
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Stone of Sacrifice
+
+[ITEMDEF 04534]
+NAME=Stone of Honor
+ID=i_virtstone_5
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Stone of Honor
+
+[ITEMDEF 04535]
+NAME=Stone of Valor
+ID=i_virtstone_6
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Stone of Valor
+
+[ITEMDEF 04536]
+NAME=Stone of Spirituality
+ID=i_virtstone_7
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Stone of Spirituality
+
+[ITEMDEF 04537]
+NAME=Stone of Compassion
+ID=i_virtstone_8
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Stone of Compassion
+
+[ITEMDEF 04538]
+NAME=Bell of Courage
+ID=i_bell_of_courage
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Bell of Courage
+
+[ITEMDEF 04539]
+NAME=Book of Truth
+ID=i_book_of_truth
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Book of Truth
+
+[ITEMDEF 04540]
+NAME=Candle of Love
+ID=i_candle_of_love
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Candle of Love
+
+//grave triggers
+
+[ITEMDEF 05016]
+DEFNAME=I_GRAVE_DIG
+ID=0edf
+//grave for grave digging.
+ON=@DCLICK
+	IF <DISTANCE>>1
+		RETURN 1
+	ENDIF
+	IF (<SRC.FINDLAYER(1).ID>==i_pickaxe)
+		SRC.ANIM=0B
+		SOUND=0126
+		IF RAND(3)
+			SRC.NEWITEM I_GRAVE_SPAWN_A
+			SRC.KARMA=<SRC.KARMA> - 50
+			SRC.SYSMESSAGE Thou hath lost a little Karma.
+			SRC.MESSAGE Thou hath disturbed the dead!
+		ELSEIF RAND(2)
+			SRC.NEWITEM backpack_meager
+			SRC.KARMA=<SRC.KARMA> - 50
+			SRC.SYSMESSAGE Thou hath lost a little Karma.
+			SRC.MESSAGE Thou hath found some treasure!
+		ELSEIF RAND(5)
+			SRC.NEWITEM I_GRAVE_SPAWN_A
+			SRC.KARMA=<SRC.KARMA> - 50
+			SRC.SYSMESSAGE Thou hath lost a little Karma.
+			SRC.MESSAGE Thou hath disturbed the dead greatly!
+		ELSEIF RAND(4)
+			SRC.DAMAGE={5 10}
+			SRC.KARMA=<SRC.KARMA> - 50
+			SRC.SYSMESSAGE Thou hath lost a little Karma.
+			SRC.MESSAGE Thou hath been almost drug into the grave //by the dead!
+		ENDIF
+	ENDIF
+	RETURN 1
+
+CATEGORY=Decoration - Dungeons and The Dead
+SUBSECTION=Graves & Gravestones
+DESCRIPTION=Grave Digging Grave
+
+[ITEMDEF 05017]
+//Average Grave Digging Random Monster Spawn
+DEFNAME=I_GRAVE_SPAWN_A
+ID=I_HOLE
+TYPE=T_SPAWN_CHAR
+
+ON=@Create
+ATTR=attr_move_never|attr_invis
+MORE1={ c_skeleton 1 c_ZOMBIE 1 c_spectre 1 }
+MORE2=0
+MOREP=0,1,3
+TIMER=0
+
+ON=@TIMER
+	IF <AMOUNT>==0
+		REMOVE
+		RETURN 1
+	ENDIF
+	IF <MORE2>==1
+		MOREP=1,1,3
+		AMOUNT=0
+		RETURN 1
+	ENDIF
+
+[ITEMDEF i_egg_dragon]
+//Dragon Egg
+ID=i_fruit_coconut
+NAME=Dragons Egg
+VALUE=5000
+
+CATEGORY=Custom Items
+SUBSECTION=Dragons Egg
+DESCRIPTION=Dragons Egg
+
+ON=@Create
+	COLOR={ 0000 1 0033 1 0038 1 005d 1 0091 1 0175 1 0371 1 0455 1 07fff 1 }
+	ATTR=attr_identified
+	MORE=0
+
+ON=@TIMER
+	IF (<MORE>==1)
+		MORE2=2
+		LINK.NEWITEM i_dragon_spawn
+		LINK.ACT.P=<LINK.P>
+		REMOVE
+	ENDIF
+	RETURN 1
+
+ON=@DCLICK    //on timer not executing in packs or containers, so do this for now if in someones pack
+	IF (<MORE>==1)
+		IF (<TIMER>>5800)
+			SRC.MESSAGE The egg seems soft and somewhat velvety to thine touch.
+		ELSEIF (<TIMER>>3600)
+			SRC.MESSAGE The egg seems to be getting hard and the velvet has fallen off.
+		ELSEIF (<TIMER>>1800)
+			SRC.MESSAGE The egg is very hard, it may hatch soon if you don't sell it quickly.
+		ELSEIF (<TIMER>>20)
+			SRC.MESSAGE You swear you can feel movement inside the egg...
+		ELSE
+			SRC.MESSAGE OH NO! as you pick up the egg it cracks and begings hatching!!!
+			LINK.NEWITEM i_dragon_spawn
+			LINK.ACT.P=<LINK.P>
+			REMOVE
+		ENDIF
+	ENDIF
+	RETURN 1
+
+ON=@PICKUP_GROUND
+	MORE=1
+	IF (<TIMER><1)
+		TIMER=7200
+	ENDIF
+	LINK=<SRC.UID>
+	RETURN 0
+
+ON=@PICKUP_PACK
+	IF (<MORE>==1)
+		TRIGGER=@DCLICK
+		RETURN 0
+	ENDIF
+	MORE=1
+	IF (<TIMER><1)
+		TIMER=7200
+	ENDIF
+	LINK=<SRC.UID>
+	RETURN 0
+
+[ITEMDEF i_dragon_spawn]
+//drake egg spawn
+ID=I_HOLE
+TYPE=T_SPAWN_CHAR
+DESCRIPTION=One Shot Drake Spawn
+SUBSECTION=Dragons Egg
+CATEGORY=Custom Items
+
+ON=@Create
+ATTR=attr_move_never|attr_invis
+MORE1={ C_M_DRAGON_GREENDRAKE 1 C_M_DRAGON_COPPERDRAKE 1 C_M_DRAGON_BLUEDRAKE 1 C_M_DRAGON_GOLDDRAKE 1 C_M_DRAGON_BLACKDRAKE 1 C_M_DRAGON_SILVERDRAKE 1 C_M_DRAGON_CRYSTALDRAKE 1 }
+MORE2=0
+MOREP=0,1,3
+TIMER=2
+
+ON=@TIMER
+	IF <AMOUNT>==0
+		REMOVE
+		RETURN 1
+	ENDIF
+	IF <MORE2>==1
+		MOREP=30,30,3
+		AMOUNT=0
+		RETURN 0
+	ENDIF
+	RETURN 0
+
+[ITEMDEF i_Book_Tennysons]
+//Tennyson's Charge of the Light Brigade
+NAME=Charge of the Light Brigade
+ID=i_BOOK_LG_PUB
+VALUE=10
+
+CATEGORY=Provisions - Miscellaneous
+SUBSECTION=Quest Items
+DESCRIPTION=Charge of the Light Brigade
+
+ON=@Create
+MORE1=b_tennyson
+
+[EOF]

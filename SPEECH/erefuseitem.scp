@@ -1,0 +1,82 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+// Purpose: Britannia Refuse Item Script
+// Notes:	This is used for general information pertaining to all Britannian NPC's
+//			refusal of items
+// Current Keyword List:
+//	none - event triggered
+//
+
+
+ON=@InternalRefuseItem
+	SAY Thou art giving me <ACT.NAME>?
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			DORAND 3
+				SAY No thanks!
+				SAY Thanks, but no.
+				SAY I don't want that!
+			ENDDO
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			DORAND 3
+				SAY I don't want it.
+				SAY I can't use that!
+				SAY Don't give me that!
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY I really don't need thy cast-offs!
+				SAY Thy generosity is duly noted. Thanks, but no thanks.
+				SAY I don't need that.
+				ENDDO
+			ENDDO
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			DORAND 3
+				SAY Thank thee. Don't need any.
+				SAY I don't want it. Sorry.
+				SAY I don't have a use for it. Thanks, though.
+			ENDDO
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			DORAND 3
+				SAY Tis very generous of thee, but I don't need it.
+				SAY I can't take it. Sorry.
+				SAY Thank thee, but I don't want it.
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY Thou art most kind <SRC.SEX good sir/good lady>, but it isn't anything that I need.
+				SAY Please, keep it. I don't want it.
+				SAY I really don't need it.
+			ENDDO
+		ENDIF
+	ELSE
+		IF ( <SRC.FAME.INFAMOUS> || <SRC.FAME.OUTLAW> )
+			DORAND 3
+				SAY Keep it! I have no need for it.
+				SAY 'Tis a shame I have no use for it. Keep it.
+				SAY If only I needed it! I don't.
+			ENDDO
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			DORAND 3
+				SAY 'Tis kind of thee, but I have no use for it.
+				SAY Thank thee, but no.
+				SAY Thank thee, kind <SRC.SEX sir/lady>, but no.
+			ENDDO
+		ELSE
+			DORAND 3
+				SAY I would like to accept thy gift, but I cannot. Thank thee.
+				SAY Thank thee <SRC.NAME>! But keep it. I have no use for it.
+				SAY 'Tis greatly appreciated, but unnecessary. I don't want it.
+			ENDDO
+		ENDIF
+	ENDIF

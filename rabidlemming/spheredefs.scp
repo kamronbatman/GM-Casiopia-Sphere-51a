@@ -1,0 +1,967 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+VERSION=0.54
+
+[DEFNAME HARDCODED]
+DEFAULTITEM i_GOLD	// if we cannot create the item. make it this.
+DEFAULTCHAR	c_MAN	// if we cannot create the char. make it this.
+GUARDS		{ c_h_guard 1 c_h_guard_f 1 }
+
+[DEFNAME HUES]	// These are hues from hues.mul.
+color_none			0
+color_metal			0
+color_black			1
+color_violet_lt		14
+color_red1          32
+color_red2          33
+color_cyan          88
+color_gray_dk       802
+color_energy_vortex	118
+color_gray_lt       904
+COLOR_DYE_HIGH		1000	// highest dyeable color = 1001
+color_ice           1152
+color_snow          1153
+color_rock          0835 //1154
+color_spectral      17969
+color_transparent   07fff
+
+[DEFNAME HUES_RANGE]	// These are ranges of hues from hues.mul.
+colors_skin			{1002 1057}
+colors_all          { {443 443} 2 {902 902} 1 {907 907} 1 {928 928} 1 {946 947} 1 {1201 1247} 6 {1301 1347} 6 {1401 1447} 6 {1501 1547} 6 {1601 1654} 6 {1701 1747} 6 {1801 1887} 6 }
+colors_white        {2301 2301}
+colors_black        {2305 2305}
+colors_brown        {443 443}
+colors_red             {1601 1654}
+colors_blue            {1301 1354}
+colors_yellow          {1701 1747}
+colors_green           {1401 1447}
+colors_orange          {1501 1547}
+colors_gray            {946 947}
+colors_pink            {1201 1247}
+colors_neutral         {1801 1887}
+colors_snake           {2001 2018}
+colors_bird            {2101 2130}
+colors_slime           {2201 2224}
+colors_animal          {2301 2318}
+colors_daemon          { 1106 1110 }
+colors_wyrm            { 0 1 { 1105 1110 } 1 { 34 39 } 1 }
+colors_wyvern	       { { 01b5 01b8 } 1 { 01ba 01bd} 1 {1401 1447} 1 }
+colors_red_drag      { color_red1 1 color_red2 1 }
+colors_blood           { 33 38 }
+colors_lava            { { 32 34 } 1 { 53 55 } 1 { 43 45 } 1 }
+colors_poison          { 61 79 }
+colors_hair        { 1102 1148 }
+
+color_magic_weap    0
+color_magic_shield    0
+color_magic_arm     0
+
+color_magic_defense		1650
+color_magic_guarding		1430
+color_magic_hardening		1353
+color_magic_fortification    	1805
+color_magic_invulnerability	1887
+
+// Brain types
+[DEFNAME BRAINS]
+BRAIN_NONE             0
+BRAIN_ANIMAL           1
+BRAIN_HUMAN            2
+BRAIN_HEALER           3
+BRAIN_GUARD            4
+BRAIN_BANKER            5
+BRAIN_VENDOR            6
+BRAIN_BEGGAR            7
+BRAIN_ANIMAL_TRAINER    8
+BRAIN_THIEF             9
+BRAIN_MONSTER           10
+BRAIN_BESERK            11
+BRAIN_UNDEAD            12
+BRAIN_DRAGON            13
+BRAIN_VENDOR_OFFDUTY    14
+BRAIN_TOWNCRIER         2
+
+[DEFNAME ITEMS_TEMPLATES]
+RANDOM_COIN_PURSE      { backpack_poor 1 backpack_meager 1 backpack_average 1 backpack_rich 1 }
+RANDOM_GOLD_PILE       { POOR_GOLD_PILE 1 MEAGER_GOLD_PILE 1 AVERAGE_GOLD_PILE 1 RICH_GOLD_PILE 1 FILTHY_RICH_GOLD_PILE 1 }
+
+[DEFNAME ITEMS_HAIR]
+RANDOM_FEMALE_HAIR      { i_hair_short 1 i_hair_long 1 i_hair_ponytail 1 i_hair_pageboy 1 i_hair_buns 1 i_hair_afro 1 i_hair_receding 1 i_hair_2_pigtails 1 i_hair_krisna 1 }
+RANDOM_MALE_HAIR        { i_hair_short 1 i_hair_long 1 i_hair_ponytail 1 i_hair_mohawk 1 i_hair_pageboy 1 i_hair_afro 1 i_hair_receding 1 i_hair_2_pigtails 1 i_hair_krisna 1 }
+RANDOM_FACIAL_HAIR      { i_beard_long 1 i_beard_short 1 i_beard_goatee 1 i_beard_mustache 1 i_beard_short_med 1 i_beard_long_med 1 i_beard_vandyke 1 }
+
+[DEFNAME ITEMS_CLOTHING]
+RANDOM_HATS            { i_floppy_hat 1 i_wide_brim_hat 1 i_cap 1 i_tall_straw_hat 1 i_straw_hat 1 i_wizards_hat 1 i_bonnet 1 i_feathered_hat 1 i_bandana 1 i_skull_cap 1 }
+RANDOM_OVER_ARMOR      { i_tunic 1 i_doublet 1 i_sash 1 }
+RANDOM_FEMALE_TOPS     { i_shirt_plain 1 i_shirt_fancy 1 i_doublet 1 i_tunic 1 i_dress_full 1 i_dress_plain 1 i_robe 1 }
+RANDOM_FEMALE_PANTS    { i_pants_short 1 i_pants_long 1 i_kilt 1 i_skirt_long 1 i_dress_full 1 i_dress_plain 1 }
+RANDOM_MASKS           { i_helm_orc 1 i_mask_bear 1 i_mask_deer 1 i_mask_orc 1 i_mask_tribal_red 1 i_mask_blue 1 }
+RANDOM_BOOTS           { i_boots_thigh 1 i_boots_calf 1 }
+RANDOM_MALE_PANTS      { i_pants_short 1 i_pants_long 1 i_kilt 1 }
+RANDOM_MALE_TOPS       { i_shirt_plain 1 i_pants_long 1 i_doublet 1 i_tunic 1 i_robe 1 }
+RANDOM_SHOES           { i_shoes_plain 1 i_sandals 1 i_boots_calf 1 }
+RANDOM_FOOTWEAR        { i_boots_thigh 1 i_boots_calf 1 i_shoes_plain 1 i_sandals 1 }
+RANDOM_PANTS           { i_pants_short 1 i_pants_long 1 }
+RANDOM_SKIRT           { i_skirt_long 1 i_kilt 1 i_skirt_short 1 }
+
+
+[DEFNAME ITEMS_ARMOR]
+RANDOM_LEG_ARMOR       { i_studded_leggings 1 i_platemail_leggings 1 i_chainmail_leggings 1 i_leather_leggings 1 i_ringmail_leggings 1 }
+RANDOM_ARM_ARMOR       { i_studded_sleeves 1 i_platemail_arms 1 i_leather_sleeves 1 i_ringmail_gloves 1 }
+RANDOM_GLOVES          { i_studded_gloves 1 i_platemail_gloves 1 i_leather_gloves 1 }
+RANDOM_SHIELD          { i_shield_round_bronze 1 i_shield_buckler 1 i_shield_kite_metal 1 i_shield_heater 1 i_shield_kite_wood 1 i_shield_wood 1 i_shield_round_metal 1 }
+RANDOM_HEAD_ARMOR      { i_chainmail_coif 1 i_helm_closed 1 i_helm_open 1 i_helm_nose 1 i_bascinet 1 i_platemail_helm 1 }
+RANDOM_HELMET          { i_helm_closed 1 i_helm_open 1 i_bascinet 1 i_helm_nose 1 i_platemail_helm 1 }
+RANDOM_CHEST_ARMOR     { i_studded_tunic 1 i_platemail_chest 1 i_chainmail_tunic 1 i_leather_tunic 1 i_ringmail_tunic 1 }
+RANDOM_GORGET          { i_studded_gorget 1 i_platemail_gorget 1 i_leather_gorget 1 i_studded_gorget 1 }
+
+[DEFNAME ITEMS_WEAPONS]
+RANDOM_START_WEAPON    { i_axe_battle 1 i_sword_long 1 i_mace 1 }
+RANDOM_AXE             { i_axe_exec 1 i_axe_battle 1 i_hatchet 1 i_axe 1 i_axe_double 1 i_axe_two_hand 1 i_axe_war 1 }
+RANDOM_POLE_ARM        { i_bardiche 1 i_spear_short 1 i_spear 1 i_war_fork 1 i_hammer_pick 1 }
+RANDOM_MACE            { i_club 1 i_mace_war 1 i_mace 1 i_maul 1 i_hammer_war 1 }
+RANDOM_SWORD           { i_cutlass 1 i_halberd 1 i_katana 1 i_sword_broad 1 i_sword_long 1 i_sword_long_b 1 i_sword_viking 1 i_scimitar 1 }
+RANDOM_STAFF           { i_staff_gnarled 1 i_staff_quarter 1 }
+RANDOM_DAGGER          { i_dagger 1 i_kryss 1 }
+RANDOM_MISSILE         { i_bow 1 i_crossbow 1 i_crossbow_heavy 1 }
+RANDOM_WEAPON          { RANDOM_AXE 7 RANDOM_POLE_ARM 5 RANDOM_MACE 5 RANDOM_SWORD 8 RANDOM_STAFF 2 RANDOM_DAGGER 2 RANDOM_MISSILE 3 }
+
+[DEFNAME ITEMS_OTHER]
+RANDOM_LIGHT			{ i_CANDLE 1 i_TORCH 1 i_LANTERN 1 }
+random_fishing_junk		{ i_FISHING_WEIGHT 1 i_FISHING_POLE 1 i_fish_cut_raw 1 i_FISH_RAW_HEAD 1 i_FISH_SMALL 1 i_FISH_BIG_1 1 i_FISH_BIG_2 1 i_FISH_BIG_3 1 i_FISH_BIG_4 1 }
+
+[DEFNAME POTIONS]
+RANDOM_POTION			{ i_bottle_empty 1 i_potion_refresh 1 i_potion_agility 1 i_potion_nightsight 1 i_potion_heal 1 i_potion_strength 1 i_potion_poison 1 i_potion_cure 1 i_potion_explosion 1 }
+
+[DEFNAME REAGENTS]
+RANDOM_REAGENT         { i_reag_black_pearl 1 i_reag_blood_moss 1 i_reag_garlic 1 i_reag_ginseng 1 i_reag_mandrake_root 1 i_reag_nightshade 1 i_reag_sulfur_ash 1 i_reag_spider_silk 1 }
+
+[DEFNAME ITEMS_MISC]
+random_instrument      { i_drum 1 i_tambourine 1 i_lyre 1 i_lute 1 }
+
+[DEFNAME ITEMS_JEWELS]
+random_NECKLACE        { i_necklace_silver_beads 1 i_necklace_gold_beads 1 i_necklace_gold 1 i_necklace_silver 1 }
+random_JEWEL           { i_gem_star_sapphire 1 i_gem_emerald 1 i_gem_sapphire 1 i_gem_ruby 1 i_gem_citrine 1 i_gem_amethyst 1 i_gem_tourmaline 1 i_gem_amber 1 i_gem_diamond 1 }
+
+[DEFNAME ITEMS_FOOD]
+random_BREAD           { i_bread_loaf 1 i_bread_french 1 }
+random_OTHER_FOOD      { i_pie_baked 1 i_cake 1 i_muffin 1 i_jar_honey 1 i_pizza 1 i_cheese_wheel 1 }
+random_MEAT            { i_chicken_leg 1 i_lamb_leg 1 i_bird_cooked 1 i_ham 1 i_lamb_leg_raw 1 I_BIRD_RAW 1 i_ribs_raw 1 i_ribs_cooked 1 i_bacon_slice 1 i_sausages 1 }
+random_VEGGIE          { i_fruit_cabbage 1 i_fruit_carrot 1 i_fruit_corn 1 i_fruit_gourd1 1 i_fruit_gourd2 1 i_fruit_lettuce 1 i_fruit_onion 1 i_fruit_pumpkin 1 i_fruit_squash 1 i_fruit_turnip 1 }
+random_PITCHER         { i_pitcher_ale 1 i_pitcher_cider 1 i_pitcher_glass 1 i_pitcher_liquor 1 i_pitcher_milk 1 i_pitcher_wine 1 i_pitcher_water 1 }
+random_BOTTLE          { i_bottle_ale 1 i_bottle_wine 1 i_bottle_liquor 1 i_jug_cider 1 }
+random_FRUIT           { i_fruit_dates 1 i_fruit_peach 1 i_fruit_pear 1 i_fruit_lemon 1 i_fruit_lime 1 i_fruit_grapes 1 i_fruit_apple 1 i_fruit_banana 1 i_fruit_coconut 1 i_fruit_cantelope 1 i_fruit_honeydewmelon 1 i_fruit_watermelon 1 }
+random_FOOD            { random_meat 1 random_bread 1 random_veggie 1 random_fruit 1 random_other_food 1 }
+
+[DEFNAME ITEMS_CONTAINERS]
+random_CHEST           { i_chest_metal_brass 1 i_chest_metal 1 i_chest_wooden_brass 1 }
+random_CRATE           { i_crate_lg 1 i_crate_md 1 i_crate_small 1 }
+random_CONTAINER       { i_barrel 1 i_barrel_open 1 RANDOM_CRATE 3 RANDOM_CHEST 4 }
+
+// Items (Scrolls)
+[DEFNAME ITEMS_SCROLLS]
+random_SCROLL          { RANDOM_LOWER_SCROLL 1 RANDOM_UPPER_SCROLL 1 }
+random_LOWER_SCROLL    { RANDOM_FIRST_CIRCLE 1 RANDOM_SECOND_CIRCLE 1 RANDOM_THIRD_CIRCLE 1 RANDOM_FOURTH_CIRCLE 1 }
+random_UPPER_SCROLL    { RANDOM_FIFTH_CIRCLE 1 RANDOM_SIXTH_CIRCLE 1 RANDOM_SEVENTH_CIRCLE 1 RANDOM_EIGHTH_CIRCLE 1 }
+
+random_FIRST_CIRCLE    { i_scroll_reactive_armor 1 i_scroll_clumsy 1 i_scroll_create_food 1 i_scroll_feeblemind 1 i_scroll_heal 1 i_scroll_magic_arrow 1 i_scroll_night_sight 1 i_scroll_weaken 1 }
+random_SECOND_CIRCLE   { i_scroll_agility 1 i_scroll_cunning 1 i_scroll_cure 1 i_scroll_harm 1 i_scroll_magic_trap 1 i_scroll_magic_untrap 1 i_scroll_protection 1 i_scroll_strength 1 }
+random_THIRD_CIRCLE    { i_scroll_bless 1 i_scroll_fireball 1 i_scroll_magic_lock 1 i_scroll_poison 1 i_scroll_telekinesis 1 i_scroll_teleport 1 i_scroll_unlock 1 i_scroll_wall_of_stone 1 }
+random_FOURTH_CIRCLE   { i_scroll_archcure 1 i_scroll_archprotection 1 i_scroll_curse 1 i_scroll_fire_field 1 i_scroll_greater_heal 1 i_scroll_lightning 1 i_scroll_mana_drain 1 i_scroll_recall 1 }
+random_FIFTH_CIRCLE    { i_scroll_blade_spirits 1 i_scroll_dispel_field 1 i_scroll_incognito 1 i_scroll_magic_reflection 1 i_scroll_mind_blast 1 i_scroll_paralyze 1 i_scroll_poison_field 1 i_scroll_summon_creature 1 }
+random_SIXTH_CIRCLE    { i_scroll_dispel 1 i_scroll_energy_bolt 1 i_scroll_explosion 1 i_scroll_invisibility 1 i_scroll_mark 1 i_scroll_mass_curse 1 i_scroll_paralyze_field 1 i_scroll_reveal 1 }
+random_SEVENTH_CIRCLE  { i_scroll_chain_lightning 1 i_scroll_energy_field 1 i_scroll_flamestrike 1 i_scroll_gate_travel 1 i_scroll_mana_vampire 1 i_scroll_mass_dispel 1 i_scroll_meteor_swarm 1 i_scroll_polymorph 1 }
+random_EIGHTH_CIRCLE   { i_scroll_earthquake 1 i_scroll_energy_vortex 1 i_scroll_resurrection 1 i_scroll_summon_elem_air 1 i_scroll_summon_daemon 1 i_scroll_summon_elem_earth 1 i_scroll_summon_elem_fire 1 i_scroll_summon_elem_water 1 }
+
+//*******************************************************************
+//items - Random Item Spawns
+[DEFNAME ITEMS_RANDOM_SPAWNS]
+random_all_items  { random_weapons 3 random_armor 3 random_scroll 3 random_targetables 2 random_wearables 2 random_activators 1 random_reagents 1 }
+
+// items - armor
+[DEFNAME ITEMS_RANDOM_ARMOR]
+random_all_armor           { random_body_armor 1 random_extra_armor 1 random_helms 1 random_coifs 1 }
+random_armor               { random_body_armor 1 random_extra_armor 1 }
+random_extra_armor         { random_shields }
+random_head_armor          { random_helms 1 random_coifs 1 }
+random_body_armor          { random_chest_armor 1 random_leg_armor 1 random_arm_armor 1 random_neck_armor 1 random_head_armor 1 random_hand_armor 1 }
+random_chest_armor         { random_chest_armor_male 2 random_chest_armor_female 1 }
+random_leg_armor           { random_leg_armor_male 2 random_leg_armor_female 1 }
+
+random_chest_armor_male    { i_bone_chest 1 i_chainmail_tunic 10 i_leather_tunic 30 i_studded_tunic 20 i_ringmail_tunic 15 i_platemail_chest 5 }
+random_chest_armor_female  { i_armor_female_studded 8 i_armor_female_plate 3 i_armor_female_leather 9 }
+random_leg_armor_male      { i_bone_leggings 1 i_chainmail_leggings 10 i_leather_leggings 30 i_studded_leggings 20 i_ringmail_leggings 15 i_platemail_leggings 5 }
+random_leg_armor_female    { i_armor_female_shorts 5 i_armor_female_skirt 5 i_armor_female_bustier 5 i_armor_female_bustier_studded 5 }
+random_arm_armor           { i_bone_arms 1 i_leather_sleeves 30 i_studded_sleeves 20 i_ringmail_sleeves 15 i_platemail_arms 5 }
+random_neck_armor          { i_leather_gorget 3 i_studded_gorget 2 i_platemail_gorget 1 i_studded_gorget 2 }
+random_helms               { i_platemail_helm 3 i_bone_helmet 1 i_helm_nose 2 } // i_closed, i_open , i_bascinet,
+random_coifs               { i_chainmail_coif 4 i_helm_closed 6 }
+random_hand_armor          { i_bone_gloves 3 i_leather_gloves 50 i_studded_gloves 30 i_ringmail_gloves 10 i_platemail_gloves 7 }
+random_shields             { i_shield_wood 3 i_shield_buckler 2 i_shield_kite_wood 2 i_shield_kite_metal 3 i_shield_heater 1 }
+
+//******************************************************************************// items - weapons
+[DEFNAME ITEMS_RANDOM_WEAPONS]
+random_weapons             { random_everyday_weapons 1 random_real_weapons 5 }
+random_real_weapons        { random_blunt_weapons 1 random_edged_weapons 1 random_ranged_weapons 1 }
+random_blunt_weapons       { random_cudgels 1 random_maces 1 random_hammers 1 }
+random_edged_weapons       { random_axes 1 random_swords 1 random_pole_arms 1 random_daggers 1 }
+
+random_everyday_weapons    { i_pickaxe 5 i_pitchfork 1 i_staff_quarter 5 i_cleaver_meat 1 i_knife_skinning 1 i_shepherds_crook 2 i_knife_butcher 1 }
+random_cudgels             { i_staff_quarter 3 i_club 4 }
+random_maces               { i_maul 1 i_mace_war 5 i_mace 14 }
+random_hammers             { i_hammer_pick 1 i_hammer_war 4 }
+random_axes                { i_axe_war 1 i_hatchet 2 i_axe_battle 6 i_axe 8 i_axe_double 3 }
+random_swords              { i_sword_broad 4 i_sword_long 4 i_scimitar 4 i_sword_long_b 1 i_sword_viking 3 i_katana 1 i_cutlass 2 }
+random_pole_arms           { i_bardiche 2 i_spear 8 i_spear_short 4 i_axe_two_hand 2 i_war_fork 1 i_halberd 3 }
+random_daggers             { i_dagger 12 i_kryss 4 }
+random_ranged_weapons      { i_crossbow 2 i_crossbow_heavy 1 i_bow 2 }
+random_missiles            { i_arrow }
+
+//*****************************************************************
+// items - wearables
+[DEFNAME ITEMS_RANDOM_WEARABLES]
+random_cloaks              { i_cape 1 }
+random_boots               { i_boots_thigh 1 i_boots_calf 1 }
+random_hats                { i_hat_wide_brim 1 i_cap 1 i_hat_straw_tall 1 i_hat_straw 1 i_hat_wizards 1 i_bonnet 1 i_hat_feather 1 i_hat_tricorne 1 i_hat_jester 1 }
+random_belts               { i_sash 1 }
+random_bracelets           { i_bracelet_gold 1 i_bracelet_silver 1 }
+random_rings               { i_ring_gold 1 i_ring_silver 1  }
+random_earrings			   { i_earrings_gold 1 i_earrings_silver 1 }
+
+random_wearables           { random_clothing 1 random_jewelry 1 };
+random_clothing            { random_male_tops 1 random_female_tops 1 random_male_pants 1 random_female_pants 1 random_cloaks 1 random_boots 1 random_hats 1 random_belts 1 }
+random_jewelry             { random_necklace 1 random_bracelets 1 random_earrings 1 random_rings 1 }
+
+//*******************************************************************
+// items - magic related items
+[DEFNAME ITEMS_RANDOM_MAGIC]
+random_reagents            { i_reag_black_pearl 1 i_reag_blood_moss 1 i_reag_garlic 1 i_reag_ginseng 1 i_reag_mandrake_root 1 i_reag_nightshade 1 i_reag_sulfur_ash 1 i_reag_spider_silk 1 }
+random_spellbooks          { i_spellbook 1 }
+random_unknown_scrolls     { i_scroll_x_red 1 i_scroll_x_blue 1 i_scroll_x_green 1 i_scroll_x_teal 1 i_scroll_x_brown 1 i_scroll_x_purp 1 }
+random_potions             { i_bottle_black 1 i_bottle_orange 1 i_bottle_blue 1 i_bottle_white 1 i_bottle_green 1 i_bottle_red 1 i_bottle_yellow 1 i_bottle_purple 1 }
+random_wands               { i_wand_1 1 i_wand_2 1 i_wand_3 1 i_wand_4 1 }
+random_staves              i_staff_gnarled
+random_crystal_balls       i_crystal_ball
+random_stationary          { i_brazier_2 1 i_statue_stone_sm 1 }
+
+random_activators          { random_crystal_balls 1 random_stationary 1 }
+random_magic_related_items { random_reagents 2 random_unknown_scrolls 3 random_potions 3 random_wearables 1 random_targetables 1 random_activators 1 }
+random_targetables         { random_wands 2 random_staves 1 }
+
+random_body_parts_1        { i_flesh_arm_right 1 i_flesh_upper_body 1 i_flesh_leggings 1 i_flesh_torso 1 i_flesh_head_2 1 i_flesh_legs_3 1 i_flesh 1 i_flesh_legs_3 1 i_flesh_arm_left 1 i_flesh_upper_body_2 1 i_flesh_legs_4 1 i_flesh_torso_2 1 i_flesh_head_2 1 i_flesh_2 1 i_flesh_legs_5 1 i_flesh_leg 1 i_flesh_heart 1 i_flesh_liver 1 i_flesh_entrails 1 i_flesh_brain 1 }
+random_body_parts_2        { i_flesh_torso 1 i_flesh_head 1 i_flesh_left_arm 1 i_flesh_right_arm 1 i_flesh_left_leg 1 i_flesh_right_leg 1 }
+
+//*******************************************************************
+// Chars
+[DEFNAME NPC_GROUPS]
+HORSES                 { c_horse_tan 1 c_horse_gray 1 c_horse_brown_lt 1 c_horse_brown_dk 1 }
+LIZARD_MEN             { c_lizardman 1 c_lizardman_spear 1 c_lizardman_mace 1 }
+RATMEN                 { c_ratman 1 c_ratman_w_sword 1 c_ratman_w_mace 1 }
+SKELETONS              { c_skeleton 1 c_skeleton_w_sword 1 c_skeleton_w_axe 1}
+TROLLS                 { c_troll 1 c_troll_w_axe 1 c_troll_w_mace 1 }
+
+[DEFNAME SOUNDS]
+// Sounds - monsters
+snd_ANIMALS_ALIGATR1     90
+snd_ANIMALS_BEAR1         95
+snd_ANIMALS_BULL1         100
+snd_ANIMALS_CAT1         105
+snd_ANIMALS_CHICKEN1       110
+snd_ANIMALS_COUGAR1       115
+snd_ANIMALS_COW1         120
+snd_ANIMALS_CROW1         125
+snd_ANIMALS_DEER3         130
+//snd_ANIMALS_DEER4         131
+//snd_ANIMALS_DEER5         132
+snd_ANIMALS_DOG1         133
+snd_ANIMALS_DOLPHIN1     138
+snd_ANIMALS_EAGLE1       143
+snd_ANIMALS_FRSTBRD1     148
+snd_ANIMALS_GOAT1         153
+snd_ANIMALS_GORILLA1     158
+snd_ANIMALS_GRIZZLY1     163
+snd_ANIMALS_HORSE1       168
+snd_ANIMALS_JUNGBRD1       173
+snd_ANIMALS_LION1         178
+snd_ANIMALS_LLAMA3       183
+//snd_ANIMALS_LLAMA4       184
+//snd_ANIMALS_LLAMA5       185
+snd_ANIMALS_PANTHER1     186
+snd_ANIMALS_PARROT1       191
+snd_ANIMALS_PIG1         196
+snd_ANIMALS_RABBIT3       201
+//snd_ANIMALS_RABBIT4       202
+//snd_ANIMALS_RABBIT5       203
+snd_ANIMALS_RAT1         204
+snd_ANIMALS_RAVEN1       209
+snd_ANIMALS_SHEEP1       214
+snd_ANIMALS_SNAKE1       219
+snd_ANIMALS_WALRUS1       224
+snd_ANIMALS_WOLF1         229
+snd_ELEMENTL_AIRELEM1     263
+snd_ELEMENTL_AIRELEM5	 267
+snd_ELEMENTL_ERTHEL1     268
+snd_ELEMENTL_FIRELEM1     273
+snd_ELEMENTL_WATREL1     278
+
+snd_HITS_HIT01           309
+snd_HITS_HIT02           310
+snd_HITS_HIT03           311
+snd_HITS_HIT04           312
+snd_HITS_HIT05           313
+snd_HITS_HIT06           314
+snd_HITS_HIT07           315
+snd_HITS_HIT08           316
+snd_HITS_HIT09           317
+snd_HITS_HIT10           318
+snd_HITS_HIT11           319
+snd_HITS_HIT12           320
+snd_HITS_HIT13           321
+snd_HITS_HIT14           322
+snd_HITS_HIT15           323
+snd_HITS_HIT16           324
+snd_HITS_HIT17           325
+snd_HITS_HIT18           326
+snd_HITS_HIT19           327
+snd_HITS_HIT20           328
+snd_HITS_HIT21           329
+snd_HITS_HIT22           330
+
+snd_HUMAN_FOOMPH01       331
+snd_HUMAN_FOOMPH06       332
+snd_HUMAN_FOOMPH07       333
+snd_HUMAN_FOOMPH08        334
+snd_HUMAN_FOOMPH09       335
+snd_HUMAN_F_DIE_01       336
+snd_HUMAN_F_DIE_02       337
+snd_HUMAN_F_DIE_03       338
+snd_HUMAN_F_DIE_04       339
+snd_HUMAN_MOOMPH01       340
+snd_HUMAN_MOOMPH02       341
+snd_HUMAN_MOOMPH03       342
+snd_HUMAN_MOOMPH04       343
+snd_HUMAN_MOOMPH05       344
+snd_HUMAN_MOOMPH13       345
+snd_HUMAN_M_DIE_01       346
+snd_HUMAN_M_DIE_02       347
+snd_HUMAN_M_DIE_03       348
+snd_HUMAN_M_DIE_04       349
+snd_MONSTER_CORPSR1       353
+//snd_MONSTER_CORPSR3       354
+//snd_MONSTER_CORPSR4       355
+//snd_MONSTER_CORPSR5       356
+snd_MONSTER_DAEMON1       357
+snd_MONSTER_DRAGON1       362
+snd_MONSTER_ETTIN1       367
+snd_MONSTER_GARGYL1       372
+snd_MONSTER_GAZER1       377
+snd_MONSTER_GHOST1       382
+snd_MONSTER_GISPIDR1      387
+snd_MONSTER_GRAT1         392
+snd_MONSTER_GSCORP1       397
+snd_MONSTER_HARPY1       402
+snd_MONSTER_HEADLS1       407
+snd_MONSTER_LICHE1       412
+snd_MONSTER_LZRDMN1       417
+snd_MONSTER_MNGBAT1       422
+snd_MONSTER_OGRE1         427
+snd_MONSTER_ORC1         432
+snd_MONSTER_RATMAN1       437
+snd_MONSTER_REAPER1       442
+snd_MONSTER_SEASERP1     447
+//snd_MONSTER_SEASERP3     448
+//snd_MONSTER_SEASERP4     449
+//snd_MONSTER_SEASERP5     450
+snd_MONSTER_SKLETN1       451
+snd_MONSTER_SLIME1       456
+snd_MONSTER_TROLL1       461
+snd_MONSTER_WISP1         466
+snd_MONSTER_ZOMBIE1       471
+snd_WEAPONS_AXE01         562
+snd_WEAPONS_BLUNT01       563
+snd_WEAPONS_CROSSBOW     564
+snd_WEAPONS_GILOTIN1     565
+snd_WEAPONS_HVYSWRD1     566
+snd_WEAPONS_HVYSWRD4     567
+snd_WEAPONS_SWISH01       568
+snd_WEAPONS_SWISH02       569
+snd_WEAPONS_SWISH03       570
+snd_WEAPONS_SWORD1       571
+snd_WEAPONS_SWORD7       572
+snd_Z_END_CARPNTRY         573
+snd_Z_END_DYE              574
+snd_Z_END_FSHSPLSH         575
+snd_Z_END_LIQUID           576
+snd_Z_END_LOCKPICK         577
+snd_Z_END_MORTAR           578
+snd_Z_END_MYSTERY1         579
+snd_Z_END_MYSTERY2         580
+snd_Z_END_MYSTERY3         581
+snd_Z_END_POISON           582
+snd_Z_END_POWDER           583
+snd_Z_END_SCISSORS         584
+snd_Z_END_SCRIBE           585
+snd_Z_END_SPIRTSPK         586
+snd_MONSTER_TERA_WARRIOR1     589
+snd_MONSTER_TERA_DRONE1       594
+snd_MONSTER_TERA_MATRIARCH1   599
+snd_MONSTER_CYCLOPS1          604
+snd_MONSTER_TITAN1            609
+snd_MONSTER_GIANTTOAD1        614
+snd_MONSTER_BULLFROG1         619
+snd_ANIMAL_OSTARD_DESERT1     624
+snd_ANIMAL_OSTARD_FRENZIED1   629
+snd_MONSTER_OPHIDIAN_WARRIOR1 634
+snd_MONSTER_OPHIDIAN_MAGE1    639
+snd_MONSTER_OPHIDIAN_QUEEN1   644
+snd_MONSTER_LAVALIZARD1       649
+
+// Sounds - Spells
+snd_SPELL_LIGHTNING                  41
+snd_SPELL_CHAIN_LIGHTNING            41
+snd_SPELL_FIREBALL                   351
+snd_SPELL_FIRE_BOLT                  351
+snd_SPELL_METEOR_SWARM               352
+snd_SPELL_FIRE_FIELD                 477
+snd_SPELL_CLUMSY                     479
+snd_SPELL_CURE                       480
+snd_SPELL_CURSE                      481
+snd_SPELL_CREATE_FOOD                482
+snd_SPELL_NIGHT_SIGHT                483
+snd_SPELL_LIGHT                      483
+snd_SPELL_FEEBLEMIND                 484
+snd_SPELL_MAGIC_ARROW                485
+snd_SPELL_WEAKEN                     486
+snd_SPELL_AGILITY                    487
+snd_SPELL_ARCHCURE                   488
+snd_SPELL_MAGIC_REFLECTION           488
+snd_SPELL_ANIMATE_DEAD               488
+snd_SPELL_BLESS                      490
+snd_SPELL_CUNNING                    491
+snd_SPELL_INCOGNITO                  492
+snd_SPELL_PROTECTION                 493
+snd_SPELL_STRENGTH                   494
+snd_SPELL_MAGIC_TRAP                 495
+snd_SPELL_MAGIC_UNTRAP               496
+snd_SPELL_HARM                       497
+snd_SPELL_HEAL                       498
+snd_SPELL_REACTIVE_ARMOR             498
+snd_SPELL_MAGIC_LOCK                 500
+snd_SPELL_telekinesis                501
+snd_SPELL_WALL_OF_STONE              502
+snd_SPELL_ARCHPROTECTION             503
+snd_SPELL_MANA_DRAIN                 504
+snd_SPELL_MANA_VAMPIRE               505
+snd_SPELL_MARK                       506
+snd_SPELL_MASS_CURSE                 507
+snd_SPELL_RECALL                     508
+snd_SPELL_REVEAL                     509
+snd_SPELL_TELEPORT                   510
+snd_SPELL_UNLOCK                     511
+snd_SPELL_DISPEL                     513
+snd_SPELL_GREATER_HEAL               514
+snd_SPELL_INVISIBILITY               515
+snd_SPELL_PARALYZE                   516
+snd_SPELL_POISON                     517
+snd_SPELL_EXPLOSION                  519
+snd_SPELL_FLAMESTRIKE                520
+snd_SPELL_MASS_DISPEL                521
+snd_SPELL_ENERGY_BOLT                522
+snd_SPELL_ENERGY_FIELD               523
+snd_SPELL_EARTHQUAKE                 525
+snd_SPELL_GATE_TRAVEL                526
+snd_SPELL_POLYMORPH                  527
+snd_SPELL_DISPEL_FIELD               528
+snd_SPELL_PARALYZE_FIELD             529
+snd_SPELL_BLADE_SPIRITS              530
+snd_SPELL_ENERGY_VORTEX              530
+snd_SPELL_MIND_BLAST                 531
+snd_SPELL_RESURRECTION               532
+snd_SPELL_SUMMON_CREATURE            533
+snd_SPELL_SUMMON_DAEMON              534
+snd_SPELL_SUMMON_elem_air       535
+snd_SPELL_SUMMON_elem_earth     535
+snd_SPELL_SUMMON_elem_fire      535
+snd_SPELL_SUMMON_elem_water     535
+snd_SPELL_POISON_FIELD               550
+snd_SPELL_BONE_ARMOR                 577
+snd_SPELL_SUMMON_UNDEAD              586
+
+[DEFNAME REGION_FLAGS]
+region_antimagic_all		00001	// All magic banned here.
+region_antimagic_recall_in	00002	// Teleport,recall in to this, and mark
+region_antimagic_recall_out	00004	// can't recall out of here.
+region_antimagic_gate		00008
+region_antimagic_teleport	00010	// Can't teleport into here.
+region_antimagic_damage		00020	// just no bad magic here
+
+region_flag_ship			00040	// This is a ship region. ship commands
+region_flag_nobuilding		00080	// No building in this area
+region_flag_globalname		00100	// Make sure the name is avail globally.
+region_flag_announce		00200	// Announce to all who enter.
+region_flag_insta_logout	00400	// Instant Log out is allowed here. (hotel)
+region_flag_underground		00800	// dungeon type area. (no weather)
+region_flag_nodecay			01000	// Things on the ground don't decay here.
+
+region_flag_safe			02000	// This region is safe from all harm.
+region_flag_guarded			04000	// try TAG.GUARDOWNER
+region_flag_no_pvp			08000	// Players cannot directly harm each other here.
+
+[DEFNAME SPELL_FLAGS]
+// spell flags.
+SPELLFLAG_DIR_ANIM                  01
+SPELLFLAG_TARG_OBJ                  02
+SPELLFLAG_TARG_CHAR                 04
+SPELLFLAG_TARG_XYZ                  08
+SPELLFLAG_HARM                      010
+SPELLFLAG_FX_BOLT                   020
+SPELLFLAG_FX_TARG                   040
+SPELLFLAG_FIELD						080
+SPELLFLAG_SUMMON					0100
+SPELLFLAG_GOOD						0200
+SPELLFLAG_RESIST					0400
+
+[DEFNAME MEM_FLAGS]
+MEMORY_SAWCRIME		00001	// I saw them commit a crime or i was attacked criminally. I can call the guards on them.
+MEMORY_IPET			00002	// I am a pet. (this link is my master) (never time out)
+MEMORY_FIGHT		00004	// Active fight going on now. may not have done any damage.
+MEMORY_IAGGRESSOR	00008	// I was the agressor here. (good or evil)
+MEMORY_HARMEDBY		00010	// I was attacked by them. (but they may have been retaliating)
+MEMORY_IRRITATEDBY	00020	// I saw them snoop from me or someone.
+MEMORY_SPEAK		00040	// We spoke about something at some point. (or was tamed) (NPC_MEM_ACT_TYPE)
+MEMORY_AGGREIVED	00080	// I was attacked and was the inocent party here !
+MEMORY_GUARD		00100	// Guard this item (never time out)
+MEMORY_ISPAWNED		00200	// I am spawned from this item. (never time out)
+MEMORY_GUILD		00400	// This is my guild stone. (never time out)
+MEMORY_TOWN			00800	// This is my town stone. (never time out)
+MEMORY_FOLLOW		01000	// I am following this Object (never time out)
+MEMORY_WAR_TARG		02000	// This is one of my current war targets.
+memory_friend		04000
+
+[DEFNAME STAT_FLAGS]
+// apply to chars
+statf_invul			000000001	// Invulnerability
+statf_dead			000000002
+statf_freeze		000000004	// Paralyzed. (spell)
+statf_invisible		000000008	// Invisible (spell).
+statf_sleeping		000000010	// You look like a corpse ?
+statf_war			000000020	// War mode on ?
+statf_reactive		000000040	// have reactive armor on.
+statf_poisoned		000000080	// Poison level is in the poison object
+statf_nightsight	000000100	// All a light to you
+statf_reflection	000000200	// Magic reflect on.
+statf_polymorph		000000400	// We have polymorphed to another form.
+statf_incognito		000000800	// Dont show skill titles
+statf_spiritspeak	000001000	// I can hear ghosts clearly.
+statf_insubstantial	000002000	// Ghost has not manifest. or GM hidden
+statf_emoteaction	000004000	// The creature will emote its actions to it's owners.
+statf_hasshield		000010000	// Using a shield
+statf_script_play	000020000	// Playing a Script. (book script)
+statf_stone			000040000	// turned to stone.
+statf_script_rec	000080000	// Recording a script.
+statf_fly			000100000	// Flying or running ? (anim)
+statf_respawnnpc	000200000	// This is a major NPC, needs to respawn if dead.
+statf_hallucinating	000400000	// eat 'shrooms or bad food.
+statf_hidden		000800000	// Hidden (non-magical)
+statf_indoors		001000000	// we are covered from the rain.
+statf_criminal		002000000	// The guards will attack me. (someone has called guards)
+statf_conjured		004000000	// This creature is conjured and will expire. (leave no corpse or loot)
+statf_pet			008000000	// I am a pet/hirling. check for my owner memory.
+statf_spawned		010000000	// I am spawned by a spawn item.
+statf_saveparity	020000000	// Has this char been saved or not ?
+statf_ridden		040000000	// This is the horse. (don't display me) I am being ridden
+statf_onhorse		080000000	// Mounted on horseback.
+
+[DEFNAME ATTR_FLAGS]
+// apply to items
+attr_identified		00001	// This is the identified name. ???
+attr_decay			00002	// Timer currently set to decay.
+attr_newbie			00004	// Not lost on death or sellable ?
+attr_move_always	00008	// Always movable (else Default as stored in client) (even if MUL says not movalble) NEVER DECAYS !
+attr_move_never		00010	// Never movable (else Default as stored in client) NEVER DECAYS !
+attr_magic			00020	// DON'T SET THIS WHILE WORN! This item is magic as apposed to marked or markable.
+attr_owned			00040	// This is owned by the town. You need to steal it. NEVER DECAYS !
+attr_invis			00080	// Gray hidden item (to GM's or owners?)
+attr_cursed			00100
+attr_cursed2		00200	// cursed damned unholy
+attr_blessed		00400
+attr_blessed2		00800	// blessed sacred holy
+attr_forsale		01000	// For sale on a vendor.
+attr_stolen			02000	// The item is hot. m_uidLink = previous owner.
+attr_can_decay		04000	// This item can decay. but it would seem that it would not (ATTR_MOVE_NEVER etc)
+attr_static			08000	// WorldForge merge marker. (not used)
+
+[DEFNAME CAN_FLAGS]
+// Monster "Can" type flags.
+MT_NONMOVER               0
+MT_GHOST                  01
+MT_SWIM                   02
+MT_WALK                   04
+MT_FLY                    010
+MT_FIRE_IMMUNE			  020
+MT_EQUIP                  00100
+MT_USEHANDS               00200
+MT_MALE					  0
+MT_FEMALE                 00800
+MT_NONHUM                 01000
+MT_RUN                    02000
+
+[DEFNAME ALIGNMENTS]
+// Ranges of karma ?
+EVIL                  {-10000 -6001}
+CHAOTIC               {-6000 -2001}
+GOOD                  {2000 10000}
+WICKED                {-10000 -6001}
+BELLIGERENT           {-6000 -2001}
+NEUTRAL               {-2000 1999}
+KINDLY                {2000 5999}
+GOODHEARTED           {6000 10000}
+
+INFAMOUS              {-10000 -6001}
+OUTLAW                {-6000 -2001}
+ANONYMOUS             {-2000 1999}
+KNOWN                 {2000 5999}
+FAMOUS                {6000 10000}
+
+[DEFNAME MIDIS]
+// MIDI Music Defs
+midi_oldult01           0
+midi_create             1
+midi_dragflit           2
+midi_oldult02           3
+midi_oldult03           4
+midi_oldult04           5
+midi_oldult05           6
+midi_oldult06           7
+midi_stones2            8
+midi_britain1           9
+midi_britain2           10
+midi_BucsDen            11
+midi_Jhelom             12
+midi_LBCastle           13
+midi_linelle            14
+midi_Magincia           15
+midi_Minoc              16
+midi_Ocllo              17
+midi_Samlethe           18
+midi_Serpents           19
+midi_Skarabra           20
+midi_Trinsic            21
+midi_Vesper             22
+midi_Wind               23
+midi_Yew                24
+midi_Cave01             25
+midi_Dungeon9           26
+midi_ForestA            27
+midi_InTown01           28
+midi_JungleA            29
+midi_MountainA          30
+midi_Plains             31
+midi_Sailing            32
+midi_SwampA             33
+midi_Tavern01           34
+midi_Tavern02           35
+midi_Tavern03           36
+midi_Tavern04           37
+midi_Combat1            38
+midi_Combat2            39
+midi_Combat3            40
+midi_Approach           41
+midi_Death              42
+midi_Victory            43
+midi_BtCastle           44
+midi_NuJelm             45
+midi_Dungeon2           46
+midi_Cove               47
+midi_Moonglow           48
+
+[DEFNAME NEEDSTOFIX]
+// Need to be defined. NEEDS and AVERSIONS
+// NONE 0
+// Area types.
+r_guardpost	r_brit
+r_docks r_brit
+r_desert r_plains
+r_foliage r_jungle
+r_civilization t_junk
+r_caves		t_junk
+r_stables t_junk
+r_house t_junk
+r_snow t_junk
+r_magical t_junk
+r_mountains t_junk
+r_JAIL		t_junk
+r_DARKNESS t_junk
+r_light t_junk
+r_orc_camp t_junk
+r_sewers t_junk
+
+// Item Types
+t_eerie_stuff	t_junk
+t_magic			t_junk
+
+[TYPEDEFS]
+t_normal			0
+t_container			1	// any unlocked container or corpse. CContainer based
+t_container_locked	2
+t_door				3	// 3 = door can be opened
+t_door_locked		4	// a locked door.
+t_key				5
+t_light_lit			6	// Local Light giving object
+t_light_out			7	// Can be lit.
+t_food				8	// edible food. (poisoned food ?)
+t_food_raw			9	// Must cook raw food unless your an animal.
+t_armor				10 // some type of armor. (no real action)
+t_weapon_mace_smith	11 // Can be used for smithing
+t_weapon_mace_sharp	12 // war axe can be used to cut/chop trees.
+t_weapon_sword		13 //
+t_weapon_fence		14 // can't be used to chop trees. (make kindling)
+t_weapon_bow		15 // bow or xbow
+t_wand				16 // A magic storage item
+t_telepad			17 // walk on teleport
+t_switch			18 // this is a switch which effects some other object in the world.
+t_book				19 // read this book. (static or dynamic text)
+t_rune				20 // can be marked and renamed as a recall rune.
+t_booze				21 // booze	(drunk effect)
+t_potion			22 // Some magic effect.
+t_fire				23 // It will burn you.
+t_clock				24 // or a wristwatch
+t_trap				25 // walk on trap.
+t_trap_active		26 	// = some animation
+t_musical			27 	// = a musical instrument.
+t_spell				28 	// = magic spell effect.
+t_gem				29 	// = no use yet
+t_water				30 	// = This is water (fishable) (Not a glass of water)
+t_clothing			31 	// = All cloth based wearable stuff
+t_scroll			32 	// = magic scroll
+t_carpentry			33 	// = tool of some sort.
+t_spawn_char		34 	// = spawn object. should be invis also.
+t_game_piece		35 	// = can't be removed from game.
+t_portculis			36 	// = Z delta moving gate. (open)
+t_figurine			37 	// = magic figure that turns into a creature when activated.
+t_shrine			38 	// = can res you
+t_moongate			39 	// = linked to other moon gates (hard coded locations)
+t_chair				40 	// = Any sort of a chair item. we can sit on.
+t_forge				41 	// = used to smelt ore blacksmithy etc.
+t_ore				42 	// = smelt to ingots.
+t_log				43 	// = make into furniture etc. lumberlogs
+t_tree				44 	// = can be chopped.
+t_rock				45 	// = can be mined for ore.
+t_carpentry_chop	46 	// = tool of some sort.
+t_multi				47 	// = multi part object like house or ship.
+t_reagent			48 	// = alchemy when clicked ?
+t_ship				49 	// = this is a SHIP MULTI
+t_ship_plank		50	//
+t_ship_side			51 	// = Should extend to make a plank
+t_ship_side_locked	52	//
+t_ship_tiller		53 	// = Tiller man on the ship.
+t_eq_trade_window	54 	// = container for the trade window.
+t_fish				55 	// = fish can be cut up.
+t_sign_gump			56 	// = Things like grave stones and sign plaques
+t_stone_guild		57 	// = Guild stones
+t_anim_active		58 	// = active anium that will recycle when done.
+t_advance_gate		59 	// = advance gate. m_AdvanceGateType = CREID_TYPE
+t_cloth				60 	// = bolt or folded cloth
+t_hair				61	//
+t_beard				62 	// = just for grouping purposes.
+t_ingot				63 	// = Ingot.
+t_coin				64 	// = coin of some sort. gold or otherwise.
+t_crops				65 	// = a plant that will regrow. picked type.
+t_drink				66 	// = some sort of drink (non booze)
+t_anvil				67 	// = for repair.
+t_port_locked		68 	// = this portcullis must be triggered.
+t_spawn_item		69 	// = spawn other items.
+t_telescope			70 	// = big telescope pic.
+t_bed				71 	// = bed.
+t_gold				72 	// = gold coin
+t_map				73 	// = Map object with pins.
+t_eq_memory_obj		74 	// = A Char has a memory link to some object. (I am fighting with someone. This records the fight.)
+t_weapon_mace_staff	75 	// = staff type of mace. or just other type of mace.
+t_eq_horse			76 	// = equipped horse object represents a riding horse to the client.
+t_comm_crystal		77 	// = communication crystal.
+t_game_board		78 	// = this is a container of pieces.
+t_trash_can			79 	// = delete any object dropped on it.
+t_cannon_muzzle		80 	// = cannon muzzle. NOT the other cannon parts.
+t_cannon			81 	// = the rest of the cannon.
+t_cannon_ball		82	//
+t_armor_leather		83 	// = non metallic armor (t_clothing)
+t_seed				84 	// = fruit to seed
+t_junk				85 	// = never used
+t_crystal_ball		86	//
+//t_old_cashiers_check	87 	// = represents large amounts of money.
+t_message			88 	// = user written message item. (for bboard ussually)
+t_reagent_raw		89 	// = Freshly grown reagents...not processed yet.
+t_eq_client_linger	90 	// = Change player to NPC for a while.
+t_dream_gate		91 	// = Push you to another server. (no items transfered client insta logged out)
+t_it_stone			92 	// = Double click for items
+t_metronome			93 	// = ticks once every n secs.
+t_explosion			94 	// = async explosion.
+t_eq_npc_script		95 	// = Script npc actions in the form of a book. (Get rid of this in favor of waiting on m_Events)
+t_web				96 	// = walk on this and transform into some other object.
+t_grass				97 	// = can be eaten by grazing animals
+t_arock				98 	// = a rock or boulder. can be thrown by giants.
+t_tracker			99 	// = points to a linked object.
+t_sound				100 // = this is a sound source.
+t_stone_town		101 // = Town stones. everyone free to join.
+t_weapon_mace_crook	102 //
+t_weapon_mace_pick	103 //
+t_leather			104 // = Leather or skins of some sort.(not wearable)
+t_ship_other		105 // = some other part of a ship.
+t_bboard			106 // = a container and bboard object.
+t_spellbook			107 // = spellbook (with spells)
+t_corpse			108 // = special type of item.
+t_track_item		109 // - track a id or type of item.
+t_track_char		110 // = track a char or range of char id's
+t_weapon_arrow		111 //
+t_weapon_bolt		112 //
+t_eq_vendor_box		113 // = an equipped vendor .
+t_eq_bank_box		114 // = an equipped bank box
+t_deed				115 //
+t_loom				116 //
+t_bee_hive			117 //
+t_archery_butte		118 //
+t_eq_murder_count	119 // = my murder count flag.
+t_eq_stuck			120 // we are stuck in a web
+t_trap_inactive		121	//  = a safe trap.
+t_stone_room		122 //  = house type stone. (for mapped house regions)
+t_bandage			123 //  = can be used for healing.
+t_campfire			124 //  = this is a fire but a small one.
+t_map_blank			125
+t_spy_glass			126
+t_sextant			127
+t_scroll_blank		128
+t_fruit				129
+t_water_wash		130 // water that will not contain fish. (for washing or drinking)
+t_weapon_axe		131 // not the same as a sword. but uses swordsmanship skill
+t_weapon_xbow		132
+t_spellicon			133
+t_door_open			134
+t_meat_raw			135	// Just a meaty part of a corpse. (uncooked meat)
+t_garbage			136
+t_keyring			137
+t_table				138	// Doesn't really do anything.
+t_floor				139
+t_roof				140
+t_feather			141	// a birds feather
+t_wool				142 // Wool cut frm a sheep.
+t_fur				143
+t_blood				144 // blood of some creature
+t_foliage			145 // does not go invis when reaped. but will if eaten
+t_grain				146
+t_scissors			147
+t_thread			148
+t_yarn				149
+t_spinwheel			150
+t_bandage_blood		151 //  = can't be used for healing.
+t_fish_pole			152
+t_shaft				153	// bolt or arrow.
+t_lockpick			154
+t_kindling			155
+t_train_dummy		156
+t_train_pickpocket	157
+t_bedroll			158
+t_bellows			159
+t_hide				160	// made into leather.
+t_cloth_bolt		161
+t_board				162 // = logs are plained into decent lumber
+t_pitcher			163
+t_pitcher_empty		164
+t_dye_vat			165
+t_dye				166
+t_potion_empty		167 // empty bottle.
+t_mortar			168
+t_hair_dye			169
+t_sewing_kit		170
+t_tinker_tools		171
+t_wall				172 // wall of a structure.
+t_window			173 // window for a structure.
+t_cotton			174 // Cotton from the plant
+t_bone				175
+t_eq_script			176	// Pure scriptable item equipped.
+t_ship_hold			177	// ships hold.
+t_ship_hold_lock	178
+t_lava				179
+t_shield			180 // equippable armor.
+t_jewelry			181
+t_dirt				182 // a patch of dirt where i can plant something
+t_script			183
+
+[DEFNAME LAYERS]
+layer_hand1		1
+layer_hand2		2
+layer_shoes		3
+layer_pants		4 // bone legs + pants.
+layer_shirt		5
+layer_helm		6
+layer_gloves	7
+layer_ring		8
+layer_light		9	// a ITEMID_LIGHT_SRC equip item can be put here.
+layer_collar	10 // gorget or necklace.
+layer_hair		11
+layer_half_apron 12
+layer_chest		13 // armor chest
+layer_wrist		14 // watch
+layer_hidden	15 // not sure
+layer_beard		16 // try to have only men have this.
+layer_tunic		17 // jester suit or full apron.
+layer_ears		18 // earrings
+layer_arms		19 // armor
+layer_cape		20 // cape
+layer_pack		21 // only used by ITEMID_BACKPACK
+layer_robe		22 // robe over all.
+layer_skirt		23 // skirt or kilt.
+layer_legs		24 // 0x18 = plate legs.
+
+// These are not part of the paper doll (but get sent to the client)
+layer_horse			25	// ride this object. (horse objects are strange?)
+layer_vendor_stock	26 // the stuff the vendor will restock and sell to the players
+layer_vendor_extra	27 // the stuff the vendor will resell to players but is not restocked. (bought from players)
+layer_vendor_buys	28 // the stuff the vendor can buy from players but does not stock.
+layer_bankbox		29 // contents of my bank box.
+
+// Internally used layers - Don't bother sending these to client.
+layer_special		30	// Can be multiple of these. memories
+layer_dragging		31
+
+// Spells that are effecting us go here.
+LAYER_SPELL_STATS	32		// Stats effecting spell. These cancel each other out.
+//LAYER_SPELL_Reactive,	// 33 =
+//LAYER_SPELL_Night_Sight,
+//LAYER_SPELL_Protection,
+//LAYER_SPELL_Incognito,
+//LAYER_SPELL_Magic_Reflect,
+//LAYER_SPELL_Paralyze,	// or turned to stone.
+//LAYER_SPELL_Invis,
+//LAYER_SPELL_Polymorph,
+//LAYER_SPELL_Summon,	// magical summoned creature.
+
+//LAYER_FLAG_Poison,
+//LAYER_FLAG_Criminal,		// criminal or murderer ?
+//LAYER_FLAG_Potion,			// Some magic type effect done by a potion. (they cannot be dispelled)
+//LAYER_FLAG_SpiritSpeak,
+//LAYER_FLAG_Wool,			// regrowing wool.
+//LAYER_FLAG_Drunk,			// Booze effect.
+//LAYER_FLAG_ClientLinger,
+//LAYER_FLAG_Hallucination,	// shrooms etc.
+//LAYER_FLAG_PotionUsed,		// track the time till we can use a potion again.
+//LAYER_FLAG_Stuck,			// In a trap or web.
+layer_flag_murders	52	// How many murders do we have ? and decay timer.
+layer_flag_bandage	53	// Bandages go here for healing
+
+[DEFNAME GUMPS]	
+// name the gumps.
+g_btn_green_ok			081a	
+g_btn_green_ok_press	081b	
+g_btn_gray_apply		5204
+g_btn_gray_apply_press	5205
+
+[EOF]

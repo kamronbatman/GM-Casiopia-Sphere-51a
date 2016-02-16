@@ -1,0 +1,358 @@
+[ITEMDEF 041f4]
+DEFNAME=i_multi_tent_gypsy_healer_caravan
+Name=gypsy healer's caravan
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Tents
+DESCRIPTION=Gypsy Healer's Caravan
+MULTIREGION=-6,-6,6,6
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 041f5]
+DEFNAME=i_multi_tent_gypsy_mage_caravan
+Name=gypsy mage's caravan
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Tents
+DESCRIPTION=Gypsy Mage's Caravan
+MULTIREGION=-6,-6,6,6
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 041f6]
+DEFNAME=i_multi_tent_gypsy_king_caravan
+Name=gypsy king's caravan
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Tents
+DESCRIPTION=Gypsy King's Caravan
+MULTIREGION=-6,-6,6,6
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[COMMENT ITEMDEF 043e8]
+DEFNAME=i_multi_treasure_pile_1
+Name=treasure pile
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Treasure Pile 1
+MULTIREGION=-2,-2,2,2
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[COMMENT ITEMDEF 043e9]
+DEFNAME=i_multi_treasure_pile_2
+Name=treasure pile
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Treasure Pile 2
+MULTIREGION=-2,-2,2,2
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[COMMENT ITEMDEF 043ea]
+DEFNAME=i_multi_treasure_pile_3
+Name=treasure pile
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Treasure Pile 3
+MULTIREGION=-2,-2,2,2
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[COMMENT ITEMDEF 043eb]
+DEFNAME=i_multi_treasure_pile_4
+Name=treasure pile
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Treasure Pile 4
+MULTIREGION=-2,-2,2,2
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa0]
+DEFNAME=i_multi_field_generator_1
+Name=field generator
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Field Generator 1
+MULTIREGION=-2,-2,2,2
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa1]
+DEFNAME=i_multi_field_generator_2
+Name=field generator
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Field Generator 2
+MULTIREGION=-2,-2,2,2
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa2]
+DEFNAME=i_multi_obolisk_1
+Name=obolisk
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Obolisk 1
+MULTIREGION=-2,-2,2,2
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa3]
+DEFNAME=i_multi_strange_tower_1
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Strange Tower L6
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa4]
+DEFNAME=i_multi_strange_tower_2
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Strange Tower L5
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa5]
+DEFNAME=i_multi_strange_tower_3
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Strange Tower L4
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa6]
+DEFNAME=i_multi_strange_tower_4
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Strange Tower L3
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa7]
+DEFNAME=i_multi_strange_tower_5
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Strange Tower L2
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa8]
+DEFNAME=i_multi_strange_tower_6
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Strange Tower L1
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fa9]
+DEFNAME=i_multi_wagon_loading_tower
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Wagon Loading Tower
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04faa]
+DEFNAME=i_multi_obolisk_2
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Obolisk 2
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fab]
+DEFNAME=i_multi_force_field
+Name=force field
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Force Field
+MULTIREGION=-3,-3,0,4
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04fac]
+DEFNAME=i_multi_obolisk_3
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Obolisk 3
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[ITEMDEF 04faa]
+DEFNAME=i_multi_obolisk_2
+Name=strange tower
+TYPE=t_multi
+CATEGORY=Multis
+SUBSECTION=Other
+DESCRIPTION=Obolisk 2
+MULTIREGION=-3,-3,3,3
+
+ON=@Targon_Item
+HTARGITEM
+RETURN 1
+
+ON=@Targon_Char
+HTARGCHAR
+RETURN 1
+
+[EOF]

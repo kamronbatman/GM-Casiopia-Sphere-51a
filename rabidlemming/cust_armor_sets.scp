@@ -1,0 +1,223 @@
+[DEFNAME COLORS_ARMOR_SETS]
+COLOR_ANGELIC_GLOW	07b1
+COLOR_DAEMON_BONE	07bc
+
+[ITEMDEF i_angelic_sword]
+NAME=angelic sword
+ID=i_sword_viking
+TYPE=t_weapon_sword
+SKILL=Swordsmanship
+DAM=25-40
+REQSTR=75
+WEIGHT=5.0
+VALUE=100000-150000
+
+ON=@Create
+  COLOR=color_angelic_glow
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Angelic Armor
+DESCRIPTION=Angelic Sword
+
+[ITEMDEF i_angelic_shield_kite_metal]
+NAME=angelic kite shield
+ID=i_shield_kite_metal
+TYPE=t_armor
+ARMOR=50
+REQSTR=85
+WEIGHT=14.0
+VALUE=100000-150000
+
+ON=@Create
+  COLOR=color_angelic_glow
+  HITPOINTS={40 50}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Angelic Armor
+DESCRIPTION=Angelic Kite Shield
+
+[ITEMDEF i_angelic_platemail_chest]
+NAME=angelic platemail
+ID=i_platemail_chest
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=23.0
+VALUE=100000-150000
+
+ON=@Create
+  COLOR=color_angelic_glow
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Angelic Armor
+DESCRIPTION=Angelic Chest
+
+[ITEMDEF i_angelic_platemail_arms]
+NAME=angelic arms
+ID=i_platemail_arms
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=18.0
+VALUE=100000-150000
+
+ON=@Create
+  COLOR=color_angelic_glow
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Angelic Armor
+DESCRIPTION=Angelic Arms
+
+[ITEMDEF i_angelic_platemail_leggings]
+NAME=angelic legs
+ID=i_platemail_leggings
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=20.0
+VALUE=100000-150000
+
+ON=@Create
+  COLOR=color_angelic_glow
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Angelic Armor
+DESCRIPTION=Angelic Legs
+
+[ITEMDEF i_angelic_platemail_gorget]
+NAME=angelic gorget
+ID=i_platemail_gorget
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+
+ON=@Create
+  COLOR=color_angelic_glow
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Angelic Armor
+DESCRIPTION=Angelic Gorget
+
+[ITEMDEF i_angelic_platemail_guantlets]
+NAME=angelic gauntlets
+ID=i_platemail_gloves
+TYPE=t_armor
+ARMOR=80
+REQSTR=85
+WEIGHT=5.0
+VALUE=100000-150000
+
+ON=@Create
+  COLOR=color_angelic_glow
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Angelic Armor
+DESCRIPTION=Angelic Gauntlets
+
+[ITEMDEF i_angelic_female_plate]
+NAME=angelic female plate
+ID=i_armor_female_plate
+TYPE=t_armor
+ARMOR=70
+REQSTR=85
+WEIGHT=6.0
+VALUE=100000-150000
+
+ON=@Create
+  COLOR=color_angelic_glow
+  HITPOINTS={55 75}
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Angelic Armor
+DESCRIPTION=Angelic Female Plate
+
+[ITEMDEF i_daemon_bone_arms]
+ID=i_bone_arms
+NAME=daemon bone arms
+TYPE=t_armor
+ARMOR=46
+REQSTR=40
+WEIGHT=2
+
+ON=@Create
+  HITPOINTS={50 65}
+  COLOR=color_daemon_bone
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Daemon Bone Armor
+DESCRIPTION=Daemon Bone Arms
+DEF=DAEMON_BONE_ARMS
+
+[ITEMDEF i_daemon_bone_chest]
+ID=i_bone_chest
+NAME=daemon bone armor
+TYPE=t_armor
+ARMOR=46
+REQSTR=40
+WEIGHT=4
+
+ON=@Create
+  HITPOINTS={50 65}
+  COLOR=color_daemon_bone
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Daemon Bone Armor
+DESCRIPTION=Daemon Bone Chest
+
+[ITEMDEF i_daemon_bone_gloves]
+ID=i_bone_gloves
+NAME=daemon bone gloves
+TYPE=t_armor
+ARMOR=46
+REQSTR=40
+WEIGHT=2
+
+ON=@Create
+  HITPOINTS={50 65}
+  COLOR=color_daemon_bone
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Daemon Bone Armor
+DESCRIPTION=Daemon Bone Gloves
+
+[ITEMDEF i_daemon_bone_helm]
+ID=i_bone_helmet
+NAME=daemon bone helmet
+TYPE=t_armor
+ARMOR=46
+REQSTR=40
+WEIGHT=3
+
+ON=@Create
+  HITPOINTS={50 65}
+  COLOR=color_daemon_bone
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Daemon Bone Armor
+DESCRIPTION=Daemon Bone Helmet
+
+[ITEMDEF i_daemon_bone_leggings]
+ID=i_bone_leggings
+NAME=daemon bone leggings
+TYPE=t_armor
+ARMOR=46
+REQSTR=35
+WEIGHT=3
+
+ON=@Create
+  HITPOINTS={50 65}
+  COLOR=color_daemon_bone
+
+CATEGORY=Provisions - Armor - Sets
+SUBSECTION=Daemon Bone Armor
+DESCRIPTION=Daemon Bone Legs
+
+[EOF]

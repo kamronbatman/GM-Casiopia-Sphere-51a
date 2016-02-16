@@ -1,0 +1,839 @@
+[ITEMDEF i_accurate_scimitar]
+ID=i_scimitar
+NAME=accurate scimitar
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Scimitar
+DUPELIST=013b6
+
+[ITEMDEF i_accurate_sword_long_b]
+ID=i_sword_long_b
+NAME=accurate long sword
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Long Sword
+DUPELIST=013b8
+
+[ITEMDEF i_accurate_sword_viking]
+ID=i_sword_viking
+NAME=accurate viking sword
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 100}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Viking Sword
+DUPELIST=013ba
+
+[ITEMDEF i_accurate_katana]
+ID=i_katana
+NAME=accurate katana
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Katana
+DUPELIST=013ff
+
+[ITEMDEF i_accurate_cutlass]
+ID=i_cutlass
+NAME=accurate cutlass
+TYPE=T_WEAPON_SWORD
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Cutlass
+DUPELIST=01441
+
+[ITEMDEF i_accurate_axe_exec]
+ID=i_axe_exec
+NAME=accurate executioner's axe
+TYPE=t_weapon_axe
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Executioner's Axe
+DUPELIST=0f46
+
+[ITEMDEF i_accurate_axe_battle]
+ID=i_axe_battle
+NAME=accurate battle axe
+TYPE=t_weapon_axe
+VALUE=32
+SKILL=Swordsmanship
+REQSTR=45
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Battle Axe
+DUPELIST=0f48
+
+[ITEMDEF i_accurate_axe]
+ID=i_axe
+NAME=accurate axe
+TYPE=t_weapon_axe
+VALUE=42
+SKILL=Swordsmanship
+REQSTR=25
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Axe
+DUPELIST=0f4a
+
+[ITEMDEF i_accurate_axe_double]
+ID=i_axe_double
+NAME=accurate double axe
+TYPE=t_weapon_axe
+VALUE=25
+SKILL=Swordsmanship
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Double Axe
+DUPELIST=0f4c
+
+[ITEMDEF i_accurate_axe_war]
+ID=i_axe_war
+NAME=accurate war axe
+TYPE=t_weapon_mace_sharp
+VALUE=32
+SKILL=Macefighting
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate War Axe
+DUPELIST=013b0
+
+[ITEMDEF i_accurate_axe_two_hand]
+ID=i_axe_two_hand
+NAME=accurate two handed axe
+TYPE=t_weapon_axe
+VALUE=36
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0 
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Two Handed Axe
+DUPELIST=01443
+
+[ITEMDEF i_accurate_dagger]
+ID=i_dagger
+NAME=accurate dagger
+TYPE=t_weapon_fence
+VALUE=18
+SKILL=Fencing
+REQSTR=1
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 40}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Dagger
+DUPELIST=0f52
+
+[ITEMDEF i_accurate_kryss]
+ID=i_kryss
+NAME=accurate kryss
+TYPE=t_weapon_fence
+VALUE=36
+SKILL=Fencing
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 90}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Kryss
+DUPELIST=01401
+
+[ITEMDEF i_accurate_mace]
+ID=i_mace
+NAME=accurate mace
+TYPE=t_weapon_mace_smith
+VALUE=32
+SKILL=Macefighting
+REQSTR=20
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Mace
+DUPELIST=0f5d
+
+[ITEMDEF i_accurate_club]
+ID=i_club
+NAME=accurate club
+TYPE=t_weapon_mace_sharp
+VALUE=22
+SKILL=Macefighting
+REQSTR=10
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 40}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Club
+DUPELIST=013b4
+
+[ITEMDEF i_accurate_mace_war]
+ID=i_mace_war
+NAME=accurate war mace
+TYPE=t_weapon_mace_smith
+VALUE=32
+SKILL=Macefighting
+REQSTR=30
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate War Mace
+DUPELIST=01407
+
+[ITEMDEF i_accurate_hammer_war]
+ID=i_hammer_war
+NAME=accurate war hammer
+TYPE=t_weapon_mace_smith
+VALUE=24
+SKILL=Macefighting
+REQSTR=40
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate War Hammer
+DUPELIST=01439
+
+[ITEMDEF i_accurate_maul]
+ID=i_maul
+NAME=accurate maul
+TYPE=t_weapon_mace_smith
+VALUE=24
+SKILL=Macefighting
+REQSTR=20
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Maul
+DUPELIST=0143b
+
+[ITEMDEF i_accurate_hammer_pick]
+ID=i_hammer_pick
+NAME=accurate hammer pick
+TYPE=t_weapon_mace_smith
+VALUE=24
+SKILL=Macefighting
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Hammer Pick
+DUPELIST=0143d
+
+[ITEMDEF i_accurate_crossbow]
+ID=i_crossbow
+NAME=accurate crossbow
+TYPE=t_weapon_bow
+VALUE=46
+SKILL=Archery
+REQSTR=30
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Crossbow
+DUPELIST=0f50
+
+[ITEMDEF i_accurate_bow]
+ID=i_bow
+NAME=accurate bow
+TYPE=t_weapon_bow
+VALUE=46
+SKILL=Archery
+REQSTR=20
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 60}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Bow
+DUPELIST=013b2
+
+[ITEMDEF i_accurate_crossbow_heavy]
+ID=i_crossbow_heavy
+NAME=accurate heavy crossbow
+TYPE=t_weapon_bow
+VALUE=85
+SKILL=Archery
+REQSTR=40
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 100}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Heavy Crossbow
+DUPELIST=013fd
+
+[ITEMDEF i_accurate_pitchfork]
+ID=i_pitchfork
+NAME=accurate pitchfork
+TYPE=t_weapon_fence
+VALUE=20
+SKILL=Fencing
+REQSTR=15
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 60}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Pitchfork
+DUPELIST=0e88
+
+[ITEMDEF i_accurate_bardiche]
+ID=i_bardiche
+NAME=accurate bardiche
+TYPE=t_weapon_sword
+VALUE=58
+SKILL=Swordsmanship
+REQSTR=40
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 100}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Bardiche
+DUPELIST=0f4e
+
+[ITEMDEF i_accurate_spear]
+ID=i_spear
+NAME=accurate spear
+TYPE=t_weapon_fence
+VALUE=32
+SKILL=Fencing
+REQSTR=30
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Spear
+DUPELIST=0f63
+
+[ITEMDEF i_accurate_halberd]
+ID=i_halberd
+NAME=accurate halberd
+TYPE=t_weapon_sword
+VALUE=64
+SKILL=Swordsmanship
+REQSTR=45
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 80}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Halberd
+DUPELIST=0143f
+
+[ITEMDEF i_accurate_spear_short]
+ID=i_spear_short
+NAME=accurate short spear
+TYPE=t_weapon_fence
+VALUE=24
+SKILL=Fencing
+REQSTR=15
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Short Spear
+DUPELIST=01403
+
+[ITEMDEF i_accurate_war_fork]
+ID=i_war_fork
+NAME=accurate war fork
+TYPE=t_weapon_fence
+VALUE=28
+SKILL=Fencing
+REQSTR=35
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 110}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate War Fork
+DUPELIST=01405
+
+[ITEMDEF i_accurate_black_staff]
+ID=i_staff_black
+NAME=accurate black staff
+TYPE=t_weapon_mace_staff
+VALUE=32
+SKILL=Macefighting
+REQSTR=35
+TWOHANDS=Y
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+//SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 70}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Black Staff
+DUPELIST=0df1
+
+[ITEMDEF i_accurate_staff_quarter]
+ID=i_staff_quarter
+NAME=accurate quarter staff
+TYPE=t_weapon_mace_staff
+VALUE=28
+SKILL=Macefighting
+REQSTR=30
+TWOHANDS=N
+
+ON=@EQUIP
+SRC.TACTICS=(<SRC.TACTICS>+5.0)
+////SRC.DEX=(<SRC.DEX>+0.5)
+RETURN 0
+
+ON=@UNEQUIP
+SRC.TACTICS=(<SRC.TACTICS>+(-5.0))
+//SRC.DEX=(<SRC.DEX>+(-0.5))
+RETURN 0
+
+ON=@Create
+  COLOR=color_magic_weap
+  HITPOINTS={31 60}
+
+CATEGORY=Provisions - Weapons
+SUBSECTION=Accurate
+DESCRIPTION=Accurate Quarter Staff
+DUPELIST=0e8a

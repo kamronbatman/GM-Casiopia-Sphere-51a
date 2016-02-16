@@ -1,0 +1,91 @@
+[ITEMDEF i_clockwork_assembly]
+ID=i_winch
+NAME=clockwork assembly
+TYPE=t_normal
+
+ON=@Create
+COLOR=07f9
+ATTR=attr_move_always
+
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Clockwork Assembly
+
+[ITEMDEF i_gem_arcane]
+ID=i_worldgem_bit
+NAME=arcane gem
+
+CATEGORY=Items by Professions
+SUBSECTION=Tailor
+DESCRIPTION=Arcane Gem
+
+[ITEMDEF i_crystal_power]
+ID=i_crystal_purple
+NAME=power crystal
+
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Power Crystal
+
+[CHARDEF c_m_golem_iron]
+ID=c_elem_earth
+NAME=Iron Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+DAM=10,30
+ARMOR=17
+RESOURCES=i_clockwork_assembly,15 i_ingot_iron,5 i_ingot_bronze
+//RESOURCES2=i_clockwork_assembly,i_crystal_power,50 i_ingot_iron,50 i_ingot_bronze,5 i_gears
+CAN=MT_WALK|MT_GHOST
+FOODTYPE=15 t_arock,t_coin,t_ore,t_ingot
+SHELTER=r_mountains,r_caves,r_dungeon
+DESIRES=r_caves
+BLOODCOLOR=colors_gray
+
+ON=@Create
+COLOR=colors_gray
+NPC=brain_monster
+FAME={1000 6000}
+KARMA={-3000 -3999}
+
+STR={225 355}
+DEX={66 85}
+INT={71 92}
+
+PARRYING={40.0 65.0}
+MAGICRESISTANCE={50.0 95.0}
+TACTICS={60.0 100.0}
+WRESTLING={60.0 100.0}
+
+ON=@NPCRestock
+ITEM=i_ingot_iron,15
+ITEM=i_ingot_bronze,5
+
+CATEGORY=Monsters
+SUBSECTION=Elementals
+DESCRIPTION=Iron Golem
+
+[ITEMDEF i_iron_golem]
+ID=i_barrel
+NAME=iron golem (partially assembled)
+TYPE=t_normal
+RESOURCES=i_clockwork_assembly,i_crystal_power,50 i_ingot_iron,50 i_ingot_bronze,5 i_gears
+SKILLMAKE=75.0 TINKERING
+
+ON=@DCLICK
+IF (<SRC.TINKERING> > 75.0)
+  SRC.SYSMESSAGE=You finish assembly of the iron golem...
+  SRC.NEWNPC=c_m_golem_iron
+  SRC.ACT.STR=(<SRC.TINKERING>*5)
+  REMOVE
+ENDIF
+
+ON=@Create
+  COLOR=079e
+
+CATEGORY=Items by Professions
+SUBSECTION=Tinker
+DESCRIPTION=Iron Golem (partially assembled)
+
+[EOF]

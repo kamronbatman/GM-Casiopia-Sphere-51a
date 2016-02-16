@@ -1,0 +1,3948 @@
+// ******************************************************************************
+// CTF & C&H Event Systems scripted by
+// 
+// The gates provide players with their equipment needed and send them into the
+// arena that the gm has marked the gate at. Invis Crystal balls of memory will
+// be dropped for each player entering the arena which stores their 
+// fame/karma/kills. After the event is over they get their fame/karma/kills back
+// when a gm simply double clicks their invis marker. The equipment a player gets
+// depends on the more2 of the gate(0 is class based using a menu, 1 is a all-in-1
+// type equipment and 2 is no equipment if a gm wants to use special packs and hand
+// out themselves. i_crystal_of_memory is a manual fame/karma/kills storing item
+// which will create the same markers the gates do.
+// C&H(Capture and Hold) works by using tiles on buildings or whatever you want
+// to use in your arena. A team scores points by having 1 team member stand on a 
+// capture tile and they keep earning points for their team as long as they hold
+// that point. You can use multiple tiles depending on the amount of ppl playing
+// and add up the points at the end. Just double click a tile when the event time
+// is up and it tells you each teams points.
+// CTF events work by each team having a capture point. A gm places the capture
+// point in each team's base and double clicks it to spawn a flag. Then both teams
+// either try to kill off the entire other team or capture the other team's flag.
+// A person equips the flag by double clicking it and they capture by walking over
+// their team's capture point. To return their team's own flag they double click it
+// and run it back into their own capture point. When a person has a flag they are
+// not supposed to heal that way it is easier to stop the people taking the flag,
+// this is why there is a message sent out when its unequiped from healing.
+// ******************************************************************************
+
+// **************************************************
+// Chars
+// **************************************************
+
+[CHARDEF 0190]
+DEFNAME=c_man
+Name=Man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+RESOURCES=i_flesh_head, i_flesh_torso, i_flesh_right_arm, i_flesh_left_arm, i_flesh_left_leg, i_flesh_right_leg, i_blood_2
+FOODTYPE=15 t_food, t_fruit
+DESIRES=i_gold,e_notoriety
+AVERSIONS=t_TRAP,t_eerie_stuff
+SHELTER=r_house
+BLOODCOLOR=0
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TEVENTS=e_Human_HearUnk
+TEVENTS=e_Human_Khaldun
+DESCRIPTION=Man
+SUBSECTION=Miscellaneous
+CATEGORY=Civilized
+
+ON=@Click
+IF (<EVAL <TAG.Team>> = 1)
+  MESSAGE [Blue]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 2)
+  MESSAGE [Red]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 3)
+  MESSAGE [White]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 4)
+  MESSAGE [Green]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 5)
+  MESSAGE [Black]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 6)
+  MESSAGE [Orange]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 7)
+  MESSAGE [Purple]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 8)
+  MESSAGE [Yellow]
+  RETURN=0
+ELSE
+  RETURN=0
+ENDIF
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+
+FENCING={15.0 38.0}
+PARRYING={15.0 38.0}
+SWORDSMANSHIP={15.0 38.0}
+WRESTLING={15.0 38.0}
+MACEFIGHTING={15.0 38.0}
+MAGICRESISTANCE={15.0 38.0}
+TACTICS={15.0 38.0}
+
+[CHARDEF 0191]
+DEFNAME=c_woman
+NAME=Woman
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_FEMALE|MT_USEHANDS
+ICON=i_pet_woman
+RESOURCES=i_flesh_head_2, i_flesh_torso, i_flesh_right_arm, i_flesh_left_arm, i_flesh_left_leg, i_flesh_right_leg, i_blood_2
+FOODTYPE=15 t_food,t_fruit
+SHELTER=r_house
+AVERSIONS=t_TRAP,t_eerie_stuff
+DESIRES=i_gold,e_notoriety
+BLOODCOLOR=0
+
+TSPEECH=spk_human_prime
+TSPEECH=spk_human_default
+TEVENTS=e_Human_HearUnk
+TEVENTS=e_Human_Khaldun
+DESCRIPTION=Woman
+SUBSECTION=Miscellaneous
+CATEGORY=Civilized
+
+ON=@Click
+IF (<EVAL <TAG.Team>> = 1)
+  MESSAGE [Blue]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 2)
+  MESSAGE [Red]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 3)
+  MESSAGE [White]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 4)
+  MESSAGE [Green]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 5)
+  MESSAGE [Black]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 6)
+  MESSAGE [Orange]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 7)
+  MESSAGE [Purple]
+  RETURN=0
+ELSEIF (<EVAL <TAG.Team>> = 8)
+  MESSAGE [Yellow]
+  RETURN=0
+ELSE
+  RETURN=0
+ENDIF
+
+ON=@Create
+NPC=brain_human
+COLOR=colors_skin
+
+FENCING={15.0 38.0}
+PARRYING={15.0 38.0}
+SWORDSMANSHIP={15.0 38.0}
+WRESTLING={15.0 38.0}
+MACEFIGHTING={15.0 38.0}
+MAGICRESISTANCE={15.0 38.0}
+TACTICS={15.0 38.0}
+
+// **************************************************
+// Defs
+// **************************************************
+
+[DEFNAME EVENT_DEFS]
+color_team_white	0481
+color_team_blue		0060
+color_team_red		04c2
+color_team_green	0110
+color_team_black	0455
+color_team_orange	002c
+color_team_purple	0015
+color_team_yellow	0099
+
+text_blue		0005
+text_red		0025
+text_white		03c1 //1153
+text_green		0170
+text_black		1108
+text_orange		0030
+text_purple		0072
+text_yellow		0035
+
+uid_event_shitlist	04000af30
+
+gate_location_1		200 200 0
+
+// **************************************************
+// Dialog/Gumps
+// **************************************************
+
+[dialog d_event_gate]
+157,77
+page 0
+resizepic 0 0 5100 425 270
+button 393 5 5052 5053 1 0 0 // Cancel button
+//button 380 0 5050 5051 1 0 1 // Continue button
+page 1
+button 3 0 5007 5007 0 1 2 // Page 1 tab 1
+text 20 0 0 0 // Tab text
+button 92 0 5006 5007 0 2 3 // Page 1 tab 2
+text 110 0 0 1 // Tab text
+button 181 0 5006 5007 0 3 4 // Page 1 tab 3
+text 190 0 0 2 // Tab text
+button 270 0 5006 5007 0 4 5 // Page 1 tab 4
+text 280 0 0 3 // Tab text
+text 125 20 0 4 // Page 1 caption
+button 30 50 5002 5003 1 0 6 // Blue team checkbox
+text 50 50 1 5
+button 30 90 5002 5003 1 0 7 // Red team checkbox
+text 50 90 26 6
+button 30 130 5002 5003 1 0 8 // White team checkbox
+text 50 130 1152 7
+button 30 170 5002 5003 1 0 9 // Green team checkbox
+text 50 170 257 8
+button 230 50 5002 5003 1 0 10 // Black team checkbox
+text 250 50 1108 9
+button 230 90 5002 5003 1 0 11 // Orange team checkbox
+text 250 90 43 10
+button 230 130 5002 5003 1 0 12 // Purple team checkbox
+text 250 130 21 11
+button 230 170 5002 5003 1 0 13 // Yellow team checkbox
+text 250 170 153 12
+text 10 230 0 13 // Current Team Color:
+gumppic 150 231 5038
+croppedtext 160 230 100 20 0 14 // <NAME>
+page 2
+button 3 0 5006 5007 0 1 2 // Page 2 tab 1
+text 20 0 0 0 // Tab text
+button 92 0 5007 5007 0 2 3 // Page 2 tab 2
+text 110 0 0 1 // Tab text
+button 181 0 5006 5007 0 3 4 // Page 2 tab 3
+text 190 0 0 2 // Tab text
+button 270 0 5006 5007 0 4 5 // Page 2 tab 4
+text 280 0 0 3 // Tab text
+text 125 20 0 15 // Page 2 caption
+button 10 40 5002 5003 1 0 14
+croppedtext 30 40 180 20 0 16 // Location 1
+button 10 60 5002 5003 1 0 15
+croppedtext 30 60 180 20 0 17 // Location 2
+button 10 80 5002 5003 1 0 16
+croppedtext 30 80 180 20 0 18 // Location 3
+button 10 100 5002 5003 1 0 17
+croppedtext 30 100 180 20 0 19 // Location 4
+button 10 120 5002 5003 1 0 18
+croppedtext 30 120 180 20 0 20 // Location 5
+button 10 140 5002 5003 1 0 19
+croppedtext 30 140 180 20 0 21 // Location 6
+button 10 160 5002 5003 1 0 20
+croppedtext 30 160 180 20 0 22 // Location 7
+button 10 180 5002 5003 1 0 21
+croppedtext 30 180 180 20 0 23 // Location 8
+button 10 200 5002 5003 1 0 22
+croppedtext 30 200 180 20 0 24 // Location 9
+button 220 40 5002 5003 1 0 23
+croppedtext 240 40 180 20 0 25 // Location 10
+button 220 60 5002 5003 1 0 24
+croppedtext 240 60 180 20 0 26 // Location 11
+button 220 80 5002 5003 1 0 25
+croppedtext 240 80 180 20 0 27 // Location 12
+button 220 100 5002 5003 1 0 26
+croppedtext 240 100 180 20 0 29 // Location 13
+button 220 120 5002 5003 1 0 27
+croppedtext 240 120 180 20 0 30 // Location 14
+button 220 140 5002 5003 1 0 28
+croppedtext 240 140 180 20 0 31 // Location 15
+button 220 160 5002 5003 1 0 29
+croppedtext 240 160 180 20 0 32 // Location 16
+button 220 180 5002 5003 1 0 30
+croppedtext 240 180 180 20 0 33 // Location 17
+button 220 200 5002 5003 1 0 31
+croppedtext 240 200 180 20 0 34 // Location 18
+text 10 230 0 35 // Current Location:
+button 150 231 5038 5037 1 0 32 // INPDLG for MOREP
+text 160 230 0 36 // <MOREP>
+page 3
+button 3 0 5006 5007 0 1 2 // Page 2 tab 1
+text 20 0 0 0 // Tab text
+button 92 0 5006 5007 0 2 3 // Page 2 tab 2
+text 110 0 0 1 // Tab text
+button 181 0 5007 5007 0 3 4 // Page 2 tab 3
+text 190 0 0 2 // Tab text
+button 270 0 5006 5007 0 4 5 // Page 2 tab 4
+text 280 0 0 3 // Tab text
+text 125 20 0 37 // Page 3 caption
+button 10 40 5002 5003 1 0 33
+croppedtext 30 40 180 20 0 38 // Spellbook 1
+button 10 60 5002 5003 1 0 34
+croppedtext 30 60 180 20 0 39 // Spellbook 2
+button 10 80 5002 5003 1 0 35
+croppedtext 30 80 180 20 0 40 // Spellbook 3
+button 10 100 5002 5003 1 0 36
+croppedtext 30 100 180 20 0 41 // Spellbook 4
+button 10 120 5002 5003 1 0 37
+croppedtext 30 120 180 20 0 42 // Spellbook 5
+button 10 140 5002 5003 1 0 38
+croppedtext 30 140 180 20 0 43 // Spellbook 6
+button 10 160 5002 5003 1 0 39
+croppedtext 30 160 180 20 0 44 // Spellbook 7
+button 10 180 5002 5003 1 0 40
+croppedtext 30 180 180 20 0 45 // Spellbook 8
+button 10 200 5002 5003 1 0 41
+croppedtext 30 200 180 20 0 46 // Spellbook 9
+text 10 230 0 47 // Current Location:
+gumppic 150 231 5038
+text 160 230 0 48 // <EVAL <MORE>>
+gumppic 300 100 2234
+page 4
+button 3 0 5006 5007 0 1 2 // Page 2 tab 1
+text 20 0 0 0 // Tab text
+button 92 0 5006 5007 0 2 3 // Page 2 tab 2
+text 110 0 0 1 // Tab text
+button 181 0 5006 5007 0 3 4 // Page 2 tab 3
+text 190 0 0 2 // Tab text
+button 270 0 5007 5007 0 4 5 // Page 2 tab 4
+text 280 0 0 3 // Tab text
+text 125 20 0 49 // Page 4 caption
+
+checkbox 10 40 5002 5003 <TAG.Class_1> 42
+croppedtext 30 40 180 20 0 50 // Warrior
+checkbox 10 60 5002 5003 <TAG.Class_2> 43
+croppedtext 30 60 180 20 0 51 // Archer
+checkbox 10 80 5002 5003 <TAG.Class_3> 44
+croppedtext 30 80 180 20 0 52 // Mage
+checkbox 10 100 5002 5003 <TAG.Class_4> 45
+croppedtext 30 100 180 20 0 53 // Paladin
+checkbox 10 120 5002 5003 <TAG.Class_5> 46
+croppedtext 30 120 180 20 0 54 // Undefined Class
+checkbox 10 140 5002 5003 <TAG.Class_6> 47
+croppedtext 30 140 180 20 0 55 // Undefined Class
+checkbox 10 160 5002 5003 <TAG.Class_7> 48
+croppedtext 30 160 180 20 0 56 // Undefined Class
+checkbox 10 180 5002 5003 <TAG.Class_8> 49
+croppedtext 30 180 180 20 0 57 // Undefined Class
+button 30 210 5202 5203 1 0 54 // Save
+
+text 180 40 0 58 // Max Mana Pots
+button 180 60 5038 5039 1 0 50
+text 180 60 0 59
+text 180 100 0 60 // Max GHeal Pots
+button 180 120 5038 5039 1 0 51
+text 180 120 0 61
+text 180 160 0 62 // Max Bandages
+button 180 180 5038 5039 1 0 52
+text 180 180 0 63
+
+button 180 230 5050 5051 1 0 53
+text 220 230 0 64
+
+gumppic 320 100 50647
+gumppic 260 -20 60992
+
+[dialog d_event_gate text]
+Teams			// Page 1 Tab 1 text
+Arenas 			// Page 1 Tab 2 text
+Spellbooks 		// Page 1 Tab 3 text
+Equipment 		// Page 1 Tab 4 text
+Team Color		// Page 1 caption
+Blue Team		// Start of team color Labels
+Red Team
+White Team
+Green Team
+Black Team
+Orange Team
+Purple Team
+Yellow Team
+Current Team:
+<NAME>
+Arena Locations		// Page 2 caption
+Unused Arena Location	// This is the start of the arena location labels
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Unused Arena Location
+Current Location:
+<MOREP>
+Spellbook Selection	// Page 3 caption
+Unused Spellbook Type	//This is the start of the Spellbook Labels
+Unused Spellbook Type
+Unused Spellbook Type
+Unused Spellbook Type
+Unused Spellbook Type
+Unused Spellbook Type
+Unused Spellbook Type
+Unused Spellbook Type
+Unused Spellbook Type
+Current Spellbook:
+<EVAL <MORE>>
+Player Equipment Setup	// Page 4 caption
+Warrior			// Start of class equipment
+Archer
+Mage
+Paladin
+Undefined Class
+Undefined Class
+Undefined Class
+Undefined Class
+Mana Pot Level (0-5)
+<EVAL <TAG.MaxManaPots>>
+GHeal Pot Level (0-5)
+<EVAL <TAG.MaxGHealPots>>
+Bandage Level (0-5)
+<EVAL <TAG.MaxBandages>>
+Add Equipment Manualy
+
+[dialog d_event_gate button]
+ON=0
+  TAG.Class_1=<ARGCHK[42]>
+  TAG.Class_2=<ARGCHK[43]>
+  TAG.Class_3=<ARGCHK[44]>
+  TAG.Class_4=<ARGCHK[45]>
+  TAG.Class_5=<ARGCHK[46]>
+  TAG.Class_6=<ARGCHK[47]>
+  TAG.Class_7=<ARGCHK[48]>
+  TAG.Class_8=<ARGCHK[49]>
+ON=6
+  MORE2=1
+  COLOR=color_team_blue
+  NAME=Blue Team Moongate
+  UPDATE
+  DIALOG=d_event_gate
+ON=7
+  MORE2=2
+  COLOR=color_team_red
+  NAME=Red Team Moongate
+  UPDATE
+  DIALOG=d_event_gate
+ON=8
+  MORE2=3
+  COLOR=color_team_white
+  NAME=White Team Moongate
+  UPDATE
+  DIALOG=d_event_gate
+ON=9
+  MORE2=4
+  COLOR=color_team_green
+  NAME=Green Team Moongate
+  UPDATE
+  DIALOG=d_event_gate
+ON=10
+  MORE2=5
+  COLOR=color_team_black
+  NAME=Black Team Moongate
+  UPDATE
+  DIALOG=d_event_gate
+ON=11
+  MORE2=6
+  COLOR=color_team_orange
+  NAME=Orange Team Moongate
+  UPDATE
+  DIALOG=d_event_gate
+ON=12
+  MORE2=7
+  COLOR=color_team_purple
+  NAME=Purple Team Moongate
+  UPDATE
+  DIALOG=d_event_gate
+ON=13
+  MORE2=8
+  COLOR=color_team_yellow
+  NAME=Yellow Team Moongate
+  UPDATE
+  DIALOG=d_event_gate
+ON=14
+  MOREP=
+  DIALOG=d_event_gate
+ON=15
+  MOREP=
+  DIALOG=d_event_gate
+ON=16
+  MOREP=
+  DIALOG=d_event_gate
+ON=17
+  MOREP=
+  DIALOG=d_event_gate
+ON=18
+  MOREP=
+  DIALOG=d_event_gate
+ON=19
+  MOREP=
+  DIALOG=d_event_gate
+ON=20
+  MOREP=
+  DIALOG=d_event_gate
+ON=21
+  MOREP=
+  DIALOG=d_event_gate
+ON=22
+  MOREP=
+  DIALOG=d_event_gate
+ON=23
+  MOREP=
+  DIALOG=d_event_gate
+ON=24
+  MOREP=
+  DIALOG=d_event_gate
+ON=25
+  MOREP=
+  DIALOG=d_event_gate
+ON=26
+  MOREP=
+  DIALOG=d_event_gate
+ON=27
+  MOREP=
+  DIALOG=d_event_gate
+ON=28
+  MOREP=
+  DIALOG=d_event_gate
+ON=29
+  MOREP=
+  DIALOG=d_event_gate
+ON=30
+  MOREP=
+  DIALOG=d_event_gate
+ON=31
+  MOREP=
+  DIALOG=d_event_gate
+ON=32
+  INPDLG=P 16
+ON=33
+  MORE=1
+  DIALOG=d_event_gate
+ON=34
+  MORE=2
+  DIALOG=d_event_gate
+ON=35
+  MORE=3
+  DIALOG=d_event_gate
+ON=36
+  MORE=4
+  DIALOG=d_event_gate
+ON=37
+  MORE=5
+  DIALOG=d_event_gate
+ON=38
+  MORE=6
+  DIALOG=d_event_gate
+ON=39
+  MORE=7
+  DIALOG=d_event_gate
+ON=40
+  MORE=8
+  DIALOG=d_event_gate
+ON=41
+  MORE=9
+  DIALOG=d_event_gate
+ON=50
+  INPDLG=TAG.MaxManaPots 1
+ON=51
+  INPDLG=TAG.MaxGHealPots 1
+ON=52
+  INPDLG=TAG.MaxBandages 1
+ON=54
+  TAG.Class_1=<ARGCHK[42]>
+  TAG.Class_2=<ARGCHK[43]>
+  TAG.Class_3=<ARGCHK[44]>
+  TAG.Class_4=<ARGCHK[45]>
+  TAG.Class_5=<ARGCHK[46]>
+  TAG.Class_6=<ARGCHK[47]>
+  TAG.Class_7=<ARGCHK[48]>
+  TAG.Class_8=<ARGCHK[49]>
+  DIALOG=d_event_gate
+
+[dialog d_event_shitlist]
+157,77
+page 0
+button 7 270 2460 2461 1 0 21 // Add
+button 60 270 2463 2464 1 0 22 // Delete
+button 127 270 2466 2467 0 1 // Previous
+button 210 270 2471 2470 0 2 // Next
+resizepic 0 0 5120 425 270
+text 75 3 455 0
+page 1
+group 0
+radio 7 34 2362 2361 1 1
+text 24 30 455 1
+radio 7 54 2362 2361 0 2
+text 24 50 455 2
+radio 7 74 2362 2361 0 3
+text 24 70 455 3
+radio 7 94 2362 2361 0 4
+text 24 90 455 4
+radio 7 114 2362 2361 0 5
+text 24 110 455 5
+radio 7 134 2362 2361 0 6
+text 24 130 455 6
+radio 7 154 2362 2361 0 7
+text 24 150 455 7
+radio 7 174 2362 2361 0 8
+text 24 170 455 8
+radio 7 194 2362 2361 0 9
+text 24 190 455 9
+radio 7 214 2362 2361 0 10
+text 24 210 455 10
+page 2
+radio 7 34 2362 2361 0 11
+text 24 30 455 11
+radio 7 54 2362 2361 0 12
+text 24 50 455 12
+radio 7 74 2362 2361 0 13
+text 24 70 455 13
+radio 7 94 2362 2361 0 14
+text 24 90 455 14
+radio 7 114 2362 2361 0 15
+text 24 110 455 15
+radio 7 134 2362 2361 0 16
+text 24 130 455 16
+radio 7 154 2362 2361 0 17
+text 24 150 455 17
+radio 7 174 2362 2361 0 18
+text 24 170 455 18
+radio 7 194 2362 2361 0 19
+text 24 190 455 19
+radio 7 214 2362 2361 0 20
+text 24 210 455 20
+
+[dialog d_event_shitlist text]
+Player Account Ban List for Events
+ 1 <TAG.Acct_1>
+ 2 <TAG.Acct_2>
+ 3 <TAG.Acct_3>
+ 4 <TAG.Acct_4>
+ 5 <TAG.Acct_5>
+ 6 <TAG.Acct_6>
+ 7 <TAG.Acct_7>
+ 8 <TAG.Acct_8>
+ 9 <TAG.Acct_9>
+10 <TAG.Acct_10>
+11 <TAG.Acct_11>
+12 <TAG.Acct_12>
+13 <TAG.Acct_13>
+14 <TAG.Acct_14>
+15 <TAG.Acct_15>
+16 <TAG.Acct_16>
+17 <TAG.Acct_17>
+18 <TAG.Acct_18>
+19 <TAG.Acct_19>
+20 <TAG.Acct_20>
+
+[dialog d_event_shitlist button]
+on=21 // Add
+  IF <ARGCHK[1]> = 1
+    SRC.TAG.Option=1
+  ELSEIF <ARGCHK[2]> = 1
+    SRC.TAG.Option=2
+  ELSEIF <ARGCHK[3]> = 1
+    SRC.TAG.Option=3
+  ELSEIF <ARGCHK[4]> = 1
+    SRC.TAG.Option=4
+  ELSEIF <ARGCHK[5]> = 1
+    SRC.TAG.Option=5
+  ELSEIF <ARGCHK[6]> = 1
+    SRC.TAG.Option=6
+  ELSEIF <ARGCHK[7]> = 1
+    SRC.TAG.Option=7
+  ELSEIF <ARGCHK[8]> = 1
+    SRC.TAG.Option=8
+  ELSEIF <ARGCHK[9]> = 1
+    SRC.TAG.Option=9
+  ELSEIF <ARGCHK[10]> = 1
+    SRC.TAG.Option=10
+  ELSEIF <ARGCHK[11]> = 1
+    SRC.TAG.Option=11
+  ELSEIF <ARGCHK[12]> = 1
+    SRC.TAG.Option=12
+  ELSEIF <ARGCHK[13]> = 1
+    SRC.TAG.Option=13
+  ELSEIF <ARGCHK[14]> = 1
+    SRC.TAG.Option=14
+  ELSEIF <ARGCHK[15]> = 1
+    SRC.TAG.Option=15
+  ELSEIF <ARGCHK[16]> = 1
+    SRC.TAG.Option=16
+  ELSEIF <ARGCHK[17]> = 1
+    SRC.TAG.Option=17
+  ELSEIF <ARGCHK[18]> = 1
+    SRC.TAG.Option=18
+  ELSEIF <ARGCHK[19]> = 1
+    SRC.TAG.Option=19
+  ELSE <ARGCHK[20]> = 1
+    SRC.TAG.Option=20
+  ENDIF
+  SRC.NEWITEM=i_event_ban_coin
+  SRC.ACT.MORE=<SRC.TAG.Option>
+  SRC.ACT.LINK=<UID>
+  SRC.ACT.BOUNCE
+  SRC.ACT.DCLICK
+on=22 // Delete
+  IF <ARGCHK[1]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_1> has been removed from the ban list.
+    TAG.Acct_1=
+  ELSEIF <ARGCHK[2]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_2> has been removed from the ban list.
+    TAG.Acct_2=
+  ELSEIF <ARGCHK[3]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_3> has been removed from the ban list.
+    TAG.Acct_3=
+  ELSEIF <ARGCHK[4]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_4> has been removed from the ban list.
+    TAG.Acct_4=
+  ELSEIF <ARGCHK[5]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_5> has been removed from the ban list.
+    TAG.Acct_5=
+  ELSEIF <ARGCHK[6]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_6> has been removed from the ban list.
+    TAG.Acct_6=
+  ELSEIF <ARGCHK[7]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_7> has been removed from the ban list.
+    TAG.Acct_7=
+  ELSEIF <ARGCHK[8]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_8> has been removed from the ban list.
+    TAG.Acct_8=
+  ELSEIF <ARGCHK[9]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_9> has been removed from the ban list.
+    TAG.Acct_9=
+  ELSEIF <ARGCHK[10]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_10> has been removed from the ban list.
+    TAG.Acct_10=
+  ELSEIF <ARGCHK[11]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_11> has been removed from the ban list.
+    TAG.Acct_11=
+  ELSEIF <ARGCHK[12]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_12> has been removed from the ban list.
+    TAG.Acct_12=
+  ELSEIF <ARGCHK[13]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_13> has been removed from the ban list.
+    TAG.Acct_13=
+  ELSEIF <ARGCHK[14]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_14> has been removed from the ban list.
+    TAG.Acct_14=
+  ELSEIF <ARGCHK[15]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_15> has been removed from the ban list.
+    TAG.Acct_15=
+  ELSEIF <ARGCHK[16]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_16> has been removed from the ban list.
+    TAG.Acct_16=
+  ELSEIF <ARGCHK[17]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_17> has been removed from the ban list.
+    TAG.Acct_17=
+  ELSEIF <ARGCHK[18]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_18> has been removed from the ban list.
+    TAG.Acct_18=
+  ELSEIF <ARGCHK[19]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_19> has been removed from the ban list.
+    TAG.Acct_19=
+  ELSE <ARGCHK[20]> = 1
+    SRC.SYSMESSAGE=Account <TAG.Acct_20> has been removed from the ban list.
+    TAG.Acct_20=
+  ENDIF
+
+[dialog d_event_exitgate]
+157,77
+resizepic 0 0 5120 425 270
+text 75 3 455 0 // Caption
+group 1
+text 85 23 455 1 // Winning Team?
+radio 85 43 2362 2361 <TAG.Win> 1 // Yes option
+text 105 43 455 2 // Yes
+radio 150 43 2362 2361 <TAG.WinOpt2> 2 // No option
+text 170 43 455 3 // No
+group 2
+text 85 63 455 4 // Distribute Prize?
+radio 85 83 2362 2361 <TAG.Prize> 3 // Yes option
+text 105 83 455 5 // Yes
+radio 150 83 2362 2361 <TAG.PrizeOpt2> 4 // No option
+text 170 83 455 6 // No
+gumppic 3 110 5121 // Divder - horizontal
+gumppic 160 110 5121 // Divder - horizontal
+gumppic 264 110 5121 // Divder - horizontal
+button 140 240 4025 4023 1 0 8 // Ok button
+button 200 240 4022 4020 1 0 0 // Cancel button
+button 20 123 4005 4007 1 0 5 // Small Prize
+text 50 123 455 7 // Small Prize
+button 20 163 4005 4007 1 0 6 // Medium Prize
+text 50 163 455 8 // Medium Prize
+button 20 203 4005 4007 1 0 7 // Large Prize
+text 50 203 455 9 // Large Prize
+gumppic 170 123 5125 // Divder - vertical
+text 220 153 455 10 // Points
+resizepic 215 178 5054 70 25
+textentry 220 183 50 20 500 1 11 // Points entry <MORE>
+text 300 153 455 12 // Tickets
+resizepic 295 178 5054 70 25
+textentry 300 183 50 20 500 2 13 // Ticket entry <MORE2>
+
+[dialog d_event_exitgate text]
+Exit Gate - Select Prize
+Winning Team?
+Yes
+No
+Distribute Prize?
+Yes
+No
+Small Prize
+Medium Prize
+Large Prize
+Points
+<EVAL <MORE>>
+Tickets
+<EVAL <MORE2>>
+
+[dialog d_event_exitgate button]
+ON=1
+  TAG.Win=1
+ON=2
+  TAG.Win=0
+ON=3
+  TAG.Prize=1
+ON=4
+  TAG.Prize=0
+ON=5 // Small Prize
+  MORE=1000
+  MORE2=5
+  IF (<ARGCHK[1]>=1)
+    TAG.Win=1
+    TAG.WinOpt2=0
+  ELSE
+    TAG.Win=0
+    TAG.WinOpt2=1
+  ENDIF
+  IF (<ARGCHK[3]>=1)
+    TAG.Prize=1
+    TAG.PrizeOpt2=0
+  ELSE
+    TAG.Prize=0
+    TAG.PrizeOpt2=1
+  ENDIF
+  DIALOG d_event_exitgate
+ON=6 // Medium Prize
+  MORE=2000
+  MORE2=10
+  IF (<ARGCHK[1]>=1)
+    TAG.Win=1
+    TAG.WinOpt2=0
+  ELSE
+    TAG.Win=0
+    TAG.WinOpt2=1
+  ENDIF
+  IF (<ARGCHK[3]>=1)
+    TAG.Prize=1
+    TAG.PrizeOpt2=0
+  ELSE
+    TAG.Prize=0
+    TAG.PrizeOpt2=1
+  ENDIF
+  DIALOG d_event_exitgate
+ON=7 // Large Prize
+  MORE=5000
+  MORE2=20
+    IF (<ARGCHK[1]>=1)
+    TAG.Win=1
+    TAG.WinOpt2=0
+  ELSE
+    TAG.Win=0
+    TAG.WinOpt2=1
+  ENDIF
+  IF (<ARGCHK[3]>=1)
+    TAG.Prize=1
+    TAG.PrizeOpt2=0
+  ELSE
+    TAG.Prize=0
+    TAG.PrizeOpt2=1
+  ENDIF
+  DIALOG d_event_exitgate
+ON=8 // Ok
+  IF (<ARGCHK[1]>=1)
+    TAG.Win=1
+    TAG.WinOpt2=0
+  ELSE
+    TAG.Win=0
+    TAG.WinOpt2=1
+  ENDIF
+  IF (<ARGCHK[3]>=1)
+    TAG.Prize=1
+    TAG.PrizeOpt2=0
+  ELSE
+    TAG.Prize=0
+    TAG.PrizeOpt2=1
+  ENDIF
+  MORE=<ARGTXT[1]> // Points
+  MORE2=<ARGTXT[2]> // Tickets
+ON=0 // Cancel
+
+[DIALOG d_event_rules]
+157,57
+resizepic 0 0 2520 300 400
+text 30 40 26 0
+htmlgump 30 80 220 80 1 0 0
+htmlgump 30 120 220 80 2 0 0
+htmlgump 30 160 220 80 3 0 0
+htmlgump 30 200 220 80 4 0 0
+htmlgump 30 220 220 80 5 0 0
+htmlgump 30 260 220 100 6 0 0
+text 50 370 445 7
+button 200 370 2143 2142 1 0 1
+
+[DIALOG d_event_rules text]
+Lord British's Rules for Events:
+1-No spamming (same or simmilar message 2 times or more)
+2-Do everything that the staff in charge tell you to do.
+3-Put all unwanted items in trash cans provided, not on the floors.
+4-Do not talk when a gm is talking.
+5-No cursing, calling names, or harassment.
+Breaking of these rules will result in jailtime through the remainder of the event and possible ban from all further events after multiple offences.
+Agree to the Rules
+
+[DIALOG d_event_rules button]
+ON=0
+  SRC.SYSMESSAGE You can not join the event unless you agree to the rules.
+ON=1
+  DIALOG=d_event_purchase_coin
+
+[DIALOG d_event_purchase_coin]
+157,57
+page 0
+resizepic 0 0 2620 400 300
+text 30 10 455 0 // Caption
+text 200 30 455 17
+page 1
+gumppic 10 30 12
+gumppic 10 30 50529
+gumppic 10 30 50527
+gumppic 10 30 50528
+gumppic 10 30 50530
+gumppic 10 30 50531
+gumppic 10 30 50563
+gumppic 10 30 50582
+gumppic 10 30 50632
+button 10 60 2646 2647 0 1 1
+text 30 60 445 1
+button 10 90 2646 2647 0 2 2
+text 30 90 445 2
+button 10 120 2646 2647 0 3 3
+text 30 120 445 3
+button 10 150 2646 2647 0 4 4
+text 30 150 445 4
+button 10 180 2646 2647 0 5 5
+text 30 180 445 5
+button 10 210 2646 2647 0 6 6
+text 30 210 445 6
+button 10 240 2646 2647 0 7 7
+text 30 240 445 7
+button 10 270 2646 2647 0 8 8
+text 30 270 445 8
+htmlgump 200 60 190 230 9 1 1
+button 330 30 2076 2075 1 0 9
+page 2
+gumppic 10 30 12
+gumppic 10 30 50540
+gumppic 10 30 50538
+gumppic 10 30 50528
+gumppic 10 30 50530
+gumppic 10 30 50531
+gumppic 10 30 50561
+gumppic 10 30 50616
+gumppic 10 30 50477
+gumppic 10 30 50490
+button 10 60 2646 2647 0 1 1
+text 30 60 445 1
+button 10 90 2646 2647 0 2 2
+text 30 90 445 2
+button 10 120 2646 2647 0 3 3
+text 30 120 445 3
+button 10 150 2646 2647 0 4 4
+text 30 150 445 4
+button 10 180 2646 2647 0 5 5
+text 30 180 445 5
+button 10 210 2646 2647 0 6 6
+text 30 210 445 6
+button 10 240 2646 2647 0 7 7
+text 30 240 445 7
+button 10 270 2646 2647 0 8 8
+text 30 270 445 8
+htmlgump 200 60 190 230 10 1 1
+button 330 30 2076 2075 1 0 10
+page 3
+gumppic 10 30 13
+gumppic 10 30 50522
+gumppic 10 30 50521
+gumppic 10 30 50523
+gumppic 10 30 50524
+gumppic 10 30 50525
+gumppic 10 30 50617
+gumppic 10 30 50985
+gumppic 10 30 50492
+gumppic 10 30 50479
+button 10 60 2646 2647 0 1 1
+text 30 60 445 1
+button 10 90 2646 2647 0 2 2
+text 30 90 445 2
+button 10 120 2646 2647 0 3 3
+text 30 120 445 3
+button 10 150 2646 2647 0 4 4
+text 30 150 445 4
+button 10 180 2646 2647 0 5 5
+text 30 180 445 5
+button 10 210 2646 2647 0 6 6
+text 30 210 445 6
+button 10 240 2646 2647 0 7 7
+text 30 240 445 7
+button 10 270 2646 2647 0 8 8
+text 30 270 445 8
+htmlgump 200 60 190 230 11 1 1
+button 330 30 2076 2075 1 0 11
+page 4
+gumppic 10 30 12 // Man
+gumppic 10 30 50548 // Ring Tunic
+gumppic 10 30 50549 // Ring Greaves
+gumppic 10 30 50456 // Kilt
+gumppic 10 30 50550 // Ring Arms
+gumppic 10 30 50551 // Ring Gloves
+gumppic 10 30 50531 // Plate Gorget
+gumppic 10 30 50973 // Orc Helm
+gumppic 10 30 50480 // Shoes
+gumppic 10 30 50631 // Mace
+gumppic 10 30 50985 // Spellbook
+button 10 60 2646 2647 0 1 1
+text 30 60 445 1
+button 10 90 2646 2647 0 2 2
+text 30 90 445 2
+button 10 120 2646 2647 0 3 3
+text 30 120 445 3
+button 10 150 2646 2647 0 4 4
+text 30 150 445 4
+button 10 180 2646 2647 0 5 5
+text 30 180 445 5
+button 10 210 2646 2647 0 6 6
+text 30 210 445 6
+button 10 240 2646 2647 0 7 7
+text 30 240 445 7
+button 10 270 2646 2647 0 8 8
+text 30 270 445 8
+htmlgump 200 60 190 230 12 1 1
+button 330 30 2076 2075 1 0 12
+page 5
+button 10 60 2646 2647 0 1 1
+text 30 60 445 1
+button 10 90 2646 2647 0 2 2
+text 30 90 445 2
+button 10 120 2646 2647 0 3 3
+text 30 120 445 3
+button 10 150 2646 2647 0 4 4
+text 30 150 445 4
+button 10 180 2646 2647 0 5 5
+text 30 180 445 5
+button 10 210 2646 2647 0 6 6
+text 30 210 445 6
+button 10 240 2646 2647 0 7 7
+text 30 240 445 7
+button 10 270 2646 2647 0 8 8
+text 30 270 445 8
+htmlgump 200 60 190 230 13 1 1
+//button 330 30 2076 2075 1 0 13
+page 6
+button 10 60 2646 2647 0 1 1
+text 30 60 445 1
+button 10 90 2646 2647 0 2 2
+text 30 90 445 2
+button 10 120 2646 2647 0 3 3
+text 30 120 445 3
+button 10 150 2646 2647 0 4 4
+text 30 150 445 4
+button 10 180 2646 2647 0 5 5
+text 30 180 445 5
+button 10 210 2646 2647 0 6 6
+text 30 210 445 6
+button 10 240 2646 2647 0 7 7
+text 30 240 445 7
+button 10 270 2646 2647 0 8 8
+text 30 270 445 8
+htmlgump 200 60 190 230 14 1 1
+//button 330 30 2076 2075 1 0 14
+page 7
+button 10 60 2646 2647 0 1 1
+text 30 60 445 1
+button 10 90 2646 2647 0 2 2
+text 30 90 445 2
+button 10 120 2646 2647 0 3 3
+text 30 120 445 3
+button 10 150 2646 2647 0 4 4
+text 30 150 445 4
+button 10 180 2646 2647 0 5 5
+text 30 180 445 5
+button 10 210 2646 2647 0 6 6
+text 30 210 445 6
+button 10 240 2646 2647 0 7 7
+text 30 240 445 7
+button 10 270 2646 2647 0 8 8
+text 30 270 445 8
+htmlgump 200 60 190 230 15 1 1
+//button 330 30 2076 2075 1 0 15
+page 8
+button 10 60 2646 2647 0 1 1
+text 30 60 445 1
+button 10 90 2646 2647 0 2 2
+text 30 90 445 2
+button 10 120 2646 2647 0 3 3
+text 30 120 445 3
+button 10 150 2646 2647 0 4 4
+text 30 150 445 4
+button 10 180 2646 2647 0 5 5
+text 30 180 445 5
+button 10 210 2646 2647 0 6 6
+text 30 210 445 6
+button 10 240 2646 2647 0 7 7
+text 30 240 445 7
+button 10 270 2646 2647 0 8 8
+text 30 270 445 8
+htmlgump 200 60 190 230 16 1 1
+//button 330 30 2076 2075 1 0 16
+
+[DIALOG d_event_purchase_coin text]
+Equipment Selection
+Warrior
+Archer
+Mage
+Paladin
+Undefined Class
+Undefined Class
+Undefined Class
+Undefined Class
+The warrior class is the most heavily armed and armored.<br><b>Armor:</b><br>Platemail, Heater Shield<br><b>Weaponry:</b><br>Katana, Viking Sword, Kryss, War Fork, War Axe, Hammer Pick
+The archer class is the second most heavily armored class.<br><b>Armor:</B><br>Archer Set(Chain/Plate)<br><b>Weaponry:</b><br>Bow, Heavy Crossbow, Dagger
+The mage is a powerfull class but has little armor. Mages can cast<br><b>Armor:</B><br>Studded Leather<br><b>Weaponry:</b><br>Spellbook, Black Staff
+The paladin class is the healer and protector of his team. Paladins can cast only beneficial spells, but also have armor and weapons.<br><b>Armor:</B><br> Ringmail, Metal Shield<br><b>Weaponry:</b><br>Mace, Longsword
+Undefined Class
+Undefined Class
+Undefined Class
+Undefined Class
+Choose this class
+
+[DIALOG d_event_purchase_coin button]
+//f_equip_player (class) (spellbook) (maxmanapots) (maxghealpots) (maxbandages)
+ON=9
+  IF (<MORE> = 1)
+    SRC.NEWITEM=tm_event_armor_blue_warrior
+  ELSEIF (<MORE> = 2)
+    SRC.NEWITEM=tm_event_armor_red_warrior
+  ELSEIF (<MORE> = 3)
+    SRC.NEWITEM=tm_event_armor_white_warrior
+  ELSEIF (<MORE> = 4)
+    SRC.NEWITEM=tm_event_armor_green_warrior
+  ELSEIF (<MORE> = 5)
+    SRC.NEWITEM=tm_event_armor_black_warrior
+  ELSEIF (<MORE> = 6)
+    SRC.NEWITEM=tm_event_armor_orange_warrior
+  ELSEIF (<MORE> = 7)
+    SRC.NEWITEM=tm_event_armor_purple_warrior
+  ELSEIF (<MORE> = 8)
+    SRC.NEWITEM=tm_event_armor_yellow_warrior
+  ENDIF
+  SRC.ACT.BOUNCE
+  f_event_bandages 1
+  f_event_gheals 1
+  IF (<SRC.ISGM> = 0)
+    REMOVE
+  ENDIF
+ON=10
+  IF (<MORE> = 1)
+    SRC.NEWITEM=tm_event_armor_blue_archer
+  ELSEIF (<MORE> = 2)
+    SRC.NEWITEM=tm_event_armor_red_archer
+  ELSEIF (<MORE> = 3)
+    SRC.NEWITEM=tm_event_armor_white_archer
+  ELSEIF (<MORE> = 4)
+    SRC.NEWITEM=tm_event_armor_green_archer
+  ELSEIF (<MORE> = 5)
+    SRC.NEWITEM=tm_event_armor_black_archer
+  ELSEIF (<MORE> = 6)
+    SRC.NEWITEM=tm_event_armor_orange_archer
+  ELSEIF (<MORE> = 7)
+    SRC.NEWITEM=tm_event_armor_purple_archer
+  ELSEIF (<MORE> = 8)
+    SRC.NEWITEM=tm_event_armor_yellow_archer
+  ENDIF
+  SRC.ACT.BOUNCE
+  f_event_bandages 2
+  f_event_gheals 2
+  IF (<SRC.ISGM> = 0)
+    REMOVE
+  ENDIF
+ON=11
+  IF (<MORE> = 1)
+    SRC.NEWITEM=tm_event_armor_blue_mage
+  ELSEIF (<MORE> = 2)
+    SRC.NEWITEM=tm_event_armor_red_mage
+  ELSEIF (<MORE> = 3)
+    SRC.NEWITEM=tm_event_armor_white_mage
+  ELSEIF (<MORE> = 4)
+    SRC.NEWITEM=tm_event_armor_green_mage
+  ELSEIF (<MORE> = 5)
+    SRC.NEWITEM=tm_event_armor_black_mage
+  ELSEIF (<MORE> = 6)
+    SRC.NEWITEM=tm_event_armor_orange_mage
+  ELSEIF (<MORE> = 7)
+    SRC.NEWITEM=tm_event_armor_purple_mage
+  ELSEIF (<MORE> = 8)
+    SRC.NEWITEM=tm_event_armor_yellow_mage
+  ENDIF
+  SRC.ACT.BOUNCE
+  f_event_bandages 3
+  f_event_gheals 3
+  f_event_manapots 3
+  f_event_spellbook <MORE2>
+  IF (<SRC.ISGM> = 0)
+    REMOVE
+  ENDIF
+ON=12
+  IF (<MORE> = 1)
+    SRC.NEWITEM=tm_event_armor_blue_paladin
+  ELSEIF (<MORE> = 2)
+    SRC.NEWITEM=tm_event_armor_red_paladin
+  ELSEIF (<MORE> = 3)
+    SRC.NEWITEM=tm_event_armor_white_paladin
+  ELSEIF (<MORE> = 4)
+    SRC.NEWITEM=tm_event_armor_green_paladin
+  ELSEIF (<MORE> = 5)
+    SRC.NEWITEM=tm_event_armor_black_paladin
+  ELSEIF (<MORE> = 6)
+    SRC.NEWITEM=tm_event_armor_orange_paladin
+  ELSEIF (<MORE> = 7)
+    SRC.NEWITEM=tm_event_armor_purple_paladin
+  ELSEIF (<MORE> = 8)
+    SRC.NEWITEM=tm_event_armor_yellow_paladin
+  ENDIF
+  SRC.ACT.BOUNCE
+  f_event_bandages 4
+  f_event_gheals 4
+  f_event_manapots 4
+  f_event_spellbook 10
+  IF (<SRC.ISGM> = 0)
+    REMOVE
+  ENDIF
+ON=13
+  
+ON=14
+  
+ON=15
+  
+ON=16
+  
+
+// **************************************************
+// Functions
+// **************************************************
+
+[FUNCTION f_event_bandages] // Arg = Class
+IF (<EVAL <ARGS>> = 1) // Warrior
+  VAR.Bandages=<EVAL (<TAG.MaxBandages>*30)>
+ELSEIF (<EVAL <ARGS>> = 2) // Archer
+  VAR.Bandages=<EVAL <TAG.MaxBandages>*20>
+ELSEIF (<EVAL <ARGS>> = 3) // Mage
+  VAR.Bandages=<EVAL <TAG.MaxBandages>*10>
+ELSEIF (<EVAL <ARGS>> = 4) // Paladin
+  VAR.Bandages=<TAG.MaxBandages>*40
+ELSEIF (<EVAL <ARGS>> = 5) // Unused
+ELSEIF (<EVAL <ARGS>> = 6) // Unused
+ELSEIF (<EVAL <ARGS>> = 7) // Unused
+ELSEIF (<EVAL <ARGS>> = 8) // Unused
+ELSE
+  RETURN=1
+ENDIF
+SRC.NEWITEM=i_bandage
+SRC.ACT.AMOUNT=<EVAL <VAR.Bandages>>
+SRC.ACT.BOUNCE
+
+[FUNCTION f_event_gheals] // Arg = Class
+IF (<EVAL <ARGS>> = 1)
+  VAR.GHealPots=(<TAG.MaxGHealPots>+5)
+ELSEIF (<EVAL <ARGS>> = 2)
+  VAR.GHealPots=(<TAG.MaxGHealPots>+3)
+ELSEIF (<EVAL <ARGS>> = 3)
+  VAR.GHealPots=(<TAG.MaxGHealPots>+0)
+ELSEIF (<EVAL <ARGS>> = 4)
+  VAR.GHealPots=(<TAG.MaxGHealPots>+1)
+ELSEIF (<EVAL <ARGS>> = 5)
+ELSEIF (<EVAL <ARGS>> = 6)
+ELSEIF (<EVAL <ARGS>> = 7)
+ELSEIF (<EVAL <ARGS>> = 8)
+ELSEIF (<EVAL <ARGS>> = 9)
+ELSEIF (<EVAL <ARGS>> = 10)
+ELSE
+  RETURN=1
+ENDIF
+SRC.NEWITEM=i_potion_heal
+SRC.ACT.MORE=s_greater_heal
+SRC.ACT.MORE2=01388
+SRC.ACT.BOUNCE
+SRC.ACT.DUPE=<EVAL <VAR.GHealPots>>
+
+[FUNCTION f_event_manapots] // Arg = Class
+IF (<EVAL <ARGS>> = 1)
+ELSEIF (<EVAL <ARGS>> = 2)
+ELSEIF (<EVAL <ARGS>> = 3)
+  VAR.ManaPots=(<TAG.MaxManaPots>*5)
+ELSEIF (<EVAL <ARGS>> = 4)
+  VAR.ManaPots=(<TAG.MaxManaPots>*2)
+ELSEIF (<EVAL <ARGS>> = 5)
+ELSEIF (<EVAL <ARGS>> = 6)
+ELSEIF (<EVAL <ARGS>> = 7)
+ELSEIF (<EVAL <ARGS>> = 8)
+ELSEIF (<EVAL <ARGS>> = 9)
+ELSEIF (<EVAL <ARGS>> = 10)
+ENDIF
+SRC.NEWITEM=i_potion_mana
+SRC.ACT.MORE=s_mana
+SRC.ACT.MORE2=01c20
+SRC.ACT.BOUNCE
+SRC.ACT.DUPE=<EVAL <VAR.ManaPots>>
+
+[FUNCTION f_event_spellbook]
+IF (<EVAL <ARGS>> = 1)
+  SRC.NEWITEM=i_event_spellbook_limited
+ELSEIF (<EVAL <ARGS>> = 2)
+  SRC.NEWITEM=i_event_spellbook_normal
+ELSEIF (<EVAL <ARGS>> = 3)
+  SRC.NEWITEM=i_event_spellbook_full
+ELSEIF (<EVAL <ARGS>> = 4)
+ELSEIF (<EVAL <ARGS>> = 5)
+ELSEIF (<EVAL <ARGS>> = 6)
+ELSEIF (<EVAL <ARGS>> = 7)
+ELSEIF (<EVAL <ARGS>> = 8)
+ELSEIF (<EVAL <ARGS>> = 9)
+ELSEIF (<EVAL <ARGS>> = 10)
+  SRC.NEWITEM=i_event_spellbook_paladin
+ENDIF
+
+// **************************************************
+// Items
+// **************************************************
+
+[ITEMDEF i_crystal_of_memory]
+ID=i_crystal_purple
+NAME=Crystal of Memory
+WEIGHT=999
+
+// Note: This is only a manual way to save players' fame/karma/kills, its not 
+// compatible with the gates themselves in any way. They should not be used
+// at the same time or at the same event. Always remember to restore them after,
+// or else they will not be able to use it next time unless you change their tag.
+
+ON=@DCLICK
+  IF <SRC.GM>=1
+    TARGET=Select the person to restore.
+  ELSE
+    SOUND=0216
+    SRC.ANIM=17
+    SRC.SPELLEFFECT=s_night_sight,1
+    SRC.TAG.Karma=<SRC.KARMA>
+    SRC.TAG.Fame=<SRC.FAME>
+    SRC.TAG.Kills=<SRC.KILLS>
+    SRC.TAG.CrystalUsed=1
+    SRC.SYSMESSAGE=Thank you <SRC.NAME>, your Fame/Karma/Kills have been memorized.
+    RETURN=0
+  ENDIF
+
+ON=@TARGON_CHAR
+  IF <SRC.TARG.TAG.CrystalUsed>!=1
+    SRC.SYSMESSAGE=This person does not appear to have their Fame/Karma/Kills stored.
+  ELSE
+    SRC.TARG.SOUND=0216
+    SRC.TARG.ANIM=17
+    SRC.TARG.KARMA=<SRC.TARG.TAG.Karma>
+    SRC.TARG.FAME=<SRC.TARG.TAG.Fame>
+    SRC.TARG.KILLS=<SRC.TARG.TAG.Kills>
+    SRC.TARG.SYSMESSAGE=Thank you for participating, your original Fame/Karma/Kills have been restored.
+    SRC.TARG.SPELLEFFECT=s_night_sight,1
+    SRC.TARG.SPELLEFFECT=s_mana,100
+    SRC.TARG.SPELLEFFECT=s_greater_heal,100
+    SRC.TARG.TAG.Karma=
+    SRC.TARG.TAG.Fame=
+    SRC.TARG.TAG.Kills=
+    SRC.TARG.TAG.CrystalUsed=
+  ENDIF
+
+ON=@Create
+  ATTR=attr_move_never
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=Crystal of Memory
+
+[ITEMDEF i_event_ban_coin]
+ID=i_gold
+NAME=Event Ban Coin
+PILE=0
+TYPE=t_script
+
+ON=@DCLICK
+  IF <SRC.GM>=1
+    TARGET Select the player to ban from all events
+  ELSE
+    REMOVE
+  ENDIF
+  
+ON=@TARGON_CHAR
+  IF (<SRC.TARG.NPC>=0)
+    IF <EVAL <MORE>> = 1
+      LINK.TAG.Acct_1=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 2
+      LINK.TAG.Acct_2=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 3
+      LINK.TAG.Acct_3=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 4
+      LINK.TAG.Acct_4=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 5
+      LINK.TAG.Acct_5=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 6
+      LINK.TAG.Acct_6=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 7
+      LINK.TAG.Acct_7=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 8
+      LINK.TAG.Acct_8=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 9
+      LINK.TAG.Acct_9=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 10
+      LINK.TAG.Acct_10=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 11
+      LINK.TAG.Acct_11=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 12
+      LINK.TAG.Acct_12=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 13
+      LINK.TAG.Acct_13=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 14
+      LINK.TAG.Acct_14=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 15
+      LINK.TAG.Acct_15=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 16
+      LINK.TAG.Acct_16=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 17
+      LINK.TAG.Acct_17=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 18
+      LINK.TAG.Acct_18=<SRC.TARG.ACCOUNT>
+    ELSEIF <EVAL <MORE>> = 19
+      LINK.TAG.Acct_19=<SRC.TARG.ACCOUNT>
+    ELSE <EVAL <MORE>> = 20
+      LINK.TAG.Acct_20=<SRC.TARG.ACCOUNT>
+    ENDIF
+    SRC.SYSMESSAGE=Account <SRC.TARG.ACCOUNT> was banned.
+    SRC.TARG.SYSMESSAGE You were banned from from all events by <SRC.NAME>
+    REMOVE
+  ELSE
+    SRC.SYSMESSAGE You can not ban npcs since they can not join events.
+    REMOVE
+  ENDIF
+  
+ON=@TARGON_ITEM
+  SRC.SYSMESSAGE This is not a person.
+  REMOVE
+  
+ON=@TARGON_GROUND
+  SRC.SYSMESSAGE This is not a person.
+  REMOVE
+
+ON=@Create
+  ATTR=attr_newbie|attr_move_never
+  COLOR=0020
+  
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=Event Ban Coin
+
+[ITEMDEF i_event_shitlist]
+ID=i_book_open
+NAME=Event Ban List
+TYPE=t_script
+WEIGHT=1
+LAYER=1
+
+ON=@DCLICK
+  DIALOG=d_event_shitlist
+
+ON=@Create
+  ATTR=attr_invis|attr_move_never
+  COLOR=0020
+  
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=Event Shitlist Book
+
+[ITEMDEF i_event_blue_coin]
+ID=i_virtstone_2
+NAME=blue purchase coin
+TYPE=t_script
+WEIGHT=0
+
+ON=@DCLICK
+  IF (<SRC.TAG.Team> = <MORE>)
+    DIALOG=d_event_rules
+  ELSE
+    SRC.SYSMESSAGE You are not on correct team to use this.
+  ENDIF
+  
+ON=@Create
+  MORE=1
+  ATTR=attr_newbie|attr_move_never // So players can kill other for more equip or drop/trade their equip stone
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Blue Purchase Coin
+
+[ITEMDEF i_event_red_coin]
+ID=i_virtstone_6
+NAME=red purchase coin
+TYPE=t_script
+WEIGHT=0
+
+ON=@DCLICK
+  IF (<SRC.TAG.Team> = <MORE>)
+    DIALOG=d_event_rules
+  ELSE
+    SRC.SYSMESSAGE You are not on correct team to use this.
+  ENDIF
+  
+ON=@Create
+  MORE=2
+  ATTR=attr_newbie|attr_move_never // So players can kill other for more equip or drop/trade their equip stone
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Red Purchase Coin
+
+[ITEMDEF i_event_white_coin]
+ID=i_virtstone_7
+NAME=white purchase coin
+TYPE=t_script
+WEIGHT=0
+
+ON=@DCLICK
+  IF (<SRC.TAG.Team> = <MORE>)
+    DIALOG=d_event_rules
+  ELSE
+    SRC.SYSMESSAGE You are not on correct team to use this.
+  ENDIF
+  
+ON=@Create
+  MORE=3
+  ATTR=attr_newbie|attr_move_never // So players can kill other for more equip or drop/trade their equip stone
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=White Purchase Coin
+
+[ITEMDEF i_event_green_coin]
+ID=i_virtstone_3
+NAME=green purchase coin
+TYPE=t_script
+WEIGHT=0
+
+ON=@DCLICK
+  IF (<SRC.TAG.Team> = <MORE>)
+    DIALOG=d_event_rules
+  ELSE
+    SRC.SYSMESSAGE You are not on correct team to use this.
+  ENDIF
+  
+ON=@Create
+  MORE=4
+  ATTR=attr_newbie|attr_move_never // So players can kill other for more equip or drop/trade their equip stone
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Green Purchase Coin
+
+[ITEMDEF i_event_black_coin]
+ID=i_virtstone_1
+NAME=black purchase coin
+TYPE=t_script
+WEIGHT=0
+
+ON=@DCLICK
+  IF (<SRC.TAG.Team> = <MORE>)
+    DIALOG=d_event_rules
+  ELSE
+    SRC.SYSMESSAGE You are not on correct team to use this.
+  ENDIF
+  
+ON=@Create
+  MORE=5
+  ATTR=attr_newbie|attr_move_never // So players can kill other for more equip or drop/trade their equip stone
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Black Purchase Coin
+
+[ITEMDEF i_event_orange_coin]
+ID=i_virtstone_4
+NAME=orange purchase coin
+TYPE=t_script
+WEIGHT=0
+
+ON=@DCLICK
+  IF (<SRC.TAG.Team> = <MORE>)
+    DIALOG=d_event_rules
+  ELSE
+    SRC.SYSMESSAGE You are not on correct team to use this.
+  ENDIF
+  
+ON=@Create
+  MORE=6
+  ATTR=attr_newbie|attr_move_never // So players can kill other for more equip or drop/trade their equip stone
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Orange Purchase Coin
+
+[ITEMDEF i_event_purple_coin]
+ID=i_virtstone_6
+NAME=purple purchase coin
+TYPE=t_script
+WEIGHT=0
+
+ON=@DCLICK
+  IF (<SRC.TAG.Team> = <MORE>)
+    DIALOG=d_event_rules
+  ELSE
+    SRC.SYSMESSAGE You are not on correct team to use this.
+  ENDIF
+  
+ON=@Create
+  MORE=7
+  ATTR=attr_newbie|attr_move_never // So players can kill other for more equip or drop/trade their equip stone
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Purple Purchase Coin
+
+[ITEMDEF i_event_yellow_coin]
+ID=i_virtstone_8
+NAME=yellow purchase coin
+TYPE=t_script
+WEIGHT=0
+
+ON=@DCLICK
+  IF (<SRC.TAG.Team> = <MORE>)
+    DIALOG=d_event_rules
+  ELSE
+    SRC.SYSMESSAGE You are not on correct team to use this.
+  ENDIF
+  
+ON=@Create
+  MORE=8
+  ATTR=attr_newbie|attr_move_never // So players can kill other for more equip or drop/trade their equip stone
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Yellow Purchase Coin
+
+[ITEMDEF i_event_gate_blue]
+NAME=Blue Team Moongate
+ID=i_moongate_black
+TYPE=t_script
+
+ON=@DCLICK
+  IF (<SRC.ISGM> = 1)
+    DIALOG=d_event_gate
+  ELSE
+    RETURN=1
+  ENDIF
+
+ON=@STEP
+  VAR.WEIGHT=6.0 // Used as default weight of the player (note, you will have to increase this to allow in mounts)
+  IF (<MOREX> = 0) || (<MOREY> = 0) || (<MORE> = 0) || (<MORE2> = 0) // Assure the gate has a location, spellbook and team
+    SAY=This gate has not been set up yet, please wait for a GM to do so.
+    RETURN=1
+  ELSE
+    // Start check of banlist for player's account, if found they will be moved aside.
+    IF (<SRC.ISGM> = 0)
+      IF (<SRC.FINDLAYER(layer_ring).ID> > 0) // Check for rings for married couples and adjust weight
+        VAR.WEIGHT=<VAR.WEIGHT>+<SRC.FINDLAYER(layer_ring).WEIGHT>
+      ENDIF
+      IF (<SRC.FINDLAYER(layer_ears).ID> > 0) // Put any earings in bank
+        VAR.WEIGHT=<VAR.WEIGHT>+<SRC.FINDLAYER(layer_ear).WEIGHT>
+      ENDIF
+      IF <SRC.WEIGHT> <= <VAR.WEIGHT>
+        IF <SRC.RESTEST=1 i_spellbook> // Spellbook check since they are weightless(in 51a at least)
+          SAY=<SRC.NAME> is trying to sneak items in!
+          SRC.MOVE=2
+          SRC.SYSMESSAGE=You have been sent away for trying to sneak items in.
+        ELSE
+          IF (<SRC.TAG.Team> = 0) // Not yet a team member, store F/K/K and equip.
+            SOUND=00216
+            SRC.ANIM=17
+            SRC.TAG.Fame=<SRC.Fame> // Backup Fame
+            SRC.TAG.Karma=<SRC.Karma> // Backup Karma
+            SRC.TAG.Kills=<SRC.Kills> // Backup Kills
+            SRC.TAG.Team=<EVAL <MORE2>> // Set team on person
+            SRC.SPELLEFFECT=s_night_sight,1
+            SRC.SPELLEFFECT=s_mana,100
+            SRC.SPELLEFFECT=s_greater_heal,100
+            SAY <SRC.NAME> has joined the team.
+            SRC.SYSMESSAGE=Thank you <SRC.NAME>, your Fame/Karma/Kills have been memorized.
+          ELSEIF (<SRC.TAG.Team> = <MORE2>) // Already a member of this team, re-equip player.
+            SRC.SYSMESSAGE=You are being re-equiped, Fame/Karma/Kills were not memorized this time.
+          ELSE
+            SRC.SYSMESSAGE=You are not a member of this team.
+            RETURN=1
+          ENDIF
+          IF (<MORE2> = 1) // Blue
+            SRC.NEWITEM=i_event_blue_coin
+          ELSEIF (<MORE2> = 2) // Red
+            SRC.NEWITEM=i_event_red_coin
+          ELSEIF (<MORE2> = 3) // White
+            SRC.NEWITEM=i_event_white_coin
+          ELSEIF (<MORE2> = 4) // Green
+            SRC.NEWITEM=i_event_green_coin
+          ELSEIF (<MORE2> = 5) // Black
+            SRC.NEWITEM=i_event_black_coin
+          ELSEIF (<MORE2> = 6) // Orange
+            SRC.NEWITEM=i_event_orange_coin
+          ELSEIF (<MORE2> = 7) // Purple
+            SRC.NEWITEM=i_event_purple_coin
+          ELSEIF (<MORE2> = 8) // Yellow
+            SRC.NEWITEM=i_event_yellow_coin
+          ENDIF
+          SRC.ACT.MORE2=<MORE2>
+          SRC.ACT.TAG.MaxManaPots=<TAG.MaxManaPots>
+          SRC.ACT.TAG.TAG.MaxGHealPots=<TAG.MaxGHealPots>
+          SRC.ACT.TAG.TAG.MaxBandages=<TAG.MaxBandages>
+          SRC.GO=<MOREP> // Transport to tourney area marked or specified in gump
+        ENDIF
+      ELSE
+        SAY=<SRC.NAME> is trying to sneak items in!
+        SRC.MOVE=2
+      ENDIF
+    ELSE // They are a gm, let them right in
+      SRC.GO=<MOREP>
+    ENDIF
+  ENDIF
+
+ON=@Create
+  MORE2=0
+  TAG.Class_1=1
+  TAG.Class_2=1
+  TAG.Class_3=1
+  TAG.Class_4=1
+  TAG.Class_5=0
+  TAG.Class_6=0
+  TAG.Class_7=0
+  TAG.Class_8=0
+  TAG.MaxManaPots=1
+  TAG.MaxGHealPots=1
+  TAG.MaxBandages=1
+  COLOR=03c1 // color_team_blue
+  ATTR=attr_move_never
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=Event Entrance Gate
+
+[ITEMDEF i_event_exitgate_blue]
+ID=i_moongate_black
+TYPE=t_script
+
+ON=@DCLICK
+  IF <SRC.ISGM>=1
+    DIALOG d_event_exitgate
+  ENDIF
+
+ON=@STEP
+  IF <SRC.TAG.Team>=1
+    SRC.KARMA=<EVAL <SRC.TAG.Karma>> 
+    SRC.FAME=<EVAL <SRC.TAG.Fame>> 
+    SRC.KILLS=<EVAL <SRC.TAG.Kills>> 
+    SRC.TAG.Team=
+    SRC.TAG.Karma=
+    SRC.TAG.Kills=
+    SRC.TAG.Fame=
+    SRC.UPDATE
+    SRC.SPELLEFFECT=s_nightsight,1
+    SRC.SPELLEFFECT=s_mana,100
+    SRC.SPELLEFFECT=s_greater_heal,100
+    SRC.SYSMESSAGE=Thank you for participating, your original Fame/Karma/Kills have been restored.
+    IF <TAG.Win>=1
+      SRC.SYSMESSAGE Congradulations on your win, you will now be sent to an appropriate town. Thanks for participating.
+    ELSE
+      SRC.SYSMESSAGE Sorry your team did not win, you will now be sent to an appropriate town. Thanks for participating.
+    ENDIF
+    IF <TAG.Prize>=1
+      GIVEPOINTS <EVAL <MORE>>
+      GIVETICKETS <EVAL <MORE2>>
+    ENDIF
+    IF (<MOREX>=0) & (<MOREY>=0) & (<MOREZ>=0) // Gate not marked
+      IF <SRC.KILLS>>=5
+        SRC.GO=buccaneer's den
+      ELSE
+        SRC.GO=britain
+      ENDIF
+    ELSE // Gate is marked with custom exit location
+      SRC.GO=<MOREP>
+    ENDIF
+  ELSEIF <SRC.ISGM>=1
+    IF (<MOREX>=0) & (<MOREY>=0) & (<MOREZ>=0) // Gate not marked
+      IF <SRC.KILLS>>=5
+        SRC.GO=buccaneer's den
+      ELSE
+        SRC.GO=britain
+      ENDIF
+    ELSE // Gate is marked with custom exit location
+      SRC.GO=<MOREP>
+    ENDIF
+  ELSE
+    SAY=<SRC.NAME> is trying to exit, but is leaving with the wrong team.
+    SRC.MOVE=0,2,0
+  ENDIF
+
+ON=@Create
+  COLOR=color_team_blue
+  TAG.Prize=1
+  TAG.PrizeOpt2=0
+  TAG.Win=1
+  TAG.WinOpt2=0
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=Exit Gate (Blue)
+
+[ITEMDEF i_event_exitgate_red]
+ID=i_moongate_black
+TYPE=t_script
+
+ON=@DCLICK
+  IF <SRC.ISGM>=1
+    DIALOG d_event_exitgate
+  ENDIF
+
+ON=@STEP
+  IF <SRC.TAG.Team>=2
+    SRC.KARMA=<EVAL <SRC.TAG.Karma>> 
+    SRC.FAME=<EVAL <SRC.TAG.Fame>> 
+    SRC.KILLS=<EVAL <SRC.TAG.Kills>> 
+    SRC.TAG.Team=
+    SRC.TAG.Karma=
+    SRC.TAG.Kills=
+    SRC.TAG.Fame=
+    SRC.UPDATE
+    SRC.SPELLEFFECT=s_nightsight,1
+    SRC.SPELLEFFECT=s_mana,100
+    SRC.SPELLEFFECT=s_greater_heal,100
+    SRC.SYSMESSAGE=Thank you for participating, your original Fame/Karma/Kills have been restored.
+    IF <TAG.Win>=1
+      SRC.SYSMESSAGE Congradulations on your win, you will now be sent to an appropriate town. Thanks for participating.
+    ELSE
+      SRC.SYSMESSAGE Sorry your team did not win, you will now be sent to an appropriate town. Thanks for participating.
+    ENDIF
+    IF <TAG.Prize>=1
+      GIVEPOINTS <EVAL <MORE>>
+      GIVETICKETS <EVAL <MORE2>>
+    ENDIF
+    IF (<MOREX>=0) & (<MOREY>=0) & (<MOREZ>=0) // Gate not marked
+      IF <SRC.KILLS>>=5
+        SRC.GO=buccaneer's den
+      ELSE
+        SRC.GO=britain
+      ENDIF
+    ELSE // Gate is marked with custom exit location
+      SRC.GO=<MOREP>
+    ENDIF
+  ELSEIF <SRC.ISGM>=1
+    IF (<MOREX>=0) & (<MOREY>=0) & (<MOREZ>=0) // Gate not marked
+      IF <SRC.KILLS>>=5
+        SRC.GO=buccaneer's den
+      ELSE
+        SRC.GO=britain
+      ENDIF
+    ELSE // Gate is marked with custom exit location
+      SRC.GO=<MOREP>
+    ENDIF
+  ELSE
+    SAY=<SRC.NAME> is trying to exit, but is leaving with the wrong team.
+    SRC.MOVE=0,2,0
+  ENDIF
+
+ON=@Create
+  COLOR=color_team_red
+  TAG.Prize=1
+  TAG.PrizeOpt2=0
+  TAG.Win=1
+  TAG.WinOpt2=0
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=Exit Gate (Red)
+
+[ITEMDEF i_event_exitgate_white]
+ID=i_moongate_black
+TYPE=t_script
+
+ON=@DCLICK
+  IF <SRC.ISGM>=1
+    DIALOG d_event_exitgate
+  ENDIF
+
+ON=@STEP
+  IF <SRC.TAG.Team>=3
+    SRC.KARMA=<EVAL <SRC.TAG.Karma>> 
+    SRC.FAME=<EVAL <SRC.TAG.Fame>> 
+    SRC.KILLS=<EVAL <SRC.TAG.Kills>> 
+    SRC.TAG.Team=
+    SRC.TAG.Karma=
+    SRC.TAG.Kills=
+    SRC.TAG.Fame=
+    SRC.UPDATE
+    SRC.SPELLEFFECT=s_nightsight,1
+    SRC.SPELLEFFECT=s_mana,100
+    SRC.SPELLEFFECT=s_greater_heal,100
+    SRC.SYSMESSAGE=Thank you for participating, your original Fame/Karma/Kills have been restored.
+    IF <TAG.Win>=1
+      SRC.SYSMESSAGE Congradulations on your win, you will now be sent to an appropriate town. Thanks for participating.
+    ELSE
+      SRC.SYSMESSAGE Sorry your team did not win, you will now be sent to an appropriate town. Thanks for participating.
+    ENDIF
+    IF <TAG.Prize>=1
+      GIVEPOINTS <EVAL <MORE>>
+      GIVETICKETS <EVAL <MORE2>>
+    ENDIF
+    IF (<MOREX>=0) & (<MOREY>=0) & (<MOREZ>=0) // Gate not marked
+      IF <SRC.KILLS>>=5
+        SRC.GO=buccaneer's den
+      ELSE
+        SRC.GO=britain
+      ENDIF
+    ELSE // Gate is marked with custom exit location
+      SRC.GO=<MOREP>
+    ENDIF
+  ELSEIF <SRC.ISGM>=1
+    IF (<MOREX>=0) & (<MOREY>=0) & (<MOREZ>=0) // Gate not marked
+      IF <SRC.KILLS>>=5
+        SRC.GO=buccaneer's den
+      ELSE
+        SRC.GO=britain
+      ENDIF
+    ELSE // Gate is marked with custom exit location
+      SRC.GO=<MOREP>
+    ENDIF
+  ELSE
+    SAY=<SRC.NAME> is trying to exit, but is leaving with the wrong team.
+    SRC.MOVE=0,2,0
+  ENDIF
+
+ON=@Create
+  COLOR=color_team_white
+  TAG.Prize=1
+  TAG.PrizeOpt2=0
+  TAG.Win=1
+  TAG.WinOpt2=0
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=Exit Gate (White)
+
+[ITEMDEF i_event_flag]
+ID=i_shield_order
+NAME=ctf flag
+LAYER=layer_hand2
+TYPE=t_armor_shield
+FLIP=0
+
+ON=@DCLICK // Disallows people from puting out fire, and equips on a double click.
+  IF (<DISTANCE> < 3)
+    IF <ATTR>=attr_move_never
+      RETURN=1
+    ELSE
+      EQUIP
+      RETURN=1
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You can not take <NAME> from where you are.
+    RETURN=1
+    ENDIF
+  ENDIF
+  
+ON=@EQUIP
+  LINK=<SRC.SERIAL>
+  ATTR=attr_move_never
+  RETURN=0
+
+ON=@UNEQUIP // Disallows people from removing the flag from their hands
+  IF <SRC.HITS>=0
+    LINK=04fffffff
+  ELSE
+    ATTR=attr_move_never
+  ENDIF
+
+ON=@Create
+  COLOR=0000
+  ATTR=attr_none
+  HITPOINTS={40 50}
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=CTF Flag (Blue)
+
+[ITEMDEF i_event_ch_tile]
+ID=004f2
+NAME=Capture Point
+TYPE=t_script
+
+ON=@STEP
+  IF <SRC.HITPOINTS> > 0
+    IF (<EVAL <SRC.TAG.Team>> = 1)
+      TAG.Team1=<TAG.Team1>+1
+      COLOR=color_team_blue
+      UPDATE
+    ELSEIF (<EVAL <SRC.TAG.Team>> = 2)
+      TAG.Team2=<TAG.Team2>+1
+      COLOR=color_team_red
+      UPDATE
+    ELSEIF (<EVAL <SRC.TAG.Team>> = 3)
+      TAG.Team3=<TAG.Team3>+1
+      COLOR=color_team_white
+      UPDATE
+    ELSEIF (<EVAL <SRC.TAG.Team>> = 4)
+      TAG.Team4=<TAG.Team4>+1
+      COLOR=color_team_green
+      UPDATE
+    ELSEIF (<EVAL <SRC.TAG.Team>> = 5)
+      TAG.Team5=<TAG.Team5>+1
+      COLOR=color_team_black
+      UPDATE
+    ELSEIF (<EVAL <SRC.TAG.Team>> = 6)
+      TAG.Team6=<TAG.Team6>+1
+      COLOR=color_team_orange
+      UPDATE
+    ELSEIF (<EVAL <SRC.TAG.Team>> = 7)
+      TAG.Team7=<TAG.Team7>+1
+      COLOR=color_team_purple
+      UPDATE
+    ELSEIF (<EVAL <SRC.TAG.Team>> = 8)
+      TAG.Team8=<TAG.Team8>+1
+      COLOR=color_team_yellow
+      UPDATE
+    ELSE
+      IF <SRC.GM>=0
+        COLOR=golden_armor_color
+        UPDATE
+        SAY=<SRC.NAME> is on an unkown team
+      ENDIF
+    ENDIF
+  ELSE
+    SRC.SYSMESSAGE=You are dead, please get off the tile and go get resurrected!
+  ENDIF
+
+ON=@DCLICK
+  IF <SRC.GM>=1
+    SHOW TAG.Team1
+    SHOW TAG.Team2
+    SHOW TAG.Team3
+    SHOW TAG.Team4
+    SHOW TAG.Team5
+    SHOW TAG.Team6
+    SHOW TAG.Team7
+    SHOW TAG.Team8
+  ELSE
+    RETURN=1
+  ENDIF
+
+ON=@Create
+  ATTR=attr_move_never
+  COLOR=color_o_gold
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=Capture & Hold Point
+
+[ITEMDEF i_event_ctf_capture_blue]
+ID=04f2 //Teleporter tile
+NAME=Blue Team Capture Point
+TYPE=t_event_ctf_cap_tile
+
+ON=@Create
+  MORE=1
+  COLOR=color_team_blue
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=CTF Capture Point (Blue)
+
+[ITEMDEF i_even_ctf_capture_red]
+ID=004f2 //Teleporter tile
+NAME=Red Team Capture Point
+TYPE=t_event_ctf_cap_tile
+
+ON=@Create
+  MORE=2
+  COLOR=color_team_red
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=CTF Capture Point (Red)
+
+[ITEMDEF i_event_ctf_capture_white]
+ID=004f2 //Teleporter tile
+NAME=White Team Capture Point
+TYPE=t_event_ctf_cap_tile
+
+ON=@Create
+  MORE=3
+  COLOR=color_team_white
+
+CATEGORY=Event System
+SUBSECTION=GM Items
+DESCRIPTION=CTF Capture Point (White)
+
+[ITEMDEF i_event_spellbook_limited]
+ID=i_spellbook
+NAME=Limited Spellbook - Tourney Property
+
+ON=@Create
+  ATTR=attr_magic
+  COLOR=03c1
+  MORE=0772bcfff
+  MORE2=04148f18
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Limited Spellbook
+
+[ITEMDEF i_event_spellbook_normal]
+ID=i_spellbook
+NAME=Normal Spellbook - Tourney Property
+
+ON=@Create
+  ATTR=attr_magic
+  COLOR=0
+  MORE=0772bcfff
+  MORE2=0575af38
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Normal Spellbook
+
+[ITEMDEF i_event_spellbook_full]
+ID=i_spellbook
+NAME=Full Spellbook - Tourney Property
+
+ON=@Create
+  ATTR=attr_magic
+  COLOR=color_o_gold
+  MORE=0ffffffff
+  MORE2=0ffffffff
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Full Spellbook
+
+[ITEMDEF i_event_spellbook_paladin]
+ID=i_spellbook
+NAME=Paladin Spellbook - Tourney Property
+
+ON=@Create
+  ATTR=attr_magic
+  COLOR=0482
+  MORE=01301c76a
+  MORE2=0420890a
+
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Paladin Spellbook
+
+// **************************************************
+// Templates
+// **************************************************
+
+[TEMPLATE tm_event_armor_blue_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Blue Paladin Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_ringmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_ringmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_ringmail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_ringmail_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_helm_orc
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_shoes_plain
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_kilt
+  NAME=Tourney Property
+  COLOR=color_team_blue
+
+ITEM=tm_event_weapons_blue_paladin
+ITEM=tm_event_provisions_paladin
+ITEM=i_event_spellbook_paladin
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_red_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Red Paladin Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_ringmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_ringmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_ringmail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_ringmail_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_helm_orc
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_shoes_plain
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_kilt
+  NAME=Tourney Property
+  COLOR=color_team_red
+
+ITEM=tm_event_weapons_red_paladin
+ITEM=tm_event_provisions_paladin
+ITEM=i_event_spellbook_paladin
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_white_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=White Paladin Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_ringmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_ringmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_ringmail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_ringmail_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_helm_orc
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_shoes_plain
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_kilt
+  NAME=Tourney Property
+  COLOR=color_team_white
+
+ITEM=tm_event_weapons_white_paladin
+ITEM=tm_event_provisions_paladin
+ITEM=i_event_spellbook_paladin
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_blue_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Blue Mage Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_studded_leggings
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_studded_tunic
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_studded_gloves
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_studded_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_studded_gorget
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_bandana
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_sandals
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_staff_black
+  NAME=Tourney Property
+  COLOR=color_team_blue
+
+ITEM=tm_event_provisions_mage
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_red_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Red Mage Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_studded_leggings
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_studded_tunic
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_studded_gloves
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_studded_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_studded_gorget
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_bandana
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_sandals
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_staff_black
+  NAME=Tourney Property
+  COLOR=color_team_red
+
+ITEM=tm_event_provisions_mage
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_white_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=White Mage Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_studded_leggings
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_studded_tunic
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_studded_gloves
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_studded_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_studded_gorget
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_bandana
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_sandals
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_staff_black
+  NAME=Tourney Property
+  COLOR=color_team_white
+
+ITEM=tm_event_provisions_mage
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_blue_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Blue Warrior Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_chest
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_blue
+
+ITEM=tm_event_weapons_blue_warrior
+ITEM=tm_event_provisions_warrior
+
+[TEMPLATE tm_event_armor_red_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Red Warrior Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_chest
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_red
+
+ITEM=tm_event_weapons_red_warrior
+ITEM=tm_event_provisions_warrior
+
+[TEMPLATE tm_event_armor_white_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=White Warrior Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_chest
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_white
+
+ITEM=tm_event_weapons_white_warrior
+ITEM=tm_event_provisions_warrior
+
+[TEMPLATE tm_event_armor_blue_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Blue Archer Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_chainmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_chainmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_boots_calf
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_sash
+  NAME=Tourney Property
+
+ITEM=tm_event_weapons_blue_archer
+ITEM=tm_event_provisions_archer
+
+[TEMPLATE tm_event_armor_red_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Red Archer Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_chainmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_chainmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_boots_calf
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_sash
+  NAME=Tourney Property
+
+ITEM=tm_event_weapons_red_archer
+ITEM=tm_event_provisions_archer
+
+[TEMPLATE tm_event_armor_white_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=White Archer Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_chainmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_chainmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_boots_calf
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_sash
+  NAME=Tourney Property
+
+ITEM=tm_event_weapons_white_archer
+ITEM=tm_event_provisions_archer
+
+[TEMPLATE tm_event_weapons_blue_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Blue Archer Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_crossbow_heavy
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_bow
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_xbolt
+  AMOUNT=300
+ITEM=i_arrow
+  AMOUNT=300
+ITEM=i_dagger
+  NAME=Tourney Property
+  COLOR=color_team_blue
+
+[TEMPLATE tm_event_weapons_red_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Red Archer Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_crossbow_heavy
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_bow
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_xbolt
+  AMOUNT=300
+ITEM=i_arrow
+  AMOUNT=300
+ITEM=i_dagger
+  NAME=Tourney Property
+  COLOR=color_team_red
+
+[TEMPLATE tm_event_weapons_white_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=White Archer Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_crossbow_heavy
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_bow
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_xbolt
+  AMOUNT=300
+ITEM=i_arrow
+  AMOUNT=300
+ITEM=i_dagger
+  NAME=Tourney Property
+  COLOR=color_team_white
+
+[TEMPLATE tm_event_weapons_blue_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Blue Paladin Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_mace
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_sword_broad
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_shield_round_metal
+  NAME=Tourney Property
+  COLOR=color_team_blue
+
+[TEMPLATE tm_event_weapons_red_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Red Paladin Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_mace
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_sword_broad
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_shield_round_metal
+  NAME=Tourney Property
+  COLOR=color_team_red
+
+[TEMPLATE tm_event_weapons_white_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=White Paladin Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_mace
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_sword_broad
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_shield_round_metal
+  NAME=Tourney Property
+  COLOR=color_team_white
+
+[TEMPLATE tm_event_weapons_blue_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Blue Warrior Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_axe_war
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_hammer_pick
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_katana
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_sword_viking
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_kryss
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_war_fork
+  NAME=Tourney Property
+  COLOR=color_team_blue
+ITEM=i_shield_heater
+  NAME=Tourney Property
+  COLOR=color_team_blue
+
+[TEMPLATE tm_event_weapons_red_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Red Warrior Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_axe_war
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_hammer_pick
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_katana
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_sword_viking
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_kryss
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_war_fork
+  NAME=Tourney Property
+  COLOR=color_team_red
+ITEM=i_shield_heater
+  NAME=Tourney Property
+  COLOR=color_team_red
+
+[TEMPLATE tm_event_weapons_white_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=White Warrior Pack
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_axe_war
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_hammer_pick
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_katana
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_sword_viking
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_kryss
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_war_fork
+  NAME=Tourney Property
+  COLOR=color_team_white
+ITEM=i_shield_heater
+  NAME=Tourney Property
+  COLOR=color_team_white
+
+[TEMPLATE tm_event_armor_purple_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=purple Paladin Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_ringmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_ringmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_ringmail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_ringmail_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_helm_orc
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_shoes_plain
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_kilt
+  NAME=Tourney Property
+  COLOR=color_team_purple
+
+ITEM=tm_event_weapons_purple_paladin
+ITEM=tm_event_provisions_paladin
+ITEM=i_event_spellbook_paladin
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_yellow_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=yellow Paladin Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_ringmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_ringmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_ringmail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_ringmail_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_helm_orc
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_shoes_plain
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_kilt
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+
+ITEM=tm_event_weapons_yellow_paladin
+ITEM=tm_event_provisions_paladin
+ITEM=i_event_spellbook_paladin
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_purple_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=purple Mage Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_studded_leggings
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_studded_tunic
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_studded_gloves
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_studded_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_studded_gorget
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_bandana
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_sandals
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_staff_black
+  NAME=Tourney Property
+  COLOR=color_team_purple
+
+ITEM=tm_event_provisions_mage
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_yellow_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=yellow Mage Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_studded_leggings
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_studded_tunic
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_studded_gloves
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_studded_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_studded_gorget
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_bandana
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_sandals
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_staff_black
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+
+ITEM=tm_event_provisions_mage
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_purple_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=purple Warrior Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_chest
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_purple
+
+ITEM=tm_event_weapons_purple_warrior
+ITEM=tm_event_provisions_warrior
+
+[TEMPLATE tm_event_armor_yellow_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=yellow Warrior Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_chest
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+
+ITEM=tm_event_weapons_yellow_warrior
+ITEM=tm_event_provisions_warrior
+
+[TEMPLATE tm_event_armor_purple_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=purple Archer Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_chainmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_chainmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_boots_calf
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_sash
+  NAME=Tourney Property
+
+ITEM=tm_event_weapons_purple_archer
+ITEM=tm_event_provisions_archer
+
+[TEMPLATE tm_event_armor_yellow_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=yellow Archer Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_chainmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_chainmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_boots_calf
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_sash
+  NAME=Tourney Property
+
+ITEM=tm_event_weapons_yellow_archer
+ITEM=tm_event_provisions_archer
+
+[TEMPLATE tm_event_weapons_purple_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=purple Archer Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_crossbow_heavy
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_bow
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_xbolt
+  AMOUNT=300
+ITEM=i_arrow
+  AMOUNT=300
+ITEM=i_dagger
+  NAME=Tourney Property
+  COLOR=color_team_purple
+
+[TEMPLATE tm_event_weapons_yellow_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=yellow Archer Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_crossbow_heavy
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_bow
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_xbolt
+  AMOUNT=300
+ITEM=i_arrow
+  AMOUNT=300
+ITEM=i_dagger
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+
+[TEMPLATE tm_event_weapons_purple_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=purple Paladin Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_mace
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_sword_broad
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_shield_round_metal
+  NAME=Tourney Property
+  COLOR=color_team_purple
+
+[TEMPLATE tm_event_weapons_yellow_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=yellow Paladin Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_mace
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_sword_broad
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_shield_round_metal
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+
+[TEMPLATE tm_event_weapons_purple_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=purple Warrior Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_axe_war
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_hammer_pick
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_katana
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_sword_viking
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_kryss
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_war_fork
+  NAME=Tourney Property
+  COLOR=color_team_purple
+ITEM=i_shield_heater
+  NAME=Tourney Property
+  COLOR=color_team_purple
+
+[TEMPLATE tm_event_weapons_yellow_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=yellow Warrior Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_axe_war
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_hammer_pick
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_katana
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_sword_viking
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_kryss
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_war_fork
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+ITEM=i_shield_heater
+  NAME=Tourney Property
+  COLOR=color_team_yellow
+
+[TEMPLATE tm_event_armor_green_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=green Paladin Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_ringmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_ringmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_ringmail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_ringmail_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_helm_orc
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_shoes_plain
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_kilt
+  NAME=Tourney Property
+  COLOR=color_team_green
+
+ITEM=tm_event_weapons_green_paladin
+ITEM=tm_event_provisions_paladin
+ITEM=i_event_spellbook_paladin
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_black_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=black Paladin Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_ringmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_ringmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_ringmail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_ringmail_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_helm_orc
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_shoes_plain
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_kilt
+  NAME=Tourney Property
+  COLOR=color_team_black
+
+ITEM=tm_event_weapons_black_paladin
+ITEM=tm_event_provisions_paladin
+ITEM=i_event_spellbook_paladin
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_orange_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=orange Paladin Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_ringmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_ringmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_ringmail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_ringmail_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_helm_orc
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_shoes_plain
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_kilt
+  NAME=Tourney Property
+  COLOR=color_team_orange
+
+ITEM=tm_event_weapons_orange_paladin
+ITEM=tm_event_provisions_paladin
+ITEM=i_event_spellbook_paladin
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_green_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=green Mage Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_studded_leggings
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_studded_tunic
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_studded_gloves
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_studded_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_studded_gorget
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_bandana
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_sandals
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_staff_black
+  NAME=Tourney Property
+  COLOR=color_team_green
+
+ITEM=tm_event_provisions_mage
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_black_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=black Mage Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_studded_leggings
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_studded_tunic
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_studded_gloves
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_studded_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_studded_gorget
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_bandana
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_sandals
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_staff_black
+  NAME=Tourney Property
+  COLOR=color_team_black
+
+ITEM=tm_event_provisions_mage
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_orange_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=orange Mage Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_studded_leggings
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_studded_tunic
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_studded_gloves
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_studded_sleeves
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_studded_gorget
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_bandana
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_sandals
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_staff_black
+  NAME=Tourney Property
+  COLOR=color_team_orange
+
+ITEM=tm_event_provisions_mage
+ITEM=tm_event_reagents
+
+[TEMPLATE tm_event_armor_green_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=green Warrior Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_chest
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_green
+
+ITEM=tm_event_weapons_green_warrior
+ITEM=tm_event_provisions_warrior
+
+[TEMPLATE tm_event_armor_black_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=black Warrior Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_chest
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_black
+
+ITEM=tm_event_weapons_black_warrior
+ITEM=tm_event_provisions_warrior
+
+[TEMPLATE tm_event_armor_orange_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=orange Warrior Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_chest
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_orange
+
+ITEM=tm_event_weapons_orange_warrior
+ITEM=tm_event_provisions_warrior
+
+[TEMPLATE tm_event_armor_green_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=green Archer Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_chainmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_chainmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_platemail_gloves
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_boots_calf
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_sash
+  NAME=Tourney Property
+
+ITEM=tm_event_weapons_green_archer
+ITEM=tm_event_provisions_archer
+
+[TEMPLATE tm_event_armor_black_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=black Archer Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_chainmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_chainmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_boots_calf
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_sash
+  NAME=Tourney Property
+
+ITEM=tm_event_weapons_black_archer
+ITEM=tm_event_provisions_archer
+
+[TEMPLATE tm_event_armor_orange_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=orange Archer Armor
+CONTAINER=i_crate_lg
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_chainmail_leggings
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_chainmail_tunic
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_arms
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_helm
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_platemail_gorget
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_boots_calf
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_sash
+  NAME=Tourney Property
+
+ITEM=tm_event_weapons_orange_archer
+ITEM=tm_event_provisions_archer
+
+[TEMPLATE tm_event_weapons_green_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=green Archer Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_crossbow_heavy
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_bow
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_xbolt
+  AMOUNT=300
+ITEM=i_arrow
+  AMOUNT=300
+ITEM=i_dagger
+  NAME=Tourney Property
+  COLOR=color_team_green
+
+[TEMPLATE tm_event_weapons_black_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=black Archer Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_crossbow_heavy
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_bow
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_xbolt
+  AMOUNT=300
+ITEM=i_arrow
+  AMOUNT=300
+ITEM=i_dagger
+  NAME=Tourney Property
+  COLOR=color_team_black
+
+[TEMPLATE tm_event_weapons_orange_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=orange Archer Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_crossbow_heavy
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_bow
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_xbolt
+  AMOUNT=300
+ITEM=i_arrow
+  AMOUNT=300
+ITEM=i_dagger
+  NAME=Tourney Property
+  COLOR=color_team_orange
+
+[TEMPLATE tm_event_weapons_green_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=green Paladin Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_mace
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_sword_broad
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_shield_round_metal
+  NAME=Tourney Property
+  COLOR=color_team_green
+
+[TEMPLATE tm_event_weapons_black_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=black Paladin Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_mace
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_sword_broad
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_shield_round_metal
+  NAME=Tourney Property
+  COLOR=color_team_black
+
+[TEMPLATE tm_event_weapons_orange_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=orange Paladin Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_mace
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_sword_broad
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_shield_round_metal
+  NAME=Tourney Property
+  COLOR=color_team_orange
+
+[TEMPLATE tm_event_weapons_green_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=green Warrior Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_axe_war
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_hammer_pick
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_katana
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_sword_viking
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_kryss
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_war_fork
+  NAME=Tourney Property
+  COLOR=color_team_green
+ITEM=i_shield_heater
+  NAME=Tourney Property
+  COLOR=color_team_green
+
+[TEMPLATE tm_event_weapons_black_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=black Warrior Weapons
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_axe_war
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_hammer_pick
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_katana
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_sword_viking
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_kryss
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_war_fork
+  NAME=Tourney Property
+  COLOR=color_team_black
+ITEM=i_shield_heater
+  NAME=Tourney Property
+  COLOR=color_team_black
+
+[TEMPLATE tm_event_weapons_orange_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=orange Warrior Pack
+CONTAINER=i_backpack
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_axe_war
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_hammer_pick
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_katana
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_sword_viking
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_kryss
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_war_fork
+  NAME=Tourney Property
+  COLOR=color_team_orange
+ITEM=i_shield_heater
+  NAME=Tourney Property
+  COLOR=color_team_orange
+
+[TEMPLATE tm_event_provisions_warrior]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Warrior Provisions
+CONTAINER=i_bag
+ITEM=tm_event_heal_potions
+ITEM=i_bandage
+  AMOUNT=100
+
+[TEMPLATE tm_event_provisions_archer]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Archer Provisions
+CONTAINER=i_bag
+ITEM=tm_event_heal_potions
+ITEM=i_bandage
+  AMOUNT=75
+
+[TEMPLATE tm_event_provisions_mage]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Mage Provisions
+CONTAINER=i_bag
+ITEM=tm_event_heal_potions
+ITEM=tm_event_mage_potions
+ITEM=i_potion_manatotal
+ITEM=i_potion_manatotal
+ITEM=i_potion_manatotal
+ITEM=i_potion_manatotal
+ITEM=i_bandage
+  AMOUNT=50
+
+[TEMPLATE tm_event_provisions_paladin]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Mage Provisions
+CONTAINER=i_bag
+ITEM=tm_event_heal_potions
+ITEM=i_potion_mana
+  TYPE=it_potion
+  MORE=s_mana
+  MORE2=01c20
+ITEM=i_potion_mana
+  TYPE=it_potion
+  MORE=s_mana
+  MORE2=01c20
+ITEM=i_bandage
+  AMOUNT=150
+
+[TEMPLATE tm_event_heal_potions]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Heal Potions (6)
+ITEM=i_potion_heal
+  MORE=s_greater_heal
+  MORE2=01388
+ITEM=i_potion_heal
+  MORE=s_greater_heal
+  MORE2=01388
+ITEM=i_potion_heal
+  MORE=s_greater_heal
+  MORE2=01388
+ITEM=i_potion_heal
+  MORE=s_greater_heal
+  MORE2=01388
+ITEM=i_potion_heal
+  MORE=s_greater_heal
+  MORE2=01388
+ITEM=i_potion_heal
+  MORE=s_greater_heal
+  MORE2=01388
+
+[TEMPLATE tm_event_mage_potions]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Mana Potions (6)
+ITEM=i_potion_mana
+  TYPE=it_potion
+  MORE=s_mana
+  MORE2=01c20
+ITEM=i_potion_mana
+  TYPE=it_potion
+  MORE=s_mana
+  MORE2=01c20
+ITEM=i_potion_mana
+  TYPE=it_potion
+  MORE=s_mana
+  MORE2=01c20
+ITEM=i_potion_mana
+  TYPE=it_potion
+  MORE=s_mana
+  MORE2=01c20
+ITEM=i_potion_mana
+  TYPE=it_potion
+  MORE=s_mana
+  MORE2=01c20
+ITEM=i_potion_mana
+  TYPE=it_potion
+  MORE=s_mana
+  MORE2=01c20
+
+[TEMPLATE tm_event_reagents]
+CATEGORY=Event System
+SUBSECTION=Equipment
+DESCRIPTION=Mage Reagent Pouch
+CONTAINER=i_pouch
+ITEM=i_reag_mandrake_root
+  AMOUNT=120
+ITEM=i_reag_ginseng
+  AMOUNT=80
+ITEM=i_reag_garlic
+  AMOUNT=80
+ITEM=i_reag_nightshade
+  AMOUNT=80
+ITEM=i_reag_sulfur_ash
+  AMOUNT=80
+ITEM=i_reag_spider_silk
+  AMOUNT=80
+ITEM=i_reag_black_pearl
+  AMOUNT=80
+ITEM=i_reag_blood_moss   
+  AMOUNT=80
+
+// **************************************************
+// Types
+// **************************************************
+
+[TYPEDEF t_event_ctf_cap_tile]
+ON=@STEP
+  IF (<SRC.TAG.Team> = <MORE>) // They are on this team
+    IF <SRC.FINDLAYER(layer_hand1).ID=i_event_flag> // If they are on cap point with a flag
+      IF (<SRC.FINDLAYER(layer_hand1).MORE> != <EVAL SRC.TAG.Team>) // Make sure some idiot isnt capturing his own flag
+        IF (<LINK> = 04fffffff)
+          TRY SRC.UID.<SRC.FINLAYER(layer_hand1).MORE2>.MORE2=1 // Change status of other team's caputre tile to captured.
+          SRC.FINDLAYER(layer_hand1).REMOVE
+        ELSE
+          SRC.SYSMESSAGE You must return your own flag before you can caputre.
+        ENDIF
+      ELSE // Kill a person capturing their own flag
+        SRC.KILL
+      ENDIF
+     ELSE // Prevent sitting on the flag
+      RETURN=1
+     ENDIF
+   ENDIF
+
+ON=@DCLICK
+  IF <SRC.GM>=1
+    IF <LINK>=04fffffff
+      SRC.NEWITEM=i_event_flag
+      SRC.ACT.P=<P>
+      SRC.ACT.NUDGEUP=6
+      SRC.ACT.MORE2=<UID>
+      LINK=<SRC.ACT.UID>
+      SRC.SYSMESSAGE=<NAME> Initialized
+    ELSE
+      SRC.SYSMESSAGE <NAME> has already been intitialized, captured and dropped flags will respawn automaticaly.
+    ENDIF
+  ENDIF
+
+ON=@TIMER
+  IF (<LINK.LINK.HITS>=0) || (<MORE2>=1) // If flag holder died or flag was captured
+    LINK.NEWITEM=i_event_flag
+    IF (<MORE> = 1)
+      LINK.ACT.NAME=Blue Team Flag
+      LINK.ACT.COLOR=color_team_blue
+    ELSEIF (<MORE> = 2)
+      LINK.ACT.NAME=Red Team Flag
+      LINK.ACT.COLOR=color_team_red
+    ELSEIF (<MORE> = 3)
+      LINK.ACT.NAME=White Team Flag
+      LINK.ACT.COLOR=color_team_white
+    ELSEIF (<MORE> = 4)
+      LINK.ACT.NAME=Green Team Flag
+      LINK.ACT.COLOR=color_team_green
+    ELSEIF (<MORE> = 5)
+      LINK.ACT.NAME=Black Team Flag
+      LINK.ACT.COLOR=color_team_black
+    ELSEIF (<MORE> = 6)
+      LINK.ACT.NAME=Orange Team Flag
+      LINK.ACT.COLOR=color_team_orange
+    ELSEIF (<MORE> = 7)
+      LINK.ACT.NAME=Purple Team Flag
+      LINK.ACT.COLOR=color_team_purple
+    ELSEIF (<MORE> = 8)
+      LINK.ACT.NAME=Yellow Team Flag
+      LINK.ACT.COLOR=color_team_yellow
+    ENDIF
+    LINK.ACT.P=<P>
+    LINK.ACT.NUDGEUP=6
+    LINK.ACT.MORE=<MORE>
+    LINK.ACT.MORE2=<UID>
+    LINK.REMOVE
+    LINK=<SRC.ACT.UID>
+  ENDIF
+  TIMER=5
+  RETURN=1
+
+[EOF]

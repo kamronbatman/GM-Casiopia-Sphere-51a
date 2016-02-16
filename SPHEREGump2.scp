@@ -1,0 +1,2444 @@
+[GUMP 12]
+0,0
+resizepic 0 0 2600 607 440 // Curved Grey background
+resizepic 40 45 2620 175 315 // Gold trimmed box
+page 0
+gumppic 40 100 12
+gumppic 40 100 50987
+text 180 17 1153 0 // Title
+button 485 403 243 241 1 0 0 // Cancel, button 0
+//button 53 54 1209 1210 1 0 26 // Serv Status
+text 70 52 1101 1
+button 53 74 1209 1210 1 0 27
+text 70 72 1101 2
+text 50 319 80 4 // Scripted by
+text 65 334 80 5 // GM Daegon
+page 1
+text 55 367 950 27 // Notice, abuse, etc
+text 55 382 950 28
+text 55 397 950 29
+button 230 52 210 211 1 0 1 // Start Stuck
+text 255 52 1104 6
+text 255 67 955 7
+text 255 82 955 8 // End Stuck
+button 230 102 210 211 1 0 2 // Start General
+text 255 102 1104 9
+text 255 117 955 10
+text 255 132 955 11
+text 255 147 955 12 // End General
+button 230 167 210 211 1 0 3 // Start Questing
+text 255 167 1104 13
+text 255 182 955 14
+text 255 197 955 15
+text 255 212 955 16
+text 255 227 955 17 // End Question
+button 230 247 210 211 1 0 4 // Start Harassment
+text 255 247 1104 18
+text 255 262 955 19
+text 255 277 995 20
+text 255 292 955 21
+text 255 307 955 22 // End Harassment
+button 230 327 210 211 1 0 5 // Start Other
+text 255 327 1104 23
+text 255 342 955 24
+text 255 357 955 25 // End Other
+button 230 377 210 211 0 2 6 // Start Web Menu
+text 255 377 1104 26 // End Web Menu
+//button 230 397 210 211 0 3 12 // Start House Menu
+text 255 397 1104 45 // End House Menu
+page 2 // PAGE: Web Menu
+text 55 367 950 70 // Notice: broswer
+text 55 382 950 71
+text 55 397 950 72
+button 230 52 210 211 1 0 7 // KLL Homepage
+text 255 52 1104 30
+text 255 67 955 31
+text 255 82 955 32
+button 230 102 210 211 1 0 8 // TUS Homepage
+text 255 102 1104 33
+text 255 117 955 34
+text 255 132 955 35
+button 230 152 210 211 1 0 9 // UOSS Homepage
+text 255 152 1104 36
+text 255 167 955 37
+text 255 182 955 38
+text 255 197 955 39
+button 230 217 210 211 1 0 10 // UO Homepage
+text 255 217 1104 40
+text 255 237 955 41
+text 255 252 955 42
+text 255 267 955 43
+button 255 407 2223 2223 0 1 11 // Back
+text 278 403 405 44
+page 3
+text 55 367 950 73 // Notice: sales final
+text 55 382 950 74
+text 55 397 950 75
+text 255 40 855 46 // Start Housing [note]
+text 230 68 1104 47
+button 230 87 210 211 1 0 13 // Small1
+text 255 87 955 48
+text 500 87 855 63
+button 230 107 210 211 1 0 14
+text 255 107 955 49
+text 500 107 855 63
+button 230 127 210 211 1 0 15
+text 255 127 955 50
+text 500 127 855 63
+button 230 147 210 211 1 0 16
+text 255 147 955 51
+text 500 147 855 63
+button 230 167 210 211 1 0 17
+text 255 167 955 52
+text 500 167 855 63
+button 230 187 210 211 1 0 18
+text 255 187 955 53
+text 500 187 855 63
+text 230 212 1104 54 // Larges
+button 230 232 210 211 1 0 19
+text 255 232 955 55
+text 500 232 855 64
+button 230 252 210 211 1 0 20
+text 255 252 955 56
+text 500 252 855 65
+button 230 272 210 211 1 0 21
+text 255 272 955 57
+text 500 272 855 65
+button 230 292 210 211 1 0 25
+text 255 292 955 62
+text 500 292 855 66
+text 230 317 1104 58 // Extra Larges
+button 230 337 210 211 1 0 22
+text 255 337 955 59
+text 500 337 855 67
+button 230 357 210 211 1 0 23
+text 255 357 955 60
+text 500 357 855 68
+button 230 377 210 211 1 0 24
+text 255 377 955 61
+text 500 377 855 69
+button 255 407 2223 2223 0 1 11 // Back
+text 278 403 405 44
+
+
+[GUMP 12 TEXT]
+!GM-Casiopia Help Menu // Line 0
+.54 Coming Soon //Server Status
+Server Version
+Unused?
+Scripted by:
+GM Dev Team //Line 5
+My character is physically stuck:
+I can not move from this location.
+(Note: try /RESEND first, before paging)
+General question about the !GM Casiopia Shard:
+Select this option if you can not seem to gain // Line 10
+a skill, are lost, or if you have a gameplay
+question.
+Quest or Player Events:
+Select this page option if you have a question
+or concern about a quest or event. Please Note: // Line 15
+Game Masters will not give hints about
+quests through the help system.
+Someone is harassing me or breaking the rules:
+Select this option if you believe you are being
+harassed by another player, or if you have // Line 20
+witnessed another player committing an action
+that is against the rules.
+Other:
+Select this option if your problem is not
+listed above. // Line 25
+Web Menu
+Note: Abuse of the page
+system will result in
+swift punishment.
+!GM-Casiopia Homepage// Line 30
+Selecting this will send you to the
+homepage of the shard.
+The Ultimate Server by Menasoft
+Selecting this will send you to the
+Sphere main page, the software we run on. // Line 35
+UO Strategies and Statistics [UOSS]
+Selecting this will send you to the
+UOSS main page, where you can find info
+on Ultima Online.
+Ultima Online Homepage // line 40
+Selecting this will send you to the
+homepage of the creators of Ultima
+Online. Good for client information.
+Back to the first page.
+Enjoy The Game! //Buy a House Deed // Line 45
+* Gold must be in your backpack. *
+Small Homes:
+Small Stone/Plaster Home
+Small Stone Home
+Small Brick Home // Line 50
+Small Wood Home
+Small Wood/Plaster Home
+Small Wood/Thatch Home
+Large Homes:
+Three Room Brick Home // Line 55
+Two Story Wood/Plaster Home
+Two Story Stone/Plaster Home
+Extra-Large Homes:
+Tower
+Keep // Line 60
+Castle
+Large Patio Home/Shop
+46,000
+144,500
+193,000 // Line 65
+180,000
+433,200
+665,200
+1,022,800
+Note: Selecting one of // Line 70
+these will launch your
+default browser.
+Note: All sales are
+final, be warned there
+is no confirmation box. // Line 75
+
+[GUMP 12 BUTTON]
+ONBUTTON=0
+SRC.SYSMESSAGE Help request aborted.
+ONBUTTON=1
+// Stuck was selected
+SRC.GMPAGE
+RETURN 1
+ONBUTTON=2
+// General Questions was selected
+SRC.GMPAGE
+RETURN 1
+ONBUTTON=3
+// Quest was selected
+SRC.SYSMESSAGE Remember, Game Masters won't give hints!
+SRC.GMPAGE
+RETURN 1
+ONBUTTON=4
+// Harassment was selected
+SRC.GMPAGE
+RETURN 1
+ONBUTTON=5
+// Other was selected
+SRC.GMPAGE
+RETURN 1
+ONBUTTON=6
+// Web menu was selected (auto handled to GUMPDLG [page 2])
+ONBUTTON=7
+// !GM Homepage
+WEBLINK http:\\WWW.GameMonger.COM/UO
+ONBUTTON=8
+// TUS Homepage
+WEBLINK http:\\www.menasoft.com\tus
+ONBUTTON=9
+// UOSS Homepage
+WEBLINK http:\\uo.stratics.com
+ONBUTTON=10
+// UO Homepage
+WEBLINK http:\\www.uo.com
+ONBUTTON=11
+// re-use BACK!
+ONBUTTON=12
+//SRC.MESSAGE This Option Has Not Been Put Into Place Yet
+// House menu was selected (auto handled to GUMPDLG [page 3]
+ONBUTTON=13
+// house 1
+IF (<SRC.RESTEST 46000 GOLD>)
+SRC.CONSUME=46000 GOLD
+SRC.NEWITEM=04200
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=14
+// house 2
+IF (<SRC.RESTEST 46000 GOLD>)
+SRC.CONSUME=46000 GOLD
+SRC.NEWITEM=04202
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=15
+// house 3
+IF (<SRC.RESTEST 46000 GOLD>)
+SRC.CONSUME=46000 GOLD
+SRC.NEWITEM=04204
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=16
+// house 4
+IF (<SRC.RESTEST 46000 GOLD>)
+SRC.CONSUME=46000 GOLD
+SRC.NEWITEM=04206
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=17
+// house 5
+IF (<SRC.RESTEST 46000 GOLD>)
+SRC.CONSUME=46000 GOLD
+SRC.NEWITEM=04208
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=18
+// house 6
+IF (<SRC.RESTEST 46000 GOLD>)
+SRC.CONSUME=46000 GOLD
+SRC.NEWITEM=04210
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=19
+// large house 1
+IF (<SRC.RESTEST 144500 GOLD>)
+SRC.CONSUME=144500 GOLD
+SRC.NEWITEM=04216
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=20
+// large house 2
+IF (<SRC.RESTEST 193000 GOLD>)
+SRC.CONSUME=193000 GOLD
+SRC.NEWITEM=04218
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=21
+// large house 3
+IF (<SRC.RESTEST 193000 GOLD>)
+SRC.CONSUME=193000 GOLD
+SRC.NEWITEM=04220
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=22
+// extra large house 1
+IF (<SRC.RESTEST 433200 GOLD>)
+SRC.CONSUME=433200 GOLD
+SRC.NEWITEM=04222
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=23
+// axtra large house 2
+IF (<SRC.RESTEST 665200 GOLD>)
+SRC.CONSUME=665200 GOLD
+SRC.NEWITEM=04224
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=24
+// extra large house 3
+IF (<SRC.RESTEST 1022800 GOLD>)
+SRC.CONSUME=1022800 GOLD
+SRC.NEWITEM=04226
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=25
+// Lg. Patio
+IF (<SRC.RESTEST 180000 GOLD>)
+SRC.CONSUME=180000 GOLD
+SRC.NEWITEM=04228
+SRC.ACT.BOUNCE
+SRC.ACT.ATTR=04
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have enough money for that.
+ENDIF
+ONBUTTON=26
+INFORMATION
+ONBUTTON=27
+VERSION
+
+[GUMP 20]                              // INFO
+0,0                                    // Position
+resizepic 100 100 2600 400 300         // Curved Grey background 
+page 0                                 // Page 0
+resizepic 116 165 5100 369 25          // Square Grey box
+button 150 366 247 248 1 0 0           // Okay, button 0
+gumppic 230 65 100                     // Top Sign Gump
+text 251 105 46 14                     // Sign Gump Name
+text 125 168 0 0                       // Info
+button 170 169 5209 5003 0 1 1         // Opens Info
+text 230 168 0 1                       // Friends      
+button 310 169 5209 5003 0 2 2         // Opens Friends
+text 375 168 0 2                       // Options
+button 455 169 5209 5003 0 3 3         // Opens Options
+page 1                                 // Page 1
+text 245 205 995 3                     // Owner Text
+text 320 205 0000 4                    // Owner Name
+text 140 240 995 5                     // Lock Down
+text 357 240 0000 6                    // Lock Down #
+text 140 260 995 7                     // Secure Items
+text 350 260 0000 8                    // Secure Items #
+text 140 296 995 9                     // House Visits
+text 415 296 0000 10                   // Visit #
+text 245 365 995 11                    // Change Name
+text 140 315 995 12                    // Properly Placed
+text 140 333 995 13                    // Modern Design
+button 425 365 2714 2715 1 0 4         // Name Change
+page 2                                 // Page 2    
+text 153 194 995 15                    // Coowner Text
+button 125 194 2714 2714 1 2 5         // List Coowner B
+text 340 194 995 16                    // Friends Text
+button 310 194 2714 2714 1 2 6         // List Friends B
+text 153 216 995 17                    // Coowner Text
+button 125 216 2714 2714 1 2 7         // Add Coowner B
+text 340 216 995 18                    // Friends Text
+button 310 216 2714 2714 1 2 8         // Add Friend B
+text 153 238 995 19                    // Remove Text C
+button 125 238 2714 2714 1 2 9         // Remove Coowner B
+text 340 238 995 20                    // Remove Text F
+button 310 238 2714 2714 1 2 10        // Remove Friends B
+text 340 260 995 21                    // Clear List Text
+button 310 260 2714 2714 1 2 11        // Clear List B
+text 225 281 995 22                    // Ban Text
+button 195 281 2714 2714 1 2 12        // Ban Button
+text 225 302 995 23                    // Eject Text
+button 195 302 2714 2714 1 2 13        // Eject Button
+text 225 324 995 24                    // Ban Text
+button 195 324 2714 2714 1 2 14        // Ban Button
+text 225 346 995 25                    // Lift Ban Text
+button 195 346 2714 2714 1 2 15        // Lift Ban Button
+page 3                                 // Page 3
+text 180 195 995 26                    // Transfer Text
+button 155 195 2714 2714 1 3 16        // Transfer Button
+text 180 225 995 27                    // Demolish Text
+button 155 225 2714 2714 1 3 17        // Demolish Button  
+text 180 255 995 28                    // Change Sign T
+button 155 255 2714 2714 0 4 18        // Change Sign B
+//text 180 285 995 29                    // Access Bank T
+//button 155 285 2714 2714 1 3 19        // Access Bank B   
+text 180 315 995 30                    // Declare Private T
+button 155 315 2714 2714 1 3 20        // Declare Private B
+page 4                                 // Page 4
+button 140 203 210 211 1 4 21          // Sign Button
+tilepic 149 195 2980                   // Sign Picture
+button 140 238 210 211 1 4 22          // Sign Button
+tilepic 149 230 2982                   // Sign Picture
+button 140 273 210 211 1 4 23          // Sign Button
+tilepic 149 265 2984                   // Sign Picture
+button 140 308 210 211 1 4 24          // Sign Button
+tilepic 149 300 2986                   // Sign Picture
+button 195 203 210 211 1 4 25          // Sign Button
+tilepic 204 195 2988                   // Sign Picture
+button 195 238 210 211 1 4 26          // Sign Button
+tilepic 204 230 2990                   // Sign Picture
+button 195 273 210 211 1 4 27          // Sign Button
+tilepic 204 265 2992                   // Sign Picture
+button 195 308 210 211 1 4 28          // Sign Button
+tilepic 204 300 2994                   // Sign Picture
+button 250 203 210 211 1 4 29          // Sign Button
+tilepic 259 195 2996                   // Sign Picture
+button 250 238 210 211 1 4 30          // Sign Button
+tilepic 259 230 2998                   // Sign Picture
+button 250 273 210 211 1 4 31          // Sign Button
+tilepic 259 265 3000                   // Sign Picture
+button 250 308 210 211 1 4 32          // Sign Button
+tilepic 259 300 3002                   // Sign Picture
+button 305 203 210 211 1 4 33          // Sign Button
+tilepic 314 195 3004                   // Sign Picture
+button 305 238 210 211 1 4 34          // Sign Button
+tilepic 314 230 3006                   // Sign Picture
+button 305 273 210 211 1 4 35          // Sign Button
+tilepic 314 265 3008                   // Sign Picture
+button 305 308 210 211 1 4 36          // Sign Button
+tilepic 314 300 3010                   // Sign Picture
+button 360 203 210 211 1 4 37          // Sign Button
+tilepic 369 195 3012                   // Sign Picture
+button 360 238 210 211 1 4 38          // Sign Button
+tilepic 369 230 3014                   // Sign Picture
+button 360 273 210 211 1 4 39          // Sign Button
+tilepic 369 265 3016                   // Sign Picture
+button 360 308 210 211 1 4 40          // Sign Button
+tilepic 369 300 3018                   // Sign Picture
+button 415 203 210 211 1 4 41          // Sign Button
+tilepic 424 195 3020                   // Sign Picture
+button 415 238 210 211 1 4 42          // Sign Button
+tilepic 424 230 3022                   // Sign Picture
+button 415 273 210 211 1 4 43          // Sign Button
+tilepic 424 265 3024                   // Sign Picture
+button 415 308 210 211 1 4 44          // Sign Button
+tilepic 424 300 3026                   // Sign Picture
+text 275 363 995 31                    // Guild Text
+button 425 360 252 253 0 5 45          // Guild Section
+page 5                                 // Page 5
+button 140 203 210 211 1 5 46          // Sign Button
+tilepic 149 195 3028                   // Sign Picture
+button 140 238 210 211 1 5 47          // Sign Button
+tilepic 149 230 3030                   // Sign Picture
+button 140 273 210 211 1 5 48          // Sign Button
+tilepic 149 265 3032                   // Sign Picture
+button 140 308 210 211 1 5 49          // Sign Button
+tilepic 149 300 3034                   // Sign Picture
+button 140 343 210 211 1 5 50          // Sign Button
+tilepic 149 335 3036                   // Sign Picture
+button 195 203 210 211 1 5 51          // Sign Button
+tilepic 204 195 3038                   // Sign Picture
+button 195 238 210 211 1 5 52          // Sign Button
+tilepic 204 230 3040                   // Sign Picture
+button 195 273 210 211 1 5 53          // Sign Button
+tilepic 204 265 3042                   // Sign Picture
+button 195 308 210 211 1 5 54          // Sign Button
+tilepic 204 300 3044                   // Sign Picture
+button 195 343 210 211 1 5 55          // Sign Button
+tilepic 204 335 3046                   // Sign Picture
+button 250 203 210 211 1 5 56          // Sign Button
+tilepic 259 195 3048                   // Sign Picture
+button 250 238 210 211 1 5 57          // Sign Button
+tilepic 259 230 3050                   // Sign Picture
+button 250 273 210 211 1 5 58          // Sign Button
+tilepic 259 265 3052                   // Sign Picture
+button 250 308 210 211 1 5 59          // Sign Button
+tilepic 259 300 3054                   // Sign Picture
+button 250 343 210 211 1 5 60          // Sign Button
+tilepic 259 335 3056                   // Sign Picture
+button 305 203 210 211 1 5 61          // Sign Button
+tilepic 314 195 3058                   // Sign Picture
+button 305 238 210 211 1 5 62          // Sign Button
+tilepic 314 230 3060                   // Sign Picture
+button 305 273 210 211 1 5 63          // Sign Button
+tilepic 314 265 3062                   // Sign Picture
+button 305 308 210 211 1 5 64          // Sign Button
+tilepic 314 300 3064                   // Sign Picture
+button 305 343 210 211 1 5 65          // Sign Button
+tilepic 314 335 3066                   // Sign Picture
+button 360 203 210 211 1 5 66          // Sign Button
+tilepic 369 195 3068                   // Sign Picture
+button 360 238 210 211 1 5 67          // Sign Button
+tilepic 369 230 3070                   // Sign Picture
+button 360 273 210 211 1 5 68          // Sign Button
+tilepic 369 265 3072                   // Sign Picture
+button 360 308 210 211 1 5 69          // Sign Button
+tilepic 369 300 3074                   // Sign Picture
+button 360 343 210 211 1 5 70          // Sign Button
+tilepic 369 335 3076                   // Sign Picture
+button 415 203 210 211 1 5 71          // Sign Button
+tilepic 424 195 3078                   // Sign Picture
+button 415 238 210 211 1 5 72          // Sign Button
+tilepic 424 230 3080                   // Sign Picture
+button 415 273 210 211 1 5 73          // Sign Button
+tilepic 424 265 3082                   // Sign Picture
+button 415 308 210 211 1 5 74          // Sign Button
+tilepic 424 300 3084                   // Sign Picture
+text 275 363 995 32                    // Shop Test
+button 425 360 250 251 0 4 75          // Shop Section
+
+[GUMP 20 TEXT]
+INFO                                   // Line 0
+FRIENDS
+OPTIONS
+Owned by  
+<UID.<LINK.MORE>.NAME>                                       
+Number of locked down items:           // Line 5
+0 out of 475
+Number of secure containers: 
+0 out of 5
+Number of visits this house has had:                  
+<SRC.TARG.LINK.AMOUNT>                 // Line 10
+Change this house's name!
+This house is properly placed.
+This house is of modern design.
+<SRC.TARG.NAME>
+List of Co-owners                      // Line 15
+List of Friends
+Add a Co-owner
+Add a Friend
+Remove a Co-owner
+Remove a Friend                        // Line 20
+Clear Friends list
+Ban someone from the house
+Eject someone from the house
+View list of banned people
+Lift a ban                             // Line 25
+Transfer ownership of the house
+Demolish the house & get a deed back
+Change the sign type
+//Access your bank account
+Declare this building to be private    // Line 30
+Guild Sign Choices
+Shop Sign Choices
+                  
+[GUMP 20 BUTTON]
+ONBUTTON=0
+ONBUTTON=4
+IF (<SRC.UID>==<LINK.MORE>)
+VAR.SIGNNAME=<LINK>
+SRC.NEWITEM=100e
+SRC.ACT.MORE=<VAR.SIGNNAME>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE To change the house's name, target the house sign.
+ELSE
+SRC.SYSMESSAGE Only the owner my change the name of the house.
+ONBUTTON=5
+TOME 23
+ONBUTTON=6
+TOME 24
+ONBUTTON=7
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE Target the individual to make a co-owner of the house.
+SRC.NEWITEM=7024
+SRC.ACT.LINK=<LINK>
+SRC.ACT.MORE2=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+ELSE
+SRC.SYSMESSAGE Only the owner may add co-owners to the house.
+ONBUTTON=8
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE Target the individual to make a friend of the house.
+SRC.NEWITEM=7022
+SRC.ACT.LINK=<UID>
+SRC.ACT.MORE2=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+ELSE 
+SRC.SYSMESSAGE Only owners may add friends to the house.
+ONBUTTON=9
+TOME 27
+ONBUTTON=10
+TOME 30
+ONBUTTON=11
+SRC.ITEMMENU 313
+ONBUTTON=12
+SRC.SYSMESSAGE We are sorry, the banning system is not available in this version.
+ONBUTTON=13
+SRC.NEWITEM=7021
+SRC.ACT.LINK=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE Target the individual to eject from this house.
+SRC.SAY Remove thyself!
+ONBUTTON=14
+TOME 25
+ONBUTTON=15
+TOME 26
+ONBUTTON=16
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.NEWITEM=7023
+SRC.ACT.LINK=<LINK>
+SRC.ACT.MORE2=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE Whom do you wish to be the new owner?
+ELSE
+SRC.SYSMESSAGE Only the owner may transfer ownership of this house.
+ONBUTTON=17
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.ITEMMENU 312
+ELSE
+SRC.SYSMESSAGE Only the owner may use this option.
+ONBUTTON=18
+ONBUTTON=19
+SRC.BANKSELF
+ONBUTTON=20
+IF (<SRC.UID>==<LINK.MORE>)
+TYPE 2001
+LINK.TYPE 2001
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bd2
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+SRC.SYSMESSAGE This house is now private.
+TOME 21
+ELSE
+SRC.SYSMESSAGE Only the owner may use this option.
+TOME 20
+ONBUTTON=21
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0ba4
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=22
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0ba6
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=23
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0ba8
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=24
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0baa
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=25
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bac
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=26
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bae
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=27
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bb0
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=28
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bb2
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=29
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bb4
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=30
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bb6
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=31
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bb8
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=32
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bba
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=33
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bbc
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=34
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bbe
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=35
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bc0
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=36
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bc2
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=37
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bc4
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=38
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bc6
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=39
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bc8
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=40
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bca
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=41
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bcc
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=42
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bce
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=43
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bd0
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=44
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bd2
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=45
+ONBUTTON=46
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bd4
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=47
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bd6
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=48
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bd8
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=49
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bda
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=50
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bdc
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=51
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bde
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=52
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0be0
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=53
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0be2
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=54
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0be4
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=55
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0be6
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=56
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0be8
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=57
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bea
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=58
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bec
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=59
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bee
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=60
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bf0
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=61
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bf2
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=62
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bf4
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=63
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bf6
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=64
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bf8
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=65
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bfa
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=66
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bfc
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=6
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0bfe
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=68
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0c00
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=69
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0c02
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=70
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0c04
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=71
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0c06
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=72
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0c08
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=73
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0c0a
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=74
+VAR.HOUSETYPE=<TYPE>
+VAR.HOUSEPOSITION=<P>
+VAR.HOUSENAME=<NAME>
+ID=0c0c
+TYPE=<VAR.HOUSETYPE>
+P=<VAR.HOUSEPOSITION>
+NAME=<VAR.HOUSENAME>
+ONBUTTON=75
+
+[GUMP 21]                              // INFO
+0,0                                    // Position
+resizepic 100 100 2600 400 300         // Curved Grey background 
+page 0                                 // Page 0
+resizepic 116 165 5100 369 25          // Square Grey box
+button 150 366 247 248 1 0 0           // Okay, button 0
+gumppic 230 65 100                     // Top Sign Gump
+text 251 105 46 12                     // Sign Gump Name
+text 125 168 0 0                       // Info
+button 170 169 5209 5003 0 1 1         // Opens Info
+text 230 168 0 1                       // Friends      
+button 310 169 5209 5003 0 2 2         // Opens Friends
+text 375 168 0 2                       // Options
+button 455 169 5209 5003 0 3 3         // Opens Options
+page 1                                 // Page 1
+text 245 205 995 3                     // Owner Text
+text 320 205 0 4                       // Owner Name
+text 140 240 995 5                     // Lock Down
+text 357 240 0 6                       // Lock Down #
+text 140 260 995 7                     // Secure Items
+text 350 260 0 8                       // Secure Items #
+text 245 365 995 9                     // Change Name
+text 140 315 995 10                    // Properly Placed
+text 140 333 995 11                    // Modern Design
+button 425 365 2714 2715 1 1 4         // Name Change
+page 2                                 // Page 2    
+text 153 194 995 13                    // Coowner Text
+button 125 194 2714 2714 1 2 5         // List Coowner B
+text 340 194 995 14                    // Friends Text
+button 310 194 2714 2714 1 2 6         // List Friends B
+text 153 216 995 15                    // Coowner Text
+button 125 216 2714 2714 1 2 7         // Add Coowner B
+text 340 216 995 16                    // Friends Text
+button 310 216 2714 2714 1 2 8         // Add Friend B
+text 153 238 995 17                    // Remove Text C
+button 125 238 2714 2714 1 2 9         // Remove Coowner B
+text 340 238 995 18                    // Remove Text F
+button 310 238 2714 2714 1 2 10        // Remove Friends B
+text 340 260 995 19                    // Clear List Text
+button 310 260 2714 2714 1 2 11        // Clear List B
+text 225 281 995 20                    // Ban Text
+button 195 281 2714 2714 1 2 12        // Ban Button
+text 225 302 995 21                    // Eject Text
+button 195 302 2714 2714 1 2 13        // Eject Button
+text 225 324 995 22                    // Ban Text
+button 195 324 2714 2714 1 2 14        // Ban Button
+text 225 346 995 23                    // Lift Ban Text
+button 195 346 2714 2714 1 2 15        // Lift Ban Button
+page 3                                 // Page 3
+text 185 195 995 24                    // Transfer Text
+button 155 195 2714 2714 1 3 16        // Transfer Button
+text 185 225 995 25                    // Demolish Text
+button 155 225 2714 2714 1 3 17        // Demolish Button  
+text 185 255 995 26                    // Change Locks T
+button 155 255 2714 2714 1 3 18        // Change Locks B
+text 185 285 995 27                    // Declare Public T
+text 185 305 995 28                    // Declare Public T
+button 155 285 2714 2714 1 3 19        // Declare Public B   
+//text 185 335 995 29                    // Access Bank T
+//button 155 335 2714 2714 1 3 20        // Access Bank B
+     
+[GUMP 21 TEXT]
+INFO                                   // Line 0
+FRIENDS
+OPTIONS
+Owned by  
+<UID.<LINK.MORE>.NAME>                                      
+Number of locked down items:           // Line 5
+0 out of 475
+Number of secure containers: 
+0 out of 5     
+Change this house's name!
+This house is properly placed.         // Line 10
+This house is of modern design.
+<SRC.TARG.NAME>
+List of Co-owners                      
+List of Friends
+Add a Co-owner                         // Line 15
+Add a Friend
+Remove a Co-owner
+Remove a Friend                        
+Clear Friends list
+Ban someone from the house             // Line 20
+Eject someone from the house           
+View list of banned people
+Lift a ban                             
+Transfer ownership of the house
+Demolish the house & get a deed back   // Line 25
+Change the house locks
+Declare this building to be public. This
+will make your front door unlockable!
+//Access your bank account               
+                                      
+[GUMP 21 BUTTON]
+ONBUTTON=0
+ONBUTTON=4
+IF (<SRC.UID> == <MORE2>)
+VAR.SIGNNAME=<LINK>
+SRC.NEWITEM=100e
+SRC.ACT.MORE=<VAR.SIGNNAME>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE To change the house's name, target the house sign.
+ELSE
+SRC.SYSMESSAGE Only the owner my change the name of the house.
+ONBUTTON=5
+TOME 23
+ONBUTTON=6
+TOME 24
+ONBUTTON=7
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE Target the individual to make a co-owner of the house.
+SRC.NEWITEM=7024
+SRC.ACT.LINK=<LINK>
+SRC.ACT.MORE2=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+ELSE
+SRC.SYSMESSAGE Only the owner may add co-owners to the house.
+ONBUTTON=8
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE Target the individual to make a friend of the house.
+SRC.NEWITEM=7022
+SRC.ACT.LINK=<UID>
+SRC.ACT.MORE2=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+ELSE 
+SRC.SYSMESSAGE Only owners may add friends to the house.
+ONBUTTON=9
+TOME 27
+ONBUTTON=10
+TOME 30
+ONBUTTON=11
+SRC.ITEMMENU 313
+ONBUTTON=12
+SRC.SYSMESSAGE We are sorry, the banning system is not available in this version.
+ONBUTTON=13
+SRC.NEWITEM=7021
+SRC.ACT.LINK=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE Target the individual to eject from this house.
+SRC.SAY Remove thyself!
+ONBUTTON=14
+TOME 25
+ONBUTTON=15
+TOME 26
+ONBUTTON=16
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.NEWITEM=7023
+SRC.ACT.LINK=<LINK>
+SRC.ACT.MORE2=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE Whom do you wish to be the new owner?
+ELSE
+SRC.SYSMESSAGE Only the owner may transfer ownership of this house.
+ONBUTTON=17
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.ITEMMENU 312
+ELSE
+SRC.SYSMESSAGE Only the owner may use this option.
+ONBUTTON=18
+IF (<SRC.UID>==<LINK.MORE>)
+//VAR.6=<LINK>
+//SRC.NEWITEM=100e
+//SRC.ACT.MORE=<VAR.6>
+//SRC.ACT.BOUNCE
+SRC.SYSMESSAGE This Option Has Been Disabled By The Admin.
+//SRC.SYSMESSAGE You have successfuly changed the house locks.
+ELSE
+SRC.SYSMESSAGE Only the owner may change the house locks.
+ONBUTTON=19
+IF (<SRC.UID>==<LINK.MORE>)
+TYPE 2000
+LINK.TYPE 2000
+SRC.SYSMESSAGE This house is now public. Friends of the house may now have vendors working out of this building.
+TOME 20
+ELSE
+SRC.SYSMESSAGE Only the owner may use this option.
+TOME 21
+ONBUTTON=20
+SRC.BANKSELF
+
+[GUMP 22]
+0,0
+gumppic 250 180 100                   // Top Sign Gump
+text 280 218 46 0                     // Sign Gump Name
+
+[GUMP 22 TEXT]         
+<SRC.TARG.NAME>                       // Sign Gump Name Text
+
+[GUMP 23]                             // Coowner List                                                
+0,0                                   // Position
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey Box
+button 270 360 247 248 1 0 1          // Okay, Button 0
+text 215 118 995 0                    // Title
+text 150 135 995 1                    // Title
+text 170 158 0 2                      // Names
+
+[GUMP 23 TEXT]
+Co-owners of the house   
+*This version only supports one coowner*    // Line 0
+<UID.<LINK.MORE2>.NAME>  (no strongbox)
+
+[GUMP 23 BUTTON]  
+ONBUTTON=0                            // Cancel
+ONBUTTON=1                            // Okay Button
+
+[GUMP 24]                             // Friends list
+0,0                                   // Postion
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 215 118 995 0                    // Title
+text 150 135 995 1                    // Title
+text 170 158 0 2                      // Names
+button 270 360 247 248 1 0 1          // Okay, button 1
+
+[GUMP 24 TEXT]
+Friends of the house                  // Line 0
+*This version only supports one friend*    // Line 0
+<UID.<MORE2>.NAME>  
+
+[GUMP 24 BUTTON]  
+ONBUTTON=0  
+
+[GUMP 25]                             // Enemies list
+0,0                                   // Postion
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 215 118 995 0                    // Title
+button 270 360 247 248 1 0 1          // Okay, button 1
+
+[GUMP 25 TEXT]
+Enemies of the house                  // Line 0
+
+[GUMP 25 BUTTON]  
+
+[GUMP 26]                             // Lift Ban
+0,0                                   // Postion
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 215 118 995 0                    // Title
+page 0                                // Page 0
+button 270 360 247 248 1 0 1          // Okay, button 1
+button 145 335 2714 2714 1 0 2        // Remove Button
+text 165 335 995 1                    // Remove Text
+
+[GUMP 26 TEXT]
+Lift a ban from the house             // Line 0
+Remove now!
+
+[GUMP 26 BUTTON]  
+ONBUTTON=0
+ONBUTTON=1
+We are sorry, the banning system is not available in this version.
+ONBUTTON=2
+We are sorry, the banning system is not available in this version.
+     
+[GUMP 27]                             // Remove Coowner
+0,0                                   // Postion
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 185 118 995 0                    // Title
+page 0                                // Page 0
+button 270 360 247 248 1 0 1          // Okay, button 1
+button 145 335 2714 2714 1 0 2        // Remove Button
+text 165 335 995 1                    // Remove Text
+button 150 158 210 211 1 0 3          // Remove Certain B
+text 180 158 0 2                      // Names
+
+[GUMP 27 TEXT]
+Remove a co-owner from the house      // Line 0
+Remove now!
+<UID.<LINK.MORE2>.NAME>
+
+[GUMP 27 BUTTON]  
+ONBUTTON=0
+ONBUTTON=2
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE <UID.<LINK.MORE2>.NAME> has been removed from friendship of the house.
+LINK.MORE2=0
+ELSE
+SRC.SYSMESSAGE Only the owner may remove a co-owner from the house.
+ONBUTTON=3
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE <UID.<LINK.MORE2>.NAME> has been removed from friendship of the house.
+LINK.MORE2=0
+ELSE
+SRC.SYSMESSAGE Only the owner may remove a co-owner from the house.
+
+[GUMP 29]                              // INFO - Admin Comtroll Menu
+0,0                                    // Position
+resizepic 100 100 2600 400 300         // Curved Grey background 
+page 0                                 // Page 0
+resizepic 116 165 5100 369 25          // Square Grey box
+button 150 366 247 248 1 0 0           // Okay, button 0
+gumppic 230 65 100                     // Top Sign Gump
+text 280 85 46 12                      // Sign Gump Name
+text 272 105 46 34                     // Sign Gump Name
+text 280 125 46 35                     // Sign Gump Name
+text 125 168 0 0                       // Info
+button 170 169 5209 5003 0 1 1         // Opens Info
+text 230 168 0 1                       // Friends      
+button 310 169 5209 5003 0 2 2         // Opens Friends
+text 375 168 0 2                       // Options
+button 455 169 5209 5003 0 3 3         // Opens Options
+page 1                                 // Page 1
+text 140 205 995 3                     // Owner Text
+text 215 205 0 4                       // Owner Name
+text 295 205 995 36                    // Account Text
+text 375 205 0 37                      // Account Name
+text 140 225 995 5                     // Lock Down
+text 357 225 0 6                       // Lock Down #
+text 140 245 995 7                     // Secure Items
+text 350 245 0 8                       // Secure Items #
+text 140 265 995 30                    // House Visits
+text 415 265 0000 31                   // Visit #
+text 140 285 995 32                    // Coordinates
+text 260 285 0000 33                   // Coordinate #
+text 245 365 995 9                     // Change Name
+text 140 315 995 10                    // Properly Placed
+text 140 333 995 11                    // Modern Design
+button 425 365 2714 2715 1 1 4         // Name Change
+page 2                                 // Page 2    
+text 153 194 995 13                    // Coowner Text
+button 125 194 2714 2714 1 2 5         // List Coowner B
+text 340 194 995 14                    // Friends Text
+button 310 194 2714 2714 1 2 6         // List Friends B
+text 153 216 995 15                    // Coowner Text
+button 125 216 2714 2714 1 2 7         // Add Coowner B
+text 340 216 995 16                    // Friends Text
+button 310 216 2714 2714 1 2 8         // Add Friend B
+text 153 238 995 17                    // Remove Text C
+button 125 238 2714 2714 1 2 9         // Remove Coowner B
+text 340 238 995 18                    // Remove Text F
+button 310 238 2714 2714 1 2 10        // Remove Friends B
+text 340 260 995 19                    // Clear List Text
+button 310 260 2714 2714 1 2 11        // Clear List B
+text 225 281 995 20                    // Ban Text
+button 195 281 2714 2714 1 2 12        // Ban Button
+text 225 302 995 21                    // Eject Text
+button 195 302 2714 2714 1 2 13        // Eject Button
+text 225 324 995 22                    // Ban Text
+button 195 324 2714 2714 1 2 14        // Ban Button
+text 225 346 995 23                    // Lift Ban Text
+button 195 346 2714 2714 1 2 15        // Lift Ban Button
+page 3                                 // Page 3
+text 185 195 995 24                    // Transfer Text
+button 155 195 2714 2714 1 3 16        // Transfer Button
+text 185 225 995 25                    // Demolish Text
+button 155 225 2714 2714 1 3 17        // Demolish Button  
+text 185 255 995 26                    // Relieve T
+button 155 255 2714 2714 1 3 18        // Relieve B
+text 185 285 995 27                    // Declare Public T
+text 185 305 995 28                    // Declare Public T
+button 155 285 2714 2714 1 3 19        // Declare Public B   
+text 185 335 995 29                    // Access ACP T
+button 155 335 2714 2714 1 3 20        // Access ACP B
+     
+[GUMP 29 TEXT]
+INFO                                   // Line 0
+FRIENDS
+OPTIONS
+Owned by 
+<UID.<LINK.MORE>.NAME>                                      
+Number of locked down items:           // Line 5
+0 out of 475
+Number of secure containers: 
+0 out of 5     
+Change this house's name!
+This house is properly placed.         // Line 10
+This house is of modern design.
+Staff
+House's Co-owners                      
+List of Friends
+Add a Co-owner                          // Line 15
+Add a Friend
+Remove a Co-owner
+Remove a Friend                        
+Clear Friends list
+Ban someone from the house             // Line 20
+Eject someone from the house           
+View list of banned people
+Lift a ban                             
+Transfer this house to another character
+Remove house in exchange for its deed  // Line 25
+Releave ownership of this house
+Declare this building to be public. This
+will make your front door unlockable!
+Access Admin Controll Panel           
+Number of visits this house has had:    // Line 30                
+<SRC.TARG.LINK.AMOUNT>       
+House location:
+<SRC.TARG.LINK.P>
+Controll
+Panel                       // Line 35
+Account of
+<UID.<LINK.MORE>.ACCOUNT>
+
+[GUMP 29 BUTTON]
+ONBUTTON=0
+ONBUTTON=4
+IF (<SRC.UID>==<LINK.MORE>)
+VAR.SIGNNAME=<LINK>
+SRC.NEWITEM=100e
+SRC.ACT.MORE=<VAR.SIGNNAME>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE To change the house's name, target the house sign.
+ELSE
+SRC.SYSMESSAGE Only the owner my change the name of the house.
+ONBUTTON=5
+TOME 23
+ONBUTTON=6
+TOME 24
+ONBUTTON=7
+SRC.SYSMESSAGE Target the individual to make a co-owner of the house.
+SRC.NEWITEM=7024
+SRC.ACT.LINK=<LINK>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+ONBUTTON=8
+SRC.SYSMESSAGE Target the individual to make a friend of the house.
+SRC.NEWITEM=7022
+SRC.ACT.LINK=<UID>
+SRC.ACT.MORE2=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+ONBUTTON=9
+TOME 27
+ONBUTTON=10
+TOME 30
+ONBUTTON=11
+SRC.ITEMMENU 313
+ONBUTTON=12
+SRC.SYSMESSAGE We are sorry, the banning system is not available in this version.
+ONBUTTON=13
+SRC.NEWITEM=7021
+SRC.ACT.LINK=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE Target the individual to eject from this house.
+SRC.SAY Remove thyself!
+ONBUTTON=14
+TOME 25
+ONBUTTON=15
+TOME 26
+ONBUTTON=16
+SRC.NEWITEM=7023
+SRC.ACT.LINK=<LINK>
+SRC.ACT.MORE2=<UID>
+SRC.ACT.BOUNCE
+SRC.ACT.DCLICK
+SRC.SYSMESSAGE Whom do you wish to be the new owner?
+ONBUTTON=17
+SRC.ITEMMENU 312
+ONBUTTON=18
+SRC.SYSMESSAGE This house has been relieved of ownership!
+<SRC.LINK.MORE>=0
+TYPE 2002
+LINK.TYPE 2002
+ONBUTTON=19
+TYPE 2000
+LINK.TYPE 2000
+SRC.SYSMESSAGE This house is now public. Friends of the house may now have vendors working out of this building.
+TOME 20
+ONBUTTON=20
+SRC.ADMIN
+
+[GUMP 30]                             // Remove Friend
+0,0                                   // Postion
+resizepic 100 100 2600 400 300        // Grey background 
+resizepic 147 359 5100 310 25         // Square Grey box
+text 185 118 995 0                    // Title
+page 0                                // Page 0
+button 270 360 247 248 1 0 1          // Okay, button 1
+button 145 335 2714 2714 1 0 2        // Remove Button
+text 165 335 995 1                    // Remove Text
+button 150 158 210 211 1 0 3          // Remove Certain B
+text 180 158 0 2                      // Names
+
+[GUMP 30 TEXT]
+Remove a friend from the house      // Line 0
+Remove now!
+<UID.<MORE2>.NAME>
+
+[GUMP 30 BUTTON]  
+ONBUTTON=0
+ONBUTTON=2
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE <UID.<MORE2>.NAME> has been removed from friendship of the house.
+MORE2=0
+ELSE
+SRC.SYSMESSAGE Only the owner may remove a friend from the house.
+ONBUTTON=3
+IF (<SRC.UID>==<LINK.MORE>)
+SRC.SYSMESSAGE <UID.<MORE2>.NAME> has been removed from friendship of the house.
+MORE2=0
+ELSE
+SRC.SYSMESSAGE Only the owner may remove a friend from the house.
+
+[GUMP 70]
+0,0
+resizepic 0 0 3600 480 320//black backround
+resizepic 45 15 2620 140 180//black box backround
+text 190 10 153 0//welcome
+text 192 33 153 1//player name
+text 195 25 153 2//----
+button 53 30 1209 1210 1 0 1//Towns
+text 70 30 695 3//towns
+button 53 60 1209 1210 1 0 2//Dungeons
+text 70 60 695 4//dugeons
+button 53 90 1209 1210 1 0 3//specal
+text 70 90 695 5//specal
+text 325 260 99 6 //Scripted By:
+text 325 280 99 7 
+button 53 120 1209 1210 1 0 4//info
+text 70 120 695 8//info
+button 53 150 1209 1210 1 0 5//Options
+text 70 150 695 9//status
+text 190 50 5 10//Message Start
+text 190 70 5 11
+text 190 90 5 12
+text 190 110 5 13
+text 190 130 5 14
+text 190 150 5 15//Message End
+button 20 280 243 241 1 0 0//close
+text 20 30 5 16//T
+text 20 60 5 17//R
+text 20 90 5 18//A
+text 20 120 5 19//V
+text 20 150 5 20//E
+text 20 180 5 21//L
+text 40 200 5 22//S
+text 70 200 5 23//T
+text 100 200 5 24//O
+text 130 200 5 25//N
+text 160 200 5 26//E
+[GUMP 70 TEXT]
+-Welcome-
+----------
+<SRC.NAME>
+Town's
+Dungeons
+Special Places//5
+GameMonger
+Other Places
+Options
+Greetings, <SRC.NAME>//10
+Thank You For Choosing Travel
+Stone. Where Do You Want To
+Go Today It Will Cost You 
+100GP Per City And 400GP 
+Per Dungeon. The Newbie 
+Dungeon Is Free
+//15
+T
+R
+A
+V
+E//20
+L
+S
+T
+O
+N//25
+E
+[GUMP 70 BUTTON]
+ONBUTTON=0
+SRC.SYSMESSAGE You leave the travel stone.
+ONBUTTON=1
+TOME 71
+ONBUTTON=2
+TOME 72
+ONBUTTON=3
+SRC.SYSMESSAGE Sorry not implement yet.
+ONBUTTON=4
+SRC.SYSMESSAGE Sorry not implement yet.
+ONBUTTON=5
+SRC.SYSMESSAGE Sorry not implement yet.
+[GUMP 71]
+0,0
+resizepic 0 0 3600 607 440
+resizepic 75 75 2620 450 315 
+button 485 400 2322 2323 1 0 0 
+page 0
+text 200 29 153 0 
+text 192 49 153 1 
+text 180 90 695 2
+text 190 400 99 17
+
+button 100 130 1209 1210 1 0 1 
+text 115 130 695 3
+button 100 150 1209 1210 1 0 2
+text 115 150 695 4
+button 100 170 1209 1210 1 0 3 
+text 115 170 695 5
+button 100 190 1209 1210 1 0 4
+text 115 190 695 6
+button 100 210 1209 1210 1 0 5 
+text 115 210 695 7
+button 100 230 1209 1210 1 0 6 
+text 115 230 695 8
+button 100 250 1209 1210 1 0 7 
+text 115 250 695 9
+button 100 270 1209 1210 1 0 8 
+text 115 270 695 10
+button 100 290 1209 1210 1 0 9 
+text 115 290 695 11
+
+
+button 300 130 1209 1210 1 0 10 
+text 315 130 695 12
+button 300 150 1209 1210 1 0 11
+text 315 150 695 13
+button 300 170 1209 1210 1 0 12
+text 315 170 695 14
+button 300 190 1209 1210 1 0 13
+text 315 190 695 15
+button 300 210 1209 1210 1 0 14
+text 315 210 695 16
+button 300 230 1209 1210 1 0 15
+text 315 230 695 19
+button 300 250 1209 1210 1 0 16
+text 315 250 695 20
+
+
+[GUMP 71 TEXT]
+Travel Stone
+--Town's--
+Please Select a Destination :
+Britain
+Bucaneers Den
+Cove
+Jhelom
+Minoc
+Moonglow
+Njuhelm
+Occlo
+Serpents Hold
+Skara Brae
+Trisnic
+Vesper
+Wind 
+Yew
+Travel Will Cost 50 Gold
+Dungeon's
+Delucia
+Papua
+[GUMP 71 BUTTON]
+ONBUTTON=0
+TOME 70
+
+ONBUTTON=1
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 1475 1645 21
+
+SRC.SYSMESSAGE You are now in Britain.
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+ONBUTTON=2
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 2710 2163 0
+
+SRC.SYSMESSAGE You are now in Bucaneers Den
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=3
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 2246 1214 0
+
+SRC.SYSMESSAGE You are now in Cove
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+ONBUTTON=4
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 1424 3800 0
+
+SRC.SYSMESSAGE You are now in Jhelom
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=5
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 2465 528 15
+
+SRC.SYSMESSAGE You are now in Minoc
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=6
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 4420 1158 0
+
+SRC.SYSMESSAGE You are now in Moonglow
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=7
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 3716 1238 0
+SRC.SYSMESSAGE You are now in Njuhelm
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=8
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 3650 2515 0
+
+SRC.SYSMESSAGE You are now in Occlo
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=9
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 3032 3386 15
+
+SRC.SYSMESSAGE You are now in Serpents Hold
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=10
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 630 2236 0
+
+SRC.SYSMESSAGE You are now in Skara Brae
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=11
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 2053 2845 0
+
+SRC.SYSMESSAGE You are now in Trisnic
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=12
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 2896 689 0
+
+SRC.SYSMESSAGE You are now in Vesper
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=13
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 5216 188 5
+
+SRC.SYSMESSAGE You are now in Wind
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=14
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 534 994 0
+
+SRC.SYSMESSAGE You are now in Yew
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+ONBUTTON=15
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 5270 3993 37
+
+SRC.SYSMESSAGE You are now in Delucia
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+ONBUTTON=16
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=100 GOLD
+SRC.GO 5730 3206 -7
+
+SRC.SYSMESSAGE You are now in Papua
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+[GUMP 72]
+0,0
+resizepic 0 0 3600 607 440
+resizepic 75 75 2620 450 315 
+button 485 400 2322 2323 1 0 0
+page 0
+text 200 29 153 0 
+text 192 49 153 1 
+text 180 90 695 2
+
+
+button 100 130 1209 1210 1 0 1 
+text 115 130 695 3
+button 100 150 1209 1210 1 0 2
+text 115 150 695 4
+button 100 170 1209 1210 1 0 3 
+text 115 170 695 5
+button 100 190 1209 1210 1 0 4
+text 115 190 695 6
+button 100 210 1209 1210 1 0 5 
+text 115 210 695 7
+button 100 230 1209 1210 1 0 6 
+text 115 230 695 8
+button 100 250 1209 1210 1 0 7 
+text 115 250 695 9
+button 100 270 1209 1210 1 0 8 
+text 115 270 695 10
+button 100 290 1209 1210 1 0 9
+text 115 290 695 11
+
+
+[GUMP 72 TEXT]
+Travel Stone
+--Dungeon's--
+Please Select a Destination :
+Deceit//britain
+Shame//bucs
+Destard//cove
+Wrong//jhelom
+Despise//minoc
+Newbie Dungeon//mooglow
+Ice Cave//njuhem
+Hythloth//Ocllo
+Covetous//Serpents Hold
+Town's
+[GUMP 72 BUTTON]
+ONBUTTON=0
+TOME 70
+
+ONBUTTON=1
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=400 GOLD
+SRC.GO 4111 434 5
+SRC.SYSMESSAGE You are now in at Deceit.
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+ONBUTTON=2
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=400 GOLD
+SRC.GO 514 1561 0
+
+SRC.SYSMESSAGE You are now in Shame
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=3
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=400 GOLD
+SRC.GO 1176 2639 0
+
+SRC.SYSMESSAGE You are now in Destard
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+ONBUTTON=4
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=400 GOLD
+SRC.GO 2044 238 10
+
+SRC.SYSMESSAGE You are now in Wrong
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=5
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=400 GOLD
+SRC.GO 1301 1080 0
+
+SRC.SYSMESSAGE You are now in Despise
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=6
+IF (<SRC.MAGERY><650) && (<SRC.HEALING><650) && (<SRC.ARCHERY><650) && (<SRC.FENCING><650) && (<SRC.MACEFIGHTING><650) && (<SRC.SWORDSMANSHIP><650) && (<SRC.TACTICS><650) && (<SRC.PARRYING><650)
+SRC.GO 5213 1292 0
+SRC.SYSMESSAGE You are now in the Newbie Dungeon
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You are too skilled, it is time to goto real dungeons!
+ENDIF
+
+
+ONBUTTON=7
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=400 GOLD
+SRC.GO 1999 81 5
+
+SRC.SYSMESSAGE You are now in Ice Cave
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=8
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=400 GOLD
+SRC.GO 4722 3825 0
+
+SRC.SYSMESSAGE You are now in Hythloth
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+
+ONBUTTON=9
+IF (<SRC.RESTEST 50 GOLD> )
+SRC.CONSUME=400 GOLD
+SRC.GO 2499 922 0
+SRC.SYSMESSAGE You are now in Covetous
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You do not have the needed Gold to Travel.
+ENDIF
+
+[GUMP 73]
+0, 0 
+page 0
+gumppic 100 10 2200
+gumppic 125 50 57
+gumppic 145 50 58
+gumppic 160 50 58
+gumppic 175 50 58
+gumppic 190 50 58
+gumppic 205 50 58
+gumppic 220 50 58
+gumppic 230 50 59
+gumppic 290 50 57
+gumppic 310 50 58
+gumppic 325 50 58
+gumppic 340 50 58
+gumppic 355 50 58
+gumppic 370 50 58
+gumppic 385 50 58
+gumppic 395 50 59
+button 130 187 2225 2225 0 2 0 // first circle
+button 165 187 2226 2226 0 2 0 // seconed circle
+button 200 187 2227 2227 0 3 0 // third circle
+button 235 187 2228 2228 0 3 0 // fourth circle
+button 300 187 2229 2229 0 4 0 // fith circle
+button 335 187 2230 2230 0 4 0 // sixth circle
+button 400 187 2230 2230 0 1 0 // To Front page
+// ------------------------- Start
+page 1
+text 135 20 037 6
+text 147 36 037 7
+button 130 65 2103 2104 1 0 1 // 
+button 130 80 2103 2104 1 0 2 //
+button 130 95 2103 2104 1 0 3 //
+button 130 110 2103 2104 1 0 4 //
+button 130 125 2103 2104 1 0 5 //
+button 130 140 2103 2104 1 0 6 //
+text 145 60 000 0 //
+text 145 75 000 1 //
+text 145 90 000 2 //
+text 145 105 000 3 //
+text 145 120 000 4 //
+text 145 135 000 5 //
+// -------------------------
+page 2
+// ------------------------- Muffins
+button 130 25 2103 2104 1 0 1 //
+text 145 20 000 0
+text 147 36 000 8
+// ------------------------- Muffins Recipe
+text 145 60 000 14
+text 145 75 000 19
+text 127 90 000 24
+text 127 105 000 25
+text 127 120 000 26
+text 127 135 000 27
+// ------------------------- Bread Loaf
+button 285 25 2103 2104 1 0 2
+text 310 20 000 1
+text 309 36 000 9
+// ------------------------- Bread Loaf recipe
+text 310 60 000 15
+text 310 75 000 20
+text 292 90 000 28
+text 292 105 000 29
+text 292 120 000 30
+// ------------------------- LINE BREAKER
+page 3
+// ------------------------- Cookies
+button 130 25 2103 2104 1 0 3
+text 145 20 000 2
+text 147 36 000 10
+// ------------------------- Cookies Recipe
+text 145 60 000 16
+text 145 75 000 19
+text 127 90 000 31
+text 127 105 000 32
+text 127 120 000 33
+text 127 135 000 34
+// ------------------------- French Bread
+button 285 25 2103 2104 1 0 4
+text 310 20 000 3
+text 309 36 000 11
+// ------------------------- French Bread Recipe
+text 310 60 000 17
+text 310 75 000 20
+text 292 90 000 35
+text 292 105 000 36
+text 292 120 000 37
+// ------------------------- LINE BREAKER
+page 4
+// ------------------------- Cake
+button 130 25 2103 2104 1 0 5
+text 145 20 000 4
+text 147 36 000 12
+// ------------------------- Cake Recipe
+text 145 60 000 18
+text 145 75 000 21
+text 127 90 000 38
+text 127 105 000 39
+text 127 120 000 40
+text 127 135 000 41
+// ------------------------- Pizza
+button 285 25 2103 2104 1 0 6
+text 310 20 000 5
+text 309 36 000 13
+// ------------------------- Pizza Recipe
+text 310 60 000 48
+text 310 75 000 49
+text 292 90 000 43
+text 292 105 000 44
+text 292 120 000 45
+text 292 135 000 46
+// ------------------------- LINE BREAKER
+[GUMP 73 TEXT]
+Muffins // 0
+Bread Loaf
+Cookies
+French Bread
+Cake
+Apple Pie // 5
+Far Havens
+CookBook
+Level 1
+Level 2
+Level 3 // 10
+Level 4
+Level 5
+Level 6
+50 Cooking // level 1
+63 Cooking // 15 // level 2
+75 Cooking // level 3
+88 Cooking // level 4
+91 Cooking // level 5
+Recipe // level 1
+Recipe // 20 // Level 2
+Recipe // level 3
+Recipe // level 4
+Recipe // level 5
+1 Bag of Flour //24
+1 Pitcher Water 
+Mix In bowl.
+Yeilds 3 Muffins.// muffins
+1 Bag of Flour // 28
+3 Eggs
+1 Pitcher of Water // bread
+2 Bags of FLour // 31
+5 Eggs
+1 Pitcher of Milk
+Makes 1 Dozen // cookies
+2 Bags of Flour // 35
+1 Pitcher of Water
+1 Garlic //F bread
+3 Bags of Flour //38
+6 Eggs
+1 Pitcher Milk 
+1 Pitcher Water
+Makes 1 Large Cake //cake
+3 Bags of Flour // 43
+1 Pitcher Water
+1 Sack of Sugar
+2 Apples // apple pie
+CAST
+95 Cooking // 48 level 6
+Recipe // level 6
+
+[GUMP 73 BUTTON]
+
+ONBUTTON=1
+IF <src.cooking>> 50.0
+IF <src.restest 1 01039> //check for flour
+IF <src.restest 1 00ff8> //check for water
+src.consume=1 01039
+src.consume=1 00ff8
+src.newitem=009ea
+src.newitem=009ea
+src.newitem=009ea
+src.act.bounce
+SRC.ANIM 16
+ELSE
+SRC.MESSAGE Not enough ingredients.
+RETURN 1
+ENDIF
+ELSE
+src.message You Burned the Muffins to a crisp, It's ruined.
+src.consume=1 01039
+src.comsume=1 00ff8
+src.newitem=01eb0
+src.act.bounce
+SRC.ANIM 16
+SRC.SOUND=01f6
+RETURN 1
+ENDIF
+RETURN 0
+
+ONBUTTON=2
+IF <src.cooking>> 63.0
+IF <src.restest 1 01039>
+IF <src.restest 1 00ff8>
+src.consume=1 01039
+src.consume=1 00ff8
+src.newitem=0103b
+src.act.bounce
+SRC.ANIM 16
+ELSE
+SRC.MESSAGE Not enough ingredients.
+RETURN 1
+ENDIF
+ELSE
+src.message You Burned the Bread to a crisp, It's ruined.
+src.consume=1 01039
+src.comsume=1 00ff8
+src.newitem=01eb0
+src.act.bounce
+SRC.ANIM 16
+SRC.SOUND=01f6
+RETURN 1
+ENDIF
+RETURN 0
+
+ONBUTTON=3
+IF <src.cooking>> 75.0
+IF <src.restest 2 01039>
+IF <src.restest 1 00ff8>
+IF <src.restest 1 009ec>
+src.consume=2 01039
+src.consume=1 00ff8
+src.consume=1 009ec
+src.newitem=0160b
+src.act.bounce
+SRC.ANIM 16
+ELSE
+SRC.MESSAGE Not enough ingredients.
+RETURN 1
+ENDIF
+ELSE
+src.message You Burned the Cookies to a crisp, It's ruined.
+src.consume=2 01039
+src.consume=1 00ff8
+src.consume=1 009ec
+src.newitem=0160b
+src.act.bounce
+SRC.ANIM 16
+SRC.SOUND=01f6
+RETURN 1
+ENDIF
+RETURN 0
+
+ONBUTTON=4
+IF <src.cooking>> 88.0
+IF <src.restest 2 01039>
+IF <src.restest 1 00ff8>
+IF <src.restest 1 00c6e> // Check for Onions
+src.consume=2 01039
+src.consume=1 00ff8
+src.consume=1 00c6e
+src.newitem=0098c
+src.act.bounce
+SRC.ANIM 16
+ELSE
+SRC.MESSAGE Not enough ingredients.
+RETURN 1
+ENDIF
+ELSE
+src.message You Burned the French Bread to a crisp, It's ruined.
+src.consume=2 01039
+src.consume=1 00ff8
+src.consume=1 00c6e
+src.newitem=0098c
+src.act.bounce
+SRC.ANIM 16
+SRC.SOUND=01f6
+RETURN 1
+ENDIF
+RETURN 0
+
+ONBUTTON=5
+IF <src.cooking>> 91.0
+IF <src.restest 3 01039>
+IF <src.restest 1 00ff8>
+IF <src.restest 1 009ad> //check for milk
+IF <src.restest 1 07102> //check for sugar. This is a new item put in SHpereitem2.scp
+src.consume=3 01039
+src.consume=1 00ff8
+src.consume=1 009ad
+src.consume=1 07102
+src.newitem=009e9
+src.act.bounce
+SRC.ANIM 16
+ELSE
+SRC.MESSAGE Not enough ingredients.
+RETURN 1
+ENDIF
+ELSE
+src.message You Burned the Cake to a crisp, It's ruined.
+src.consume=3 01039
+src.consume=1 00ff8
+src.consume=1 009ad
+src.consume=1 07102
+src.newitem=0098c
+src.act.bounce
+SRC.ANIM 16
+SRC.SOUND=01f6
+RETURN 1
+ENDIF
+RETURN 0
+
+ONBUTTON=6
+IF <src.cooking>> 95.0
+IF <src.restest 3 01039>
+IF <src.restest 1 00ff8>
+IF <src.restest 1 07102>
+IF <src.restest 2 009d0> // check for apples
+src.consume=3 01039
+src.consume=1 00ff8
+src.consume=1 07102
+src.consume=2 009d0
+src.newitem=01041
+src.act.bounce
+SRC.ANIM 16
+ELSE
+SRC.MESSAGE Not enough ingredients.
+RETURN 1
+ENDIF
+ELSE
+src.message You Burned the Pie to a crisp, It's ruined.
+src.consume=3 01039
+src.consume=1 00ff8
+src.consume=1 07102
+src.consume=2 009d0
+src.newitem=0098c
+src.act.bounce
+SRC.ANIM 16
+SRC.SOUND=01f6
+RETURN 1
+ENDIF
+RETURN 0

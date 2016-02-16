@@ -1,0 +1,377 @@
+//****************************************************************************
+//GameMonger.com's SPEECH2 File 
+//By CasioDeFlux : ©1999-2000 Innovative Network Designs Corporation
+
+
+[0700] 
+//Portal Mage 
+DEFAULT=Thou dost speak in a foreign language... 
+ON=*hail* 
+SAY=Greetings friend, where wouldst thou wish to travel today? 
+ON=*where*
+ON=*travel*
+ON=*go*
+ON=*gate*
+SAY=I can gate to various towns or dungeons. Towns start at 100gp, dungeons start at 200gp. Ask about my PRICES for detailed information.
+ON=*help*
+SAY=Simply say the name of the place you would like to go such as Britain, Despise, Wind, Deceit, Moonglow. 
+ON=*price*
+SAY=Current prices are:
+SAY=Britain 100, Trinsic 150, Vesper 175, Minoc 150, Moonglow 300, Wind 300, Yew 125, Skara Brae 200.
+SAY=Occlo 300, Serpents Hold 300, Bucaneers Den 300, Cove 200, Jhelom 300, Nujelm 300.
+SAY=No Dungeon Areas yet.
+
+// TOWNS
+VAR.LOCATIONX=0
+VAR.LOCATIONY=0
+VAR.LOCATIONZ=0
+VAR.PRICE=0
+
+ON=*BRITAIN* 
+VAR.X=1443
+VAR.Y=1701
+VAR.Z=1
+VAR.PRICE=100
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*TRINSIC*
+VAR.X=1866
+VAR.Y=2779
+VAR.Z=1
+VAR.PRICE=150
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*VESPER*
+VAR.X=2899
+VAR.Y=676
+VAR.Z=1
+VAR.PRICE=175
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*MINOC*
+VAR.X=2465
+VAR.Y=534
+VAR.Z=16
+VAR.PRICE=150
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*MOONGLOW*
+VAR.X=4442
+VAR.Y=1172
+VAR.Z=1
+VAR.PRICE=200
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*WIND*
+VAR.X=5167 
+VAR.Y=243
+VAR.Z=16
+VAR.PRICE=400
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*YEW*
+VAR.X=546
+VAR.Y=991
+VAR.Z=1
+VAR.PRICE=125
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*SKARA*
+VAR.X=591 
+VAR.Y=2147
+VAR.Z=1
+VAR.PRICE=200
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*OCCLO*
+VAR.X=3682 
+VAR.Y=2518
+VAR.Z=1
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*NUJELM*
+VAR.X=3754 
+VAR.Y=1258
+VAR.Z=1
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*JHELOM*
+VAR.X=1384 
+VAR.Y=3809
+VAR.Z=1
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*COVE*
+VAR.X=2247 
+VAR.Y=1213
+VAR.Z=1
+VAR.PRICE=200
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+
+ON=*BUC*
+ON=*BUCS*
+VAR.X=2720 
+VAR.Y=2186
+VAR.Z=1
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF
+
+ON=*SERP*
+VAR.X=3015
+VAR.Y=3398
+VAR.Z=16
+VAR.PRICE=300
+
+if <SRC.RESTEST <VAR.PRICE> GOLD>
+	SRC.CONSUME=<VAR.PRICE> GOLD
+	SRC.MESSAGE That will be <VAR.PRICE> Gold
+	SRC.MESSAGE I thank thee.
+	ANIM=17
+	SOUND=020e
+	SRC.NEWITEM=0f6c
+	SRC.ACT.TYPE=17 
+	SRC.ACT.MOREX=<VAR.X>
+	SRC.ACT.MOREY=<VAR.Y>
+	SRC.ACT.MOREZ=<VAR.Z>
+	SRC.ACT.TIMER=10 
+	RETURN 1
+ELSE
+	MESSAGE You lack the necessary funds.
+	MESSAGE I don't do this because I like it, I need to eat! 
+ENDIF

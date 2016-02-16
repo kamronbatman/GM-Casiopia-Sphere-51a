@@ -1,0 +1,504 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+VERSION=0.55
+
+[REGIONRESOURCE mr_nothing]
+// there is nothing here
+REAP=i_unused
+REGEN=60*60*10	// maybe something here later.
+
+[REGIONRESOURCE mr_fish1]
+// fishing default
+// t_water
+SKILL=1.0,100.0
+AMOUNT=9,30
+REAP=i_fish_big_1
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_fish2]
+// fishing default
+// t_water
+SKILL=1.0,100.0
+REAP=i_fish_big_2
+AMOUNT=9,30
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_fish3]
+// fishing default
+// t_water
+SKILL=1.0,100.0
+AMOUNT=9,30
+REAP=i_fish_big_3
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_fish4]
+// fishing default
+// t_water
+SKILL=1.0,100.0
+AMOUNT=9,30
+REAP=i_fish_big_4
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_tree]
+// lumberjacking default
+// t_tree
+SKILL=1.0,80.0
+AMOUNT=9,30
+REAP=i_log
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_tree_ancient]
+SKILL=50.0,100.0
+AMOUNT=9,30
+REAP=i_log_ancient
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_tree_magic]
+SKILL=50.0,100.0
+AMOUNT=9,30
+REAP=i_log_magic
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_grass]
+// grazing animals
+// t_grass
+AMOUNT=9,30
+REGEN=60*60*10
+REAP=i_hay_sheaf
+
+[REGIONTYPE r_default]
+// Unclaimed regions.
+ON=@ENTER
+	SRC.MIDILIST=midi_britain1,midi_ForestA,midi_JungleA,midi_MountainA,midi_Plains,midi_Victory
+
+ON=@CLIPERIODIC
+	SRC.MIDILIST=midi_britain1,midi_ForestA,midi_JungleA,midi_MountainA,midi_Plains,midi_Victory
+
+[REGIONTYPE r_default_rock t_rock]
+// Random rocks
+RESOURCES=100.0 mr_nothing
+RESOURCES=50.0 mr_iron
+//RESOURCES=6.0 mr_rusty
+//RESOURCES=6.0 mr_old_copper
+//RESOURCES=6.0 mr_dull_copper
+//RESOURCES=4.5 mr_bronze
+RESOURCES=5.0 mr_copper
+RESOURCES=2.0 mr_gold
+RESOURCES=1.0 mr_rose
+RESOURCES=2.0 mr_agapite
+RESOURCES=1.0 mr_bloodrock
+RESOURCES=1.0 mr_silver
+RESOURCES=0.5 mr_verite
+RESOURCES=0.2 mr_Valorite
+RESOURCES=0.1 mr_mytheril
+RESOURCES=0.1 mr_blackrock
+RESOURCES=0.1 mr_diamond
+
+[REGIONTYPE r_gem_mine t_rock]
+// Gem mines
+RESOURCES=50.0 mr_nothing
+RESOURCES=10.0 mr_citrine_sm
+RESOURCES=10.0 mr_citrine_lg
+RESOURCES=10.0 mr_diamond_lg
+RESOURCES=10.0 mr_diamond_sm
+RESOURCES=10.0 mr_amber_sm
+RESOURCES=10.0 mr_ruby_lg
+RESOURCES=10.0 mr_ruby_sm
+RESOURCES=10.0 mr_amethyst_lg
+RESOURCES=10.0 mr_amethyst_sm
+RESOURCES=10.0 mr_tourmaline_lg
+RESOURCES=10.0 mr_tourmaline_sm
+RESOURCES=10.0 mr_emerald_lg
+RESOURCES=10.0 mr_emerald_sm
+RESOURCES=10.0 mr_star_sapphire_lg
+RESOURCES=10.0 mr_star_sapphire_sm
+RESOURCES=10.0 mr_sapphire_sm
+
+[REGIONRESOURCE mr_citrine_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_citrine
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_citrine_lg]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_citrine_2
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_diamond_lg]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_diamond_4
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_diamond_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_diamond
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_amber_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_amber
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_ruby_lg]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_ruby_6
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_ruby_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_ruby
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_amethyst_lg]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_amethyst_3
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_amethyst_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_amethyst
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_tourmaline_lg]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_tourmaline_4
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_tourmaline_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_tourmaline
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_emerald_lg]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_emerald_2
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_emerald_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_emerald
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_star_sapphire_lg]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_star_sapphire_3
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_star_sapphire_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_star_sapphire
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONRESOURCE mr_sapphire_sm]
+SKILL=1.0,30.0
+AMOUNT=9,30
+REAP=i_gem_sapphire
+REAPAMOUNT=4,8
+REGEN=60*60*10
+
+[REGIONTYPE r_default_water t_water]
+// Not really ocean area.
+RESOURCES=100.0 mr_nothing
+RESOURCES=10.0 mr_fish1
+RESOURCES=10.0 mr_fish2
+RESOURCES=10.0 mr_fish3
+RESOURCES=10.0 mr_fish4
+
+[REGIONTYPE r_default_tree t_tree]
+// All tress produce wood by default.
+RESOURCES=20.0 mr_tree
+RESOURCES=1.0 mr_tree_magic
+RESOURCES=1.0 mr_tree_ancient
+
+[REGIONTYPE r_default_grass t_grass]
+// All grass can be eaten by default.
+RESOURCES=1.0 mr_grass
+
+[REGIONTYPE r_water t_water]
+// Water/Ocean boat sounds
+RESOURCES=100.0 mr_nothing
+RESOURCES=10.0 mr_fish1
+RESOURCES=10.0 mr_fish2
+RESOURCES=10.0 mr_fish3
+RESOURCES=10.0 mr_fish4
+
+ON=@REGPERIODIC
+	src.SFX={025,1,026,1,027,1,010,1,011,1,012,1,013,1}
+
+[REGIONTYPE r_brit_rock t_rock]
+// Brit
+RESOURCES=100.0 mr_nothing
+RESOURCES=30.0 mr_iron
+
+ON=@ENTER
+	SRC.MIDILIST=midi_britain1,midi_britain2
+ON=@CLIPERIODIC
+	SRC.MIDILIST=midi_britain1,midi_britain2
+
+[REGIONTYPE r_brit_castle]
+// Lord brit castle.
+ON=@ENTER
+	SRC.MIDILIST=midi_LBCastle
+ON=@CLIPERIODIC
+	SRC.MIDILIST=midi_LBCastle
+
+[REGIONTYPE r_guard_tower]
+// Guard tower.
+ON=@ENTER
+	SRC.MIDILIST=midi_ForestA
+ON=@CLIPERIODIC
+	SRC.MIDILIST=midi_ForestA
+
+[REGIONTYPE r_black_castle]
+// Lord Blackthorne's Castle
+ON=@ENTER
+	SRC.MIDILIST=midi_BtCastle
+ON=@CLIPERIODIC
+	SRC.MIDILIST=midi_BtCastle
+
+[REGIONTYPE r_bucs_den]
+// Bucs den
+
+ON=@ENTER
+	IF <SRC.KILLS> > 5
+		SRC.MESSAGE Welcome to Bucs Den <SRC.NAME> You are a murderer and you feel at home here
+		SRC.MIDILIST=midi_BucsDen
+		RETURN 1
+	ELSE
+		SRC.MIDILIST=midi_BucsDen
+	ENDIF
+
+ON=@CLIPERIODIC
+	SRC.MIDILIST=midi_BucsDen
+
+[REGIONTYPE r_spooky_rock t_rock]
+// Spooky outdoor area.
+RESOURCES=1000.0 mr_nothing
+RESOURCES=30.0 mr_iron
+RESOURCES=5.0 mr_shadow
+
+ON=@ENTER
+	SRC.MIDILIST=midi_Approach
+ON=@CLIPERIODIC
+	SRC.MIDILIST=midi_Approach
+
+[REGIONTYPE r_dungeon_rock t_rock]
+// Dungeon sounds same day or night.
+// Shadow ore is only found here.
+RESOURCES=1000.0 mr_nothing
+RESOURCES=30.0 mr_iron
+RESOURCES=5.0 mr_shadow
+
+ON=@REGPERIODIC
+	src.SFX={021f,1,0243,1,0244,1,0245,1}
+
+[REGIONTYPE r_plains]
+// Plains night and day.
+ON=@REGPERIODIC
+	src.SFX={0a,1,0b,1}
+
+[REGIONTYPE r_forests]
+// Forest Day and night.
+
+ON=@REGPERIODIC
+	IF <src.sector.ISNIGHTTIME>
+		src.SFX={00,2,01,2,02,2,07d,1}
+	ELSE
+		src.SFX={08,10,09,10,0219,1,07d,1}
+	ENDIF
+
+[REGIONTYPE r_jungle]
+// Jungle Day and night.
+
+ON=@REGPERIODIC
+	IF <src.sector.ISNIGHTTIME>
+		src.SFX={0c,2,0d,2,0b3,1}
+	ELSE
+		src.SFX={03,2,04,2,05,2,0b3,1}
+	ENDIF
+
+[REGIONTYPE r_swamp_rock t_rock]
+// Swamp Day and night.
+// Never anything to mine here.
+
+ON=@REGPERIODIC
+	src.SFX={0e,10,0f,10,022,1,023,1,024,1,0267,1}
+
+[REGIONTYPE r_khaldun]
+
+ON=@ENTER
+	SRC.MIDILIST=midi_Dungeon9
+
+ON=@REGPERIODIC
+	SRC.SFX={0107,1,0246,1,0ff,10,0104,10,0106,10,0105,10}
+	
+[REGIONTYPE r_avatar_isle t_rock]
+RESOURCES=100.0 mr_nothing
+RESOURCES=50.0 mr_iron
+//RESOURCES=6.0 mr_rusty
+//RESOURCES=6.0 mr_old_copper
+//RESOURCES=6.0 mr_dull_copper
+RESOURCES=5.0 mr_copper
+RESOURCES=4.6 mr_bloodrock
+RESOURCES=4.1 mr_mytheril
+RESOURCES=4.1 mr_blackrock
+RESOURCES=1.1 mr_blood_crest
+RESOURCES=3.0 mr_marik
+
+[REGIONTYPE r_minoc_mines t_rock]
+RESOURCES=75.0 mr_nothing
+RESOURCES=50.0 mr_iron
+//RESOURCES=6.0 mr_rusty
+//RESOURCES=6.0 mr_old_copper
+//RESOURCES=6.0 mr_dull_copper
+//RESOURCES=4.5 mr_bronze
+RESOURCES=5.0 mr_copper
+RESOURCES=4.0 mr_gold
+RESOURCES=3.0 mr_rose
+RESOURCES=3.0 mr_agapite
+RESOURCES=2.0 mr_bloodrock
+RESOURCES=2.0 mr_silver
+RESOURCES=1.5 mr_verite
+RESOURCES=1.2 mr_Valorite
+RESOURCES=1.1 mr_mytheril
+RESOURCES=1.1 mr_blackrock
+
+[REGIONTYPE r_britain_mines t_rock]
+RESOURCES=75.0 mr_nothing
+RESOURCES=50.0 mr_iron
+//RESOURCES=6.0 mr_rusty
+//RESOURCES=6.0 mr_old_copper
+//RESOURCES=6.0 mr_dull_copper
+//RESOURCES=4.5 mr_bronze
+RESOURCES=10.0 mr_copper
+RESOURCES=7.0 mr_gold
+RESOURCES=6.0 mr_rose
+RESOURCES=5.0 mr_agapite
+RESOURCES=3.5 mr_bloodrock
+RESOURCES=3.0 mr_silver
+RESOURCES=2.5 mr_verite
+RESOURCES=2.2 mr_Valorite
+RESOURCES=2.1 mr_mytheril
+RESOURCES=2.1 mr_blackrock
+RESOURCES=1.1 mr_midnite
+
+[REGIONTYPE r_covetous_mines t_rock]
+RESOURCES=50.0 mr_nothing
+RESOURCES=50.0 mr_iron
+//RESOURCES=6.0 mr_rusty
+//RESOURCES=6.0 mr_old_copper
+//RESOURCES=6.0 mr_dull_copper
+//RESOURCES=4.5 mr_bronze
+RESOURCES=7.0 mr_copper
+RESOURCES=6.0 mr_gold
+RESOURCES=5.0 mr_rose
+RESOURCES=4.0 mr_agapite
+RESOURCES=3.0 mr_bloodrock
+RESOURCES=2.0 mr_silver
+RESOURCES=1.5 mr_verite
+RESOURCES=1.2 mr_Valorite
+RESOURCES=1.1 mr_provain
+RESOURCES=1.1 mr_sanexim
+
+[REGIONTYPE r_dragonhame_north t_rock]
+RESOURCES=50.0 mr_nothing
+RESOURCES=50.0 mr_iron
+//RESOURCES=6.0 mr_rusty
+//RESOURCES=6.0 mr_old_copper
+//RESOURCES=6.0 mr_dull_copper
+//RESOURCES=4.5 mr_bronze
+RESOURCES=5.0 mr_copper
+RESOURCES=2.9 mr_silver
+RESOURCES=2.5 mr_verite
+RESOURCES=2.1 mr_blackrock
+RESOURCES=1.2 mr_grandure
+RESOURCES=1.1 mr_shivess
+RESOURCES=1.1 mr_provain
+
+[REGIONTYPE r_dragonhame_south t_rock]
+RESOURCES=100.0 mr_nothing
+RESOURCES=50.0 mr_iron
+RESOURCES=4.0 mr_bloodrock
+RESOURCES=3.0 mr_silver
+RESOURCES=2.1 mr_mytheril
+RESOURCES=2.1 mr_blackrock
+RESOURCES=1.1 mr_terocir
+RESOURCES=1.1 mr_ontura
+RESOURCES=1.1 mr_sanexim
+
+[REGIONTYPE r_ice_mines t_rock]
+RESOURCES=25.0 mr_nothing
+RESOURCES=50.0 mr_iron
+RESOURCES=5.2 mr_Valorite
+RESOURCES=5.5 mr_mytheril
+RESOURCES=1.5 mr_freoric
+RESOURCES=1.1 mr_terocir
+
+[REGIONTYPE r_yew_passage_mine t_rock]
+RESOURCES=50.0 mr_nothing
+RESOURCES=50.0 mr_iron
+RESOURCES=25.0 mr_copper
+RESOURCES=15.0 mr_gold
+RESOURCES=10.0 mr_rose
+RESOURCES=10.0 mr_agapite
+RESOURCES=3.0 mr_bloodrock
+RESOURCES=3.5 mr_silver
+RESOURCES=1.5 mr_verite
+RESOURCES=1.2 mr_Valorite
+RESOURCES=1.1 mr_mytheril
+RESOURCES=1.1 mr_blackrock
+RESOURCES=0.9 mr_locrin
+RESOURCES=0.9 mr_vinatol
+
+[REGIONTYPE r_volcano t_rock]
+RESOURCES=100.0 mr_nothing
+RESOURCES=4.0 mr_inferno
+RESOURCES=4.0 mr_brazen
+RESOURCES=6.1 mr_blackrock
+RESOURCES=7.0 mr_gold
+RESOURCES=7.0 mr_silver
+
+[EOF]
+

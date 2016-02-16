@@ -1,0 +1,161 @@
+[ITEMDEF i_cape_celtic]
+NAME=Celtic Cape
+ID=i_cape
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=0
+COLOR=07ad
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Celtic Clothes
+DESCRIPTION=Celtic Cape
+DUPELIST=01530
+
+ON=@create
+HITPOINTS={40 80}
+
+
+[ITEMDEF i_dress_plain_celtic]
+NAME=Celtic Dress
+ID=i_dress_plain
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=0
+COLOR=07a6
+ARMOR=5
+CATEGORY=Provisions - Clothes
+SUBSECTION=Celtic Clothes
+DESCRIPTION=Celtic Dress
+DUPELIST=01f02
+
+ON=@create
+HITPOINTS={40 80}
+
+[ITEMDEF i_skirt_long_celtic]
+NAME=Celtic Long Skirt
+ID=i_skirt_long
+WEIGHT=4
+TYPE=T_CLOTHING
+DYE=0
+COLOR=07b2
+ARMOR=4
+CATEGORY=Provisions - Clothes
+SUBSECTION=Celtic Clothes
+DESCRIPTION=Celtic Long Skirt
+DUPELIST=(didnt have one)
+
+ON=@create
+HITPOINTS={40 80}
+
+
+[ITEMDEF i_kilt_celtic]
+NAME=Celtic Kilt
+ID=i_kilt
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=0
+COLOR=079b
+ARMOR=3
+CATEGORY=Provisions _ Clothes
+SUBSECTION=Celtic Clothing
+DESCRIPTION=Celtic Kilt
+DUPELIST=01538
+
+ON=@create
+HITPOINTS={40 80}
+
+[ITEMDEF i_sandals_celtic]
+Celtic Sandles
+ID=i_sandals
+WEIGHT=1
+TYPE=T_CLOTHING
+DYE=0
+COLOR=07aa
+ARMOR=3
+CATEGORY=Provisions - Clothes
+SUBSECTION=Celtic Clothing
+DESCRIPTION=Celtic Sandles
+DUPELIST=0170e
+
+ON=@create
+HITPOINTS={40 80}
+
+[ITEMDEF i_boots_thigh_Celtic]
+NAME=Celtic Thigh Boots
+ID=i_boots_thigh
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=0
+COLOR=07ac
+ARMOR=6
+CATEGORY=Provisions - Clothes
+SUBSECTION=Celtic Clothing
+DESCRIPTION=Celtic Thigh Boots
+DUPELIST=01712
+
+ON=@create
+HITPOINTS={40 80}
+
+
+[ITEMDEF i_surcoat_celtic]
+NAME=Celtic Surcoat
+ID=i_surcoat
+WEIGHT=5
+TYPE=T_CLOTHING
+DYE=0
+COLOR=07b8
+ARMOR=3
+CATEGORY=Provisions - Clothing
+SUBSECTION=Celtic Clothing
+DESCRIPTION=Celtic Surcoat
+DUPELIST=01ffe
+
+ON=@create
+HITPOINTS={40 80}
+
+[ITEMDEF i_shirt_fancy_celtic]
+NAME=Celtic Fancy Shirt
+ID=i_shirt_fancy
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=0
+COLOR=07a0
+ARMOR=4
+CATEGORY=Provisions - Clothing
+SUBSECTION=Celtic Clothing
+DESCRIPTION=Celtic Fancy Shirt
+DUPELIST=014efe
+
+ON=@create
+HITPOINTS={40 80}
+
+[ITEMDEF i_robe_celtic]
+NAME=Celtic Robe
+ID=i_robe
+WEIGHT=3
+TYPE=T_CLOTHING
+DYE=0
+COLOR=07e8
+ARMOR=7
+CATEGORY=Provisions - Clothing
+SUBSECTION=Celtic Clothing
+DESCRIPTION=Celtic Robe
+
+ON=@create
+HITPOINTS={40 80}
+
+
+[ITEMDEF i_doublet_celtic]
+NAME=Celtic Doublet
+ID=i_doublet
+WEIGHT=2
+TYPE=T_CLOTHING
+DYE=0
+COLOR=0799
+ARMOR=3
+CATEGORY=Provisions - Clothing
+SUBSECTION=Celtic Clothing
+DESCRIPTION=Celtic Doublet
+
+ON=@create
+HITPOINTS={40 80}

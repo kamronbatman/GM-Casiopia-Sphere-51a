@@ -1,0 +1,593 @@
+[DEFNAME JAILSYSTEM_DEFS]
+uid_jail_book		04003a59b
+
+[DIALOG d_jail_time]
+320,240
+resizepic 0 0 5120 225 290
+text 20 3 455 0
+button 7 34 2362 2361 1 0 1
+text 24 30 455 1
+button 7 54 2362 2361 1 0 2
+text 24 50 455 2
+button 7 74 2362 2361 1 0 3
+text 24 70 455 3
+button 7 94 2362 2361 1 0 4
+text 24 90 455 4
+button 7 114 2362 2361 1 0 5
+text 24 110 455 5
+button 7 134 2362 2361 1 0 6
+text 24 130 455 6
+button 7 154 2362 2361 1 0 7
+text 24 150 455 7
+button 7 174 2362 2361 1 0 8
+text 24 170 455 8
+button 7 194 2362 2361 1 0 9
+text 24 190 455 9
+button 7 214 2362 2361 1 0 10
+text 24 210 455 10
+button 7 234 2362 2361 1 0 11
+text 24 230 455 11
+button 7 254 2362 2361 1 0 12
+text 24 250 455 12
+
+[DIALOG d_jail_time text]
+Select Prisoner's Jail Time
+1/2 Day
+1 Days
+1.5 Days
+2 Days
+2.5 Days
+3 Days
+4 Days
+5 Days
+6 Days
+1 Week (7 days)
+2 Week (14 days)
+Ban Player
+
+[DIALOG d_jail_time button]
+on=1
+var.jailtime=<eval 0.5*24*60*60>
+newjail <var.jailtime>
+on=2
+var.jailtime=<eval 1*24*60*60>
+newjail <var.jailtime>
+on=3
+var.jailtime=<eval 1.5*24*60*60>
+newjail <var.jailtime>
+on=4
+var.jailtime=<eval 2*24*60*60>
+newjail <var.jailtime>
+on=5
+var.jailtime=<eval 2.5*24*60*60>
+newjail <var.jailtime>
+on=6
+var.jailtime=<eval 3*24*60*60>
+newjail <var.jailtime>
+on=7
+var.jailtime=<eval 4*24*60*60>
+newjail <var.jailtime>
+on=8
+var.jailtime=<eval 5*24*60*60>
+newjail <var.jailtime>
+on=9
+var.jailtime=<eval 6*24*60*60>
+newjail <var.jailtime>
+on=10
+var.jailtime=<eval 7*24*60*60>
+newjail <var.jailtime>
+on=11
+var.jailtime=<eval 14*24*60*60>
+newjail <var.jailtime>
+on=12
+dialog d_ban_prompt
+
+[DIALOG d_ban_prompt]
+320,240
+gumppic 0 0 2070
+text 30 20 2101 0
+text 30 40 2101 1
+button 30 73 2073 2072 1 0 0
+button 100 73 2076 2075 1 0 1
+
+[DIALOG d_ban_prompt text]
+Player has 5+
+jailings, Ban?
+
+[DIALOG d_ban_prompt button]
+on=1
+SRC.FINDID(i_jail_book).TAG.Deleted=<SRC.FINDID(i_jail_book).TAG.Banned> + 1
+SYSMESSAGE=You have been banned for multiple offences.
+KICK
+
+[DIALOG d_account_removal_prompt]
+320,240
+gumppic 0 0 2070
+text 30 20 2101 0
+text 30 40 2101 1
+button 30 73 2073 2072 1 0 0
+button 100 73 2076 2075 1 0 1
+
+[DIALOG d_account_removal_prompt text]
+Player has 11+
+jailings, delete?
+
+[DIALOG d_account_removal_prompt button]
+on=1
+TRY SRC.UID.<uid_jail_book>.TAG.Deleted=<SRC.UID.<uid_jail_book>.TAG.Deleted> + 1
+SYSMESSAGE=Your account has now been deleted for multiple offences.
+TRY SERV.ACCOUNT <ACCOUNT> DELETE
+
+[ITEMDEF i_jail_memory]
+NAME=jail memory
+ID=i_memory
+TYPE=t_eq_memory_obj
+LAYER=layer_special
+
+ON=@DCLICK
+  VAR.Hours=((<TIMER>)/(60*60))
+  LINK.SYSMESSAGE=You will be released in <EVAL <VAR.Hours>> hours.
+  RETURN=1
+
+ON=@UNEQUIP
+  SRC.FINDID(i_jail_book).TAG.JailedCurrent=<FINDID(i_jail_book).TAG.JailedCurrent> +- 1
+  TRY SRC.FINDID(i_jail_book).TAG.Slot<EVAL <MOREX>>_Account=
+  SRC.STONE=0
+  SRC.PARDON
+  SRC.GO 293 770 0 // Yew Prison
+  SRC.SYSMESSAGE=Your jail time is up, you have been realsed. Remember, more than 5 times jailed and your account is banned.
+  SRC.JAILED // Tells times total in jail
+
+ON=@Create
+  ATTR=attr_decay|attr_move_never
+
+[FUNCTION jailed]
+SRC.SYSMESSAGE=You have been jailed <EVAL <TAG.JailCount>> times so far.
+
+[FUNCTION newjail]
+JAIL=1
+STONE=1
+NEWITEM=i_jail_memory
+ACT.LINK=<UID>
+ACT.TIMER=<EVAL <ARGS>>
+ACT.MORE=<SRC.UID> // Staff member
+ACT.CONT=<UID>
+ACT.DCLICK
+//ACT.EQUIP
+SRC.FINDID(i_jail_book).TAG.JailedCurrent=<SRC.FINDID(i_jail_book).TAG.JailedCurrent> + 1
+SRC.FINDID(i_jail_book).TAG.JailedTotal=<SRC.FINDID(i_jail_book).TAG.JailedTotal> + 1
+f_log_jailed_account
+IF (<EVAL <UID.<uid_jail_book>.TAG.<NAME>>> = 6)
+  IF <SRC.ACCOUNT.PLEVEL> > 5
+    DIALOG d_ban_prompt
+  ELSE
+    MESSAGE=This player is on his 6th jailtime and should be banned, please contact an admin.
+  ENDIF
+ELSEIF (<EVAL <TAG.JailCount>> > 10)
+  IF <SRC.ACCOUNT.PLEVEL> > 5
+    DIALOG d_account_removal_prompt
+  ELSE
+    MESSAGE=This player has been jailed 11 or more times which warrants account removal, please contact an admin.
+  ENDIF
+ENDIF
+
+[FUNCTION f_jail]
+DIALOG d_jail_time
+
+[FUNCTION bye]
+SRC.SYSMESSAGE Target the character to jail...
+XF_JAIL
+
+[ITEMDEF i_jail_book]
+ID=0fbe //i_book_open
+NAME=jail log book
+TYPE=t_script
+FLIP=0
+
+ON=@DCLICK
+DIALOG d_jail_book
+
+ON=@CLICK
+MESSAGE=<name> (<EVAL <TAG.JailedCurrent>> jailed)
+RETURN=1
+
+ON=@Create
+TAG.JailedCurrent=0
+TAG.JailedTotal=0
+TAG.Banned=0
+TAG.Deleted=0
+
+[DIALOG d_jail_book]
+320,240
+// button id 1-10 for page tabs
+page 0
+gumppic 0 0 2200
+tilepic 30 120 7036
+tilepic 295 120 7039
+tilepic 120 170 6921
+tilepic 175 170 6925
+
+page 1
+button 295 5 2206 2206 0 2 1
+
+text 70 10 255 0
+
+button 25 40 2224 2224 1 0 11
+croppedtext 42 38 130 20 0 1
+button 25 60 2224 2224 1 0 12
+croppedtext 42 58 130 20 0 2
+button 25 80 2224 2224 1 0 13
+croppedtext 42 78 130 20 0 3
+button 25 100 2224 2224 1 0 14
+croppedtext 42 98 130 20 0 4
+button 25 120 2224 2224 1 0 15
+croppedtext 42 118 130 20 0 5
+button 25 140 2224 2224 1 0 16
+croppedtext 42 138 130 20 0 6
+button 25 160 2224 2224 1 0 17
+croppedtext 42 158 130 20 0 7
+button 25 180 2224 2224 1 0 18
+croppedtext 42 178 130 20 0 8
+
+text 220 10 255 0
+
+button 310 40 2223 2223 1 0 19
+croppedtext 180 38 130 20 0 9
+button 310 60 2223 2223 1 0 20
+croppedtext 180 58 130 20 0 10
+button 310 80 2223 2223 1 0 21
+croppedtext 180 78 130 20 0 11
+button 310 100 2223 2223 1 0 22
+croppedtext 180 98 130 20 0 12
+button 310 120 2223 2223 1 0 23
+croppedtext 180 118 130 20 0 13
+button 310 140 2223 2223 1 0 24
+croppedtext 180 138 130 20 0 14
+button 310 160 2223 2223 1 0 25
+croppedtext 180 158 130 20 0 15
+button 310 180 2223 2223 1 0 26
+croppedtext 180 178 130 20 0 16
+
+page 2
+button 20 5 2205 2205 0 1 2
+button 295 5 2206 2206 0 3 3
+
+text 70 10 255 0
+
+button 25 40 2224 2224 1 0 27
+croppedtext 42 38 130 20 0 17
+button 25 60 2224 2224 1 0 28
+croppedtext 42 58 130 20 0 18
+button 25 80 2224 2224 1 0 29
+croppedtext 42 78 130 20 0 19
+button 25 100 2224 2224 1 0 30
+croppedtext 42 98 130 20 0 20
+button 25 120 2224 2224 1 0 31
+croppedtext 42 118 130 20 0 21
+button 25 140 2224 2224 1 0 32
+croppedtext 42 138 130 20 0 22
+button 25 160 2224 2224 1 0 33
+croppedtext 42 158 130 20 0 23
+button 25 180 2224 2224 1 0 34
+croppedtext 42 178 130 20 0 24
+
+text 220 10 255 0
+
+button 310 40 2223 2223 1 0 35
+croppedtext 180 38 130 20 0 25
+button 310 60 2223 2223 1 0 36
+croppedtext 180 58 130 20 0 26
+button 310 80 2223 2223 1 0 37
+croppedtext 180 78 130 20 0 27
+button 310 100 2223 2223 1 0 38
+croppedtext 180 98 130 20 0 28
+button 310 120 2223 2223 1 0 39
+croppedtext 180 118 130 20 0 29
+button 310 140 2223 2223 1 0 40
+croppedtext 180 138 130 20 0 30
+button 310 160 2223 2223 1 0 41
+croppedtext 180 158 130 20 0 31
+button 310 180 2223 2223 1 0 42
+croppedtext 180 178 130 20 0 32
+
+page 3
+button 20 5 2205 2205 0 2 4
+button 295 5 2206 2206 0 4 5
+
+text 70 10 255 33		// Functions
+
+text 30 40 255 34		// Lookup Account
+button 30 60 5540 5542 1 0 43
+//gumppic 50 60 2440
+textentry 50 60 100 20 255 1 35 // type here
+
+text 220 10 255 36 		// Statistics
+
+text 180 38 255 37 		// Current Jailings:
+text 180 58 255 38 		// Total Jailings:
+text 180 78 255 39 		// Banned Accounts:
+text 180 98 255 40 		// Deleted Accounts:
+
+page 4
+button 20 5 2205 2205 0 3 6
+
+text 190 38 255 41 // Celtic Underground
+text 210 58 255 42 // Jail System
+text 210 98 255 43 // Version 1.0
+text 210 138 255 44 // Created by:
+text 215 158 255 45 // Thermite
+
+
+[DIALOG d_jail_book text]
+Jail Log		// First Page
+<TAG.Slot1_Account>
+<TAG.Slot2_Account>
+<TAG.Slot3_Account>
+<TAG.Slot4_Account>
+<TAG.Slot5_Account>
+<TAG.Slot6_Account>
+<TAG.Slot7_Account>
+<TAG.Slot8_Account>
+<TAG.Slot9_Account>
+<TAG.Slot10_Account>
+<TAG.Slot11_Account>
+<TAG.Slot12_Account>
+<TAG.Slot13_Account>
+<TAG.Slot14_Account>
+<TAG.Slot15_Account>
+<TAG.Slot16_Account>
+<TAG.Slot17_Account>	// Second Page
+<TAG.Slot18_Account>
+<TAG.Slot19_Account>
+<TAG.Slot20_Account>
+<TAG.Slot21_Account>
+<TAG.Slot22_Account>
+<TAG.Slot23_Account>
+<TAG.Slot24_Account>
+<TAG.Slot25_Account>
+<TAG.Slot26_Account>
+<TAG.Slot27_Account>
+<TAG.Slot28_Account>
+<TAG.Slot29_Account>
+<TAG.Slot30_Account>
+<TAG.Slot31_Account>
+<TAG.Slot32_Account>
+Functions
+Lookup Account
+type here			// Third Page
+Statistics
+Current Jailings <EVAL <TAG.JailedCurrent>>
+Total Jailings: <EVAL <TAG.JailedTotal>>
+Banned Accounts: <EVAL <TAG.Banned>>
+Deleted Accounts: <EVAL <TAG.Deleted>>
+Celtic Underground
+Jail System
+Version 1.0
+Created by:
+Thermite
+
+[DIALOG d_jail_book button]
+
+on=11
+IF (<TAG.Slot1_Account> > 0)
+  f_account_lookup <TAG.Slot1_Account>
+on=12
+IF (<TAG.Slot2_Account> > 0)
+  f_account_lookup <TAG.Slot2_Account>
+on=13
+IF (<TAG.Slot3_Account> > 0)
+  f_account_lookup <TAG.Slot3_Account>
+on=14
+IF (<TAG.Slot4_Account> > 0)
+  f_account_lookup <TAG.Slot4_Account>
+on=15
+IF (<TAG.Slot5_Account> > 0)
+  f_account_lookup <TAG.Slot5_Account>
+on=16
+IF (<TAG.Slot6_Account> > 0)
+  f_account_lookup <TAG.Slot6_Account>
+on=17
+IF (<TAG.Slot7_Account> > 0)
+  f_account_lookup <TAG.Slot7_Account>
+on=18
+IF (<TAG.Slot8_Account> > 0)
+  f_account_lookup <TAG.Slot8_Account>
+on=19
+IF (<TAG.Slot9_Account> > 0)
+  f_account_lookup <TAG.Slot9_Account>
+on=20
+IF (<TAG.Slot10_Account> > 0)
+  f_account_lookup <TAG.Slot10_Account>
+on=21
+IF (<TAG.Slot11_Account> > 0)
+  f_account_lookup <TAG.Slot11_Account>
+on=22
+IF (<TAG.Slot12_Account> > 0)
+  f_account_lookup <TAG.Slot12_Account>
+on=23
+IF (<TAG.Slot13_Account> > 0)
+  f_account_lookup <TAG.Slot13_Account>
+on=24
+IF (<TAG.Slot14_Account> > 0)
+  f_account_lookup <TAG.Slot14_Account>
+on=25
+IF (<TAG.Slot15_Account> > 0)
+  f_account_lookup <TAG.Slot15_Account>
+on=26
+IF (<TAG.Slot16_Account> > 0)
+  f_account_lookup <TAG.Slot16_Account>
+on=27
+IF (<TAG.Slot17_Account> > 0)
+  f_account_lookup <TAG.Slot17_Account>
+on=28
+IF (<TAG.Slot18_Account> > 0)
+  f_account_lookup <TAG.Slot18_Account>
+on=29
+IF (<TAG.Slot19_Account> > 0)
+  f_account_lookup <TAG.Slot19_Account>
+on=30
+IF (<TAG.Slot20_Account> > 0)
+  f_account_lookup <TAG.Slot20_Account>
+on=31
+IF (<TAG.Slot21_Account> > 0)
+  f_account_lookup <TAG.Slot21_Account>
+on=32
+IF (<TAG.Slot22_Account> > 0)
+  f_account_lookup <TAG.Slot22_Account>
+on=33
+IF (<TAG.Slot23_Account> > 0)
+  f_account_lookup <TAG.Slot23_Account>
+on=34
+IF (<TAG.Slot24_Account> > 0)
+  f_account_lookup <TAG.Slot24_Account>
+on=35
+IF (<TAG.Slot25_Account> > 0)
+  f_account_lookup <TAG.Slot25_Account>
+on=36
+IF (<TAG.Slot26_Account> > 0)
+  f_account_lookup <TAG.Slot26_Account>
+on=37
+IF (<TAG.Slot27_Account> > 0)
+  f_account_lookup <TAG.Slot27_Account>
+on=38
+IF (<TAG.Slot28_Account> > 0)
+  f_account_lookup <TAG.Slot28_Account>
+on=39
+IF (<TAG.Slot29_Account> > 0)
+  f_account_lookup <TAG.Slot29_Account>
+on=40
+IF (<TAG.Slot30_Account> > 0)
+  f_account_lookup <TAG.Slot30_Account>
+on=41
+IF (<TAG.Slot31_Account> > 0)
+  f_account_lookup <TAG.Slot31_Account>
+on=42
+IF (<TAG.Slot32_Account> > 0)
+  f_account_lookup <TAG.Slot32_Account>
+
+on=43
+f_account_lookup <ARGTXT[1]>
+
+[FUNCTION f_account_lookup]
+TAG.AccountLookup=<ARGS>
+DIALOG d_account_lookup
+
+[FUNCTION f_log_jailed_account]
+IF !(0<FINDID(i_jail_book).TAG.Slot1_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot1_Account=<ARGS>
+  ACT.MOREX=1
+ELSEIF !(<SRC.FINDID(i_jail_book).TAG.Slot2_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot2_Account=<ARGS>
+  ACT.MOREX=2
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot3_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot3_Account=<ARGS>
+  ACT.MOREX=3
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot4_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot4_Account=<ARGS>
+  ACT.MOREX=4
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot5_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot5_Account=<ARGS>
+  ACT.MOREX=5
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot6_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot6_Account=<ARGS>
+  ACT.MOREX=6
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot7_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot7_Account=<ARGS>
+  ACT.MOREX=7
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot8_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot8_Account=<ARGS>
+  ACT.MOREX=8
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot9_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot9_Account=<ARGS>
+  ACT.MOREX=9
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot10_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot10_Account=<ARGS>
+  ACT.MOREX=10
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot11_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot11_Account=<ARGS>
+  ACT.MOREX=11
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot12_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot12_Account=<ARGS>
+  ACT.MOREX=12
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot13_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot13_Account=<ARGS>
+  ACT.MOREX=13
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot14_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot14_Account=<ARGS>
+  ACT.MOREX=14
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot15_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot15_Account=<ARGS>
+  ACT.MOREX=15
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot16_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot16_Account=<ARGS>
+  ACT.MOREX=16
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot17_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot17_Account=<ARGS>
+  ACT.MOREX=17
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot18_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot18_Account=<ARGS>
+  ACT.MOREX=18
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot19_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot19_Account=<ARGS>
+  ACT.MOREX=19
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot20_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot20_Account=<ARGS>
+  ACT.MOREX=20
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot21_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot21_Account=<ARGS>
+  ACT.MOREX=21
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot22_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot22_Account=<ARGS>
+  ACT.MOREX=22
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot23_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot23_Account=<ARGS>
+  ACT.MOREX=23
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot24_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot24_Account=<ARGS>
+  ACT.MOREX=24
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot25_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot25_Account=<ARGS>
+  ACT.MOREX=25
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot26_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot26_Account=<ARGS>
+  ACT.MOREX=26
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot27_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot27_Account=<ARGS>
+  ACT.MOREX=27
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot28_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot28_Account=<ARGS>
+  ACT.MOREX=28
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot29_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot29_Account=<ARGS>
+  ACT.MOREX=29
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot30_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot30_Account=<ARGS>
+  ACT.MOREX=30
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot31_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot31_Account=<ARGS>
+  ACT.MOREX=31
+ELSEIF !(<SRC.SRC.FINDID(i_jail_book).TAG.Slot32_Account> > 0)
+  SRC.FINDID(i_jail_book).TAG.Slot32_Account=<ARGS>
+  ACT.MOREX=32
+ELSE
+  SRC.MESSAGE=The jail log book was filled up, slot 1 was overwriten.
+  SRC.FINDID(i_jail_book).TAG.Slot1_Account=<ARGS>
+  ACT.MOREX=1
+ENDIF
+
+[DIALOG d_account_lookup]
+320,240
+resizepic 0 0 5120 250 100
+resizepic 0 0 5100 250 40
+
+text 5 5 1108 0
+text 5 40 480 1
+
+[DIALOG d_account_lookup text]
+<TAG.AccountLookup>
+Times in jail: <EVAL <SRC.UID.<uid_jail_book>.TAG.<TAG.AccountLookup>>>
+
+
+[DIALOG d_account_lookup button]
+
+[EOF]

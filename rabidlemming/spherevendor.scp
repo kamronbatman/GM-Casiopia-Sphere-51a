@@ -1,0 +1,1333 @@
+// Avatar's Realm - VENDOR CUSTOMIZATION SYSTEM v2.0c
+// Created by:  Admin Vaticus
+// Script Location:  http://www.avatarsrealm.com/
+// Supported Sphere versions: v.55/99/1.0
+
+// FILE LAST UPDATED: Tuesday, June 26, 2001
+// Vendor Customization System v2.0c created by Vaticus
+
+VERSION=0.55
+
+[ITEMDEF i_deed_housevendor]
+NAME=contract of employment
+ID=i_deed
+VALUE=1252
+
+ON=@DClick
+IF (!<SRC.REGION.FLAGS>==01092 || !<SRC.REGION.FLAGS>==01192)
+SRC.SYSMESSAGE Vendors can only be placed in houses.
+RETURN 1
+ELSEIF (<SRC.REGION.EVENTS>==r_house_private) || (<EVAL <SRC.REGION.TAG.VENDORS>>>=20)
+SRC.SYSMESSAGE You cannot place this vendor.  Make sure the house is public and that you have not reached your vendor limit.
+RETURN 1
+ELSEIF (<LINK>==04fffffff)
+MESSAGE This deed must be locked down to use.
+RETURN 1
+ELSEIF (<EVAL <SRC.UID>>==<EVAL <SRC.REGION.TAG.NAME>>) || (<EVAL <SRC.REGION.TAG.CO1UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.CO2UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.CO3UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.CO4UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.CO5UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.CO6UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.CO7UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.CO8UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F1UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F2UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F3UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F4UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F5UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F6UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F7UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F8UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F9UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F10UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F11UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F12UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F13UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F14UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F15UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F16UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F17UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F18UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F19UID>>==<EVAL <SRC.UID>>) || (<EVAL <SRC.REGION.TAG.F20UID>>==<EVAL <SRC.UID>>) || (<SRC.ACCOUNT.PLEVEL>>=4)
+SRC.NEWNPC { C_HOUSE_VENDOR 1 C_HOUSE_VENDOR_F 1 }
+SRC.ACT.FINDLAYER(29).MORE1=500
+SRC.ACT.SAY Greetings, I will be working for you.
+SRC.TAG.VENDOR <SRC.ACT.UID>
+SRC.ACT.P <P>
+LINK.TAG.VENDORS <EVAL <LINK.TAG.VENDORS>>+1
+SRC.NEWITEM i_vendor_use
+SRC.ACT.CONT <SRC.TAG.VENDOR>
+SRC.ACT.LINK <SRC.UID>
+SRC.NEWITEM i_vendor_link
+SRC.ACT.CONT <SRC.TAG.VENDOR>
+SRC.ACT.LINK <LINK.UID>
+SRC.NEWITEM=i_custom_mem_vendor
+SRC.ACT.COLOR memory_ipet
+SRC.ACT.LINK <SRC.UID>
+SRC.ACT.MORE <SRC.UID>
+SRC.ACT.MORE2 memory_ipet
+SRC.ACT.CONT <SRC.TAG.VENDOR>
+SRC.ACT.TIMER 30
+CONT.ACT.BOUNCE
+CONT.UPDATEX
+REMOVE
+RETURN 1
+ELSE
+SRC.SYSMESSAGE You must ask the owner of this building to name you a friend of the household in order to place a vendor here.
+RETURN 1
+ENDIF
+
+[ITEMDEF i_vendor_link]
+ID=0db5
+DEFNAME=i_vendor_link
+NAME=[DO NOT REMOVE] VEND LINK
+
+[ITEMDEF i_custom_mem_vendor]
+DEFNAME=i_custom_mem_vendor
+ID=i_memory
+NAME=Vendor Memory [DO NOT REMOVE]
+
+ON=@Timer
+LINK <MORE>
+COLOR <MORE2>
+TIMER 30
+RETURN 1
+
+[ITEMDEF i_vendor_use]
+ID=0db5
+DEFNAME=i_vendor_use
+NAME=[DO NOT REMOVE]
+
+[CHARDEF c_house_vendor]
+DEFNAME=C_HOUSE_VENDOR 
+NAME=#NAMES_HUMANMALE
+ID=C_MAN
+CAN=mt_equip
+HIREDAYWAGE=50
+
+TSPEECH=spk_house_vendor
+TEVENTS=e_Human_ConvInit
+TEVENTS=e_Human_Needs
+
+ON=@Create
+NPC=brain_vendor
+COLOR=colors_skin
+FLAGS=000000005
+NEED=i_gold
+SPEECHCOLOR 030f
+TAG.HIREDWAGE 50
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=random_pants
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+
+CATEGORY=Civilized
+SUBSECTION=Tradesmen
+DESCRIPTION=House Vendor
+
+ON=@Dclick
+IF (<FINDID.i_vendor_use.LINK>==<SRC.UID>)
+DIALOG d_vendor_main
+RETURN 1
+ELSE
+BUY
+RETURN 1
+ENDIF
+
+ON=@GetHit
+RETURN 1
+
+ON=@Hit
+RETURN 1
+
+[CHARDEF c_house_vendor_f]
+DEFNAME=C_HOUSE_VENDOR_F
+NAME=#NAMES_HUMANFEMALE
+ID=C_WOMAN
+CAN=mt_equip
+HIREDAYWAGE=50
+
+TSPEECH=spk_house_vendor
+TEVENTS=e_Human_ConvInit
+TEVENTS=e_Human_Needs
+
+ON=@Create
+NPC=brain_vendor
+COLOR=colors_skin
+FLAGS=000000005
+NEED=i_gold
+SPEECHCOLOR 030f
+TAG.HIREDWAGE 50
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+ITEM=i_shirt_plain
+COLOR=colors_all
+ITEM=random_skirt
+COLOR=colors_all
+ITEM=random_shoes
+COLOR=colors_neutral
+
+CATEGORY=Provisions - Deeds
+SUBSECTION=Vendor Deeds
+DESCRIPTION=Player Vendor Female
+
+ON=@Dclick
+IF (!<REGION.FLAGS>==01092 || !<REGION.FLAGS>==01192)
+REMOVE
+SRC.SYSMESSAGE Vendor improperly placed.
+RETURN 1
+ELSEIF (<FINDID.i_vendor_use.LINK>==<SRC.UID>)
+DIALOG d_vendor_main
+RETURN 1
+ELSE
+BUY
+RETURN 1
+ENDIF
+
+ON=@GetHit
+RETURN 1
+
+ON=@Hit
+RETURN 1
+
+[SPEECH spk_house_vendor]
+DEFNAME=spk_house_vendor
+ON=*Help*
+IF (<FINDID.i_vendor_use.LINK>==<SRC.UID>)
+SRC.SYSMESSAGE To set the price of items you are selling, say Price, and then the amount you wish to sell the item for.
+SRC.SYSMESSAGE
+SRC.SYSMESSAGE To view your vendor's inventory, type <NAME> Inventory, or <NAME> Stock.
+SRC.SYSMESSAGE
+SRC.SYSMESSAGE To change the vendors clothing or items, double click your vendor, and select 'Customize Vendor' from the vendor status menu.
+RETURN 1
+ELSE
+RETURN 1
+ENDIF
+
+ON=redeed*
+IF (<FINDID.i_vendor_use.LINK>==<SRC.UID>)
+SRC.NEWITEM i_deed_housevendor
+SRC.ACT.BOUNCE
+FINDID.i_vendor_link.LINK.TAG.VENDORS <EVAL <FINDID.i_vendor_link.LINK.TAG.VENDORS>>+(-1)
+REMOVE
+RETURN 1
+ELSE
+RETURN 1
+ENDIF
+
+ON=buy*
+IF (!<REGION.FLAGS>==01092 || !<REGION.FLAGS>==01192)
+REMOVE
+SRC.SYSMESSAGE Vendor improperly placed.
+RETURN 1
+ELSEIF (<FINDID.i_vendor_use.LINK>==<SRC.UID>)
+SPEAK You own this shop, just take what you want.
+RETURN 1
+ELSE
+BUY
+RETURN 1
+ENDIF
+
+ON=sell*
+IF (!<REGION.FLAGS>==01092 || !<REGION.FLAGS>==01192)
+REMOVE
+SRC.SYSMESSAGE Vendor improperly placed.
+RETURN 1
+ELSE
+RETURN 1
+ENDIF
+
+ON=get*
+IF (!<REGION.FLAGS>==01092 || !<REGION.FLAGS>==01192)
+REMOVE
+SRC.SYSMESSAGE Vendor improperly placed.
+RETURN 1
+ELSEIF (<FINDID.i_vendor_use.LINK>==<SRC.UID>)
+CASH
+RETURN 1
+ELSE
+RETURN 1
+ENDIF
+
+ON=*
+RETURN 1
+
+[DIALOG d_vendor_nonown]                 // VENDOR NON-OWN  
+150,200
+page 0 
+gumppic 100 10 2070 
+button 165 85 2071 2072 1 0 0 
+text 141 45 0 0 
+button 123 45 208 209 1 0 1 
+
+[DIALOG d_vendor_nonown TEXT]                       
+Remove vendor?
+
+[DIALOG d_vendor_nonown BUTTON]  
+ONBUTTON=0
+ONBUTTON=1
+REMOVE
+SRC.SYSMESSAGE The vendor has been remove from your house.
+RETURN 1
+
+[DIALOG d_vendor_main]                 // VENDOR START MENU  
+150,200
+page 0 
+gumppic 100 10 2070 
+text 150 35 0 0 
+text 150 58 0 1 
+button 125 35 208 209 1 0 1 
+button 125 58 208 209 1 0 2 
+button 165 85 2071 2072 1 0 0 
+
+[DIALOG d_vendor_main TEXT]                       
+See goods
+Customize
+
+[DIALOG d_vendor_main BUTTON]  
+ONBUTTON=0
+ONBUTTON=1
+FINDLAYER.26.OPEN
+SPEAK Take a look at your goods.
+SRC.SYSMESSAGE For a list of commands for your vendor, say 'Help'.
+RETURN 1
+ONBUTTON=2
+DIALOG d_vendor_customize
+RETURN 1
+
+[dialog d_vendor_customize]                  // VENDOR CUSTOMIZATION MENU 
+0,0                                          // Position
+page 0                                       // Page 0
+resizepic 25 0 2600 500 400                  // Backround
+resizepic 45 60 5100 450 25                  // Backround Rectangle Top
+resizepic 45 330 5100 450 25                 // Backround Rectangle Bottom
+text 130 15 995 0                            // Title Text
+button 340 358 242 241 1 0 2                 // Cancel Button 2
+button 410 358 247 248 1 0 1                 // Okay Button 1
+text 60 60 0 1                               // Upper Torso Text
+button 160 63 5209 5003 0 1 0                // Upper Torso Button
+text 190 60 0 15                             // Over Chest Text
+button 270 63 5209 5003 0 3 0                // Over Chest Button
+text 300 60 0 32                             // Footwear Text
+button 370 63 5209 5003 0 5 0                // Footwear Button
+text 400 60 0 19                             // Hats Text
+button 440 63 5209 5003 0 4 0                // Hats Button
+text 65 330 0 11                             // Lower Torso Text
+button 165 333 5208 5003 0 2 0               // Lower Torso Button
+text 195 330 0 37                            // Back Text
+button 245 333 5208 5003 0 6 0               // Back Button
+text 275 330 0 39                            // Hair Text
+button 320 333 5208 5003 0 7 0               // Hair Button
+text 350 330 0 50                            // Held Items Text
+button 450 333 5208 5003 0 8 0               // Held Items Button
+page 1                                       // Page 1
+text 70 95 995 3                             // Shirt Text                                                    
+button 130 120 210 211 1 0 3                 // Shirt Button
+tilepic 70 120 5399                          // Shirt Picture
+text 70 175 995 4                            // Fancy Shirt Text
+button 130 205 210 211 1 0 4                 // Fancy Shirt Button
+tilepic 75 200 7933                          // Fancy Shirt Picture
+text 70 255 995 7                            // Plain Dress
+button 130 280 210 211 1 0 5                 // Plain Dress Button
+tilepic 75 280 7937                          // Plain Dress Picture
+text 200 95 995 8                            // Fancy Dress Text
+button 270 120 210 211 1 0 6                 // Fancy Dress Button
+tilepic 210 110 7935                         // Fancy Dress Picture
+text 200 175 995 9                           // Robe Text
+button 270 205 210 211 1 0 7                 // Robe Button
+tilepic 210 200 7939                         // Robe Picture
+resizepic 85 358 5100 100 25                 // Color Backround Box
+text 95 360 0 59                             // Color Text
+button 150 361 210 211 1 0 8                 // Color Button
+resizepic 190 358 5100 100 25                // Remove Backround Box
+text 205 360 0 60                            // Remove Text
+button 260 361 210 211 1 0 9                 // Remove Button
+page 2                                       // Page 2
+text 100 120 995 12                          // Fancy Pants Text
+button 145 150 210 211 1 0 10                // Fancy Pants Button
+tilepic 100 140 5433                         // Fancy Pants Picture
+text 100 220 995 13                          // Kilt Text
+button 145 250 210 211 1 0 11                // Kilt Button
+tilepic 100 250 5431                         // Kilt Pic
+text 275 120 995 14                          // Skirt Text
+button 340 150 210 211 1 0 12                // Skirt Button
+tilepic 280 140 5398                         // Skirt Picture
+resizepic 85 358 5100 100 25                 // Color Backround Box           
+text 95 360 0 59                             // Color Text
+button 150 361 210 211 1 0 13                // Color Button
+resizepic 190 358 5100 100 25                // Remove Backround Box
+text 205 360 0 60                            // Remove Text
+button 260 361 210 211 1 0 14                // Remove Button
+page 3                                       // Page 3
+text 70 95 995 2                             // Doublet Text
+button 130 120 210 211 1 0 15                // Doublet Button
+tilepic 65 120 8059                          // Doublet Picture
+text 200 95 995 5                            // Tunic Text                      
+button 270 120 210 211 1 0 16                // Tunic Button          
+tilepic 210 110 8097                         // Tunic Picture
+text 200 175 995 6                           // Surcoat Text                  
+button 270 205 210 211 1 0 17                // Surcoat Button
+tilepic 210 200 8189                         // Surcoat Picture
+text 70 165 995 16                           // Body Sash Text                  
+button 130 205 210 211 1 0 18                // Body Sash Button
+tilepic 80 200 5441                          // Body Sash Picture
+text 70 255 995 17                           // Half Apron Text                 
+button 130 280 210 211 1 0 19                // Half Apron Button
+tilepic 75 280 5435                          // Half Apron Picture
+text 200 255 995 18                          // Full Apron Text
+button 270 280 210 211 1 0 20                // Full Apron Button
+tilepic 210 280 5437                         // Full Apron Picture
+text 340 95 995 10                           // Jesters Robe Text
+button 400 120 210 211 1 0 21                // Jesters Robe Button
+tilepic 330 115 8095                         // Jesters Robe Picture
+resizepic 85 358 5100 100 25                 // Color Backround Box  
+text 95 360 0 59                             // Color Text
+button 150 361 210 211 1 0 22                // Color Button
+resizepic 190 358 5100 100 25                // Remove Backround Box
+text 205 360 0 60                            // Remove Text 
+button 260 361 210 211 1 0 23                // Remove Button
+page 4                                       // Page 4
+text 70 95 995 20                            // Hats Text
+button 130 120 210 211 1 0 24                // Hats Button
+tilepic 75 120 5444                          // Hats Picture
+text 70 175 995 21                           // Bandana Text
+button 130 205 210 211 1 0 25                // Bandana Button
+tilepic 75 200 5440                          // Bandana Picture
+text 70 255 995 22                           // Floopy Text
+button 130 280 210 211 1 0 26                // Floppy Button
+tilepic 75 280 5907                          // Floppy Picture
+text 180 95 995 23                           // Wide Text
+button 240 120 210 211 1 0 27                // Wide Button
+tilepic 190 120 5908                         // Wide Picture
+text 180 175 995 24                          // Cap Text
+button 240 205 210 211 1 0 28                // Cap Button
+tilepic 190 205 5909                         // Cap Picture
+text 180 255 995 25                          // Tall Text
+button 240 280 210 211 1 0 29                // Tall Button
+tilepic 195 280 5910                         // Tall Picture
+text 305 95 995 26                           // Straw Text
+button 350 120 210 211 1 0 30                // Straw Button
+tilepic 305 120 5911                         // Straw Picture
+text 305 175 995 27                          // Wizards Text
+button 350 205 210 211 1 0 31                // Wizards Button
+tilepic 305 205 5912                         // Wizards Picture
+text 305 255 995 28                          // Bonnet Text
+button 350 280 210 211 1 0 32                // Bonnet Button
+tilepic 310 280 5913                         // Bonnet Picture
+text 405 95 995 29                           // Feathered Text
+button 450 120 210 211 1 0 33                // Feathered Button
+tilepic 405 120 5914                         // Feathered Picture
+text 405 175 995 30                          // Tricone Text
+button 450 205 210 211 1 0 34                // Tricone Button
+tilepic 405 205 5915                         // Tricone Picture
+text 405 255 995 31                          // Jesters Text 
+button 450 280 210 211 1 0 35                // Jesteres Button
+tilepic 410 280 5916                         // Jesteres Picture
+resizepic 85 358 5100 100 25                 // Color Backround Box 
+text 95 360 0 59                             // Color Text
+button 150 361 210 211 1 0 36                // Color Button
+resizepic 190 358 5100 100 25                // Remove Backround Box
+text 205 360 0 60                            // Remove Text
+button 260 361 210 211 1 0 37                // Remove Button
+page 5                                       // Page 5
+text 100 120 995 33                          // Sandals Text
+button 145 150 210 211 1 0 38                // Sandals Button
+tilepic 100 140 5901                         // Sandals Picture 
+text 100 220 995 34                          // Shoes Text
+button 145 250 210 211 1 0 39                // Shoes Button
+tilepic 100 250 5904                         // Shoes Picture
+text 275 120 995 35                          // Boots Text
+button 340 150 210 211 1 0 40                // Boots Button
+tilepic 280 140 5899                         // Boots Picture
+text 275 220 995 36                          // Thigh Boots Text
+button 340 250 210 211 1 0 41                // Thigh Boots Button
+tilepic 280 240 5906                         // Thigh Boots Picture
+resizepic 85 358 5100 100 25                 // Color Backround Box 
+text 95 360 0 59                             // Color Text
+button 150 361 210 211 1 0 42                // Color Picture
+resizepic 190 358 5100 100 25                // Remove Backround Box
+text 205 360 0 60                            // Remove Text
+button 260 361 210 211 1 0 43                // Remove Button
+page 6                                       // Page 6
+text 100 120 995 38                          // Cloak Text 
+button 145 150 210 211 1 0 44                // Cloak Button
+tilepic 85 150 5397                          // Cloak Picture               
+resizepic 85 358 5100 100 25                 // Color Backround Box 
+text 95 360 0 59                             // Color Text
+button 150 361 210 211 1 0 45                // Color Button 
+resizepic 190 358 5100 100 25                // Remove Backround Box
+text 205 360 0 60                            // Remove Text
+button 260 361 210 211 1 0 46                // Remove Button
+page 7                                       // Page 7
+text 90 95 995 40                            // Short Text
+button 70 95 210 211 1 0 47                  // Short Button
+text 90 120 995 41                           // Long Text
+button 70 120 210 211 1 0 48                 // Long Button
+text 90 145 995 42                           // Pony Tail Text
+button 70 145 210 211 1 0 49                 // Pony Tail Button
+text 90 170 995 43                           // Mohawk Text
+button 70 170 210 211 1 0 50                 // Mohawk Button
+text 90 195 995 44                           // Pageboy Text
+button 70 195 210 211 1 0 51                 // Pageboy Button
+text 90 220 995 45                           // Topknot Text
+button 70 220 210 211 1 0 52                 // Topknot Button
+text 90 245 995 46                           // Curly Text
+button 70 245 210 211 1 0 53                 // Curly Button
+text 90 270 995 47                           // Receeding Text      
+button 70 270 210 211 1 0 54                 // Receeding Button
+text 90 295 995 48                           // 2 Tails Text
+button 70 295 210 211 1 0 55                 // 2 Tails Button
+text 270 95 995 52                           // Moustache Text
+button 250 95 210 211 1 0 56                 // Moustache Button
+text 270 120 995 53                          // Short Beard Text
+button 250 120 210 211 1 0 57                // Short Beard Button
+text 270 145 995 54                          // Short Beard / Moustache Text
+button 250 145 210 211 1 0 58                // Short Beard / Moustache Button
+text 270 170 995 55                          // Long Beard Text
+button 250 170 210 211 1 0 59                // Long Beard Button
+text 270 195 995 56                          // Long Beard / Moustache Text
+button 250 195 210 211 1 0 60                // Long Beard / Moustache Button
+text 270 220 995 57                          // Goatee Text
+button 250 220 210 211 1 0 61                // Goatee Button
+text 270 245 995 58                          // Vandyke Text
+button 250 245 210 211 1 0 62                // Vandyke Button
+resizepic 85 358 5100 100 25                 // Color Backround Box 
+text 95 360 0 59                             // Color Text
+button 150 361 210 211 1 0 63                // Color Button
+resizepic 190 358 5100 100 25                // Remove Backround Box
+text 205 360 0 60                            // Remove Text
+button 260 361 210 211 1 0 64                // Remove Button
+page 8                                       // Page 8
+text 90 95 995 64                            // Fishing Pole Text
+button 70 95 210 211 1 0 65                  // Fishing Pole Button
+text 90 120 995 65                           // Pickaxe Text
+button 70 120 210 211 1 0 66                 // Pickaxe Button
+text 90 145 995 66                           // Pitchfork Text
+button 70 145 210 211 1 0 67                 // Pitchfork Button
+text 90 170 995 67                           // Cleaver Text
+button 70 170 210 211 1 0 68                 // Cleaver Button
+text 90 195 995 68                           // Mace Text
+button 70 195 210 211 1 0 69                 // Mace Button
+text 90 220 995 69                           // Torch Text
+button 70 220 210 211 1 0 70                 // Torch Button
+text 90 245 995 70                           // Hammer Text
+button 70 245 210 211 1 0 71                 // Hammer Button
+text 90 270 995 71                           // Longsword Text
+button 70 270 210 211 1 0 72                 // Longsword Button
+text 90 295 995 72                           // Gnarlled Staff Text
+button 70 295 210 211 1 0 73                 // Gnarlled Staff Button
+text 270 95 995 73                           // Crossbow Text
+button 250 95 210 211 1 0 74                 // Croosbow Button
+text 270 120 995 74                          // War Mace Text
+button 250 120 210 211 1 0 75                // War Mace Button
+text 270 145 995 75                          // Two-Handed Axe Text
+button 250 145 210 211 1 0 76                // Two-Handed Axe Button
+text 270 170 995 76                          // Spear Text
+button 250 170 210 211 1 0 77                // Spear Button
+text 270 195 995 77                          // Katana Text
+button 250 195 210 211 1 0 78                // Katana Button
+text 270 220 995 78                          // Spellbook Text
+button 250 220 210 211 1 0 79                // Spellbook Button
+resizepic 190 358 5100 100 25                // Remove Backround Box
+text 205 360 0 60                            // Remove Text
+button 260 361 210 211 1 0 80                // Remove Button
+
+[dialog d_vendor_customize TEXT]
+VENDOR CUSTOMIZATION MENU
+Upper Torso
+Doublet
+Shirt
+Fancy shirt
+Tunic
+Surcoat
+Plain dress
+Fancy dress
+Robe
+Jester's Robe
+Lower Torso
+Fancy pants
+Kilt
+Skirt
+Over chest
+Body sash
+Half apron
+Full apron
+Hats
+Skullcap
+Bandana
+Floppy
+Wide
+Cap
+Tall
+Straw
+Wizards
+Bonnet
+Feathered
+Tricorne
+Jester's
+Footwear
+Sandals
+Shoes
+Boots
+Thigh Boots
+Back
+Cloak
+Hair
+Short
+Long
+Pony Tail
+Mohawk
+Pageboy
+Topknot
+Curly
+Receding
+2 Tails
+Bald
+Held Items
+None
+Moustache
+Short Beard
+Short Beard / Moustache
+Long Beard
+Long Beard / Moustache
+Goatee
+VanDyke
+Color
+Remove
+Change Name
+Male
+Change Greeting
+Fishing Pole
+Pickaxe
+Pitchfork
+Cleaver
+Mace
+Torch
+Hammer
+Long Sword
+Gnarled Staff
+Crossbow
+War Mace
+Two-Handed Axe
+Spear
+Katana
+Spellbook
+
+[dialog d_vendor_customize BUTTON]
+ONBUTTON=0
+v_rand_message
+RETURN 1
+ONBUTTON=1
+v_rand_message
+RETURN 1
+ONBUTTON=2
+v_rand_message
+RETURN 1
+ONBUTTON=3  //shirt
+FINDLAYER(5).REMOVE
+SRC.NEWITEM 01517
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=4  //fancy shirt
+FINDLAYER(5).REMOVE
+SRC.NEWITEM 01efd
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=5  //plain dress
+FINDLAYER(5).REMOVE
+SRC.NEWITEM 01f01
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=6  //fancy dress
+FINDLAYER(22).REMOVE
+SRC.NEWITEM 01eff
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=7  //robe
+FINDLAYER(22).REMOVE
+SRC.NEWITEM 01f03
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=8                 //  <<<<<-----COLOR BUTTON, ADD GUMP THERE
+IF (<FINDLAYER.5.UID>>0) && (<FINDLAYER.22.UID>>0)
+DIALOG d_vend_color_1
+RETURN 1
+ELSEIF (<FINDLAYER.5.UID>>0)
+FINDLAYER(5).INPDLG COLOR 5
+RETURN 1
+ELSE
+FINDLAYER(22).INPDLG COLOR 5
+RETURN 1
+ENDIF
+ONBUTTON=9
+FINDLAYER(5).REMOVE
+FINDLAYER(22).REMOVE
+v_rand_message
+RETURN 1
+ONBUTTON=10  //fancy pants
+FINDLAYER(4).REMOVE
+SRC.NEWITEM 01539
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=11  //kilt
+FINDLAYER(23).REMOVE
+SRC.NEWITEM 01537
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=12  //skirt
+FINDLAYER(23).REMOVE
+SRC.NEWITEM 01516
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=13                //  <<<<<-----COLOR BUTTON, ADD GUMP THERE
+IF (<FINDLAYER.4.UID>>0) && (<FINDLAYER.23.UID>>0)
+DIALOG d_vend_color_2
+RETURN 1
+ELSEIF (<FINDLAYER.4.UID>>0)
+FINDLAYER(4).INPDLG COLOR 5
+RETURN 1
+ELSE
+FINDLAYER(23).INPDLG COLOR 5
+RETURN 1
+ENDIF
+ONBUTTON=14
+FINDLAYER(4).REMOVE
+FINDLAYER(23).REMOVE
+v_rand_message
+RETURN 1
+ONBUTTON=15  //doublet
+FINDLAYER(17).REMOVE
+SRC.NEWITEM 01f7b
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=16  //tunic        
+FINDLAYER(17).REMOVE
+SRC.NEWITEM 01fa1
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=17  //surcoat             
+FINDLAYER(17).REMOVE
+SRC.NEWITEM 01ffd
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=18  //body sash
+FINDLAYER(17).REMOVE
+SRC.NEWITEM 01541
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=19  //half apron
+FINDLAYER(12).REMOVE
+SRC.NEWITEM 0153b
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=20  //full apron
+FINDLAYER(17).REMOVE
+SRC.NEWITEM 0153d
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=21  //jester suit
+FINDLAYER(17).REMOVE
+SRC.NEWITEM 01f9f
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=22                //  <<<<<-----COLOR BUTTON, ADD GUMP THERE
+IF (<FINDLAYER.17.UID>>0) && (<FINDLAYER.12.UID>>0)
+DIALOG d_vend_color_3
+RETURN 1
+ELSEIF (<FINDLAYER.17.UID>>0)
+FINDLAYER(17).INPDLG COLOR 5
+RETURN 1
+ELSE
+FINDLAYER(12).INPDLG COLOR 5
+RETURN 1
+ENDIF
+ONBUTTON=23
+FINDLAYER(12).REMOVE
+FINDLAYER(17).REMOVE
+v_rand_message
+RETURN 1
+ONBUTTON=24  //skullcap
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 01544
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=25  //bandana
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 0153f
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=26  //floppy
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 01713
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=27  //wide brim
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 01714
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=28  //cap
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 01715
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=29  //tall
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 01716
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=30  //straw
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 01717
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=31  //wizards
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 01718
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=32  //bonet
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 01719
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=33  //feathered
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 0171a
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=34  //tricone
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 0171b
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=35  //jesters
+FINDLAYER(6).REMOVE
+SRC.NEWITEM 0171c
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=36                //  <<<<<-----COLOR BUTTON, ADD GUMP THERE
+IF (<FINDLAYER.6.UID>>0)
+FINDLAYER(6).INPDLG COLOR 5
+RETURN 1
+ENDIF
+ONBUTTON=37
+FINDLAYER(6).REMOVE
+v_rand_message
+RETURN 1
+ONBUTTON=38  //sandals
+FINDLAYER(3).REMOVE
+SRC.NEWITEM 0170d
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=39  //shoes
+FINDLAYER(3).REMOVE
+SRC.NEWITEM 01710
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=40  //boots
+FINDLAYER(3).REMOVE
+SRC.NEWITEM 0170c
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=41  //thigh boots
+FINDLAYER(3).REMOVE
+SRC.NEWITEM 01712
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=42                //  <<<<<-----COLOR BUTTON, ADD GUMP THERE
+IF (<FINDLAYER.3.UID>>0)
+FINDLAYER(3).INPDLG COLOR 5
+RETURN 1
+ENDIF
+ONBUTTON=43
+FINDLAYER(3).REMOVE
+v_rand_message
+RETURN 1
+ONBUTTON=44  //cloak
+FINDLAYER(20).REMOVE
+SRC.NEWITEM 01515
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=45                //  <<<<<-----COLOR BUTTON, ADD GUMP THERE
+IF (<FINDLAYER.3.UID>>0) && (<FINDLAYER.20.UID>>0)
+DIALOG d_vend_color_4
+RETURN 1
+ELSEIF (<FINDLAYER.3.UID>>0)
+FINDLAYER(3).INPDLG COLOR 5
+RETURN 1
+ELSE
+FINDLAYER(20).INPDLG COLOR 5
+RETURN 1
+ENDIF
+ONBUTTON=46
+FINDLAYER(20).REMOVE
+v_rand_message
+RETURN 1
+ONBUTTON=47  //short hair
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 0203b
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=48  //long
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 0203c
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=49  //pony tail
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 0203d
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=50  //mohawk
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 02044
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=51  //pageboy
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 02045
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=52  //topknot
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 0204a
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=53  //curley
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 02047
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=54  //receding
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 02048
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=55  //2 tails
+FINDLAYER(11).REMOVE
+SRC.NEWITEM 02049
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=56  //moustache
+IF (<BODY>==c_Man)
+FINDLAYER(16).REMOVE
+SRC.NEWITEM 02041
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Female's cannot have facial hair!
+ONBUTTON=57  //short beard
+IF (<BODY>==c_Man)
+FINDLAYER(16).REMOVE
+SRC.NEWITEM 0203f
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Female's cannot have facial hair!
+ONBUTTON=58  //short beard/moustache
+IF (<BODY>==c_Man)
+FINDLAYER(16).REMOVE
+SRC.NEWITEM 0204b
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Female's cannot have facial hair!
+ONBUTTON=59  //long beard
+IF (<BODY>==c_Man)
+FINDLAYER(16).REMOVE
+SRC.NEWITEM 0203e
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Female's cannot have facial hair!
+ONBUTTON=60  //long beard/moustache
+IF (<BODY>==c_Man)
+FINDLAYER(16).REMOVE
+SRC.NEWITEM 0204c
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Female's cannot have facial hair!
+ONBUTTON=61  //goatee
+IF (<BODY>==c_Man)
+FINDLAYER(16).REMOVE
+SRC.NEWITEM 02040
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Female's cannot have facial hair!
+ONBUTTON=62  //vandyke
+IF (<BODY>==c_Man)
+FINDLAYER(16).REMOVE
+SRC.NEWITEM 0204d
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ELSE
+SRC.SYSMESSAGE Female's cannot have facial hair!
+ONBUTTON=63                //  <<<<<-----COLOR BUTTON, ADD GUMP THERE
+IF (<FINDLAYER.11.UID>>0) && (<FINDLAYER.16.UID>>0)
+DIALOG d_vend_color_5
+RETURN 1
+ELSEIF (<FINDLAYER.11.UID>>0)
+FINDLAYER(11).INPDLG COLOR 5
+RETURN 1
+ELSE
+FINDLAYER(16).INPDLG COLOR 5
+RETURN 1
+ENDIF
+ONBUTTON=64
+FINDLAYER(11).REMOVE
+FINDLAYER(16).REMOVE
+v_rand_message
+RETURN 1
+ONBUTTON=65  //fishing pole
+FINDLAYER(2).REMOVE
+SRC.NEWITEM 0dbf
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=66  //pickaxe
+FINDLAYER(2).REMOVE
+SRC.NEWITEM 0e86
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=67  //pitchfork
+FINDLAYER(2).REMOVE
+SRC.NEWITEM 0e87
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=68  //cleaver
+FINDLAYER(1).REMOVE
+SRC.NEWITEM 0ec3
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=69  //mace
+FINDLAYER(1).REMOVE
+SRC.NEWITEM 0f5c
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=70  //torch
+FINDLAYER(2).REMOVE
+SRC.NEWITEM 0f64
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=71  //hammer
+FINDLAYER(1).REMOVE
+SRC.NEWITEM 013e3
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=72  //longsword
+FINDLAYER(1).REMOVE
+SRC.NEWITEM 0f61
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=73  //gnarled staff
+FINDLAYER(2).REMOVE
+SRC.NEWITEM 013f8
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=74  //crossbow
+FINDLAYER(2).REMOVE
+SRC.NEWITEM 013fd
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=75  //war mace
+FINDLAYER(1).REMOVE
+SRC.NEWITEM 01407
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+RETURN 1
+ONBUTTON=76  //two-handed axe
+FINDLAYER(2).REMOVE
+SRC.NEWITEM 01443
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=77  //spear
+FINDLAYER(2).REMOVE
+SRC.NEWITEM 0f62
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=78  //katana
+FINDLAYER(1).REMOVE
+SRC.NEWITEM 013ff
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=79  //spellbook
+FINDLAYER(1).REMOVE
+SRC.NEWITEM 0efa
+SRC.ACT.CONT=<SERIAL>
+ACT.EQUIP
+v_rand_message
+RETURN 1
+ONBUTTON=80
+FINDLAYER(1).REMOVE
+FINDLAYER(2).REMOVE
+v_rand_message
+RETURN 1
+
+[DIALOG d_vend_color_1]              // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 300        // Curved Grey background 
+resizepic 210 185 3000 380 280        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 2                   // Description
+text 230 215 0000 3                   // Description
+
+[DIALOG d_vend_color_1 TEXT]
+I want to change layer 5.
+I want to change layer 22.
+Your vendor has multiple layers of items equiped.
+Which layer do you wish to set the color of?
+
+[DIALOG d_vend_color_1 BUTTON]
+ONBUTTON=0
+ONBUTTON=1
+FINDLAYER(5).INPDLG COLOR 5
+RETURN 1
+ONBUTTON=2
+FINDLAYER(22).INPDLG COLOR 5
+RETURN 1
+
+[DIALOG d_vend_color_2]              // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 300        // Curved Grey background 
+resizepic 210 185 3000 380 280        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 2                   // Description
+text 230 215 0000 3                   // Description
+
+[DIALOG d_vend_color_2 TEXT]
+I want to change layer 4.
+I want to change layer 23.
+Your vendor has multiple layers of items equiped.
+Which layer do you wish to set the color of?
+
+[DIALOG d_vend_color_2 BUTTON]
+ONBUTTON=0
+ONBUTTON=1
+FINDLAYER(4).INPDLG COLOR 5
+RETURN 1
+ONBUTTON=2
+FINDLAYER(23).INPDLG COLOR 5
+RETURN 1
+
+[DIALOG d_vend_color_3]              // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 300        // Curved Grey background 
+resizepic 210 185 3000 380 280        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 2                   // Description
+text 230 215 0000 3                   // Description
+text 227 400 995 7                    // Confirm Message 1
+text 227 415 995 8                    // Confirm Message 2
+text 227 430 995 9                    // Confirm Message 3
+
+[DIALOG d_vend_color_3 TEXT]
+I want to change layer 17.
+I want to change layer 12.
+Your vendor has multiple layers of items equiped.
+Which layer do you wish to set the color of?
+
+[DIALOG d_vend_color_3 BUTTON]
+ONBUTTON=0
+ONBUTTON=1
+FINDLAYER(17).INPDLG COLOR 5
+RETURN 1
+ONBUTTON=2
+FINDLAYER(12).INPDLG COLOR 5
+RETURN 1
+
+[DIALOG d_vend_color_4]              // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 300        // Curved Grey background 
+resizepic 210 185 3000 380 280        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 2                   // Description
+text 230 215 0000 3                   // Description
+
+[DIALOG d_vend_color_4 TEXT]
+I want to change layer 3.
+I want to change layer 20.
+Your vendor has multiple layers of items equiped.
+Which layer do you wish to set the color of?
+
+[DIALOG d_vend_color_4 BUTTON]
+ONBUTTON=0
+ONBUTTON=1
+FINDLAYER(3).INPDLG COLOR 5
+RETURN 1
+ONBUTTON=2
+FINDLAYER(20).INPDLG COLOR 5
+RETURN 1
+
+[DIALOG d_vend_color_5]              // Main
+0,0                                   // Position
+resizepic 200 175 5054 400 300        // Curved Grey background 
+resizepic 210 185 3000 380 280        // Curved White background 
+resizepic 220 195 3000 360 100        // Curved White box 
+text 260 315 0000 0                   // Continue Text
+button 220 315 4005 4006 1 0 1        // Continue Button
+text 260 340 0000 1                   // Cancel Text
+button 220 340 4005 4006 1 0 2        // Cancel Button
+text 230 200 0000 2                   // Description
+text 230 215 0000 3                   // Description
+
+[DIALOG d_vend_color_5 TEXT]
+I want to change layer 11.
+I want to change layer 16.
+Your vendor has multiple layers of items equiped.
+Which layer do you wish to set the color of?
+
+[DIALOG d_vend_color_5 BUTTON]
+ONBUTTON=0
+ONBUTTON=1
+FINDLAYER(11).INPDLG COLOR 5
+RETURN 1
+ONBUTTON=2
+FINDLAYER(16).INPDLG COLOR 5
+RETURN 1
+
+[FUNCTION v_rand_message]
+DORAND 10
+SPEAK Good journeys to you.
+ANIM 32
+SPEAK Safe travels to you.
+ANIM 32
+SPEAK The market will surely be good for such fine wares.
+ANIM 32
+SPEAK I only live to serve thee.
+ANIM 32
+SPEAK One day, I would like to ride a horse, until then I will wait here and sell goods for you.
+ANIM 32
+SPEAK I do only thy bidding.
+ANIM 32
+SPEAK Oh goody!  I get to stand here and sell things.  My life is complete.
+ANIM 32
+SPEAK It shall be as you say.
+ANIM 32
+SPEAK Mother told me to become a mage, but no, I wanted a 'people' position.
+ANIM 32
+SPEAK I love you, fair master.
+ANIM 32
+ENDDO

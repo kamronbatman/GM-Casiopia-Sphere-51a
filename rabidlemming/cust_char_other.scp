@@ -1,0 +1,448 @@
+[CHARDEF c_h_dreadknight]
+ID=C_MAN
+NAME=#NAMES_DREAD_LORD the Dread Knight
+SOUND=snd_HUMAN_M_DIE_01
+
+DAM=20,30
+ARMOR=20
+
+//DESIRES=i_gold,e_notoriety
+AVERSIONS=t_TRAP,t_eerie_stuff
+//ALIGNMENT=EVIL
+
+TSPEECH=spk_human_prime
+TSPEECH=jobMageEvil
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+ON=@Create
+COLOR=colors_skin
+STR={300 350}
+DEX={80 120}
+INT={71 85}
+
+PARRYING={75.0 98.0}
+SWORDSMANSHIP={80.0 95.0}
+WRESTLING={67.0 90.0}
+MAGICRESISTANCE={65.0 88.0}
+TACTICS={80.0 98.0}
+POISONING={90.0 100.0}
+DETECTINGHIDDEN={90.0 100.0}
+
+NPC=brain_monster
+
+FAME=9999
+KARMA=-9999
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+ITEMNEWBIE=i_platemail_gloves
+COLOR=07b9
+ITEMNEWBIE=i_platemail_helm
+COLOR=07b9
+ITEMNEWBIE=i_platemail_arms
+COLOR=07b9
+ITEMNEWBIE=i_platemail_gorget
+COLOR=07b9
+ITEMNEWBIE=i_platemail_chest
+COLOR=07b9
+ITEMNEWBIE=i_platemail_leggings
+COLOR=07b9
+ITEMNEWBIE={i_shield_kite_metal 1 i_shield_heater 1}
+COLOR=07b9
+ITEMNEWBIE={i_sword_viking 1 i_mace_war 1 i_spear_short 1}
+COLOR=07b9
+ITEMNEWBIE=i_cape
+COLOR=07bc
+
+ON=@NPCRestock
+ITEMNEWBIE=i_mt_horse_brown_dk
+NAME=Horse
+COLOR=07b9
+
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM=i_gold,{250 450}
+
+CATEGORY=Civilized
+SUBSECTION=Dread Lords
+DESCRIPTION=Dread Lord
+
+[CHARDEF c_rabbit_snow]
+ID=c_rabbit
+NAME=Snow Rabbit
+SOUND=snd_ANIMALS_RABBIT3
+ICON=i_pet_RABBIT_2
+CAN=MT_WALK|MT_RUN
+ANIM=01fff
+DAM=1
+ARMOR=3
+RESOURCES=2 i_ribs_raw,1 i_fur_light
+FOODTYPE=55 t_crops,55 t_foliage, 64 t_grass
+DESIRES=c_rabbit
+SHELTER=r_plains,r_forests,r_foliage
+AVERSIONS=e_carnivores2
+
+ON=@Create
+NPC=brain_animal
+FAME=10
+KARMA={-1 -99}
+//ALIGNMENT=NEUTRAL
+COLOR=07e7
+
+STR=5
+DEX=14
+INT=5
+PARRYING=5.0
+MAGICRESISTANCE=5.0
+TACTICS=5.0
+WRESTLING=5.0
+TAMING=5.0
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Snow Rabbit
+
+[CHARDEF c_mexican_staring_frog]
+ID=c_bullfrog
+NAME=Mexican Staring Frog
+SOUND=snd_ANIMALS_BULLFROG
+ICON=i_pet_bullfrog
+CAN=MT_WALK|
+ANIM=01fff
+DAM=4
+ARMOR=12
+RESOURCES=2 i_ribs_raw
+FOODTYPE=55 t_crops,55 t_foliage, 64 t_grass
+DESIRES=c_bullfrog
+SHELTER=r_plains,r_forests,r_foliage
+AVERSIONS=e_carnivores2
+
+ON=@Create
+NPC=brain_animal
+FAME=1000
+KARMA={-400 -1000}
+//ALIGNMENT=NEUTRAL
+COLOR=007d4
+
+ON=@SeeNewPlayer
+  Say=<NAME> trying to stare you down.
+  RETURN=0
+
+STR=150
+DEX=250
+INT=100
+PARRYING=105.0
+MAGICRESISTANCE=105.0
+TACTICS=105.0
+WRESTLING=105.0
+TAMING=85.0
+
+CATEGORY=Animals
+SUBSECTION=Land (Wild)
+DESCRIPTION=Mexican Staring Frog
+
+[CHARDEF c_tremmor_worm]
+ID=c_sea_serpent
+NAME=Tremmor Worm
+SOUND=snd_MONSTER_SEASERP1
+ICON=i_pet_shark
+ANIM=01ff
+CAN=MT_WALK
+DAM=10,30
+ARMOR=20
+RESOURCES=50 i_ribs_raw,8 i_reag_serpent_scale
+FOODTYPE=25 t_meat_raw,t_fish
+DESIRES=c_man,c_woman,c_tremmor_worm,c_tremmor_worm_mother,c_sea_serpent
+SHELTER=r_desert
+AVERSIONS=r_civilization
+
+ON=@Create
+NPC=brain_monster
+FAME={5000 8000}
+KARMA={-5000 -5999}
+COLOR=07e5
+STR={500 750}
+DEX={80 120}
+INT={53 85}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={40.0 55.0}
+TACTICS={70.0 80.0}
+WRESTLING={100.0 130.0}
+//ALIGNMENT=NEUTRAL
+
+ON=@NPCRestock
+ITEM=loot_tremmor_worm
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Tremmor Worm
+
+[CHARDEF c_tremmor_worm_mother]
+ID=c_sea_serpent
+NAME=Tremmor Worm Mother
+SOUND=snd_MONSTER_SEASERP1
+ICON=i_pet_shark
+ANIM=01ff
+CAN=MT_WALK|MT_RUN
+DAM=20,40
+ARMOR=30
+RESOURCES=75 i_ribs_raw,16 i_reag_serpent_scale
+FOODTYPE=25 t_meat_raw,t_fish
+DESIRES=c_man,c_woman,c_tremmor_worm,c_sea_serpent
+SHELTER=r_desert
+AVERSIONS=r_civilization,c_tremmor_worm_mother
+
+ON=@Create
+NPC=brain_monster
+FAME={5000 8000}
+KARMA={-5000 -5999}
+COLOR=07e6
+STR={700 950}
+DEX={90 130}
+INT={73 105}
+
+PARRYING={85.0 95.0}
+MAGICRESISTANCE={50.0 65.0}
+TACTICS={80.0 90.0}
+WRESTLING={110.0 140.0}
+//ALIGNMENT=NEUTRAL
+
+ON=@NPCRestock
+ITEM=loot_tremmor_worm_mother
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Tremmor Worm Mother
+
+[CHARDEF c_tremmor_worm_larve]
+ID=c_alligator //c_sea_serpent // Make into a giant lizard ?
+NAME=Tremmor Worm Larve
+SOUND=snd_MONSTER_SEASERP1
+ICON=i_pet_shark
+ANIM=01ff
+CAN=MT_WALK
+DAM=5,15
+ARMOR=10
+RESOURCES=10 i_ribs_raw,2 i_reag_serpent_scale
+FOODTYPE=25 t_meat_raw,t_fish
+DESIRES=c_tremmor_worm_mother,c_sea_serpent
+SHELTER=r_desert
+AVERSIONS=r_civilization
+
+ON=@Create
+NPC=brain_monster
+FAME={1000 2000}
+KARMA={-1000 -2999}
+COLOR=07e4
+STR={100 350}
+DEX={70 100}
+INT={53 85}
+
+PARRYING={75.0 85.0}
+MAGICRESISTANCE={40.0 55.0}
+TACTICS={70.0 80.0}
+WRESTLING={100.0 130.0}
+//ALIGNMENT=NEUTRAL
+
+ON=@NPCRestock
+ITEM=loot_tremmor_worm
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Tremmor Worm Larve
+
+[CHARDEF c_holy_guardian]
+NAME=#NAMES_HUMANMALE the Holy Guardian
+ID=C_MAN
+DAM=15,20
+ARMOR=10
+DESIRES=t_shrine
+SHELTER=r_shrine
+
+TSPEECH=spk_human_prime
+TSPEECH=jobPriest
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Holy Guardians
+DESCRIPTION=Holy Guardian (male)
+
+ON=@Create
+NPC=brain_monster
+ALIGNMENT=GOOD
+COLOR=colors_skin
+STR={200 250}
+DEX={100 150}
+INT={71 85}
+
+PARRYING={75.0 98.0}
+SWORDSMANSHIP={80.0 95.0}
+WRESTLING={67.0 90.0}
+MAGICRESISTANCE={65.0 88.0}
+TACTICS={80.0 98.0}
+POISONING={90.0 100.0}
+DETECTINGHIDDEN={90.0 100.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=match_hair
+ITEMNEWBIE=i_bandana
+COLOR=07bd
+NAME=halo
+ITEMNEWBIE=i_angelic_platemail_gorget
+ITEMNEWBIE=i_angelic_platemail_arms
+ITEMNEWBIE=i_angelic_platemail_chest
+ITEMNEWBIE=i_angelic_platemail_leggings
+ITEMNEWBIE=i_angelic_platemail_gauntlets
+ITEMNEWBIE=i_angelic_sword
+ITEMNEWBIE=i_angelic_shield_kite_metal
+
+ON=@NPCRestock
+ITEM=loot_angelic_guardian
+
+ON=@NPCRefuseItem
+	SAY Thank you for your donation.
+	return 0
+
+[CHARDEF c_holy_guardian_f]
+NAME=#NAMES_HUMANFEMALE the Holy Guardian
+ID=C_WOMAN
+DAM=15,20
+ARMOR=10
+DESIRES=t_shrine
+SHELTER=r_shrine
+
+TSPEECH=spk_human_prime
+TSPEECH=jobPriest
+TSPEECH=spk_needs
+TSPEECH=spk_rehello
+TSPEECH=spk_human_default
+
+CATEGORY=Civilized
+SUBSECTION=Holy Guardians
+DESCRIPTION=Holy Guardian (female)
+
+ON=@Create
+NPC=brain_monster
+ALIGNMENT=GOOD
+COLOR=colors_skin
+STR={200 250}
+DEX={100 150}
+INT={71 85}
+
+PARRYING={75.0 98.0}
+SWORDSMANSHIP={80.0 95.0}
+WRESTLING={67.0 90.0}
+MAGICRESISTANCE={65.0 88.0}
+TACTICS={80.0 98.0}
+POISONING={90.0 100.0}
+DETECTINGHIDDEN={90.0 100.0}
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+ITEMNEWBIE=i_bandana
+COLOR=07bd
+NAME=halo
+ITEMNEWBIE=i_angelic_platemail_gorget
+ITEMNEWBIE=i_angelic_platemail_arms
+ITEMNEWBIE=i_angelic_female_plate
+ITEMNEWBIE=i_angelic_platemail_leggings
+ITEMNEWBIE=i_angelic_platemail_gauntlets
+ITEMNEWBIE=i_angelic_sword
+ITEMNEWBIE=i_angelic_shield_kite_metal
+
+ON=@NPCRestock
+ITEM=loot_angelic_guardian
+
+ON=@NPCRefuseItem
+	SAY Thank you for your donation.
+	return 0
+	
+[CHARDEF c_m_blue_giant]
+ID=C_WISP
+NAME=blue giant
+RESOURCES=i_essence_celestial
+
+ON=@Create
+  NPC=brain_monster
+  COLOR=007a0
+  KARMA=-3500
+  FAME=4000
+  STR=500
+  DEX=100
+  INT=100
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Blue Giant
+
+[CHARDEF c_m_red_giant]
+ID=C_WISP
+NAME=red giant
+RESOURCES=i_essence_celestial
+
+ON=@Create
+  NPC=brain_monster
+  COLOR=0079c
+  KARMA=-3000
+  FAME=3500
+  STR=400
+  DEX=100
+  INT=100
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Red Giant
+
+[CHARDEF c_m_red_dwarf]
+ID=C_WISP
+NAME=red giant
+RESOURCES=i_essence_celestial
+
+ON=@Create
+  NPC=brain_monster
+  COLOR=0079c
+  KARMA=-2000
+  FAME=2500
+  STR=350
+  DEX=100
+  INT=100
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Red Dwarf
+
+[CHARDEF c_m_supernova]
+ID=C_WISP
+NAME=supernova
+
+RESOURCES=i_essence_celestial
+
+ON=@Create
+  NPC=brain_monster
+  COLOR=00481
+  KARMA=-3500
+  FAME=4000
+  STR=650
+  DEX=100
+  INT=100
+
+CATEGORY=Monsters
+SUBSECTION=Miscellaneous
+DESCRIPTION=Supernova
+
+[EOF]

@@ -1,0 +1,269 @@
+//Created by Serafina and Belzedar
+// Converted & Tested - Paradox
+
+
+[ITEMDEF i_book_of_the_dead]
+NAME=Book of the Dead
+ID=i_spellbook
+TYPE=t_wand
+WEIGHT=0
+TWOHANDS=Y
+
+CATEGORY=Special
+SUBSECTION=Magical items
+DESCRIPTION=Book of the Dead
+
+ON=@Create
+//ATTR=0
+AMOUNT=1
+COLOR=color_gray_dk
+
+ON=@DCLICK
+IF (<SRC.SKILLCLASS>=Class_Necromancer)||(<SRC.ISGM>)
+SRC.SYSMESSAGE As you lay your hand on the book, the binding of flesh creeps back and allows itself to be opened.
+DIALOG D_BOOK_OF_THE_DEAD
+RETURN 1
+ELSE
+SRC.SYSMESSAGE The book stings your skill as you attempt to open it.
+SRC.DAMAGE=4-20
+SRC.FINDLAYER(2).UNEQUIP
+RETURN 1
+ENDIF
+
+ON=@EQUIP
+IF (<SRC.SKILLCLASS>=Class_Necromancer)||(<SRC.ISGM>)
+RETURN 0
+ELSE
+SRC.SYSMESSAGE You are not a Necromancer.
+SRC.FINDLAYER(2).UNEQUIP
+RETURN 1
+ENDIF
+
+ONTRIGGER=@TARGON_ITEM
+SRC.SYSMESSAGE That spell must be used on a player...not an item.
+
+ONTRIGGER=@TARGON_GROUND
+SRC.SYSMESSAGE That spell must be used on a player...not the ground.
+
+ONTRIGGER=@TARGON_CHAR
+IF !<SRC.TARG.ACCT>
+SRC.TARG.BODY=051
+SRC.FIX
+SRC.TARG.SYSMESSAGE You have been turned into a frog by <SRC.NAME>!
+ELSE
+SRC.SYSMESSAGE This spell cannot be used on an NPC.
+ENDIF
+
+[ITEMDEF I_POTION_OF_KISS]
+NAME=Potion of Kiss
+TYPE=0
+ID=0f06
+
+ON=@CREATE
+//ATTRIB=0
+COLOR=26
+WEIGHT=0
+
+CATEGORY=Special
+SUBSECTION=Magical Items
+DESCRIPTION=Potion of Kiss
+
+ONTRIGGER=@DCLICK
+IF (<SRC.BODY>>=051)
+SRC.BODY=<SRC.OBODY>
+SRC.FIX
+SRC.SAY You have been restored to your natural self.
+SRC.CONSUME=1 i_potion_of_kiss
+ELSE
+SRC.SAY You drink the potion, yet it does nothing...
+SRC.CONSUME=1 i_potion_of_kiss
+ENDIF
+
+[DIALOG D_BOOK_OF_THE_DEAD]
+0, 0
+page 0 					//Page 0: Background of book
+gumppic 100 10 2203			//Background: open book
+
+page 1					//Page 1: Spell Index
+text 175 15 899 0 			//Text: Book
+gumppic 100 -13 12 			//man
+gumppic 100 -13 60970  			//deathshroud
+text 149 91 899 1  			//Text: of the Dead
+button 285 20 1209 1210 0 2 		//Button: Turn to page 2(spells 1 and 2)
+button 285 40 1209 1210 0 2 		//Button: Turn to page 2(spells 1 and 2)
+button 285 60 1209 1210 0 3 		//Button: Turn to page 3(spells 3 and 4)
+button 285 80 1209 1210 0 3 		//Button: Turn to page 3(spells 3 and 4)
+button 285 100 1209 1210 0 4 		//Button: Turn to page 4(spells 5 and 6)
+button 285 120 1209 1210 0 4 		//Button: Turn to page 4(spells 5 and 6)
+text 300 20 0 2				//Text: Bone Armor
+text 300 60 0 4 			//Text: Hallucination
+text 300 40 0 3  			//Text: Summon Undead
+text 300 80 0 5				//Text: Frog
+text 300 100 0 6			//Text: Fire Bolt
+text 300 120 0 7			//Text: Warts
+button 394 14 2206 2206 0 2 		//page flip
+
+page 2 					//Page 2: Spells 1 and 2
+button 123 15 2205 2205 0 1 		//page flip
+button 394 14 2206 2206 0 3  		//page flip
+text 155 30 0 2 			//Text: Bone Armor
+button 160 55 7038 7038 1 0 1 		//Cast Bone Armor
+gumppic 140 120 93  			//flower
+gumppic 130 120 92  			//flower
+gumppic 160 120 94  			//flower
+text 130 155 0 8			//Text: Bone
+text 130 170 0 9			//Text: Bloodspawn
+text 130 185 0 10			//Text: Volcanic Ash
+text 300 30 0 3 			//Text: Summon Undead
+button 320 55 7040 7040 1 0 2 		//Cast Summon Undead
+gumppic 300 120 93  			//flower
+gumppic 290 120 92  			//flower
+gumppic 310 120 94  			//flower
+text 290 155 0 11			//Text: Dead Wood
+text 290 170 0 12			//Text: Vial of Blood
+
+page 3  				//Page 3: Spells 3 and 4
+button 123 15 2205 2205 0 2  		//page flip
+button 394 14 2206 2206 0 4  		//page flip
+text 165 30 0 4 			//Text: Hallucination
+button 160 55 7017 7017 1 0 3 		//Cast Hallucination
+gumppic 140 120 93  			//flower
+gumppic 130 120 92  			//Flower
+gumppic 160 120 94  			//flower
+text 130 155 0 13 			//Text: Eye of Newt
+text 130 170 0 14 			//Text: Pig Iron
+text 130 185 0 15			//Text: Pumice
+text 330 30 0 5 			//Text: Frog
+button 320 55 7051 7051 1 0 4 		//Cast Frog
+gumppic 300 120 93  			//flower
+gumppic 290 120 92  			//flower
+gumppic 310 120 94  			//flower
+text 290 155 0 16			//Text: Obsidian
+text 290 170 0 17			//Text: Daemon's Bone
+text 290 185 0 18			//Text: Dragon's Blood
+
+page 4  				//Page 4: Spells 5 and 6
+button 123 15 2205 2205 0 3  		//page flip
+text 165 30 0 6				//Text: Fire Bolt
+button 160 55 7049 7049 1 0 5 		//Cast Fire Bolt
+gumppic 140 120 93  			//flower
+gumppic 130 120 92  			//flower
+gumppic 160 120 94  			//flower
+text 130 155 0 19			//Text: Volcanic Ash
+text 130 170 0 20			//Text: Worm's Heart
+text 330 30 0 7 			//Text: Warts
+button 320 55 7051 7051 1 0 6 		//Cast Warts
+gumppic 300 120 93  			//flower
+gumppic 290 120 92  			//flower
+gumppic 310 120 94  			//flower
+text 290 155 0 21			//Text: Fertile Dirt
+text 290 170 0 22			//Text: Executioner's Cap
+
+[DIALOG D_BOOK_OF_THE_DEAD TEXT]
+Book			// 0
+of the Dead
+Bone Armor
+Summon Undead
+Hallucination
+Frog			// 5
+Fire Bolt
+Warts
+Bone
+Bloodspawn
+Volcanic Ash		// 10
+Dead Wood
+Vial of Blood
+Eye of Newt
+Pig Iron
+Pumice			// 15
+Obsidian
+Deamon's Bone
+Dragon's Blood
+Volcanic Ash
+Wyrm's Heart
+Fertile Dirt		// 21
+Executioner's Cap
+
+[DIALOG D_BOOK_OF_THE_DEAD BUTTON]
+ONBUTTON=0			// Close Book
+SRC.SYSMESSAGE As you close the book, the binding of flesh creeps over it and seals it shut.
+
+ONBUTTON=1			// Cast Bone Armor(Bone, Bloodspawn, Volcanic Ash)
+IF (<SRC.RESTEST 1 I_REAG_BONE> && <SRC.RESTEST 1 I_REAG_BLOOD_SPAWN> && <SRC.RESTEST 1 I_REAG_VOLCANIC_ASH> && (<SRC.MAGERY>>=250) && (<SRC.MANA>>=9))
+SRC.CAST 67
+SRC.SAY In Sanct Ylem
+SRC.ANIM 16
+SRC.CONSUME=1 I_REAG_BONE
+SRC.CONSUME=1 I_REAG_BLOOD_SPAWN
+SRC.CONSUME=1 I_REAG_VOLCANIC_ASH
+SRC.FIX
+SRC.MANA=(<SRC.MANA>-9)
+ELSE
+SRC.MESSAGE You lack the proper reagants to cast the spell Bone Armor, or you are not skilled enough.
+ENDIF
+
+ONBUTTON=2			// Cast Summon Undead(Dead Wood, Vial of Blood)
+IF (<SRC.RESTEST 1 I_REAG_DEAD_WOOD> && <SRC.RESTEST 1 I_REAG_BLOOD_VIAL> && (<SRC.MAGERY>>=600) && (<SRC.MANA>>=20))
+SRC.CAST 65
+SRC.SAY An Bet Xen
+SRC.ANIM 16
+SRC.CONSUME=1 I_REAG_DEAD_WOOD
+SRC.CONSUME=1 I_REAG_BLOOD_VIAL
+SRC.FIX
+SRC.MANA=(<SRC.MANA>-20)
+ELSE
+SRC.MESSAGE You lack the proper reagants to cast the spell Summon Undead, or you are not skilled enough.
+ENDIF
+
+ONBUTTON=3			// Cast Hallucination(Eye of Newt, Pig Iron, Pumice)
+IF (<SRC.RESTEST 1 I_REAG_EYE_OF_NEWT> && <SRC.RESTEST 1 I_REAG_PIG_IRON> && <SRC.RESTEST 1 I_REAG_PUMICE> && (<SRC.MAGERY>>=450) && (<SRC.MANA>>=14))
+SRC.CAST 70
+SRC.SAY Ex Quas
+SRC.ANIM 16
+SRC.CONSUME=1 I_REAG_EYE_OF_NEWT
+SRC.CONSUME=1 I_REAG_PIG_IRON
+SRC.CONSUME=1 I_REAG_PUMICE
+SRC.FIX
+SRC.MANA=(<SRC.MANA>-14)
+ELSE
+SRC.MESSAGE You lack the proper reagants to cast the spell Hallucination, or you are not skilled enough.
+ENDIF
+
+ONBUTTON=4			// Cast Frog(Obsidian, Deamon's Bone, Dragon's Blood)
+IF (<SRC.RESTEST 1 I_REAG_OBSIDIAN> && <SRC.RESTEST 1 i_reag_daemon_bone> && <SRC.RESTEST 1 i_reag_dragon_blood> && (<SRC.MAGERY>>=850) && (<SRC.MANA>>=40))
+TARGET Who would you curse with the body of a frog?
+SRC.SAY In Xen Wis
+SRC.ANIM 16
+SRC.CONSUME=1 I_REAG_OBSIDIAN
+SRC.CONSUME=1 i_reag_daemon_bone
+SRC.CONSUME=1 i_reag_dragon_blood
+SRC.MANA=(<SRC.MANA>-40)
+ELSE
+SRC.MESSAGE You lack the proper reagants to cast the spell Frog, or you are not skilled enough.
+ENDIF
+
+ONBUTTON=5			// Cast Fire Bolt(Volcanic Ash, Wyrm's Heart)
+IF (<SRC.RESTEST 1 I_REAG_VOLCANIC_ASH> && <SRC.RESTEST 1 I_REAG_WORM_HEART> && (<SRC.MAGERY>>=650) && (<SRC.MANA>>=20))
+SRC.CAST 69
+SRC.ANIM 16
+SRC.SAY In Vas Corp Flam
+SRC.CONSUME=1 I_REAG_WORM_HEART
+SRC.CONSUME=1 I_REAG_VOLCANIC_ASH
+SRC.MANA=(<SRC.MANA>-20)
+ELSE
+SRC.MESSAGE You lack the proper reagants to cast the spell Fire Bolt, or you are not skilled enough.
+ENDIF
+
+ONBUTTON=6			// Cast Warts(Fertile Dirt, Excecutioner's Cap)
+IF (<SRC.RESTEST 1 I_REAG_FERTILE_DIRT> && <SRC.RESTEST 1 I_REAG_EXECUTIONERS_CAP> && (<SRC.MAGERY>>=200) && (<SRC.MANA>>=7))
+SRC.CAST 71
+SRC.SAY In Por Nox
+SRC.ANIM 16
+SRC.CONSUME=1 I_REAG_FERTILE_DIRT
+SRC.CONSUME=1 I_REAG_EXECUTIONERS_CAP
+SRC.MANA=(<SRC.MANA>-20)
+ELSE
+SRC.MESSAGE You lack the proper reagants to cast the spell Warts, or you are not skilled enough.
+ENDIF
+
+[EOF]

@@ -1,0 +1,289 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+//
+//
+
+
+// Get the starting items for each skill.
+
+[MALE_DEFAULT]
+// Male Generic Starting Clothes
+ITEM=plain_shirt
+COLOR=all_colors
+ITEM=plain_pants
+COLOR=neutral_colors
+ITEM=plain_shoes
+COLOR=neutral_colors
+ITEM=DAGGER
+ITEM=candle
+ITEM=sm_blank_book
+ITEM=GOLD,100
+
+[FEMALE_DEFAULT]
+// Female Generic Starting Clothes
+ITEM=plain_shirt
+COLOR=all_colors
+ITEM=skirt
+COLOR=neutral_colors
+ITEM=plain_shoes
+COLOR=neutral_colors
+ITEM=DAGGER
+ITEM=candle
+ITEM=sm_blank_book
+ITEM=GOLD,100
+
+[ALCHEMY]
+// Alchemy is best skill
+ITEM=mortar_pestle
+ITEM=empty_vial,4
+ITEM=black_pearl_reagent,4
+ITEM=garlic_reagent,4
+ITEM=ginseng_reagent,4
+ITEM=spider_silk_reagent,4
+ITEM=robe
+COLOR=red_colors
+
+[ANATOMY]
+// Anatomy is best skill
+ITEM=robe
+COLOR=yellow_colors
+ITEM=bandage,3
+
+[ANIMALLORE]
+// Animal Lore is best skill
+ITEM=robe
+COLOR=green_colors
+ITEM=shepherd_crook
+
+[ITEMID]
+// Item Identification is best skill
+ITEM=gnarled_staff
+
+[ARMSLORE]
+// Armslore is best skill
+ITEM=random_start_weapon
+
+[PARRYING]
+// Parrying is best skill
+ITEM=wooden_shield
+
+[BEGGING]
+// Begging is best skill
+ITEM=gnarled_staff
+
+[BLACKSMITHING]
+// Blacksmithing is best skill
+ITEM={ SLEDGE_HAMMER 1 SLEDGE_HAMMER 1 TONGS 1 TONGS 1 SMITH_HAMMER 1 SMITH_HAMMER 1 }
+ITEM=apron
+COLOR=brown_colors
+
+[BOWCRAFT]
+// Bowcraft/Fletching is best skill
+ITEM=LUMBER,14
+ITEM=LOOSE_FEATHERS,5
+ITEM=ARROW_SHAFTS,5
+
+[PEACEMAKING]
+// Peacemaking is best skill
+ITEM=random_instrument
+
+[CAMPING]
+// Camping is best skill
+ITEM=kindling,5
+ITEM=bedroll
+
+[CARPENTRY]
+// Carpentry is best skill
+ITEM={ DOVETAIL 1 DOVETAIL 1 HAMMER 1 HAMMER 1 MOULDING_PLANE 1 MOULDING_PLANE 1 NAILS 1 JOINTING_PLANE 1 SMOOTHING_PLANE 1 SAW 1 RING 1 BEADS 1 SCORP 1 INSHAVE 1 }
+ITEM=LUMBER,10
+ITEM=apron
+COLOR=brown_colors
+
+[CARTOGRAPHY]
+// Cartography is best skill
+ITEM=OPEN_MAP,4
+ITEM=sextant
+
+[COOKING]
+// Cooking is best skill
+ITEM={ FISH_STEAK 1 FRESH_EGGS 1 RAW_BIRD 1 RAW_RIBS 1 DOUGH 1 COOKIE_MIX 1 UNBAKED_PIE 1 UNCOOKED_PIZZA 1 CHICKEN_LEG 1 MUTTON_LEG 1 FLOUR_SACK 1 WATER_PITCHER 1 }
+ITEM={ FISH_STEAK 1 FRESH_EGGS 1 RAW_BIRD 1 RAW_RIBS 1 DOUGH 1 COOKIE_MIX 1 UNBAKED_PIE 1 UNCOOKED_PIZZA 1 CHICKEN_LEG 1 MUTTON_LEG 1 FLOUR_SACK 1 WATER_PITCHER 1 }
+ITEM={ FISH_STEAK 1 FRESH_EGGS 1 RAW_BIRD 1 RAW_RIBS 1 DOUGH 1 COOKIE_MIX 1 UNBAKED_PIE 1 UNCOOKED_PIZZA 1 CHICKEN_LEG 1 MUTTON_LEG 1 FLOUR_SACK 1 WATER_PITCHER 1 }
+ITEM=flour_sack
+ITEM=water_pitcher
+ITEM=kindling,2
+
+[DETECTING HIDDEN]
+// Detecting Hidden is best skill
+ITEM=cloak
+COLOR=black_colors
+
+[ENTICEMENT]
+// Enticement is best skill
+ITEM=random_instrument
+
+[EvaluatingIntel]
+// Evaluate Intelligence is best skill
+
+
+[HEALING]
+// Healing is best skill
+ITEM=bandage,5
+ITEM=scissors
+
+[FISHING]
+// Fishing is best skill
+ITEM=fishing_pole
+ITEM=FLOPPY_HAT
+COLOR=brown_colors
+
+[FORENSICS]
+// Forensics is best skill
+
+[HERDING]
+// Herding is best skill
+ITEM=shepherd_crook
+
+[HIDING]
+// Hiding is best skill
+ITEM=cloak
+COLOR=black_colors
+
+
+[PROVOCATION]
+// Provocation is best skill
+ITEM=random_instrument
+
+[INSCRIPTION]
+// Inscription is best skill
+ITEM=scroll_blank,2
+ITEM=sm_blank_book
+
+[LOCKPICKING]
+// Lockpicking is best skill
+ITEM=lockpick,5
+
+[MAGERY]
+// Magery is best skill
+ITEM=spell_book
+ITEM=black_pearl_reagent,3
+ITEM=blood_moss_reagent,3
+ITEM=garlic_reagent,3
+ITEM=ginseng_reagent,3
+ITEM=nightshade_reagent,3
+ITEM=sulfurous_ash_reagent,3
+ITEM=spider_silk_reagent,3
+ITEM=mandrake_root,3
+ITEM={ SCROLL_NIGHT_SIGHT 1 SCROLL_CLUMSY 1 SCROLL_CREATE_FOOD 1 }
+ITEM={ SCROLL_FEEBLEMIND 1 SCROLL_HEAL 1 SCROLL_MAGIC_ARROW 1 }
+ITEM={ SCROLL_NIGHT_SIGHT 1 SCROLL_WEAKEN 1 }
+
+[MAGICRESISTANCE]
+// Resisting Spells is best skill
+
+[TACTICS]
+// Tactics is best skill
+
+[SNOOPING]
+// Snooping is best skill
+ITEM=lockpick,4
+
+[MUSICIANSHIP]
+// Musicianship is best skill
+ITEM=random_instrument
+
+[POISONING]
+// Poisoning is best skill
+ITEM=poison_potion,2
+
+[ARCHERY]
+// Archery is best skill
+ITEM=bow
+ITEM=arrows,25
+
+[SPIRITSPEAK]
+// Spirit Speak is best skill
+ITEM=cloak
+COLOR=black_colors
+
+[STEALING]
+// Steal is best skill
+ITEM=lockpick,4
+
+[TAILORING]
+// Tailoring is best skill
+ITEM=sewing_kit
+ITEM=folded_cloth_1
+COLOR=neutral_colors
+ITEM=folded_cloth_1
+COLOR=neutral_colors
+ITEM=folded_cloth_1
+COLOR=neutral_colors
+ITEM=folded_cloth_1
+COLOR=neutral_colors
+
+[TAMING]
+// Animal Training is best skill
+ITEM=shepherd_crook
+
+[TASTEID]
+// Taste Identification is best skill
+ITEM=random_potion
+ITEM=random_potion
+ITEM=random_potion
+
+[TINKERING]
+// Tinkering is best skill
+ITEM={ CLOCK_FRAME 1 CLOCK_PARTS 1 AXEL_AND_GEARS 1 1 GEARS 1 HINGE 1 SEXTANT_PARTS 1 STICKS 1 SPRINGS 1 TINKER_TOOLS 1 }
+ITEM=tinker_tools
+ITEM=apron
+COLOR=brown_colors
+
+[TRACKING]
+// Tracking is best skill
+ITEM=skinning_knife
+ITEM=BLACK_BOOTS
+COLOR=brown_colors
+
+[VETERINARY]
+// Veterinary is best skill
+ITEM=bandage,5
+ITEM=scissors
+
+[SWORDSMANSHIP]
+// Swordsmanship is best skill
+ITEM=long_sword
+
+[MACEFIGHTING]
+// Mace Fighting is best skill
+ITEM=mace
+
+[FENCING]
+// Fencing is best skill
+ITEM=spear
+
+[WRESTLING]
+// Wrestling is best skill
+ITEM=leather_gloves
+
+[LUMBERJACKING]
+// Lumberjacking is best skill
+ITEM=hatchet
+
+[MINING]
+// Mining is best skill
+ITEM={ pickaxe 1 shovel 1 }
+
+[GM]
+// Create a new GM
+ITEM=
+
+

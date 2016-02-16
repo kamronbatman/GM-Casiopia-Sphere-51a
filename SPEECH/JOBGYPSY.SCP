@@ -1,0 +1,146 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 30, 2000
+
+// Purpose: Britannia Gypsy Script
+// Notes:  This is used for general information pertaining to all Britannian Gypsies
+// Current Keyword List:
+//	*job*, *work*,  *what*do*do*, *profession*, *occupation*, *skill*, *lock*, *appraise*,  *hide*,
+//	*camp*, *gypsy*, *freeman*, *gypsie*
+//
+
+ON=*job*
+ON=*work*
+ON=*what*do*do*
+ON=*profession*
+ON=*occupation*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		DORAND 2
+			SAY I have no leash around my neck.  I am a freeman!
+			SAY Others can have their 'jobs.' I choose the open road.
+		ENDDO
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		DORAND 2
+			SAY I'm a child of the open road.  I wander freely of my own accord.
+			SAY I'm a wanderer, and take whatever fortune offers me.
+		ENDDO
+	ELSE
+		DORAND 2
+			SAY I'm a freeman, and my job is to be who I am and ask nothing more from anyone else.
+			SAY I am contented wandering as my fortune may carry me.
+		ENDDO
+	ENDIF
+
+ON=*skill*
+ON=*lock*
+ON=*appraise*
+ON=*hide*
+ON=*camp*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		DORAND 3
+			SAY Get thee away from me. I have no reason to show thee anything that could help, though I know quite a bit.
+			SAY I don't need to show thee anything! Thou art no freeman!
+			SAY Oh yes, I know many things! Things that could help thee in thy journeys. Things I am loath to show thee.
+		ENDDO
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		DORAND 4
+			SAY If thou dost want to learn, I might be persuaded to teach thee about such things as camping in the wild. Or not being seen when thou dost not WANT to be seen. Thou wouldst need to pay me, thou knowest.
+			SAY Thou shouldst know something about the people that thou art likely to spend time with. Could be of use to thee. I could help thee some, I think.
+			SAY If thou dost need help with thy camping skills, just ask me to teach thee and if I can, I will. For a small price.
+			SAY I can teach thee how to observe things around thee better. Things like the people thou dost see every day.
+		ENDDO
+	ELSE
+		DORAND 3
+			SAY I'd be happy for thee to learn what I know about surviving in towns. Just give me a few coins.
+			SAY Thou can always learn new things, my friend. I could show thee some things, for instance, about the observation of people that could help thee. For some small amount of money, of course.
+			SAY I can teach thee things that could help thee when thou dost make camp. I would need thee to pay me for my time, however.
+		ENDDO
+	ENDIF
+
+ON=*gypsy*
+ON=*freeman*
+ON=*gypsie*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		DORAND 2
+			SAY Dost thou have a problem with us?  Live and let live, I say.
+			SAY What's wrong with 'gypsies,' as thou dost call us?  We are honest people who choose to live where we feel most comfortable at the moment.
+		ENDDO
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		DORAND 2
+			SAY I am a true freeman, born and bred.
+			SAY Not everyone is lucky enough to be born a freeman. Thou might refer to us as  gypsies nevertheless we are a breed apart.
+		ENDDO
+	ELSE
+		DORAND 2
+			SAY We freemen, or 'gypsies,' as thy people insist on calling us, are brothers to the road!
+			SAY Music, love and travel, that is the life of a freeman!
+		ENDDO
+	ENDIF
+
+ON=*thief*
+ON=*steal*
+ON=*thiev*
+	IF ( <SRC.KARMA.WICKED> || <SRC.KARMA.BELLIGERANT> )
+		DORAND 2
+			SAY I refuse to answer to any base accusations!
+			SAY Thou cannot prove anything!
+		ENDDO
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		DORAND 2
+			SAY A thief? I see thou hast been listening to malicious lies about us... 'gypsies,' to use thy own word.
+			SAY Freemen are not thieves! That is a malicious lie of the ignorant.
+		ENDDO
+	ELSE
+		DORAND 2
+			SAY We have no need to steal, for nature meets all our needs.
+			SAY What could I possibly steal? I have everything I need!
+		ENDDO
+	ENDIF
+
+DEFAULT=I do not understand thee.
+ON=Hi
+ON=Greet
+ON=Hello
+ON=Hail
+SAY=Ah, hello traveler.  Do you wish to know your fate?
+ON=Job
+ON=What do you do
+SAY=I am a Gypsy.  I see all and hear all!  I may tell thee... for a price.
+ON=Bye
+ON=Goodbye
+ON=Farewell
+SAY=If you were more free with your gold, I could tell you more.  No matter.  Goodbye.
+ON=APPRAISE
+SAY=Let me see.  Ah, yes... it's doubtful such a thing would have worth to a person of your means.
+ON=CAMP
+SAY=Some free advice... do not camp near a swamp.
+ON=DESTINY
+ON=FORTUNE
+ON=PALM
+ON=READ
+ON=FUTURE
+SAY=Perhaps if you cross my palms with gold, the mists clouding your future will clear...
+ON=FREEMAN
+SAY=Oh yes, every man and woman should be free.  Yet, some are slaves to their destiny.
+ON=GYPSIE
+ON=GYPSY
+SAY=We are a mystical people who know much of destiny.
+ON=HIDE
+SAY=Beware of the shadows, for they betray the light and only bring fear.
+ON=LOCK
+SAY=A lock is merely an invitation.
+ON=SKILL
+SAY=The skill of a Gypsy is known far and near, though stingy travelers may find their fortunes misleading.
+ON=STEAL
+SAY=Some travelers tire easily if they carry too much.  Gypsies merely help relieve their burden.
+ON=THIEF
+SAY=A gypsy is not a thief.  Where did you hear such lies?  I shall have to think of a curse...
+ON=THIEV
+SAY=My people have not stolen anything from you.  Begone!

@@ -1,0 +1,35 @@
+[TEMPLATE loot_tremmor_worm]
+CONTAINER=i_backpack
+ITEM=i_gold
+AMOUNT={750 1500}
+ITEM={goodie_loaded_1 1 goodie_loaded_2 1 goodie_loaded_3 1 goodie_loaded_4 1}
+
+CATEGORY=Item Templates
+SUBSECTION=Loot Templates
+DESCRIPTION=Poor Backpack
+
+[TEMPLATE loot_tremmor_worm_mother]
+CONTAINER=i_backpack
+ITEM=i_gold
+AMOUNT={1000 2000}
+ITEM={goodie_loaded_1 1 goodie_loaded_2 1 goodie_loaded_3 1 goodie_loaded_4 1}
+ITEM={goodie_loaded_1 1 goodie_loaded_2 1 goodie_loaded_3 1 goodie_loaded_4 1}
+
+CATEGORY=Item Templates
+SUBSECTION=Loot Templates
+DESCRIPTION=Tremmor Worm Mother
+
+[TEMPLATE loot_angelic_guardian]
+CONTAINER=i_backpack
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM={ random_jewel 1 0 1 }
+ITEM=i_gold,{250 450}
+ITEM={i_angelic_platemail_gorget 1 i_angelic_platemail_arms 1 i_angelic_platemail_chest 1 i_angelic_platemail_leggings 1 i_angelic_platemail_gauntlets 1 i_angelic_sword 1 i_angelic_shield_kite_metal 1},R60
+
+CATEGORY=Item Templates
+SUBSECTION=Loot Templates
+DESCRIPTION=Angelic Guardian
+
+[EOF]

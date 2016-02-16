@@ -1,0 +1,141 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+// Traveling NPC
+// commands are:
+// DISCHARGE = release and remove NPC without pay
+// I AGREE or WILL TAKE or SURE or GUIDE= to receive the town name and escort the NPC
+// DESTINATION= NPC will repeat detination if you forgot (town name also on NPC paperdoll)
+// ARRIVED or HERE= tell the NPC you made it to the destination, receive payment & NPC disappears
+
+ON=*Hi*
+ON=*Hail*
+ON=*Hello*
+ON=*go*
+ON=*city*
+ON=*town*
+ON=*travel*
+ON=*place*
+	VAR.TOWN=<TITLE>
+	IF <ISMYPET>
+		SAY You are already leading me
+	ELSEIF !(<TITLE>==the Noble)
+		SAY I am already being guided.
+		RETURN 1
+	ELSEIF (STRLEN(<SRC.REGION.NAME>)==STRLEN(<TITLE>)) && (<SRC.REGION.NAME>==<TITLE>))
+		SAY I am at my desired location.
+	ELSEIF ( <DISTANCE> == 0  )
+		SAY=There is no need to stand upon me !!
+		LEAVE
+	ELSEIF ( <DISTANCE> < 4 )
+		DORAND 2
+			SAY I need escort to town, couldst thee take me??
+			SAY Excuse me. I need an escort to town please.
+		ENDDO
+		RETURN 1
+	ELSE
+	SAY=You are to far away
+	ENDIF
+	RETURN 1
+ON=*DISCHARGE*
+	IF <ISMYPET>
+		REMOVE
+		RETURN 1
+	ENDIF
+ON=*destination*
+	IF <ISMYPET>
+	VAR.TOWN=<TITLE>
+	SAY We are going to <VAR.TOWN>
+	RETURN 1
+	ELSE
+	SAY You have not agreed to guide me
+	RETURN 1
+ON=*I Agree*
+ON=*will take*
+ON=*sure*
+ON=*guide*
+	VAR.TOWN=<TITLE>
+	IF ( <DISTANCE>==0 )
+		SAY=There is no need to stand upon me !!
+		LEAVE
+	ELSEIF ( <DISTANCE> > 3 )
+		SAY I cannot make out what thou sayest, please step closer
+	ELSEIF !<TITLE>==the Noble
+		SAY We are already going to <VAR.TOWN>
+	ELSE 
+		DORAND 15
+			VAR.TOWN=Britain
+			VAR.TOWN=Buccaneer's Den
+			VAR.TOWN=Cove
+			VAR.TOWN=Jhelom
+			VAR.TOWN=Magincia
+			VAR.TOWN=Minoc
+			VAR.TOWN=Moonglow
+			VAR.TOWN=Nujel'm
+			VAR.TOWN=Ocllo
+			VAR.TOWN=Serpent's Hold
+			VAR.TOWN=Skara Brae
+			VAR.TOWN=Trinsic
+			VAR.TOWN=Vesper
+			VAR.TOWN=Yew
+			VAR.TOWN=Wind
+		ENDDO
+		DORAND 2
+			SAY I thank thee kindly
+			SAY I feel much safer already.
+		ENDDO
+		SAY=My business is in <VAR.TOWN>
+		TITLE=<VAR.TOWN>
+            VAR.GUIDE=<SERIAL>
+		VAR.LOCAT=<SRC.ACT.P>
+            VAR.CHAR=<NAME>
+
+            SRC.NEWITEM=02007
+		SRC.ACT.COLOR=02
+		SRC.ACT.TYPE=74
+		SRC.ACT.LINK=<SRC.SERIAL>
+		SRC.ACT.ATTR=04
+		SRC.ACT.MORE2=035d
+		SRC.ACT.MOREP=<SRC.ACT.P>
+		SRC.ACT.LAYER=30
+		SRC.ACT.CONT=<VAR.GUIDE>
+
+//            SRC.NEWITEM=02007
+//		SRC.ACT.NAME=<VAR.CHAR>
+//		SRC.ACT.COLOR=01000
+//		SRC.ACT.TYPE=74
+//		SRC.ACT.LINK=<VAR.GUIDE>
+//		SRC.ACT.ATTR=04
+//		SRC.ACT.MORE2=0B5d
+//		SRC.ACT.MOREP=<SRC.P>
+//		SRC.ACT.LAYER=30
+//		SRC.ACT.CONT=<SRC.SERIAL>
+	ENDIF
+	RETURN 1
+ON=*ARRIVED*
+ON=*here*
+// Would like to find a way to release the NPC with a time out delay for re-escorting
+// currently set to remove the NPC to avoid exploit 
+      VAR.TOWN=<TITLE>
+	IF !<ISMYPET>
+		SAY You are not my guide
+		RETURN 1
+	ELSEIF (STRLEN(<SRC.REGION.NAME>)==STRLEN(<VAR.TOWN>)) && (<SRC.REGION.NAME>==<VAR.TOWN>))
+		SAY I thank thee for thy service, here is thy pay
+		REMOVE
+		SRC.NEWITEM=GOLD
+		SRC.ACT.AMOUNT=1000
+		SRC.ACT.BOUNCE
+		RETURN 1
+	ELSE
+	SAY This is not the right place !! I am going to <VAR.TOWN>.
+	RETURN 1
+	ENDIF
+

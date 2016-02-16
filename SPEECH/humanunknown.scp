@@ -1,0 +1,529 @@
+//****************************************************************************
+//SPHERE by : Menasoft ©1997-2000
+//www.sphereserver.com
+// All SPHERE script files and formats are copyright Menasoft & Partners.
+// This file may be freely edited for personal use, but may not be distributed
+// in whole or in part, in any format without express written permission from
+// Menasoft & Partners.  All donations and contributions 
+// become the property of Menasoft & Partners.
+//****************************************************************************
+// FILE LAST UPDATED: Friday, April 28, 2000
+// Sorry I don't understand.
+
+ON=*
+	IF ( <SRC.KARMA.WICKED> )
+		IF ( <SRC.FAME.INFAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 4
+					SAY Begging thy <SRC.SEX lordship's/ladyship's> pardon, but kindly remove thyself from here. Thy blatherings annoy me.
+					SAY Even if thou hast a reputation, it says little about thy sense. Canst thou give me a reason why I shouldst not have thy legs broken?
+					SAY 'Tis not my life full enough of inconveniences? Must I also deal with the awkward importunings of the likes of thee?
+					SAY It revolts me how petty lordlings and puffed-up peacocks disturb me with their callow chatter. Begone.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I don't care if thou art a dangerous powerful <SRC.SEX man/woman>. Please leave me alone.
+					SAY All high and mighty, are we? Why dost thou not wander off, eh?
+					SAY Even if thou hast a bit of a reputation, I'll wager if I hit thee, thou wouldst bleed.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Go 'way, big shot.
+					SAY Ye want me to break thy nose?
+					SAY Thou art quite stuck on thyself.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND
+					SAY My time is valuable enough to me without thy pratings wasting it.
+					SAY If thou wert capable of talking sense, perhaps thou wouldst.
+					SAY The rumors that reached me of thy small measure of fame failed to include how annoying thou art.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND
+					SAY Make sense, or leave.
+					SAY I had heard of thee, but thy annoying nature wasn't mentioned.
+					SAY I'm busy and have no time for this.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Go 'way.
+					SAY Make sense, please.
+					SAY Gosh, thou art annoying.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY I know not who thou art, but annoying is a right good term for thee.
+					SAY To put it politely, given the miserable state of the world today, GO AWAY.
+					SAY 'Tis said that one of the burdens we of high intelligence bear is the pestering of folk such as thee: the idle questioners of no consequence.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Who art thou anyway?
+					SAY Go away.
+					SAY Why am I always pestered by those with nothing better to do?
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Who art thou anyway? Besides annoying.
+					SAY Life is lousy. Go away.
+					SAY Go shovel stables or something.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.KNOWN> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Not to puncture thy small bubble of self-importance, but I have work to do.
+					SAY I do not care who thou art--thou art tiring.
+					SAY I cannot understand thee, which I did not expect from one of thy small reputation.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I know thou fanciest thyself a public figure, but some of us have work to do.
+					SAY I don't care who thou art, I have better things to spend my time upon.
+					SAY Excuse me? I would have thought I would be able to understand someone as well known as thee.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Uh, I have work to do.
+					SAY Hmm?
+					SAY Ye talk confusing.
+				ENDDO
+			ENDIF
+		ELSE
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Ah, the high and mighty deign to speak with me. I feel honored that they soil their feet with the ground upon which I walk.
+					SAY For one of the greats of this land, thou makest remarkably little sense.
+					SAY Noble <SRC.SEX lord/lady> of whatever it is thou art, know this: my life is a miserable cesspool, and right now the honor of thy asking me a question makes me merely the noblest toad there. It also maketh of thee the noblest leech.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Goodness, a high and mighty <SRC.SEX lord/lady> talking to ME. I suppose thou thinkest I have no work to do.
+					SAY For a fancy <SRC.SEX lord/lady>, thou makest little sense.
+					SAY Even if thou art famous, talking to me will not make my day any better.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Are ye somebody famous?
+					SAY Huh?
+					SAY Um, yeah, whatever.
+				ENDDO
+			ENDIF
+		ENDIF
+	ELIF ( <SRC.KARMA.BELLIGERANT> )
+		IF ( <SRC.FAME.INFAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Begging thy pardon, oh terrible one, but today is not the day to say things I do not understand.
+					SAY Please do not hurt me! Life is hard enough without the whims of the likes of thee.
+					SAY I don't know what it is thou seekest from me. I am but a humble wretch whose life is a disaster.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY See here, today hath not been a good day for me. I beg thee, <SRC.SEX sir/ma'am>, try to make more sense.
+					SAY Please don't hurt me! Life is hard enough.
+					SAY Life is terrible, I am but a poor wretch, and I do not know what 'tis thou wantest from me.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY This ain't a good day to talk funny.
+					SAY Don' hurt me!,
+					SAY I'm nobody, right? Leave me alone, please?
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Thou art unsavory, much like my life.
+					SAY I fear that I do not understand thee.
+					SAY I hear what thou sayest, but do not understand. Then again, everything seems that way to me these days.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I fear I don't understand thee.
+					SAY Thou art that person I have been hearing rumors about! Sort of unsavory, not quite the model citizen? Is that thee?
+					SAY These days nothing seems to make sense.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Hey, art thou a bad guy?
+					SAY Um, er, what?
+					SAY Yes? No? I don't understand.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY My life is bad, and thy face worse. Go away.
+					SAY If I asked thee to go away, wouldst thou forgive my ill-temper on the grounds that I do not know thee?
+					SAY I am not here for thy pleasure. Kindly begin to make sense.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Today is the WORST day I have seen. Please bother me not.
+					SAY Mind thee, I do not know who thou art, so if I tell thee to go away, do not take it amiss.
+					SAY I am not here to answer thy questions. Make sense if thou must ask.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY My, thou art ugly.
+					SAY Enh?
+					SAY I don't understand.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.KNOWN> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Ah, forgive me, but I fail to understand what thou meanest. I am much distracted by my pitiful life these days.
+					SAY Enough about thy wants. When shall folk like thee, of some meager reputation, begin to heed the needs of those such as I?
+					SAY Thou hast some reputation in these parts. A shame that thou talkest so little sense.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Sorry, but I do not quite follow. My life these days is terrible and my attention wanders.
+					SAY Enough about what thou wantest! When will it ever be about people like me?
+					SAY I have heard of thee! A shame that thou makest no sense.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Oh, thee's somebody, right?
+					SAY Who cares? Let's talk about me.
+					SAY I know thee! Thou art... umm... <SRC.SEX whatsisface/whatserface>!
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.FAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY I know nothing, nothing, nothing.
+					SAY Forgive me, if it please thee. I am weary, and fail to understand what thou sayest.
+					SAY And I suppose my petty problems are beneath one such as thou?
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I know nothing, <SRC.SEX milord/milady>.
+					SAY I'm sorry, I am tired and do not understand thee.
+					SAY I guess that my small problems are too small for the likes of thee?
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Wha'?
+					SAY Thou ought to spend time grubbing in the dirt, getting to know the poor.
+					SAY Erm, I guess I canna help ye. I think. Not sure.
+				ENDDO
+			ENDIF
+		ENDIF
+	ELIF ( <SRC.KARMA.NEUTRAL> )
+		IF ( <SRC.FAME.INFAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY I beg thee, do not harm me. I cannot help thee.
+					SAY I do not understand thee--I am sure it must be my fault, however.
+					SAY Begging thy pardon, but I fail to understand what it is that thou wantest.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Do not hurt me! I can't help thee!,
+					SAY I, ahh, can't help thee, with this at least, thou seest, I, ahh, oh, please... I can grovel, wouldst thou like to see me grovel?
+					SAY I beg thy pardon, but I do not understand.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Don' hurt me!,
+					SAY Sorry, sorry, I'm stupid, don't hit me.
+					SAY Please, my old grandmother, she'd miss me if thou slit my throat!
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY I wish I could answer thee, so that thou wouldst leave me alone.
+					SAY Excuse my incomprehension, oh mighty terrorizer of small children, but I did not understand thee, and would find life more pleasant without thy ilk nearby.
+					SAY I am sorry, but I do not always understand the utterances of petty criminals.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY If I knew, I would tell thee so as to be left alone.
+					SAY Life would be better if people like thee were not around.
+					SAY Sorry. Can't help thee.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Lemme alone.
+					SAY Hey, thou art stinkin' up the place.
+					SAY Thou'rt a bad'un, aren't ye?
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Forgive me, but I do not understand.
+					SAY Excuse me? Forgive my lack of comprehension.
+					SAY If I look perplexed, 'tis because I am.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Sorry, I don't know what thou talkest about.
+					SAY I'd scratch my head, but I's told it ain't polite.
+					SAY Excuse me?
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Huh?
+					SAY Um... um?
+					SAY What?
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.KNOWN> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Accept my apologies, <SRC.SEX sir/milady>, for my lack of comprehension.
+					SAY If 'twere in my capabilities to help thee, I surely would.
+					SAY I cannot fathom what 'tis that thou wishest.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Forgive me, but... what?
+					SAY If I could help thee with that, I would.
+					SAY I don't know what 'tis thou wantest?
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Come again?
+					SAY I'd help ye, ifn I knew how.
+					SAY Ye lost me, not that it's hard.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.FAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Begging thy pardon, but in my awe at seeing thee actually here before me, I neglected to listen closely to what thou spoke.
+					SAY Sadly, I must report that I know nothing of what thou speakest.
+					SAY Help me to understand thee, for I know not what thou seekest.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Thou art amazing, didst thou know that? A truly magnificent person.
+					SAY Oh... I know nothing about that.
+					SAY Begging thy pardon, <SRC.SEX sir/ma'am>, but couldst thou explain that a bit better for me?
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY It 'ud be so great to help ye! I'd love to tell thee all abouts it! It's like this, it's... um... oh, consarn it.
+					SAY Aw, why'd ye ask something I ain't never known?
+					SAY How old are ye really? No, really, ye're so famous an' all...
+				ENDDO
+			ENDIF
+		ENDIF
+	ELIF ( <SRC.KARMA.KINDLY> )
+		IF ( <SRC.FAME.INFAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Please do not hurt me! I know nothing of what thou speakest!,
+					SAY I wish I could help thee, but I cannot. Please believe me.
+					SAY Even for one of thy dread reputation, I cannot answer what I do not know.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Don't hurt me! I know noting of what thou sayest!,
+					SAY I wish I could help thee, believe me.
+					SAY Even if thou didst threaten me, I could not tell what I do not know.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Don' beat me up, huh?
+					SAY I can't help ye, honest, really!,
+					SAY I hear ye eat little children. Does they taste good?
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Poor <SRC.SEX fellow/lass>, I fear I cannot help thee.
+					SAY I do not understand--and best thee not harass me for my lack of understanding.
+					SAY And why would a hooligan like thou wish to know that? In any case, I do not know.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Thou art rather pitiable. Sorry, but I cannot help thee.
+					SAY 'Twould go ill with thee wert thou to harass me because I cannot answer.
+					SAY Why doth a crook like thee want to know about that? Not that I know either.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Aye, I heard 'bout that I think... no, wait, 'twasn't that... or was it? Me mind's going, not that I had a good one in the first place, ifn ye know what I mean.
+					SAY I dunno what ye're sayin'.
+					SAY Does bad guys like to ask about that stuff?
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Sorry, friend, I fail to follow what thou sayest.
+					SAY I do not understand.
+					SAY Forgive me--I do not quite follow.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Sorry, I don't follow.
+					SAY Eh? I don't understand.
+					SAY Huh?
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Ye ain't makin' sense, friend.
+					SAY Huh?
+					SAY Er, aye, whatever. Nice talking to ye.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.KNOWN> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Alas, I know nothing about that.
+					SAY 'Twere it within my abilities to aid thee, I would.
+					SAY I do not understand thee--doubtless not thy fault, of course.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Oh, no, I know nothing about that.
+					SAY If I could, I would help thee.
+					SAY 'Tis probably my fault, but I do not understand thee.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY I don' know anythin' 'bout that.
+					SAY I'd help ye, ifn I knew.
+					SAY Argh! I's so stupid. I ALMOST understood what ye were on about.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.FAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY 'Tis indeed a great honor to speak with thee!,
+					SAY I fear that thy words go straight over my head, <SRC.SEX milord/milady>.
+					SAY I shall have a tale to tell my children now! That I met thee, spoke with thee, and even failed to answer thy brilliant inquiries and subtle comments! They shall never believe me, alas.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY This is such an honor, to talk to thee!,
+					SAY Oh my, that went right over my head.
+					SAY My friends will never believe I spoke to thee!
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Kin I kiss yer foot?
+					SAY Wow, thee talks pretty.
+					SAY I can't believe I met ye! This is the greatest day of my life!
+				ENDDO
+			ENDIF
+		ENDIF
+	ELIF ( <SRC.KARMA.GOODHEARTED> )
+		IF ( <SRC.FAME.INFAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY I know thy reputation, but surely thou wouldst not harm me for not knowing the answer?
+					SAY Even if I knew, would I tell such as thee, scoundrel?
+					SAY To think I have met thee, the infamous <SRC.NAME>.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY Even if thou art a cruel and frightening person, thou wouldst not harm me for not knowing... wouldst thou?
+					SAY Why would I tell scum like thee, if I knew?
+					SAY I never thought I would meet a famous villain like thee!
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Ye're going to kill me, aren't ye. Well, I've lived a good life.
+					SAY I ain't talking to scum like ye.
+					SAY Where's the horns? I thought ye had horns growin' out of yer head.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.OUTLAW> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY And if I knew, would it cause thee to reform thy ways?
+					SAY How typical of a petty criminal to speak so nonsensically.
+					SAY Poor <SRC.NAME>, thy life has led thee astray, and thou makest no sense now.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY If I know, wouldst thou return to the path of the virtuous?
+					SAY Smalltime criminals usually make no sense.
+					SAY I almost feel sorry for thee, making so little sense.
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Ye oughter try to reform, ye know. Ifn the guards catch ye, yer bound for the gallows.
+					SAY Ain't bad guys like ye educated these days? Ye don't talk half so well as me!,
+					SAY Erm, what ye said made no sense.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.ANONYMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Terribly sorry, friend, but I fear I do not understand what thou askest.
+					SAY I fail to grasp thy meaning, friend.
+					SAY My apologies, but thy meaning escapes me.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I am very sorry, friend, but I don't understand thee.
+					SAY I don't know what thou art talking about.
+					SAY Excuse me, but what art thou saying?
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Huh?
+					SAY Ye ain't talking sense there.
+					SAY Sorry, I don't get yer drift.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.KNOWN> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY 'Twould be a pleasure to assist thee, but alas, I cannot.,
+					SAY Unfortunately, <SRC.SEX sir/milady>, I know nothing of that.
+					SAY I do not understand. Couldst thou clarify?
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I would love to help thee, but I can't.
+					SAY I know nothing of that, <SRC.SEX milord/milady>.
+					SAY I do not understand... couldst thou explain further?
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY I wanna help ye, but...
+					SAY <SRC.SEX Sir/Ma'am>, I don't know, <SRC.SEX milord/milady>, but ifn I did, ye know, I'd be sure to tell one as <SRC.SEX noble/lovely> as ye are!,
+					SAY Yer such a nice person. Sorry I canna help ye.
+				ENDDO
+			ENDIF
+		ELIF ( <SRC.FAME.FAMOUS> )
+			IF ( <COMPLEXITY.HIGH> )
+				DORAND 3
+					SAY Help me to understand thee, <SRC.SEX milord/milady>. One of thy caliber should not go unassisted.
+					SAY Thou art as kind and wondrous as they say. Sadly, I cannot help thee on this matter as I know not whereof thou speakest.
+					SAY If only we had more such as thee! I regret that I know nothing of what thou sayest.
+				ENDDO
+			ELIF ( <COMPLEXITY.MEDIUM> )
+				DORAND 3
+					SAY I could not let a person like thee go by unassisted... help me understand what 'tis thou seekest.
+					SAY I know nothing of that. But thou art as wonderful as thy reputation has it.
+					SAY I'm sorry that I cannot help thee. If only we had more like thee!
+				ENDDO
+			ELSE
+				DORAND 3
+					SAY Why, someone oughter answer ye, thou bein' so nice an' all. Yes indeedy, someone out there somewheres must know. Ye just go on lookin', an' I know ye'll find the answer.
+					SAY Thee's the best, the best we have. I wisht I could help ye.
+					SAY I wish I understood ye... but the greats, ye know, talk a different language from the likes o' me.
+				ENDDO
+			ENDIF
+		ENDIF
+	ENDIF
+
+	//SAY=Uhhh, sorry I have not a clue what you mean.
+	RETURN 1
+
